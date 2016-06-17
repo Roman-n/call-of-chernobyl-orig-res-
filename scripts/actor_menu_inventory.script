@@ -7,60 +7,31 @@
  passed parameters:
 	itm1 is the object being dragged; may be nil
 	itm2 is the object the item is being dragged onto; may be nil
-<<<<<<< HEAD
-	from_slot is the number value of the slot itm1 is being dragged from;  0 or EDDListType.iInvalid is invalid 
-	to_slot is the number value of the slot itm2 is occupying;  0 or EDDListType.iInvalid is invalid 
-	
-from_slot and to_slot values:
-		EDDListType.iInvalid			= 0
-		EDDListType.iActorSlot			= 1
-		EDDListType.iActorBag			= 2
-		EDDListType.iActorBelt			= 3
-
-		EDDListType.iActorTrade			= 4
-		EDDListType.iPartnerTradeBag	= 5
-		EDDListType.iPartnerTrade		= 6
-		EDDListType.iDeadBodyBag		= 7
-		EDDListType.iQuickSlot			= 8
-		EDDListType.iTrashSlot			= 9
-		
-ex. if (to_slot == EDDListType.iActorSlot) then 
-		printf("dragging item to slot!")
-	end
-=======
 	from_slot is the number value of the slot itm1 is being dragged from; 255 is invalid
 	to_slot is the number value of the slot itm2 is occupying;  255 is invalid 
 	
 from_slot and to_slot values:
-	0 = inventory bag
-	1 = belt
-	2 = slot 2
-	3 = slot 3 
-	4 = outfit slot 
-	5 = helmet slot 
-	6 = detector slot 
->>>>>>> 0cce237... + added new actor_menu_inventory.script; contains new drag & drop callback from engine to tell which item of an icon is being drag onto another in inventory (Requires new xrGame.dll)
+		iInvalid			= 0
+		iActorSlot			= 1
+		iActorBag			= 2
+		iActorBelt			= 3
+
+		iActorTrade			= 4
+		iPartnerTradeBag	= 5
+		iPartnerTrade		= 6
+		iDeadBodyBag		= 7
+		iQuickSlot			= 8
+		iTrashSlot			= 9
 	
 --]]
 function CUIActorMenu_OnItemDropped(itm1,itm2,from_slot,to_slot)
 	printf("itm1=%s itm2=%s from_slot=%s to_slot=%s",itm1 and itm1:name(),itm2 and itm2:name(),from_slot,to_slot)
-<<<<<<< HEAD
 	
-	if (itm1 and itm2) then
-		SendScriptCallback("CUIActorMenu_OnItemDropped",itm1,itm2,from_slot,to_slot)
-	end
+	SendScriptCallback("CUIActorMenu_OnItemDropped",itm1,itm2,from_slot,to_slot)
+	
+	if (from_slot == to_slot) then -- should be here at the end
+		return false 
+	end 
 	
 	return true
-end
-
--- called from engine!
-function CUIActorMenu_OnItemFocusReceive(itm)
-	SendScriptCallback("CUIActorMenu_OnItemFocusReceive",itm)
-end
-
--- called from engine!
-function CUIActorMenu_OnItemFocusLost(itm)
-	SendScriptCallback("CUIActorMenu_OnItemFocusLost",itm)
-=======
->>>>>>> 0cce237... + added new actor_menu_inventory.script; contains new drag & drop callback from engine to tell which item of an icon is being drag onto another in inventory (Requires new xrGame.dll)
 end

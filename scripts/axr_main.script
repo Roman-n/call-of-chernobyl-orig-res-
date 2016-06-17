@@ -21,9 +21,7 @@ local intercepts = {
 	-- _g.script
 
 	-- actor_menu_inventory.script 
-	CUIActorMenu_OnItemDropped		= {},
-	CUIActorMenu_OnItemFocusReceive = {},
-	CUIActorMenu_OnItemFocusLost 	= {},
+	CUIActorMenu_OnItemDropped	= {},
 	
 	-- ui_main_menu.script
 	main_menu_on_keyboard		= {},
