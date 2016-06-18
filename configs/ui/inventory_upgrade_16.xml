@@ -550,7 +550,7 @@
 	            <cell x="0" y="24" point_x="95" point_y="205"/>
 	            <cell x="0" y="126" point_x="110" point_y="195"/>
 	            <cell x="0" y="228" point_x="80" point_y="190"/>
-	            <cell x="0" y="335" point_x="110" point_y="160"/>
+	            <cell x="0" y="335" point_x="90" point_y="230"/>
 	        </column>
 	        <column>
 	            <cell x="80" y="0" point_x="120" point_y="200"/>
@@ -559,7 +559,7 @@
 	            <cell x="80" y="151" point_x="185" point_y="200"/>
 	            <cell x="80" y="204" point_x="135" point_y="195"/>
 	            <cell x="80" y="253" point_x="60" point_y="185"/>
-	            <cell x="80" y="335" point_x="175" point_y="160"/>
+	            <cell x="80" y="335" point_x="140" point_y="169"/>
 	        </column>
 	        <column>
 	            <cell x="160" y="0" point_x="95" point_y="185"/>
@@ -572,7 +572,7 @@
 	            <cell x="160" y="360" point_x="110" point_y="160"/>
 	        </column>
 	    </template>
-	    <template name="upgrade_scheme_fort">
+		<template name="upgrade_scheme_fort">
 	        <column>
 	            <cell x="0" y="24" point_x="135" point_y="160"/>
 	            <cell x="0" y="126" point_x="200" point_y="170"/>

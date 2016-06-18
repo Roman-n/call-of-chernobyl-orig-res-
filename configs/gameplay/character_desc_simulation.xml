@@ -15,7 +15,7 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>1500</rank>
+		<rank>0</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\ecolog\stalker_ecolog</visual>
@@ -43,8 +43,8 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>3000</rank>
-		<reputation>0</reputation>
+		<rank>0</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_blue</visual>
 		<snd_config>characters_voice\human_03\ecolog\</snd_config>
@@ -71,8 +71,8 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>3000</rank>
-		<reputation>-1000</reputation>
+		<rank>0</rank>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_brown</visual>
 		<snd_config>characters_voice\human_03\ecolog\</snd_config>
@@ -98,8 +98,8 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>5000</rank>
-		<reputation>-500</reputation>
+		<rank>3000</rank>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
 		<snd_config>characters_voice\human_03\ecolog\</snd_config>
@@ -126,7 +126,7 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>1500</rank>
+		<rank>0</rank>
 		<reputation>-500</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_white</visual>
@@ -153,7 +153,7 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 
 		
-		<rank>0</rank>
+		<rank>3000</rank>
 		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_yellow</visual>
@@ -185,8 +185,8 @@
 		<class>sim_default_ecolog_1</class>
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		
-		<rank>5000</rank>
-		<reputation>0</reputation>
+		<rank>500</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\ecolog\stalker_ecolog_military</visual>
 		<snd_config>characters_voice\human_03\ecolog\</snd_config>
@@ -215,7 +215,7 @@
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		
 		<rank>0</rank>
-		<reputation>500</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\ecolog\stalker_ecolog_military</visual>
 		<snd_config>characters_voice\human_03\ecolog\</snd_config>
@@ -238,15 +238,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 	<class>sim_default_ecolog_1</class>
 	<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>1500</rank>
+		<rank>5000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-1000</reputation>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
 		<supplies>
@@ -274,15 +275,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 	<class>sim_default_ecolog_2</class>
 	<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>3000</rank>
+		<rank>1500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-500</reputation>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_neutral\stalker_neutral_2</visual>
 		<supplies>
@@ -306,15 +308,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_merc_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_ecolog_2</class>
 		<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\killer\</snd_config>
 
-		<rank>1500</rank>
+		<rank>3000</rank>
 	<money min="250" max="1750" infinitive="0"/>
-		<reputation>-500</reputation>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_merc\stalker_merc_2</visual>
 		<supplies>
@@ -336,15 +339,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 	<class>sim_default_ecolog_2</class>
 	<community>ecolog</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\stalker\</snd_config>
 
-		<rank>3000</rank>
+		<rank>5000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>500</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
 		<supplies>
@@ -370,6 +374,7 @@
 		<name>GENERATE_NAME_sergeant</name>
 		<icon>ui_inGame2_Soldier_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_ecolog_3</class>
@@ -377,7 +382,7 @@
 		<snd_config>characters_voice\human_02\military\</snd_config>
 
 		<rank>3000</rank>
-		<reputation>500</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_soldier\stalker_soldier_2</visual>
 		<supplies>
@@ -400,6 +405,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 	<class>sim_default_ecolog_3</class>
@@ -408,7 +414,7 @@
 
 		<rank>3000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>500</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_ecologist\stalker_ecolog_guard</visual>
 		<supplies>
@@ -444,14 +450,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_0</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>1500</rank>
-		<reputation>-1000</reputation>
+		<rank>0</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_R</visual>
 		<supplies>
@@ -474,14 +481,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_1_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_0</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
-		<reputation>1000</reputation>
+		<rank>3000</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_R_mask</visual>
 		<supplies>
@@ -501,13 +509,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_0</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>0</rank>
+		<rank>5000</rank>
 		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_R_mas2</visual>
@@ -531,14 +540,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_1_gas</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_0</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>-500</reputation>
+		<rank>500</rank>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_R_gas</visual>
 		<supplies>
@@ -558,14 +568,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_a</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_0</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>0</reputation>
+		<rank>3000</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_R2</visual>
 		<supplies>
@@ -591,13 +602,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>1500</rank>
 		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_1</visual>
@@ -621,14 +633,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>500</reputation>
+		<rank>500</rank>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_1</visual>
 		<supplies>
@@ -651,6 +664,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
@@ -658,7 +672,7 @@
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
 		<rank>500</rank>
-		<reputation>1000</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_a</visual>
 		<supplies>
@@ -682,14 +696,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>0</reputation>
+		<rank>3000</rank>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_neboa2</visual>
 		<supplies>
@@ -712,15 +727,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>1500</rank>
+		<rank>500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>0</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s</visual>
 		<supplies>
@@ -744,6 +760,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
@@ -752,7 +769,7 @@
 
 		<rank>5000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>1000</reputation>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_mask</visual>
 		<supplies>
@@ -776,15 +793,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2mask1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>0</rank>
+		<rank>1500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>1000</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_smask1</visual>
 		<supplies>
@@ -808,15 +826,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>1500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-1000</reputation>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_smask2</visual>
 		<supplies>
@@ -840,6 +859,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_old</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
@@ -848,7 +868,7 @@
 
 		<rank>500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>1000</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
 		<supplies>
@@ -872,13 +892,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_merc</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>0</rank>
+		<rank>500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
 		<reputation>500</reputation>
 
@@ -904,15 +925,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_gp5</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>1500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>0</reputation>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_gp5</visual>
 		<supplies>
@@ -936,15 +958,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>3000</rank>
+		<rank>5000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-500</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_mas2</visual>
 		<supplies>
@@ -968,6 +991,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_1</class>
@@ -1006,13 +1030,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>1500</rank>
 		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_1</visual>
@@ -1038,13 +1063,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>1500</rank>
+		<rank>0</rank>
 		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_a</visual>
@@ -1067,14 +1093,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_01\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>0</reputation>
+		<rank>1500</rank>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_b</visual>
 		<supplies>
@@ -1097,14 +1124,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>-1000</reputation>
+		<rank>3000</rank>
+		<reputation>500</reputation>
 
   <visual>actors\stalker_nebo\stalker_nebo_2</visual>
 		<supplies>
@@ -1127,6 +1155,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
@@ -1134,7 +1163,7 @@
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
 		<rank>500</rank>
-		<reputation>0</reputation>
+		<reputation>1000</reputation>
 
   <visual>actors\stalker_nebo\stalker_nebo_b</visual>
 		<supplies>
@@ -1157,14 +1186,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>3000</rank>
-		<reputation>0</reputation>
+		<rank>0</rank>
+		<reputation>1000</reputation>
 
   <visual>actors\stalker_nebo\stalker_nebo2a</visual>
 		<supplies>
@@ -1187,6 +1217,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
@@ -1217,14 +1248,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
-		<reputation>1000</reputation>
+		<rank>3000</rank>
+		<reputation>0</reputation>
 
   <visual>actors\stalker_nebo\stalker_nebo2b</visual>
 		<supplies>
@@ -1248,15 +1280,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>3000</rank>
+		<rank>0</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-1000</reputation>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_mask</visual>
 		<supplies>
@@ -1280,15 +1313,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2mask1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>0</rank>
+		<rank>5000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>1000</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_smask1</visual>
 		<supplies>
@@ -1312,15 +1346,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>500</rank>
+		<rank>0</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>0</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_smask2</visual>
 		<supplies>
@@ -1344,15 +1379,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_old</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>3000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-1000</reputation>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
 		<supplies>
@@ -1376,13 +1412,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_merc</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
+		<rank>500</rank>
 	<money min="1000" max="2000" infinitive="0"/>
 		<reputation>-1000</reputation>
 
@@ -1408,6 +1445,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_gp5</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
@@ -1440,15 +1478,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>1500</rank>
+		<rank>0</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>-1000</reputation>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_mas2</visual>
 		<supplies>
@@ -1472,15 +1511,16 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_02\csky\</snd_config>
 
-		<rank>500</rank>
+		<rank>3000</rank>
 	<money min="1000" max="2000" infinitive="0"/>
-		<reputation>0</reputation>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_s_mas3</visual>
 		<supplies>
@@ -1504,6 +1544,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_1</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_2</class>
@@ -1542,6 +1583,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
@@ -1572,14 +1614,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>0</reputation>
+		<rank>0</rank>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_3</visual>
 		<supplies>
@@ -1602,14 +1645,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
-		<reputation>-500</reputation>
+		<rank>500</rank>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo2a</visual>
 		<supplies>
@@ -1632,6 +1676,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
@@ -1639,7 +1684,7 @@
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
 		<rank>0</rank>
-		<reputation>500</reputation>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo3a</visual>
 		<supplies>
@@ -1662,14 +1707,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_2</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>1000</reputation>
+		<rank>5000</rank>
+		<reputation>-500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo2b</visual>
 		<supplies>
@@ -1692,20 +1738,21 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>3000</rank>
-		<reputation>-500</reputation>
+		<rank>1500</rank>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo3b</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
-		  wpn_ak74 \n
+		  wpn_ak74_pso \n
 		  ammo_5.45x39_ap = 1 \n
 		  wpn_fort \n
 		  ammo_9x18_pmm = 1 \n
@@ -1722,20 +1769,21 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>500</reputation>
+		<rank>1500</rank>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_1</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
-		  wpn_ak74 \n
+		  wpn_ak74_ekp \n
 		  ammo_5.45x39_ap = 1 \n
 		  wpn_fort \n
 		  ammo_9x18_pmm = 1 \n
@@ -1752,6 +1800,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
@@ -1759,13 +1808,13 @@
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
 		<rank>0</rank>
-		<reputation>-1000</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
-		  wpn_ak74 \n
+		  wpn_ak74_pso \n
 		  ammo_5.45x39_ap = 1 \n
 		  wpn_fort \n
 		  ammo_9x18_pmm = 1 \n
@@ -1782,6 +1831,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_3</class>
@@ -1789,7 +1839,7 @@
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
 		<rank>0</rank>
-		<reputation>-1000</reputation>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
 		<supplies>
@@ -1820,14 +1870,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
-		<reputation>1000</reputation>
+		<rank>1500</rank>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_3</visual>
 		<supplies>
@@ -1850,6 +1901,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
@@ -1863,7 +1915,7 @@
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
-		  wpn_ak74 \n
+		  wpn_ak74_ekp \n
 		  wpn_colt1911 \n
 		  ammo_5.45x39_ap = 1 \n
 		  ammo_11.43x23_fmj = 1 \n
@@ -1880,14 +1932,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>1500</rank>
-		<reputation>-1000</reputation>
+		<rank>5000</rank>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo3a</visual>
 		<supplies>
@@ -1910,20 +1963,21 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_nebo_3</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>1500</rank>
-		<reputation>-1000</reputation>
+		<rank>3000</rank>
+		<reputation>500</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo3b</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
-		  wpn_ak74 \n
+		  wpn_ak74m_pso \n
 		  wpn_colt1911 \n
 		  ammo_5.45x39_ap = 1 \n
 		  ammo_11.43x23_fmj = 1 \n
@@ -1940,14 +1994,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>5000</rank>
-		<reputation>500</reputation>
+		<rank>0</rank>
+		<reputation>0</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_1</visual>
 		<supplies>
@@ -1970,14 +2025,15 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>-500</reputation>
+		<rank>3000</rank>
+		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
 		<supplies>
@@ -2000,24 +2056,25 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>0</rank>
-		<reputation>-1000</reputation>
+		<rank>500</rank>
+		<reputation>1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_seva_2</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
 		  wpn_spas12 \n
-		  wpn_beretta = 1 \n
+		  wpn_sv98 \n
+	  ammo_7.62x54_fmj
 		  ammo_12x76_zhekan = 1 \n
-		  ammo_9x19_pbp = 1 \n
-		  
+						
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -2030,13 +2087,14 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_inGame2_neutral_4</icon>
 		<map_icon x="1" y="0"></map_icon>
+
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 
 		<class>sim_default_csky_4</class>
 		<community>csky</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<snd_config>characters_voice\human_03\csky\</snd_config>
 
-		<rank>500</rank>
+		<rank>1500</rank>
 		<reputation>-1000</reputation>
 
 		<visual>actors\stalker_nebo\stalker_nebo_exo_1</visual>

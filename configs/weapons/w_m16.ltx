@@ -1,0 +1,380 @@
+[wpn_m16]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn                  = "weapons\m4a1"               ; option for Level Editor
+$npc                 	= on           ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_AK74
+description             = st_wpn_m16_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 8
+
+default_to_ruck         = false
+sprint_allowed          = true
+
+;-------------------------------------------------------------------------------
+cost                 	= 8000
+weapon_class            = assault_rifle
+inv_weight              = 3.26
+
+upgrades                = up_gr_firstab_lr300, up_gr_seconab_lr300, up_gr_thirdab_lr300, up_gr_fourtab_lr300, up_gr_fifthab_lr300
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_lr300
+
+scopes 					= acog
+parent_section  				= wpn_m16
+
+;--TTX----------------------------------------------------------------------------
+
+hit_power         = 0.44
+hit_impulse       = 120
+hit_type          = fire_wound
+fire_distance        = 500
+bullet_speed         = 948 ;начальная скорость пули
+rpm                  = 700
+rpm_empty_click      = 200
+
+use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 2.0
+
+hud                        = wpn_m16_hud
+
+misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.6
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.1
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.006
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.072
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= 0.0014
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= 0.0015
+
+ammo_elapsed            = 30
+ammo_mag_size        	= 30          ; clip (magazine) size
+
+fire_modes          	= 1, 3
+
+ammo_class		 		= ammo_5.56x45_ss190, ammo_5.56x45_ap
+grenade_class			= ammo_m209
+
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;---DOF-------------------------------------------------------------------------
+zoom_dof             = 0.5, 1.0, 180
+reload_dof           = 0.0, 0.5, 5, 2
+
+;---дисперсия---------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base	= 0.1	;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 1.2f
+crosshair_inertion		= 5.25
+
+;отдача
+cam_return				= 0
+cam_relax_speed         = 5	;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 1.6	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc      = 0.45	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 0.7	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 50.0 	;максимальный угол отдачи
+cam_max_angle_horz      = 10.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 3.0	;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 2.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+zoom_cam_relax_speed        = 5    ; scope & ironsight
+zoom_cam_relax_speed_ai     = 360
+zoom_cam_dispersion         = 0.8
+zoom_cam_dispersion_inc     = 0.4
+zoom_cam_dispersion_frac    = 1.0
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 10.0
+zoom_cam_step_angle_horz    = 2
+
+fire_dispersion_condition_factor = 2        ;увеличение дисперсии в процентах при максимальном износе
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
+
+min_radius              = 0
+max_radius              = 100
+
+hit_probability_gd_novice  = 0.80
+hit_probability_gd_stalker = 0.80
+hit_probability_gd_veteran = 0.80
+hit_probability_gd_master  = 0.80
+
+;-------------------------------------------------------------------------------
+inv_name             	= st_wpn_m16
+inv_name_short          = st_wpn_m16
+
+inv_grid_width				= 6
+inv_grid_height				= 2
+inv_grid_x					= 70
+inv_grid_y					= 14
+
+upgr_icon_x				= 600
+upgr_icon_y				= 500
+upgr_icon_width				= 300
+upgr_icon_height 				= 100
+
+kill_msg_x				= 175
+kill_msg_y				= 0
+kill_msg_width			= 82
+kill_msg_height			= 28
+
+slot 			 		= 2		; // secondary
+animation_slot			= 2		; type of the animation that will be used
+
+;-------------------------------------------------------------------------------
+position                   				= -0.026, -0.130, 0.0
+orientation                				= 0.0, 0.0, 0.0
+
+fire_point              				= 0.0, 0.199, 0.575
+fire_point2             				= 0.0, 0.199, 0.575
+
+flame_particles         = weapons\generic_weapon05
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point             = 0.120000,0.000000,0.070000
+shell_dir               = 0.0, 0.0, 0.4
+shell_particles         = weapons\556x45
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position         		= -0.15,-0.37,0.2			; position (offset) and orientation of the weapon when it is strapped
+strap_orientation      		= -10,-5,10					; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo               = 90
+visual                     = dynamics\weapons\wpn_m16a3\wpn_m16a3.ogf
+
+light_disabled          = false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.1
+light_time              = 0.2
+
+ph_mass                 = 3
+;cost                   = 2100
+
+;addons
+scope_status               = 0                     ; 0 - no addon
+silencer_status            = 2                   ; 1 - permanent
+grenade_launcher_status    = 2                   ; 2 - attachable
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time        = 0.25
+scope_zoom_factor       = 75                                                ; fov for zoom mode
+scope_texture				= wpn_crosshair_l85
+
+silencer_name              = wpn_addon_silencer556    ; section name for the attachable silencer
+silencer_x                 = 250                ; offset in inventory icon
+silencer_y                 = 14
+grenade_launcher_name      = wpn_addon_grenade_launcher_m203; section name for the attachable grenade launcher
+grenade_launcher_x         = 150                ; offset in inventory icon
+grenade_launcher_y         = 28
+
+;звуки
+snd_draw                = weapons\m16\m16_draw
+snd_holster       = weapons\generic_holster
+snd_shoot                = weapons\m16\m16_fire
+snd_silncer_shot        = weapons\m16\m16_suppressed
+snd_empty               = weapons\gen_empty, 0.5
+snd_reload              = weapons\m16\m16_reload
+snd_shoot_grenade       = weapons\m203\m203_fire
+snd_reload_grenade      = weapons\m16\m203_reload
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\no_sound
+snd_bore1			= weapons\no_sound
+
+;настройки для глушителя
+;silencer_flame_particles  = weapons\generic_weapon01
+silencer_smoke_particles   = weapons\generic_shoot_00
+
+
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_m16_hud]
+zoom_hide_crosshair				= true
+
+attach_place_idx				= 0
+item_visual					= dynamics\weapons\wpn_m16a3\wpn_m16a3_hud.ogf
+
+hands_position				= -0.044,-0.17,0.1355
+hands_orientation				= 0.549999,2.399999,0.1499993
+
+hands_position_16x9				= -0.044,-0.17,0.1355
+hands_orientation_16x9			= 0.549999,2.399999,0.1499993
+
+item_position				= 0.0,0.0,0.0
+item_orientation				= 0.0,0.0,0.0
+
+aim_hud_offset_pos				= -0.1085,0.048,-0.175
+aim_hud_offset_rot				= 0.04,0.0087,-0.0125
+
+aim_hud_offset_pos_16x9 			= -0.1085,0.048,-0.175
+aim_hud_offset_rot_16x9 			= 0.04,0.0087,-0.0125
+
+gl_hud_offset_pos	 			= -0.11,-0.12,0.0
+gl_hud_offset_rot				= -0.142,0.009,-0.01
+
+gl_hud_offset_pos_16x9 			= -0.11,-0.12,0.0
+gl_hud_offset_rot_16x9 			= -0.142,0.009,-0.01
+
+shell_point					= 0.028,0.078,0.113
+shell_dir					= 0.0, 1.0, 0.0
+shell_bone					= wpn_body
+
+fire_point					= 0.0,0.072761,0.524496
+fire_bone					= wpn_body
+fire_point2					= 0.0,-0.009,0.601
+fire_bone2					= wpn_body
+
+anm_show                				= lancew_m16a3_draw
+anm_hide                				= lancew_m16a3_holster
+anm_idle                				= lancew_m16a3_idle
+anm_idle_sprint         				= lancew_m16a3_sprint
+anm_idle_moving         				= lancew_m16a3_moving
+anm_shots               				= lancew_m16a3_shoot, shoot
+anm_reload              				= lancew_m16a3_reload, reload
+anm_idle_aim            				= lancew_m16a3_idle_aim, idle_aim
+anm_switch              				= lancew_m16a3_switch_off, switch_off
+anm_switch_g            				= lancew_m16a3_switch_on, switch_on	
+anm_bore                				= lancew_m16a3_no_reload
+anm_hide_w_gl           				= lancew_m16a3_holster_w_gl
+anm_show_w_gl           			= lancew_m16a3_draw_w_gl
+anm_idle_w_gl           				= lancew_m16a3_idle_w_gl
+anm_shots_w_gl          				= lancew_m16a3_shoot_w_gl, shoot
+anm_reload_w_gl         			= lancew_m16a3_reload_w_gl, reload
+anm_idle_w_gl_aim       			= lancew_m16a3_idle_aim_w_gl, idle_aim
+anm_idle_sprint_w_gl    			= lancew_m16a3_sprint_w_gl
+anm_idle_moving_w_gl    			= lancew_m16a3_moving_w_gl
+anm_bore_w_gl           				= lancew_m16a3_no_reload_w_gl
+anm_show_g              				= lancew_m16a3_draw_g, idle_g
+anm_hide_g              				= lancew_m16a3_holster_g, idle_g
+anm_idle_g              				= lancew_m16a3_idle_g, idle_g
+anm_reload_g            				= lancew_m16a3_reload_g, reload_g
+anm_idle_g_aim          				= lancew_m16a3_idle_aim_g, idle_g
+anm_shots_g             				= lancew_m16a3_shoot_g, shoot_g
+anm_idle_sprint_g       				= lancew_m16a3_sprint_g, idle_g
+anm_idle_moving_g       			= lancew_m16a3_moving_g, idle_g
+anm_bore_g              				= lancew_m16a3_no_reload_g, idle_g
+
+lean_hud_offset_pos				= 0,0,0
+lean_hud_offset_rot				= 0,0,0
+
+[wpn_m16_acog]:wpn_m16
+visual					= dynamics\weapons\wpn_m16a3\wpn_m16a3_acog.ogf
+hud					= wpn_m16_acog_hud
+
+inv_grid_width				= 6
+inv_grid_height				= 2
+inv_grid_x					= 76
+inv_grid_y					= 14
+
+inv_weight              = 3.61
+scope_status				= 1
+scope_texture				= wpn_crosshair_acog
+scope_zoom_factor				= 25
+
+[wpn_m16_acog_hud]:wpn_m16_hud
+item_visual            	 			= dynamics\weapons\wpn_m16a3\wpn_m16a3_acog_hud.ogf
+
+;-----------------------------------------------------------------------------
+; Уникальные
+;-----------------------------------------------------------------------------
+
+[wpn_m16_68]:wpn_m16
+
+scopes 					= acog
+parent_section  				= wpn_m16_68
+
+ammo_class		 		= ammo_6.8x43_fmj, ammo_6.8x43_sst
+
+hit_power         = 0.75
+hit_impulse       = 100
+hit_type          = fire_wound
+
+fire_distance        = 450
+bullet_speed         = 785
+rpm                  = 500
+
+cost                 	= 28000
+
+ammo_mag_size        	= 25 
+fire_modes          	= 1, -1
+
+snd_shoot			= weapons\m16\m1668_fire 
+snd_silncer_shot	= weapons\m4a1\m4bm_suppressed
+
+description             = st_wpn_m1668_descr
+inv_name             	= st_wpn_m1668
+inv_name_short          = st_wpn_m1668
+
+cam_return				= 0
+cam_relax_speed         = 5	;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360
+cam_dispersion          = 2.2	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc      = 0.85	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 0.7	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle        	= 50.0 	;максимальный угол отдачи
+cam_max_angle_horz      = 10.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 3.0	;(degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 2.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+zoom_cam_relax_speed        = 5    ; scope & ironsight
+zoom_cam_relax_speed_ai     = 360
+zoom_cam_dispersion         = 1.4
+zoom_cam_dispersion_inc     = 0.6
+zoom_cam_dispersion_frac    = 1.0
+zoom_cam_max_angle          = 50.0
+zoom_cam_max_angle_horz     = 10.0
+zoom_cam_step_angle_horz    = 2
+silencer_name           = wpn_addon_silencer68
+silencer_x                 = 250                ; offset in inventory icon
+silencer_y                 = 12
+
+[wpn_m16_68_acog]:wpn_m16_68
+visual					= dynamics\weapons\wpn_m16a3\wpn_m16a3_acog.ogf
+hud					= wpn_m16_68_acog_hud
+
+inv_grid_width				= 6
+inv_grid_height				= 2
+inv_grid_x					= 76
+inv_grid_y					= 14
+
+inv_weight              = 3.61
+scope_status				= 1
+scope_texture				= wpn_crosshair_acog
+scope_zoom_factor				= 25
+
+[wpn_m16_68_acog_hud]:wpn_m16_acog_hud
+item_visual            	 			= dynamics\weapons\wpn_m16a3\wpn_m16a3_acog_hud.ogf

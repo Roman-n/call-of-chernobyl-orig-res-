@@ -1,0 +1,232 @@
+---------------------------
+-- Written by Darryl123 ---
+---------------------------
+
+-- Table of all items considered as scopes.
+local scope_table = alun_utils.collect_section(system_ini(), "mod_addons_list", true)
+
+-- Time Event: give actor a cloned weapon by id
+local function give_actor_this_weapon(id)
+	local wpn = level.object_by_id(id)
+	if not (wpn) then 
+		return false 
+	end 
+	db.actor:transfer_item(wpn, db.actor)
+	return true
+end
+
+-- Creates an item next to the actor.
+local function create_item(section)
+	return alife():create(section, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id())
+end
+
+-- Checks whether an scope is suitable.
+local function check_scope(scope, allowed_scopes)
+	for k, v in pairs(allowed_scopes) do
+		if (v == scope) then
+			return true
+		end
+	end
+	return false
+end
+
+-- Tries to add scope to weapon
+local function set_scope(scope,weapon)
+	local ini = system_ini()
+	
+	-- Used to identify the original, unmodified weapon.
+	local parent_section = ini:r_string_ex(weapon:section(), "parent_section")
+	if not (parent_section) then 
+		return 
+	end
+	
+	-- You cannot attach multiple scopes to one weapon!
+	if (weapon:section() ~= parent_section) then
+		return
+	end
+	
+	------------
+	-- Scopes --
+	------------
+	
+	-- No 'scopes' line for this item
+	if not (ini:line_exist(weapon:section(),"scopes")) then
+		return 
+	end
+	
+	-- List all scopes available for this weapon.
+	local scopes = alun_utils.parse_list(ini, weapon:section(), "scopes")
+	
+	-- Check if the scope can be attached.
+	if not (check_scope(scope:section(), scopes)) then
+		return
+	end
+	
+	------------
+	------------
+	
+	-- Read the unmodified weapon's packet data.
+	local old_weapon = alife():object(weapon:id())
+	local old_data = stpk_utils.get_weapon_data(old_weapon)
+	
+	-- Remove the unmodified weapon.
+	alife():release(old_weapon, true)
+	
+	-- Create the modified weapon.
+	local new_weapon = create_item(parent_section.. "_" .. scope:section())
+	local new_data = new_weapon and stpk_utils.get_weapon_data(new_weapon)
+	
+	if (old_data and new_data) then
+		-- Transfer the unmodified weapon data to the modified weapon.
+		new_data.addon_flags	=	old_data.addon_flags
+		new_data.ammo_current	=	old_data.ammo_current
+		new_data.ammo_type		=	old_data.ammo_type
+		new_data.ammo_elapsed	=	old_data.ammo_elapsed
+		new_data.condition		=	old_data.condition
+		new_data.upgrades		=	old_data.upgrades
+		--new_data.weapon_state	=	old_data.weapon_state
+		new_data.xz1			=	old_data.xz1
+		stpk_utils.set_weapon_data(new_data, new_weapon)
+	end
+	
+	local se_obj = alife():object(scope:id())
+	alife():release(se_obj,true)
+	
+	CreateTimeEvent(0,"give_actor_this_weapon",0,give_actor_this_weapon,new_weapon.id)
+end 
+
+-- called from defines.ltx default_weapon_params
+function remove_scope_context_menu_text(weapon)
+	-- Used to identify the original, unmodified weapon.
+	local parent_section = system_ini():r_string_ex(weapon:section(), "parent_section")
+	if not (parent_section) then 
+		return 
+	end
+	
+	------------
+	-- Scopes --
+	------------
+	
+	-- You cannot remove a scope from an unmodified weapon!
+	if ((weapon:section() == parent_section) or (not parent_section)) then
+		return
+	end
+	
+	return game.translate_string("st_remove_scope")
+end
+
+-- called from defines.ltx default_weapon_params
+function remove_scope_context_menu_action(weapon)
+	-- Used to identify the original, unmodified weapon.
+	local parent_section = system_ini():r_string_ex(weapon:section(), "parent_section")
+	if not (parent_section) then 
+		return 
+	end
+	
+	-- Determine which scope is attached to the weapon.
+	for k, v in pairs(scope_table) do
+		if (string.find(weapon:section(), k)) then
+			give_object_to_actor(k)
+			break
+		end
+	end
+	
+	------------
+	------------
+	
+	-- Read the modified weapon's packet data.
+	local old_weapon = alife():object(weapon:id())
+	local old_data = stpk_utils.get_weapon_data(old_weapon)
+	
+	-- Remove the modified weapon.
+	alife():release(old_weapon, true)
+	
+	-- Create the unmodified weapon.
+	local new_weapon = create_item(parent_section)
+	if not (new_weapon) then
+		abort("m_scopes:remove_scope_context_menu_action failed to create %s",parent_section)
+		return
+	end
+	
+	local new_data = stpk_utils.get_weapon_data(new_weapon)
+	
+	if (old_data and new_data) then
+		-- Transfer the modified weapon data to the unmodified weapon.
+		new_data.addon_flags	=	old_data.addon_flags
+		new_data.ammo_current	=	old_data.ammo_current
+		new_data.ammo_type		=	old_data.ammo_type
+		new_data.ammo_elapsed	=	old_data.ammo_elapsed
+		new_data.condition		=	old_data.condition
+		new_data.upgrades		=	old_data.upgrades
+		--new_data.weapon_state	=	old_data.weapon_state
+		new_data.xz1			=	old_data.xz1
+		stpk_utils.set_weapon_data(new_data, new_weapon)
+	end
+	
+	CreateTimeEvent(0,"give_actor_this_weapon",0,give_actor_this_weapon,new_weapon.id)
+end
+
+local function on_drag_drop(itm1,itm2,from_slot,to_slot)
+
+	-- We only want to do this when an item is being dragged inside bag or to a weapon slot
+	if not ((from_slot == EDDListType.iActorBag) and (to_slot == EDDListType.iActorSlot or to_slot == EDDListType.iActorBag)) then 
+		return 
+	end 
+	
+	-- Check if item is a scope
+	if not (scope_table[itm1:section()]) then 
+		return 
+	end
+	
+	if not (IsWeapon(itm2)) then 
+		return 
+	end 
+	
+	set_scope(itm1,itm2)
+end
+
+local function on_focus(itm)
+	-- No 'scopes' line for this item
+	if not (system_ini():line_exist(itm:section(),"scopes")) then
+		return 
+	end
+	
+	-- List all scopes available for this weapon.
+	local scopes = alun_utils.parse_list(system_ini(), itm:section(), "scopes")
+	if not (scopes) then 
+		return true 
+	end 
+	
+	local inv = ActorMenu.get_actor_menu()
+	if not (inv and inv:IsShown()) then 
+		return true
+	end
+	
+	for i=1,#scopes do 
+		inv:highlight_section_in_slot(scopes[i],EDDListType.iActorBag)
+	end
+end
+
+local function actor_on_item_use(itm)
+	if (scope_table[itm:section()]) then
+		local weapon = db.actor:item_in_slot(db.actor:active_slot()) or db.actor:item_in_slot(3) or db.actor:item_in_slot(2)
+		if (weapon) then
+			set_scope(itm,weapon)
+		end
+	elseif (itm:section() == "addons_box") then 
+		local weapon = db.actor:item_in_slot(db.actor:active_slot()) or db.actor:item_in_slot(3) or db.actor:item_in_slot(2)
+		if (weapon) then
+			remove_scope_context_menu_action(weapon)
+		end
+	end
+end
+
+------------------------------
+
+-- Called on game start.
+function on_game_start()
+	RegisterScriptCallback("CUIActorMenu_OnItemDropped",on_drag_drop)
+	RegisterScriptCallback("CUIActorMenu_OnItemFocusReceive",on_focus)
+	RegisterScriptCallback("actor_on_item_use",actor_on_item_use)
+end
+
