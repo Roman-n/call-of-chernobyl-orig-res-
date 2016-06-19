@@ -46,7 +46,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			vodka = 1 \n
-			addons_box \n
 			novice_outfit \n			
 		</loadout_1>
 		<loadout_2>
@@ -58,7 +57,6 @@
 			medkit = 2 \n
 			bread = 1 \n
 			kolbasa = 1 \n
-			addons_box \n
 			novice_outfit \n			
 		</loadout_2>
 		<loadout_3>
@@ -67,7 +65,6 @@
 			bandage = 1 \n
 			kolbasa = 1 \n
 			vodka = 1 \n
-			addons_box \n
 			stalker_outfit \n			
 		</loadout_3>
 		<loadout_4>
@@ -76,7 +73,6 @@
 			ammo_5.56x45_ss190 = 2 \n
 			medkit = 1 \n
 			vodka \n
-			addons_box \n
 			stalker_outfit \n
 		</loadout_4>
 		<loadout_5>
@@ -86,7 +82,6 @@
 			medkit = 1 \n
 			conserva = 2 \n
 			antirad = 1 \n
-			addons_box \n
 			novice_outfit \n
 		</loadout_5>
 		<loadout_6>
@@ -94,7 +89,6 @@
 			ammo_9x19_fmj = 2 \n
 			medkit = 1 \n
 			novice_outfit \n
-			addons_box \n
 			itm_pda_rare \n
 		</loadout_6>		
 		<loadout_7>
@@ -104,7 +98,6 @@
 			drug_psy_blockade \n
 			medkit = 1 \n
 			novice_outfit \n
-			addons_box \n
 			wpn_mine = 2 \n
 		</loadout_7>
 		<loadout_8>
@@ -113,7 +106,6 @@
 			drug_psy_blockade \n
 			bandage = 1 \n
 			medkit = 1 \n
-			addons_box \n
 			novice_outfit \n
 		</loadout_8>
 		<loadout_9>
@@ -122,7 +114,6 @@
 			bandage \n
 			grenade_f1 = 2 \n
 			medkit = 1 \n
-			addons_box \n
 			novice_outfit \n
 		</loadout_9>
 		<loadout_10>
@@ -131,7 +122,6 @@
 			wpn_wincheaster1300 \n 
 			ammo_12x70_buck = 2 \n
 			grenade_f1 = 2 \n
-			addons_box \n
 			novice_outfit \n
 		</loadout_10>
 		
@@ -165,7 +155,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			vodka = 1 \n
-			addons_box \n
 			bandit_novice_outfit \n			
 		</loadout_1>
 		<loadout_2>
@@ -178,7 +167,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			bandit_novice_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -187,7 +175,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			trenchcoat_outfit \n			
-			addons_box \n	
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -196,7 +183,6 @@
 			medkit = 1 \n
 			vodka \n
 			trenchcoat_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -206,7 +192,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			bandit_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -214,7 +199,6 @@
 			medkit = 1 \n
 			bandit_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -224,7 +208,6 @@
 			medkit = 1 \n
 			bandit_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -235,7 +218,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			trenchcoat_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -244,7 +226,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			bandit_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -253,7 +234,6 @@
 			ammo_12x70_buck = 2 \n
 			grenade_f1 = 2 \n
 			bandit_novice_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="500"  max="500"  infinitive="0"/>
@@ -286,7 +266,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			vodka = 1 \n
-			addons_box \n
 			dolg_outfit \n
 						helm_respirator \n				
 		</loadout_1>
@@ -300,7 +279,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			dolg_novice_outfit \n			
-			addons_box \n	
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -309,7 +287,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			dolg_outfit \n			
-			addons_box \n	
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -318,7 +295,6 @@
 			medkit = 1 \n
 			vodka \n
 			dolg_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -328,7 +304,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			dolg_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -336,7 +311,6 @@
 			medkit = 1 \n
 			dolg_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -346,7 +320,6 @@
 			medkit = 1 \n
 			dolg_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -357,7 +330,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			dolg_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -366,7 +338,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			dolg_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -375,7 +346,6 @@
 			ammo_12x70_buck = 2 \n
 			grenade_f1 = 2 \n
 			dolg_novice_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="1500"  max="1500"  infinitive="0"/>
@@ -409,8 +379,7 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			svoboda_light_outfit \n
-						helm_respirator \n
-			addons_box \n			
+			helm_respirator \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -422,7 +391,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			svoboda_novice_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -431,7 +399,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			svoboda_light_outfit \n			
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -440,7 +407,6 @@
 			medkit = 1 \n
 			vodka \n
 			svoboda_light_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -450,7 +416,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			svoboda_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -458,7 +423,6 @@
 			medkit = 1 \n
 			svoboda_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -468,7 +432,6 @@
 			medkit = 1 \n
 			svoboda_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -479,7 +442,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			svoboda_light_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -488,7 +450,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			svoboda_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -498,7 +459,6 @@
 			ammo_12x76_zhekan = 1 \n
 			grenade_f1 = 2 \n
 			svoboda_novice_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="1500"  max="1500"  infinitive="0"/>
@@ -534,7 +494,6 @@
 			vodka = 1 \n
 			military_novice_outfit \n	
 						helm_hardhat \n
-			addons_box \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -546,7 +505,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			specops_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -555,7 +513,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			military_novice_outfit \n			
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -564,7 +521,6 @@
 			medkit = 1 \n
 			vodka \n
 			specops_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -574,7 +530,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			military_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -582,7 +537,6 @@
 			medkit = 1 \n
 			military_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -592,7 +546,6 @@
 			medkit = 1 \n
 			military_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -603,7 +556,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			military_novice_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -612,7 +564,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			military_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -622,7 +573,6 @@
 			ammo_12x76_zhekan = 1 \n
 			grenade_f1 = 2 \n
 			specops_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="2500"  max="2500"  infinitive="0"/>
@@ -656,7 +606,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			cs_novice_outfit \n
-			addons_box \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -668,7 +617,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			cs_novice_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -677,7 +625,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			cs_light_novice_outfit \n			
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -686,7 +633,6 @@
 			medkit = 1 \n
 			vodka \n
 			cs_light_novice_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -697,7 +643,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			cs_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -705,7 +650,6 @@
 			medkit = 1 \n
 			cs_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>			
 		<loadout_7>
 			wpn_pm \n
@@ -715,7 +659,6 @@
 			medkit = 1 \n
 			cs_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -726,7 +669,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			cs_light_novice_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -735,7 +677,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			cs_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -744,7 +685,6 @@
 			ammo_12x70_buck = 2 \n
 			grenade_f1 = 2 \n
 			cs_novice_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="500"  max="500"  infinitive="0"/>
@@ -778,7 +718,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			ecolog_guard_outfit \n
-			addons_box \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -790,7 +729,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			ecolog_guard_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -799,7 +737,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			ecolog_outfit_green \n			
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -808,7 +745,6 @@
 			medkit = 1 \n
 			vodka \n
 			ecolog_outfit_green \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -818,7 +754,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			ecolog_guard_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -826,7 +761,6 @@
 			medkit = 1 \n
 			ecolog_guard_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -836,7 +770,6 @@
 			medkit = 1 \n
 			ecolog_guard_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -847,7 +780,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			ecolog_outfit_green \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -856,7 +788,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			ecolog_guard_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -866,7 +797,6 @@
 			ammo_12x76_zhekan = 1 \n
 			grenade_f1 = 2 \n
 			ecolog_outfit_green \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="5000"  max="5000"  infinitive="0"/>
@@ -903,7 +833,6 @@
 			vodka = 1 \n
 			merc_novice_outfit \n
 						helm_m40 \n
-			addons_box \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -915,7 +844,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			merc_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -925,7 +853,6 @@
 			grenade_f1 = 2 \n
 			vodka = 1 \n
 			merc_novice_outfit \n		
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -935,7 +862,6 @@
 			vodka \n
 			wpn_mine = 2 \n
 			merc_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -946,7 +872,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			merc_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_ak74m \n
@@ -954,7 +879,6 @@
 			medkit = 1 \n
 			merc_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_pm \n
@@ -964,7 +888,6 @@
 			medkit = 1 \n
 			merc_novice_outfit \n
 			wpn_mine = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			itm_backpack \n
@@ -975,7 +898,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			merc_novice_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -984,7 +906,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			merc_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -993,7 +914,6 @@
 			ammo_12x70_buck = 2 \n
 			grenade_f1 = 2 \n
 			merc_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="5000"  max="5000"  infinitive="0"/>
@@ -1027,7 +947,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			monolith_novice_outfit \n
-			addons_box \n
 		</loadout_1>
 		<loadout_2>
 			detector_simple \n
@@ -1039,7 +958,6 @@
 			bread = 1 \n
 			kolbasa = 1 \n
 			monolith_outfit \n			
-			addons_box \n
 		</loadout_2>
 		<loadout_3>
 			wpn_beretta \n
@@ -1048,7 +966,6 @@
 			kolbasa = 1 \n
 			vodka = 1 \n
 			monolith_novice_outfit \n			
-			addons_box \n
 		</loadout_3>
 		<loadout_4>
 			detector_simple \n
@@ -1057,7 +974,6 @@
 			medkit = 1 \n
 			vodka \n
 			monolith_outfit \n
-			addons_box \n
 		</loadout_4>
 		<loadout_5>
 			itm_gunsmith_toolkit \n
@@ -1067,7 +983,6 @@
 			conserva = 2 \n
 			antirad = 1 \n
 			monolith_novice_outfit \n
-			addons_box \n
 		</loadout_5>
 		<loadout_6>
 			wpn_mp5 \n
@@ -1075,7 +990,6 @@
 			medkit = 1 \n
 			monolith_novice_outfit \n
 			itm_pda_rare \n
-			addons_box \n
 		</loadout_6>		
 		<loadout_7>
 			wpn_colt1911 \n
@@ -1085,7 +999,6 @@
 			monolith_novice_outfit \n
 			wpn_mine = 2 \n
 			conserva = 2 \n
-			addons_box \n
 		</loadout_7>
 		<loadout_8>
 			wpn_rpg7 \n
@@ -1094,7 +1007,6 @@
 			bandage = 1 \n
 			medkit = 1 \n
 			monolith_novice_outfit \n
-			addons_box \n
 		</loadout_8>
 		<loadout_9>
 			wpn_ak74u \n
@@ -1103,7 +1015,6 @@
 			grenade_f1 = 2 \n
 			medkit = 1 \n
 			monolith_novice_outfit \n
-			addons_box \n
 		</loadout_9>
 		<loadout_10>
 			detector_simple \n
@@ -1113,7 +1024,6 @@
 			ammo_12x76_zhekan = 1 \n
 			grenade_f1 = 2 \n
 			monolith_outfit \n
-			addons_box \n
 		</loadout_10>
 		
 		<money min="500"  max="500"  infinitive="0"/>
