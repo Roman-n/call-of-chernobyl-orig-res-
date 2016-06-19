@@ -78,11 +78,13 @@ function msg_box_ui:OnMsgOk()
 	local p = pos and alun_utils.str_explode(pos,",")
 	pos = p and vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
 
-	if (ini:r_bool_ex(self.name,"allow_vehicle")) then
+	local allow_car = ini:r_bool_ex(self.name,"allow_vehicle") or true
+	if (allow_car) then
 		-- allow vehicles to teleport too
 		local car = db.actor:get_attached_vehicle()
 		if (car) then
-			car:force_set_position(pos or point and point:point(0))
+			--car:force_set_position(pos or point and point:point(0))
+			TeleportObject(car:id(),pos or point and point:point(0),point and point:level_vertex_id(0),point and point:game_vertex_id(0))
 		else
 			db.actor:set_actor_position(pos or point and point:point(0))
 		end

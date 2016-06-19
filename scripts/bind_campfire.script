@@ -74,6 +74,7 @@ function campfire_binder:net_spawn(server_object)
 		db.campfire_table_by_smart_names[smart_name][id] = self
 	end
 	
+	--[[
 	self.object:set_callback(callback.use_object, self.use_campfire, self)
 	
 	if (self.campfire) then
@@ -83,6 +84,7 @@ function campfire_binder:net_spawn(server_object)
 			self.object:set_tip_text("st_extinguish_fire")
 		end
 	end
+	--]]
 	
 	return true
 end
@@ -95,8 +97,10 @@ function campfire_binder:net_destroy(server_object)
 		end
 	end
 	
+	--[[
 	self.object:set_callback(callback.use_object, nil)
 	self.object:set_tip_text("")
+	--]]
 	
 	object_binder.net_destroy(self)
 end 
@@ -105,6 +109,7 @@ function campfire_binder:update(delta)
 	object_binder.update(self, delta)
 end
 
+--[[
 function campfire_binder:use_campfire()
 	if not (self.campfire) then 
 		return 
@@ -118,6 +123,7 @@ function campfire_binder:use_campfire()
 		self.object:set_tip_text("st_extinguish_fire")
 	end
 end
+--]]
 
 --[[
 function turn_on_campfires_by_smart_name(smart_name,use_rand)

@@ -212,6 +212,10 @@ end
 ----------- End Dialog Func--------------------
 
 function precondition_functor_a( param1, section )
+	local victim = victim_id and (db.storage[victim_id] and db.storage[victim_id].object or level.object_by_id(victim_id))
+	if not (victim) then 
+		return 2 
+	end
 	local ret = 0
 	if(param_ini:line_exist(mechanic_name.."_upgr", section)) then
 		local param = param_ini:r_string_ex(mechanic_name.."_upgr", section)
@@ -271,6 +275,10 @@ function get_possibility_string(mechanic_name, possibility_table)
 end
 
 function prereq_functor_a( param3, section )
+	local victim = victim_id and (db.storage[victim_id] and db.storage[victim_id].object or level.object_by_id(victim_id))
+	if not (victim) then 
+		return ""
+	end
 	local str = ""
 	if(param_ini:line_exist(mechanic_name.."_upgr", section)) then
 		local param = param_ini:r_string_ex(mechanic_name.."_upgr", section)
@@ -355,10 +363,6 @@ end
 
 function property_functor_c( param1, name )
 	return issue_property( param1, name )
-end
-
-function need_victim(obj)
-	victim = obj
 end
 
 function issue_property( param1, name )

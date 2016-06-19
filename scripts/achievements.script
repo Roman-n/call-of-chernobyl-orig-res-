@@ -23,6 +23,7 @@ function completionist_functor()
 	and (has_alife_info("achieved_silver_or_lead"))
 	and (has_alife_info("achieved_tourist"))
 	and (has_alife_info("achieved_well_dressed")) then
+	and (has_alife_info("achieved_wishful_thinking")) then
 		db.actor:give_info_portion("achieved_completionist")
 		news_manager.send_tip(db.actor, "st_achievement_10_unlock", nil, "completionist", nil, nil)
 		xr_statistic.inc_actor_rank(xr_statistic.rank_rep.completionist.rnk)
@@ -56,7 +57,7 @@ function clear_skies_functor()
 	if has_alife_info("achieved_clear_skies") then
 		return true
 	end
-	if (xr_statistic.actor_statistic.heli_rocket_kills >= 1) then
+	if (xr_statistic.actor.heli_kills >= 3 or xr_statistic.actor_statistic.heli_rocket_kills >= 1) then
 		db.actor:give_info_portion("achieved_clear_skies")
 		news_manager.send_tip(db.actor, "st_achievement_12_unlock", nil, "clear_skies", nil, nil)
 		xr_statistic.inc_actor_rank(xr_statistic.rank_rep.clear_skies.rnk)
@@ -279,6 +280,7 @@ function wishful_thinking_functor()
 		news_manager.send_tip(db.actor, "st_achievement_11_unlock", nil, "wishful_thinking", nil, nil)
 		xr_statistic.inc_actor_rank(xr_statistic.rank_rep.wishful_thinking.rnk)
 		xr_statistic.inc_actor_reputation(xr_statistic.rank_rep.wishful_thinking.rpt)
+		alife():create("af_oasis_heart", db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 	end
 	return has_alife_info("achieved_wishful_thinking")
 end

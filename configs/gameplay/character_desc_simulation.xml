@@ -35,7 +35,7 @@
 
 	<specific_character id="sim_default_ecolog_0_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog</icon>
+		<icon>ui_inGame2_ecolog_blue</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Member of mobile science camp. Detailed information is missing.</bio>
 
@@ -63,7 +63,7 @@
 
 	<specific_character id="sim_default_ecolog_0_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog</icon>
+		<icon>ui_inGame2_ecolog_brown</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Member of mobile science camp. Detailed information is missing.</bio>
 
@@ -90,7 +90,7 @@
 	</specific_character>
 	<specific_character id="sim_default_ecolog_0_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog</icon>
+		<icon>ui_inGame2_ecolog_green</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Member of mobile science camp. Detailed information is missing.</bio>
 
@@ -118,7 +118,7 @@
 
 	<specific_character id="sim_default_ecolog_0_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog</icon>
+		<icon>ui_inGame2_ecolog_white</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Member of mobile science camp. Detailed information is missing.</bio>
 
@@ -145,7 +145,7 @@
 	</specific_character>
 	<specific_character id="sim_default_ecolog_0_default_5" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog</icon>
+		<icon>ui_inGame2_ecolog_yellow</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Member of mobile science camp. Detailed information is missing.</bio>
 
@@ -178,7 +178,7 @@
 
 	<specific_character id="sim_default_ecolog_1_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog_military</icon>
+		<icon>ui_inGame2_ecolog_green</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Researcher. Detailed information is missing.</bio>
 		
@@ -207,7 +207,7 @@
 
 	<specific_character id="sim_default_ecolog_1_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_stalker_ecolog_military</icon>
+		<icon>ui_inGame2_ecolog_green</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Researcher. Detailed information is missing.</bio>
 		
@@ -236,7 +236,7 @@
 
   <specific_character id="sim_default_ecolog_1_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_ecolog_guard_blue</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -337,7 +337,7 @@
 
   <specific_character id="sim_default_ecolog_2_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_ecolog_guard_blue</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -403,7 +403,7 @@
 
   <specific_character id="sim_default_ecolog_3_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_ecolog_guard_blue</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -448,7 +448,7 @@
 
   <specific_character id="sim_default_csky_0_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_1</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -479,7 +479,7 @@
 
   <specific_character id="sim_default_csky_0_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_1_mask</icon>
+		<icon>ui_inGame2_csky_2</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -507,7 +507,7 @@
 
   <specific_character id="sim_default_csky_0_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_1</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -538,7 +538,7 @@
 
   <specific_character id="sim_default_csky_0_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_1_gas</icon>
+		<icon>ui_inGame2_csky_1_gas</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -566,7 +566,7 @@
 
   <specific_character id="sim_default_csky_0_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_a</icon>
+		<icon>ui_inGame2_csky_4</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -600,7 +600,7 @@
 
   <specific_character id="sim_default_csky_1_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -631,7 +631,7 @@
 
   <specific_character id="sim_default_csky_1_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -662,7 +662,7 @@
 
   <specific_character id="sim_default_csky_1_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_4</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -694,7 +694,7 @@
 
   <specific_character id="sim_default_csky_1_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_4</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -725,7 +725,7 @@
 
   <specific_character id="sim_default_csky_1_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_csky_1_gas</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -758,7 +758,7 @@
 
   <specific_character id="sim_default_csky_1_default_5" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -791,7 +791,7 @@
 
   <specific_character id="sim_default_csky_1_default_6" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2mask1</icon>
+		<icon>ui_inGame2_csky_2</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -824,7 +824,7 @@
 
   <specific_character id="sim_default_csky_1_default_7" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -857,7 +857,7 @@
 
   <specific_character id="sim_default_csky_1_default_8" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_old</icon>
+		<icon>ui_inGame2_csky_oldgas</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -890,7 +890,7 @@
 
   <specific_character id="sim_default_csky_1_default_9" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_merc</icon>
+		<icon>ui_inGame2_csky_merc</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -923,7 +923,7 @@
 
   <specific_character id="sim_default_csky_1_default_10" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_gp5</icon>
+		<icon>ui_inGame2_csky_gp5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -956,7 +956,7 @@
 
   <specific_character id="sim_default_csky_1_default_11" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -989,7 +989,7 @@
 
   <specific_character id="sim_default_csky_1_default_12" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1028,7 +1028,7 @@
 
   <specific_character id="sim_default_csky_2_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1061,7 +1061,7 @@
 
   <specific_character id="sim_default_csky_2_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_4</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1091,7 +1091,7 @@
 
   <specific_character id="sim_default_csky_2_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1122,7 +1122,7 @@
 
   <specific_character id="sim_default_csky_2_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1134,7 +1134,7 @@
 		<rank>3000</rank>
 		<reputation>500</reputation>
 
-  <visual>actors\stalker_nebo\stalker_nebo_2</visual>
+		<visual>actors\stalker_nebo\stalker_nebo_2</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
@@ -1153,7 +1153,7 @@
 
   <specific_character id="sim_default_csky_2_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1165,7 +1165,7 @@
 		<rank>500</rank>
 		<reputation>1000</reputation>
 
-  <visual>actors\stalker_nebo\stalker_nebo_b</visual>
+		<visual>actors\stalker_nebo\stalker_nebo_b</visual>
 		<supplies>
 		  [spawn] \n
 		  device_torch \n
@@ -1184,7 +1184,7 @@
 
   <specific_character id="sim_default_csky_2_default_5" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1215,7 +1215,7 @@
 
   <specific_character id="sim_default_csky_2_default_6" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1246,7 +1246,7 @@
 
   <specific_character id="sim_default_csky_2_default_7" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1278,7 +1278,7 @@
 
   <specific_character id="sim_default_csky_2_default_8" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1311,7 +1311,7 @@
 
   <specific_character id="sim_default_csky_2_default_9" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2mask1</icon>
+		<icon>ui_inGame2_csky_2</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1344,7 +1344,7 @@
 
   <specific_character id="sim_default_csky_2_default_10" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1377,7 +1377,7 @@
 
   <specific_character id="sim_default_csky_2_default_11" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_old</icon>
+		<icon>ui_inGame2_csky_oldgas</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1410,7 +1410,7 @@
 
   <specific_character id="sim_default_csky_2_default_12" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_merc</icon>
+		<icon>ui_inGame2_csky_merc</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1443,7 +1443,7 @@
 
   <specific_character id="sim_default_csky_2_default_13" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_gp5</icon>
+		<icon>ui_inGame2_csky_gp5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1476,7 +1476,7 @@
 
   <specific_character id="sim_default_csky_2_default_14" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1509,7 +1509,7 @@
 
   <specific_character id="sim_default_csky_2_default_15" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_2_mask</icon>
+		<icon>ui_inGame2_csky_1</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1542,7 +1542,7 @@
 		  
   <specific_character id="sim_default_csky_2_default_16" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_1</icon>
+		<icon>ui_inGame2_csky_4</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1581,7 +1581,7 @@
 
   <specific_character id="sim_default_csky_3_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1612,7 +1612,7 @@
 
   <specific_character id="sim_default_csky_3_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1643,7 +1643,7 @@
 
   <specific_character id="sim_default_csky_3_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1674,7 +1674,7 @@
 
   <specific_character id="sim_default_csky_3_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1705,7 +1705,7 @@
 
   <specific_character id="sim_default_csky_3_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_2</icon>
+		<icon>ui_inGame2_csky_5</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1736,7 +1736,7 @@
 
   <specific_character id="sim_default_csky_3_default_5" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1767,7 +1767,7 @@
 
   <specific_character id="sim_default_csky_3_default_6" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1798,7 +1798,7 @@
 
   <specific_character id="sim_default_csky_3_default_7" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1829,7 +1829,7 @@
 		  
   <specific_character id="sim_default_csky_3_default_8" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1868,7 +1868,7 @@
 
   <specific_character id="sim_default_csky_4_default_0" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1899,7 +1899,7 @@
 
   <specific_character id="sim_default_csky_4_default_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1930,7 +1930,7 @@
 
   <specific_character id="sim_default_csky_4_default_2" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1961,7 +1961,7 @@
 
   <specific_character id="sim_default_csky_4_default_3" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_npc_u_nebo_3</icon>
+		<icon>ui_inGame2_csky_3</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1992,7 +1992,7 @@
 		  
   <specific_character id="sim_default_csky_4_default_4" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -2023,7 +2023,7 @@
 
   <specific_character id="sim_default_csky_4_default_5" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -2054,7 +2054,7 @@
 
   <specific_character id="sim_default_csky_4_default_6" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_csky_nauchniy</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -2085,7 +2085,7 @@
 
   <specific_character id="sim_default_csky_4_default_7" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
-		<icon>ui_inGame2_neutral_4</icon>
+		<icon>ui_inGame2_csky_exo</icon>
 		<map_icon x="1" y="0"></map_icon>
 
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
