@@ -1,330 +1,336 @@
 [wpn_hk417]:identity_immunities,weapon_probability,default_weapon_params
-GroupControlSection     = spawn_group
-$spawn						= "weapons\sig550"                ; option for Level Editor
-$npc                    = on                                ; option for Level Editor
-$prefetch               = 8
-scheduled               = off                                ; option for ALife Simulator
-cform                   = skeleton
-class                   = WP_AK74
-description             = st_wpn_hk417_descr
+GroupControlSection                      = spawn_group
+$spawn                                   = "weapons\sig550"	                                       ; option for Level Editor
+$npc                                     = on	                                       ; option for Level Editor
+$prefetch                                = 8
+scheduled                                = off	                                       ; option for ALife Simulator
+cform                                    = skeleton
+class                                    = WP_AK74
+description                              = st_wpn_hk417_descr
 
-ef_main_weapon_type     = 2
-ef_weapon_type          = 6
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 6
 
-default_to_ruck         = false
-sprint_allowed       	= true
+default_to_ruck                          = false
+sprint_allowed                           = true
 
 ;-------------------------------------------------------------------------------
-cost                    = 35000
-weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight              = 4.2
+cost                                     = 35000
+weapon_class                             = assault_rifle	                                       ; Type of the weapon
+inv_weight                               = 4.2
 
-upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_sig550
+upgrades                                 = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_sig550
 
-scopes 					= acog, eot
-parent_section  				= wpn_hk417
+scopes                                   = acog, eot
+parent_section                           = wpn_hk417
 
 ;-------TTX-----------------------------------------------------------------------
-hit_power				= 0.85
-hit_impulse				= 120
-hit_type				= fire_wound
-fire_distance           = 500
-bullet_speed            = 817         ;начальная скорость пули
-rpm                     = 600
-rpm_empty_click         = 200
+hit_power                                = 0.85
+hit_impulse                              = 120
+hit_type                                 = fire_wound
+fire_distance                            = 500
+bullet_speed                             = 817	                                       ;начальная скорость пули
+rpm                                      = 600
+rpm_empty_click                          = 200
 
-use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
-time_to_aim             = 3.0
+use_aim_bullet                           = false	                                       ;Поддерживается ли первая суппер пуля
+time_to_aim                              = 3.0
 
-hud                     = wpn_hk417_hud
+hud                                      = wpn_hk417_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+misfire_probability                      = 0.005	                                       ;вероятность осечки при максимальном износе  !!!old - now not working
 ;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
+misfire_start_condition                  = 0.6
 ;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
+misfire_end_condition                    = 0.1
 ;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
+misfire_start_prob                       = 0.003
 ;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.045
+misfire_end_prob                         = 0.045
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0010
+condition_shot_dec                       = 0.0010
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0011
+condition_queue_shot_dec                 = 0.0011
 
-ammo_elapsed            = 20
-ammo_mag_size           = 20
+ammo_elapsed                             = 20
+ammo_mag_size                            = 20
 
-ammo_class              = ammo_7.62x51_fmj, ammo_7.62x51_ap
-grenade_class           = ammo_m209
-fire_modes              = 1, -1
-launch_speed            = 0
-hand_dependence         = 1
-single_handed           = 0
+ammo_class                               = ammo_7.62x51_fmj, ammo_7.62x51_ap
+grenade_class                            = ammo_m209
+fire_modes                               = 1, -1
+launch_speed                             = 0
+hand_dependence                          = 1
+single_handed                            = 0
 
 ;-дисперсия-----------------------------------------------------------------------------
 ;базовая дисперсия
-fire_dispersion_base    = 0.12        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor = 1.5f
-crosshair_inertion		= 7.25
+fire_dispersion_base                     = 0.12	                                       ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor                  = 1.5f
+crosshair_inertion                       = 7.25
 
 ;отдача
-cam_return				= 0
-cam_relax_speed         = 5		; скорость возврата в исходное положение
-cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
-cam_dispersion          = 4.2       ; увеличения угла (в градусах) при первом выстреле
-cam_dispersion_inc      = 0.85       ; увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
-cam_max_angle           = 50.0       ; максимальный угол отдачи
-cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
-cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+cam_return                               = 0
+cam_relax_speed                          = 5	                                       ; скорость возврата в исходное положение
+cam_relax_speed_ai                       = 360	                                       ; скорость возврата в исходное положение для AI
+cam_dispersion                           = 4.2	                                       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc                       = 0.85	                                       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac                      = 1.0	                                       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle                            = 50.0	                                       ; максимальный угол отдачи
+cam_max_angle_horz                       = 50.0	                                       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz                      = 1.5	                                       ; (degree) size of step camera moved in horizontal position while shooting
 
-PDM_disp_base 				= 0.5
-PDM_disp_vel_factor 		= 2.0
-PDM_disp_accel_factor 		= 2.0
-PDM_disp_crouch	 			= 1.0
-PDM_disp_crouch_no_acc 		= 1.0
+PDM_disp_base                            = 0.5
+PDM_disp_vel_factor                      = 2.0
+PDM_disp_accel_factor                    = 2.0
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
 
-zoom_cam_relax_speed         = 5     ; scope & ironsight
-zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 3.0
-zoom_cam_dispersion_inc      = 1.1
-zoom_cam_dispersion_frac     = 0.7
-zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 50.0
-zoom_cam_step_angle_horz     = 1.3
+zoom_cam_relax_speed                     = 5	                                       ; scope & ironsight
+zoom_cam_relax_speed_ai                  = 360
+zoom_cam_dispersion                      = 3.0
+zoom_cam_dispersion_inc                  = 1.1
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 50.0
+zoom_cam_step_angle_horz                 = 1.3
 
-fire_dispersion_condition_factor = 2        ;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor         = 2	                                       ;увеличение дисперсии в процентах при максимальном износе
 ;---DOF-------------------------------------------------------------------------
-zoom_dof				= 0.5, 1.0, 180
-reload_dof				= 0.0, 0.5, 5, 2
+zoom_dof                                 = 0.5, 1.0, 180
+reload_dof                               = 0.0, 0.5, 5, 2
 
 ;-------------------------------------------------------------------------------
-holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
-holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
+holder_range_modifier                    = 1.0	                                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier                      = 1.0	                                       ; во сколько раз увеличивается eye_fov
 
-min_radius              = 30
-max_radius              = 100
+min_radius                               = 30
+max_radius                               = 100
 
-hit_probability_gd_novice  = 0.80
-hit_probability_gd_stalker = 0.80
-hit_probability_gd_veteran = 0.80
-hit_probability_gd_master  = 0.80
+hit_probability_gd_novice                = 0.80
+hit_probability_gd_stalker               = 0.80
+hit_probability_gd_veteran               = 0.80
+hit_probability_gd_master                = 0.80
 ;------------------------------------------------------------------------------
-slot                    = 2                ; // secondary
-animation_slot          = 2                ; type of the animation that will be used
+slot                                     = 2	                                       ; // secondary
+animation_slot                           = 2	                                       ; type of the animation that will be used
 
-inv_name                = st_wpn_hk417
-inv_name_short          = st_wpn_hk417
+inv_name                                 = st_wpn_hk417
+inv_name_short                           = st_wpn_hk417
 
-inv_grid_width				= 6
-inv_grid_height				= 2
-inv_grid_x					= 70
-inv_grid_y					= 26
+inv_grid_width                           = 6
+inv_grid_height                          = 2
+inv_grid_x                               = 70
+inv_grid_y                               = 26
 
-upgr_icon_x				= 1450
-upgr_icon_y				= 1200
-upgr_icon_width				= 300
-upgr_icon_height 				= 100
+upgr_icon_x                              = 1450
+upgr_icon_y                              = 1200
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
 
-kill_msg_x              = 80
-kill_msg_y              = 59
-kill_msg_width          = 87
-kill_msg_height         = 24
+kill_msg_x                               = 80
+kill_msg_y                               = 59
+kill_msg_width                           = 87
+kill_msg_height                          = 24
 
 ;-------------------------------------------------------------------------------
 ;---normal                  = 0, 1, 0
 ;---direction               = 0, 0, 1
 
-position                   = -0.026, -0.130, 0.0
-orientation                = 0.0, 0.0, 0.0
+position                                 = -0.026, -0.130, 0.0
+orientation                              = 0.0, 0.0, 0.0
 
 
-fire_point              = 0.000000,0.137000,0.649000
-fire_point2             = 0.0, 0.097, 0.722
+fire_point                               = 0.000000,0.137000,0.649000
+fire_point2                              = 0.0, 0.097, 0.722
 
-flame_particles         = weapons\generic_weapon05
-smoke_particles         = weapons\generic_shoot_00
-grenade_flame_particles = weapons\generic_weapon01
+flame_particles                          = weapons\generic_weapon05
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
 
-shell_point             = -0.020000,0.167000,0.082000
-shell_dir               = 0.0, 0.0, 0.4
-shell_particles         = weapons\762x51
+shell_point                              = -0.020000,0.167000,0.082000
+shell_dir                                = 0.0, 0.0, 0.4
+shell_particles                          = weapons\762x51
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
-strap_position          = -0.26,-0.11,0.25                        	; position (offset) and orientation of the weapon when it is strapped
-strap_orientation       = -15,-9,110                                	; (3rd person view in degrees)
-strap_bone0             = bip01_spine2
-strap_bone1             = bip01_spine1
+strap_position                           = -0.26,-0.11,0.25	                                       ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation                        = -15,-9,110	                                       ; (3rd person view in degrees)
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
 
-startup_ammo            = 90
-visual                  = dynamics\weapons\wpn_hk417\wpn_hk417.ogf
+startup_ammo                             = 90
+visual                                   = dynamics\weapons\wpn_hk417\wpn_hk417.ogf
 
-light_disabled		= false
-light_color             = 0.6,0.5,0.3
-light_range             = 5
-light_var_color         = 0.05
-light_var_range         = 0.5
-light_time              = 0.2
+light_disabled                           = false
+light_color                              = 0.6,0.5,0.3
+light_range                              = 5
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+light_time                               = 0.2
 
-ph_mass                 = 4
+ph_mass                                  = 4
 
 ;addons
-scope_status            = 0 
-silencer_status         = 2
-grenade_launcher_status = 2
+scope_status                             = 0
+silencer_status                          = 2
+grenade_launcher_status                  = 2
 
-zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
-zoom_rotate_time		= 0.25
-scope_zoom_factor       = 75                                                ; fov for zoom mode
+zoom_enabled                             = true	                                       ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time                         = 0.25
+scope_zoom_factor                        = 75	                                       ; fov for zoom mode
 
-silencer_name           = wpn_addon_silencer762
-silencer_x              = 260
-silencer_y              = 8
-grenade_launcher_name   = wpn_addon_grenade_launcher_m203
-grenade_launcher_x      = 135
-grenade_launcher_y      = 22
+silencer_name                            = wpn_addon_silencer762
+silencer_x                               = 260
+silencer_y                               = 8
+grenade_launcher_name                    = wpn_addon_grenade_launcher_m203
+grenade_launcher_x                       = 135
+grenade_launcher_y                       = 22
 
 ;звуки
-snd_draw                = weapons\hk417\hk417_draw
-snd_holster             = weapons\generic_holster
-snd_shoot		  = weapons\hk417\hk417_fire
-snd_silncer_shot        = weapons\hk417\hk417_suppressed
-snd_empty               = weapons\gen_empty, 0.5
-snd_reload              = weapons\hk417\hk417_reload
-snd_shoot_grenade       = weapons\m203\m203_fire
-snd_reload_grenade      = weapons\m203\m203_reload
-snd_switch              = weapons\groza_switch, 1.0, 0.5
-snd_bore				= weapons\no_sound
-snd_bore1				= weapons\no_sound
+snd_draw                                 = weapons\hk417\hk417_draw
+snd_holster                              = weapons\generic_holster
+snd_shoot                                = weapons\hk417\hk417_fire
+snd_silncer_shot                         = weapons\hk417\hk417_suppressed
+snd_empty                                = weapons\gen_empty, 0.5
+snd_reload                               = weapons\hk417\hk417_reload
+snd_shoot_grenade                        = weapons\m203\m203_fire
+snd_reload_grenade                       = weapons\m203\m203_reload
+snd_switch                               = weapons\groza_switch, 1.0, 0.5
+snd_bore                                 = weapons\no_sound
+snd_bore1                                = weapons\no_sound
 
 ;silencer_flame_particles  = weapons\generic_weapon01
-silencer_smoke_particles   = weapons\generic_shoot_00
+silencer_smoke_particles                 = weapons\generic_shoot_00
 
-silencer_light_color    = 0.6,0.5,0.3
-silencer_light_range    = 0.01
-silencer_light_var_color= 0.05
-silencer_light_var_range= 0.5
-silencer_light_time     = 0.2
+silencer_light_color                     = 0.6,0.5,0.3
+silencer_light_range                     = 0.01
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_light_time                      = 0.2
 
 
 [wpn_hk417_hud]:hud_base
-zoom_hide_crosshair     = true
+zoom_hide_crosshair                      = true
 
-attach_place_idx        = 0
-item_visual             = dynamics\weapons\wpn_hk417\wpn_hk417_hud.ogf
+attach_place_idx                         = 0
+item_visual                              = dynamics\weapons\wpn_hk417\wpn_hk417_hud.ogf
 
-hands_position			= -0.044000,-0.191999,0.135500
-hands_orientation		= 0.549999,2.399999,0.1499993
-hands_position_16x9		= -0.044000,-0.191999,0.135500
-hands_orientation_16x9	= 0.549999,2.399999,0.1499993
+hands_position                           = -0.044000,-0.191999,0.135500
+hands_orientation                        = 0.549999,2.399999,0.1499993
+hands_position_16x9                      = -0.044000,-0.191999,0.135500
+hands_orientation_16x9                   = 0.549999,2.399999,0.1499993
 
-item_position			= 0.0,0.0,0.0
-item_orientation		= 0.0,0.0,0.0
+item_position                            = 0.0,0.0,0.0
+item_orientation                         = 0.0,0.0,0.0
 
-shell_point				= 0.028,0.078,0.113
-shell_dir               = 0.0, 1.0, 0.0
-shell_bone              = wpn_body
+shell_point                              = 0.028,0.078,0.113
+shell_dir                                = 0.0, 1.0, 0.0
+shell_bone                               = wpn_body
 
-fire_point				= 0.0,0.074259,0.795394
-fire_bone               = wpn_body
-fire_point2				= 0.0,-0.009,0.601
-fire_bone2              = wpn_body
+fire_point                               = 0.0,0.074259,0.795394
+fire_bone                                = wpn_body
+fire_point2                              = 0.0,-0.009,0.601
+fire_bone2                               = wpn_body
 
-anm_show                = lancew_hk417_draw
-anm_hide                = lancew_hk417_holster
-anm_idle                = lancew_hk417_idle
-anm_idle_sprint         = lancew_hk417_sprint
-anm_idle_moving         = lancew_hk417_moving
-anm_shots               = lancew_hk417_shoot, shoot
-anm_reload              = lancew_hk417_reload, reload
-anm_idle_aim            = lancew_hk417_idle_aim, idle_aim
-anm_bore                = lancew_hk417_no_reload
-anm_switch              = lancew_hk417_switch_off, switch_off
-anm_switch_g            = lancew_hk417_switch_on, switch_on
-anm_show_w_gl           = lancew_hk417_draw_w_gl
-anm_hide_w_gl           = lancew_hk417_holster_w_gl
-anm_idle_w_gl           = lancew_hk417_idle_w_gl
-anm_shots_w_gl          = lancew_hk417_shoot_w_gl, shoot
-anm_reload_w_gl         = lancew_hk417_reload_w_gl, reload
-anm_idle_w_gl_aim       = lancew_hk417_idle_aim_w_gl, idle_aim
-anm_idle_sprint_w_gl    = lancew_hk417_sprint_w_gl
-anm_idle_moving_w_gl    = lancew_hk417_moving_w_gl
-anm_bore_w_gl           = lancew_hk417_no_reload_w_gl
-anm_show_g              = lancew_hk417_draw_g, idle_g
-anm_hide_g              = lancew_hk417_holster_g, idle_g
-anm_idle_g              = lancew_hk417_idle_g, idle_g
-anm_reload_g            = lancew_hk417_reload_g, reload_g
-anm_idle_g_aim          = lancew_hk417_idle_aim_g, idle_g
-anm_shots_g             = lancew_hk417_shoot_g, shoot_g
-anm_idle_sprint_g       = lancew_hk417_sprint_g, idle_g
-anm_idle_moving_g       = lancew_hk417_moving_g, idle_g
-anm_bore_g              = lancew_hk417_no_reload_g, idle_g
+anm_show                                 = lancew_hk417_draw
+anm_hide                                 = lancew_hk417_holster
+anm_idle                                 = lancew_hk417_idle
+anm_idle_sprint                          = lancew_hk417_sprint
+anm_idle_moving                          = lancew_hk417_moving
+anm_shots                                = lancew_hk417_shoot, shoot
+anm_reload                               = lancew_hk417_reload, reload
+anm_idle_aim                             = lancew_hk417_idle_aim, idle_aim
+anm_bore                                 = lancew_hk417_no_reload
+anm_switch                               = lancew_hk417_switch_off, switch_off
+anm_switch_g                             = lancew_hk417_switch_on, switch_on
+anm_show_w_gl                            = lancew_hk417_draw_w_gl
+anm_hide_w_gl                            = lancew_hk417_holster_w_gl
+anm_idle_w_gl                            = lancew_hk417_idle_w_gl
+anm_shots_w_gl                           = lancew_hk417_shoot_w_gl, shoot
+anm_reload_w_gl                          = lancew_hk417_reload_w_gl, reload
+anm_idle_w_gl_aim                        = lancew_hk417_idle_aim_w_gl, idle_aim
+anm_idle_sprint_w_gl                     = lancew_hk417_sprint_w_gl
+anm_idle_moving_w_gl                     = lancew_hk417_moving_w_gl
+anm_bore_w_gl                            = lancew_hk417_no_reload_w_gl
+anm_show_g                               = lancew_hk417_draw_g, idle_g
+anm_hide_g                               = lancew_hk417_holster_g, idle_g
+anm_idle_g                               = lancew_hk417_idle_g, idle_g
+anm_reload_g                             = lancew_hk417_reload_g, reload_g
+anm_idle_g_aim                           = lancew_hk417_idle_aim_g, idle_g
+anm_shots_g                              = lancew_hk417_shoot_g, shoot_g
+anm_idle_sprint_g                        = lancew_hk417_sprint_g, idle_g
+anm_idle_moving_g                        = lancew_hk417_moving_g, idle_g
+anm_bore_g                               = lancew_hk417_no_reload_g, idle_g
 
-aim_hud_offset_pos 		= -0.108200,0.061300,-0.101000
-aim_hud_offset_rot		= 0.040040,0.009700,-0.012504
-aim_hud_offset_pos_16x9 = -0.108200,0.061300,-0.101000
-aim_hud_offset_rot_16x9 = 0.040040,0.009700,-0.012504
+aim_hud_offset_pos                       = -0.108200,0.061300,-0.101000
+aim_hud_offset_rot                       = 0.040040,0.009700,-0.012504
+aim_hud_offset_pos_16x9                  = -0.108200,0.061300,-0.101000
+aim_hud_offset_rot_16x9                  = 0.040040,0.009700,-0.012504
 
-gl_hud_offset_pos 		= -0.113600,-0.083000,0.000000
-gl_hud_offset_rot 		= -0.107700,0.014100,0.000000
-gl_hud_offset_pos_16x9 	= -0.113600,-0.083000,0.000000
-gl_hud_offset_rot_16x9 	= -0.107700,0.014100,0.000000
+gl_hud_offset_pos                        = -0.113600,-0.083000,0.000000
+gl_hud_offset_rot                        = -0.107700,0.014100,0.000000
+gl_hud_offset_pos_16x9                   = -0.113600,-0.083000,0.000000
+gl_hud_offset_rot_16x9                   = -0.107700,0.014100,0.000000
 
-lean_hud_offset_pos		= 0,0,0
-lean_hud_offset_rot		= 0,0,0
+lean_hud_offset_pos                      = 0,0,0
+lean_hud_offset_rot                      = 0,0,0
 
 [wpn_hk417_acog]:wpn_hk417
 
-visual                  = dynamics\weapons\wpn_hk417\wpn_hk417_acog
-hud                     = wpn_hk417_acog_hud
+visual                                   = dynamics\weapons\wpn_hk417\wpn_hk417_acog
+hud                                      = wpn_hk417_acog_hud
 
-inv_grid_width				= 6
-inv_grid_height				= 2
-inv_grid_x					= 70
-inv_grid_y					= 28
+inv_grid_width                           = 6
+inv_grid_height                          = 2
+inv_grid_x                               = 70
+inv_grid_y                               = 28
 
-scope_status            = 1 
-scope_zoom_factor       = 35 
-scope_texture	     = wpn_crosshair_acog
+scope_status                             = 1
+scope_zoom_factor                        = 35
+scope_texture                            = wpn_crosshair_acog
 
-inv_weight              = 4.55
+inv_weight                               = 4.55
 
+1icon_layer_scale                        = 0.90
+1icon_layer                              = acog
+1icon_layer_x                            = 0
 [wpn_hk417_acog_hud]:wpn_hk417_hud
-item_visual				= dynamics\weapons\wpn_hk417\wpn_hk417_acog_hud.ogf
-anm_shots               = lancew_hk417_shoot_scope, idle_aim
-anm_idle_aim           	= lancew_hk417_idle_aim, idle_aim
-anm_shots_w_gl          = lancew_hk417_shoot_scope_w_gl, idle_aim
-anm_idle_aim_w_gl  		= lancew_hk417_idle_aim_w_gl, idle_aim
-aim_hud_offset_pos 		= -0.107600,0.043200,-0.042000
-aim_hud_offset_rot 		= 0.039540,0.009000,-0.012504
-aim_hud_offset_pos_16x9 = -0.107600,0.043200,-0.042000
-aim_hud_offset_rot_16x9 = 0.039540,0.009000,-0.012504
+item_visual                              = dynamics\weapons\wpn_hk417\wpn_hk417_acog_hud.ogf
+anm_shots                                = lancew_hk417_shoot_scope, idle_aim
+anm_idle_aim                             = lancew_hk417_idle_aim, idle_aim
+anm_shots_w_gl                           = lancew_hk417_shoot_scope_w_gl, idle_aim
+anm_idle_aim_w_gl                        = lancew_hk417_idle_aim_w_gl, idle_aim
+aim_hud_offset_pos                       = -0.107600,0.043200,-0.042000
+aim_hud_offset_rot                       = 0.039540,0.009000,-0.012504
+aim_hud_offset_pos_16x9                  = -0.107600,0.043200,-0.042000
+aim_hud_offset_rot_16x9                  = 0.039540,0.009000,-0.012504
 
 [wpn_hk417_eot]:wpn_hk417
 
-visual                  = dynamics\weapons\wpn_hk417\wpn_hk417_eotech
-hud                     = wpn_hk417_eot_hud
+visual                                   = dynamics\weapons\wpn_hk417\wpn_hk417_eotech
+hud                                      = wpn_hk417_eot_hud
 
-inv_grid_width				= 6
-inv_grid_height				= 2
-inv_grid_x					= 76
-inv_grid_y					= 26
+inv_grid_width                           = 6
+inv_grid_height                          = 2
+inv_grid_x                               = 76
+inv_grid_y                               = 26
 
-inv_weight              = 4.5
+inv_weight                               = 4.5
 
+1icon_layer_scale                        = 0.90
+1icon_layer                              = eot
+1icon_layer_x                            = 0
 [wpn_hk417_eot_hud]:wpn_hk417_hud
-item_visual				= dynamics\weapons\wpn_hk417\wpn_hk417_eotech_hud.ogf
-anm_shots               = lancew_hk417_shoot_scope, idle_aim
-anm_idle_aim           	= lancew_hk417_idle_aim, idle_aim
-anm_shots_w_gl          = lancew_hk417_shoot_scope_w_gl, idle_aim
-anm_idle_aim_w_gl      	= lancew_hk417_idle_aim_w_gl, idle_aim
-aim_hud_offset_pos 		= -0.107200,0.050300,-0.035000
-aim_hud_offset_rot 		= 0.043040,0.007700,-0.012504
-aim_hud_offset_pos_16x9 = -0.107200,0.050300,-0.035000
-aim_hud_offset_rot_16x9 = 0.043040,0.007700,-0.012504
+item_visual                              = dynamics\weapons\wpn_hk417\wpn_hk417_eotech_hud.ogf
+anm_shots                                = lancew_hk417_shoot_scope, idle_aim
+anm_idle_aim                             = lancew_hk417_idle_aim, idle_aim
+anm_shots_w_gl                           = lancew_hk417_shoot_scope_w_gl, idle_aim
+anm_idle_aim_w_gl                        = lancew_hk417_idle_aim_w_gl, idle_aim
+aim_hud_offset_pos                       = -0.107200,0.050300,-0.035000
+aim_hud_offset_rot                       = 0.043040,0.007700,-0.012504
+aim_hud_offset_pos_16x9                  = -0.107200,0.050300,-0.035000
+aim_hud_offset_rot_16x9                  = 0.043040,0.007700,-0.012504
 
 

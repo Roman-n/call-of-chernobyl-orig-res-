@@ -1,367 +1,369 @@
 [wpn_aks74]:identity_immunities,weapon_probability,default_weapon_params
-GroupControlSection     = spawn_group
-$spawn                      = "weapons\ak-74"        ; name and section in level editor
-$npc              = on
-$prefetch               = 8
-scheduled               = off                                ; option for ALife Simulator
-cform                   = skeleton
-class                = WP_AK74         ; class of the weapon that corresponding to CPP class
-description          = st_wpn_aks74_descr
+GroupControlSection                      = spawn_group
+$spawn                                   = "weapons\ak-74"	                                       ; name and section in level editor
+$npc                                     = on
+$prefetch                                = 8
+scheduled                                = off	                                       ; option for ALife Simulator
+cform                                    = skeleton
+class                                    = WP_AK74	                                       ; class of the weapon that corresponding to CPP class
+description                              = st_wpn_aks74_descr
 
-ef_main_weapon_type     = 2
-ef_weapon_type          = 8
+ef_main_weapon_type                      = 2
+ef_weapon_type                           = 8
 
-default_to_ruck         = false
-sprint_allowed          = true
+default_to_ruck                          = false
+sprint_allowed                           = true
 
 ;-------------------------------------------------------------------------------
-cost              	 = 6500            ; the price of the item
-weapon_class         = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight        = 3.2                      ; weight in inventory
+cost                                     = 6500	                                       ; the price of the item
+weapon_class                             = assault_rifle	                                       ; the type of the box that will be used in buy-menu in multiplayer mode
+inv_weight                               = 3.2	                                       ; weight in inventory
 
-upgrades                = up_gr_firstab_lr300, up_gr_seconab_lr300, up_gr_thirdab_lr300, up_gr_fourtab_lr300, up_gr_fifthab_lr300
-installed_upgrades      =
-upgrade_scheme          = upgrade_scheme_lr300
+upgrades                                 = up_gr_firstab_lr300, up_gr_seconab_lr300, up_gr_thirdab_lr300, up_gr_fourtab_lr300, up_gr_fifthab_lr300
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_lr300
 
-scopes 					= pso, ekp, 1p29
-parent_section  				= wpn_aks74
+scopes                                   = pso, ekp, 1p29
+parent_section                           = wpn_aks74
 
 ;-ТТХ---------------------------------------------------------------------------
-hit_power            = 0.41
-hit_impulse          = 100    ; size of physic impulse by bullet
-hit_type             = fire_wound            ; [] type of the wound
-fire_distance           = 500 ;1000                  ; maximum fire distance that bullet can fly
-bullet_speed            = 900                ; starting bullet speed
-rpm                     = 650    ; max round per minute
-rpm_empty_click         = 200
+hit_power                                = 0.41
+hit_impulse                              = 100	                                       ; size of physic impulse by bullet
+hit_type                                 = fire_wound	                                       ; [] type of the wound
+fire_distance                            = 500	                                       ;1000                  ; maximum fire distance that bullet can fly
+bullet_speed                             = 900	                                       ; starting bullet speed
+rpm                                      = 650	                                       ; max round per minute
+rpm_empty_click                          = 200
 
-use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
-time_to_aim             = 3.0
+use_aim_bullet                           = false	                                       ;Поддерживается ли первая суппер пуля
+time_to_aim                              = 3.0
 
-hud                     = wpn_aks74_hud
+hud                                      = wpn_aks74_hud
 
-misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+misfire_probability                      = 0.005	                                       ;вероятность осечки при максимальном износе  !!!old - now not working
 ;изношенность, при которой появляется шанс осечки
-misfire_start_condition		= 0.6
+misfire_start_condition                  = 0.6
 ;изношеность при которой шанс осечки становится константным
-misfire_end_condition		= 0.1
+misfire_end_condition                    = 0.1
 ;шанс осечки при изношености больше чем misfireStartCondition
-misfire_start_prob	     	= 0.003
+misfire_start_prob                       = 0.003
 ;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= 0.043
+misfire_end_prob                         = 0.043
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= 0.0001
+condition_shot_dec                       = 0.0001
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= 0.0001
+condition_queue_shot_dec                 = 0.0001
 
-ammo_elapsed         = 30           ; obsolete
-ammo_mag_size        = 30           ; clip (magazine) size
-fire_modes           = 1, -1
+ammo_elapsed                             = 30	                                       ; obsolete
+ammo_mag_size                            = 30	                                       ; clip (magazine) size
+fire_modes                               = 1, -1
 
-ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
-grenade_class        = ammo_vog-25         ; name of the ltx-section of used grenades
+ammo_class                               = ammo_5.45x39_fmj, ammo_5.45x39_ap
+grenade_class                            = ammo_vog-25	                                       ; name of the ltx-section of used grenades
 
-launch_speed            = 0
-hand_dependence         = 1
-single_handed           = 0
+launch_speed                             = 0
+hand_dependence                          = 1
+single_handed                            = 0
 
 ;-Доф----------------------------------------------------------------------
-zoom_dof             = 0.5, 1.0, 180
-reload_dof           = 0.0, 0.5, 5, 2;1.7
+zoom_dof                                 = 0.5, 1.0, 180
+reload_dof                               = 0.0, 0.5, 5, 2	                                       ;1.7
 
 ;-Дисперсия----------------------------------------------------------------------
 ;params of weapon recoil
-fire_dispersion_base       	= 0.18    ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
-control_inertion_factor    	= 1.2f
-crosshair_inertion			= 6
+fire_dispersion_base                     = 0.18	                                       ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor                  = 1.2f
+crosshair_inertion                       = 6
 
 ;отдача
-cam_return					= 0
-cam_relax_speed             = 10		;скорость возврата в исходное положение
-cam_relax_speed_ai      	= 360
-cam_dispersion              = 1.0		;увеличения угла (в градусах) с первым выстрелом
-cam_dispersion_inc         	= 0.5		;увеличениe cam_dispersion с каждым выстрелом
-cam_dispersion_frac        	= 1.0	    ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle				= 50.0      ;максимальный угол отдачи
-cam_max_angle_horz         	= 5.0      ;(degree) maximum shot horizontal degree
-cam_step_angle_horz        	= 0.35		;(degree) size of step camera moved in horizontal position while shooting
+cam_return                               = 0
+cam_relax_speed                          = 10	                                       ;скорость возврата в исходное положение
+cam_relax_speed_ai                       = 360
+cam_dispersion                           = 1.0	                                       ;увеличения угла (в градусах) с первым выстрелом
+cam_dispersion_inc                       = 0.5	                                       ;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac                      = 1.0	                                       ;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle                            = 50.0	                                       ;максимальный угол отдачи
+cam_max_angle_horz                       = 5.0	                                       ;(degree) maximum shot horizontal degree
+cam_step_angle_horz                      = 0.35	                                       ;(degree) size of step camera moved in horizontal position while shooting
 
-zoom_cam_relax_speed         = 10	    ; scope & ironsight
-zoom_cam_relax_speed_ai      = 360
-zoom_cam_dispersion          = 0.9
-zoom_cam_dispersion_inc      = 0.45
-zoom_cam_dispersion_frac     = 0.7
-zoom_cam_max_angle           = 50.0
-zoom_cam_max_angle_horz      = 5.0
-zoom_cam_step_angle_horz     = 0.3
+zoom_cam_relax_speed                     = 10	                                       ; scope & ironsight
+zoom_cam_relax_speed_ai                  = 360
+zoom_cam_dispersion                      = 0.9
+zoom_cam_dispersion_inc                  = 0.45
+zoom_cam_dispersion_frac                 = 0.7
+zoom_cam_max_angle                       = 50.0
+zoom_cam_max_angle_horz                  = 5.0
+zoom_cam_step_angle_horz                 = 0.3
 
-PDM_disp_base 				= 0.5
-PDM_disp_vel_factor 		= 2.0
-PDM_disp_accel_factor 		= 2.0
-PDM_disp_crouch	 			= 1.0
-PDM_disp_crouch_no_acc 		= 1.0
+PDM_disp_base                            = 0.5
+PDM_disp_vel_factor                      = 2.0
+PDM_disp_accel_factor                    = 2.0
+PDM_disp_crouch                          = 1.0
+PDM_disp_crouch_no_acc                   = 1.0
 
-fire_dispersion_condition_factor    = 2        ;увеличение дисперсии в процентах при максимальном износе
-
-;-------------------------------------------------------------------------------
-holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
-holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
-
-min_radius           = 30           ; [] for AI
-max_radius           = 100          ; [] for AI
-
-hit_probability_gd_novice  = 0.80
-hit_probability_gd_stalker = 0.80
-hit_probability_gd_veteran = 0.80
-hit_probability_gd_master  = 0.80
+fire_dispersion_condition_factor         = 2	                                       ;увеличение дисперсии в процентах при максимальном износе
 
 ;-------------------------------------------------------------------------------
-slot                    = 2                ; // secondary
-animation_slot          = 2                ; type of the animation that will be used
+holder_range_modifier                    = 1.0	                                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier                      = 1.0	                                       ; во сколько раз увеличивается eye_fov
 
-position                = -0.026, -0.175, 0.0
-orientation             = 0, 0, 0
+min_radius                               = 30	                                       ; [] for AI
+max_radius                               = 100	                                       ; [] for AI
 
-fire_point              =  0,0.218,0.656        ; position (3rd person view) for particles of fire
-fire_point2             =  0,0.161,0.583        ; position (3rd person view) for particles of fire (when shooting with secondary fire)
+hit_probability_gd_novice                = 0.80
+hit_probability_gd_stalker               = 0.80
+hit_probability_gd_veteran               = 0.80
+hit_probability_gd_master                = 0.80
 
-flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
-smoke_particles         = weapons\generic_shoot_00
-grenade_flame_particles = weapons\generic_weapon01
+;-------------------------------------------------------------------------------
+slot                                     = 2	                                       ; // secondary
+animation_slot                           = 2	                                       ; type of the animation that will be used
 
-shell_point             = 0,0.216,0.174            ; position (3rd person view) for shell to throw out
-shell_particles         = weapons\generic_shells   ; name of the particles for shells
+position                                 = -0.026, -0.175, 0.0
+orientation                              = 0, 0, 0
+
+fire_point                               = 0,0.218,0.656	                                       ; position (3rd person view) for particles of fire
+fire_point2                              = 0,0.161,0.583	                                       ; position (3rd person view) for particles of fire (when shooting with secondary fire)
+
+flame_particles                          = weapons\generic_weapon05	                                       ; particles for shooting effects
+smoke_particles                          = weapons\generic_shoot_00
+grenade_flame_particles                  = weapons\generic_weapon01
+
+shell_point                              = 0,0.216,0.174	                                       ; position (3rd person view) for shell to throw out
+shell_particles                          = weapons\545x39	                                       ; name of the particles for shells
 shell_particles         = weapons\545x39
 
 ;-------------------------------------------------------------------------------
-inv_name          = st_wpn_aks74                    ; name in inventory
-inv_name_short    = st_wpn_aks74
+inv_name                                 = st_wpn_aks74	                                       ; name in inventory
+inv_name_short                           = st_wpn_aks74
 
-inv_grid_width				= 5
-inv_grid_height				= 2
-inv_grid_x					= 20
-inv_grid_y					= 24
+inv_grid_width                           = 5
+inv_grid_height                          = 2
+inv_grid_x                               = 20
+inv_grid_y                               = 24
 
-upgr_icon_x				= 300
-upgr_icon_y				= 200
-upgr_icon_width				= 300
-upgr_icon_height 				= 100
+upgr_icon_x                              = 300
+upgr_icon_y                              = 200
+upgr_icon_width                          = 300
+upgr_icon_height                         = 100
 
-kill_msg_x        = 0
-kill_msg_y        = 28
-kill_msg_width    = 84
-kill_msg_height   = 28
+kill_msg_x                               = 0
+kill_msg_y                               = 28
+kill_msg_width                           = 84
+kill_msg_height                          = 28
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
 ;под мишкой
-strap_position          = -0.26,-0.11,0.25                                ; position (offset) and orientation of the weapon when it is strapped
-strap_orientation       = -15,-9,110                                        ; (3rd person view in degrees)
-strap_bone0             = bip01_spine2
-strap_bone1             = bip01_spine1
+strap_position                           = -0.26,-0.11,0.25	                                       ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation                        = -15,-9,110	                                       ; (3rd person view in degrees)
+strap_bone0                              = bip01_spine2
+strap_bone1                              = bip01_spine1
 
-startup_ammo            = 90
-visual                  = dynamics\weapons\wpn_aks74\wpn_aks74.ogf
+startup_ammo                             = 90
+visual                                   = dynamics\weapons\wpn_aks74\wpn_aks74.ogf
 
-light_disabled                                = false
-light_color             = 0.6,0.5,0.3
-light_range             = 5
-light_var_color         = 0.05
-light_var_range         = 0.5
-light_time              = 0.2
+light_disabled                           = false
+light_color                              = 0.6,0.5,0.3
+light_range                              = 5
+light_var_color                          = 0.05
+light_var_range                          = 0.5
+light_time                               = 0.2
 
-ph_mass                 = 4
+ph_mass                                  = 4
 
 ;addons
-scope_status               = 0                     ; 0 - no addon
-silencer_status            = 2                   ; 1 - permanent
-grenade_launcher_status    = 2                  ; 2 - attachable
+scope_status                             = 0	                                       ; 0 - no addon
+silencer_status                          = 2	                                       ; 1 - permanent
+grenade_launcher_status                  = 2	                                       ; 2 - attachable
 
-zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
-zoom_rotate_time        = 0.25
-scope_zoom_factor       = 75                                                ; fov for zoom mode
+zoom_enabled                             = true	                                       ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time                         = 0.25
+scope_zoom_factor                        = 75	                                       ; fov for zoom mode
 
-grenade_launcher_name			= wpn_addon_grenade_launcher
-grenade_launcher_x          			= 114
-grenade_launcher_y          			= 21
+grenade_launcher_name                    = wpn_addon_grenade_launcher
+grenade_launcher_x                       = 114
+grenade_launcher_y                       = 21
 
-silencer_name				= wpn_addon_silencer545
-silencer_x                  				= 227
-silencer_y                  				= 12
+silencer_name                            = wpn_addon_silencer545
+silencer_x                               = 227
+silencer_y                               = 12
 
 ;звуки
-snd_draw                = weapons\ak74\ak74_draw
-snd_holster             = weapons\generic_holster
-snd_shoot               = weapons\ak74\ak74_fire
+snd_draw                                 = weapons\ak74\ak74_draw
+snd_holster                              = weapons\generic_holster
+snd_shoot                                = weapons\ak74\ak74_fire
 
-snd_empty               = weapons\gen_empty, 0.5
-snd_reload              = weapons\ak74\ak74_reload
-snd_shoot_grenade       = weapons\gp25\gp25_fire
-snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
-snd_switch              = weapons\groza_switch, 1.0, 0.5
-snd_bore		= weapons\no_sound
+snd_empty                                = weapons\gen_empty, 0.5
+snd_reload                               = weapons\ak74\ak74_reload
+snd_shoot_grenade                        = weapons\gp25\gp25_fire
+snd_reload_grenade                       = weapons\gen_grenload, 1.0, 0.8
+snd_switch                               = weapons\groza_switch, 1.0, 0.5
+snd_bore                                 = weapons\no_sound
 
 ;silencer_flame_particles  = weapons\generic_weapon01
-silencer_smoke_particles   = weapons\generic_shoot_00
+silencer_smoke_particles                 = weapons\generic_shoot_00
 
-snd_silncer_shot        = weapons\ak74\ak74_suppressed
+snd_silncer_shot                         = weapons\ak74\ak74_suppressed
 
-silencer_light_color    = 0.6,0.5,0.3
-silencer_light_range    = 0.01
-silencer_light_var_color= 0.05
-silencer_light_var_range= 0.5
-silencer_light_time     = 0.2
+silencer_light_color                     = 0.6,0.5,0.3
+silencer_light_range                     = 0.01
+silencer_light_var_color                 = 0.05
+silencer_light_var_range                 = 0.5
+silencer_light_time                      = 0.2
 
 
 [wpn_aks74_hud]
-zoom_hide_crosshair				= true
+zoom_hide_crosshair                      = true
 
-attach_place_idx				= 0
-item_visual				= dynamics\weapons\wpn_aks74\wpn_aks74_hud.ogf
+attach_place_idx                         = 0
+item_visual                              = dynamics\weapons\wpn_aks74\wpn_aks74_hud.ogf
 
-hands_position				= -0.13,-0.19,0.09
-hands_orientation				= -0.75,1.7,-4.2
+hands_position                           = -0.13,-0.19,0.09
+hands_orientation                        = -0.75,1.7,-4.2
 
-hands_position_16x9				= -0.13,-0.19,0.09
-hands_orientation_16x9			= -0.75,1.7,-4.2
+hands_position_16x9                      = -0.13,-0.19,0.09
+hands_orientation_16x9                   = -0.75,1.7,-4.2
 
-item_position				= 0,0.004,0
-item_orientation				= -15.488927,-3.320898,367.220154
+item_position                            = 0,0.004,0
+item_orientation                         = -15.488927,-3.320898,367.220154
 
-aim_hud_offset_pos				= -0.0871,0.0545,-0.05
-aim_hud_offset_rot				= 0.015,0.0005,-0.006
+aim_hud_offset_pos                       = -0.0871,0.0545,-0.05
+aim_hud_offset_rot                       = 0.015,0.0005,-0.006
 
-aim_hud_offset_pos_16x9 			= -0.0871,0.0545,-0.05
-aim_hud_offset_rot_16x9 			= 0.015,0.0005,-0.006
+aim_hud_offset_pos_16x9                  = -0.0871,0.0545,-0.05
+aim_hud_offset_rot_16x9                  = 0.015,0.0005,-0.006
 
-gl_hud_offset_pos				= -0.05,0.005,0
-gl_hud_offset_rot				= -0.085,-0.004,-0.02
+gl_hud_offset_pos                        = -0.05,0.005,0
+gl_hud_offset_rot                        = -0.085,-0.004,-0.02
 
-gl_hud_offset_pos_16x9 			= -0.05,0.005,0
-gl_hud_offset_rot_16x9 			= -0.085,-0.004,-0.02
+gl_hud_offset_pos_16x9                   = -0.05,0.005,0
+gl_hud_offset_rot_16x9                   = -0.085,-0.004,-0.02
 
-shell_point					= 0.0,0.064,0.19
-shell_dir					= 0.0, 1.0, 0.0
-shell_bone					= wpn_body
+shell_point                              = 0.0,0.064,0.19
+shell_dir                                = 0.0, 1.0, 0.0
+shell_bone                               = wpn_body
 
-fire_point					= 0,0.038159,0.608368
-fire_bone					= wpn_body
-fire_point2					= 0.0,-0.011,0.553
-fire_bone2					= wpn_body
+fire_point                               = 0,0.038159,0.608368
+fire_bone                                = wpn_body
+fire_point2                              = 0.0,-0.011,0.553
+fire_bone2                               = wpn_body
 
-anm_show					= lancew_aks74_draw
-anm_hide                				= lancew_aks74_holster
-anm_idle                				= lancew_aks74_idle
-anm_idle_sprint         				= lancew_aks74_sprint
-anm_idle_moving        		 	= lancew_aks74_moving
-anm_shots               				= lancew_aks74_shoot, shoot
-anm_reload              				= lancew_aks74_reload, reload
-anm_idle_aim            				= lancew_aks74_idle_aim, idle_aim
-anm_bore                				= lancew_aks74_no_reload
-anm_show_w_gl          		 	= lancew_aks74_draw_w_gl	
-anm_hide_w_gl          			= lancew_aks74_holster_w_gl
-anm_idle_w_gl           			= lancew_aks74_idle_w_gl
-anm_shots_w_gl          			= lancew_aks74_shoot_w_gl, shoot
-anm_reload_w_gl         			= lancew_aks74_reload_w_gl, reload
-anm_idle_w_gl_aim       			= lancew_aks74_idle_aim_w_gl, idle_aim
-anm_idle_sprint_w_gl    			= lancew_aks74_sprint
-anm_idle_moving_w_gl    			= lancew_aks74_moving_w_gl
-anm_bore_w_gl           			= lancew_aks74_no_reload_w_gl
-anm_switch_g            				= lancew_aks74_no_reload_w_gl        
-anm_switch            				= lancew_aks74_no_reload_w_gl  
-anm_show_g              			= lancew_aks74_draw_w_gl		
-anm_hide_g              				= lancew_aks74_holster_w_gl		
-anm_idle_g              				= lancew_aks74_idle_w_gl		
-anm_reload_g            				= lancew_aks74_reload_g, reload_g
-anm_idle_g_aim          			= lancew_aks74_idle_aim_w_gl		
-anm_shots_g             				= lancew_aks74_shoot_g, shoot_g
-anm_idle_sprint_g       			= lancew_aks74_sprint		
-anm_idle_moving_g       			= lancew_aks74_moving_w_gl		
-anm_bore_g              				= lancew_aks74_no_reload_w_gl
+anm_show                                 = lancew_aks74_draw
+anm_hide                                 = lancew_aks74_holster
+anm_idle                                 = lancew_aks74_idle
+anm_idle_sprint                          = lancew_aks74_sprint
+anm_idle_moving                          = lancew_aks74_moving
+anm_shots                                = lancew_aks74_shoot, shoot
+anm_reload                               = lancew_aks74_reload, reload
+anm_idle_aim                             = lancew_aks74_idle_aim, idle_aim
+anm_bore                                 = lancew_aks74_no_reload
+anm_show_w_gl                            = lancew_aks74_draw_w_gl
+anm_hide_w_gl                            = lancew_aks74_holster_w_gl
+anm_idle_w_gl                            = lancew_aks74_idle_w_gl
+anm_shots_w_gl                           = lancew_aks74_shoot_w_gl, shoot
+anm_reload_w_gl                          = lancew_aks74_reload_w_gl, reload
+anm_idle_w_gl_aim                        = lancew_aks74_idle_aim_w_gl, idle_aim
+anm_idle_sprint_w_gl                     = lancew_aks74_sprint
+anm_idle_moving_w_gl                     = lancew_aks74_moving_w_gl
+anm_bore_w_gl                            = lancew_aks74_no_reload_w_gl
+anm_switch_g                             = lancew_aks74_no_reload_w_gl
+anm_switch                               = lancew_aks74_no_reload_w_gl
+anm_show_g                               = lancew_aks74_draw_w_gl
+anm_hide_g                               = lancew_aks74_holster_w_gl
+anm_idle_g                               = lancew_aks74_idle_w_gl
+anm_reload_g                             = lancew_aks74_reload_g, reload_g
+anm_idle_g_aim                           = lancew_aks74_idle_aim_w_gl
+anm_shots_g                              = lancew_aks74_shoot_g, shoot_g
+anm_idle_sprint_g                        = lancew_aks74_sprint
+anm_idle_moving_g                        = lancew_aks74_moving_w_gl
+anm_bore_g                               = lancew_aks74_no_reload_w_gl
 
-lean_hud_offset_pos				= 0,0,0
-lean_hud_offset_rot				= 0,0,0
+lean_hud_offset_pos                      = 0,0,0
+lean_hud_offset_rot                      = 0,0,0
 
 ;-----------------------------------------------------------------------------
 ; Аддоны
 ;-----------------------------------------------------------------------------
 [wpn_aks74_ekp]:wpn_aks74
-$spawn             				= "weapons\wpn_aks74_ekp"
-hud					= wpn_aks74_ekp_hud
-visual					= dynamics\weapons\wpn_aks74\wpn_aks74_ekp.ogf
+$spawn                                   = "weapons\wpn_aks74_ekp"
+hud                                      = wpn_aks74_ekp_hud
+visual                                   = dynamics\weapons\wpn_aks74\wpn_aks74_ekp.ogf
 
 ;inv_grid_x					= 30
-inv_weight				= 4.0
-scope_zoom_factor				= 58.3
+inv_weight                               = 4.0
+scope_zoom_factor                        = 58.3
 
-1icon_layer = ekp 
-1icon_layer_x = 0 
-1icon_layer_y = 0
+1icon_layer                              = ekp
+1icon_layer_x                            = 0
+1icon_layer_y                            = 0
 
+1icon_layer_scale                        = 0.90
 [wpn_aks74_ekp_hud]:wpn_aks74_hud
-item_visual                				= dynamics\weapons\wpn_aks74\wpn_aks74_ekp_hud.ogf
+item_visual                              = dynamics\weapons\wpn_aks74\wpn_aks74_ekp_hud.ogf
 
-anm_shots               				= lancew_aks74_shoot, shoot
-anm_idle_aim           				= lancew_aks74_idle_aim, idle_aim
+anm_shots                                = lancew_aks74_shoot, shoot
+anm_idle_aim                             = lancew_aks74_idle_aim, idle_aim
 
-aim_hud_offset_pos				= -0.087,0.0132,0
-aim_hud_offset_rot	 			= 0.013,-0.0007,0.0025
+aim_hud_offset_pos                       = -0.087,0.0132,0
+aim_hud_offset_rot                       = 0.013,-0.0007,0.0025
 
-aim_hud_offset_pos_16x9 			= -0.087,0.0132,0
-aim_hud_offset_rot_16x9 			= 0.013,-0.0007,0.0025
+aim_hud_offset_pos_16x9                  = -0.087,0.0132,0
+aim_hud_offset_rot_16x9                  = 0.013,-0.0007,0.0025
 
 [wpn_aks74_kobra]:wpn_aks74
-$spawn             				= "weapons\wpn_aks74_kobra"
-hud					= wpn_aks74_kobra_hud
-visual					= dynamics\weapons\wpn_aks74\wpn_aks74_kobra.ogf
+$spawn                                   = "weapons\wpn_aks74_kobra"
+hud                                      = wpn_aks74_kobra_hud
+visual                                   = dynamics\weapons\wpn_aks74\wpn_aks74_kobra.ogf
 
 ;inv_grid_x					= 35
-inv_weight				= 4.0
-scope_zoom_factor				= 58.3
+inv_weight                               = 4.0
+scope_zoom_factor                        = 58.3
 
-1icon_layer = kobra 
-1icon_layer_x = 0 
-1icon_layer_y = 0
+1icon_layer                              = kobra
+1icon_layer_x                            = 0
+1icon_layer_y                            = 0
 
 [wpn_aks74_kobra_hud]:wpn_aks74_hud
-item_visual                				= dynamics\weapons\wpn_aks74\wpn_aks74_kobra_hud.ogf
+item_visual                              = dynamics\weapons\wpn_aks74\wpn_aks74_kobra_hud.ogf
 
-aim_hud_offset_pos	 			= -0.085,0.0242,-0.1
-aim_hud_offset_rot	 			= 0.01,-0.001,0
+aim_hud_offset_pos                       = -0.085,0.0242,-0.1
+aim_hud_offset_rot                       = 0.01,-0.001,0
 
-aim_hud_offset_pos_16x9 			= -0.085,0.0242,-0.1
-aim_hud_offset_rot_16x9 			= 0.01,-0.001,0
+aim_hud_offset_pos_16x9                  = -0.085,0.0242,-0.1
+aim_hud_offset_rot_16x9                  = 0.01,-0.001,0
 
 [wpn_aks74_1p29]:wpn_aks74
-$spawn             				= "weapons\wpn_aks74_1p29"
-hud					= wpn_aks74_1p29_hud
-visual					= dynamics\weapons\wpn_aks74\wpn_aks74_1p29.ogf
+$spawn                                   = "weapons\wpn_aks74_1p29"
+hud                                      = wpn_aks74_1p29_hud
+visual                                   = dynamics\weapons\wpn_aks74\wpn_aks74_1p29.ogf
 
 ;inv_grid_x					= 25
-inv_weight				= 4.10
+inv_weight                               = 4.10
 
-scope_status				= 1
-scope_texture				= wpn_crosshair_1p29
-scope_zoom_factor				= 18	
-zoom_rotate_time				= 0.25
+scope_status                             = 1
+scope_texture                            = wpn_crosshair_1p29
+scope_zoom_factor                        = 18
+zoom_rotate_time                         = 0.25
 
-1icon_layer = 1p29 
-1icon_layer_x = 0 
-1icon_layer_y = 0
+1icon_layer                              = 1p29
+1icon_layer_x                            = 0
+1icon_layer_y                            = 0
 
+1icon_layer_scale                        = 0.90
 [wpn_aks74_1p29_hud]:wpn_aks74_kobra_hud
-item_visual                				= dynamics\weapons\wpn_aks74\wpn_aks74_1p29_hud.ogf
+item_visual                              = dynamics\weapons\wpn_aks74\wpn_aks74_1p29_hud.ogf
 
 [wpn_aks74_pso]:wpn_aks74
-$spawn             				= "weapons\wpn_aks74_pso"
+$spawn                                   = "weapons\wpn_aks74_pso"
 
 ;inv_grid_x					= 40
-inv_weight				= 3.950
+inv_weight                               = 3.950
 
-scope_status				= 1
-scope_texture				= wpn_crosshair
-scope_zoom_factor				= 25	
-zoom_rotate_time				= 0.25
+scope_status                             = 1
+scope_texture                            = wpn_crosshair
+scope_zoom_factor                        = 25
+zoom_rotate_time                         = 0.25
 
-1icon_layer = pso 
-1icon_layer_x = 0 
-1icon_layer_y = 0
+1icon_layer                              = pso
+1icon_layer_x                            = 0
+1icon_layer_y                            = 0
