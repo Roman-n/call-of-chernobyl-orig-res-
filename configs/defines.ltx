@@ -61,6 +61,63 @@ sprint_allowed              = true
 control_inertion_factor     = 1.0
 zoom_rotate_time            = 0.25
 
+[booster]:identity_immunities
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+;$spawn 				= "food and drugs\booster"
+$prefetch                                = 8
+class                                    = S_FOOD
+cform                                    = skeleton
+visual                                   = dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+description                              = default
+inv_name                                 = default
+inv_name_short                           = default
+inv_weight                               = 0.01
+
+inv_grid_width                           = 1
+inv_grid_height                          = 1
+inv_grid_x                               = 3
+inv_grid_y                               = 18
+cost                                     = 1
+
+; eatable item
+eat_health                               = 0
+eat_satiety                              = 0
+eat_power                                = 0
+eat_max_power                            = 0
+eat_radiation                            = 0
+eat_alcohol                              = 0
+wounds_heal_perc                         = 0
+
+boost_time                               = 0.0
+boost_max_weight                         = 0.0
+boost_health_restore                     = 0.0
+boost_power_restore                      = 0.0
+boost_radiation_restore                  = 0.0
+boost_bleeding_restore                   = 0.0
+
+boost_radiation_protection               = 0.0
+boost_telepat_protection                 = 0.0
+boost_chemburn_protection                = 0.0
+
+boost_burn_immunity                      = 0.0
+boost_shock_immunity                     = 0.0
+boost_radiation_immunity                 = 0.0
+boost_telepat_immunity                   = 0.0
+boost_chemburn_immunity                  = 0.0
+boost_strike_immunity                    = 0.0
+boost_wound_immunity                     = 0.0
+boost_explosion_immunity                 = 0.0
+boost_fire_wound_immunity                = 0.0
+
+;New fields
+use_condition                            = false
+max_uses                                 = 1
+remove_after_use                         = true
+empty_weight                             = 0.1
+allow_repair                             = false
+dont_stack								 = false
+
 [zero_immunities]:identity_immunities
 immunities_sect				= sect_zero_immunities
 
@@ -97,7 +154,7 @@ use1_action_functor			= m_scopes.remove_scope_context_menu_action
 ph_skeleton_airr_lin_factor   = 2.0 ;550.0 (изменно из-за того, что убрано домножение коэффициент 0.002 из кода)
 ph_skeleton_airr_ang_factor   = 0.0 ;0.0 (изменно из-за того, что убрано домножение на коэффициент 0.3 из кода (0.0*0.3=0.0))
 ph_skeleton_hinger_factor1    = 1.0 ;1.0 (изменно из-за того, что убрано домножение на коэффициент 5.0 из кода)
-ph_skeleton_ddelay	     	  = 1 ;Время изменения значения трения в суставе с момента создания шелла, сек
+ph_skeleton_ddelay	     	  = 0 ;Время изменения значения трения в суставе с момента создания шелла, сек
 
 ph_skel_fatal_impulse_factor  = 6.0
 ph_after_death_velocity_factor= 0.75

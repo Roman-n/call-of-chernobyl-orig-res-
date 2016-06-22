@@ -8,8 +8,6 @@ if string.find(command_line(), "-dbg") then
 	DEV_DEBUG = true
 end
 
-get_console():execute("ai_die_in_anomaly 0")
-
 -- Improves performance if true, by disabling update methods for squads and smart terrains on levels not linked in configs\ai_tweaks\simulation_objects.ltx
 -- But this means simulation will only be active on actor level and linked levels everything else will remain in an idle state
 DEACTIVATE_SIM_ON_NON_LINKED_LEVELS = true
@@ -392,7 +390,7 @@ function time_global()
 	return device():time_global()
 end
 
---[[ does not work on 1.6 xray because of multithreading
+--[[ does not work?
 function wait_game(time_to_wait)
 	verify_if_thread_is_running()
 	if (time_to_wait == nil) then

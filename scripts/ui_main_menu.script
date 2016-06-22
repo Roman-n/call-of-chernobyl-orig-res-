@@ -19,6 +19,9 @@ function main_menu:__init() super()
     self:InitControls()
     self:InitCallBacks()
 	SendScriptCallback("main_menu_on_init",self)
+	if not (level.present()) then
+		xrs_debug_tools.on_game_start()
+	end
 end
 
 function main_menu:__finalize()
@@ -38,7 +41,7 @@ function main_menu:InitControls()
 
 	local _ver = xml:InitStatic		("static_version",self)
 	local mm						= _G.main_menu.get_main_menu()
-	_ver:TextControl():SetText		("Call of Chernobyl ver. " .. (GAME_VERSION))
+	_ver:TextControl():SetText		("Call of Chernobyl ver. " .. (_G.GAME_VERSION))
 end
 
 function main_menu:Show(f)
