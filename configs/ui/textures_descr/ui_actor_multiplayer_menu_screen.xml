@@ -28,15 +28,15 @@
 	    <texture id="ui_inGame2_button_h" x="429" y="562" width="108" height="24" />
 	    <texture id="ui_inGame2_button_d" x="209" y="562" width="108" height="24" />
 
-	    <texture id="ui_inGame2_checkbox_e" x="832" y="160" width="44" height="29" />
-	    <texture id="ui_inGame2_checkbox_h" x="904" y="250" width="44" height="29" />
-	    <texture id="ui_inGame2_checkbox_t" x="832" y="188" width="44" height="29" />
-	    <texture id="ui_inGame2_checkbox_d" x="832" y="220" width="44" height="29" />
+	    <texture id="ui_inGame2_checkbox_e" x="940" y="0" width="20" height="20" />
+	    <texture id="ui_inGame2_checkbox_h" x="964" y="0" width="20" height="20" />
+	    <texture id="ui_inGame2_checkbox_t" x="988" y="0" width="20" height="20" />
+	    <texture id="ui_inGame2_checkbox_d" x="916" y="0" width="20" height="20" />
 
-	    <texture id="ui_radio_e" x="902" y="214" width="47" height="28" />
-	    <texture id="ui_radio_h" x="902" y="184" width="47" height="28" />
-	    <texture id="ui_radio_t" x="902" y="154" width="47" height="28" />
-	    <texture id="ui_radio_d" x="902" y="214" width="47" height="28" />
+	    <texture id="ui_radio_e" x="940" y="21" width="20" height="20" />
+	    <texture id="ui_radio_h" x="964" y="21" width="20" height="20" />
+	    <texture id="ui_radio_t" x="988" y="21" width="20" height="20" />
+	    <texture id="ui_radio_d" x="916" y="21" width="20" height="20" />
 
 	    <texture id="ui_inGame2_spin_box_b"		x="209" y="693" width="3" height="20" />
 	    <texture id="ui_inGame2_spin_box_back" 	x="212" y="693" width="265" height="20" />

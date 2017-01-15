@@ -88,17 +88,17 @@
         <text align="l" vert_align="c" font="letterica16" r="80" g="80" b="80"/>
     </sleep_st_24>
 
-    <time_track x="37" y="177" width="601" height="16" is_integer="1" step="1">
+    <time_track x="40" y="177" width="594" height="16" is_integer="1" step="1">
         <options_item entry="g_sleep_time" group="sleep" depend="runtime"/>
     </time_track>
 
-    <btn_sleep x="209" y="212" width="127" height="28" check_mode="0">
+    <btn_sleep x="209" y="222" width="127" height="28" check_mode="0">
         <window_name>button_yes</window_name>
         <text font="letterica18">sleep_ok_button</text>
         <texture>ui_inGame2_Mp_bigbuttone</texture>
     </btn_sleep>
 
-    <btn_cancel x="341" y="212" width="127" height="28" check_mode="0">
+    <btn_cancel x="341" y="222" width="127" height="28" check_mode="0">
         <window_name>button_no</window_name>
         <text font="letterica18">Btn_Cancel</text>
         <texture>ui_inGame2_Mp_bigbuttone</texture>

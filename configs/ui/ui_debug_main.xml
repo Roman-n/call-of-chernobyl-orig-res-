@@ -141,8 +141,8 @@
 	</wnd_attach_editor>
 
 	<main_dialog>
-		<dialog x="508" y="274" width="487" height="462">
-			<texture>ui_inGame2_opt_main_window</texture>
+		<dialog x="508" y="274" width="487" height="462" stretch="1">
+			<texture>ui_inGame2_main_window_small</texture>
 	        <auto_static x="14" y="27" width="461" height="38">
 	            <texture>ui_inGame2_opt_buttons_frame</texture>
 	        </auto_static>
@@ -256,7 +256,7 @@
 		<list x="-17" y="20" width="200" height="332" item_height="22" can_select="1">
 			<font font="letterica16" r="210" g="210" b="210"/>
 		</list>
-		<check_own_to_actor x="190" y="20" width="32" height="21" vert_align="c">
+		<check_own_to_actor x="190" y="20" width="20" height="20" vert_align="c">
 			<texture>ui_inGame2_checkbox</texture>
 			<text x="-8" font="letterica16" r="115" g="114" b="112">Spawn object on Actor</text>
 		</check_own_to_actor>

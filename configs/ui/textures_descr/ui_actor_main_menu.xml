@@ -1,5 +1,5 @@
 <w>
-	<file name="ui\ui_actor_main_menu2">
+	<file name="ui\ui_actor_main_menu">
 		<texture id="ui_inGame2_background" x="0" y="0" width="1024" height="768" />
 		<texture id="ui_inGame2_slider" x="5" y="773" width="274" height="61" />
 	</file>
@@ -10,13 +10,19 @@
 		<texture id="ui_credits_background" x="0" y="0" width="1024" height="768" />
 	</file>
 	<file name="ui\ui_actor_widescreen_sidepanels">
-	    <texture id="ui_inGame2_left_widepanel" x="256" y="0" width="128" height="768" />
-	    <texture id="ui_inGame2_right_widepanel" x="384" y="0" width="128" height="768" />
+	    <texture id="ui_inGame2_left_widepanel" x="0" y="0" width="128" height="768" />
+	    <texture id="ui_inGame2_right_widepanel" x="128" y="0" width="128" height="768" />
    </file>
 	<file name="ui\ui_actor_widescreen_sidepanels_1">
 	    <texture id="ui_credits_left_widepanel" x="0" y="0" width="128" height="768" />
 	    <texture id="ui_credits_right_widepanel" x="128" y="0" width="128" height="768" />
 	    <texture id="ui_inGame2_screen_2" x="290" y="435" width="624" height="411" />
-	    <texture id="ui_inGame2_screen_4" x="290" y="3" width="624" height="411" />
+	    <texture id="ui_inGame2_screen_4" x="290" y="3" width="624" height="399" />
    </file>
+    <file name="ui\ui_actor_loading_background">
+	    <texture id="ui_inGame2_load_background" x="0" y="0" width="1024" height="768" />
+   </file>
+	<file name="ui\ui_actor_mp_buyscreen">
+		<texture id="ui_inGame2_mp_side_info_1" x="856" y="192" width="168" height="366" />
+	</file>
 </w>

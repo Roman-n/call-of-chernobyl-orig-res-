@@ -113,5 +113,90 @@
 	    <texture id="ui_inGame2_radiation_inv_green" 	x="865" y="933" width="45" height="45" />
 	    <texture id="ui_inGame2_radiation_inv_yellow" 	x="773" y="933" width="45" height="45" />
 	    <texture id="ui_inGame2_radiation_inv_red" 		x="589" y="933" width="45" height="45" />
+		
+		<!-- use ui_inGame2_main_window_small instead -->
+		<texture id="ui_inGame2_opt_main_window" x="508" y="462" width="487" height="462" />
+	    <texture id="ui_inGame2_opt_buttons_frame" x="17" y="772" width="461" height="38" />
+
+	    <texture id="ui_inGame2_opt_slider_bar_b" x="38" y="739" width="1" height="16" />
+	    <texture id="ui_inGame2_opt_slider_bar_back" x="39" y="739" width="235" height="16" />
+	    <texture id="ui_inGame2_opt_slider_bar_e" x="274" y="739" width="1" height="16" />
+
+	    <texture id="ui_inGame2_opt_slider_box_e" x="296" y="739" width="21" height="16" />
+	    <texture id="ui_inGame2_opt_slider_box_h" x="296" y="739" width="21" height="16" />
+	    <texture id="ui_inGame2_opt_slider_box_t" x="296" y="739" width="21" height="16" />
+	    <texture id="ui_inGame2_opt_slider_box_d" x="296" y="739" width="21" height="16" />
+
+	    <texture id="ui_inGame2_opt_button_1_e" x="6" y="817" width="9" height="9" />
+	    <texture id="ui_inGame2_opt_button_1_h" x="6" y="844" width="131" height="25" />
+	    <texture id="ui_inGame2_opt_button_1_t" x="6" y="817" width="131" height="25" />
+	    <texture id="ui_inGame2_opt_button_1_d" x="6" y="817" width="131" height="25" />
+
+	    <texture id="ui_inGame2_opt_button_2_e" x="6" y="817" width="9" height="9" />
+	    <texture id="ui_inGame2_opt_button_2_h" x="145" y="844" width="129" height="25" />
+	    <texture id="ui_inGame2_opt_button_2_t" x="145" y="817" width="129" height="25" />
+	    <texture id="ui_inGame2_opt_button_2_d" x="145" y="817" width="129" height="25" />
+
+	    <texture id="ui_inGame2_empty_frameline_15_b" x="0" y="780" width="1" height="15" />
+	    <texture id="ui_inGame2_empty_frameline_15_back" x="0" y="780" width="1" height="15" />
+	    <texture id="ui_inGame2_empty_frameline_15_e" x="0" y="780" width="1" height="15" />
+		
+		<texture id="ui_inGame2_PDA_icon_Stalker_machanik" x="6" y="543" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_VIP" x="26" y="543" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_Trader" x="46" y="543" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_Medic" x="66" y="543" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_guide" x="26" y="543" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Actor_Box" x="6" y="522" width="19" height="19" />
+		<texture id="ui_inGame2_PDA_icon_Place_to_rest" x="6" y="501" width="19" height="19" />
+
+
+		<texture id="ui_inGame2_PDA_icon_Stalker_machanik_small" x="22" y="630" width="15" height="14" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_Trader_small" x="54" y="630" width="15" height="14" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_Medic_small" x="70" y="630" width="15" height="14" />
+		<texture id="ui_inGame2_PDA_icon_Stalker_guide_small" x="38" y="630" width="15" height="14" />
+		<texture id="ui_inGame2_PDA_icon_Actor_Box_small" x="6" y="630" width="15" height="14" />
+		<texture id="ui_inGame2_PDA_icon_Place_to_rest_small" x="70" y="610" width="15" height="15" />
+
+		<texture id="ui_inGame2_PDA_icon_Primary_mission" x="4" y="563" width="23" height="23" />
+		<texture id="ui_inGame2_PDA_icon_Secondary_mission" x="28" y="563" width="23" height="23" />
+
+		<texture id="ui_inGame2_PDA_icon_secret" x="52" y="563" width="25" height="25" />
+		<texture id="ui_inGame2_PDA_icon_location_legend" x="4" y="587" width="41" height="41" />
+		
+	    <texture id="ui_inGame2_Mp_bigbuttone_e" x="97" y="542" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_h" x="97" y="542" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_t" x="97" y="573" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_d" x="236" y="618" width="127" height="28" />
+
+	    <texture id="ui_inGame2_Mp_bigbuttone_nodowncorner_e" x="97" y="604" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_nodowncorner_h" x="97" y="604" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_nodowncorner_t" x="97" y="635" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_nodowncorner_d" x="236" y="653" width="127" height="28" />
+
+	    <texture id="ui_inGame2_Mp_bigbuttone_noupcorner_e" x="97" y="667" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_noupcorner_h" x="97" y="667" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_noupcorner_t" x="97" y="698" width="127" height="28" />
+	    <texture id="ui_inGame2_Mp_bigbuttone_noupcorner_d" x="236" y="688" width="127" height="28" />
+
+	    <texture id="ui_inGame2_Mp_frame_button_e_b" 	x="97" y="542" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_e_back" x="101" y="542" width="119" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_e_e" 	x="220" y="542" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_h_b" 	x="97" y="542" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_h_back" x="101" y="542" width="119" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_h_e" 	x="220" y="542" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_t_b" 	x="97" y="573" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_t_back" x="101" y="573" width="119" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_t_e" 	x="220" y="573" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_d_b" 	x="97" y="573" width="4" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_d_back" x="101" y="573" width="119" height="28" />
+	    <texture id="ui_inGame2_Mp_frame_button_d_e" 	x="220" y="573" width="4" height="28" />
+		
+		<texture id="ui_inGame2_radiation_icon_part_1" x="501" y="124" width="21" height="21" />
+	    <texture id="ui_inGame2_radiation_icon_part_2" x="499" y="183" width="25" height="25" />
+	    <texture id="ui_inGame2_radiation_icon_part_3" x="496" y="251" width="31" height="31" />
+
+	    <texture id="ui_inGame2_blood_icon_part_1" x="505" y="153" width="13" height="20" />
+	    <texture id="ui_inGame2_blood_icon_part_2" x="503" y="218" width="17" height="26" />
+	    <texture id="ui_inGame2_blood_icon_part_3" x="500" y="289" width="23" height="33" />
 	</file>
 </w>

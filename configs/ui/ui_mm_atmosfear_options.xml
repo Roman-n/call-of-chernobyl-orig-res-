@@ -80,7 +80,7 @@
             <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_psi_storm</text>
         </cap_af_psi_storm>
 
-        <check_enable_blowout x="26" y="112" width="44" height="29">
+        <check_enable_blowout x="43" y="112" width="20" height="20">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="opt_enable_blowout" group="mm_opt_atmosfear"/>
         </check_enable_blowout>
@@ -89,7 +89,7 @@
         </cap_check_enable_blowout>
 
 		<!-- swapped coords with psi -->
-        <check_enable_fallout x="26" y="312" width="44" height="29">
+        <check_enable_fallout x="43" y="312" width="20" height="20">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="opt_enable_fallout" group="mm_opt_atmosfear"/>
         </check_enable_fallout>
@@ -100,7 +100,7 @@
         </cap_check_enable_fallout>
 		
 		<!-- swapped coords with fallout -->
-        <check_enable_psi_storm x="26" y="212" width="44" height="29">
+        <check_enable_psi_storm x="26" y="212" width="20" height="20">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="opt_enable_psi_storm" group="mm_opt_atmosfear"/>
         </check_enable_psi_storm>
@@ -417,70 +417,70 @@
 
 		<radio_moon_phase x="26" y="117" width="580" height="260" radio="1">
 			<options_item entry="opt_moon_phase" group="mm_opt_atmosfear"/>
-			<button x="0" y="30" width="47" height="28" id="8days" stretch="1">
+			<button x="0" y="30" width="20" height="20" id="8days" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_cycle_length_8</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="0" y="60" width="47" height="28" id="28days" stretch="1">
+			<button x="0" y="60" width="20" height="20" id="28days" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_cycle_length_28</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="0" width="47" height="28" id="moon0" stretch="1">
+			<button x="400" y="0" width="20" height="20" id="moon0" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_0</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="30" width="47" height="28" id="moon1" stretch="1">
+			<button x="400" y="30" width="20" height="20" id="moon1" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_1</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="60" width="47" height="28" id="moon2" stretch="1">
+			<button x="400" y="60" width="20" height="20" id="moon2" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_2</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="90" width="47" height="28" id="moon3" stretch="1">
+			<button x="400" y="90" width="20" height="20" id="moon3" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_3</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="120" width="47" height="28" id="moon4" stretch="1">
+			<button x="400" y="120" width="20" height="20" id="moon4" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_4</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="150" width="47" height="28" id="moon5" stretch="1">
+			<button x="400" y="150" width="20" height="20" id="moon5" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_5</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="180" width="47" height="28" id="moon6" stretch="1">
+			<button x="400" y="180" width="20" height="20" id="moon6" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_6</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="400" y="210" width="47" height="28" id="moon7" stretch="1">
+			<button x="400" y="210" width="20" height="20" id="moon7" stretch="1">
 				<text font="letterica16" vert_align="c" x="40" y="3" width="150" height="20" align="l" >st_cap_moon_phase_7</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
