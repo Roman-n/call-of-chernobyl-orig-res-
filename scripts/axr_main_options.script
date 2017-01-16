@@ -28,6 +28,21 @@ function opt_menu_on_init(menu)
 		end
 	end}
 	
+	-- mask hud
+	if (mask_hud) then
+		menu.gameplay_options["mask_hud"]		= {default=false, 	debug_only=false, 	typ="check",
+			on_accept=function(handler,optMgr,ctrl)
+				if (level.present() and mask_hud) then
+					if (ctrl:GetCheck()) then
+						mask_hud.activate_hud()
+					else
+						mask_hud.deactivate_hud()
+					end
+				end
+			end
+		}
+	end
+	
 	-- slot Hud
 	if (slot_hud) then
 		menu.gameplay_options["slot_hud"]		= {default=false, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)
