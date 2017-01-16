@@ -25,59 +25,6 @@ function activate_hud()
 		-- minimal distance from actor to draw helmet (increase it if helmet disappear when running / jumping)
 		cam_dist = 1.6,
 		radiation_ppe_threshold = 0.3,
-	
-		helmets = {
-			-- texture to use when wearing the exo outfit
-			exo_outfit = "helm_exo",
-			merc_exo_outfit = "helm_exo",
-			dolg_exo_outfit = "helm_exo",
-			svoboda_exo_outfit = "helm_exo",
-			military_exo_outfit = "helm_exo",
-			bandit_exo_outfit = "helm_exo",
-			monolith_exo_outfit = "helm_exo",
-			cs_exo_outfit = "helm_exo",
-			
-			-- texture to use when wearing the scientific outfit
-			scientific_outfit = "helm_scientific",
-			ecolog_outfit_orange = "helm_scientific",
-			ecologist_red_outfit = "helm_scientific",
-			ecolog_outfit_green = "helm_scientific",
-			monolith_scientific_outfit = "helm_scientific",
-			dolg_scientific_outfit = "helm_scientific",
-			merc_scientific_outfit = "helm_scientific",
-			svoboda_scientific_outfit = "helm_scientific",
-			cs_scientific_outfit = "helm_scientific",
-			isg_scientific_outfit = "helm_scientific",
-			ghillie_outfit = "helm_ghillie",
-			
-			-- texture to use when wearing the respirator outfit               
-			monolith_radiation_outfit = "helm_respirator",
-			merc_radiation_outfit = "helm_respirator",
-			svoboda_radiation_outfit = "helm_respirator",
-			dolg_radiation_outfit = "helm_respirator",
-			radiation_outfit = "helm_respirator",
-			monolith_nbc_outfit = "helm_respirator",
-			cs_nbc_outfit = "helm_respirator",
-			nbc_outfit = "helm_respirator",               
-			
-			helm_respirator = "helm_respirator",
-			helm_respirator_joker = "helm_respirator",
-			helm_respirator_gp5 = "helm_respirator",
-			helm_hardhat = "helm_hardhat",
-			helm_tactic_2 = "helm_hardhat",
-			helm_hardhat_snag = "helm_hardhat",
-			helm_protective = "helm_protective",
-			helm_tactic = "helm_tactic",
-			helm_battle = "helm_battle",
-			helm_battle_lucky = "helm_battle",
-			helm_m40	= "helm_protective",	
-			helm_respirator_half = "helm_invisible"
-		},
-		helmet_no_respi = {
-			-- helmets that doesn't provide respirator (no gasmask breath sounds)
-			helm_hardhat = true,
-			helm_ghillie = true,
-		},
 		health = {
 			-- health level for heavy injuring sounds
 			level1 = 0.1,
@@ -95,13 +42,6 @@ function activate_hud()
 			huge_ppe = "total_recall.ppe",
 			huge_anm = {"head_shot","fusker"},
 			huge_snd = {"pain_4","pain_1","hit_5","hit_6"},
-			-- hit drop weapon probability (0-1)
-			drop_wnp_prob = 0.05,
-			-- non droppable items
-			no_drop_wnp = {	bolt = true,
-							wpn_knife = true,
-							wpn_binoc = true
-			},
 		},
 	}
 	
@@ -180,7 +120,7 @@ function DynamicHud:InitHelm(helm)
 	if not helm or helm == "" then return end
 	local xml = CScriptXmlInit()
 	xml:ParseFile("ui_dyn_huds.xml")
-	if not self.breath and not opt.helmet_no_respi[helm] and not self.no_breath and helm~="helm_invisible" then
+	if not self.breath and not system_ini():r_bool_ex(helm,"helmet_no_respi",false) and not self.no_breath and helm~="helm_invisible" then
 		self.breath = {}
 		for i=1,5 do
 			self.breath[i] = xml:InitStatic("hud_blur"..i, self)
@@ -221,14 +161,19 @@ end
 
 --//	OnUpdate Functions	//--
 function DynamicHud:hud_condition()
-	local helm_obj = db.actor:item_in_slot(12) or db.actor:item_in_slot(7)
-	local helmet = db.actor:alive() and helm_obj and opt.helmets[helm_obj:section()]
+	local helm_obj = db.actor:alive() and (db.actor:item_in_slot(12) or db.actor:item_in_slot(7))
+	if not (helm_obj) then 
+		return 
+	end
+	local sys_ini = system_ini()
+	local helmet = sys_ini:r_string_ex(helm_obj:section(),"mask_hud")
+	local helmet_no_respi = sys_ini:r_bool_ex(helm_obj:section(),"mask_hud_no_respi",false)
 	local cam_dist = db.actor:bone_position("bip01_head"):distance_to_sqr(device().cam_pos)	
 	if not (helmet_active) or cam_dist > opt.cam_dist then
 		if self.helmet_name then
 			if not helmet or cam_dist <= opt.cam_dist then
 				local snd
-				if opt.helmet_no_respi[self.helmet_name] or self.tg < (self.snd_tg-400) then
+				if helmet_no_respi or self.tg < (self.snd_tg-400) then
 					snd = sound_object("actor\\gasmask_nobreath")
 				else
 					snd = sound_object("actor\\gasmask_off")
@@ -265,7 +210,7 @@ function DynamicHud:hud_condition()
 		end
 		if self.suitfirstrun then
 			local snd
-			if opt.helmet_no_respi[helmet] or self.tg < self.snd_tg then
+			if helmet_no_respi or self.tg < self.snd_tg then
 				snd = sound_object("actor\\gasmask_nobreath")
 			else
 				snd = sound_object("actor\\gasmask_on")
@@ -277,7 +222,7 @@ function DynamicHud:hud_condition()
 			return
 		end
 		
-		if opt.helmet_no_respi[helmet] then
+		if helmet_no_respi then
 			self:mask_no_resp()
 		elseif self.tg>self.snd_tg then
 			self:ActorBreathSpeed()
@@ -302,7 +247,7 @@ function DynamicHud:hud_condition()
 				self:UseHelm(helmet)
 			end
 			self.helmet_name = helmet
-			keep_helm = opt.helmet_no_respi[helmet]
+			keep_helm = helmet_no_respi
 			self.cond = cond
 			self.helm_hud[cond]:Show(true)
 		end
@@ -380,13 +325,6 @@ function DynamicHud:HitEffect()
 			end					--optional for recoil effects
 			local snd_obj = sound_object("actor\\"..sounds[math.random(#sounds)])
 			snd_obj:play(db.actor,0,sound_object.s2d)
-	
-			if math.random(100) < (delta_health*opt.health.drop_wnp_prob) then
-				local active_item = db.actor:active_item()
-				if active_item and not opt.health.no_drop_wnp[active_item:section()] then
-					db.actor:drop_item(active_item)
-				end
-			end
 		end
 	end
 end
@@ -409,7 +347,7 @@ function DynamicHud:ActorRadiation()
 end
 ---------------------------------------------------------------------------------------------------------------------------
 function DynamicHud:init_blurs()
-	if self.helmet_name and self.helmet_name~="" and self.helmet_name~="helm_invisible" and not(opt.helmet_no_respi[self.helmet_name]) and self.cond <= math.ceil(self.cnt/2) then
+	if self.helmet_name and self.helmet_name~="" and self.helmet_name~="helm_invisible" and not(system_ini():r_bool_ex(self.helmet_name,"helmet_no_respi",false)) and self.cond <= math.ceil(self.cnt/2) then
 		local zoom = ((67.5/device().fov)-1)*1.5+1
 		zoom = zoom < 1.001 and 1.001 or zoom
 		local stretchy = 0.75/(math.floor(device().aspect_ratio*1000)/1000)
