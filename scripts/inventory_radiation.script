@@ -18,11 +18,12 @@ local day_rad_modifiers = {
 local SafeCover = alun_utils.collect_section(ini_file("misc\\surge_manager.ltx"),"list",true)
 local ini = system_ini()
 local day_rad = 0
-local day_rad_factor = 10000
+local day_rad_factor = 5000
 local irr_arts
 local _tmr
 local inv_arts_rad = 0
 local rad_factor = 0.5
+local force_calc
 
 function on_game_start()
 	RegisterScriptCallback("actor_on_update",actor_on_update)
@@ -45,6 +46,10 @@ function actor_on_update()
 	end
 	if not enable_inv_art_radiation then
 		inv_arts_rad = 0
+		force_calc = nil
+	elseif force_calc == nil then -- Необходимо для форсированного пересчёта радиации от артефактов
+		force_calc = true
+		calc_inv_art()
 	end
 	if not (enable_day_radiation or enable_inv_art_radiation) then return end
 	change_rad()
@@ -100,7 +105,6 @@ function day_radiation()
 				else
 					day_rad = v.default
 				end
-				return
 			end
 		end
 	end
@@ -117,11 +121,16 @@ function register_artefact(arte, sw)
 			irr_arts[arte:id()] = nil
 		end
 		-- printf("artefact [%s] [%s] [id = %s] [rad = %s] [cond = %s]",arte:section(),sw,arte:id(),val,arte:condition())
-		if irr_arts == nil then return end 
-		inv_arts_rad = 0
-		for id, val in pairs(irr_arts) do
-			inv_arts_rad = inv_arts_rad + val
-		end
+		calc_inv_art()
+	end
+end
+
+function calc_inv_art()
+	if force_calc == true then force_calc = false end
+	if irr_arts == nil then return end 
+	inv_arts_rad = 0
+	for id, val in pairs(irr_arts) do
+		inv_arts_rad = inv_arts_rad + val
 	end
 end
 
@@ -142,20 +151,20 @@ function change_rad()
 	end
 	local outfit_resist = outfit and (upgr(outfit) + rad_prot(outfit))*outfit:condition() or 0
 	local helm_resist = helm and (upgr(helm) + rad_prot(helm))*helm:condition() or 0
-	local rad_resist = 0 -- helm_resist + outfit_resist
+	local rad_resist = helm_resist + outfit_resist
 	if inv_arts_rad < 0 then inv_arts_rad = 0 end
 	
-	local final_rad = ((inv_arts_rad * rad_factor) + (day_rad/day_rad_factor)) - rad_resist
+	local final_rad = inv_arts_rad * rad_factor + (day_rad/day_rad_factor - rad_resist)
 	if final_rad <= 0 then
 		final_rad = 0
 	end
-	db.actor.radiation = final_rad
-	if db.actor.radiation < 0.1 then
+	if final_rad < 0.1 then
 		level.remove_pp_effector(1983)
 	else
 		level.add_pp_effector("radiation.ppe", 1983, true)
 		level.set_pp_effector_factor(1983, final_rad)
 	end
 	
-	-- printf('all=[%s] inv_arts_rad=[%s] rad_factor=[%s] day_rad=[%s] rad_resist=[%s] db.actor.radiation=[%s]',final_rad,inv_arts_rad,rad_factor,day_rad/day_rad_factor,rad_resist,db.actor.radiation)
+	db.actor.radiation = final_rad
+	-- printf('all=[%s] inv_arts_rad=[%s] day_rad=[%s] rad_resist=[%s] db.actor.radiation=[%s]',final_rad,inv_arts_rad,day_rad/day_rad_factor,rad_resist,db.actor.radiation)
 end
