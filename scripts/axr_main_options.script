@@ -28,21 +28,6 @@ function opt_menu_on_init(menu)
 		end
 	end}
 	
-	-- mask hud
-	if (mask_hud) then
-		menu.gameplay_options["mask_hud"]		= {default=false, 	debug_only=false, 	typ="check",
-			on_accept=function(handler,optMgr,ctrl)
-				if (level.present() and mask_hud) then
-					if (ctrl:GetCheck()) then
-						mask_hud.activate_hud()
-					else
-						mask_hud.deactivate_hud()
-					end
-				end
-			end
-		}
-	end
-	
 	-- slot Hud
 	if (slot_hud) then
 		menu.gameplay_options["slot_hud"]		= {default=false, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)
@@ -124,6 +109,9 @@ function opt_menu_on_init(menu)
 	
 	-- quicksave_cnt
 	menu.gameplay_options["quicksave_cnt"]		= {default=5, 		debug_only=false, 	typ="list", list={1,5,10,20}}
+	
+	menu.gameplay_options["day_radiation"]		= {default=false, debug_only=false, typ="check"}
+	menu.gameplay_options["inv_art_radiation"]	= {default=false, debug_only=false, typ="check"}
 	
 	if (db.actor) then -- Options will only show while in-game
 	
