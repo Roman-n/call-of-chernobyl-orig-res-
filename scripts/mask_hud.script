@@ -320,9 +320,7 @@ function DynamicHud:HitEffect()
 				cameffs = opt.health.middle_anm
 				sounds = opt.health.middle_snd
 			end
-			if not wpn_effects.shott then	--optional for recoil effects
-				level.add_cam_effector("camera_effects\\"..cameffs[math.random(#cameffs)]..".anm",999,false,"")
-			end					--optional for recoil effects
+			level.add_cam_effector("camera_effects\\"..cameffs[math.random(#cameffs)]..".anm",999,false,"")
 			local snd_obj = sound_object("actor\\"..sounds[math.random(#sounds)])
 			snd_obj:play(db.actor,0,sound_object.s2d)
 		end
