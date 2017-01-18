@@ -67,6 +67,32 @@ function opt_menu_on_init(menu)
 	menu.gameplay_options["heli_engine_sound"]	= {default=true, 	debug_only=false, 	typ="check"}
 	-- heli_spawn
 	menu.gameplay_options["heli_spawn"]			= {default=true, 	debug_only=false, 	typ="check"}
+	if inventory_radiation then
+		-- daytime radiation 
+		menu.gameplay_options["day_radiation"]		= {default=false, 	debug_only=false, 	typ="check",
+			on_accept=function(handler,optMgr,ctrl)
+				if (level.present()) then
+					if (ctrl:GetCheck()) then
+						inventory_radiation.activate()
+					else
+						inventory_radiation.deactivate()
+					end
+				end
+			end
+		}
+			-- Inventory artifact radiation
+		menu.gameplay_options["inventory_radiation"]	= {default=false, 	debug_only=false, 	typ="check",
+			on_accept=function(handler,optMgr,ctrl)
+				if (level.present()) then
+					if (ctrl:GetCheck()) then
+						inventory_radiation.activate()
+					else
+						inventory_radiation.deactivate()
+					end
+				end
+			end
+		}
+	end
 	-- dynamic_news
 	menu.gameplay_options["dynamic_news"]		= {default=true, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)
 		if (level.present() and dynamic_news_manager) then 
