@@ -136,9 +136,6 @@ function opt_menu_on_init(menu)
 	-- quicksave_cnt
 	menu.gameplay_options["quicksave_cnt"]		= {default=5, 		debug_only=false, 	typ="list", list={1,5,10,20}}
 	
-	menu.gameplay_options["day_radiation"]		= {default=false, debug_only=false, typ="check"}
-	menu.gameplay_options["inv_art_radiation"]	= {default=false, debug_only=false, typ="check"}
-	
 	if (db.actor) then -- Options will only show while in-game
 	
 		local l = get_character_icon_list()
