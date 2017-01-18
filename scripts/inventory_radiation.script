@@ -1,52 +1,79 @@
-local day_rad_modifiers = {
-	["6"] 	= {default = 30,	cloudy = 10,	rain = 0},
-	["7"] 	= {default = 40,	cloudy = 20,	rain = 10},
-	["8"] 	= {default = 50,	cloudy = 30,	rain = 20},
-	["9"] 	= {default = 60,	cloudy = 40,	rain = 30},
-	["10"] 	= {default = 70,	cloudy = 50,	rain = 40},
-	["11"] 	= {default = 80,	cloudy = 60,	rain = 50},
-	["12"] 	= {default = 90,	cloudy = 70,	rain = 60},
-	["13"] 	= {default = 100,	cloudy = 80,	rain = 70},	-- 100%, 80%, 70%
-	["14"] 	= {default = 90,	cloudy = 70,	rain = 60},
-	["15"] 	= {default = 80,	cloudy = 60,	rain = 50},
-	["16"] 	= {default = 70,	cloudy = 50,	rain = 40},
-	["17"] 	= {default = 60,	cloudy = 40,	rain = 30},
-	["18"] 	= {default = 50,	cloudy = 30,	rain = 20},
-	["19"] 	= {default = 40,	cloudy = 20,	rain = 10},
-	["20"] 	= {default = 30,	cloudy = 10,	rain = 0}
-}
-local SafeCover = alun_utils.collect_section(ini_file("misc\\surge_manager.ltx"),"list",true)
-local ini = system_ini()
-local day_rad = 0
-local day_rad_factor = 10000
-local irr_arts
-local _tmr
-local inv_arts_rad = 0
-local rad_factor = 0.5
+local SafeCover,ini,day_rad_factor,irr_arts,_tmr,inv_arts_rad,rad_factor,day_rad_modifiers
+
+function activate()
+	ini = system_ini()
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+	
+	if ((axr_main.config:r_value("mm_options","enable_day_radiation",1,false))== true) then
+		day_rad_modifiers = {
+			["6"] 	= {default = 30,	cloudy = 10,	rain = 0},
+			["7"] 	= {default = 40,	cloudy = 20,	rain = 10},
+			["8"] 	= {default = 50,	cloudy = 30,	rain = 20},
+			["9"] 	= {default = 60,	cloudy = 40,	rain = 30},
+			["10"] 	= {default = 70,	cloudy = 50,	rain = 40},
+			["11"] 	= {default = 80,	cloudy = 60,	rain = 50},
+			["12"] 	= {default = 90,	cloudy = 70,	rain = 60},
+			["13"] 	= {default = 100,	cloudy = 80,	rain = 70},	-- 100%, 80%, 70%
+			["14"] 	= {default = 90,	cloudy = 70,	rain = 60},
+			["15"] 	= {default = 80,	cloudy = 60,	rain = 50},
+			["16"] 	= {default = 70,	cloudy = 50,	rain = 40},
+			["17"] 	= {default = 60,	cloudy = 40,	rain = 30},
+			["18"] 	= {default = 50,	cloudy = 30,	rain = 20},
+			["19"] 	= {default = 40,	cloudy = 20,	rain = 10},
+			["20"] 	= {default = 30,	cloudy = 10,	rain = 0}
+		}
+		SafeCover = alun_utils.collect_section(ini_file("misc\\surge_manager.ltx"),"list",true)
+		day_rad_factor = 5000 -- higher is lower day_rad
+	end
+
+	if ((axr_main.config:r_value("mm_options","enable_inventory_radiation",1,false))==true) then
+		inv_arts_rad = 0
+		rad_factor = 0.5
+		RegisterScriptCallback("actor_on_item_drop",actor_on_item_drop)
+		RegisterScriptCallback("actor_on_item_take",actor_on_item_take)
+		RegisterScriptCallback("actor_item_to_belt",actor_item_to_belt)
+		RegisterScriptCallback("actor_item_to_ruck",actor_item_to_ruck)
+		iterate_inv_arts()
+	end
+end
+
+function deactivate()
+	if ((axr_main.config:r_value("mm_options","enable_day_radiation",1,false))== false) then
+		SafeCover = nil
+		day_rad_factor = nil
+		day_rad_modifiers = nil
+	end
+
+	if ((axr_main.config:r_value("mm_options","enable_inventory_radiation",1,false))==false) then
+		irr_arts = nil
+		inv_arts_rad = nil
+		rad_factor = nil
+		UnregisterScriptCallback("actor_on_item_drop",actor_on_item_drop)
+		UnregisterScriptCallback("actor_on_item_take",actor_on_item_take)
+		UnregisterScriptCallback("actor_item_to_belt",actor_item_to_belt)
+		UnregisterScriptCallback("actor_item_to_ruck",actor_item_to_ruck)
+	end
+	
+	if ((axr_main.config:r_value("mm_options","enable_day_radiation",1,false))== false and (axr_main.config:r_value("mm_options","enable_inventory_radiation",1,false))==false) then
+		UnregisterScriptCallback("actor_on_update",actor_on_update)
+		ini = nil
+		_tmr = nil
+	end
+end
 
 function on_game_start()
-	RegisterScriptCallback("actor_on_update",actor_on_update)
-	RegisterScriptCallback("actor_on_item_drop",actor_on_item_drop)
-	RegisterScriptCallback("actor_on_item_take",actor_on_item_take)
-	RegisterScriptCallback("actor_item_to_belt",actor_item_to_belt)
-	RegisterScriptCallback("actor_item_to_ruck",actor_item_to_ruck)
+	local function actor_on_first_update()
+		activate()
+	end
+	if (axr_main.config:r_value("mm_options","enable_inventory_radiation",1,false) == true) or (axr_main.config:r_value("mm_options","enable_day_radiation",1,false) == true) then
+		RegisterScriptCallback("actor_on_first_update",actor_on_first_update)
+	end
 end
 
 function actor_on_update()
 	local tg = time_global()
 	if _tmr ~= nil and tg < (_tmr + 1000) then return end
 	_tmr = tg
-	local enable_day_radiation = axr_main.config:r_value("mm_options","enable_day_radiation",1,false) == true
-	local enable_inv_art_radiation = axr_main.config:r_value("mm_options","enable_inv_art_radiation",1,false) == true
-	if enable_day_radiation then
-		day_radiation()
-	else
-		day_rad = 0
-	end
-	if not enable_inv_art_radiation then
-		inv_arts_rad = 0
-	end
-	if not (enable_day_radiation or enable_inv_art_radiation) then return end
 	change_rad()
 end
 
@@ -79,32 +106,40 @@ function actor_item_to_ruck(obj)
 end
 
 function day_radiation()
-	if xr_conditions.is_day() and level_weathers.valid_levels[level.name()] then
-		for k,v in pairs(SafeCover) do
-			local zone = db.zone_by_name[k]
-			if (zone and zone:inside(db.actor:position())) then
-				day_rad = 0
-				return
-			end
+	local day_rad = 0
+	
+	if (axr_main.config:r_value("mm_options","enable_day_radiation",1,false) == false) then
+		return day_rad
+	end
+
+	if not (xr_conditions.is_day() or level_weathers.valid_levels[level.name()]) --[[and db.actor:get_luminocity_hemi()> 0.003]] then
+		return day_rad
+	end
+	
+	for k,v in pairs(SafeCover) do
+		local zone = db.zone_by_name[k]
+		if (zone and zone:inside(db.actor:position())) then
+			return day_rad
 		end
-		local hour = level.get_time_hours()
-		local weather = level.get_weather()
-		for k,v in pairs(day_rad_modifiers) do
-			if (hour == tonumber(k)) then
-				if string.find(weather, "rain") or string.find(weather, "storm") or string.find(weather, "thunder") or level.rain_factor() >= 0.3 then
-					day_rad = v.rain
-				elseif string.find(weather, "foggy") or string.find(weather, "cloudy") then
-					day_rad = v.cloudy
-				elseif string.find(weather, "partly") then
-					day_rad = v.cloudy + 0.1
-				else
-					day_rad = v.default
-				end
-				return
+	end
+	
+	local hour = level.get_time_hours()
+	local weather = level.get_weather()
+	for k,v in pairs(day_rad_modifiers) do
+		if (hour == tonumber(k)) then
+			if string.find(weather, "rain") or string.find(weather, "storm") or string.find(weather, "thunder") or level.rain_factor() >= 0.3 then
+				day_rad = v.rain
+			elseif string.find(weather, "foggy") or string.find(weather, "cloudy") then
+				day_rad = v.cloudy
+			elseif string.find(weather, "partly") then
+				day_rad = v.cloudy + 0.1
+			else
+				day_rad = v.default
 			end
 		end
 	end
-	day_rad = 0
+
+	return day_rad > 0 and day_rad/day_rad_factor - rad_resist() or 0
 end
 
 function register_artefact(arte, sw)
@@ -117,15 +152,29 @@ function register_artefact(arte, sw)
 			irr_arts[arte:id()] = nil
 		end
 		-- printf("artefact [%s] [%s] [id = %s] [rad = %s] [cond = %s]",arte:section(),sw,arte:id(),val,arte:condition())
-		if irr_arts == nil then return end 
-		inv_arts_rad = 0
-		for id, val in pairs(irr_arts) do
-			inv_arts_rad = inv_arts_rad + val
-		end
+		calc_inv_art()
 	end
 end
 
-function change_rad()
+function iterate_inv_arts()
+	db.actor:inventory_for_each(
+		function (item)
+			if (IsArtefact(item) and not db.actor:is_on_belt(item)) then
+				register_artefact(item, "in")
+			end
+		end
+	)
+end
+
+function calc_inv_art()
+	if irr_arts == nil then return end 
+	inv_arts_rad = 0
+	for id, val in pairs(irr_arts) do
+		inv_arts_rad = inv_arts_rad + val
+	end
+end
+
+function rad_resist()
 	local outfit = db.actor:item_in_slot(7)
 	local helm = db.actor:item_in_slot(12)
 	local function upgr(obj)
@@ -142,20 +191,21 @@ function change_rad()
 	end
 	local outfit_resist = outfit and (upgr(outfit) + rad_prot(outfit))*outfit:condition() or 0
 	local helm_resist = helm and (upgr(helm) + rad_prot(helm))*helm:condition() or 0
-	local rad_resist = 0 -- helm_resist + outfit_resist
-	if inv_arts_rad < 0 then inv_arts_rad = 0 end
+	return helm_resist + outfit_resist
+end
+
+function change_rad()
+	inv_arts_rad = inv_arts_rad < 0 and 0 or inv_arts_rad
 	
-	local final_rad = ((inv_arts_rad * rad_factor) + (day_rad/day_rad_factor)) - rad_resist
-	if final_rad <= 0 then
-		final_rad = 0
-	end
-	db.actor.radiation = final_rad
-	if db.actor.radiation < 0.1 then
+	local final_rad = (inv_arts_rad * rad_factor) + day_radiation()
+	final_rad = final_rad < 0 and 0 or final_rad
+	if final_rad < 0.1 then
 		level.remove_pp_effector(1983)
 	else
 		level.add_pp_effector("radiation.ppe", 1983, true)
 		level.set_pp_effector_factor(1983, final_rad)
 	end
 	
-	-- printf('all=[%s] inv_arts_rad=[%s] rad_factor=[%s] day_rad=[%s] rad_resist=[%s] db.actor.radiation=[%s]',final_rad,inv_arts_rad,rad_factor,day_rad/day_rad_factor,rad_resist,db.actor.radiation)
+	db.actor.radiation = final_rad
+	printf('db.actor.radiation=[%s]',db.actor.radiation)
 end

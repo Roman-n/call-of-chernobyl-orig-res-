@@ -67,6 +67,32 @@ function opt_menu_on_init(menu)
 	menu.gameplay_options["heli_engine_sound"]	= {default=true, 	debug_only=false, 	typ="check"}
 	-- heli_spawn
 	menu.gameplay_options["heli_spawn"]			= {default=true, 	debug_only=false, 	typ="check"}
+	if inventory_radiation then
+		-- daytime radiation 
+		menu.gameplay_options["day_radiation"]		= {default=false, 	debug_only=false, 	typ="check",
+			on_accept=function(handler,optMgr,ctrl)
+				if (level.present()) then
+					if (ctrl:GetCheck()) then
+						inventory_radiation.activate()
+					else
+						inventory_radiation.deactivate()
+					end
+				end
+			end
+		}
+			-- Inventory artifact radiation
+		menu.gameplay_options["inventory_radiation"]	= {default=false, 	debug_only=false, 	typ="check",
+			on_accept=function(handler,optMgr,ctrl)
+				if (level.present()) then
+					if (ctrl:GetCheck()) then
+						inventory_radiation.activate()
+					else
+						inventory_radiation.deactivate()
+					end
+				end
+			end
+		}
+	end
 	-- dynamic_news
 	menu.gameplay_options["dynamic_news"]		= {default=true, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)
 		if (level.present() and dynamic_news_manager) then 
@@ -109,9 +135,6 @@ function opt_menu_on_init(menu)
 	
 	-- quicksave_cnt
 	menu.gameplay_options["quicksave_cnt"]		= {default=5, 		debug_only=false, 	typ="list", list={1,5,10,20}}
-	
-	menu.gameplay_options["day_radiation"]		= {default=false, debug_only=false, typ="check"}
-	menu.gameplay_options["inv_art_radiation"]	= {default=false, debug_only=false, typ="check"}
 	
 	if (db.actor) then -- Options will only show while in-game
 	
