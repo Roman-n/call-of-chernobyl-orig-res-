@@ -11,7 +11,7 @@
 	</background>
 
 	<main_dialog>
-		<dialog x="592" y="0" width="600" height="768">
+		<dialog x="592" y="0" width="600" height="868">
 		</dialog>
 
 		<cap_character_name x="112" y="616" width="32" height="22">
