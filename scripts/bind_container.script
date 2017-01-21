@@ -217,7 +217,7 @@ function container_binder:net_spawn(sobject)
 	if (containers[id]) then
 		-- release inv_box not linked to an object
 		for inv_box_id,item_id in pairs(se_inv_box_containers) do
-			if (id == false) then 
+			if (item_id == false) then 
 				local se_obj = alife():object(inv_box_id)
 				if (se_obj and IsInvbox(nil,se_obj:clsid())) then
 					alife():release(se_obj)
