@@ -7,7 +7,7 @@ function eva_state_mgr_weapon:__init(name, st) super (nil, name)
 end
 function eva_state_mgr_weapon:evaluate()
 	--alun_utils.debug_write("eva_state_mgr_weapon")
-	local weapon = state_lib.states[self.st.target_state].weapon
+	local weapon = self.st.target_state and state_lib.states[self.st.target_state] and state_lib.states[self.st.target_state].weapon
 	if not (weapon) then
 		return true
 	end
@@ -268,7 +268,7 @@ function get_idle_state(target_state)
 end
 
 function get_weapon(obj, target_state)
-	return state_lib.states[target_state].weapon_slot and obj:item_in_slot(state_lib.states[target_state].weapon_slot) or obj:best_weapon()
+	return target_state and state_lib.states[target_state] and state_lib.states[target_state].weapon_slot and obj:item_in_slot(state_lib.states[target_state].weapon_slot) or obj:best_weapon()
 end
 
 function strappable_weapon(obj)
