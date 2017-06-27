@@ -699,7 +699,7 @@ end
 
 function string_to_vector(str)
 	if (str == nil or str == "") then 
-		return vector()
+		return vector():set(0,0,0)
 	end
 	local t = alun_utils.str_explode(str,",")
 	return vector():set(tonumber(t[1] or 0) or 0,tonumber(t[2] or 0) or 0,tonumber(t[3] or 0) or 0)

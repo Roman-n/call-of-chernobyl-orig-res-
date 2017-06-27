@@ -415,7 +415,7 @@ function heli_combat:load( packet )
 
 		self.st.enemy_id             = packet:r_s16()
 		self.enemy_last_seen_time = t - packet:r_u32()
-		self.enemy_last_seen_pos = vector()
+		self.enemy_last_seen_pos = vector():set(0,0,0)
 		packet:r_vec3(self.enemy_last_seen_pos)
 
 		self.combat_type          = packet:r_u8()
@@ -423,7 +423,7 @@ function heli_combat:load( packet )
 		if self.combat_type == combat_type_search then
 			self.change_pos_time      = packet:r_u32() + t
 			self.flight_direction     = packet:r_bool()
-			self.center_pos = vector()
+			self.center_pos = vector():set(0,0,0)
 			packet:r_vec3(self.center_pos)
 
 		elseif self.combat_type == combat_type_flyby then
@@ -459,7 +459,7 @@ function heli_combat:forget_enemy()
 	--alun_utils.debug_write(strformat("heli_combat:forget_enemy"))
 	self.st.enemy_id = nil
 	self.enemy = nil
-	self.heliObject:LookAtPoint(vector(), false)
+	self.heliObject:LookAtPoint(vector():set(0,0,0), false)
 	self.heliObject:ClearEnemy()
 	self.initialized = false
 end
@@ -714,7 +714,7 @@ function heli_combat:retreat_initialize()
 
 	self.heliObject:SetMaxVelocity( self.max_velocity )
 	self.heliObject:SetSpeedInDestPoint( self.max_velocity )
-	self.heliObject:LookAtPoint( vector(), false )
+	self.heliObject:LookAtPoint( vector():set(0,0,0), false )
 	self.heliObject:SetDestPosition( self:calc_position_in_radius( 5000 ) )
 end
 
