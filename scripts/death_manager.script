@@ -218,6 +218,8 @@ function keep_item(npc, item)
 	local cls = item:clsid()
 	if IsWeapon(item,cls) and not(cls==clsid.wpn_grenade_rgd5_s or cls==clsid.wpn_grenade_f1_s or cls==clsid.wpn_knife_s) then
 		set_weapon_drop_condition(npc,item)
+		-- Set random ammo in mag
+		item:set_ammo_elapsed( math.random(0,item:get_ammo_in_magazine()) )
 		return
 	end
 	
