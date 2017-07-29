@@ -129,9 +129,6 @@
 	<string id="st_pri_b302_name">
 		<text>"Vine" anomaly</text>
 	</string>
-	<string id="st_pri_b307_name">
-		<text>"Volcano" anomaly</text>
-	</string>
 	<string id="st_mar_smart_terrain_11_3_anomaly_spot_name">
 		<text>"Fault" anomaly</text>
 	</string>
@@ -446,8 +443,5 @@
 	</string>
 	<string id="st_pri_b307_name">
 		<text>"Volcano" anomaly</text>
-	</string>
-	<string id="st_pri_b302_name">
-		<text>"Vine" anomaly</text>
 	</string>
 </string_table>

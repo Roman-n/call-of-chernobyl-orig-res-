@@ -407,9 +407,6 @@
 	<string id="st_pda_action_1__2_4_3_off">
 		<text>Corpses (enable)</text>
 	</string>
-	<string id="st_pda_action_back">
-		<text>Back</text>
-	</string>	
 	<string id="pda_btn_contacts">
 		<text>Contacts</text>
 	</string>
