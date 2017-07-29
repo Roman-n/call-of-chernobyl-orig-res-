@@ -435,9 +435,6 @@
 	<string id="st_mm_pda_items_sold">
 		<text>Items sold</text>
 	</string>
-	<string id="st_mm_pda_statistics">
-		<text>Statistics</text>
-	</string>
 	<string id="st_mm_pda_level_travel">
 		<text>Level travel</text>
 	</string>
