@@ -163,6 +163,8 @@ local intercepts = {
 	save_state						= {},
 	load_state						= {},
 	
+	actor_menu_mode_changed			= {},
+	
 	TrdWndOpened					= {},
 	TrdWndClosed					= {}
 }

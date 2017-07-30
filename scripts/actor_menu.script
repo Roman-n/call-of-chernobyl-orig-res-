@@ -43,6 +43,7 @@ function actor_menu_mode(mode)
 	elseif(mode==11) then
         dialog_wnd_closed()
 	end
+	SendScriptCallback("actor_menu_mode_changed",mode,last_mode)
 end
 
 function inventory_wnd_opened()
