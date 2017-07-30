@@ -267,6 +267,9 @@
 	<string id="st_ui_pda_legend_vip">
                 <text>Важный персонаж</text>
 	</string>
+	<string id="st_ui_pda_companion">
+		<text>Товарищ</text>
+	</string>
 	<string id="zombie_name">
                 <text>Бенито</text>
 	</string>

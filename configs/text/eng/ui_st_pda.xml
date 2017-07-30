@@ -267,6 +267,9 @@
 	<string id="st_ui_pda_legend_vip">
 		<text>Important character</text>
 	</string>
+	<string id="st_ui_pda_companion">
+		<text>Companion</text>
+	</string>
 	<string id="zombie_name">
 		<text>John Doe</text>
 	</string>

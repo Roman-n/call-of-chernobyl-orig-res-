@@ -9,7 +9,7 @@
 	    	<texture id="ui_inGame2_PDA_icon_Actor_Box" x="6" y="522" width="19" height="19" />
 			<texture id="ui_inGame2_PDA_icon_Place_to_rest" x="6" y="501" width="19" height="19" />
 			<texture id="ui_inGame2_PDA_icon_Player_Mine" x="6" y="480" width="19" height="19" />
-		
+			<texture id="ui_inGame2_PDA_icon_Stalker_companion" x="6" y="460" width="19" height="19" />
 
 			<texture id="ui_inGame2_PDA_icon_Stalker_machanik_small" x="22" y="630" width="15" height="14" />
 	    	<texture id="ui_inGame2_PDA_icon_Stalker_Trader_small" x="54" y="630" width="15" height="14" />

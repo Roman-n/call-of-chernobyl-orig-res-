@@ -135,6 +135,9 @@ function reset_show_spot(npc, scheme, st, section)
 						elseif map_spot == "medic" then
 								map_location = "ui_pda2_medic_location"
 								hint = "st_ui_pda_legend_medic"
+						elseif map_spot == "companion" then
+							map_location = "ui_pda2_companion_location"
+							hint = "st_ui_pda_companion"
 						end
 			if level.map_has_object_spot(npc_id, map_location) ~= 0 then
 								level.map_remove_object_spot(npc_id, map_location)
@@ -153,6 +156,8 @@ function reset_show_spot(npc, scheme, st, section)
 								level.map_remove_object_spot(npc_id, "ui_pda2_quest_npc_location")
 						elseif level.map_has_object_spot(npc_id, "ui_pda2_medic_location") ~= 0 then
 								level.map_remove_object_spot(npc_id, "ui_pda2_medic_location")
+						elseif level.map_has_object_spot(npc_id, "ui_pda2_companion_location") ~= 0 then
+								level.map_remove_object_spot(npc_id, "ui_pda2_companion_location")
 						end
 		end
 	end
@@ -186,6 +191,8 @@ function remove_level_spot(npc, st)
 		map_location = "ui_pda2_quest_npc_location"
 	elseif map_spot == "medic" then
 		map_location = "ui_pda2_medic_location"
+	elseif map_spot == "companion" then
+		map_location = "ui_pda2_companion_location"
 	end
 	if level.map_has_object_spot(npc_id, map_location) ~= 0 then
 		level.map_remove_object_spot(npc_id, map_location)
