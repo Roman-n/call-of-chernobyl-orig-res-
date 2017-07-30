@@ -1,134 +1,6 @@
 <string_table>
 	
 	<!-- --------------->
-	<!----- ADDONS ----->
-	<!------------------>
-
-	<string id="st_dxr_addon_sight_1p29">
-        <text>1P29</text>
-    </string>
-    <string id="st_dxr_addon_sight_1p29_descr">
-        <text>The 1P29 is a medium to long range telescopic sight designed primarily for Kalashnikov-style rifles.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_ac10632">
-        <text>Barska AC10632</text>
-    </string>
-    <string id="st_dxr_addon_sight_ac10632_descr">
-        <text>The Barska AC10632 is a short range high performance reflex sight, however it boasts extremely high visibility due to a large lens and thin frame.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_ac11090">
-        <text>Barska AC11090</text>
-    </string>
-    <string id="st_dxr_addon_sight_ac11090_descr">
-        <text>The Barska AC11090 is a medium range cheap tube-style optical sight with decent visibility, it is most useful when attached to a shotgun when firing slug rounds.</text>
-	</string>
-	
-    <string id="st_dxr_addon_sight_acog">
-        <text>Trijicon ACOG</text>
-    </string>
-    <string id="st_dxr_addon_sight_acog_descr">
-        <text>The Trijicon ACOG is a long range telescopic sight intended for much greater accuracy and visibility on targets at great distance.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_c-more">
-        <text>C-MORE</text>
-    </string>
-    <string id="st_dxr_addon_sight_c-more_descr">
-        <text>The C-MORE is a short range high performance reflex sight with great visibility.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_eot">
-        <text>EOTech 512</text>
-    </string>
-    <string id="st_dxr_addon_sight_eot_descr">
-        <text>The EOTech 512 is a very common short to medium range reflex sight with good visibility.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_ekp">
-        <text>Kobra EKP-8-02</text>
-    </string>
-    <string id="st_dxr_addon_sight_ekp_descr">
-        <text>The Kobra EKP-8-02 is a short range reflex sight with decent visibility. Exclusively used by eastern weaponry.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_kobra">
-        <text>Kobra EKP-1S-03</text>
-    </string>
-    <string id="st_dxr_addon_sight_kobra_descr">
-        <text>The Kobra EKP-1S-03 sight is a short to medium range reflex sight with great visibility. Exclusively used by eastern weaponry.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_po4x34">
-        <text>Kronos PO 4x34</text>
-    </string>
-    <string id="st_dxr_addon_sight_po4x34_descr">
-        <text>The Kronos PO 4x34 is a long-range telescopic sight which has largely been replaced by the PSO and its variants.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_pso">
-        <text>PSO-1</text>
-    </string>
-    <string id="st_dxr_addon_sight_pso_descr">
-        <text>The PSO-1 is a long range telescopic sight designed primarily for Kalashnikov-style rifles.</text>
-    </string>
-	
-	<string id="st_dxr_addon_sight_pso1m">
-        <text>PSO-1M2</text>
-    </string>
-    <string id="st_dxr_addon_sight_pso1m_descr">
-        <text>The PSO-1M2 is a variant of the PSO long range telescopic sight, and is designed for use with 9x39 mm calibre rifles.</text>
-    </string>
-	
-    <string id="st_dxr_addon_sight_pu">
-        <text>PU</text>
-    </string>
-    <string id="st_dxr_addon_sight_pu_descr">
-        <text>The PU is a telescopic sight designed primarily for World War II era Soviet weaponry.</text>
-    </string>
-	
-	<!-------------------------->
-	<!----- VANILLA SCOPES ----->
-	<!-------------------------->
-
-	<string id="st_dxr_addon_scope_descr">
-		<text>A common Soviet-made 5.0x fixed zoom optical scope with a range scale. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_detector_descr">
-		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by special forces. Attached to weapons by means of a dovetail mount.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_night_vision_descr">
-		<text>An image intensifier night vision 5.0x fixed zoom scope for combat in darkness. Attached to weapons by means of a dovetail mount.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_susat_custom_descr">
-		<text>An adjustable long-range 1.6-4x zoom scope that can use automatic adjustment to provide greater fire effectiveness. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_susat_descr">
-		<text>A 4x fixed zoom scope produced primarily in Western countries. Attached to weapons by means of the NATO-standard Picatinny rail. Often used for accurate fire from small arms at medium to long range.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_susat_dusk_descr">
-		<text>An optical SUSAT 1.6x higher contrast scope for combat in reduced lighting conditions. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_susat_night_vision_descr">
-		<text>A 4.0x fixed zoom scope with a night vision device for long range combat in darkness. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_susat_x1.6_descr">
-		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<string id="st_dxr_addon_scope_x2.7_descr">
-		<text>A 2.7x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.\n \n%c[255,255,255,0]Unused because of an installed weapon pack.</text>
-	</string>
-	
-	<!-- --------------->
 	<!----- KNIVES ----->
 	<!------------------>
 	
@@ -316,7 +188,7 @@
     </string>
 	
     <string id="st_dxr_wpn_oc33_name">
-        <text>OTs-33 "Pernach"</text>
+        <text>KBP OTs-33 "Pernach"</text>
     </string>
     <string id="st_dxr_wpn_oc33_descr">
         <text>The OTs-33 "Pernach" is an automatic pistol designed to replace the Stechkin APS because of huge recoil when fired in fully automatic. It is currently used by units of the Russian police and the MVD.</text>
@@ -337,10 +209,10 @@
     </string>
 	
     <string id="st_dxr_wpn_pm_actor_name">
-        <text>Ceremonial Makarov PM</text>
+        <text>Degtyarev's PM</text>
     </string>
     <string id="st_dxr_wpn_pm_actor_descr">
-        <text>A ceremonial PM once awarded to Major Degtyarev as the engraving on the side would suggest. How it ended up in the Zone and how it fell out of his possession is unknown.</text>
+        <text>A Makarov PM once awarded to Major Degtyarev as the engraving on the side would suggest. How it ended up in the Zone and how it fell out of his possession is unknown.</text>
     </string>
 	
     <string id="st_dxr_wpn_pmm_name">
@@ -606,7 +478,7 @@
     </string>
 	
     <string id="st_dxr_wpn_bm16_name">
-        <text>TOZ-66 (Obrez)</text>
+        <text>TOZ-66 Obrez</text>
     </string>
     <string id="st_dxr_wpn_bm16_descr">
         <text>The TOZ-66 is a break-action double-barrel shotgun produced between 1968 and 1974 and uses a side-by-side barrel configuration. This particular shotgun has had the majority of the barrel and stock sawed off.</text>
@@ -697,14 +569,14 @@
     </string>
 	
     <string id="st_dxr_wpn_groza_name">
-        <text>KBP OTs-14-4A "Groza-4"</text>
+        <text>TsKIB SOO OTs-14-4A "Groza-4"</text>
     </string>
     <string id="st_dxr_wpn_groza_descr">
         <text>The Groza-4 is a Russian selective fire bullpup assault rifle chambered for the 9x39 mm subsonic round. It was developed in the 1990s in Tula, Russia.</text>
     </string>
 	
     <string id="st_dxr_wpn_groza1_name">
-        <text>KBP OTs-14-1A "Groza-1"</text>
+        <text>TsKIB SOO OTs-14-1A "Groza-1"</text>
     </string>
     <string id="st_dxr_wpn_groza1_descr">
         <text>The Groza-1 is a Russian selective fire bullpup assault rifle, the 1A/Groza-1 variant is chambered for the 5.45x39 mm round. It was developed in the 1990s in Tula, Russia.</text>
@@ -861,7 +733,7 @@
         <text>PPSh-41</text>
     </string>
     <string id="st_dxr_wpn_ppsh41_descr">
-        <text>The PPSh-41 is a Soviet submachine gun designed by Georgi Shpagin as a cheap, reliable, and simplified alternative to the PPD-40. Made largely of stamped steel, it can be loaded with either a box or drum magazine, and fires the 7.62x25 mm Tokarev pistol round.</text>
+        <text>The PPSh-41 is a Soviet submachine gun designed by Georgi Shpagin as a cheap, reliable, and simplified alternative to the PPD-40. It typically comes with a box or drum magazine, and fires the 7.62x25 mm Tokarev pistol round.</text>
     </string>
 	
     <string id="st_dxr_wpn_protecta_name">
@@ -876,6 +748,244 @@
     </string>
     <string id="st_dxr_wpn_protecta_nimble_descr">
         <text>This variant of the shotgun is painted in a woodland camouflage pattern with an Aimpoint CompM2 optical sight installed for accuracy. Modifications have been made to the weapon to increase the cylindrical magazine's rotation and thus boost RPM.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_remington870_name">
+        <text>Remington M870</text>
+    </string>
+    <string id="st_dxr_wpn_remington870_descr">
+        <text>The Remington Model 870 is a pump-action shotgun widely used by the public for sport shooting, hunting, and self-defense and used by law enforcement and military organizations worldwide. As of 1983, the 870 held the record for best-selling shotgun in history with three million sold.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_remington870_express_name">
+        <text>Remington M870 "Express"</text>
+    </string>
+    <string id="st_dxr_wpn_remington870_express_descr">
+        <text>The Remington Model 870 "Express" shotgun is a a lower-cost and heavier alternative to the original Wingmaster line, featuring a matte black body with a laminated hardwood stock.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_rg-6_name">
+        <text>TsKIB SOO RG-6</text>
+    </string>
+    <string id="st_dxr_wpn_rg-6_descr">
+        <text>The RG-6 is a Russian 40 mm semi-automatic, six-shot revolver-type grenade launcher. It was developed between 1993 and 1994 to increase the firepower of infantry during urban combat, like was seen during the wars in Chechnya.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_rpd_name">
+        <text>RPD</text>
+    </string>
+    <string id="st_dxr_wpn_rpd_descr">
+        <text>The RPD is a 7.62x39 mm light machine gun developed in the Soviet Union by Vasily Degtyaryov. It was created as a replacement for the DP machine gun, a precursor of most squad automatic weapons. It was later succeeded and replaced in Soviet service by the RPK.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_rpg7_name">
+        <text>Bazalt RPG-7</text>
+    </string>
+    <string id="st_dxr_wpn_rpg7_descr">
+        <text>Almost as recognisable as any Kalashnikov rifle, the RPG-7 is a portable, reusable, unguided, shoulder-launched, anti-tank rocket-propelled grenade launcher which has been in solid continuous use for over half a century since it was first manufactured.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_rpk_name">
+        <text>Izhmash RPK</text>
+    </string>
+    <string id="st_dxr_wpn_rpk_descr">
+        <text>The RPK is a 7.62x39 mm light machine gun of Soviet design, it was developed by Mikhail Kalashnikov in the late 1950s in parallel with the AKM assault rifle.  It was created as part of a program designed to standardise the small arms inventory of the Red Army, where it replaced the RPD.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_rpk74_name">
+        <text>Izhmash RPK-74</text>
+    </string>
+    <string id="st_dxr_wpn_rpk74_descr">
+        <text>The RPK-74 was introduced in 1974 together with the AK-74 assault rifle and chambered for the new 5.45x39 mm high-velocity cartridge. It was derived from the AK-74 rifle, with modifications that mirror those made to the AKM to create the RPK.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_saiga_name">
+        <text>Izhmash Saiga-12</text>
+    </string>
+    <string id="st_dxr_wpn_saiga_descr">
+        <text>The Saiga-12 is a rotating bolt, gas-operated shotgun available in a wide range of configurations, patterned after the Kalashnikov series of rifles and is fed from a box magazine. Allowing for decreased reload times and increasing its effectiveness in combat.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_scar-h_name">
+        <text>FN SCAR-H</text>
+    </string>
+    <string id="st_dxr_wpn_scar-h_descr">
+        <text>The SCAR-H was developed by FN Herstal for the United States' SOCOM to satisfy the requirements of the "Special Operations Forces Combat Assault Rifle" competition. The "H", or "Heavy", designation indicates that this variant is chambered for the 7.62x51 mm round.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sig550_name">
+        <text>SIG SG 550</text>
+    </string>
+    <string id="st_dxr_wpn_sig550_descr">
+        <text>This Swiss assault rifle is chambered for the 5.56x39 mm NATO cartridge, and is based on the earlier SG 540. Many variants of the rifle exist and are used by armed, special, and police forces across many Western nations.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sig550_luckygun_name">
+        <text>SIG SG 550 Sniper</text>
+    </string>
+    <string id="st_dxr_wpn_sig550_luckygun_descr">
+        <text>This member of the SG 550 family is the SG 550 Sniper variant, which was designed specifically for Swiss security forces. This model is no longer in production and was never exported, as such it is a mystery as to how it found its way to the Zone.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sig552_name">
+        <text>SIG SG 552 Commando</text>
+    </string>
+    <string id="st_dxr_wpn_sig552_descr">
+        <text>Also known as the 552-2P, this rifle is a carbine variant of the SG 550 released initially in 1998, however later discontinued in 2008 and replaced by the SG 553. Despite this vast quantities of surplus rifles are clearly still in use.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sks_name">
+        <text>SKS-45</text>
+    </string>
+    <string id="st_dxr_wpn_sks_descr">
+        <text>The SKS is a Soviet semi-automatic clip-fed carbine rifle chambered for the 7.62x39 mm round. Design-wise, it relies on the AVS-36 to a point that some consider it a shortened variant, stripped of select-fire capability and then re-chambered.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_spas12_name">
+        <text>Franchi SPAS-12</text>
+    </string>
+    <string id="st_dxr_wpn_spas12_descr">
+        <text>The Franchi SPAS-12 is a combat shotgun manufactured by Italian firearms company Franchi from 1979 to 2000. The SPAS-12 was sold to military and police users worldwide, often being used to fire tear gas and beanbag rounds for riot control.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sr25_name">
+        <text>KAC SR-25</text>
+    </string>
+    <string id="st_dxr_wpn_sr25_descr">
+        <text>The Stoner Rifle-25 is a designated marksman rifle designed by Eugene Stoner and manufactured by Knight's Armament Company. It is heavily designed on the AR-10 platform, with up to 60% of parts being interchangeable with the AR-15 and M16.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sr3m_name">
+        <text>TsNIITM SR-3M</text>
+    </string>
+    <string id="st_dxr_wpn_sr3m_descr">
+        <text>The SR-3M is a modernised and greatly improved variant of the SR-3 "Vikhr", one of the most major differences is the new magazine - which has a 30 round capacity and provides a more reliable feeding system during fully automatic fire.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_sv98_name">
+        <text>Izhmash SV-98</text>
+    </string>
+    <string id="st_dxr_wpn_sv98_descr">
+        <text>The SV-98 is a Russian bolt-action sniper rifle designed by Vladimir Stronskiy, and is based on the Record 300m full bore sport shooting rifle series also made by Izhmash. As such, the rifle's accuracy is said to be as equal to the best sporting guns.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_svd_name">
+        <text>Izhmash SVD</text>
+    </string>
+    <string id="st_dxr_wpn_svd_descr">
+        <text>The SVD is a semi-automatic marksman rifle developed by the Soviet Union when long-range engagement ability was lost to ordinary troops. The rifle has since become the standard squad support weapon of several countries, including those of the former Warsaw Pact.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_svd_nimble_name">
+        <text>Izhmash SVDM</text>
+    </string>
+    <string id="st_dxr_wpn_svd_nimble_descr">
+        <text>The SVDM is a modernised version of the SVD, it features improved ergonomics, an adjustable side-folding shoulder stock and a thicker and heavier barrel which delivers much better accuracy than its predecessor.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_svt40_name">
+        <text>Tokarev SVT-40</text>
+    </string>
+    <string id="st_dxr_wpn_svt40_descr">
+        <text>The SVT-40 saw widespread service during and after World War II. Intended to be the new service rifle of the Red Army, production was disrupted by the German invasion in 1941. After the war new rifles were adopted by the Soviet Union instead, such as the SKS and the AK-47.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_svu_name">
+        <text>KBP OTs-03 SVU</text>
+    </string>
+    <string id="st_dxr_wpn_svu_descr">
+        <text>The SVU is a bullpup configuration of the SVD sniper rifle. The SVU was developed to meet the needs of the security forces of the Russian Ministry of Internal Affairs, such as OMON.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_svu_nimble_name">
+        <text>KBP OTs-03 SVU Tactical</text>
+    </string>
+    <string id="st_dxr_wpn_svu_nimble_descr">
+        <text>This modified variant of the SVU comes painted in a woodland camouflage pattern, and a permanently-attached optical sight. The muzzle break was also replaced; allowing for more recoil energy to be absorbed.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_toz194_name">
+        <text>TOZ-194</text>
+    </string>
+    <string id="st_dxr_wpn_toz194_descr">
+        <text>The TOZ-194 is a 12 Gauge, pump-action shotgun manufactured by the Tula Arms Plant. Designed during the later years of the Soviet Union, the production of this firearm started after the Soviet era in Russia, and has since gained a certain popularity within civilian shooters in Russia and Europe.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_toz34_name">
+        <text>TOZ-34</text>
+    </string>
+    <string id="st_dxr_wpn_toz34_descr">
+        <text>Designed in 1964 by Nikolai Korovyakov, like many other hunting shotguns the TOZ-34 features a typical over-and-under barrel configuration. In 1965 it was awarded a gold medal at the Leipzig Trade Fair and more than one million units have been produced since.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_toz34_nimble_name">
+        <text>TOZ-34 Tactical</text>
+    </string>
+    <string id="st_dxr_wpn_toz34_nimble_descr">
+        <text>This modified TOZ-34 has a long-range optical sight permanently affixed to the rails. Whilst the rifle itself doesn't perform all too differently, it will allow the user much improved accurate at longer ranges.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_toz34_obrez_name">
+        <text>TOZ-34 Obrez</text>
+    </string>
+    <string id="st_dxr_wpn_toz34_obrez_descr">
+        <text>Designed in 1964 by Nikolai Korovyakov, like many other hunting shotguns the TOZ-34 features a typical over-and-under barrel configuration. This particular shotgun has had the majority of the barrel and stock sawed off.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_val_name">
+        <text>TsNIITM AS "Val"</text>
+    </string>
+    <string id="st_dxr_wpn_val_descr">
+        <text>The AS "Val" is a special automatic rifle that was developed in 1987 by TsNIITochMash. Since 1987 it has been in the arsenal of the Red Army and the KGB, though due to it being both expensive and in limited quantity, it is very rarely deployed.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_vintorez_name">
+        <text>TsNIITM VSS "Vintorez"</text>
+    </string>
+    <string id="st_dxr_wpn_vintorez_descr">
+        <text>The VSS is a suppressed sniper rifle developed in the late 1980s by TsNIITochMash, and was issued primarily to Spetsnaz units for undercover or clandestine operations. For all intents and purposes in the Zone, it is a lighter and more economical AS "Val".</text>
+    </string>
+	
+    <string id="st_dxr_wpn_vintorez_nimble_name">
+        <text>TsNIITM VSS "Vintorez" Tactical</text>
+    </string>
+    <string id="st_dxr_wpn_vintorez_nimble_descr">
+        <text>A tactical variant of the VSS. Whilst it performs no differently to the standard model, it features synthetic parts in place of wood and a permanently attached PKS-07 optical sight.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_vityaz_name">
+        <text>Izhmash Vityaz-SN</text>
+    </string>
+    <string id="st_dxr_wpn_vityaz_descr">
+        <text>The Vityaz-SN is a 9x19 mm submachine gun developed in 2004 by Izhmash. It is based on the AK-74 rifle, so they naturally offer a high degree of part commonality. It is the standard submachine gun for all branches of the Russian military and police forces.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_vsk94_name">
+        <text>KBP VSK-94</text>
+    </string>
+    <string id="st_dxr_wpn_vsk94_descr">
+        <text>The VSK-94 is a suppressed sniper rifle designed In 1995 by Vasily Petrovich. The VSK fires 9x39 mm ammunition from a 20-round detachable box magazine much like the 9A-91, but deals slightly greater damage at the expense of a lower rate-of-fire.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_vssk_name">
+        <text>TsKIB SOO VSSK "Vykhlop"</text>
+    </string>
+    <string id="st_dxr_wpn_vssk_descr">
+        <text>Developed in around 2002 for the special forces units of FSB, the VSSK is a Russian bullpup, magazine-fed sniper rifle chambered for the 12.7x55 mm subsonic round. Its integral suppressor and chambering make it ideal for stealth.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_wincheaster1300_name">
+        <text>Mossberg M590A1</text>
+    </string>
+    <string id="st_dxr_wpn_wincheaster1300_descr">
+        <text>Intended for use in harsh and dirty conditions, the Model 500 series of shotguns and its variants are designed to be easy to clean and maintain. It is only natural to find such a shotgun here in the Zone for these very reasons.</text>
+    </string>
+	
+    <string id="st_dxr_wpn_wincheaster1300_trapper_name">
+        <text>Daewoo USAS-12</text>
+    </string>
+    <string id="st_dxr_wpn_wincheaster1300_trapper_descr">
+        <text>The USAS-12 is a gas-operated, selective fire weapon, designed to provide sustained firepower in close-combat scenarios, and was designed in South Korea by Daewoo Precision Industries during the 1980s. How such a weapon found its way here is anyone's guess.</text>
     </string>
 	
 </string_table>
