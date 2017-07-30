@@ -432,7 +432,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_17:bandit:freedom:csky)%
-on_complete = %=reward_random_money(5000:7000) =inc_task_stage(simulation_task_17) =reward_stash(true) =complete_task_inc_goodwill(50:army)%
+on_complete = %=reward_random_item(wpn_ak74:wpn_ak74u:wpn_abakan:wpn_groza:wpn_pkm:wpn_vintorez:wpn_val) =inc_task_stage(simulation_task_17) =complete_task_inc_goodwill(50:army)%
 on_fail = %=fail_task_dec_goodwill(25:army)%
 condlist_0 = {!task_giver_alive(simulation_task_17)} fail
 
