@@ -1192,10 +1192,13 @@
 		<text>на Затоне,</text>
 	</string>
 	<string id="st_dyn_news_l12_stancia">
-		<text>на юге ЧАЭС,</text>
+		<text>на юге ЧАЭС</text>
 	</string>
 	<string id="st_dyn_news_l12_stancia_2">
-		<text>на севере ЧАЭС,</text>
+		<text>на севере ЧАЭС</text>
+	</string>
+	<string id="st_dyn_news_l13_generators">
+		<text>на Генераторах</text>
 	</string>
 	<!-- Daleko -->
 	<string id="st_dyn_l09_deadcity_daleko_1">

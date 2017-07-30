@@ -241,6 +241,71 @@
 		<text>Ну не люблю я говорить под прицелом, чувак.</text>
 	</string>
 	
+	<!-- Mercenaries -->
+	
+	<string id="cc_generic-killer-meet_hello_1">
+		<text>Подходи. Не кусаюсь.</text>
+	</string>
+	<string id="cc_generic-killer-meet_hello_2">
+		<text>Здорово, брат!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hello_3">
+		<text>Ты кто такой?</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_1">
+		<text>Ты пушку-то спрячь!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_2">
+		<text>Если хочешь поговорить, так пушку опусти и подходи. Медленно!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_3">
+		<text>Если хочешь поговорить, так пушку опусти и подходи. Медленно!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_4">
+		<text>Ты пушку-то спрячь!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_5">
+		<text>Если хочешь поговорить, так пушку опусти и подходи. Медленно!</text>
+	</string>
+	<string id="cc_generic-killer-meet_hide_weapon_6">
+		<text>Ты пушку-то спрячь!</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_default_1">
+		<text>Слышишь, иди с другими трепись. Я - пас.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_default_2">
+		<text>Кореш, мне сейчас не до тёрок.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_default_3">
+		<text>Отвали.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_fight_1">
+		<text>Не сейчас!</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_fight_2">
+		<text>Ты чего, сдурел? Не сейчас!</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_fight_3">
+		<text>Война идёт, не видишь, что ли?</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_talk_leader_1">
+		<text>Да не охота мне болтать, иди с командиром говори.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_talk_leader_2">
+		<text>Если что - к командиру. С ним беседуй.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_talk_leader_3">
+		<text>Да не охота мне болтать, иди с командиром говори.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_weapon_1">
+		<text>Со стволом в лапах - какой базар? Убери на!</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_weapon_2">
+		<text>Волыну заныкай, тогда и побазарим.</text>
+	</string>
+	<string id="cc_generic-killer-meet_use_no_weapon_3">
+		<text>Или пушку нах, или сам вали!</text>
+	</string>
 	<!-- Military -->
 	
 	<string id="cc_generic-military-meet_hello_1">
