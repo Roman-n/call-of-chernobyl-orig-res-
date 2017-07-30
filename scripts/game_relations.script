@@ -297,11 +297,7 @@ function get_gulag_relation_actor(smart_name, relation)
 	return false
 end
 
-function get_squad_relation_to_actor_by_id(squad_id)
-	local squad = alife_object(squad_id)
-	if(squad==nil) then
-		printf("No such squad %s in board", tostring(squad_id))
-	end
+function get_squad_relation_to_actor_by_id(squad)
 	
 	if (is_squad_monster[squad.player_id]) then 
 		return "enemy"
