@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <string_table>
 	<string id="st_mar_2c_01_anomaly_spot_name">
-     <text>Аномалия «Ведьмин студень»</text>
+		<text>Аномалия «Ведьмин студень»</text>
 	</string>
 	<string id="st_mar_2c_02_anomaly_spot_name">
 		<text>Аномалия «Ловушка»</text>
 	</string>
 	<string id="st_ds_2c_01_anomaly_spot_name">
-    <text>Аномалия «Гибельный погост»</text>
+		<text>Аномалия «Гибельный погост»</text>
 	</string>
 	<string id="st_ds_2c_02_anomaly_spot_name">
 		<text>Сияющий мост</text>

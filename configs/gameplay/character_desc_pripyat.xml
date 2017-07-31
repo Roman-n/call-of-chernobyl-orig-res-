@@ -999,6 +999,7 @@
 #include "gameplay\character_drugs_2.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
     </specific_character>
     
     <specific_character id="pri_b36_monolith_master_hiding_place" team_default = "1">
@@ -1024,6 +1025,7 @@
 #include "gameplay\character_drugs_3.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
     </specific_character>
     
     <specific_character id="pri_b36_monolith_marine_sniper" team_default = "1">
@@ -1049,6 +1051,7 @@
 #include "gameplay\character_drugs_3.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
+#include "gameplay\character_dialogs.xml"
     </specific_character>
     
     <specific_character id="pri_b305_strelok" team_default = "1">
