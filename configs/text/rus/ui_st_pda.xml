@@ -267,6 +267,9 @@
 	<string id="st_ui_pda_legend_vip">
                 <text>Важный персонаж</text>
 	</string>
+	<string id="st_ui_pda_companion">
+		<text>Напарник</text>
+	</string>
 	<string id="zombie_name">
                 <text>Бенито</text>
 	</string>
@@ -419,6 +422,10 @@
     <string id="pda_msg_all">
         <text>Все</text>
     </string>
+	
+	<string id="st_mm_pda_statistics">
+		<text>Статистика</text>
+	</string>
 	<string id="st_mm_pda_stalkers_killed">
 		<text>Убито сталкеров</text>
 	</string>
@@ -430,9 +437,6 @@
 	</string>
 	<string id="st_mm_pda_items_sold">
 		<text>Вещей продано</text>
-	</string>
-	<string id="st_mm_pda_statistics">
-		<text>Статистика</text>
 	</string>
 	<string id="st_mm_pda_level_travel">
 		<text>Переходы по локациям</text>
