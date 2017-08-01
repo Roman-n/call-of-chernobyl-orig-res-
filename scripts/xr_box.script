@@ -74,7 +74,7 @@ function ph_item_box:spawn_items(obj,who,spawn_ini)
 	
 	for k,v in pairs(spawn_list) do
 		if (v > 0) then
-			local number = math.random(count_by_level[k][1], count_by_level[k][2])
+			local number = count_by_level[k] and math.random(count_by_level[k][1], count_by_level[k][2]) or math.random(0,1)
 			if (number > 0) then
 				create_items(obj, k, number, v)
 			end

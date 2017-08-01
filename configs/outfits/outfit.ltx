@@ -36,7 +36,7 @@ inv_name                                 = stalker_outfit_name
 inv_name_short                           = stalker_outfit_name
 description                              = stalker_outfit_description
 
-inv_weight                               = 8.5
+inv_weight                               = 7.5
 
 inv_grid_x                               = 10
 inv_grid_y                               = 18
@@ -254,7 +254,7 @@ explosion_immunity                       = -0.015
 fire_wound_immunity                      = -0.003
 
 ;---------------------------------------------------------------------------------------------
-;		CS-1 body armor
+;		CS-1 body armor        http://stalker.wikia.com/wiki/CS-1_body_armor
 ;---------------------------------------------------------------------------------------------
 [cs_light_novice_outfit]:outfit_base             ;disregard section name, cs-1 is heavy, cs-2 is medium and cs-3 is light like in vanilla
 $spawn                                   = "outfit\cs_light_novice_outfit"
@@ -265,10 +265,10 @@ player_hud_section                       = actor_hud_cs1
 
 ef_equipment_type                        = 3
 
-inv_name                                 = csky_light_novice_outfit_name
-inv_name_short                           = csky_light_novice_outfit_name
-description                              = csky_light_novice_outfit_description
-inv_weight                               = 7.5
+inv_name                                 = csky_medium_outfit_name
+inv_name_short                           = csky_medium_outfit_name
+description                              = csky_medium_outfit_description
+inv_weight                               = 8.0
 
 inv_grid_x                               = 18
 inv_grid_y                               = 14
@@ -297,7 +297,7 @@ explosion_protection                     = 0.1750
 wound_protection                         = 0.1750
 
 bones_koeff_protection                   = actor_armor_cs1
-hit_fraction_actor                       = 0.3
+hit_fraction_actor                       = 0.45
 artefact_count                           = 2
 control_inertion_factor                  = 1.2
 
@@ -329,7 +329,7 @@ explosion_immunity                       = -0.01
 fire_wound_immunity                      = -0.0020
 
 ;---------------------------------------------------------------------------------------------
-;		CS-1b Body Armor
+;		CS-1b Body Armor http://stalker.wikia.com/wiki/CS-1_body_armor?file=SCS_Original_CS1.png
 ;---------------------------------------------------------------------------------------------
 [cs_heavy_outfit]:outfit_base
 $spawn                                   = "outfit\cs_heavy_outfit"
@@ -371,7 +371,7 @@ strike_protection                        = 0.2100
 explosion_protection                     = 0.2100
 wound_protection                         = 0.2100
 
-hit_fraction_actor                       = 0.45
+hit_fraction_actor                       = 0.3
 bones_koeff_protection                   = actor_armor_duty_suit
 
 artefact_count                           = 2
@@ -405,7 +405,7 @@ explosion_immunity                       = -0.01
 fire_wound_immunity                      = -0.0025
 
 ;---------------------------------------------------------------------------------------------
-;		CS-2 body armor
+;		CS-2 body armor http://stalker.wikia.com/wiki/CS-2_body_armour
 ;---------------------------------------------------------------------------------------------
 [cs_light_outfit]:outfit_base
 $spawn                                   = "outfit\cs_light_outfit"
@@ -419,7 +419,7 @@ ef_equipment_type                        = 3
 inv_name                                 = csky_light_outfit_name
 inv_name_short                           = csky_light_outfit_name
 description                              = csky_light_outfit_description
-inv_weight                               = 6.0
+inv_weight                               = 7.7
 
 inv_grid_x                               = 0
 inv_grid_y                               = 15
@@ -447,7 +447,7 @@ explosion_protection                     = 0.1400
 wound_protection                         = 0.1400
 
 bones_koeff_protection                   = actor_armor_cs2
-hit_fraction_actor                       = 0.3
+hit_fraction_actor                       = 0.6
 artefact_count                           = 2
 control_inertion_factor                  = 1.2
 
@@ -491,11 +491,11 @@ player_hud_section                       = actor_hud_cs3a
 
 ef_equipment_type                        = 3
 
-inv_name                                 = csky_medium_outfit_name
-inv_name_short                           = csky_medium_outfit_name
-description                              = csky_medium_outfit_description
+inv_name                                 = csky_light_novice_outfit_name
+inv_name_short                           = csky_light_novice_outfit_name
+description                              = csky_light_novice_outfit_description
 
-inv_weight                               = 4.5
+inv_weight                               = 6.0
 
 inv_grid_x                               = 18
 inv_grid_y                               = 33
@@ -521,7 +521,7 @@ strike_protection                        = 0.1050
 explosion_protection                     = 0.1050
 wound_protection                         = 0.1050
 
-hit_fraction_actor                       = 0.35
+hit_fraction_actor                       = 0.75
 bones_koeff_protection                   = actor_armor_cs3
 
 artefact_count                           = 1
@@ -556,12 +556,12 @@ fire_wound_immunity                      = -0.0025
 
 
 ;---------------------------------------------------------------------------------------------
-;		CS-3b Body Armor
+;		CS-3b Body Armor http://stalker.wikia.com/wiki/CS-3a_body_armor_(Clear_Sky)?file=SCS_Clear_Sky_Concept_Art_2.png
 ;---------------------------------------------------------------------------------------------
 [cs_3b_outfit]:outfit_base
 $spawn                                   = "outfit\cs_medium_outfit"
 visual                                   = dynamics\outfit\cs_light_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_a ; CS-3a (cut E3 variant) http://stalker.wikia.com/wiki/CS-3a_body_armor_(Clear_Sky)
+actor_visual                             = actors\stalker_nebo\stalker_nebo_a ; CS-3a (cut E3 variant) 
 npc_visual                               = actors\stalker_nebo\stalker_nebo_a
 player_hud_section                       = actor_hud_cs3b
 
@@ -571,7 +571,7 @@ inv_name                                 = csky_3b_outfit_name
 inv_name_short                           = csky_3b_outfit_name
 description                              = csky_3b_outfit_description
 
-inv_weight                               = 7.5
+inv_weight                               = 7.8
 
 inv_grid_x                               = 28
 inv_grid_y                               = 33
@@ -598,7 +598,7 @@ strike_protection                        = 0.1850
 explosion_protection                     = 0.1850
 wound_protection                         = 0.1750
 
-hit_fraction_actor                       = 0.35
+hit_fraction_actor                       = 0.71
 bones_koeff_protection                   = actor_armor_cs3
 
 artefact_count                           = 2
@@ -1105,7 +1105,7 @@ inv_name                                 = merc_stalker_outfit_name
 inv_name_short                           = merc_stalker_outfit_name
 description                              = merc_stalker_outfit_description
 
-inv_weight                               = 8.5
+inv_weight                               = 7.5
 
 inv_grid_x                               = 30
 inv_grid_y                               = 36
@@ -1880,7 +1880,7 @@ inv_name                                 = cs_stalker_outfit_name
 inv_name_short                           = cs_stalker_outfit_name
 description                              = cs_stalker_outfit_description
 
-inv_weight                               = 8.5
+inv_weight                               = 7.5
 
 inv_grid_x                               = 26
 inv_grid_y                               = 33

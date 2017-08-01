@@ -56,7 +56,7 @@ function save_dialog:InitControls()
 
 	local ctrl
 
-	xml:InitWindow					("background", 0, self)
+	xml:InitStatic("background", self)
 
 	ctrl							= CUIWindow()
 	ctrl:SetAutoDelete(true)
