@@ -192,7 +192,6 @@ function act_turn_on_campfire:initialize()
 	local npc = self.object
 	npc:set_desired_position()
 	npc:set_desired_direction()
-	npc:set_path_type(game_object.level_path)
 	self.st.vid = utils.send_to_nearest_accessible_vertex(npc,self.st.vid,"turn_on_campfire")
 	state_mgr.set_state(npc,self.st.state or "patrol")
 	action_base.initialize(self)

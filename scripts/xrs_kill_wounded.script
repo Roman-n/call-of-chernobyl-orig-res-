@@ -196,9 +196,6 @@ function act_kill_wounded:initialize()
 	local st = self.st 
 	
 	st.timer = nil
-
-	npc:inactualize_patrol_path()
-	npc:set_path_type(game_object.level_path)
 end
 
 function act_kill_wounded:reset()

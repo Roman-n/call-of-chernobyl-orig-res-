@@ -904,7 +904,7 @@ function sim_squad_scripted:check_online_status()
 		b = true
 	elseif (axr_companions.companion_squads[self.id]) then 
 		b = true
-	elseif not (level_weathers.valid_levels[level.name()]) then 
+	elseif not (level_weathers.valid_levels[level.name()]) then -- force online in underground levels
 		b = true
 	elseif (self.assigned_target_id and is_squad_monster[self.player_id]) then
 			local hour = level.get_time_hours()
@@ -929,7 +929,7 @@ function sim_squad_scripted:check_online_status()
 					b = false
 				end
 			end
-	elseif (db.actor and not get_object_story_id(self.id)) then	
+	elseif (db.actor and not get_object_story_id(self.id) and not self.online) then	-- exclude from coming online except if already online or storied
 		local dist = axr_main.config:r_value("mm_options","excl_dist",2) or 0
 		if (dist > 0 and not db.actor:has_info("actor_is_sleeping")) then 
 			local actor = alife():actor()

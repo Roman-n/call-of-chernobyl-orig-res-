@@ -192,9 +192,11 @@ function act_state_mgr_to_idle:__init(name,state_manager) super (nil, name)
 end
 function act_state_mgr_to_idle:initialize()
 	action_base.initialize(self)
-	self.object:inactualize_patrol_path()
-	self.object:set_path_type(game_object.level_path)
-	utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id(), "state_mgr_to_idle" )
+	if (self.object:path_type() == game_object.patrol_path) then
+		self.object:inactualize_patrol_path()
+		self.object:set_path_type(game_object.level_path)
+		utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id(), "state_mgr_to_idle" )
+	end
 end
 
 function act_state_mgr_to_idle:execute()

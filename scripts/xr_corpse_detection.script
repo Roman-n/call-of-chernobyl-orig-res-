@@ -428,7 +428,6 @@ function action_search_corpse:initialize()
 	state_mgr.set_state(npc,self.a.state)
 	npc:set_desired_position()
 	npc:set_desired_direction()
-	npc:set_path_type(game_object.level_path)
 	self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id,"corpse_detection")
 end
 

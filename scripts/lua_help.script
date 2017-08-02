@@ -6010,6 +6010,7 @@ C++ class game_object {
     function get_current_outfit_protection(number);
     function get_current_point_index();
     function get_dest_level_vertex_id();
+	function get_dest_game_vertex_id();
     function get_dest_smart_cover();
     function get_dest_smart_cover_name();
     function get_enemy() const;
@@ -6073,6 +6074,8 @@ C++ class game_object {
     function in_restrictions();
     function in_smart_cover() const;
     function inactualize_patrol_path();
+	function inactualize_level_path();
+	function inactualize_game_path();
     function info_add(string);
     function info_clear();
     function inside(const vector&) const;

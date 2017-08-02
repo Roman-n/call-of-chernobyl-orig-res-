@@ -324,8 +324,6 @@ end
 function action_danger:initialize()
 	action_base.initialize( self )
 	self.a.stage = 1
-	self.object:set_path_type(game_object.level_path)
-	self.object:set_detail_path_type(move.line)
 	self.object:set_desired_direction()
 	self.a.last_state = state_mgr.get_state(self.object)
 end

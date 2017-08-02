@@ -385,7 +385,6 @@ function action_steal_up:initialize()
 	local npc,wpn = self.object,self.object:active_item()
 	npc:set_desired_position()
 	npc:set_desired_direction()
-	npc:set_path_type(game_object.level_path)
 	npc:clear_animations()
 	npc:set_movement_type(move.run)
 end
@@ -400,6 +399,9 @@ function action_steal_up:execute()
 		return
 	end
 	--npc:set_dest_level_vertex_id(target:level_vertex_id())
+	if (npc:path_type() ~= game_object.level_path) then 
+		npc:set_path_type(game_object.level_path)
+	end
 	utils.send_to_nearest_accessible_vertex(npc,target:level_vertex_id(),"xrs_facer")
 end
 function action_steal_up:finalize()

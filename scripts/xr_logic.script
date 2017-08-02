@@ -221,10 +221,11 @@ function activate_by_section(npc, ini, section, gulag_name, loading)
 
 	if db.storage[npc_id].stype == modules.stype_stalker then
 		-- чтобы избежать дальнейшего движения по пути при установке рестрикторов
-		npc:inactualize_patrol_path() -- Alundaio: Necessary to clear path data or npc can get stuck on generic schemes
-		npc:set_path_type(game_object.level_path)
-		utils.send_to_nearest_accessible_vertex(npc, npc:level_vertex_id(),"xr_logic")
-
+		if (npc:path_type() == game_object.patrol_path) then 
+			npc:inactualize_patrol_path() -- Alundaio: Necessary to clear path data or npc can get stuck on generic schemes
+			npc:set_path_type(game_object.level_path)
+			--utils.send_to_nearest_accessible_vertex(npc, npc:level_vertex_id(),"xr_logic")
+		end
 		issue_event(npc, db.storage[npc_id][scheme], "activate_scheme", loading, npc)
 	else
 		issue_event(npc, db.storage[npc_id][scheme], "reset_scheme", loading, npc)

@@ -130,10 +130,13 @@ function action_reach_task_location:initialize()
 	self.object:clear_animations()
 	self.object:set_desired_direction()
 	self.object:set_desired_position()
-	self.object:inactualize_patrol_path()
-	self.object:set_detail_path_type(move.line)
+	
+	if (self.object:path_type() == game_object.patrol_path) then
+		self.object:inactualize_patrol_path()
+		self.object:set_path_type(game_object.level_path)
+	end
+	
 	self.object:set_movement_selection_type(game_object.alifeMovementTypeMask)
-	self.object:set_path_type(game_object.level_path)
 	self.object:set_sight(look.path_dir,nil,0)
 	
 	setup_movement(self.object,move.stand,move.standing,anim.free)
@@ -215,7 +218,6 @@ function action_reach_task_location:fake_target(squad,is_monolith)
 		local new_vid = alun_utils.find_random_cover(npc,npc:position(),1,15)
 		if (new_vid) then 
 			npc:clear_animations()
-			npc:set_detail_path_type( move.line )
 			npc:set_sight(look.path_dir,nil,0)
 			setup_movement(self.object,move.walk,move.standing,anim.free)
 			self.st.lvid = utils.send_to_nearest_accessible_vertex(npc,new_vid)
@@ -319,17 +321,13 @@ function action_reach_task_location:commander_execute(squad)
 	if npc:game_vertex_id() ~= gv_id then
 		if (npc:path_type() ~= game_object.game_path) then
 			npc:set_path_type(game_object.game_path)
-			npc:set_movement_selection_type(game_object.alifeMovementTypeRandom)
+			npc:set_dest_game_vertex_id(gv_id)
 		end
-		--squad.debug_me = true
-		npc:set_dest_game_vertex_id(gv_id)
 	else
 		if (npc:path_type() ~= game_object.level_path) then
 			npc:set_path_type(game_object.level_path)
-			npc:set_movement_selection_type(game_object.alifeMovementTypeMask)
 		end
 		utils.send_to_nearest_accessible_vertex(npc,lv_id,"xr_reach_task:2")
-		--squad.debug_me = false
 	end
 	
 	if (mov_type == 3 or squad.rush_to_target) then 

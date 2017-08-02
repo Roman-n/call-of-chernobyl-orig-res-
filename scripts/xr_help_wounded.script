@@ -251,7 +251,6 @@ function action_help_wounded:initialize()
 	local npc = self.object
 	npc:set_desired_position()
 	npc:set_desired_direction()
-	npc:set_path_type(game_object.level_path)
 	--npc:set_dest_level_vertex_id(self.a.vertex_id)
 	self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc, self.a.vertex_id,"xr_help_wounded")
 

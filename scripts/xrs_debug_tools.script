@@ -149,7 +149,7 @@ function activate_feature()
 	actions_by_stalker_ids[20] = "action_retreat_from_enemy"
 	actions_by_stalker_ids[92] = "action_script"
 	actions_by_stalker_ids[26] = "action_search_enemy"
-	actions_by_stalker_ids[4] = "action_smart_terrain_task"
+	actions_by_stalker_ids[4] = "action_smart_terrain_task (xr_reach_task)"
 	actions_by_stalker_ids[5] = "action_solve_zone_puzzle"
 	actions_by_stalker_ids[28] = "action_sudden_attack"
 	actions_by_stalker_ids[21] = "action_take_cover"
