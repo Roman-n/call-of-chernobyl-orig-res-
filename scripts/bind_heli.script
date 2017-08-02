@@ -124,6 +124,10 @@ function heli_binder:net_spawn( se_abstract )
 	
 	self.st.heliObject = self.object:get_helicopter()
 	
+	if (axr_main.config:r_value("mm_options","enable_heli_spawn",1,true) == false) then 
+		self.self_destruct = true
+	end
+	
 	return true
 end
 
