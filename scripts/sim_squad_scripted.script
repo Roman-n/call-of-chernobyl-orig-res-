@@ -70,6 +70,7 @@ function sim_squad_scripted:init_squad()
 	self.show_spot			= xr_logic.parse_condlist(self, "show_spot", "show_spot", sys_ini:r_string_ex(settings_id,"show_spot") or "false")
 
 	self.always_arrived		= sys_ini:r_bool_ex(settings_id,"always_arrived",false)
+	self:set_location_types_section("squad_terrain")
 	self:set_location_types_section("stalker_terrain")
 	self:set_squad_sympathy()
 end
@@ -79,7 +80,7 @@ function sim_squad_scripted:init_squad_on_load()
 	self:set_squad_sympathy()
 	sim_board.get_sim_board():assign_squad_to_smart(self, self.smart_id)
 	self.current_action = 0
-	--self.need_to_reset_location_masks = true
+	self.need_to_reset_location_masks = true
 	--alun_utils.debug_write(self:name().."init_squad_on_load end")
 end
 --***********************************************************************************************
@@ -128,7 +129,6 @@ function sim_squad_scripted:update()
 	
 	if not (self.first_update) then 
 		self.first_update = true 
-		
 	end
 
 	self:refresh()
@@ -143,6 +143,7 @@ function sim_squad_scripted:update()
 		self.need_to_reset_location_masks = false
 	end
 	
+	self:check_online_status()
 	SendScriptCallback("squad_on_update",self)
 
 	local sim = alife()
@@ -483,6 +484,7 @@ function sim_squad_scripted:set_location_types(new_smart_name)
 	self:clear_location_types()
 	
 	self:set_location_types_section("stalker_terrain")
+	self:set_location_types_section("squad_terrain")
 	
 	local old_target = self.assigned_target_id and db.smart_terrain_by_id[self.assigned_target_id]
 	if (old_target) then 
@@ -492,10 +494,9 @@ function sim_squad_scripted:set_location_types(new_smart_name)
 	if (new_smart_name) then 
 		self:set_location_types_section(new_smart_name)
 	else
-		self:set_location_types_section("squad_terrain")
 		for id,se_obj in pairs(db.smart_terrain_by_id) do
 			local props_base = se_obj.props and se_obj.props["base"]
-			if (props_base and tonumber(props_base) == 0) then
+			if (props_base and tonumber(props_base) ~= 0) then
 				self:set_location_types_section(se_obj:name())
 			end
 		end
@@ -856,6 +857,7 @@ function sim_squad_scripted:STATE_Read(packet, size)
 		self.smart_id = tonumber(self.smart_id)
 	end
 	self:init_squad_on_load()
+	
 	set_save_marker(packet, "load", true, "sim_squad_scripted")
 	--alun_utils.debug_write( strformat("%s:STATE_Read end",self:name()) )
 end
@@ -894,6 +896,51 @@ function sim_squad_scripted:on_unregister()
 	cse_alife_online_offline_group.on_unregister(self)
 end
 
+function sim_squad_scripted:check_online_status()
+	local b = nil
+	if (IsSurvivalMode()) then
+		b = true
+	elseif (self.force_online) then
+		b = true
+	elseif (axr_companions.companion_squads[self.id]) then 
+		b = true
+	elseif not (level_weathers.valid_levels[level.name()]) then 
+		b = true
+	elseif (self.assigned_target_id and is_squad_monster[self.player_id]) then
+			local hour = level.get_time_hours()
+			if (self.player_id == "monster_predatory_day") then 
+				-- Monster will not come online during the hours of (9PM till 5AM)
+				if (hour <= 5 or hour >= 22) then
+					b = false 
+				end
+			elseif (self.player_id == "monster_zombied_day") then 
+				-- Monster will not come online during the hours of (7PM till 5AM)
+				if (hour <= 5 or hour >= 19) then
+					b = false
+				end
+			elseif (self.player_id == "monster_predatory_night") then 
+				-- Monster will not come online during the hours of (5AM till 7PM)
+				if (hour >= 5 and hour <= 19) then
+					b = false
+				end
+			elseif (self.player_id == "monster_zombied_night") then 
+				-- Monster will not come online during the hours of (5AM till 7PM)
+				if (hour >= 5 and hour <= 19) then
+					b = false
+				end
+			end
+	elseif (db.actor and not get_object_story_id(self.id)) then	
+		local dist = axr_main.config:r_value("mm_options","excl_dist",2) or 0
+		if (dist > 0 and not db.actor:has_info("actor_is_sleeping")) then 
+			local actor = alife():actor()
+			if (self.position:distance_to(actor.position) <= dist) then
+				b = false
+			end
+		end
+	end
+	self.forced_online_status = b
+end
+
 function sim_squad_scripted:can_switch_offline()
 	--[[
 	if (self.current_action == 1) then 
@@ -909,84 +956,24 @@ function sim_squad_scripted:can_switch_offline()
 		return false
 	end
 	
-	if (IsSurvivalMode()) then
+	if (self.forced_online_status == true) then
 		return false
-	end
-	
-	-- companions
-	if (axr_companions.companion_squads[self.id]) then 
-		return false 
-	end
-	
-	-- was forced online for task reasons 
-	if (self.force_online) then 
-		return false 
 	end
 
 	return true
 end
 
 function sim_squad_scripted:can_switch_online()
-
 	-- important to check with inherited method first if it's okay to switch online, otherwise this leads to
 	-- crash saying 'object with ID already exists' when returning false and object is already online
 	if not cse_alife_online_offline_group.can_switch_online(self) then 
-		return false 
-	end 
-	
-	if (self.online or self.force_online or IsSurvivalMode()) then 
-		return true
+		return false
 	end
 	
-	if (axr_companions.companion_squads[self.id] or get_object_story_id(self.id)) then 
-		return true 
+	if (self.forced_online_status == false) then 
+		return false
 	end
 	
-	-- always come online in underground level
-	if not (level_weathers.valid_levels[level.name()]) then
-		return true
-	end
-	
-	if (is_squad_monster[self.player_id]) then
-	
-		-- monster doesn't have a target smart so just leave it offline
-		if (self.assigned_target_id == nil) then
-			return false
-		end
-		
-		local hour = level.get_time_hours()
-		if (self.player_id == "monster_predatory_day") then 
-			-- Monster will not come online during the hours of (9PM till 5AM)
-			if (hour <= 5 or hour >= 22) then
-				return false 
-			end
-		elseif (self.player_id == "monster_zombied_day") then 
-			-- Monster will not come online during the hours of (7PM till 5AM)
-			if (hour <= 5 or hour >= 19) then
-				return false 
-			end
-		elseif (self.player_id == "monster_predatory_night") then 
-			-- Monster will not come online during the hours of (5AM till 7PM)
-			if (hour >= 5 and hour <= 19) then
-				return false 
-			end
-		elseif (self.player_id == "monster_zombied_night") then 
-			-- Monster will not come online during the hours of (5AM till 7PM)
-			if (hour >= 5 and hour <= 19) then
-				return false 
-			end
-		end
-	end
-	
-	if (db.actor and db.spawned_vertex_by_id[self:commander_id()] == nil) then
-		local dist = axr_main.config:r_value("mm_options","excl_dist",2) or 0
-		if (dist > 0 and not db.actor:has_info("actor_is_sleeping")) then 
-			local actor = alife():actor()
-			if (self.position:distance_to(actor.position) <= dist) then
-				return false
-			end
-		end
-	end
     return true
 end
 function sim_squad_scripted:switch_offline()
@@ -1083,8 +1070,8 @@ function sim_squad_scripted:get_squad_props()
 		local assigned_target = self.assigned_target_id and alife_object(self.assigned_target_id)
 		local current_target = self.current_target_id and alife_object(self.current_target_id)
 
-		local t = "%s\\n\\n%s\\n\\nnpcs=%s\\n\\ncurrent_target=%s\\nassigned_target=%s\\n\\n"
-		t = strformat(t,self.disabled and "[disabled]" or "",self:name(),self:npc_count(),self.current_target_id == 0 and "actor" or current_target and current_target:name(),self.assigned_target_id == 0 and "actor" or assigned_target and assigned_target:name())
+		local t = "forced_online_status=%s\\n%s\\n\\n%s\\n\\nnpcs=%s\\n\\ncurrent_target=%s\\nassigned_target=%s\\n\\n"
+		t = strformat(t,tostring(self.forced_online_status),self.disabled and "[disabled]" or "",self:name(),self:npc_count(),self.current_target_id == 0 and "actor" or current_target and current_target:name(),self.assigned_target_id == 0 and "actor" or assigned_target and assigned_target:name())
 
 		if (self.current_action) then
 			if (self.current_action == 0) then 

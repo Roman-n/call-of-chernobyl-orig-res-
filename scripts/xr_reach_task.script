@@ -319,13 +319,17 @@ function action_reach_task_location:commander_execute(squad)
 	if npc:game_vertex_id() ~= gv_id then
 		if (npc:path_type() ~= game_object.game_path) then
 			npc:set_path_type(game_object.game_path)
+			npc:set_movement_selection_type(game_object.alifeMovementTypeRandom)
 		end
+		--squad.debug_me = true
 		npc:set_dest_game_vertex_id(gv_id)
 	else
 		if (npc:path_type() ~= game_object.level_path) then
 			npc:set_path_type(game_object.level_path)
+			npc:set_movement_selection_type(game_object.alifeMovementTypeMask)
 		end
 		utils.send_to_nearest_accessible_vertex(npc,lv_id,"xr_reach_task:2")
+		--squad.debug_me = false
 	end
 	
 	if (mov_type == 3 or squad.rush_to_target) then 
