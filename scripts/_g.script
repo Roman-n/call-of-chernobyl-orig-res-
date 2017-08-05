@@ -8,7 +8,7 @@
 		Such thing is 'okay' in db.storage, but that is because on net_destroy db.storage[id] is set nil. So if you are keeping track of objects directly in a table, instead of ID 
 		then you absolutely must rid of every single reference to the userdata so that it can be destroy and garbage collected. Otherwise you end up with undetectable issues.
 --]]
-GAME_VERSION = "1.5b r2"
+GAME_VERSION = "1.5b r3"
 
 if string.find(command_line(), "-dbg") then
 	DEV_DEBUG = true
@@ -40,35 +40,27 @@ function start_game_callback()
 		printf("using marshal library")
 	end
 
-	sound_theme.load_sound()
-		
 	-- Alundaio
 	if (axr_main) then axr_main.on_game_start() end
 	-- End Alundaio
-
-	SIMBOARD = nil
+	
 	sim_board.get_sim_board()
-
 	smart_names.init_smart_names_table()
-	task_manager.clear_task_manager()
-	--xr_sound.start_game_callback()
 	dialog_manager.fill_phrase_table()
-
-	sr_light.clean_up ()
 	pda.add_quick_slot_items_on_game_start()
 end
 
-local alife_sim
+--local alife_sim
 function alife_object(id)
 	if (id == nil or id >= 65535) then
 		callstack()
 		printf("ALIFE OBJECT ID IS %s!",id)
 		return
 	end
-	if not (alife_sim) then 
-		alife_sim = alife()
-	end
-	return alife_sim:object(id)
+	-- if not (alife_sim) then 
+		-- alife_sim = alife()
+	-- end
+	return alife():object(id)
 end
 -------------------------------------------------------------------------------------------------------
 -- 											SCRIPTED CALLBACKS
@@ -1633,17 +1625,23 @@ if (USE_INI_MEMOIZE) then
 		return a,b,c
 	end
 else
-	function ini_file.r_string_ex(ini,s,k)
+	function ini_file.r_string_ex(ini,s,k,def)
 		--callstack()
 		--printf("r_string_ex(%s,%s)",s,k)
-		return ini:section_exist(s) and ini:line_exist(s,k) and ini:r_string(s,k) or nil
+		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
+			return def
+		end
+		return ini:r_string(s,k) or def
 	end
-		function ini_file.r_float_ex(ini,s,k)
+	function ini_file.r_float_ex(ini,s,k,def)
 		--callstack()
 		--printf("r_float_ex(%s,%s)",s,k)
-		return ini:section_exist(s) and ini:line_exist(s,k) and ini:r_float(s,k) or nil
+		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
+			return def
+		end
+		return ini:r_float(s,k) or def
 	end
-		function ini_file.r_bool_ex(ini,s,k,def)
+	function ini_file.r_bool_ex(ini,s,k,def)
 		--callstack()
 		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
 			return def
@@ -1652,7 +1650,7 @@ else
 		local v = ini:r_string(s,k)
 		return v == nil and def or v == "true" or v == "1" or false
 	end
-		function ini_file.r_line_ex(ini,s,k)
+	function ini_file.r_line_ex(ini,s,k)
 		--callstack()
 		return ini:r_line(s,k,"","")
 	end

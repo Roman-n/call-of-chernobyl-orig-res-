@@ -206,7 +206,7 @@ end
 --------------------------------------------------------------------------------------------------------------------
 function on_game_start()
 	local ignore = { 
-		["_G.script"] = true,
+		["_g.script"] = true,
 		["class_registrator.script"] = true,
 		["game_registrator.script"] = true,
 		["ui_registrator.script"] = true,

@@ -670,6 +670,7 @@ function debug_write(output,trace)
 
 	if (log) then 
 		log(output)
+		--get_console():execute("flush")
 	end 
 end
 

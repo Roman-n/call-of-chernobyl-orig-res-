@@ -560,7 +560,6 @@ end
 -- отослать в ближайшую разрешённую ноду по направлению к заданной.
 -- возвращает vertex_id, в которое отправил персонажа
 function send_to_nearest_accessible_vertex(npc,v_id,caller)
-	alun_utils.debug_nearest(npc,"%s send_to_nearest_accessible_vertex %s",npc:id(),caller)
 	if (v_id == nil or v_id >= 4294967295) then
 		npc:set_dest_level_vertex_id(npc:level_vertex_id())
 		return npc:level_vertex_id()

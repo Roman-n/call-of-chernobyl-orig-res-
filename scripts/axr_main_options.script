@@ -31,6 +31,7 @@ function opt_menu_on_init(menu)
 				loc_ini:w_value("string_table","language",language)
 				loc_ini:save()
 				menu.b__require_restart = true
+				--game.reload_language() -- ?? not working ??
 			end
 		end
 	end}
