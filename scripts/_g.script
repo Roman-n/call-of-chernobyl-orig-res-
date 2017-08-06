@@ -57,7 +57,7 @@ function alife_object(id)
 		printf("ALIFE OBJECT ID IS %s!",id)
 		return
 	end
-	-- if not (alife_sim) then 
+	-- if not (alife_sim) then
 		-- alife_sim = alife()
 	-- end
 	return alife():object(id)

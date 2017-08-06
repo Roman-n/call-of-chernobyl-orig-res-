@@ -2139,9 +2139,9 @@ end
 ]]--
 
 function create_squad(actor, obj, p)
-	if obj ~= nil then
-		printf("pl:creating_squad from obj [%s] in section [%s]", tostring(obj:name()), tostring(db.storage[obj:id()].active_section))
-	end
+	-- if obj ~= nil then
+		-- printf("pl:creating_squad from obj [%s] in section [%s]", tostring(obj:name()), tostring(db.storage[obj:id()].active_section))
+	-- end
 	local squad_id = p[1]
 	if squad_id == nil then
 		printf("Wrong squad identificator [NIL] in create_squad function")
@@ -2163,12 +2163,12 @@ function create_squad(actor, obj, p)
 		printf("Wrong smart_name [%s] for [%s] faction in create_squad function", tostring(smart_name), tostring(player_name))
 	end
 
-	printf("Create squad %s BEFORE",squad_id)
+	--printf("Create squad %s BEFORE",squad_id)
 	local squad = board:create_squad(smart, squad_id)
 	if not (squad) then 
 		return
 	end
-	printf("Create squad %s AFTER",squad_id)
+	--printf("Create squad %s AFTER",squad_id)
 
 	--board:enter_smart(squad, smart.id)
 

@@ -190,6 +190,10 @@ function get_spawn_table(name)
 							typ = "Items (Quest)"
 						end
 					end
+					local scope = ini:r_string_ex(section,"description")
+					if (scope and scope:find("st_dxr_addon_scope_")) then
+						typ = "Weapons (Addons)"
+					end
 					if (spawn_table_list[typ]) then
 						spawn_table_list[typ][#spawn_table_list[typ]+1] = section
 					end

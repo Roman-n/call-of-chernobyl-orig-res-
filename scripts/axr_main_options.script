@@ -30,8 +30,9 @@ function opt_menu_on_init(menu)
 			if (loc_ini:r_value("string_table","language") ~= language) then
 				loc_ini:w_value("string_table","language",language)
 				loc_ini:save()
-				menu.b__require_restart = true
-				--game.reload_language() -- ?? not working ??
+				--menu.b__require_restart = true
+				reload_system_ini()
+				game.reload_language()
 			end
 		end
 	end}
