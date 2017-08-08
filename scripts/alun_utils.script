@@ -607,24 +607,9 @@ function get_sound(snd)
 	end
 end
 
-function safe_bone_pos(npc,bone)
-    if not (npc) then
-		printf("safe_bone_pos: npc is nil!")
-		return
-    end
-	
-	local pos
-	if (IsStalker(npc)) then
-		pos = npc:bone_position(bone or "bip01_spine")
-		pos = pos and vector():set(pos) or nil
-	end
-
-	if not (pos) then
-		pos = vector():set(npc:position())
-		pos.y = pos.y + 0.5
-	end
-
-	return pos
+function safe_bone_pos(obj,bone)
+	local bone_id = obj:get_bone_id(bone)
+	return obj:bone_position(bone_id == 65535 and "" or bone)
 end
 
 function is_level_changing()
@@ -868,7 +853,7 @@ function in_los(npc,friend,be)
 		end	
 	end
 
-	local pos = npc:bone_position("bip01_spine")
+	local pos = alun_utils.safe_bone_pos(npc,"bip01_spine")
 	local friend_pos = alun_utils.safe_bone_pos(friend,"bip01_spine")
 	local friend_dist = pos:distance_to(friend_pos)
 	local be_pos = alun_utils.safe_bone_pos(be,"bip01_spine")
@@ -1930,7 +1915,7 @@ function in_los(npc,be,friend)
 	end
 
 	local be_pos = alun_utils.safe_bone_pos(be,"bip01_spine")
-	local pos = npc:bone_position("bip01_spine")
+	local pos = alun_utils.safe_bone_pos(npc,"bip01_spine")
 	local friend_pos = alun_utils.safe_bone_pos(friend,"bip01_spine")
 	local friend_dist = pos:distance_to(friend_pos)
 	local dir_aim = vector():sub(be_pos,pos)
@@ -1976,7 +1961,7 @@ function friends_on_fire_line(npc,be,st)
 		local friend = id  and id ~= sid and db.storage[id] and db.storage[id].object
 	
 		if (friend and friend:alive() and npc:relation(friend) < game_object.enemy) then
-			local pos = npc:bone_position("bip01_spine")
+			local pos = alun_utils.safe_bone_pos(npc,"bip01_spine")
 			local friend_pos = alun_utils.safe_bone_pos(friend,"bip01_spine")
 			local friend_dist = pos:distance_to(friend_pos)
 			local be_pos = alun_utils.safe_bone_pos(be,"bip01_spine")

@@ -169,7 +169,7 @@ function action_patrol:execute()
 				npc:set_item(object.aim1,bw)
 				return
 			else
-				local pos = bw:bone_position("wpn_body")
+				local pos = alun_utils.safe_bone_pos(bw,"wpn_body")
 				local result = rq_result()
 				level.ray_pick(pos,vector():sub(be_pos,pos):normalize(),pos:distance_to(be_pos)+0.1,rq_target.rqtObject,result,npc)
 				--printf("result=%s",result.object and result.object:name())

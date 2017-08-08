@@ -209,7 +209,7 @@ function action_facer:execute()
 		end
 	elseif self.hit_time < tg then
 		--printf("facer[%s]:run hit",npc:character_name())
-		local spos,tpos = npc:bone_position("bip01_neck"),alun_utils.safe_bone_pos(target,"bip01_neck")
+		local spos,tpos = alun_utils.safe_bone_pos(npc,"bip01_neck"),alun_utils.safe_bone_pos(target,"bip01_neck")
 		local ysub = spos.y - tpos.y
 		local cls,bone = target:clsid()
 		if cls == clsid.script_stalker or alun_utils.is_actor(nil,cls) then
@@ -257,7 +257,7 @@ function action_facer:execute()
 			hi.power = power/math.random(70,120)
 			hi.impulse = math.random(50)*2
 			hi.draftsman = npc
-			hi.direction = alun_utils.safe_bone_pos(target,bone):sub(npc:bone_position("bip01_neck"))
+			hi.direction = alun_utils.safe_bone_pos(target,bone):sub(alun_utils.safe_bone_pos(npc,"bip01_neck"))
 			if (math.random(1,100)/100) < hi.power*2 then
 				if (enable_drop_item and alun_utils.is_actor(nil,cls)) then
 					local item,slot = target:active_item(),target:active_slot()

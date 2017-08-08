@@ -248,7 +248,7 @@ function act_kill_wounded:execute()
 		end
 	end
 	
-	local dir = vector():sub(vo:bone_position("bip01_spine"),npc:bone_position("bip01_r_finger02"))
+	local dir = vector():sub(alun_utils.safe_bone_pos(vo,"bip01_spine"),alun_utils.safe_bone_pos(npc,"bip01_r_finger02"))
 	
 	local tg = time_global()
 	if (st.timer and tg > st.timer) then

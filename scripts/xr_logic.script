@@ -1066,9 +1066,7 @@ function save_obj(obj, packet)
 	packet:w_stringZ(st.active_section or "")
 	packet:w_stringZ(st.gulag_name or "")
 
-	local activation_time = db.storage[npc_id].activation_time or 0
-
-	alun_utils.w_stpk(packet,"s32",activation_time - time_global(),obj:name()..":save_logic:activation_time - cur_tm")
+	alun_utils.w_stpk(packet,"s32",(db.storage[npc_id].activation_time or time_global()) - time_global(),obj:name()..":save_logic:activation_time - cur_tm")
 	alun_utils.w_stpk(packet,"CTime",db.storage[npc_id].activation_game_time,obj:name()..":save_logic:GAMETIME")
 	
 	if st.active_scheme then

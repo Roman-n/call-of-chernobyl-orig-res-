@@ -604,7 +604,7 @@ function motivator_binder:save_state(m_data)
 	state.xr_logic.section_logic = st.section_logic
 	state.xr_logic.active_section = st.active_section
 	state.xr_logic.gulag_name = st.gulag_name
-	state.xr_logic.activation_time = (st.activation_time or 0) - time_global()
+	state.xr_logic.activation_time = (st.activation_time or time_global()) - time_global()
 	state.xr_logic.activation_game_time = st.activation_game_time
 
 	xr_sound.npc_save_state(id,m_data)

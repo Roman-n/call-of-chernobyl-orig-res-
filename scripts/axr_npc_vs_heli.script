@@ -284,7 +284,7 @@ function action_npc_vs_heli:execute()
 				if (be) then
 					state_mgr.set_state(npc,new_state,nil,nil,{look_object = be},{fast_set = true})
 				else
-					local dir = ene_pos and vector():sub(ene_pos,npc:bone_position("bip01_r_finger02")) or nil
+					local dir = ene_pos and vector():sub(ene_pos,alun_utils.safe_bone_pos(npc,"bip01_r_finger02")) or nil
 					state_mgr.set_state(npc,new_state,nil,nil,{look_object = enemy, look_dir = dir},{fast_set = true})
 				end
 			else 
@@ -323,7 +323,7 @@ function action_npc_vs_heli:execute()
 				if (be) then
 					state_mgr.set_state(npc,new_state,nil,nil,{look_object = be},{fast_set = true})
 				else 
-					local dir = ene_pos and vector():sub(ene_pos,npc:bone_position("bip01_r_finger02")) or nil
+					local dir = ene_pos and vector():sub(ene_pos,alun_utils.safe_bone_pos(npc,"bip01_r_finger02")) or nil
 					state_mgr.set_state(npc,new_state,nil,nil,{look_object = enemy, look_dir = dir},{fast_set = true})
 				end
 			else 

@@ -1269,7 +1269,7 @@ function get_position_offset(npc,o)
 	if not (attach_bone_name) then
 		return
 	end
-	local pos1 = npc:bone_position(attach_bone_name)
+	local pos1 = alun_utils.safe_bone_pos(npc,attach_bone_name)--npc:bone_position(attach_bone_name)
 	local pos2 = o:center()
 	return pos1:sub(pos2)
 end
