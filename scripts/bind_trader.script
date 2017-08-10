@@ -183,7 +183,7 @@ function trader_object_binder:load_state()
 	st.loaded_section_logic = state.xr_logic.section_logic
 	st.loaded_active_section = state.xr_logic.active_section
 	st.loaded_gulag_name = state.xr_logic.gulag_name or ""
-	st.activation_time = state.xr_logic.activation_time and state.xr_logic.activation_time + time_global() or time_global()
+	st.activation_time = time_global() + (state.xr_logic.activation_time or 0)
 	st.activation_game_time = state.xr_logic.activation_game_time or game.get_game_time()
 	state.xr_logic = nil
 	--xr_sound.npc_load_state(id,state)

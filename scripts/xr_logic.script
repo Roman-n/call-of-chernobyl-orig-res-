@@ -151,7 +151,9 @@ function activate_by_section(npc, ini, section, gulag_name, loading)
 		db.storage[npc_id].activation_time = time_global()
 		db.storage[npc_id].activation_game_time = game.get_game_time()
 	else 
-		db.storage[npc_id].activation_time = db.storage[npc_id].activation_time or time_global()
+		local tg = time_global()
+		local act_time = db.storage[npc_id].activation_time or tg
+		db.storage[npc_id].activation_time = tg >= act_time and act_time or tg -- activation_time can never be larger then tg, if so it's an error, correct!
 		db.storage[npc_id].activation_game_time = db.storage[npc_id].activation_game_time or game.get_game_time()	
 	end
 
