@@ -228,7 +228,11 @@ function reward_random_item(actor,npc,p)
 	if (#p > 0) then 
 		local section = p[math.random(#p)]
 		if (system_ini():section_exist(section)) then
-			alife():create(section,vector(),0,0,0)
+			local se_item = alife():create(section,vector(),0,0,0)
+			local cls = se_item:clsid()
+			if (IsWeapon(nil,cls) and cls ~= clsid.wpn_knife_s) then
+				se_item.condition = math.random(60,90)/100
+			end
 			news_manager.relocate_item(db.actor, "in", section)
 		end
 	end
