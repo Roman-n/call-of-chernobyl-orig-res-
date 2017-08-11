@@ -234,6 +234,9 @@ function CSurgeManager:new_surge_time(reset)
 end
 
 function CSurgeManager:skip_surge()
+	if (self.started) then 
+		xr_statistic.inc_counter("surges")
+	end
 	if not (self.inited_time) then 
 		self.inited_time = game.get_game_time()
 	end
@@ -270,7 +273,6 @@ function CSurgeManager:skip_surge()
 	self:toggle_level_artefact_respawns()
 	self:respawn_artefacts_and_replace_anomaly_zone()
 	
-	xr_statistic.inc_counter("surges")
 	if not (self.skip_message) and (atmosfear_options.config:r_value("atmosfear_current_parameters","opt_enable_blowout",2,1)==1) then
 		news_manager.send_tip(db.actor, "st_surge_while_asleep", nil, "recent_surge", nil, nil)
 		self.skip_message = true

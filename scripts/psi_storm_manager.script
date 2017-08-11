@@ -84,7 +84,7 @@ function CPsiStormManager:start(manual)
 	
 	-- Deserted Hospital has nowhere to hide (almost all the map is inside anyway).
 	if (level_name == "l11_hospital" or has_alife_info("bar_arena_fight")) then
-		self:skip_surge()
+		self:skip_psi_storm()
 		return
 	end
 	
@@ -132,6 +132,9 @@ function CPsiStormManager:new_psi_storm_time()
 end
 
 function CPsiStormManager:skip_psi_storm()
+	if (self.started) then 
+		xr_statistic.inc_counter("storms")
+	end
 	if not (self.inited_time) then 
 		self.inited_time = game.get_game_time()
 	end
@@ -151,7 +154,7 @@ function CPsiStormManager:skip_psi_storm()
 	self.psi_storm_task_sect 	= ""
 	self.task_given 		= nil
 	prev_sec				= 0
-	xr_statistic.inc_counter("storms")
+
 	level.set_time_factor(self.game_time_factor)
 end
 
