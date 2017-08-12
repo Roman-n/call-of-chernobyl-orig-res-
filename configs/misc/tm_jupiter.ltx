@@ -53,7 +53,7 @@ target_functor = general_fetch_task
 task_complete_descr = jup_b6_scientist_tech_task_2_fetch_finish
 ; precondition = true
 repeat_timeout = 604800
-on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =reward_stash(true) =remove_fetch_item(jup_b6_scientist_tech_task_2_fetch) =inc_task_stage(jup_b6_scientist_tech_task_2) =reward_random_item(scientific_outfit:ecolog_outfit_orange:ecolog_outfit_green:detector_elite)%
+on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =reward_stash(true) =remove_fetch_item(jup_b6_scientist_tech_task_2_fetch) =inc_task_stage(jup_b6_scientist_tech_task_2) =reward_random_item(itm_repairkit_tier_3:scientific_outfit:ecolog_outfit_orange:ecolog_outfit_green:detector_elite)%
 on_fail = %=fail_task_dec_goodwill(25:ecolog:csky)%
 
 ;--------------------------------------------------------------------------------------------------
