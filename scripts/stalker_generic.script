@@ -83,19 +83,7 @@ function reset_show_spot(npc, scheme, st, section)
 
 	local npc_id = npc:id()
 
-	if level.map_has_object_spot(npc_id, "ui_pda2_trader_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_trader_location")
-	elseif level.map_has_object_spot(npc_id, "ui_pda2_mechanic_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_mechanic_location")
-	elseif level.map_has_object_spot(npc_id, "ui_pda2_scout_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_scout_location")
-	elseif level.map_has_object_spot(npc_id, "ui_pda2_quest_npc_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_quest_npc_location")
-	elseif level.map_has_object_spot(npc_id, "ui_pda2_medic_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_medic_location")
-	elseif level.map_has_object_spot(npc_id, "ui_pda2_companion_location") ~= 0 then
-		level.map_remove_object_spot(npc_id, "ui_pda2_companion_location")
-	end
+	remove_level_spot(npc_id)
 	
 	local sim  = alife()
 	local se_obj  = sim:object(npc_id)
@@ -136,40 +124,19 @@ function reset_show_spot(npc, scheme, st, section)
 	end
 end
 
-function remove_level_spot(npc, st)
-	local map_spot = st.section_logic and st.ini:r_string_ex(st.section_logic,"level_spot")
-	if (map_spot == nil and st.active_section) then 
-		map_spot = st.ini:r_string_ex(st.active_section,"level_spot")
-	end
-	
-	if (map_spot == nil or map_spot == "") then 
-		return 
-	end
-	
-	map_spot = xr_logic.parse_condlist(npc, st.active_section, "level_spot", map_spot)
-	map_spot = xr_logic.pick_section_from_condlist(db.actor, npc, map_spot)
-
-	if not (map_spot) then 
-		return 
-	end 
-	
-	local map_location
-	if map_spot == "trader" then
-		map_location = "ui_pda2_trader_location"
-	elseif map_spot == "mechanic" then
-		map_location = "ui_pda2_mechanic_location"
-	elseif map_spot == "guider" then
-		map_location = "ui_pda2_scout_location"
-	elseif map_spot == "quest_npc" then
-		map_location = "ui_pda2_quest_npc_location"
-	elseif map_spot == "medic" then
-		map_location = "ui_pda2_medic_location"
-	elseif map_spot == "companion" then
-		map_location = "ui_pda2_companion_location"
-	end
-	
-	if (map_location and level.map_has_object_spot(npc_id, map_location) ~= 0) then
-		level.map_remove_object_spot(npc_id, map_location)
+function remove_level_spot(npc_id)
+	if level.map_has_object_spot(npc_id, "ui_pda2_trader_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_trader_location")
+	elseif level.map_has_object_spot(npc_id, "ui_pda2_mechanic_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_mechanic_location")
+	elseif level.map_has_object_spot(npc_id, "ui_pda2_scout_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_scout_location")
+	elseif level.map_has_object_spot(npc_id, "ui_pda2_quest_npc_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_quest_npc_location")
+	elseif level.map_has_object_spot(npc_id, "ui_pda2_medic_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_medic_location")
+	elseif level.map_has_object_spot(npc_id, "ui_pda2_companion_location") ~= 0 then
+		level.map_remove_object_spot(npc_id, "ui_pda2_companion_location")
 	end
 end
 

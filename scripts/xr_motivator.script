@@ -366,7 +366,7 @@ function motivator_binder:death_callback(victim, who)
 
 	death_manager.decide_items_to_keep(self.object)
 
-	stalker_generic.remove_level_spot(victim, self.st)
+	stalker_generic.remove_level_spot(id)
 
 	if (who and IsStalker(who) and who:alive()) then
 		local count = utils.load_var(who,"s_kill_count") or 0
