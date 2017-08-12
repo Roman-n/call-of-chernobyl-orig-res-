@@ -82,7 +82,7 @@ local function evaluate_actor_mines(npc,st)
 			h.type = hit.fire_wound
 			h.power = 0.0
 			h.impulse = 0.0
-			h.direction = vector():set(0,1,0)
+			h.direction = VEC_Y
 			h.draftsman = db.actor
 			npc:hit(h)
 		end

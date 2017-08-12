@@ -459,7 +459,7 @@ function heli_combat:forget_enemy()
 	--alun_utils.debug_write(strformat("heli_combat:forget_enemy"))
 	self.st.enemy_id = nil
 	self.enemy = nil
-	self.heliObject:LookAtPoint(vector():set(0,0,0), false)
+	self.heliObject:LookAtPoint(VEC_Z, false)
 	self.heliObject:ClearEnemy()
 	self.initialized = false
 end
@@ -714,7 +714,7 @@ function heli_combat:retreat_initialize()
 
 	self.heliObject:SetMaxVelocity( self.max_velocity )
 	self.heliObject:SetSpeedInDestPoint( self.max_velocity )
-	self.heliObject:LookAtPoint( vector():set(0,0,0), false )
+	self.heliObject:LookAtPoint( VEC_Z, false )
 	self.heliObject:SetDestPosition( self:calc_position_in_radius( 5000 ) )
 end
 

@@ -274,7 +274,9 @@ function af_options_dialog:__init() super()
 	end
 
 	if (need_save) then
+	printf("default need_save before")
 		self.default_settings:save()
+		printf("default need_save after")
 	end
 
 	--self.m_preconditions	= {}

@@ -124,7 +124,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_5_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_item_cost_mult_and_remove(simulation_task_5_fetch:1.2) =reward_stash(true) =inc_task_stage(simulation_task_5)%
+on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_item_cost_mult_and_remove(simulation_task_5_fetch:1.1) =reward_stash(true) =inc_task_stage(simulation_task_5)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_5)} fail
 
@@ -150,7 +150,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_6_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_item_cost_mult_and_remove(simulation_task_6_fetch:1.5) =reward_stash(true) =inc_task_stage(simulation_task_6)%
+on_complete = %=reward_item_cost_mult_and_remove(simulation_task_6_fetch:1.1) =reward_stash(true) =inc_task_stage(simulation_task_6)%
 condlist_0 = {!task_giver_alive(simulation_task_6)} fail
 
 

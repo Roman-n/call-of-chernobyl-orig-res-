@@ -1032,7 +1032,7 @@ function debug_ui:OnButton_create_clicked()
 			data.shapes = {}
 			data.shapes[1] = {}
 			data.shapes[1].shtype = 0
-			data.shapes[1].offset = vector():set(0,0,0)
+			data.shapes[1].offset = VEC_ZERO
 			data.shapes[1].radius = 10
 			stpk_utils.set_object_data(data,se_obj)
 		end

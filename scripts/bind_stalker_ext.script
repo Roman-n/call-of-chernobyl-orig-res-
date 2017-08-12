@@ -50,13 +50,27 @@ function actor_on_net_spawn()
 		con:execute("ai_aim_predict_time 0.40")
 	end
 	
+	-- some hacks
 	local sim = alife()
+	local remove_outfits = not db.actor:has_info("remove_outfits_hack")
 	for i=1,65534 do
 		local se_obj = sim:object(i)
-		if (se_obj and se_obj:clsid() == clsid.phantom) then
-			--printf("release phantom")
-			sim:release(se_obj,true)
+		if (se_obj) then
+			-- hack to remove phantoms
+			if (se_obj:clsid() == clsid.phantom) then
+				--printf("release phantom hack!")
+				sim:release(se_obj,true)
+			end
+			
+			-- hack to remove statically placed outfits (Really this should be done in level editor FIX ME!)
+			if (remove_outfits and se_obj.parent_id == 65535 and IsOutfit(nil,se_obj:clsid())) then
+				--printf("release outfit hack! %s",se_obj:name())
+				sim:release(se_obj,true)
+			end
 		end
+	end
+	if (remove_outfits) then
+		db.actor:give_info_portion("remove_outfits_hack")
 	end
 	
 	SendScriptCallback("on_game_load",binder)

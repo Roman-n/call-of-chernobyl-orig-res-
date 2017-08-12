@@ -359,7 +359,7 @@ function interpret_spawn_data(sections)
 
 						-- Repack abstract properties
 						--se_obj.repack = {}
-						--se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+						--se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or VEC_ZERO
 
 						-- Alter packet properties
 						local class = system_ini():r_string_ex(section,"class")
@@ -567,7 +567,7 @@ function dynamic.cse_alife_level_changer(se_obj,t)
 	data.dest_game_vertex_id = tonumber(t.dest_game_vertex_id)
 	data.dest_level_vertex_id = tonumber(t.dest_level_vertex_id)
 	data.dest_position = alun_utils.string_to_vector(t.dest_position)
-	data.dest_direction = t.dest_direction and alun_utils.string_to_vector(t.dest_direction) or vector():set(0,0,0)
+	data.dest_direction = t.dest_direction and alun_utils.string_to_vector(t.dest_direction) or VEC_ZERO
 	data.dest_level_name = t.dest_level_name or ""
 	data.dest_graph_point = t.dest_graph_point and t.dest_graph_point or ""
 	data.silent_mode = 1
@@ -586,13 +586,13 @@ function dynamic.cse_alife_level_changer(se_obj,t)
 		data.shapes[i] = {}
 		data.shapes[i].shtype = t.shape_type and t.shape_type[i] and tonumber(t.shape_type) or 1
 		if (data.shapes[i].shtype == 0) then
-			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or VEC_ZERO
 			data.shapes[i].radius = t.radius and t.radius[i] and tonumber(t.radius[i]) or 10
 		else
 			data.shapes[i].v1 = t.v1 and t.v1[i] and alun_utils.string_to_vector(t.v1[i]) or vector():set(5,0,0)
 			data.shapes[i].v2 = t.v2 and t.v2[i] and alun_utils.string_to_vector(t.v2[i]) or vector():set(0,2,0)
 			data.shapes[i].v3 = t.v3 and t.v3[i] and alun_utils.string_to_vector(t.v3[i]) or vector():set(0,0,5)
-			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or VEC_ZERO
 		end
 	end
 
@@ -629,13 +629,13 @@ function dynamic.cse_alife_space_restrictor(se_obj,t,sec)
 		data.shapes[i] = {}
 		data.shapes[i].shtype = t.shape_type and t.shape_type[i] and tonumber(t.shape_type) or 1
 		if (data.shapes[i].shtype == 0) then
-			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or VEC_ZERO
 			data.shapes[i].radius = t.radius and t.radius[i] and tonumber(t.radius[i]) or 10
 		else
 			data.shapes[i].v1 = t.v1 and t.v1[i] and alun_utils.string_to_vector(t.v1[i]) or vector():set(5,0,0)
 			data.shapes[i].v2 = t.v2 and t.v2[i] and alun_utils.string_to_vector(t.v2[i]) or vector():set(0,2,0)
 			data.shapes[i].v3 = t.v3 and t.v3[i] and alun_utils.string_to_vector(t.v3[i]) or vector():set(0,0,5)
-			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or VEC_ZERO
 		end
 	end
 
@@ -667,13 +667,13 @@ function dynamic.cse_alife_anomalous_zone(se_obj,t,sec)
 		data.shapes[i] = {}
 		data.shapes[i].shtype = t.shape_type and t.shape_type[i] and tonumber(t.shape_type) or 1
 		if (data.shapes[i].shtype == 0) then
-			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or VEC_ZERO
 			data.shapes[i].radius = t.radius and t.radius[i] and tonumber(t.radius[i]) or 10
 		else
 			data.shapes[i].v1 = t.v1 and t.v1[i] and alun_utils.string_to_vector(t.v1[i]) or vector():set(5,0,0)
 			data.shapes[i].v2 = t.v2 and t.v2[i] and alun_utils.string_to_vector(t.v2[i]) or vector():set(0,2,0)
 			data.shapes[i].v3 = t.v3 and t.v3[i] and alun_utils.string_to_vector(t.v3[i]) or vector():set(0,0,5)
-			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or VEC_ZERO
 		end
 	end
 
@@ -909,13 +909,13 @@ function dynamic.cse_alife_object_climable(se_obj,t)
 		data.shapes[i] = {}
 		data.shapes[i].shtype = t.shape_type and t.shape_type[i] and tonumber(t.shape_type) or 1
 		if (data.shapes[i].shtype == 0) then
-			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.center and t.center[i] and alun_utils.string_to_vector(t.center[i]) or VEC_ZERO
 			data.shapes[i].radius = t.radius and t.radius[i] and tonumber(t.radius[i]) or 10
 		else
 			data.shapes[i].v1 = t.v1 and t.v1[i] and alun_utils.string_to_vector(t.v1[i]) or vector():set(5,0,0)
 			data.shapes[i].v2 = t.v2 and t.v2[i] and alun_utils.string_to_vector(t.v2[i]) or vector():set(0,2,0)
 			data.shapes[i].v3 = t.v3 and t.v3[i] and alun_utils.string_to_vector(t.v3[i]) or vector():set(0,0,5)
-			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or vector():set(0,0,0)
+			data.shapes[i].offset = t.v4 and t.v4[i] and alun_utils.string_to_vector(t.v4[i]) or VEC_ZERO
 		end
 	end
 

@@ -443,7 +443,7 @@ function action_patrol:execute()
 		self.l_vid = utils.send_to_nearest_accessible_vertex(self.object, self.l_vid)
 	local desired_direction = self.dir
 	--printf("desired_direction = %s", vec_to_str(desired_direction))
-	if desired_direction ~= nil and not utils.vector_cmp(desired_direction, vector():set(0,0,0)) then
+	if desired_direction ~= nil and not utils.vector_cmp(desired_direction, VEC_ZERO) then
 		desired_direction:normalize()
 		self.object:set_desired_direction(desired_direction)
 	end

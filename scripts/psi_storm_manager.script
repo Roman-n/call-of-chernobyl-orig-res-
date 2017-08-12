@@ -385,7 +385,7 @@ function CPsiStormManager:vortex_actor_hit(vortex)
 			h.power = surge_manager.SurgeManager:hit_power(hit_power, h.type)
 		end		
 		h.impulse = 0
-		h.direction = vector():set(0,0,1)
+		h.direction = VEC_Z
 		h.draftsman = db.actor
 		
 		db.actor:hit(h)
@@ -404,7 +404,7 @@ function CPsiStormManager:vortex_actor_hit(vortex)
 			h.power = surge_manager.SurgeManager:hit_power(hit_power, h.type)
 		end
 		h.impulse = 0
-		h.direction = vector():set(0,0,1)
+		h.direction = VEC_Z
 		h.draftsman = db.actor
 		db.actor:hit(h)
 		level.remove_pp_effector(667)
@@ -528,7 +528,7 @@ function CPsiStormManager:kill_crows_at_pos(pos)
 	h.type = hit.fire_wound
 	h.power = 1.0
 	h.impulse = 0
-	h.direction = vector():set(0,0,1)
+	h.direction = VEC_Z
 	h.draftsman = db.actor
 	for k,v in pairs(bind_crow.crow_storage) do
 		local obj = alife_object(v)

@@ -17,7 +17,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = esc_2_12_stalker_nimble_task_1_fetch_finish
 repeat_timeout = 86400
-on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_item_cost_mult_and_remove(esc_2_12_stalker_nimble_task_1_fetch:1.5) =reward_stash(true) =inc_task_stage(esc_2_12_stalker_nimble_task_1)%
+on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_item_cost_mult_and_remove(esc_2_12_stalker_nimble_task_1_fetch:1.1) =reward_stash(true) =inc_task_stage(esc_2_12_stalker_nimble_task_1)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 
 

@@ -1414,7 +1414,7 @@ end
 
 function hit_actor(actor, npc, p)
 	local h = hit()
-	h.direction = vector():set(0,0,0)
+	h.direction = VEC_ZERO
 	h.draftsman = actor
 	h.type = hit.shock
 	h:bone("bip01_spine")
@@ -4264,7 +4264,7 @@ function make_a_wish(actor,npc,p)
 --			local gvid = spawn_path:game_vertex_id(0)
 --			local gg = game_graph()
 --			if (gvid and gg:valid_vertex_id(gvid)) then
---				ChangeLevel(pos,lvid,gvid,vector():set(0,0,0))
+--				ChangeLevel(pos,lvid,gvid,VEC_ZERO)
 --			end
 --		end
 
@@ -4272,7 +4272,7 @@ function make_a_wish(actor,npc,p)
 --		Goodwill is increased with the Monolith and Zombified faction to ensure they aren't hostile.
 		inc_faction_goodwill_to_actor(db.actor, nil, {"monolith", 5000})
 		inc_faction_goodwill_to_actor(db.actor, nil, {"zombied", 5000})
-		ChangeLevel(vector():set(266.99, 0.00, -131.07), 310937, 181, vector():set(0,0,0))
+		ChangeLevel(vector():set(266.99, 0.00, -131.07), 310937, 181, VEC_ZERO)
 		return 
 	end
 	
@@ -4471,7 +4471,7 @@ function x18_gluk (actor, npc)
 		local sound_obj_l		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_l]] )
         local sound_obj_r		= xr_sound.get_safe_sound_object( [[affects\psy_blackout_r]] )
         local snd_obj			= xr_sound.get_safe_sound_object( [[affects\tinnitus3a]] )
-		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector():set(0,0,0), 1.0)
+		snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, VEC_ZERO, 1.0)
 		sound_obj_l:play_no_feedback(db.actor, sound_object.s2d, 0, vector():set(-1, 0, 1), 1.0)
 		sound_obj_r:play_no_feedback(db.actor, sound_object.s2d, 0, vector():set( 1, 0, 1), 1.0)
 	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
@@ -4503,7 +4503,7 @@ end
 
 function aes_earthshake (npc)
 	local snd_obj = xr_sound.get_safe_sound_object([[ambient\earthquake]])
-	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, vector():set(0,0,0), 1.0)
+	snd_obj:play_no_feedback(db.actor, sound_object.s2d, 0, VEC_ZERO, 1.0)
 	level.add_cam_effector("camera_effects\\earthquake.anm", 1974, false, "")
     --set_postprocess ("scripts\\earthshake.ltx")
 end
@@ -4534,7 +4534,7 @@ function play_snd(actor, npc, p)
 	if p[1] then
 		local snd_obj = xr_sound.get_safe_sound_object(p[1])
 		--snd_obj:play(actor, p[2] or 0, sound_object.s2d)
-		snd_obj:play_no_feedback(actor, sound_object.s2d, p[2] or 0, vector():set(0,0,0), 1.0)
+		snd_obj:play_no_feedback(actor, sound_object.s2d, p[2] or 0, VEC_ZERO, 1.0)
 	end
 end
 
