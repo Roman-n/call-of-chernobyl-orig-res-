@@ -1512,20 +1512,6 @@ function enemy_hud_show(hud)
 				hud:add_msg("Danger Object",bdname)
 				hud:add_msg("Dependent",bddname)
 
-				--[[
-				if (xr_danger.DangerInertion) then
-					local src = xr_danger.DangerInertion[ danger_types[bd_type] ]
-					local inertion = tonumber(xr_logic.pick_section_from_condlist(db.actor,near,xr_logic.parse_condlist(near,danger_types[bd_type],"danger_intertion_time",src))) or 30000
-					hud:add_msg("Inertion",inertion)
-
-					if (st.danger_flag) then
-						local danger_time = xr_danger.get_danger_time(bd,near)
-						local timr = inertion and danger_time and (danger_time + inertion) - time_global()
-						hud:add_msg("Timer",timr and timr > 0 and timr or 0)
-					end
-				end
-				--]]
-
 				if (xr_danger.has_danger(near)) then
 					hud:add_msg("","---Danger Mode is Active---")
 					if (st.danger) then

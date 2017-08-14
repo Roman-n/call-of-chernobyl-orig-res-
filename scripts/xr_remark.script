@@ -39,14 +39,7 @@ function action_remark_activity:activate_scheme()
 	self.anim_scheduled = true
 
 	-- Определим нужно ли нам отыгрывать отдельно звук после поворота.
-	if self.st.snd_anim_sync == false and
-		 self.st.snd ~= nil
-	then
-		self.snd_scheduled = true
-	else
-		self.snd_scheduled = false
-	end
-
+	self.snd_scheduled = self.st.snd_anim_sync == false and self.st.snd ~= nil or false
 	self.snd_started = false
 
 	-- Задаем стартовое состояние
@@ -76,7 +69,7 @@ end
 function action_remark_activity:time_callback()
 --printf("TIME CALLBACK CALLED")
 	self.state = state_sound
-	--self:update() --wtf?
+	self:update()
 end
 function action_remark_activity:update()
 	--' 1. Мы должны повернуться на объект.
@@ -155,7 +148,7 @@ end
 --remark binder
 ----------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder [%s]: scheme='%s', section='%s'", npc:name(), scheme, section)
+	--printf("DEBUG: add_to_binder [%s]: scheme='%s', section='%s'", npc:name(), scheme, section)
 	local operators	= {}
 	local properties  = {}
 
@@ -189,9 +182,9 @@ end
 
 -- Включение схемы
 function set_scheme(npc, ini, scheme, section, gulag_name)
-	printf("DEBUG: set_scheme: scheme='%s', section='%s'", scheme, section)
+	--printf("DEBUG: set_scheme: scheme='%s', section='%s'", scheme, section)
 	local st = xr_logic.assign_storage_and_bind(npc, ini, scheme, section)
-	printf("DEBUG: set_scheme: storage assigned")
+	--printf("DEBUG: set_scheme: storage assigned")
 
 	st.logic     = xr_logic.cfg_get_switch_conditions(ini, section, npc)
 
