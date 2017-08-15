@@ -21,7 +21,7 @@ class                = SM_CAT_S					; AI class
 ef_creature_type	 = 2				; option for evaluation functions
 ef_weapon_type		 = 2
 ef_detector_type			 = 1
-panic_threshold			= 0.2
+panic_threshold			= 0
 rank				= 6
 
 bone_torso			 = bip01_spine1 			; bone name
@@ -102,13 +102,13 @@ Max_Satiety		= 1.0		; üðú¸. ýþ¨üð ¸vªþ¸ªø (ñþû¹°õ - þ¢õý¹ ¸vªvù)
 distance_to_corpse	= 1.5		; ôø¸ª. ôþ ª¨ºÿð, ÿ¨ø úþªþ¨þù þý ÿõ¨õ¿þôøª ò ¸þ¸ªþ ýøõ õôv
 
 ;							  fSearchRange,fCoverFromEnemyWeight,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
-selector_cover           =      20.0,            -1000.0,                30.0,                 0.0,                  0.0,              100000.0,             100000.0,               1000.0,
+selector_cover           =      20.0,            -1000.0,                30.0,                 0.0,                  0.0,              100000.0,             100.0,               1000.0,
 
 
 ;							  fSearchRange,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
 selector_free_hunting    =     20.0,            20.0,               1000.0,             0.0,               10000.0,					1000.0,             10000.0,      
 selector_hear_sound		=      20.0,            1.0,				1000.0,             0.0,               0.0,						1000.0,             10000.0,      
-selector_getaway		=      20.0,            20.0,               1000.0,             0.0,               10000.0,					1000.0,				10000.0,      
+selector_getaway		=      20.0,            20.0,               1000.0,             0.0,               10000.0,					100.0,				10000.0,      
 selector_approach		=      20.0,            1.0,                1000.0,             0.0,               0.0,						1000.0,				10000.0,      
 ;							  fSearchRange,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
 selector_walk_around	=      20.0,            6.0,                 1000.0,             4.0,               5000.0,					8.0,				5000.0,      
