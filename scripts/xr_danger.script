@@ -139,8 +139,8 @@ end
 
 function danger_in_radius(npc,best_danger,bd_type)
 	local src = DangerIgnore[ bd_types[bd_type] ]
-	local condlist = xr_logic.parse_condlist(npc,bd_types[bd_type],"danger_object",src)
-	local ignore_distance = condlist and tonumber(xr_logic.pick_section_from_condlist(db.actor,npc,condlist)) or 0
+	local condlist = xr_logic.parse_condlist(npc,"danger_object",bd_types[bd_type],src)
+	local ignore_distance = condlist and tonumber(xr_logic.pick_section_from_condlist(db.actor,npc,condlist) or 0) or 0
 
 	if (ignore_distance == 0) then
 		return false
@@ -189,7 +189,7 @@ local function is_danger(npc,best_danger,script)
 			end
 
 			local killer = db.storage[corpse_st.death_by_id] and db.storage[corpse_st.death_by_id].object
-			if not (killer and (IsMonster(killer) or IsStalker(killer)) and killer:alive() and npc:relation(killer) > 0 and character_community(killer) ~= character_community(npc)) then
+			if not (killer and (IsMonster(killer) or IsStalker(killer)) and killer:alive() and npc:relation(killer) >= game_object.enemy and character_community(killer) ~= character_community(npc)) then
 				return false
 			end
 			
@@ -281,7 +281,8 @@ local function eval_danger(self)
 	self.a.inertion = nil
 
 	local src = DangerInertion[ bd_types[bd_type] ]
-	local inertion = tonumber(xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,bd_types[bd_type],"danger_inertion_time",src))) or 0
+	local condlist = xr_logic.parse_condlist(npc,"danger_inertion",bd_types[bd_type],src)
+	local inertion = condlist and tonumber(xr_logic.pick_section_from_condlist(db.actor,npc,condlist) or 0) or 0
 
 	local new_danger_time = get_danger_time(danger,npc)
 	if (tg >= new_danger_time + inertion) then

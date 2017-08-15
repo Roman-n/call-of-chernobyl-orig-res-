@@ -113,7 +113,7 @@ local function get_hostage(npc)
 end
 
 local function validate(npc,vid)
-	if (vid and vid < 4294967295 and npc:accessible(vid) and vid ~= npc:level_vertex_id()) then 
+	if (vid and level.valid_vertex(vid) and npc:accessible(vid) and vid ~= npc:level_vertex_id()) then 
 		return db.used_level_vertex_ids[vid] == nil or db.used_level_vertex_ids[vid] == npc:id()
 	end 
 	return false

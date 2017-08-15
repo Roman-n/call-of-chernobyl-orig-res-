@@ -157,8 +157,10 @@ function se_smart_terrain:read_params()
 	self.def_restr				= ini:r_string_ex(smart_sect,"def_restr")	-- default out_restrictor for npc on jobs here
 	self.default_faction 		= ini:r_string_ex(smart_sect,"default_faction")
 	self.faction_controlled 	= ini:r_string_ex(smart_sect,"faction_controlled")
-	self.max_population 		= tonumber(xr_logic.pick_section_from_condlist(get_story_object("actor"), nil, xr_logic.parse_condlist(nil, smart_sect, "max_population", ini:r_string_ex(smart_sect,"max_population") or ""))) or 0
-	self.min_population			= tonumber(xr_logic.pick_section_from_condlist(get_story_object("actor"), nil, xr_logic.parse_condlist(nil, smart_sect, "min_population", ini:r_string_ex(smart_sect,"min_population") or ""))) or 0
+	
+	self.max_population 		= tonumber(xr_logic.pick_section_from_condlist(get_story_object("actor"), nil, ini:r_string_to_condlist(smart_sect,"max_population"))  or 0) or 0
+	self.min_population			= tonumber(xr_logic.pick_section_from_condlist(get_story_object("actor"), nil, ini:r_string_to_condlist(smart_sect,"min_population"))  or 0) or 0
+	
 	self.respawn_idle 			= ini:r_float_ex(smart_sect,"respawn_idle") or 43200
 	self.respawn_only_level 	= ini:r_bool_ex(smart_sect,"respawn_only_level",false)
 	self.respawn_only_smart 	= ini:r_bool_ex(smart_sect,"respawn_only_smart",false)
@@ -169,9 +171,8 @@ function se_smart_terrain:read_params()
 	self.squad_id				= ini:r_float_ex(smart_sect,"squad_id") or 0	
 	
 	if (self.faction_controlled) then
-		local spawn_num = ini:r_string_ex(smart_sect,"faction_respawn_num")
-		if (spawn_num) then 
-			spawn_num = xr_logic.parse_condlist(nil, smart_sect, "faction_respawn_num", spawn_num)
+		local spawn_num_condlist = ini:r_string_to_condlist(smart_sect,"faction_respawn_num")
+		if (spawn_num_condlist) then
 			self.respawn_params 	= {}
 			
 			self.already_spawned	= {}
@@ -195,7 +196,7 @@ function se_smart_terrain:read_params()
 					if (squads_by_faction[faction]) then
 						self.respawn_params[prop_name] = {}
 						self.already_spawned[prop_name]	= {}
-						self.respawn_params[prop_name].num = spawn_num
+						self.respawn_params[prop_name].num = spawn_num_condlist
 						self.already_spawned[prop_name].num	= 0
 						local spawn_squads = utils.parse_names(squads_by_faction[faction])
 						self.respawn_params[prop_name].squads = spawn_squads
@@ -232,14 +233,11 @@ function se_smart_terrain:read_params()
 		if not ini:section_exist(prop_name) then
 			printf("ERROR: %s Wrong smatr_terrain respawn_params section [%s] prop [%s](there is no section)",self:name(), respawn_params, prop_name)
 		else
-			local spawn_num = ini:r_string_ex(prop_name,"spawn_num")
-			if not (spawn_num) then 
-				printf("ERROR: %s Wrong smart_terrain respawn_params section [%s] prop [%s] line [spawn_num](there is no line)",self:name(),respawn_params, prop_name)
-			else
-				spawn_num = xr_logic.parse_condlist(nil, prop_name, "spawn_num", spawn_num)
+			local spawn_num_condlist = ini:r_string_to_condlist(prop_name,"spawn_num")
+			if (spawn_num_condlist) then
 				self.respawn_params[prop_name] 			= {}
 				self.already_spawned[prop_name]			= {}
-				self.respawn_params[prop_name].num		= spawn_num
+				self.respawn_params[prop_name].num		= spawn_num_condlist
 				self.already_spawned[prop_name].num	= 0
 				
 				local spawn_squads = ini:r_string_ex(prop_name,"spawn_squads")
@@ -1100,7 +1098,7 @@ function se_smart_terrain:get_smart_props()
 			props = props.."\\nAlready_spawned :\n"
 			for k,v in pairs(self.already_spawned) do
 				if (v.num and self.respawn_params[k] and self.respawn_params[k].num) then
-					props = props.."["..k.."] = "..v.num.."("..xr_logic.pick_section_from_condlist(db.actor, nil,self.respawn_params[k].num)..")\\n"
+					props = props.."["..k.."] = "..v.num.."("..(xr_logic.pick_section_from_condlist(db.actor, self,self.respawn_params[k].num) or "0")..")\\n"
 				end
 			end
 		end

@@ -65,22 +65,6 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 -- Вызывается на переключении на новую секцию. Производит вычитывание настроек из текущей секции.
 function reset_show_spot(npc, scheme, st, section)
-	local spot_section
-	if (scheme == nil or scheme == "nil") then
-		spot_section = st.ini:r_string_ex(st.section_logic,"show_spot")
-	else
-		spot_section = st.ini:r_string_ex(section,"show_spot")
-	end
-	
-	local map_spot = st.ini:r_string_ex(st.section_logic,"level_spot") or st.ini:r_string_ex(section,"level_spot")
-	if (map_spot) then
-		map_spot = xr_logic.parse_condlist(npc, section, "level_spot", map_spot)
-		map_spot = xr_logic.pick_section_from_condlist(db.actor, npc, map_spot)
-	end
-
-	local spot_condlist = xr_logic.parse_condlist(npc, section, "show_spot", spot_section or "true")
-	local spot = xr_logic.pick_section_from_condlist(db.actor, npc, spot_condlist) or "false"
-
 	local npc_id = npc:id()
 
 	remove_level_spot(npc_id)
@@ -91,7 +75,19 @@ function reset_show_spot(npc, scheme, st, section)
 		return
 	end
 	
-	se_obj:visible_for_map(spot ~= "false")
+	local map_spot
+	local map_spot_condlist = st.ini:r_string_to_condlist(st.section_logic,"level_spot") or st.ini:r_string_to_condlist(section,"level_spot")
+	if (map_spot_condlist) then 
+		map_spot = xr_logic.pick_section_from_condlist(db.actor, npc, map_spot_condlist)
+	end
+	
+	local show_spot = "true"
+	map_spot_condlist = st.ini:r_string_to_condlist(st.section_logic,"show_spot") or st.ini:r_string_to_condlist(section,"show_spot")
+	if (map_spot_condlist) then 
+		show_spot = xr_logic.pick_section_from_condlist(db.actor, npc, map_spot_condlist)
+	end
+	
+	se_obj:visible_for_map(map_spot and show_spot == "true" or false)
 	
 	if not (map_spot) then 
 		return

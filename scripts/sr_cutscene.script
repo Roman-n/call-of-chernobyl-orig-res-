@@ -43,10 +43,10 @@ function cam_effector_set:update()
 		local eff = self.set[self.state][self.cur_effect]
 		if(eff) and (eff.looped~=false) then
 			local cond = xr_logic.pick_section_from_condlist(db.actor, nil, self.condlist)
-					if(cond=="false") then
+			if(cond=="false") then
 				self.looped = false
---	            self:stop_effect()
-					end
+				--self:stop_effect()
+			end
 		end
 	else
 		local eff = self:select_effect()

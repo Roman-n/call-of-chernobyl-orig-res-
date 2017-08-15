@@ -1624,6 +1624,12 @@ if (USE_INI_MEMOIZE) then
 		
 		return a,b,c
 	end
+	function ini_file.r_string_to_condlist(ini,s,k,def)
+		local src = ini:r_string_ex(s,k) or def
+		if (src) then
+			return xr_logic.parse_condlist(nil, s, k, src)
+		end
+	end
 else
 	function ini_file.r_string_ex(ini,s,k,def)
 		--callstack()
@@ -1653,6 +1659,12 @@ else
 	function ini_file.r_line_ex(ini,s,k)
 		--callstack()
 		return ini:r_line(s,k,"","")
+	end
+	function ini_file.r_string_to_condlist(ini,s,k,def)
+		local src = ini:r_string_ex(s,k) or def
+		if (src) then
+			return xr_logic.parse_condlist(nil, s, k, src)
+		end
 	end
 end
 
@@ -1751,6 +1763,13 @@ end
 
 function ini_file_ex:r_float_ex(s,k)
 	return self.ini:section_exist(s) and self.ini:line_exist(s,k) and tonumber(self.ini:r_string(s,k)) or nil
+end
+
+function ini_file_ex:r_string_to_condlist(s,k,def)
+	local src = self:r_string_ex(s,k) or def
+	if (src) then
+		return xr_logic.parse_condlist(nil, s, k, src)
+	end
 end
 
 -----------------------------------------

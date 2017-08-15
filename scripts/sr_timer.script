@@ -37,11 +37,11 @@ function action_timer:update(delta)
 
 	-- Определяем нужно ли куда то переходить.
 	for k,v in pairs(self.st.on_value) do
-		if (self.st.type == "dec" and value_time <= v.dist) or
-			 (self.st.type == "inc" and value_time >= v.dist)
-		then
-			-- Обработка значения.
-			xr_logic.switch_to_section(self.object, self.st.ini, xr_logic.pick_section_from_condlist(db.actor, self.object, v.state))
+		if (v.state) then
+			if (self.st.type == "dec" and value_time <= v.dist) or (self.st.type == "inc" and value_time >= v.dist)	then
+				-- Обработка значения.
+				xr_logic.switch_to_section(self.object, self.st.ini, xr_logic.pick_section_from_condlist(db.actor, self.object, v.state))
+			end
 		end
 	end
 end

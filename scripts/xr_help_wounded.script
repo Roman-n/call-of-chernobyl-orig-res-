@@ -190,7 +190,7 @@ function evaluator_wounded_exist:find_valid_target()
 	local see = dist <= 900 --or npc:see(vo) or npc:memory_time(vo) <= 30000
 	if (see) and (self.a.nearest_dist == nil or dist < self.a.nearest_dist) then 
 		local vertex = level.vertex_id(vo_position)
-		if (vertex and vertex < 4294967295) then
+		if (vertex and level.valid_vertex(vertex)) then
 			if level.vertex_position(vertex):distance_to_sqr(vo_position) > 16 then
 				vertex = vo:level_vertex_id()
 			end

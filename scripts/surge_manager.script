@@ -134,17 +134,8 @@ function CSurgeManager:initialize()
 	self:init_surge_covers()
 
 	local ini = self.ini
-	local cond_string = "true"
-	if(ini:line_exist("settings", "condlist")) then
-		cond_string = ini:r_string_ex("settings", "condlist")
-	end
-	self.condlist = xr_logic.parse_condlist(nil, "surge_manager", "condlist", cond_string)
-
-	cond_string = "false"
-	if(ini:line_exist("settings", "survive")) then
-		cond_string = ini:r_string_ex("settings", "survive")
-	end
-	self.survive = xr_logic.parse_condlist(nil, "surge_manager", "survive_condlist", cond_string)
+	self.condlist = ini:r_string_to_condlist("settings","condlist")
+	self.survive = ini:r_string_to_condlist("settings","survive")
 
 	self.surge_message = ""
 	self.surge_task_sect = ""
@@ -385,7 +376,7 @@ function CSurgeManager:init_surge_covers()
 	local ini = self.ini
 	for i = 0, ini:line_count("list")-1 do
 		temp1, id, temp2 = ini:r_line("list", i, "", "")
-		self.covers[id] = ini:line_exist(id, "condlist") and xr_logic.parse_condlist(db.actor, id, "condlist", ini:r_string_ex(id, "condlist") or "true") or true
+		self.covers[id] = ini:r_string_to_condlist(id,"condlist") or xr_logic.parse_condlist(nil,"surge_manager","covers","true")
 	end
 end
 
@@ -411,7 +402,7 @@ function CSurgeManager:calculate_best_surge_cover()
 	for name,condlist in pairs(self.covers) do
 		local zone = db.zone_by_name[name]
 		if (zone) then
-			local valid = type(condlist) == "boolean" or xr_logic.pick_section_from_condlist(db.actor, nil, condlist) ~= "false"
+			local valid = xr_logic.pick_section_from_condlist(db.actor, nil, condlist) == "true"
 			if (valid) then
 				dist = zone:position():distance_to_sqr(db.actor:position())
 				if (near_dist == nil or dist < near_dist) then 
@@ -469,7 +460,7 @@ function CSurgeManager:update()
 		if(g_time:diffSec(self.last_surge_time) < self._delta) then
 			return
 		end
-		if(xr_logic.pick_section_from_condlist(db.actor, nil, self.condlist) ~= "true") then
+		if (self.condlist and xr_logic.pick_section_from_condlist(db.actor, nil, self.condlist) == "false") then
 			return
 		end
 		self:start()
@@ -791,7 +782,7 @@ function CSurgeManager:update()
 						h.impulse = 0.0
 						h.direction = VEC_Z
 						h.draftsman = db.actor
-						if(xr_logic.pick_section_from_condlist(db.actor, nil, self.survive)=="true") then
+						if (self.survive and xr_logic.pick_section_from_condlist(db.actor, nil, self.survive) == "true") then
 							if(db.actor.health<=h.power) then
 								if (db.actor.health-0.05 > 0.05) then
 									h.power = 0.05

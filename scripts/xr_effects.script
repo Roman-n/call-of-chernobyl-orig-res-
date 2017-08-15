@@ -2209,21 +2209,43 @@ function create_squad_member(actor, obj, p)
 	end
 
 	if p[3] ~= nil then
-		local spawn_point
 		if p[3] == "simulation_point" then
-			spawn_point = system_ini():r_string_ex(squad:section_name(),"spawn_point")
-			if spawn_point == "" or spawn_point == nil then
-				spawn_point = xr_logic.parse_condlist(obj, "spawn_point", "spawn_point", squad_smart.spawn_point)
-			else
-				spawn_point = xr_logic.parse_condlist(obj, "spawn_point", "spawn_point", spawn_point)
+			local spawn_point_condlist = system_ini():r_string_to_condlist(squad:section_name(),"spawn_point")
+			if (spawn_point_condlist) then 
+				local spawn_point = xr_logic.pick_section_from_condlist(db.actor, obj, spawn_point_condlist)
+				if (spawn_point and spawn_point ~= "") then 
+					local pat = patrol(spawn_point)
+					if (pat) then
+						position = pat:point(0)
+						level_vertex_id = pat:level_vertex_id(0)
+						game_vertex_id 	= pat:game_vertex_id(0)
+					end
+				end
 			end
-			spawn_point = xr_logic.pick_section_from_condlist(db.actor, obj, spawn_point)
-		else
-			spawn_point = p[3]
+			
+			if not (position and level_vertex_id and game_vertex_id) then 
+				if (squad_smart.spawn_point) then
+					local pat = patrol(squad_smart.spawn_point)
+					if (pat) then
+						position = pat:point(0)
+						level_vertex_id = pat:level_vertex_id(0)
+						game_vertex_id 	= pat:game_vertex_id(0)
+					end
+				end
+			end
+		elseif (p[3] ~= nil) then
+			local pat = patrol(p[3])
+			if (pat) then
+				position = pat:point(0)
+				level_vertex_id = pat:level_vertex_id(0)
+				game_vertex_id 	= pat:game_vertex_id(0)
+			end
 		end
-		position 		= patrol(spawn_point):point(0)
-		level_vertex_id = patrol(spawn_point):level_vertex_id(0)
-		game_vertex_id 	= patrol(spawn_point):game_vertex_id(0)
+		if not (position and level_vertex_id and game_vertex_id) then 
+			position = squad.position
+			level_vertex_id = squad.m_level_vertex_id
+			game_vertex_id = squad.m_game_vertex_id
+		end
 	else
 		local commander = alife_object(squad:commander_id())
 		position		= commander.position

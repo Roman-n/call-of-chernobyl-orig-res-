@@ -155,7 +155,7 @@ function generic_object_binder:update(delta)
 	local tg = time_global()
 	if (enemy) or (self.post_combat_idle_timer and tg < self.post_combat_idle_timer) then
 		xr_logic.mob_release(self.object)
-		self.post_combat_idle_timer = time_global() + 15000 -- This allows mob released to use engine stuff like corpse eating and dragging after combat
+		self.post_combat_idle_timer = time_global() + math.random(15000,30000) -- This allows mob released to use engine stuff like corpse eating and dragging after combat
 		return
 	end
 	

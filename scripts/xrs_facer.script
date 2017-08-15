@@ -368,7 +368,7 @@ function evaluator_steal_up:evaluate()
 	end
 	
 	local vid = target:level_vertex_id()
-	if (vid < 4294967295 and npc:accessible(vid) and level.vertex_position(vid):distance_to_sqr(tpos) < 3) then
+	if (level.valid_vertex(vid) and npc:accessible(vid) and level.vertex_position(vid):distance_to_sqr(tpos) < 3) then
 		return true
 	end
 

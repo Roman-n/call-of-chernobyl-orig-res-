@@ -116,23 +116,23 @@ function action.debug_attachment_ui(p)
 end 
 
 function action.debug_3d_ui(p)
-	if not (DEV_DEBUG) then 
-		return 
-	end
-	if (p==1) then
-		if not (this.debug_ui_3d) then 
-			this.debug_ui_3d = ui_debug_main.debug_ui_3d()
-		end 
+	-- if not (DEV_DEBUG) then 
+		-- return 
+	-- end
+	-- if (p==1) then
+		-- if not (this.debug_ui_3d) then 
+			-- this.debug_ui_3d = ui_debug_main.debug_ui_3d()
+		-- end 
 		
-		if (this.debug_ui_3d) then 
-			if not (this.debug_ui_3d:IsShown()) then 
-				this.debug_ui_3d:ShowDialog(true)
-				this.debug_ui_3d:Reset()
-			else
-				this.debug_ui_3d:HideDialog()
-			end
-		end
-	end
+		-- if (this.debug_ui_3d) then 
+			-- if not (this.debug_ui_3d:IsShown()) then 
+				-- this.debug_ui_3d:ShowDialog(true)
+				-- this.debug_ui_3d:Reset()
+			-- else
+				-- this.debug_ui_3d:HideDialog()
+			-- end
+		-- end
+	-- end
 end
 
 function action.debug_select_object(p)
@@ -175,15 +175,13 @@ function action.debug_test(p)
 		return 
 	end 
 	if (p==1) then
-		
-		
-		local npc = level.get_target_obj()
-		if (npc and IsStalker(npc)) then 
-			debug_visual_ltx = debug_visual_ltx or ini_file_ex("debug_visual.ltx",true)
-			debug_visual_ltx:w_value("visual_at_cursor",npc:get_visual_name())
-			printf("%s",npc:get_visual_name())
-			debug_visual_ltx:save()
-		end
+		-- local npc = level.get_target_obj()
+		-- if (npc and IsStalker(npc)) then 
+			-- debug_visual_ltx = debug_visual_ltx or ini_file_ex("debug_visual.ltx",true)
+			-- debug_visual_ltx:w_value("visual_at_cursor",npc:get_visual_name())
+			-- printf("%s",npc:get_visual_name())
+			-- debug_visual_ltx:save()
+		-- end
 		--alun_utils.print_table(story_objects.get_story_objects_registry().story_id)
 		--[[ PRINT _G
 		local valid = {

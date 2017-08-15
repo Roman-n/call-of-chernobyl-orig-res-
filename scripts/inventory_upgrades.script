@@ -217,8 +217,8 @@ function precondition_functor_a( param1, section )
 				ret = 1
 			elseif(param~="true") then
 				local possibility_table = xr_logic.parse_condlist(victim, mechanic_name.."_upgr", section, param)
-				local possibility = xr_logic.pick_section_from_condlist(db.actor, victim, possibility_table)
-				if not(possibility) or (possibility=="false") then
+				local possibility = possibility_table and xr_logic.pick_section_from_condlist(db.actor, victim, possibility_table)
+				if (possibility == nil or possibility == "" or possibility == "false") then
 					ret = 2
 				end
 			end
@@ -283,8 +283,8 @@ function prereq_functor_a( param3, section )
 			else
 				cur_hint = nil
 				local possibility_table = xr_logic.parse_condlist(victim, mechanic_name.."_upgr", section, param)
-				local possibility = xr_logic.pick_section_from_condlist(db.actor, victim, possibility_table)
-				if not(possibility) or (possibility=="false") then
+				local possibility = possibility_table and xr_logic.pick_section_from_condlist(db.actor, victim, possibility_table)
+				if (possibility == nil or possibility == "" or possibility == "false") then
 					str = str..get_possibility_string(mechanic_name, possibility_table)
 				end
 			end
@@ -587,9 +587,10 @@ function can_upgrade_item( item_name, mechanic )
 	end
 	local mechanic_name = victim:section()
 	if param_ini:line_exist(mechanic_name, "discount_condlist") then
-		local condlist = param_ini:r_string_ex(mechanic_name, "discount_condlist")
-		local parsed = xr_logic.parse_condlist(db.actor, nil, nil, condlist)
-		xr_logic.pick_section_from_condlist(db.actor, nil, parsed)
+		local parsed = param_ini:r_string_to_condlist(mechanic_name,"discount_condlist")
+		if (parsed) then
+			xr_logic.pick_section_from_condlist(db.actor, nil, parsed)
+		end
 	end
 	return true
 end

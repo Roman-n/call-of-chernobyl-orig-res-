@@ -46,25 +46,25 @@ local function init_custom_data(npc, ini, section, st, scheme)
 
 	
 	
-	st.behavior_state 		= xr_logic.parse_condlist(npc, section, "behavior_state", ini:r_string_ex(section,"behavior_state") or def.behavior_state)
-	st.goto_target 			= xr_logic.parse_condlist(npc, section, "target", ini:r_string_ex(section,"target") or def.goto_target)
+	st.behavior_state 		= ini:r_string_to_condlist(section,"behavior_state",def.behavior_state)
+	st.goto_target 			= ini:r_string_to_condlist(section,"target",def.goto_target)
 	
-	st.walk_dist 			= xr_logic.parse_condlist(npc, section, "walk_dist", ini:r_string_ex(section,"walk_dist") or def.walk_dist)
-	st.jog_dist 			= xr_logic.parse_condlist(npc, section, "jog_dist", ini:r_string_ex(section,"jog_dist") or def.jog_dist)
+	st.walk_dist 			= ini:r_string_to_condlist(section,"walk_dist",def.walk_dist)
+	st.jog_dist 			= ini:r_string_to_condlist(section,"jog_dist",def.jog_dist)
 	
-	st.keep_distance 		= xr_logic.parse_condlist(npc, section, "keep_distance", ini:r_string_ex(section,"keep_distance") or def.keep_distance)
+	st.keep_distance 		= ini:r_string_to_condlist(section,"keep_dist",def.keep_distance)
 	
-	st.near_desired_dist 	= xr_logic.parse_condlist(npc, section, "near_desired_dist", ini:r_string_ex(section,"near_desired_dist") or def.near_desired_dist)
-	st.far_desired_dist 	= xr_logic.parse_condlist(npc, section, "far_desired_dist", ini:r_string_ex(section,"far_desired_dist") or def.far_desired_dist)
+	st.near_desired_dist 	= ini:r_string_to_condlist(section,"near_desired_dist",def.near_desired_dist)
+	st.far_desired_dist 	= ini:r_string_to_condlist(section,"far_desired_dist",def.far_desired_dist)
 	
-	st.wait_cond 			= xr_logic.parse_condlist(npc, section, "wait_anim", ini:r_string_ex(section,"wait_anim") or def.wait_cond)
-	st.walk_cond 			= xr_logic.parse_condlist(npc, section, "walk_anim", ini:r_string_ex(section,"walk_anim") or def.walk_cond)
-	st.jog_cond 			= xr_logic.parse_condlist(npc, section, "jog_anim", ini:r_string_ex(section,"jog_anim") or def.jog_cond)
-	st.run_cond 			= xr_logic.parse_condlist(npc, section, "run_anim", ini:r_string_ex(section,"run_anim") or def.run_cond)
-	st.delay_cond 			= xr_logic.parse_condlist(npc, section, "delay_anim", ini:r_string_ex(section,"delay_anim") or def.delay_cond)
+	st.wait_cond 			= ini:r_string_to_condlist(section,"wait_anim",def.wait_cond)
+	st.walk_cond 			= ini:r_string_to_condlist(section,"walk_anim",def.walk_cond)
+	st.jog_cond 			= ini:r_string_to_condlist(section,"job_anim",def.jog_cond)
+	st.run_cond 			= ini:r_string_to_condlist(section,"run_anim",def.run_cond)
+	st.delay_cond 			= ini:r_string_to_condlist(section,"delay_anim",def.delay_cond)
 	
-	st.path_end 			= xr_logic.parse_condlist(npc, section, "path_end", 	ini:r_string_ex(section,"path_end") or "nil")
-	st.sound_idle			= xr_logic.parse_condlist(npc, section, "sound_idle", 	ini:r_string_ex(section, "sound_idle") or "nil")
+	st.path_end 			= ini:r_string_to_condlist(section,"path_end")
+	st.sound_idle			= ini:r_string_to_condlist(section,"sound_idle")
 	
 	st.use_camp			= ini:r_bool_ex(section,"use_camp",false)
 
@@ -111,9 +111,9 @@ function action_beh:execute()
 	action_base.execute(self)
 
 	local keep_distance 		= xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.keep_distance)
-	self.st.desired_distance	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st[keep_distance.."_desired_dist"])) or 0
+	self.st.desired_distance	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st[keep_distance.."_desired_dist"]) or 0) or 0
 	
-	self.st.behavior 			= xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.behavior_state,"behavior_state") or "beh_wait"
+	self.st.behavior 			= xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.behavior_state, "beh_wait")
 	
 	self.st.wait_animation 		= xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.wait_cond)
 	self.st.walk_animation 		= xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.walk_cond)
@@ -341,8 +341,8 @@ function action_beh:set_state()
 	self.keep_state_until = t + keep_state_min_time
 	
 	local new_state = self.st.wait_animation
-	local dist_walk	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.walk_dist)) or 5
-	local dist_jog 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.jog_dist)) or 10
+	local dist_walk	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.walk_dist) or 5) or 5
+	local dist_jog 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.jog_dist) or 10) or 10
 	
 	if (self.st.assist_point == nil or self.st.assist_point == self.object:level_vertex_id()) then 
 		new_state = self.st.wait_animation
@@ -479,8 +479,8 @@ function action_beh:beh_path()
 		self.camp:unregister_npc(self.object:id())
 		self.in_camp = nil
 	else
-		local sound = self.st.desired_target.sound_idle or xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.sound_idle)
-		if (sound and sound ~= "nil") then
+		local sound = self.st.desired_target.sound_idle or self.st.sound_idle and xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.sound_idle)
+		if (sound and sound ~= "nil" and sound ~= "") then
 			xr_sound.set_sound_play(self.object:id(), sound)
 		end
 	end
@@ -621,7 +621,7 @@ function action_beh:increment_waypoint_index()
 			self.st.path_reverse = nil
 		end
 	else
-		local new_section = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.path_end)
+		local new_section = self.st.path_end and xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.path_end)
 		if (new_section and new_section ~= "nil" and new_section ~= "") then
 			if (new_section == "reverse") then
 				self.st.path_reverse = true

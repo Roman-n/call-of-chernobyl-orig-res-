@@ -874,3 +874,8 @@ function escape_lua_pattern(s)
 	}
     return (s:gsub(".",matches))
 end
+
+-- because xr_logic.parse_condlist npc, section, field params are only used on error
+function parse_condlist(src)
+	return xr_logic.parse_condlist(nil,nil,nil,src)
+end

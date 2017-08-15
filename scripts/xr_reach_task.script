@@ -37,7 +37,7 @@ local function get_npc_command(npc)
 	local dir = commander:direction()
 	local pos = vector():set(0, 0, 0)
 	local vertex_id = commander:location_on_path(5, pos)
-	if level.vertex_position(vertex_id):distance_to(npc:position()) > 5 then
+	if (level.valid_vertex(vertex_id) and level.vertex_position(vertex_id):distance_to(npc:position()) > 5) then
 		vertex_id = commander:level_vertex_id()
 	end	
 

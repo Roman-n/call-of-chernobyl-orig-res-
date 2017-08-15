@@ -46,10 +46,14 @@ function on_game_start()
 			return false 
 		end
 		
-		if (xr_logic.pick_section_from_condlist(nil, se_obj, se_obj.sim_avail) == "true") then
+		if (se_obj.sim_avail) then 
+			if (xr_logic.pick_section_from_condlist(nil, se_obj, se_obj.sim_avail) == "true") then 
+				available_by_id[se_obj.id] = true
+			else 
+				available_by_id[se_obj.id] = false
+			end
+		else -- default true if no condlist
 			available_by_id[se_obj.id] = true
-		else
-			available_by_id[se_obj.id] = false
 		end
 	
 		return false
@@ -116,9 +120,6 @@ function get_props(se_obj)
 		else
 			se_obj.props[prop_name] = tonumber(prop_condlist)
 		end
-	end
-	if se_obj.sim_avail == nil then
-		se_obj.sim_avail = xr_logic.parse_condlist(nil, "simulation_object", "sim_avail", "true")
 	end
 end
 

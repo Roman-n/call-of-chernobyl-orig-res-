@@ -62,13 +62,17 @@ function action_reach_animpoint:execute()
 	self.object:set_path_type(game_object.level_path)
 
     --printf("%s animpoint position riched %s", npc:name(), npc:position():distance_to_sqr(self.vertex_position))
-
-    local reach_movement = xr_logic.pick_section_from_condlist(db.actor, nil, self.st.reach_movement)
-
+	local new_state = "walk"
+	if (self.st.reach_movement) then 
+		local reach_movement = xr_logic.pick_section_from_condlist(db.actor, nil, self.st.reach_movement)
+		if (reach_movement and reach_movement ~= "") then 
+			new_state = reach_movement
+		end
+	end
 	if (self.object:position():distance_to_sqr(self.st.animpoint.vertex_position) <= self.st.reach_distance) then
-		state_mgr.set_state(self.object, reach_movement, nil, nil, {look_position = self.st.animpoint.look_position}  )
+		state_mgr.set_state(self.object, new_state, nil, nil, {look_position = self.st.animpoint.look_position}  )
 	else
-		state_mgr.set_state(self.object, reach_movement)
+		state_mgr.set_state(self.object, new_state)
 	end
 end
 function action_reach_animpoint:finalize()
@@ -461,8 +465,8 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	st.cover_name		= ini:r_string_ex(section,"cover_name") or "$script_id$_cover"
 	st.use_camp 		= ini:r_bool_ex(section,"use_camp",true)
 	st.reach_distance	= ini:r_float_ex(section,"reach_distance") or 0.8
-	st.reach_movement = xr_logic.parse_condlist(db.actor, "animpoint", "reach_movement", ini:r_string_ex(section,"reach_movement") or "walk")
-	st.reach_distance = st.reach_distance*st.reach_distance
+	st.reach_movement 	= ini:r_string_to_condlist(section,"reach_movement")
+	st.reach_distance 	= st.reach_distance*st.reach_distance
 
 	st.direction = ini:r_string_ex(section,"direction")
 	st.direction = st.direction and alun_utils.string_to_vector(st.direction)

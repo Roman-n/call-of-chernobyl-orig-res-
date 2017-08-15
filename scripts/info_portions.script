@@ -57,7 +57,7 @@ end
 
 local function actor_on_info_callback(actor,info,obj)
 	if (info_switches[info]) then
-		xr_logic.pick_section_from_condlist(actor,actor,alun_utils.parse_condlist(info_switches[info]))
+		xr_logic.pick_section_from_condlist(actor,actor,utils.parse_condlist(info_switches[info]))
 	end
 	
 	if (info == "ui_pda") then 

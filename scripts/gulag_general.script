@@ -142,10 +142,7 @@ end
 --------------------------------------------------------------------
 local function precond_exclusive(se_obj,smart,job)
 	local result = xr_logic.pick_section_from_condlist(db.actor, se_obj, job.precondition_params.condlist)
-	if (result == "false" or result == nil) then
-		return false
-	end
-	return true
+	return result == "true" or result == ""
 end
 
 local function precond_heli_hide(se_obj,smart,job)
@@ -1189,6 +1186,9 @@ local function add_exclusive_job(smart,sect, work_field, smart_ini)
 	end
 
 	local condlist = xr_logic.parse_condlist(smart, lsec, "suitable", job_suitable)
+	-- if (condlist) then
+		-- alun_utils.print_table(condlist,ini_path)
+	-- end
 
 	local new_job = {section = lsec, ini_path = ini_path, ltx = job_ini_file, job_type = job_type, prior = new_prior, precondition_params = { condlist = condlist },	precondition_function = precond_exclusive, prefix_name = prefix, exclusive = true}
 	if (is_monster) then

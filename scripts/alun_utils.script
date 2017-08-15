@@ -285,47 +285,6 @@ function parse_list(ini,key,val,convert)
 	return t
 end
 
-function eval_condlist(npc, condlist, p)
-	return xr_logic.pick_section_from_condlist(db.actor,npc, condlist, p)
-end
-
-function parse_condlist(str)
-	if not (str) then
-		printf("alun_utils.parse_condlist: Error no source string")
-		return
-	end
-
-	local src = str_explode(str,",")
-	local t = {}
-	local a,b,infop_check_lst,infop_set_lst,remainings,new_sect
-	for i=1,#src do
-		a, b, infop_check_lst = string.find(src[i], "{%s*(.*)%s*}")
-		if (infop_check_lst) then
-			remainings = string.sub(src[i], 1, a - 1) .. string.sub(src[i], b + 1)
-		else
-			remainings = src[i]
-		end
-
-		a, b, infop_set_lst = string.find(remainings, "%%%s*(.*)%s*%%")
-		if (infop_set_lst) then
-			new_sect = string.sub(remainings, 1, a - 1) .. string.sub(remainings, b + 1)
-		else
-			new_sect = remainings
-		end
-
-		new_sect = trim(new_sect)
-
-		t[i] = {}
-		t[i].infop_check = {}
-		t[i].infop_set = {}
-
-		t[i].section = new_sect
-		xr_logic.parse_infop(t[i].infop_check, infop_check_lst)
-		xr_logic.parse_infop(t[i].infop_set, infop_set_lst)
-	end
-	return t
-end
-
 function collect_sections(ini,sections)
 	local r,p = {},{}
 	for k=1,#sections do

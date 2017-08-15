@@ -160,19 +160,20 @@ function msg_box_ui:InitControls(obj,disable_msg,item)
 		return
 	end
 
-	local enable = ini:r_string_ex(self.name,"enable")
-	enable = enable and xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj,"enable",self.name,enable))
-
-	if (enable ~= "true") then
-		local reject_on_disable = ini:r_bool_ex(self.name,"reject_on_disabled",false)
-		if (reject_on_disable) then
-			local warning = ini:r_string_ex(self.name,"warning")
-			if (warning) then
-				SetHudMsg(game.translate_string(warning),5)
+	local enable_condlist = ini:r_string_to_condlist(self.name,"enable")
+	if (enable_condlist) then
+		local enable = xr_logic.pick_section_from_condlist(db.actor,obj,enable_condlist)
+		if (enable == "false") then 
+			local reject_on_disable = ini:r_bool_ex(self.name,"reject_on_disabled",false)
+			if (reject_on_disable) then
+				local warning = ini:r_string_ex(self.name,"warning")
+				if (warning) then
+					SetHudMsg(game.translate_string(warning),5)
+				end
+				self:OnMsgCancel()
 			end
-			self:OnMsgCancel()
+			return
 		end
-		return
 	end
 	
 	if (self.disable_msg) then

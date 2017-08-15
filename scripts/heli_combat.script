@@ -260,14 +260,7 @@ function heli_combat:read_custom_data( ini, section )
 	self.combat_use_mgun   = ini:r_bool_ex(section,"combat_use_mgun") or sys_ini:r_bool_ex(section,"combat_use_mgun",false)
 	self.actor_always_enemy   = ini:r_bool_ex(section,"actor_always_enemy") or sys_ini:r_bool_ex(section,"actor_always_enemy",false)
 	
-	--	self.combat_ignore     = utils.cfg_get_bool  ( ini, section, "combat_ignore",     self.object, false, false )
-
-	local combat_ignore    = ini:r_string_ex(section,"combat_ignore")
-	if combat_ignore then
-		self.combat_ignore = xr_logic.parse_condlist( self.object, section, "combat_ignore", combat_ignore )
-	else
-		self.combat_ignore = nil
-	end
+	self.combat_ignore = ini:r_string_to_condlist(section,"combat_ignore")
 
 	local combat_enemy = ini:r_string_ex(section,"combat_enemy")
 	self:set_enemy_from_custom_data( combat_enemy )
@@ -493,7 +486,7 @@ end
 
 -- нужно ли игнорировать врага
 function heli_combat:combat_ignore_check()
-	return self.combat_ignore ~= nil and xr_logic.pick_section_from_condlist( db.actor, self.object, self.combat_ignore ) ~= nil
+	return self.combat_ignore ~= nil and xr_logic.pick_section_from_condlist( db.actor, self.object, self.combat_ignore ) == "true"
 end
 
 -- Обновление боевой схемы. Вызывается из обновлений схем логики вертолёта.

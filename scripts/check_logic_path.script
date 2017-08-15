@@ -5,22 +5,19 @@ local path_fields = { "path_walk", "path_main", "path_home", "center_point" }
 function check()
 	for smart_name,smart in pairs(smart_terrain.smart_terrains_by_name) do
 		--printf("checking smart ---> %s", smart_name)
-		
 		for k,v in pairs(smart.job_data) do
 			--printf("     checking work --> %s", v.section)
 			local ltx = v.ini_file or smart.ltx
 			check_ini(ltx, v.section, smart, v.prefix_name)
 		end
-
-		
 	end
 end
 
-
-
 local section_to_check = {}
-
 function get_sections(ini, active_section_cond)
+	if not (active_section_cond) then 
+		return 
+	end
 	for k,cond in pairs(active_section_cond) do
 		if cond.section ~= nil then
 			if section_to_check[cond.section] ~= true then		
@@ -35,8 +32,6 @@ function get_sections(ini, active_section_cond)
 			end
 		end
 	end
-
-
 end
 
 function check_ini(ini, section, smart, prefix_name)

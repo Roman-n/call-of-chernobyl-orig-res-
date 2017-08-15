@@ -45,13 +45,11 @@ function sim_squad_scripted:init_squad()
 	local settings_id 		= self:section_name()
 	
 	self.player_id 			= sys_ini:r_string_ex(settings_id,"faction") or "stalker"
-	self.action_condlist	= xr_logic.parse_condlist(self, "assign_action", "target_smart", sys_ini:r_string_ex(settings_id,"target_smart") or "")
-	self.death_condlist		= xr_logic.parse_condlist(self, "death_condlist", "on_death", sys_ini:r_string_ex(settings_id,"on_death") or "")
-	self.invulnerability	= xr_logic.parse_condlist(self, "invulnerability", "invulnerability", sys_ini:r_string_ex(settings_id,"invulnerability") or "")
+	self.action_condlist	= sys_ini:r_string_to_condlist(settings_id,"target_smart")
+	self.death_condlist		= sys_ini:r_string_to_condlist(settings_id,"on_death")
+	self.invul_condlist		= sys_ini:r_string_to_condlist(settings_id,"invulnerability")
 	
-	local rel 				= sys_ini:r_string_ex(settings_id,"relationship")
-	self.relationship_condlist = rel and xr_logic.parse_condlist(self, settings_id, "relationship",rel)
-	
+	self.relationship_condlist = sys_ini:r_string_to_condlist(settings_id,"relationship")
 	if (self.relationship_condlist) then 
 		local new_relation = xr_logic.pick_section_from_condlist(db.actor, self, self.relationship_condlist)
 		if (new_relation) and (new_relation == "enemy" or new_relation == "friend" or new_relation == "neutral") then 
@@ -67,7 +65,6 @@ function sim_squad_scripted:init_squad()
 	
 	self.relationship		= self.relationship or rel
 	self.sympathy			= sys_ini:r_float_ex(settings_id,"sympathy")
-	self.show_spot			= xr_logic.parse_condlist(self, "show_spot", "show_spot", sys_ini:r_string_ex(settings_id,"show_spot") or "false")
 
 	self.always_arrived		= sys_ini:r_bool_ex(settings_id,"always_arrived",false)
 	self:set_location_types_section("squad_terrain")
@@ -100,7 +97,7 @@ function sim_squad_scripted:get_script_target()
 		else 
 			return self.assigned_target_id
 		end
-	else
+	elseif (self.action_condlist) then
 		new_target = xr_logic.pick_section_from_condlist(db.actor, self, self.action_condlist)
 	end 
 	
@@ -360,7 +357,7 @@ function sim_squad_scripted:remove_npc(npc_id)
 	end
 	if self:npc_count() == 0 then
 		self.current_action = nil
-		if self.death_condlist ~= nil then
+		if (self.death_condlist) then
 			xr_logic.pick_section_from_condlist(db.actor, self, self.death_condlist)
 		end
 		
@@ -396,7 +393,7 @@ function sim_squad_scripted:on_npc_death(se_npc,se_killer)
 	end 
 	
 	self.current_action = nil
-	if self.death_condlist ~= nil then
+	if (self.death_condlist) then
 		xr_logic.pick_section_from_condlist(db.actor, self, self.death_condlist)
 	end
 	
@@ -461,7 +458,7 @@ function sim_squad_scripted:check_invulnerability()
 	if self.online ~= true then
 		return
 	end
-	local invulnerability = xr_logic.pick_section_from_condlist(db.actor, self, self.invulnerability) == "true"
+	local invulnerability = self.invul_condlist and xr_logic.pick_section_from_condlist(db.actor, self, self.invul_condlist) == "true"
 	if (invulnerability) then
 		for k in self:squad_members() do
 			local npc_st = db.storage[k.id]
@@ -551,39 +548,54 @@ function sim_squad_scripted:create_npc(spawn_smart,pos,lvid,gvid)
 	local settings_id = self:section_name()
 	local spawn_sections = utils.parse_names(ini:r_string_ex(settings_id, "npc") or "")
 	
-	local spawn_point, base_spawn_position, base_lvi, base_gvi, spawn_vid
-	if (spawn_smart) then 
-		spawn_point = ini:r_string_ex(settings_id,"spawn_point") or spawn_smart.ini and spawn_smart.ini:r_string_ex(settings_id,"spawn_point") or "self"
-		spawn_point = xr_logic.parse_condlist(self, "spawn_point", "spawn_point", spawn_point)
-		spawn_point = xr_logic.pick_section_from_condlist(db.actor, self, spawn_point)
-		
-		base_spawn_position = spawn_smart.position
-		base_lvi = spawn_smart.m_level_vertex_id
-		base_gvi = spawn_smart.m_game_vertex_id
-		spawn_vid = ini:r_string_ex(settings_id,"spawn_vid") or spawn_smart.ini and spawn_smart.ini:r_string_ex(settings_id,"spawn_vid")
-		spawn_vid = spawn_vid and xr_logic.pick_section_from_condlist(db.actor,self, xr_logic.parse_condlist(self,"spawn_vid","spawn_vid",spawn_vid))
-		
+	local base_spawn_position, base_lvi, base_gvi, spawn_vid
+	if (spawn_smart) then
+	
+		-- Try to look/parse spawn_vid in either squad logic or smart logic
+		local spawn_vid = ini:r_string_to_condlist(settings_id,"spawn_vid") or spawn_smart.ini:r_string_to_condlist(settings_id,"spawn_vid")
 		if (spawn_vid) then
-			local vid = alun_utils.str_explode(spawn_vid,":")
-			base_lvi = tonumber(vid[1])
-			base_spawn_position = level.vertex_position(base_lvi)
-			base_gvi = tonumber(vid[2])
-		else
-			if spawn_point ~= nil then
-				if spawn_point == "self" then
-					base_spawn_position = spawn_smart.position
-					base_lvi = spawn_smart.m_level_vertex_id
-					base_gvi = spawn_smart.m_game_vertex_id
-				else
-					base_spawn_position = patrol(spawn_point):point(0)
-					base_lvi = patrol(spawn_point):level_vertex_id(0)
-					base_gvi = patrol(spawn_point):game_vertex_id(0)
-				end
-			elseif spawn_smart.spawn_point ~= nil then
-				base_spawn_position = patrol(spawn_smart.spawn_point):point(0)
-				base_lvi = patrol(spawn_smart.spawn_point):level_vertex_id(0)
-				base_gvi = patrol(spawn_smart.spawn_point):game_vertex_id(0)
+			local str = xr_logic.pick_section_from_condlist(db.actor,self,spawn_vid)
+			if (str and str ~= "" and str ~= "nil") then
+				local vid = alun_utils.str_explode(str,":")
+				base_lvi = tonumber(vid[1])
+				base_spawn_position = level.vertex_position(base_lvi)
+				base_gvi = tonumber(vid[2])
 			end
+		end
+		
+		-- Try to look/parse spawn_point in either squad logic or smart logic
+		if not (base_spawn_position and base_lvi and base_gvi) then
+			local spawn_point = ini:r_string_to_condlist(settings_id,"spawn_point") or spawn_smart.ini:r_string_to_condlist(settings_id,"spawn_point")
+			if (spawn_point) then 
+				local p_path = xr_logic.pick_section_from_condlist(db.actor, self, spawn_point)
+				if (p_path and p_path ~= "" and p_path ~= "nil") then 
+					local pat = patrol(p_path)
+					if (pat) then
+						base_spawn_position = pat:point(0)
+						base_lvi = pat:level_vertex_id(0)
+						base_gvi = pat:game_vertex_id(0)
+					end
+				end
+			end
+		end
+		
+		-- Try spawn_smart.spawn_point
+		if not (base_spawn_position and base_lvi and base_gvi) then
+			if (spawn_smart.spawn_point) then	
+				local pat = patrol(spawn_smart.spawn_point)
+				if (pat) then
+					base_spawn_position = pat:point(0)
+					base_lvi = pat:level_vertex_id(0)
+					base_gvi = pat:game_vertex_id(0)
+				end
+			end
+		end
+		
+		-- if all else fail, spawn on smart
+		if not (base_spawn_position and base_lvi and base_gvi) then
+			base_spawn_position = spawn_smart.position
+			base_lvi = spawn_smart.m_level_vertex_id
+			base_gvi = spawn_smart.m_game_vertex_id
 		end
 		
 		self.smart_id = spawn_smart.id

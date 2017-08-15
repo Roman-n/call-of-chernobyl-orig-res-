@@ -123,14 +123,10 @@ function has_completed_task_prerequisites(actor,npc,p)
 		return true 
 	end
 	
-	local precond = task_manager.task_ini:r_string_ex(p[1],"precondition")
-	if (precond and precond ~= "") then 
-		precond = xr_logic.parse_condlist(npc, p[1], "precondition", task_manager.task_ini:r_string_ex(p[1],"precondition") or "true")
-		if (precond == "false") then 
-			return false 
-		end 
-		if (db.actor and xr_logic.pick_section_from_condlist(db.actor, npc, precond) == "false") then 
-			return false 
+	local precond_condlist = task_manager.task_ini:r_string_to_condlist(p[1],"precondition")
+	if (precond_condlist and db.actor) then
+		if (xr_logic.pick_section_from_condlist(db.actor, npc, precond_condlist) == "false") then 
+			return false
 		end
 	end
 	
@@ -442,7 +438,7 @@ end
 function check_squad_name (actor , npc , p)
 	local squad = get_object_squad(npc)
 	if not (squad) then
-		return
+		return false
 	end
 
 	local sq
@@ -452,7 +448,7 @@ function check_squad_name (actor , npc , p)
 			return true
 		end
 	end
-	return
+	return false
 end
 
 function is_playing_sound (actor, npc)

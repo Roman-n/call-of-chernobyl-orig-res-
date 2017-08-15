@@ -358,15 +358,17 @@ function evaluator_corpse:find_valid_target()
 
 			if (dist < AlwaysDetectDistance) and (self.a.nearest_corpse_dist == nil or dist <= self.a.nearest_corpse_dist) then
 				local corpse_vertex = level.vertex_id(corpse_pos)
-				if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
-					corpse_vertex = corpse_npc:level_vertex_id()
-				end
-				if (npc:accessible(corpse_vertex) and level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) <= 15) then
-					self.a.nearest_corpse_dist = dist
-					self.a.nearest_corpse_vertex = corpse_vertex
-					self.a.nearest_corpse_position = corpse_pos
-					self.a.nearest_id = id
-					self.a.nearest_state = dist < math.random(5,30) and StateWalk or StateRun
+				if (corpse_vertex and level.valid_vertex(corpse_vertex)) then
+					if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
+						corpse_vertex = corpse_npc:level_vertex_id()
+					end
+					if (npc:accessible(corpse_vertex) and level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) <= 15) then
+						self.a.nearest_corpse_dist = dist
+						self.a.nearest_corpse_vertex = corpse_vertex
+						self.a.nearest_corpse_position = corpse_pos
+						self.a.nearest_id = id
+						self.a.nearest_state = dist < math.random(5,30) and StateWalk or StateRun
+					end
 				end
 			end
 		end
@@ -402,8 +404,8 @@ function evaluator_corpse:evaluate()
 		return false 
 	end
 
-	self.a.analse_mode = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.mutant_corpse_analysis)
-	self.a.enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.corpse_detection_enabled)
+	self.a.analse_mode = self.a.mutant_corpse_analysis and xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.mutant_corpse_analysis) or "false"
+	self.a.enabled = self.a.corpse_detection_enabled and xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.corpse_detection_enabled) or "true"
 	if (self.a.analse_mode == "false" and self.a.enabled == "false") then
 		return false
 	end
@@ -594,8 +596,8 @@ function reset_generic_scheme(npc,scheme,section,stype,st)
 	st.corpse_detection.vertex_id = nil
 	st.corpse_detection.vertex_position = nil
 
-	st.corpse_detection.mutant_corpse_analysis = xr_logic.parse_condlist(npc, section, "mutant_corpse_analysis", st.ini:r_string_ex(section,"mutant_corpse_analysis") or "false")
-	st.corpse_detection.corpse_detection_enabled = xr_logic.parse_condlist(npc, section, "corpse_detection_enabled",st.ini:r_string_ex(section,"corpse_detection_enabled") or "true")
+	st.corpse_detection.mutant_corpse_analysis = st.ini:r_string_to_condlist(section,"mutant_corpse_analysis")
+	st.corpse_detection.corpse_detection_enabled = st.ini:r_string_to_condlist(section,"corpse_detection_enabled")
 end
 
 function is_under_corpse_detection(npc)

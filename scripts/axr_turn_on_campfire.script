@@ -110,7 +110,7 @@ function eva_turn_on_campfire:find_valid_target()
 		return false
 	end
 
-	if (npc_info.job.exclusive and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.allow) == "false") then
+	if (npc_info.job.exclusive and self.st.allow and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.allow) == "false") then
 		return false
 	end
 
@@ -299,7 +299,7 @@ end
 
 function reset_generic_scheme(npc,scheme,section,stype,st)
 	if (st.turn_on_campfire) then
-		st.turn_on_campfire.allow = xr_logic.parse_condlist(npc, section, "turn_on_campfire", st.ini:r_string_ex(section,"turn_on_campfire") or "false")
+		st.turn_on_campfire.allow = st.ini:r_string_to_condlist(section,"turn_on_campfire")
 		eval_reset(st.turn_on_campfire)
 	end
 end
