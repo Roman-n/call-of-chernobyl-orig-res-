@@ -87,7 +87,7 @@ function reset_show_spot(npc, scheme, st, section)
 		show_spot = xr_logic.pick_section_from_condlist(db.actor, npc, map_spot_condlist)
 	end
 	
-	se_obj:visible_for_map(map_spot and show_spot == "true" or false)
+	se_obj:visible_for_map(show_spot == "true" or false)
 	
 	if not (map_spot) then 
 		return
