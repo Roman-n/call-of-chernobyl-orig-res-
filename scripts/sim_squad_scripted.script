@@ -53,10 +53,9 @@ function sim_squad_scripted:init_squad()
 	if (self.relationship_condlist) then 
 		local new_relation = xr_logic.pick_section_from_condlist(db.actor, self, self.relationship_condlist)
 		if (new_relation) and (new_relation == "enemy" or new_relation == "friend" or new_relation == "neutral") then 
-			rel = new_relation
+			self.relationship = new_relation
 		end
 	end
-	self.relationship		= self.relationship or rel
 	
 	local s	= sys_ini:r_string_ex(settings_id, "target_random_smart")
 	if (s) then
