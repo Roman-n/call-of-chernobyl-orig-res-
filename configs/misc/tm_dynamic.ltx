@@ -19,7 +19,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_1_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_5.56x45_ap:ammo_5.56x45_ap:ammo_12x70_buck:ammo_12x70_buck) =reward_item_cost_mult_and_remove(simulation_task_1_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_1_fetch) =inc_task_stage(simulation_task_1) =pstor_reset(simulation_task_1_fetch)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_5.56x45_ap:ammo_5.56x45_ap:ammo_12x70_buck:ammo_12x70_buck) =reward_item_cost_mult_and_remove(simulation_task_1_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_1_fetch) =inc_task_stage(simulation_task_1) =pstor_reset(simulation_task_1_fetch)%
 on_fail = %=pstor_reset(simulation_task_1_fetch)%
 on_cancel = %=pstor_reset(simulation_task_1_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_1)} fail
@@ -73,7 +73,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_3_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap) =reward_item_cost_mult_and_remove(simulation_task_3_fetch:6:6) =reward_stash(true) =inc_task_stage(simulation_task_3)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap) =reward_item_cost_mult_and_remove(simulation_task_3_fetch:6:6) =reward_stash(true) =inc_task_stage(simulation_task_3)%
 condlist_0 = {!task_giver_alive(simulation_task_3)} fail
 
 
@@ -98,7 +98,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_4_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap:wpn_vintorez:wpn_abakan:wpn_groza:wpn_pkm) =complete_task_inc_goodwill(50:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap:wpn_vintorez:wpn_abakan:wpn_groza:wpn_pkm) =complete_task_inc_goodwill(50:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_4)} fail
 
@@ -295,7 +295,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_12:bandit)%
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap:wpn_sig550:vodka) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(50:stalker)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_9x39_ap:ammo_9x39_ap:ammo_9x39_ap:ammo_5.56x45_ap:ammo_5.56x45_ap:wpn_sig550:vodka) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(50:stalker)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_12)} fail
 
@@ -321,7 +321,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_13_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_9x39_pab9:ammo_9x39_pab9:ammo_5.45x39_ap:ammo_vog-25) =reward_item_cost_mult_and_remove(simulation_task_13_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_13_fetch) =inc_task_stage(simulation_task_13) =pstor_reset(simulation_task_13_fetch)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_9x39_pab9:ammo_9x39_pab9:ammo_5.45x39_ap:ammo_vog-25) =reward_item_cost_mult_and_remove(simulation_task_13_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_13_fetch) =inc_task_stage(simulation_task_13) =pstor_reset(simulation_task_13_fetch)%
 on_fail = %=pstor_reset(simulation_task_13_fetch)%
 on_cancel = %=pstor_reset(simulation_task_13_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_13)} fail
@@ -348,7 +348,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_14_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(itm_repairkit_tier_1:itm_repairkit_tier_2:ammo_5.45x39_ap:ammo_5.45x39_fmj:ammo_5.45x39_fmj:ammo_9x19_pbp) =reward_item_cost_mult_and_remove(simulation_task_14_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_14_fetch) =inc_task_stage(simulation_task_14) =pstor_reset(simulation_task_14_fetch)%
+on_complete = %=reward_random_item(itm_repairkit_tier_1:ammo_5.45x39_ap:ammo_5.45x39_fmj:ammo_5.45x39_fmj:ammo_9x19_pbp) =reward_item_cost_mult_and_remove(simulation_task_14_fetch:1) =reward_stash(true) =remove_fetch_item(simulation_task_14_fetch) =inc_task_stage(simulation_task_14) =pstor_reset(simulation_task_14_fetch)%
 on_fail = %=pstor_reset(simulation_task_14_fetch)%
 on_cancel = %=pstor_reset(simulation_task_14_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_14)} fail

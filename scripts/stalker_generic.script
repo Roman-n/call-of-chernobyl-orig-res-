@@ -71,7 +71,7 @@ function reset_show_spot(npc, scheme, st, section)
 	
 	local sim  = alife()
 	local se_obj  = sim:object(npc_id)
-	if not (se_obj) then 
+	if not (se_obj) then
 		return
 	end
 	

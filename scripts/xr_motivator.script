@@ -131,11 +131,6 @@ function motivator_binder:net_spawn(se_abstract)
 		
 	db.add_enemy(npc)
 
-	local relation = db.goodwill.relations and db.goodwill.relations[npc:id()]
-	if (relation and db.actor) then
-		game_relations.set_npcs_relation(npc, db.actor, relation)
-	end
-
 	local sympathy = db.goodwill.sympathy and db.goodwill.sympathy[npc:id()]
 	if (sympathy) then
 		game_relations.set_npc_sympathy(npc, sympathy)

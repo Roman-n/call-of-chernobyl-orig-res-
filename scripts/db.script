@@ -19,7 +19,7 @@ smart_terrain_by_id = {}
 info_restr          = {}
 heli_enemies        = {}
 anim_obj_by_name	= {}
-goodwill 			= {sympathy = {}, relations = {}}
+goodwill 			= {sympathy = {}}
 story_object		= {}
 signal_light		= {}
 offline_objects		= {}
