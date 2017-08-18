@@ -36,8 +36,9 @@ path_walk = nuc_walk
 path_look  = nuc_look
 def_state_standing = wait_trade
 def_state_moving = walk_noweap
-on_info2 = remark@stand_still
+on_actor_dist_le_nvis = 5 | remark@stand_still
 
 [remark@stand_still]:walker@generic
 target = story | actor
 anim = wait_trade
+on_actor_dist_ge_nvis = 6 | walker@meet
