@@ -110,8 +110,10 @@ function eva_turn_on_campfire:find_valid_target()
 		return false
 	end
 
-	if (npc_info.job.exclusive and self.st.allow and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.allow) ~= "true") then
-		return false
+	if (npc_info.job.exclusive) then 
+		if (self.st.allow == nil or xr_logic.pick_section_from_condlist(db.actor, npc, self.st.allow) ~= "true") then
+			return false
+		end
 	end
 
 	local campfires = db.campfire_table_by_smart_names[smart:name()]
