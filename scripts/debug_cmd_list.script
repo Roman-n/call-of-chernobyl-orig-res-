@@ -1344,6 +1344,7 @@ function cmd.invisible(me,txt,owner,p)
 	return "invisible:= type invisible help for list of sub commands"
 end
 
+local crow_fun
 function cmd.crow(me,txt,owner,p)
 	local wrd = check_and_set_help(me,txt,owner,"[on|off]")
 	if not (wrd) then return end
@@ -1351,14 +1352,22 @@ function cmd.crow(me,txt,owner,p)
 	if (wrd == "on") then
 		local se_crow = alun_utils.nearest_object("m_crow")
 		if (se_crow) then
-			xrs_debug_tools.crow_fun = se_crow.id
+			local function mount_crow()
+				if (crow_fun) then
+					db.actor:set_actor_position(se_crow.position)
+					return false
+				end 
+				return true
+			end
+			crow_fun = true
+			AddUniqueCall(mount_crow)
 			return "crow:= enabled"
 		end
 		return "crow:= no crows found"
 	end
 
 	if (wrd == "off") then
-		xrs_debug_tools.crow_fun = nil
+		crow_fun = nil
 		return "crow:= disabled"
 	end
 
@@ -1366,8 +1375,9 @@ function cmd.crow(me,txt,owner,p)
 end
 
 local heli_id
+local heli_fun
 function cmd.heli(me,txt,owner,p)
-	local wrd = check_and_set_help(me,txt,owner,"[spawn|move]")
+	local wrd = check_and_set_help(me,txt,owner,"[spawn|move|mount|dismount]")
 	if not (wrd) then return end
 
 	if (wrd == "spawn") then
@@ -1404,11 +1414,66 @@ function cmd.heli(me,txt,owner,p)
 		return "heli:= move failed"
 	end
 
-	if (wrd == "attack") then
-
-
-
-
+	if (wrd == "mount") then
+		local heli
+		for id,o in pairs(db.heli) do
+			heli = o
+			break
+		end
+		if (heli) then
+			local function mount_heli()
+				if (heli_fun) then
+					local dirlook = device().cam_dir
+					local dirmove = device().cam_pos
+					local dirlookheli = vector():set(dirmove)
+					local deltalookheli = vector():set(dirmove)
+					
+					local pos = heli:position()
+					
+					dirlookheli.x = dirmove.x + (dirlook.x*20)
+					if (pos.y < 38 and pos.y > 42) then 
+						dirlookheli.y = pos.y
+					else 
+						dirlookheli.y = 40
+					end
+					dirlookheli.z = dirmove.z + (dirlook.z*20)
+					
+					local ho = heli:get_helicopter()
+					ho:LookAtPoint(dirlookheli,true)
+					ho:SetSpeedInDestPoint(0)
+					ho:SetDestPosition(dirlookheli)
+					ho.m_max_mgun_dist = 200
+					ho.m_max_rocket_dist = 200
+					ho.m_min_mgun_dist = 5
+					ho.m_min_rocket_dist = 10
+					
+					local target = level.get_target_obj()
+					if (target) then
+						enemy = target
+					end
+					if (enemy) then
+						if (IsStalker(enemy) or IsMonster(enemy)) and (enemy:alive()) then
+							ho:SetEnemy(enemy)
+						elseif (enemy:clsid() == clsid.obj_phys_destroyable) then
+							ho:SetEnemy(enemy)
+						end
+					end
+					
+					db.actor:set_actor_position(vector():set(pos.x+(dirlook.x*7),pos.y+1,pos.z+(dirlook.z*7)))
+					
+					return false
+				end 
+				return true
+			end
+			heli_fun = true
+			AddUniqueCall(mount_heli)
+			return "heli:= mounted"
+		end
+		return "heli:= not found"
+	elseif (wrd == "dismount") then 
+		heli_fun = nil
+		enemy = nil
+		return "heli:= dismounted"
 	end
 	return "heli:= type heli help for list of sub commands"
 end

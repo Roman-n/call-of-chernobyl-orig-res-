@@ -390,7 +390,7 @@ function nearest_object(s,offline)
 	local nearest
 	local min_dist
 	local is_match
-	for i=1, 65535 do
+	for i=1, 65534 do
 		local obj = alife_object(i)
 		if (obj) then
 			is_match = false
