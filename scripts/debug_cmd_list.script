@@ -1423,8 +1423,8 @@ function cmd.heli(me,txt,owner,p)
 		if (heli) then
 			local function mount_heli()
 				if (heli_fun) then
-					local dirlook = device().cam_dir
-					local dirmove = device().cam_pos
+					local dirlook = db.actor:direction()--device().cam_dir
+					local dirmove = db.actor:position()--device().cam_pos
 					local dirlookheli = vector():set(dirmove)
 					local deltalookheli = vector():set(dirmove)
 					
