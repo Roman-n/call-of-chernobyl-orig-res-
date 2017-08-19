@@ -287,11 +287,10 @@ function evaluator_corpse:find_valid_target()
 	end 
 	
 	local tg = time_global()
-	self.a.__dtimer = not self.a.__dtimer and tg + 250 or self.a.__dtimer
-	if (tg < self.a.__dtimer) then 
+	if (self.a.__dtimer and tg < self.a.__dtimer) then 
 		return false 
 	end
-	self.a.__dtimer = nil
+	self.a.__dtimer = tg + 250
 	
 	if not (self.a.index) then
 		self.a.index = 1
@@ -439,10 +438,13 @@ function action_search_corpse:execute()
 	local current_state = state_mgr.get_state(npc)
 	if (current_state == "search_corpse" or current_state == "field_dress") then
 		local tg = time_global()
-		self.a.__stimer = not self.a.__stimer and tg + 15000 or self.a.__stimer
-		if (tg > self.a.__stimer) then
-			self.a.__stimer = nil
-			get_all_from_corpse(npc)
+		if (self.a.__stimer) then 
+			if (tg > self.a.__stimer) then
+				self.a.__stimer = nil
+				get_all_from_corpse(npc)
+			end
+		else 
+			self.a.__stimer = tg + 15000
 		end
 		return
 	elseif (current_state == "scaner_crouch" and not self.a.mutant_analysed) then 

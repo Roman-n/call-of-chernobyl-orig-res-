@@ -93,10 +93,10 @@ function eva_turn_on_campfire:find_valid_target()
 	end
 	
 	local tg = time_global()
-	self.st.__dtimer = not self.st.__dtimer and tg + 5000 or self.st.__dtimer
-	if (tg < self.st.__dtimer) then 
+	if (self.st.__dtimer and tg < self.st.__dtimer) then 
 		return false
-	end 
+	end
+	self.st.__dtimer = tg + 5000
 	
 	local smart = xr_gulag.get_npc_smart(npc)
 

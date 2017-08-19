@@ -202,11 +202,10 @@ function eva_gather_itm:find_valid_item()
 	end
 
 	local tg = time_global()
-	self.st.__dtimer = not self.st.__dtimer and tg + 250 or self.st.__dtimer
-	if (tg < self.st.__dtimer) then 
+	if (self.st.__dtimer and tg < self.st.__dtimer) then 
 		return false 
 	end
-	self.st.__dtimer = nil
+	self.st.__dtimer = tg + 250
 	
 	local loot_table = UseCorpseLootTable ~= true and LootTable or xr_corpse_detection.lootable_table
 	if not (loot_table) then

@@ -414,11 +414,12 @@ local function script_action_danger_scripted(npc,st)
 	elseif (st.stage == 2) then
 		if (npc:level_vertex_id() == st.lvid) then
 			local tg = time_global()
-			st.__dtimer = not st.__dtimer and tg + math_random(5000,15000) or st.__dtimer
-			if (tg > st.__dtimer) then 
+			if (st.__dtimer and tg > st.__dtimer) then
+				st.__dtimer = nil
 				st.stage = 1
 				return
 			end
+			st.__dtimer = tg + math_random(5000,15000)
 			state_mgr.set_state(npc,"threat_danger",nil,nil,{look_position = who_dist and who_dist < 22500 and bdo and bdo:position() or bdo_pos})
 			return
 		end

@@ -63,16 +63,16 @@ function action_point_campfire:activate_scheme()
 			local campfire
 			local t = {}
 			local function create_campfire_point(pos,dir)
-				local radius = 8
+				local radius = 2
 				local vertex_id = 4294967295
 				local tmp_pos = vector():set(0,0,0)
-				while (vertex_id >= 4294967295) do
+				while (level.valid_vertex(vertex_id) ~= true) do
 					tmp_pos.x = pos.x + dir.x * radius
 					tmp_pos.z = pos.z + dir.z * radius
 					tmp_pos.y = pos.y
 
 					vertex_id = level.vertex_id(tmp_pos)
-					if (vertex_id >= 4294967295 or used_vids[vertex_id]) then
+					if (level.valid_vertex(vertex_id) or used_vids[vertex_id]) then
 						if (radius > 1) then
 							radius = radius - 1
 						else
@@ -90,27 +90,27 @@ function action_point_campfire:activate_scheme()
 					for i=1,6 do
 						vid = create_campfire_point(pos,vector_rotate_y(dir,i*60))
 						look = pos
-						if (vid and vid < 4294967295 and not used_vids[vid]) then 
+						if (vid and level.valid_vertex(vid) and not used_vids[vid]) then 
 							break 
 						end
 					end
 				end
-				if (vid and vid < 4294967295 and not used_vids[vid]) then 
+				if (vid and level.valid_vertex(vid) and not used_vids[vid]) then 
 					break 
 				end
 			end
 			
 			-- fallback no camp or all space is taken
-			if (vid == nil or vid >= 4294967295 or used_vids[vid]) then
+			if (vid == nil or not level.valid_vertex(vid) or used_vids[vid]) then
 				local pos = t and #t > 0 and t[math.random(#t)] or self.object:position()
-				vid = alun_utils.find_random_cover(self.object,pos,5,15)
+				vid = alun_utils.find_random_cover(self.object,pos,3,12)
 				look = pos
 			end
 		end
 	end
 	
 	-- fallback if no campfires
-	if (vid == nil or vid >= 4294967295 or used_vids[vid]) then
+	if (vid == nil or not level.valid_vertex(vid) or used_vids[vid]) then
 		local smart = self.st.smart and SIMBOARD:get_smart_by_name(self.st.smart) or xr_gulag.get_npc_smart(self.object)
 		local pos = smart and smart.position or self.object:position()
 		vid = alun_utils.find_random_cover(self.object,pos,5,15)
@@ -146,7 +146,7 @@ function action_point_campfire:execute()
 			npc:set_path_type(game_object.level_path)
 		end
 		self.st.vid = utils.send_to_nearest_accessible_vertex(npc,self.st.vid,"xr_campfire_point")
-		state_mgr.set_state(npc,xr_logic.pick_section_from_condlist(db.actor, npc, self.st.reach_movement))
+		state_mgr.set_state(npc,self.st.reach_movement and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.reach_movement) or "rush")
 		return
 	end
 
@@ -194,7 +194,7 @@ function action_point_campfire:execute()
 		end
 	end
 
-	local new_state = self:get_camp_action()
+	local new_state = self:get_camp_action() or "sit_ass"
 	if (self.st.anm) then 
 		local anm = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.anm)
 		if (anm and anm ~= "") then 
@@ -216,10 +216,11 @@ function action_point_campfire:get_camp_action()
 	end
 	
 	if (self.current_action and self.current_action ~= "play_guitar" and self.current_action ~= "play_harmonica") then 
-		self.__dtimer = not self.__dtimer and time_global() + math.random(10000,15000) or self.__dtimer
-		if (time_global() < self.__dtimer) then
+		local tg = time_global()
+		if (self.__dtimer and tg < self.__dtimer) then
 			return
 		end
+		self.__dtimer = tg + math.random(10000,15000)
 	end 
 	
 	local role = is_director and "director" or "listener"
