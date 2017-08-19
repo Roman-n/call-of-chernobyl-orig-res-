@@ -39,7 +39,7 @@ function try_to_cook(itm)
 	-- iterate all items in the inventory box
 	inv_box:iterate_inventory_box(transmutate_items, nil)
 
-	get_hud():HideActorMenu() -- Necessary or crash!
+	ActorMenu.get_actor_menu():SetMenuMode(1) -- Necessary or crash!
 	
 	local sim = alife()
 	for i=1,size_t do
@@ -92,7 +92,10 @@ function on_item_focus(obj)
 end
 
 function can_access_inventory(obj)
-	return game.translate_string("st_open")
+	if not (obj:parent() and obj:parent():id() == 0) then 
+		return
+	end
+	return bind_container.can_access_inventory(obj)
 end
 
 function try_add_fuel(stove_obj)

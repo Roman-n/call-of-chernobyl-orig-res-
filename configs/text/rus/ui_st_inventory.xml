@@ -321,8 +321,11 @@
 	<string id="st_unequip">
 		<text>убрать в рюкзак</text>
 	</string>
-		<string id="st_open">
+	<string id="st_open">
 		<text>открыть</text>
+	</string>
+	<string id="st_close">
+		<text>Закрыть</text>
 	</string>
 	<string id="ui_inv_af_condition">
 		<text>Заряд</text>

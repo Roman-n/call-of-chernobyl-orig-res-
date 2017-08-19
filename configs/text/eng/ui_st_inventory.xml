@@ -324,6 +324,9 @@
 	<string id="st_open">
 		<text>open</text>
 	</string>
+	<string id="st_close">
+		<text>close</text>
+	</string>
 	<string id="ui_inv_af_condition">
 		<text>Efficiency</text>
 	</string>
