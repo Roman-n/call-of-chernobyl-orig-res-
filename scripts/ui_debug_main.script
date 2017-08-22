@@ -993,7 +993,7 @@ function debug_ui:OnButton_create_clicked()
 		gvid = db.actor:game_vertex_id()
 		local r = level.get_target_dist and level.get_target_dist() or 3
 		pos = vector():set(db.actor:position())
-		pos:add(device().cam_dir:mul(r))
+		pos:add(vector():set(device().cam_dir):mul(r))
 		pos = vector():set(pos.x,db.actor:position().y,pos.z)
 		lvid = level.vertex_id(pos)
 	else

@@ -175,6 +175,23 @@ function action.debug_test(p)
 		return 
 	end 
 	if (p==1) then
+	
+		local heli
+		for id,o in pairs(db.heli) do
+			heli = o
+			break
+		end
+		if (heli) then
+			local veh = db.actor:get_attached_vehicle()
+			if not (veh) then
+				db.actor:attach_vehicle(heli)
+			elseif (veh:cast_Heli()) then 
+				db.actor:detach_vehicle()
+			else 
+				db.actor:detach_vehicle()
+				db.actor:attach_vehicle(heli)
+			end
+		end	
 		-- local npc = level.get_target_obj()
 		-- if (npc and IsStalker(npc)) then 
 			-- debug_visual_ltx = debug_visual_ltx or ini_file_ex("debug_visual.ltx",true)

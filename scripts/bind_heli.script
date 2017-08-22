@@ -46,6 +46,11 @@ function heli_binder:reinit()
 
 	self.object:set_callback( callback.helicopter_on_point, self.on_point, self )
 	self.object:set_callback( callback.helicopter_on_hit,   self.on_hit,   self )
+	
+	-- Helicopter Input
+	self.object:set_callback(callback.key_press,self.on_key_press,self)
+	self.object:set_callback(callback.key_release,self.on_key_release,self)
+	self.object:set_callback(callback.key_hold,self.on_key_hold,self)
 
 	self.st.combat = heli_combat.heli_combat( self.object, self.st.heliObject )
 
@@ -61,6 +66,104 @@ function heli_binder:reinit()
 	-- на случай загрузки
 	self.st.last_alt       = self.st.heliObject:GetRealAltitude()
 	self.st.alt_check_time = time_global() + 1000
+	
+	self.target_alt = 40
+end
+
+function heli_binder:interpret_input(bind,state)
+	if (db.actor) then
+		local veh = self.object
+		local ho = veh:get_helicopter()
+		
+		if (bind == key_bindings.kWPN_FIRE) then
+			if (state == 0) then
+				ho:ClearEnemy()
+			else
+				local result = rq_result()
+				level.ray_pick(device().cam_pos,device().cam_dir,1000,rq_target.rqtBoth,result,veh)
+				if (result.range) then
+					local end_pos = vector():set(device().cam_pos):add(vector():set(device().cam_dir):mul(result.range))
+					ho:SetEnemy(end_pos)
+				end
+			end
+		elseif (bind == key_bindings.kFWD) then
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				local pos = vector():set(ho:GetPosition()):add(vector():set(self.last_dir):mul(7))
+				pos.y = 40
+				ho:SetDestPosition(pos)
+				ho:SetSpeedInDestPoint(10)
+			end
+		elseif (bind == key_bindings.kBACK) then
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				local dir = vector_rotate_y(self.last_dir,180)
+				local pos = vector():set(ho:GetPosition()):add(vector():set(dir):mul(7))
+				pos.y = ho:GetPosition().y
+				ho:SetDestPosition(pos)
+				ho:SetSpeedInDestPoint(10)
+			end
+		elseif (bind == key_bindings.kL_STRAFE) then 
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				local dir = vector_rotate_y(self.last_dir,90)
+				local pos = vector():set(ho:GetPosition()):add(vector():set(dir):mul(7))
+				pos.y = ho:GetPosition().y
+				ho:SetDestPosition(pos)
+				ho:SetSpeedInDestPoint(10)
+			end
+		elseif (bind == key_bindings.kR_STRAFE) then 
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				local dir = vector_rotate_y(self.last_dir,-90)
+				local pos = vector():set(ho:GetPosition()):add(vector():set(dir):mul(7))
+				pos.y = ho:GetPosition().y
+				ho:SetDestPosition(pos)
+				ho:SetSpeedInDestPoint(10)
+			end
+		elseif (bind == key_bindings.kL_LOOKOUT) then
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				if (ho:GetPosition().y > 10) then
+					local pos = vector():set(ho:GetPosition())
+					pos.y = pos.y - 5
+					ho:SetDestPosition(pos)
+					ho:SetSpeedInDestPoint(5)
+				end
+			end
+		elseif (bind == key_bindings.kR_LOOKOUT) then
+			if (state == 0) then 
+				ho:SetSpeedInDestPoint(0)
+			else
+				if (ho:GetPosition().y < 80) then
+					local pos = vector():set(ho:GetPosition())
+					pos.y = pos.y + 5
+					ho:SetDestPosition(pos)
+					ho:SetSpeedInDestPoint(5)
+				end
+			end
+		end
+	end
+end
+
+-- Helicopter Input
+function heli_binder:on_key_press(bind)
+	self:interpret_input(bind,1)
+end
+
+-- Helicopter Input
+function heli_binder:on_key_hold(bind)
+	self:interpret_input(bind,2)
+end
+
+-- Helicopter Input
+function heli_binder:on_key_release(bind)
+	self:interpret_input(bind,0)
 end
 
 function heli_binder:update( delta )
@@ -74,38 +177,77 @@ function heli_binder:update( delta )
 		self.initialized = true
 		xr_logic.initialize_obj( self.object, self.st, self.loaded, db.actor, modules.stype_heli )
 	end
-
-	if self.st.active_section ~= nil then
-		xr_logic.issue_event( self.object, self.st[self.st.active_scheme], "update", delta )
+		
+	local is_holder = false
+	-- Helicopter Input
+	if (db.actor) then
+		local veh = db.actor:get_attached_vehicle()
+		if (veh and veh:id() == self.object:id()) then
+			is_holder = true
+			
+			local ho = veh:get_helicopter()
+	
+			ho.m_min_mgun_dist = 5
+			ho.m_max_mgun_dist = 200
+			ho.m_min_rocket_dist = 50
+			ho.m_max_rocket_dist = 200
+			ho.m_use_mgun_on_attack = true
+			ho.m_use_rocket_on_attack = true
+			
+			ho:SetMaxVelocity(40)
+				
+			-- calculate end point at end of cursor direction
+			local end_pos = vector():set(device().cam_pos)
+			end_pos:add(vector():set(device().cam_dir):mul(300))
+			end_pos.y = ho:GetPosition().y
+			
+			-- look at point at end of cursor
+			local dir = vector():set(end_pos):sub(ho:GetPosition()):normalize()
+			if not (self.last_dir and self.last_dir:similar(dir,0.20) == 1) then -- dead zone within 20 angle
+				ho:LookAtPoint(end_pos,true)
+				self.last_dir = dir
+			end
+			
+			ho:TurnEngineSound(axr_main.config:r_value("mm_options","enable_heli_engine_sound",1,false))
+		end
 	end
 
-	self.object:info_clear()
-	local active_section = db.storage[self.object:id()].active_section
-	if active_section then
-		self.object:info_add('section -- ' .. active_section)
+	if not (is_holder) then
+		if self.st.active_section ~= nil then
+			xr_logic.issue_event( self.object, self.st[self.st.active_scheme], "update", delta )
+		end
+
+		self.object:info_clear()
+		local active_section = db.storage[self.object:id()].active_section
+		if active_section then
+			self.object:info_add('section -- ' .. active_section)
+		end
+		
+		-- Down to Earth achievement
+		-- Kills off any remaining strong helicopters.
+		if (has_alife_info("achieved_down_to_earth")) then
+			local self_destruct = system_ini():r_bool_ex(self.object:section(), "kill_with_achievement", false)
+			if (not self.st.heliObject.m_dead and self_destruct == true) then
+				self.self_destruct = true
+			end
+		end
+		
+		-- heli alife simulation
+		if (heli_alife) then
+			local veh = db.actor:get_attached_vehicle()
+			if (veh and veh:id() ~= self.object:id()) then
+				local se_obj = alife_object(self.object:id())
+				if (se_obj and se_obj.player_id) then
+					heli_alife.update(self.object,se_obj,self.st.heliObject)
+				end
+			end
+		end
 	end
 	
 	self:check_health()
 
 	xr_sound.update(self.object:id())
-	
-	-- heli alife simulation
-	if (heli_alife) then
-		local se_obj = alife_object(self.object:id())
-		if (se_obj and se_obj.player_id) then
-			heli_alife.update(self.object,se_obj,self.st.heliObject)
-		end
-	end
-	
-	-- Down to Earth achievement
-	-- Kills off any remaining strong helicopters.
-	if (has_alife_info("achieved_down_to_earth")) then
-		local self_destruct = system_ini():r_bool_ex(self.object:section(), "kill_with_achievement", false)
-		if (not self.st.heliObject.m_dead and self_destruct == true) then
-			self.self_destruct = true
-		end
-	end
-	
+
 	--alun_utils.debug_write("heli update end")
 end
 
@@ -134,6 +276,11 @@ end
 function heli_binder:net_destroy()
 	self.object:set_callback(callback.helicopter_on_point,nil)
 	self.object:set_callback(callback.helicopter_on_hit,nil)
+	
+	-- Helicopter Input
+	self.object:set_callback(callback.key_press,nil)
+	self.object:set_callback(callback.key_release,nil)
+	self.object:set_callback(callback.key_hold,nil)
 	
 	db.del_obj( self.object )
 	db.del_heli( self.object )
