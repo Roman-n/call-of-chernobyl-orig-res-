@@ -1695,9 +1695,9 @@ function table2CTime(t)
 end
 
 function find_random_cover(npc,pos,min_rad,max_rad)
-	local rand = math.random
+	local rnd = math.random
 	local base_point = npc:level_vertex_id()
-	local base_vertex_id = level.vertex_in_direction(base_point, vector_rotate_y(utils.vector_copy_by_val(npc:direction()),rand(0,360)), rand(min_rad,max_rad))
+	local base_vertex_id = level.vertex_in_direction(base_point, vector_rotate_y(utils.vector_copy_by_val(npc:direction()),rnd(0,360)), rnd(min_rad,max_rad))
 	local base_position = level.vertex_position(base_vertex_id)
 
 	local cover, tcover
@@ -1733,17 +1733,17 @@ function find_close_cover(npc,base_position,pos,cover_dist,mn,mx)
 end
 
 function find_cover_in_rand_direction(npc,base_point,pos)
-	local rand = math.random
+	local rnd = math.random
 	
 	local dir = npc:direction()
-	local rand_dir = rand(1,6)
+	local rand_dir = rnd(1,6)
 	local base_vertex_id, base_position, cover, cover_dist
 	for i=rand_dir,6 do
 		base_vertex_id = level.vertex_in_direction(base_point,dir,i*60)
 		base_position = level.vertex_position(base_vertex_id)
 
 		cover = nil
-		cover_dist = rand(1,30)
+		cover_dist = rnd(1,30)
 		while not cover and cover_dist > 0 do
 			cover = npc:best_cover(base_position,pos,cover_dist,1,30)
 			cover_dist = cover_dist - 1
