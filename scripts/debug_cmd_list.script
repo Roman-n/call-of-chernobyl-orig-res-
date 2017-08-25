@@ -2142,7 +2142,7 @@ end
 debug_visuals = nil
 function cmd.debug_visuals(me,txt,owner,p)
 	local wrd,rest = check_and_set_help(me,txt,owner,"[all|<visual_name>]")
-	if (wrd == "all" or wrd ~= "") then
+	if (wrd) and (wrd == "all" or wrd ~= "") then
 		local check_all = wrd == "all"
 		
 		debug_visuals = {}
@@ -2274,7 +2274,7 @@ function cmd.debug_visuals(me,txt,owner,p)
 		for	it=0, f_cnt-1 do
 			local file = flist:GetAt(it)
 			local visual_name = file:NameFull():sub(1,-5)
-			
+			printf(visual_name)
 			local found = false
 			if (wrd == "test") then -- for testing specific bulk visuals
 				for kk,vv in pairs(tester) do 
@@ -2295,7 +2295,7 @@ function cmd.debug_visuals(me,txt,owner,p)
 					if (se_obj) then
 						alife():create("wpn_pkm",se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id,se_obj.id)
 						--printf("%s visual:= %s",se_obj:name(),visual_name)
-						debug_visuals[se_obj.id] = visual_name
+						--debug_visuals[se_obj.id] = visual_name
 					end
 					dist = dist + 1
 				end
@@ -2305,7 +2305,8 @@ function cmd.debug_visuals(me,txt,owner,p)
 		if (wrd == "test") then 
 			for kk,vv in pairs(tester) do
 				if (vv == false) then 
-					printf("failed to find %s",kk)
+					printf("Either file doesn't exist or bad *.ogf. %s",kk)
+					owner:SendOutput("Either file doesn't exist or bad *.ogf. %s",kk)
 				end
 			end
 		end

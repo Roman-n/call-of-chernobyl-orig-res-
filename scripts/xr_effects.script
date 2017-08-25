@@ -77,7 +77,7 @@ function remove_task_companion(actor,npc,p)
 	for k in squad:squad_members() do
 		local npc = k.id and db.storage[k.id] and db.storage[k.id].object
 		if (npc) then
-			axr_logic.restore_scheme_and_logic(npc)
+			xr_logic.restore_scheme_and_logic(npc)
 			npc:disable_info_portion("npcx_is_companion")
 			npc:disable_info_portion("npcx_beh_cannot_dismiss")
 			

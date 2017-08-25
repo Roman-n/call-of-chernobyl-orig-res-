@@ -122,48 +122,48 @@ quick_item_3 = antirad
 quick_item_4 = conserva
 
 [actor_immunities_gd_novice]
-burn_immunity           = 0.3 ;0.45                                ;коэффициенты иммунитета
-strike_immunity         = 0.3 ;0.45
-shock_immunity          = 0.3 ;0.45
-wound_immunity          = 0.05 ;0.45
-radiation_immunity      = 0.3 ;0.45
-telepatic_immunity      = 0.3 ;0.45
-chemical_burn_immunity  = 0.3 ;0.45
-explosion_immunity      = 0.05 ;0.45
-fire_wound_immunity 	= 0.15
+burn_immunity           = 0.3                                ;коэффициенты иммунитета
+strike_immunity         = 0.3
+shock_immunity          = 0.3
+wound_immunity          = 0.3
+radiation_immunity      = 0.3
+telepatic_immunity      = 0.3
+chemical_burn_immunity  = 0.3
+explosion_immunity      = 0.25
+fire_wound_immunity 	= 0.3
 
 [actor_immunities_gd_stalker]
-burn_immunity           = 0.7                               ;коэффициенты иммунитета
-strike_immunity         = 0.5
-shock_immunity          = 0.7
-wound_immunity          = 0.15
-radiation_immunity      = 0.7
-telepatic_immunity      = 0.7
-chemical_burn_immunity  = 0.7
-explosion_immunity      = 0.15
-fire_wound_immunity 	= 0.5 ;0.65
+burn_immunity           = 0.6                               ;коэффициенты иммунитета
+strike_immunity         = 0.6
+shock_immunity          = 0.6
+wound_immunity          = 0.5
+radiation_immunity      = 0.6
+telepatic_immunity      = 0.6
+chemical_burn_immunity  = 0.6
+explosion_immunity      = 0.5
+fire_wound_immunity 	= 0.5
 
 [actor_immunities_gd_veteran]
-burn_immunity           = 0.80                                ;коэффициенты иммунитета
-strike_immunity         = 0.70
-shock_immunity          = 0.80
-wound_immunity          = 0.5
-radiation_immunity      = 0.80
-telepatic_immunity      = 0.80
-chemical_burn_immunity  = 0.80
-explosion_immunity      = 0.5
-fire_wound_immunity     = 0.70
+burn_immunity           = 0.75                                ;коэффициенты иммунитета
+strike_immunity         = 0.75
+shock_immunity          = 0.75
+wound_immunity          = 0.7
+radiation_immunity      = 0.75
+telepatic_immunity      = 0.75
+chemical_burn_immunity  = 0.75
+explosion_immunity      = 0.6
+fire_wound_immunity     = 0.7
 
 [actor_immunities_gd_master]
-burn_immunity           = 0.85                                ;коэффициенты иммунитета
-strike_immunity         = 0.75
-shock_immunity          = 0.85
-wound_immunity          = 0.5
-radiation_immunity      = 0.85
-telepatic_immunity      = 0.85
-chemical_burn_immunity  = 0.85
-explosion_immunity      = 0.5
-fire_wound_immunity     = 0.75
+burn_immunity           = 0.9                                ;коэффициенты иммунитета
+strike_immunity         = 0.9
+shock_immunity          = 0.9
+wound_immunity          = 0.9
+radiation_immunity      = 0.9
+telepatic_immunity      = 0.9
+chemical_burn_immunity  = 0.9
+explosion_immunity      = 0.75
+fire_wound_immunity     = 0.9
 
 [actor_condition]
 satiety_v				= 0.0000162 	;скорость уменьшения сытости со временем
@@ -232,17 +232,16 @@ can_sleep_callback                        = dream.can_sleep_callback
 sleep_video_name_callback        = dream.sleep_video_name_callback
 
 radio_zone_max_power		= 0.03			;пределы зон для датчиков и для инвентаря (% защит броников)
-fire_zone_max_power			= 0.2
-acid_zone_max_power			= 0.2
+fire_zone_max_power			= 0.14
+acid_zone_max_power			= 0.14
 psi_zone_max_power			= 0.1
-electra_zone_max_power		= 0.8
+electra_zone_max_power		= 0.7
 
 max_power_restore_speed		= 0.017
-max_fire_wound_protection	= 1.45
-max_wound_protection		= 0.5
+max_fire_wound_protection	= 1.0
+max_wound_protection		= 1.0
 
 hud_health_blink        = 0.05
-
 
 [actor_thd_gd_novice]				; Секция настроек неодноударного убийства для сложности novice
 killing_hit_treshold		= 0.2	; Если наносится потенциально смертельный хит, и у игрока хитов больше, чем killing_hit_treshold,
@@ -273,19 +272,19 @@ default                                  = 1.0, -1, 1.0
 
 bip01_pelvis                             = 1.0, 10, 1.0
 bip01_spine                              = 1.0, 10, 1.0
-bip01_spine1                             = 1.0, 0, 1.0
-bip01_spine2                             = 1.0, 0, 1.0
-bip01_neck                               = 1.0, 0, 1.0
-bip01_head                               = 1.0, 0, 1.0
-eyelid_1                                 = 1.0, 0, 1.0
-eye_left                                 = 1.0, 0, 1.0
-eye_right                                = 1.0, 0, 1.0
-jaw_1                                    = 1.0, 0, 1.0
+bip01_spine1                             = 1.0, 0, 1.1
+bip01_spine2                             = 1.0, 0, 1.1
+bip01_neck                               = 1.0, 0, 1.5
+bip01_head                               = 1.0, 0, 1.5
+eyelid_1                                 = 1.0, 0, 1.5
+eye_left                                 = 1.0, 0, 1.5
+eye_right                                = 1.0, 0, 1.5
+jaw_1                                    = 1.0, 0, 1.1
 
-bip01_l_clavicle                         = 1.0, 4, 1.0
-bip01_l_upperarm                         = 1.0, 4, 1.0
-bip01_l_forearm                          = 1.0, 4, 1.0
-bip01_l_hand                             = 1.0, 4, 3.0
+bip01_l_clavicle                         = 1.0, 4, 0.8
+bip01_l_upperarm                         = 1.0, 4, 0.7
+bip01_l_forearm                          = 1.0, 4, 0.6
+bip01_l_hand                             = 1.0, 4, 0.5
 bip01_l_finger0                          = 0.0, 4, 0.0
 bip01_l_finger01                         = 0.0, 4, 0.0
 bip01_l_finger02                         = 0.0, 4, 0.0
@@ -296,10 +295,10 @@ bip01_l_finger2                          = 0.0, 4, 0.0
 bip01_l_finger21                         = 0.0, 4, 0.0
 bip01_l_finger22                         = 0.0, 4, 0.0
 
-bip01_r_clavicle                         = 1.0, 2, 1.0
-bip01_r_upperarm                         = 1.0, 2, 1.0
-bip01_r_forearm                          = 1.0, 2, 1.0
-bip01_r_hand                             = 1.0, 2, 1.0
+bip01_r_clavicle                         = 1.0, 2, 0.8
+bip01_r_upperarm                         = 1.0, 2, 0.7
+bip01_r_forearm                          = 1.0, 2, 0.6
+bip01_r_hand                             = 1.0, 2, 0.5
 bip01_r_finger0                          = 0.0, 2, 0.0
 bip01_r_finger01                         = 0.0, 2, 0.0
 bip01_r_finger02                         = 0.0, 2, 0.0
@@ -311,13 +310,13 @@ bip01_r_finger21                         = 0.0, 2, 0.0
 bip01_r_finger22                         = 0.0, 2, 0.0
 
 bip01_l_thigh                            = 1.0, 8, 1.0
-bip01_l_calf                             = 1.0, 8, 1.0
-bip01_l_foot                             = 1.0, 8, 1.0
-bip01_l_toe0                             = 1.0, 8, 1.0
+bip01_l_calf                             = 1.0, 8, 0.5
+bip01_l_foot                             = 1.0, 8, 0.5
+bip01_l_toe0                             = 1.0, 8, 0.1
 bip01_r_thigh                            = 1.0, 6, 1.0
-bip01_r_calf                             = 1.0, 6, 1.0
-bip01_r_foot                             = 1.0, 6, 1.0
-bip01_r_toe0                             = 1.0, 6, 1.0
+bip01_r_calf                             = 1.0, 6, 0.5
+bip01_r_foot                             = 1.0, 6, 0.5
+bip01_r_toe0                             = 1.0, 6, 0.1
 
 [actor_animation]
 ;углы  дворота ног актера во время стрейфов (в градусах)

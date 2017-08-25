@@ -4,6 +4,42 @@ local sign_equ = "=" -- 3
 local sign_neg = "!" -- 4
 local sign_prb = "~" -- 5
 
+-- spawn items used by xr_logic.configure_schemes
+local function create_items(npc, section, number)
+	for i=1,number do
+		alife():create(section,vector():set(0,0,0),0,0,npc:id())
+	end
+end
+
+function spawn_items(npc, st)
+	--alun_utils.debug_write("spawner:spawn_items")
+	if not (st.ini and st.section_logic) then 
+		return 
+	end 
+	local items_to_spawn = {}
+	local spawn_items_section = st.ini:r_string_ex(st.section_logic,"spawn")
+	if spawn_items_section ~= nil then
+		local n = st.ini:line_count(spawn_items_section)
+		local id, value = "", ""
+		for i=0,n-1 do
+			result, id, value	= st.ini:r_line(spawn_items_section,i,"","")
+			if value == "" then
+				value = 1
+			end
+			items_to_spawn[id] = tonumber(value)
+		end
+		local inv = {}
+		local function add(item)
+			inv[item:id()] = item
+		end
+		npc:inventory_for_each(add)
+		for k,v in pairs(items_to_spawn) do
+			if npc:object(k) == nil then
+				create_items(npc, k, v)
+			end
+		end
+	end
+end
 
 function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_name)
 	--printf("DEBUG: enable_scripts: npc:name()=%s", npc:name())
@@ -88,7 +124,7 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 		if (npc:alive()) then
 			local trade_ini = actual_ini:r_string_ex(section_logic,"trade") or "misc\\trade\\trade_generic.ltx"
 			trade_manager.trade_init(npc, trade_ini)
-			spawner.spawn_items(npc, st)
+			spawn_items(npc, st)
 		end
 	end
 
@@ -1120,4 +1156,82 @@ function initialize_obj(obj, st, loaded, actor, stype)
 	st.loaded_active_section = nil
 	st.loaded_section_logic = nil
 	st.loaded_gulag_name = ""
+end
+
+-------------
+function set_new_scheme_and_logic(npc,scheme,section,logic,gulag,ini_filename)
+	if not (npc) then 
+		printf("set_new_scheme_and_logic npc is nil!")
+	end 
+	
+	local st = db.storage[npc:id()]
+	--utils.save_var(npc,"old_active_section", st.active_section)
+	--utils.save_var(npc,"old_section_logic", st.section_logic)
+	--utils.save_var(npc,"old_ini_filename", st.ini_filename)
+
+	-- Store new ini
+	db.storage[npc:id()].ini_filename = ini_filename
+	db.storage[npc:id()].ini = ini_file(ini_filename)
+	if not (st.ini) then 
+		printf("Error: set_new_scheme_and_logic: cannot find ini %s",ini_filename)
+		return
+	end
+
+	-- Set new section logic
+	db.storage[npc:id()].section_logic = logic
+
+	-- Select new active section
+	local new_section = section or xr_logic.determine_section_to_activate(npc, st.ini, st.section_logic)
+
+	-- Switch to new section
+	xr_logic.switch_to_section(npc, st.ini, new_section)
+	db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, new_section, npc)
+end
+
+function restore_scheme_and_logic(npc)
+	local st = db.storage[npc:id()]
+	st.ini_filename = "<customdata>"
+	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.active_section = nil
+	st.active_scheme = nil
+	st.section_logic = "logic"
+	xr_logic.switch_to_section(npc,nil,nil)
+	-- Load old logic
+	--[[
+	st.ini_filename = utils.load_var(npc,"old_ini_filename", st.loaded_ini_filename)
+	--st.ini = ini_file(st.ini_filename)
+	if (not st.ini_filename) or (string.find(st.ini_filename,"*")) or (string.find(st.ini_filename,"<customdata>")) then
+		st.ini_filename = "<customdata>"
+		st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+		st.active_section = nil
+		st.active_scheme = nil
+		st.section_logic = "logic"
+		xr_logic.switch_to_section(npc,nil,nil)
+	else
+		local active_section = utils.load_var(npc,"old_active_section", st.active_section)
+		local section_logic = utils.load_var(npc,"old_section_logic", st.section_logic)
+
+		st.ini = ini_file(st.ini_filename)
+		local section = st.ini:section_exist(active_section) and active_section or xr_logic.determine_section_to_activate(npc, st.ini, section_logic)
+		st.section = section
+
+		xr_logic.switch_to_section(npc,st.ini,section)
+		db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, section, npc)
+	end
+	--]]
+end
+
+function reset_logic(npc,st)
+	st.ini_filename = "<customdata>"
+	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.active_section = nil
+	st.active_scheme = nil
+	st.section_logic = "logic"
+	xr_logic.switch_to_section(npc,nil,nil)
+end
+
+function str_from_condlist(obj,ini,section,field)
+	local str = section and ini and ini:section_exist(section) and ini:line_exist(section,field) and ini:r_string_ex(section,field) or "nil"
+	local condlist = xr_logic.parse_condlist(obj,section,field,str)
+	return xr_logic.pick_section_from_condlist(db.actor,obj,condlist)
 end

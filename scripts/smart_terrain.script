@@ -1076,7 +1076,7 @@ function se_smart_terrain:get_smart_props()
 		return "deactivated\\n\\n"..self:name().."  ["..self.id.."]\\n".."squad_id = "..tostring(self.squad_id)
 	end
 
-	local props = (not self.disabled) and smart_names.get_smart_terrain_name(self)
+	local props = (not self.disabled) and get_smart_terrain_name(self)
 	if(props==nil) or (DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
 		if (self.disabled) then
 			return "deactivated\\n\\n"..self:name().."  ["..self.id.."]\\n".."squad_id = "..tostring(self.squad_id)
@@ -1648,4 +1648,29 @@ function se_smart_terrain:try_respawn()
 			self.already_spawned[sect_to_spawn].num = self.already_spawned[sect_to_spawn].num + 1
 		end
 	end
+end
+
+------------
+local smart_names_table
+function get_smart_terrain_name(smart)
+	if not (smart_names_table) then 
+		smart_names_table = {}
+		local names_ini = ini_file("misc\\smart_names.ltx")
+		for i=0,names_ini:line_count("levels")-1 do
+			temp1, level_name, temp2 = names_ini:r_line("levels", i, "", "")
+			if(names_ini:section_exist(level_name)) then
+				smart_names_table[level_name] = {}
+				for i=0,names_ini:line_count(level_name)-1 do
+					result, smart_name, value = names_ini:r_line(level_name, i, "", "")
+					smart_names_table[level_name][smart_name] = value
+				end
+			end
+		end
+	end
+	local level_name = alife():level_name(game_graph():vertex(smart.m_game_vertex_id):level_id())
+	local smart_name = smart:name()
+	if(smart_names_table[level_name]~=nil) and (smart_names_table[level_name][smart_name]~=nil) then
+		return game.translate_string(smart_names_table[level_name][smart_name])	
+	end
+	return smart_name
 end

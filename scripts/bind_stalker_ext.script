@@ -14,6 +14,7 @@ function actor_on_init(binder)
 	SendScriptCallback("actor_on_init",binder)
 end 
 
+ShowMessageTime = nil
 function actor_on_reinit(binder)
 	SendScriptCallback("actor_on_reinit",binder)
 	local function check_hud_msg()

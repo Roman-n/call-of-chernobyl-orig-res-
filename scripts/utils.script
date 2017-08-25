@@ -879,3 +879,55 @@ end
 function parse_condlist(src)
 	return xr_logic.parse_condlist(nil,nil,nil,src)
 end
+
+function get_ext(s)
+	return string.gsub(s,"(.*)%.","")
+end
+
+--require("lua_extensions")
+local lfs = require("lfs")
+lfs_ignore_exact_ext_match = false
+function file_for_each(node,ext,func,nonrecursive,...)
+	local stack = {}
+	local deepest
+	while not deepest do
+		if (node) then
+			for file in lfs.dir(node) do
+				if (file ~= ".." and file ~= ".") then
+					local fullpath = node .. "\\" .. file
+					local mode = lfs.attributes(fullpath,"mode")
+					if (mode == "file") then
+						for i=1,#ext do
+							if (lfs_ignore_exact_ext_match and string.find(get_ext(file), ext[i]) or get_ext(file) == ext[i]) then
+								func(node,file,fullpath,...)
+							end
+						end
+					elseif (mode == "directory" and nonrecursive ~= true) then
+						if not (file_exists(fullpath.."\\.ignore")) then
+							table.insert(stack,fullpath)
+						end
+					end
+				end
+			end
+		end
+		if (#stack > 0) then
+			node = stack[#stack]
+			stack[#stack] = nil
+		else
+			deepest = true
+		end
+	end
+	if lfs_ignore_exact_ext_match then
+		lfs_ignore_exact_ext_match = false
+	end
+end
+
+function directory_for_each(node,func,...)
+	for l in lfs.dir(node) do
+		if (l ~= ".." and l ~= ".") then
+			if lfs.attributes(node.."\\"..l,"mode") == "directory" then
+				func(node,l,...)
+			end
+		end
+	end
+end

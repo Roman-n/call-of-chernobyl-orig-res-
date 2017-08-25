@@ -45,7 +45,6 @@ function start_game_callback()
 	-- End Alundaio
 	
 	sim_board.get_sim_board()
-	smart_names.init_smart_names_table()
 	dialog_manager.fill_phrase_table()
 	pda.add_quick_slot_items_on_game_start()
 end

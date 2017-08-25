@@ -266,7 +266,7 @@ function remove_from_actor_squad(npc)
 	non_task_companions[npc:id()] = nil
 	npc:disable_info_portion("npcx_is_companion")
 	npc:disable_info_portion("npcx_beh_cannot_dismiss")
-	axr_logic.restore_scheme_and_logic(npc)
+	xr_logic.restore_scheme_and_logic(npc)
 	
 	local se_obj = alife_object(npc:id())
 	if not (se_obj) then 
@@ -293,7 +293,7 @@ function remove_all_from_actor_squad()
 					if (member) then 
 						member:disable_info_portion("npcx_is_companion")
 						member:disable_info_portion("npcx_beh_cannot_dismiss")
-						axr_logic.restore_scheme_and_logic(member)
+						xr_logic.restore_scheme_and_logic(member)
 					end
 				end
 			end
