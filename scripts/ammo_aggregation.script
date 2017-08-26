@@ -1,6 +1,5 @@
 local ammos = {}
-local function actor_on_item_take(obj)
-
+function aggregate(npc,obj)
 	if not (IsAmmo(obj)) then
 		return 
 	end 
@@ -17,7 +16,7 @@ local function actor_on_item_take(obj)
 	
 	local section = obj:section()
 	
-	db.actor:inventory_for_each(
+	npc:inventory_for_each(
 		function (item)
 			-- collect ammos except this one; we use it for remainder
 			if (section == item:section() and item:id() ~= obj:id() and item:ammo_get_count() < box_size) then
@@ -50,7 +49,7 @@ local function actor_on_item_take(obj)
 				item:ammo_set_count(box_size)
 				fill = fill - 1
 			else
-				db.actor:drop_item(item)
+				npc:drop_item(item)
 				local se_obj = sim:object(ammos[i])
 				if (se_obj) then
 					--printf("release %s",se_obj:name())
@@ -61,6 +60,15 @@ local function actor_on_item_take(obj)
 	end
 end
 
+function actor_on_item_take(item)
+	aggregate(db.actor,item)
+end 
+
+function npc_on_item_take(npc,item)
+	aggregate(npc,item)
+end
+
 function on_game_start()
 	RegisterScriptCallback("actor_on_item_take", actor_on_item_take)
+	RegisterScriptCallback("npc_on_item_take", npc_on_item_take)
 end
