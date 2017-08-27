@@ -37,6 +37,8 @@ immunities_sect                          = sect_helm_immunities
 
 installed_upgrades                       =
 
+power_restore_speed = 0
+
 ;---------------------------------------------------------------------------------------------
 ;		Gas Mask
 ;---------------------------------------------------------------------------------------------
@@ -55,10 +57,13 @@ upgr_icon_y                              = 619
 upgr_icon_width                          = 106
 upgr_icon_height                         = 149
 
-cost                                     = 8250
+cost                                     = 8000
 
 immunities_sect                          = sect_helm_respirator_immunities
 bones_koeff_protection                   = actor_helm_respirator
+
+power_loss                               = 0.1 ;NEW FORMULA BELOW
+; power restore (0.0 base) * (0.5 + outfit power loss + helmet power loss)
 
 burn_protection                          = 0.02
 shock_protection                         = 0.1
@@ -100,10 +105,12 @@ upgr_icon_y                              = 619
 upgr_icon_width                          = 149
 upgr_icon_height                         = 143
 
-cost                                     = 3750
+cost                                     = 3500
 
 immunities_sect                          = sect_helm_hardhat_immunities
 bones_koeff_protection                   = actor_helm_hardhat
+
+power_loss                               = 0.0
 
 upgrades                                 = up_gr_firstab_helm_hardhat, up_gr_seconab_helm_hardhat
 upgrade_scheme                           = upgrade_scheme_helm_hardhat
@@ -143,10 +150,12 @@ upgr_icon_y                              = 619
 upgr_icon_width                          = 119
 upgr_icon_height                         = 148
 
-cost                                     = 26250
+cost                                     = 25000
 
 immunities_sect                          = sect_helm_protective_immunities
 bones_koeff_protection                   = actor_helm_screen
+
+power_loss                               = 0.1
 
 burn_protection                          = 0.04
 shock_protection                         = 0.2
@@ -197,6 +206,8 @@ nightvision_sect                         = effector_nightvision_1
 immunities_sect                          = sect_helm_tactic_immunities
 bones_koeff_protection                   = actor_helm_tactic
 
+power_loss                               = 0.1
+
 burn_protection                          = 0.01
 shock_protection                         = 0.05
 radiation_protection                     = 0.003
@@ -244,6 +255,8 @@ nightvision_sect                         = effector_nightvision_1
 
 immunities_sect                          = sect_helm_battle_immunities
 bones_koeff_protection                   = actor_helm_battle
+
+power_loss                               = 0.1
 
 burn_protection                          = 0.015
 shock_protection                         = 0.075
@@ -294,6 +307,7 @@ cost                                     = 11250
 bones_koeff_protection                   = actor_helm_m40
 immunities_sect                          = sect_helm_m40_immunities
 
+power_loss                               = 0.1
 
 burn_protection                          = 0.015
 shock_protection                         = 0.075
@@ -343,6 +357,8 @@ nightvision_sect                         = effector_nightvision_1
 immunities_sect                          = sect_helm_tactic_2_immunities
 bones_koeff_protection                   = actor_helm_tacticm12
 
+power_loss                               = 0.1
+
 burn_protection                          = 0.013
 shock_protection                         = 0.065
 radiation_protection                     = 0.004
@@ -385,10 +401,12 @@ upgr_icon_y                              = 1129
 upgr_icon_width                          = 104
 upgr_icon_height                         = 141
 
-cost                                     = 3750
+cost                                     = 6000
 
 immunities_sect                          = sect_helm_respirator_2_immunities
 bones_koeff_protection                   = actor_helm_respirator
+
+power_loss                               = 0.11
 
 burn_protection                          = 0.018
 shock_protection                         = 0.09
@@ -436,6 +454,8 @@ cost                                     = 375
 immunities_sect                          = sect_helm_facemask_immunities
 bones_koeff_protection                   = actor_helm_mask
 
+power_loss                               = 0.01
+
 burn_protection                          = 0.005
 shock_protection                         = 0.025
 radiation_protection                     = 0.001
@@ -473,10 +493,12 @@ upgr_icon_y                              = 1129
 upgr_icon_width                          = 107
 upgr_icon_height                         = 141
 
-cost                                     = 5250
+cost                                     = 5000
 
 immunities_sect                          = sect_helm_respirator_half_immunities
 bones_koeff_protection                   = actor_helm_mask
+
+power_loss                               = 0.06
 
 burn_protection                          = 0.01
 radiation_protection                     = 0.002
@@ -520,6 +542,8 @@ cost                                     = 9000
 
 immunities_sect                          = sect_helm_respirator_gp5_immunities
 bones_koeff_protection                   = actor_helm_respirator
+
+power_loss                               = 0.1
 
 burn_protection                          = 0.022
 shock_protection                         = 0.11

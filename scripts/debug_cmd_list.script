@@ -2147,123 +2147,6 @@ function cmd.debug_visuals(me,txt,owner,p)
 		
 		debug_visuals = {}
 		
-		local tester = {
-		["actors\\stalker_monolith\\stalker_monolith1_gp5"] = true,
-	["actors\\stalker_monolith\\stalker_monolith1b"] = true,
-	["actors\\stalker_monolith\\stalker_monolith2_gp5"] = true,
-	["actors\\stalker_monolith\\stalker_monolith2a_old"] = true,
-	["actors\\stalker_monolith\\stalker_monolith2b_old"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_b"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_r_gas"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_s"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_s_gp5"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_s_merc"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_s_old"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_seva_1"] = true,
-	["actors\\stalker_nebo\\stalker_nebo_seva_2"] = true,
-	["actors\\stalker_nebo\\stalker_nebob2"] = true,
-	["actors\\stalker_neutral\\stalker_neutral_0"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0a"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0b"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0c"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0d"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0e"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0f"] = true,
-	["actors\\stalker_neutral\\stalker_neutral0g"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2a_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2a_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2a_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2b_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2b_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2b_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2c"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2c_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2c_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2c_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2d"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2d_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2d_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2d_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2e"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2e_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2e_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2e_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2f"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2f_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2f_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2f_old"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2g"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2g_gp5"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2g_merc"] = true,
-	["actors\\stalker_neutral\\stalker_neutral2g_old"] = true,
-	["actors\\stalker_soldier\\stalker_soldier_3_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3a_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3b_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3c_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3d_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3e_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3f_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3g_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3h_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3i_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3j_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier3k_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5a_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5b_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5c_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5d_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5f_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5g_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5h_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5j_beret"] = true,
-	["actors\\stalker_soldier\\stalker_soldier5k_beret"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_1_gas"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_2a"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_2a_gp5"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_2a_merc"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_5"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_5_gasmask"] = true,
-	["actors\\stalker_bandit\\stalker_bandit_a"] = true,
-	["actors\\stalker_bandit\\stalker_bandit1a_gas"] = true,
-	["actors\\stalker_bandit\\stalker_bandit1b_gas"] = true,
-	["actors\\stalker_bandit\\stalker_bandit1c_gas"] = true,
-	["actors\\stalker_bandit\\stalker_bandit2a_old"] = true,
-	["actors\\stalker_bandit\\stalker_bandit5a"] = true,
-	["actors\\stalker_bandit\\stalker_bandita1"] = true,
-	["actors\\stalker_bandit\\stalker_bandita2"] = true,
-	["actors\\stalker_bandit\\stalker_bandita3"] = true,
-	["actors\\stalker_neutral\\stalker_bar_security"] = true,
-	["actors\\stalker_dolg\\stalker_dolg_2_old"] = true,
-	["actors\\stalker_dolg\\stalker_dolg2a"] = true,
-	["actors\\stalker_dolg\\stalker_dolg2a_old"] = true,
-	["actors\\stalker_dolg\\stalker_dolggas_2"] = true,
-	["actors\\stalker_dolg\\stalker_dolggas2a"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_blue"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_brown"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_guard"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_military"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_tookarev"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_white"] = true,
-	["actors\\stalker_ecologist\\stalker_ecolog_yellow"] = true,
-	["actors\\stalker_freedom\\stalker_freedom_2"] = true,
-	["actors\\stalker_freedom\\stalker_freedom_2_old"] = true,
-	["actors\\stalker_freedom\\stalker_freedom_5"] = true,
-	["actors\\stalker_freedom\\stalker_freedom2a"] = true,
-	["actors\\stalker_freedom\\stalker_freedom2a_old"] = true,
-	["actors\\stalker_freedom\\stalker_freedom2b"] = true,
-	["actors\\stalker_freedom\\stalker_freedom2b_old"] = true,
-	["actors\\stalker_freedom\\stalker_freedom5a"] = true,
-	["actors\\stalker_freedom\\stalker_freedom5b"] = true,
-	["actors\\stalker_neutral\\stalker_medic_3_face_1"] = true,
-	["actors\\stalker_merc\\stalker_merc_sun1"] = true,
-	["actors\\stalker_merc\\stalker_merc_sun1_merc"] = true,
-	["actors\\stalker_merc\\stalker_merc_sun1_old"] = true,
-	["actors\\stalker_merc\\stalker_mercenary3"] = true,
-	["actors\\stalker_merc\\stalker_mercenary4"] = true,
-	["actors\\stalker_monolith\\stalker_monolith_2_old"] = true,
-	["actors\\stalker_monolith\\stalker_monolith1"] = true
-	}
 		local gvid = db.actor:game_vertex_id()
 		local pos = db.actor:position()
 
@@ -2274,18 +2157,8 @@ function cmd.debug_visuals(me,txt,owner,p)
 		for	it=0, f_cnt-1 do
 			local file = flist:GetAt(it)
 			local visual_name = file:NameFull():sub(1,-5)
-			printf(visual_name)
-			local found = false
-			if (wrd == "test") then -- for testing specific bulk visuals
-				for kk,vv in pairs(tester) do 
-					if (string.find(visual_name,kk)) then 
-						found = true
-						tester[kk] = false
-						break
-					end
-				end
-			end
-			if (found or check_all or string.find(visual_name,wrd)) then
+
+			if (check_all or string.find(visual_name,wrd)) then
 				if (string.find(visual_name,"actors\\") == 1 and not string.find(visual_name,"trader") and not string.find(visual_name,"lesnik")) then
 					local newpos = vector():set(pos)
 					newpos:add(vector():set(device().cam_dir):mul(dist))
@@ -2298,15 +2171,6 @@ function cmd.debug_visuals(me,txt,owner,p)
 						--debug_visuals[se_obj.id] = visual_name
 					end
 					dist = dist + 1
-				end
-			end
-		end
-		
-		if (wrd == "test") then 
-			for kk,vv in pairs(tester) do
-				if (vv == false) then 
-					printf("Either file doesn't exist or bad *.ogf. %s",kk)
-					owner:SendOutput("Either file doesn't exist or bad *.ogf. %s",kk)
 				end
 			end
 		end

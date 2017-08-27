@@ -8,6 +8,8 @@ additional_inventory_weight              = 0 ; +max_walk_weight
 additional_inventory_weight2             = 0 ;	+40 kg
 player_hud_section                       = actor_hud_05
 
+power_restore_speed = 0
+
 discovery_dependency                     =
 installed_upgrades                       =
 
@@ -23,6 +25,9 @@ default_to_ruck                          = false
 
 hit_fraction_actor                       = 0.45
 control_inertion_factor                  = 2.5
+power_loss                               = 0.6
+additional_inventory_weight              = 30
+additional_inventory_weight2             = 30
 
 upgrades                                 = up_gr_firstab_exo_outfit, up_gr_seconab_exo_outfit, up_gr_thirdab_exo_outfit, up_gr_fourtab_exo_outfit, up_gr_fifthab_exo_outfit
 upgrade_scheme                           = upgrade_scheme_exo_outfit
@@ -108,9 +113,8 @@ immunities_sect                          = sect_svoboda_exo_outfit_immunities
 bones_koeff_protection                   = actor_armor_freedom_exo
 
 hit_fraction_actor                       = 0.5
-power_loss                               = 1.0
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
+power_loss                               = 0.55
+
 artefact_count                           = 1
 
 character_portrait                       = ui_inGame2_Freedom_4
@@ -175,9 +179,8 @@ immunities_sect                          = sect_bandit_exo_outfit_immunities
 
 bones_koeff_protection                   = actor_armor_bandit_exo
 
-power_loss                               = 1.05
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
+power_loss                               = 0.55
+
 artefact_count                           = 1
 
 character_portrait                       = ui_inGame2_merc_4
@@ -230,9 +233,6 @@ upgr_icon_height                         = 159
 
 cost                                     = 110000
 
-power_loss                               = 1.1
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
 artefact_count                           = 1
 
 character_portrait                       = ui_inGame2_neutral_4
@@ -265,9 +265,6 @@ cost                                     = 115000
 
 upgrades                                 = up_gr_firstab_merc_exo_outfit, up_gr_seconab_merc_exo_outfit, up_gr_thirdab_merc_exo_outfit, up_gr_fourtab_merc_exo_outfit, up_gr_fifthab_merc_exo_outfit
 
-power_loss                               = 1.1
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
 artefact_count                           = 2
 
 character_portrait                       = ui_inGame2_merc_4
@@ -303,9 +300,6 @@ upgrades                                 = up_gr_firstab_monolith_exo_outfit, up
 radiation_protection                     = 0.021
 telepatic_protection                     = 0.0
 
-power_loss                               = 1.1
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
 artefact_count                           = 2
 
 character_portrait                       = ui_inGame2_monolit_4
@@ -350,9 +344,8 @@ immunities_sect                          = sect_dolg_exo_outfit_immunities
 
 bones_koeff_protection                   = actor_armor_duty_exo
 
-power_loss                               = 1.15
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
+power_loss                               = 0.65
+
 artefact_count                           = 0
 
 character_portrait                       = ui_inGame2_Dolg_4
@@ -417,9 +410,8 @@ immunities_sect                          = sect_military_exo_outfit_immunities
 
 bones_koeff_protection                   = actor_armor_military_exo
 
-power_loss                               = 1.20
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
+power_loss                               = 0.72
+
 artefact_count                           = 0
 
 character_portrait                       = ui_inGame2_monolit_4
@@ -459,6 +451,8 @@ class                                    = EQU_STLK ;Change to E_STLK if you wan
 cform                                    = skeleton
 player_hud_section                       = actor_hud_radiation
 
+power_restore_speed = 0
+
 discovery_dependency                     =
 installed_upgrades                       =
 
@@ -484,10 +478,10 @@ upgr_icon_y                              = 509
 upgr_icon_width                          = 298
 upgr_icon_height                         = 156
 
-cost                                     = 71250
+cost                                     = 75000
 
 helmet_avaliable                         = false
-power_loss                               = 0.9
+power_loss                               = 0.5
 hit_fraction_actor                       = 0.6
 control_inertion_factor                  = 2.5
 sprint_allowed                           = true
@@ -511,6 +505,7 @@ bones_koeff_protection                   = actor_armor_rad
 artefact_count                           = 1
 
 upgrades                                 = up_gr_firstab_rad_outfit, up_gr_seconab_rad_outfit, up_gr_thirdab_rad_outfit, up_gr_fourtab_rad_outfit, up_gr_fifthab_rad_outfit
+upgrade_scheme                           = upgrade_scheme_exo_outfit
 
 character_portrait                       = ui_inGame2_neutral_3
 mask_hud                                 = helm_respirator
@@ -560,9 +555,9 @@ upgr_icon_y                              = 676
 upgr_icon_width                          = 290
 upgr_icon_height                         = 153
 
-cost                                     = 71250
+cost                                     = 77500
 
-power_loss                               = 0.9
+power_loss                               = 0.52
 
 burn_protection                          = 0.055
 shock_protection                         = 0.275
@@ -628,10 +623,10 @@ upgr_icon_y                              = 842
 upgr_icon_width                          = 298
 upgr_icon_height                         = 157
 
-cost                                     = 71250
+cost                                     = 77500
 
 helmet_avaliable                         = false
-power_loss                               = 0.9
+power_loss                               = 0.48
 control_inertion_factor                  = 2.5
 sprint_allowed                           = true
 additional_inventory_weight              = 0
@@ -697,7 +692,7 @@ upgr_icon_y                              = 507
 upgr_icon_width                          = 293
 upgr_icon_height                         = 157
 
-cost                                     = 71250
+cost                                     = 77500
 
 artefact_count                           = 2
 
@@ -727,7 +722,7 @@ upgr_icon_y                              = 509
 upgr_icon_width                          = 296
 upgr_icon_height                         = 157
 
-cost                                     = 71250
+cost                                     = 77500
 
 artefact_count                           = 2
 
@@ -763,11 +758,8 @@ upgr_icon_y                              = 1000
 upgr_icon_width                          = 296
 upgr_icon_height                         = 154
 
-cost                                     = 113250
+cost                                     = 110000
 
-power_loss                               = 1.1
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
 artefact_count                           = 2
 
 character_portrait                       = ui_inGame2_csky_exo
@@ -796,11 +788,10 @@ upgr_icon_y                              = 1150
 upgr_icon_width                          = 302
 upgr_icon_height                         = 157
 
-cost                                     = 83625
+cost                                     = 80000
 
-power_loss                               = 1.1
-additional_inventory_weight              = 30
-additional_inventory_weight2             = 30
+power_loss                               = 0.55
+
 artefact_count                           = 1
 
 helmet_avaliable                         = true

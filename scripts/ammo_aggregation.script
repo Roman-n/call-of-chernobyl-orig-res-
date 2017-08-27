@@ -52,8 +52,7 @@ function aggregate(npc,obj)
 				npc:drop_item(item)
 				local se_obj = sim:object(ammos[i])
 				if (se_obj) then
-					--printf("release %s",se_obj:name())
-					sim:release(se_obj)
+					safe_release_manager.release(se_obj)
 				end
 			end
 		end
@@ -62,13 +61,8 @@ end
 
 function actor_on_item_take(item)
 	aggregate(db.actor,item)
-end 
-
-function npc_on_item_take(npc,item)
-	aggregate(npc,item)
 end
 
 function on_game_start()
 	RegisterScriptCallback("actor_on_item_take", actor_on_item_take)
-	RegisterScriptCallback("npc_on_item_take", npc_on_item_take)
 end
