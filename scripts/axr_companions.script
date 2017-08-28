@@ -526,7 +526,7 @@ function move_to_point(p)
 			local r = level.get_target_dist and level.get_target_dist()
 			if (r) then
 				local pos = vector():set(device().cam_pos)
-				pos:add(vector():set(device().cam_dir):mul(result.range):mul(r))
+				pos:add(vector():set(device().cam_dir):mul(r))
 				
 				local lvid = level.vertex_id(pos)
 				local npc = lvid and level.valid_vertex(lvid) and get_test_member()
@@ -558,7 +558,7 @@ function move_to_point(p)
 			local r = level.get_target_dist and level.get_target_dist()
 			if (r) then
 				local pos = vector():set(device().cam_pos)
-				pos:add(vector():set(device().cam_dir):mul(result.range):mul(r))
+				pos:add(vector():set(device().cam_dir):mul(r))
 			
 				local lvid = level.vertex_id(pos)
 					
