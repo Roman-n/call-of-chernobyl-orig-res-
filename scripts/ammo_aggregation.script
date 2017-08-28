@@ -49,10 +49,10 @@ function aggregate(npc,obj)
 				item:ammo_set_count(box_size)
 				fill = fill - 1
 			else
-				npc:drop_item(item)
 				local se_obj = sim:object(ammos[i])
 				if (se_obj) then
-					safe_release_manager.release(se_obj)
+				printf("release %s",se_obj:name())
+					sim:release(se_obj)
 				end
 			end
 		end
