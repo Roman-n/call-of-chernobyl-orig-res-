@@ -26,6 +26,46 @@ hud                                      = wpn_vodka_hud
 slot                                     = -1
 ;use_sound								 = interface\inv_open
 
+[equ_backpack]
+GroupControlSection                      = spawn_group
+discovery_dependency                     =
+$spawn                                   = "equipments\backpack"
+$prefetch                                = 32
+class                                    = EQ_BAKPK
+cform                                    = skeleton
+visual                                   = dynamics\devices\dev_rukzak\dev_rukzak.ogf
+description                              = st_itm_backpack_desc
+inv_weight                               = 0.5
+inv_name                                 = st_itm_backpack_name
+inv_name_short                           = st_itm_backpack_name
+inv_grid_width                           = 2
+inv_grid_height                          = 2
+inv_grid_x                               = 16
+inv_grid_y                               = 10
+cost                                     = 700
+highlight_equipped 						 = true
+slot                                     = 12
+additional_inventory_weight				 = 20
+additional_inventory_weight2			 = 40
+use_condition							 = false
+can_stack 								 = false
+default_to_ruck                          = false
+sprint_allowed							 = true
+immunities_sect                          = sect_backpack_immunities
+control_inertion_factor					 = 1.0
+
+[sect_backpack_immunities]
+burn_immunity                            = 0.025
+strike_immunity                          = 0.0
+shock_immunity                           = 0.01
+wound_immunity                           = 0.0
+wound_2_immunity                         = 0.0
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.025
+explosion_immunity                       = 0.03
+fire_wound_immunity                      = 0.03
+
 [test_container]:booster_script
 use1_action_functor                      = bind_container.access_inventory
 use1_functor                             = bind_container.can_access_inventory
