@@ -1,82 +1,86 @@
 [up_sect_firsta_dolg_outfit]
-cost 		= 400
+cost 		= 600
 value		= +10
 
-fire_wound_protection  			= 0.05
-bones_koeff_protection_add  	= actor_armor_light_add_1
+fire_wound_protection  			= 0.04
+bones_koeff_protection_add  	= actor_armor_add_1
 
 [up_sect_firstc_dolg_outfit]
-cost 		= 800
-value		= +15
+cost 		= 1200
+value		= +25
 
 immunities_sect_add				= sect_dolg_outfit_immunities_add
 
 [up_sect_firste_dolg_outfit]
-cost 		= 1200
+cost 		= 1300
 value		= +30
 
-fire_wound_protection  			= 0.1
-bones_koeff_protection_add  	= actor_armor_light_add_3
+fire_wound_protection  			= 0.08
+bones_koeff_protection_add  	= actor_armor_add_3
+inv_weight						= +0.25
+power_loss						= +0.01
 
 [up_sect_firstf_dolg_outfit]
-cost 		= 1200
+cost 		= 1300
 value		= -30
 
-strike_protection 				= 0.06 ;0.3 
-explosion_protection 			= 0.06 ;0.3 
-wound_protection				= 0.06 ;0.3 
-hit_fraction_actor				= -0.12 ;0.45
+strike_protection 				= 0.07
+explosion_protection 			= 0.07
+wound_protection				= 0.07
+hit_fraction_actor				= -0.07
 
 [up_sect_secona_dolg_outfit]
-cost 		= 400
+cost 		= 600
 value		= -10
 
-hit_fraction_actor				= -0.08 ;0.55
-strike_protection 				= 0.04 ;0.3 
-explosion_protection 			= 0.04 ;0.3 
-wound_protection				= 0.04 ;0.3 
+hit_fraction_actor				= -0.03
+strike_protection 				= 0.03
+explosion_protection 			= 0.03 
+wound_protection				= 0.03
 
 [up_sect_seconc_dolg_outfit]
-cost 		= 800
+cost 		= 1500
 value		= -3.5
 
 inv_weight  					= -3.5
-power_loss						= -0.05
+power_loss						= -0.02
 
 [up_sect_second_dolg_outfit]
-cost 		= 3000
+cost 		= 2000
 value		= +2
 
-power_restore_speed				= 0.002
-power_loss						= -0.1
+power_restore_speed				= 0.0014
+power_loss						= -0.01
 
 [up_sect_secone_dolg_outfit]
-cost 		= 1200
+cost 		= 1400
 value		= +30
 
-fire_wound_protection  			= 0.15
-bones_koeff_protection_add  	= actor_armor_medium_add_2
+fire_wound_protection  			= 0.08
+bones_koeff_protection_add  	= actor_armor_add_3
+inv_weight						= +0.25
+power_loss						= +0.01
 
 [up_sect_thirda_dolg_outfit]
-cost 		= 400
+cost 		= 1000
 value		= +5
 
-additional_inventory_weight		= 5		; +max_walk_weight
+additional_inventory_weight		= 5
 additional_inventory_weight2	= 5
-power_loss						= -0.05
+power_loss						= -0.03
 
 [up_sect_thirdc_dolg_outfit]
-cost 		= 1000
+cost 		= 2500
 value       = +3
 
 health_restore_speed			= 0.00045
 
 [up_sect_thirde_dolg_outfit]
-cost 		= 2000
+cost 		= 4000
 value       = +3
 
 bleeding_restore_speed          = 0.003
-power_restore_speed				= 0.003
+power_restore_speed				= 0.0014
 
 
 [up_firsta_dolg_outfit]
@@ -115,8 +119,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_arm_b2_name
-description             = st_up_arm_b2_descr
+name                    = st_up_kom_c3_name
+description             = st_up_kom_c3_descr
 icon                    = ui_inGame2_upgrade_dolg_outfit_2
 
 [up_firste_dolg_outfit]
@@ -124,7 +128,7 @@ scheme_index            = 2, 0
 known                   = 1
 effects                 = 
 section                 = up_sect_firste_dolg_outfit
-property                = prop_armor
+property                = prop_armor, prop_weightoutfit
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -155,8 +159,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_arm_c6_name
-description             = st_up_arm_c6_descr
+name                    = st_up_arm_b2_name
+description             = st_up_arm_b2_descr
 icon                    = ui_inGame2_upgrade_dolg_outfit_4
 
 [up_secona_dolg_outfit]
@@ -224,7 +228,7 @@ scheme_index            = 2, 2
 known                   = 1
 effects                 = 
 section                 = up_sect_secone_dolg_outfit
-property                = prop_armor
+property                = prop_armor, prop_weightoutfit
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -235,8 +239,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_kom_c3_name
-description             = st_up_kom_c3_descr
+name                    = st_up_arm_c6_name
+description             = st_up_arm_c6_descr
 icon                    = ui_inGame2_upgrade_dolg_outfit_7
 
 [up_thirda_dolg_outfit]

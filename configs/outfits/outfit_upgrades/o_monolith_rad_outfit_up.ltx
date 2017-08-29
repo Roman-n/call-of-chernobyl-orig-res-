@@ -3,71 +3,71 @@ cost 		= 1500
 value		= +10
 
 fire_wound_protection  			= 0.04
-bones_koeff_protection_add  	= actor_armor_exo_add_1
+bones_koeff_protection_add  	= actor_armor_add_1
 
 [up_sect_firstc_monolith_rad_outfit]
 cost 		= 2500
 value		= +20
 
-fire_wound_protection  			= 0.07
-bones_koeff_protection_add  	= actor_armor_exo_add_2
+fire_wound_protection  			= 0.06
+bones_koeff_protection_add  	= actor_armor_add_2
 
 [up_sect_firstd_monolith_rad_outfit]
 cost 		= 2500
-value		= +15
+value		= +25
 
-immunities_sect_add 			= sect_exo_outfit_immunities_add
+immunities_sect_add 			= sect_monolith_rad_outfit_immunities_add
 
 [up_sect_firste_monolith_rad_outfit]
 cost 		= 3500
 value		= +30
 
-fire_wound_protection  			= 0.09
-bones_koeff_protection_add 		= actor_armor_exo_add_3
+fire_wound_protection  			= 0.08
+bones_koeff_protection_add 		= actor_armor_add_3
 
 [up_sect_firstf_monolith_rad_outfit]
 cost 		= 3500
 value		= -30
 
-hit_fraction_actor				= -0.06 ;0.55
-strike_protection 				= 0.06 ;0.40
-explosion_protection 			= 0.06 ;0.40
-wound_protection				= 0.06 ;0.40
+hit_fraction_actor				= -0.06
+strike_protection 				= 0.06
+explosion_protection 			= 0.06
+wound_protection				= 0.06
 
 [up_sect_secona_monolith_rad_outfit]
 cost 		= 1500
 value		= -10
 
-hit_fraction_actor				= -0.04 ;0.55
-strike_protection 				= 0.04 ;0.40
-explosion_protection 			= 0.04 ;0.40
-wound_protection				= 0.04 ;0.40
+hit_fraction_actor				= -0.04
+strike_protection 				= 0.04
+explosion_protection 			= 0.04
+wound_protection				= 0.04
 
 [up_sect_seconc_monolith_rad_outfit]
 cost 		= 2500
 value		= +20
 
-shock_protection                = 0.100 ;0.039
+shock_protection                = 0.1
 
 [up_sect_second_monolith_rad_outfit]
 cost 		= 2500
 value		= +20
 
-burn_protection 				= 0.005 ;0.039
+burn_protection 				= 0.01
 
 [up_sect_secone_monolith_rad_outfit]
 cost 		= 3500
 value		= +30
 
-burn_protection 				= 0.0075 ;0.039
-chemical_burn_protection	    = 0.0075 ;0.039
+burn_protection 				= 0.0075
+chemical_burn_protection	    = 0.0075
 
 [up_sect_seconf_monolith_rad_outfit]
 cost 		= 3500
 value		= +30
 
-chemical_burn_protection 	    = 0.0075 ;0.039
-radiation_protection 		 	= 0.002 ;0.039
+chemical_burn_protection 	    = 0.0075
+radiation_protection 		 	= 0.003
 
 [up_sect_thirda_monolith_rad_outfit]
 cost 		= 1500
@@ -81,6 +81,12 @@ value       = +1
 
 artefact_count					= 1
 
+[up_sect_thirdd_monolith_rad_outfit]
+cost 		= 2500
+value		= -10
+
+inv_weight  					= -5
+power_loss						= -0.03
 
 [up_sect_thirde_monolith_rad_outfit]
 cost 		= 5000
@@ -88,66 +94,37 @@ value       = +2
 
 artefact_count					= 2
 
+[up_sect_thirdf_monolith_rad_outfit]
+cost 		= 4000
+
+additional_inventory_weight 	= 10
+additional_inventory_weight2 	= 10
+power_loss	                 	= -0.05
 
 [up_sect_fourta_monolith_rad_outfit]
 cost 		= 1500
 value		= +10
 
-additional_inventory_weight		= 5		; +max_walk_weight
-additional_inventory_weight2	= 5
-power_loss						= -0.05
+chemical_burn_protection        = 0.005
+radiation_protection 			= 0.0015
 
 [up_sect_fourtc_monolith_rad_outfit]
 cost 		= 2500
-value		= -10
-
-inv_weight  					= -5
-power_loss						= -0.05
-
-[up_sect_fourtd_monolith_rad_outfit]
-cost 		= 2500
-value		= +15
-
-immunities_sect_add 			= sect_exo_outfit_immunities_add
-
-[up_sect_fourte_monolith_rad_outfit]
-cost 		= 4000
-value		= +3
-
-power_restore_speed				= 0.001
-power_loss						= -0.1
-
-[up_sect_fourtf_monolith_rad_outfit]
-cost 		= 5000
-
-additional_inventory_weight 	= 10
-additional_inventory_weight2 	= 10
-power_loss	                 	= -0.1
-
-[up_sect_fiftha_monolith_rad_outfit]
-cost 		= 1500
-value		= +10
-
-chemical_burn_protection        = 0.005 ;0.039
-radiation_protection 			= 0.001 ;0.039
-
-[up_sect_fifthc_monolith_rad_outfit]
-cost 		= 2500
 value 		= +20
 
-telepatic_protection  			= 0.01; 0.039
+telepatic_protection  			= 0.01
 
-[up_sect_fifthd_monolith_rad_outfit]
+[up_sect_fourtd_monolith_rad_outfit]
 cost 		= 4000
 value		= +2
 
 nightvision_sect				= effector_nightvision_2
 
-[up_sect_fifthe_monolith_rad_outfit]
+[up_sect_fourte_monolith_rad_outfit]
 cost 		= 4000
 value 		= +30
 
-telepatic_protection  			= 0.02; 0.039
+telepatic_protection  			= 0.02
 
 
 [up_firsta_monolith_rad_outfit]
@@ -390,6 +367,25 @@ name                    = st_up_uti_b1_name
 description             = st_up_uti_b1_descr
 icon                    = ui_inGame2_upgrade_monolith_exo_outfit_14
 
+[up_thirdd_monolith_rad_outfit]
+scheme_index            = 1, 5
+known                   = 1
+effects                 = up_gr_thirdef_monolith_rad_outfit
+section                 = up_sect_thirdd_monolith_rad_outfit
+property                = prop_weightoutfit
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_arm_a5_name
+description             = st_up_arm_a5_descr
+icon                    = ui_inGame2_upgrade_rad_outfit_16
 
 [up_thirde_monolith_rad_outfit]
 scheme_index            = 2, 4
@@ -411,11 +407,11 @@ name                    = st_up_uti_c1_name
 description             = st_up_uti_c1_descr
 icon                    = ui_inGame2_upgrade_monolith_exo_outfit_13
 
-[up_fourta_monolith_rad_outfit]
-scheme_index            = 0, 3
+[up_thirdf_monolith_rad_outfit]
+scheme_index            = 2, 5
 known                   = 1
-effects                 = up_gr_fourtcd_monolith_rad_outfit
-section                 = up_sect_fourta_monolith_rad_outfit
+effects                 = 
+section                 = up_sect_thirdf_monolith_rad_outfit
 property                = prop_tonnage
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -431,92 +427,11 @@ name                    = st_up_uti_b3_name
 description             = st_up_uti_b3_descr
 icon                    = ui_inGame2_upgrade_rad_outfit_15
 
-[up_fourtc_monolith_rad_outfit]
-scheme_index            = 1, 5
+[up_fourta_monolith_rad_outfit]
+scheme_index            = 0, 3
 known                   = 1
-effects                 = up_gr_fourtef_monolith_rad_outfit
-section                 = up_sect_fourtc_monolith_rad_outfit
-property                = prop_weightoutfit
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_arm_a5_name
-description             = st_up_arm_a5_descr
-icon                    = ui_inGame2_upgrade_rad_outfit_16
-
-[up_fourtd_monolith_rad_outfit]
-scheme_index            = 1, 6
-known                   = 1
-effects                 = up_gr_fourtef_monolith_rad_outfit
-section                 = up_sect_fourtd_monolith_rad_outfit
-property                = prop_durability
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_arm_b5_name
-description             = st_up_arm_b5_descr
-icon                    = ui_inGame2_upgrade_rad_outfit_18
-
-
-[up_fourte_monolith_rad_outfit]
-scheme_index            = 2, 5
-known                   = 1
-effects                 =
-section                 = up_sect_fourte_monolith_rad_outfit
-property                = prop_power
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_tch_a1_name
-description             = st_up_tch_a1_descr
-icon                    = ui_inGame2_upgrade_rad_outfit_17
-
-[up_fourtf_monolith_rad_outfit]
-scheme_index            = 2, 6
-known                   = 1
-effects                 =
-section                 = up_sect_fourtf_monolith_rad_outfit
-property                = prop_tonnage
-
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
-
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
-
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           =
-name                    = st_up_uti_b2_name
-description             = st_up_uti_b2_descr
-icon                    = ui_inGame2_upgrade_rad_outfit_19
-
-[up_fiftha_monolith_rad_outfit]
-scheme_index            = 0, 4
-known                   = 1
-effects                 = up_gr_fifthcd_monolith_rad_outfit
-section                 = up_sect_fiftha_monolith_rad_outfit
+effects                 = up_gr_fourtcd_monolith_rad_outfit
+section                 = up_sect_fourta_monolith_rad_outfit
 property                = prop_radio, prop_chem
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -532,11 +447,11 @@ name                    = st_up_res_a1_name
 description             = st_up_res_a1_descr
 icon                    = ui_inGame2_upgrade_monolith_exo_outfit_20
 
-[up_fifthc_monolith_rad_outfit]
-scheme_index            = 1, 7
+[up_fourtc_monolith_rad_outfit]
+scheme_index            = 1, 6
 known                   = 1
-effects                 = up_gr_fifthef_monolith_rad_outfit
-section                 = up_sect_fifthc_monolith_rad_outfit
+effects                 = up_gr_fourtef_monolith_rad_outfit
+section                 = up_sect_fourtc_monolith_rad_outfit
 property                = prop_psy
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -552,11 +467,11 @@ name                    = st_up_res_b1_name
 description             = st_up_res_b1_descr
 icon                    = ui_inGame2_upgrade_monolith_exo_outfit_21
 
-[up_fifthd_monolith_rad_outfit]
-scheme_index            = 1, 8
+[up_fourtd_monolith_rad_outfit]
+scheme_index            = 1, 7
 known                   = 1
-effects                 = up_gr_fifthef_monolith_rad_outfit
-section                 = up_sect_fifthd_monolith_rad_outfit
+effects                 = up_gr_fourtef_monolith_rad_outfit
+section                 = up_sect_fourtd_monolith_rad_outfit
 property                = prop_night_vision
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -572,11 +487,11 @@ name                    = st_up_resp_b1_name
 description             = st_up_resp_b1_descr
 icon                    = ui_inGame2_upgrade_monolith_exo_outfit_23
 
-[up_fifthe_monolith_rad_outfit]
-scheme_index            = 2, 7
+[up_fourte_monolith_rad_outfit]
+scheme_index            = 2, 6
 known                   = 1
 effects                 =
-section                 = up_sect_fifthe_monolith_rad_outfit
+section                 = up_sect_fourte_monolith_rad_outfit
 property                = prop_psy
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -614,10 +529,10 @@ elements                = up_secone_monolith_rad_outfit, up_seconf_monolith_rad_
 elements                = up_thirda_monolith_rad_outfit
 
 [up_gr_thirdcd_monolith_rad_outfit]
-elements                = up_thirdc_monolith_rad_outfit
+elements                = up_thirdc_monolith_rad_outfit, up_thirdd_monolith_rad_outfit
 
 [up_gr_thirdef_monolith_rad_outfit]
-elements                = up_thirde_monolith_rad_outfit
+elements                = up_thirde_monolith_rad_outfit, up_thirdf_monolith_rad_outfit
 
 [up_gr_fourtab_monolith_rad_outfit]
 elements                = up_fourta_monolith_rad_outfit
@@ -626,13 +541,4 @@ elements                = up_fourta_monolith_rad_outfit
 elements                = up_fourtc_monolith_rad_outfit, up_fourtd_monolith_rad_outfit
 
 [up_gr_fourtef_monolith_rad_outfit]
-elements                = up_fourte_monolith_rad_outfit, up_fourtf_monolith_rad_outfit
-
-[up_gr_fifthab_monolith_rad_outfit]
-elements                = up_fiftha_monolith_rad_outfit
-
-[up_gr_fifthcd_monolith_rad_outfit]
-elements                = up_fifthc_monolith_rad_outfit, up_fifthd_monolith_rad_outfit
-
-[up_gr_fifthef_monolith_rad_outfit]
-elements                = up_fifthe_monolith_rad_outfit
+elements                = up_fourte_monolith_rad_outfit

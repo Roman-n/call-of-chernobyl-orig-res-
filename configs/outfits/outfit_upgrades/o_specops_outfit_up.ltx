@@ -1,79 +1,81 @@
 [up_sect_firsta_specops_outfit]
-cost 		= 500
+cost 		= 600
 value		= -10
 
-hit_fraction_actor				= -0.05 ;0.55
-strike_protection 				= 0.05 ;0.3 
-explosion_protection 			= 0.05 ;0.3 
-wound_protection				= 0.05 ;0.3 
+hit_fraction_actor				= -0.05
+strike_protection 				= 0.05
+explosion_protection 			= 0.05
+wound_protection				= 0.05
 
 [up_sect_firstc_specops_outfit]
-cost 		= 900
+cost 		= 1000
 value		= -5
 
-inv_weight 						= -5
-power_loss						= -0.05
+inv_weight 						= -4
+power_loss						= -0.02
 
 [up_sect_firstd_specops_outfit]
-cost 		= 900
+cost 		= 1000
 value		= +15
 
 immunities_sect_add				= sect_specops_outfit_immunities_add
 
 [up_sect_firste_specops_outfit]
-cost 		= 1400
+cost 		= 1500
 value		= +30
 
-fire_wound_protection  			= 0.2
-bones_koeff_protection_add 		= actor_armor_medium_add_2
+fire_wound_protection  			= 0.1
+bones_koeff_protection_add 		= actor_armor_add_4
+inv_weight						= +0.30
+power_loss						= +0.015
 
 [up_sect_firstf_specops_outfit]
-cost 		= 1400
+cost 		= 1500
 value		= -10
 
-hit_fraction_actor				= -0.1 ;0.55
-strike_protection 				= 0.07 ;0.3 
-explosion_protection 			= 0.07 ;0.3 
-wound_protection				= 0.07 ;0.3 
+hit_fraction_actor				= -0.08
+strike_protection 				= 0.07
+explosion_protection 			= 0.07
+wound_protection				= 0.07
 
 [up_sect_secona_specops_outfit]
-cost 		= 500
+cost 		= 800
 value		= +10
 
 immunities_sect_add 			= sect_specops_outfit_immunities_add
 
 [up_sect_seconc_specops_outfit]
-cost 		= 900
+cost 		= 2000
 value		= +2
 
-power_restore_speed				= 0.002
-power_loss						= -0.1
+power_restore_speed				= 0.0014
+power_loss						= -0.02
 
 [up_sect_second_specops_outfit]
-cost 		= 900
+cost 		= 1200
 value       = +20 
 
-burn_protection      			= 0.010 ;0.050 
-shock_protection     			= 0.100 ;0.200
+burn_protection      			= 0.01
+shock_protection     			= 0.1
 
 [up_sect_secone_specops_outfit]
-cost 		= 1400
+cost 		= 1500
 value		= +30
 
-chemical_burn_protection 		= 0.005 ;0.0250
-radiation_protection 			= 0.001 ;0.0015
+chemical_burn_protection 		= 0.01
+radiation_protection 			= 0.003
 
 [up_sect_thirda_specops_outfit]
-cost 		= 700
+cost 		= 1500
 value		= +2
 
 bleeding_restore_speed			= 0.002
 
 [up_sect_thirdc_specops_outfit]
-cost 		= 900
+cost 		= 2500
 value		= +10
 
-additional_inventory_weight		= 10		; +max_walk_weight
+additional_inventory_weight		= 10
 additional_inventory_weight2	= 10
 power_loss						= -0.05
 
@@ -149,7 +151,7 @@ scheme_index            = 2, 0
 known                   = 1
 effects                 = 
 section                 = up_sect_firste_specops_outfit
-property                = prop_armor
+property                = prop_armor, prop_weightoutfit
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -160,8 +162,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           =
-name                    = st_up_arm_c5_name
-description             = st_up_arm_c5_descr
+name                    = st_up_arm_b1_name
+description             = st_up_arm_b1_descr
 icon                    = ui_inGame2_upgrade_specops_outfit_3
 
 [up_firstf_specops_outfit]
@@ -180,8 +182,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_arm_b1_name
-description             = st_up_arm_b1_descr
+name                    = st_up_arm_c5_name
+description             = st_up_arm_c5_descr
 icon                    = ui_inGame2_upgrade_specops_outfit_5
 
 [up_secona_specops_outfit]
