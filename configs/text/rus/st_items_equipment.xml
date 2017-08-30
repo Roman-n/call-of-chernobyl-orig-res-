@@ -173,4 +173,28 @@
 	<string id="st_memory_stick_name">
 		<text>Флеш-карта</text>
 	</string>
+	<string id="st_equ_backpack_name">
+		<text>Backpack</text>
+	</string>
+	<string id="st_equ_backpack_desc">
+		<text>A regular water resistant backpack. It has high popularity among stalkers who travel around the Zone.</text>
+	</string>
+	<string id="st_equ_smallpack_name">
+		<text>Small Backpack</text>
+	</string>
+	<string id="st_equ_smallpack_desc">
+		<text>Small backpack usually worn by rookies. The inside has been modified to keep water out. Not a pretty solution, but works.</text>
+	</string>
+	<string id="st_equ_milpack_name">
+		<text>Combat Backpack</text>
+	</string>
+	<string id="st_equ_milpack_desc">
+		<text>Backpack used by the military on longer assaults.</text>
+	</string>
+	<string id="st_equ_touristpack_name">
+		<text>Tourist Backpack</text>
+	</string>
+	<string id="st_equ_touristpack_desc">
+		<text>A tourist backpack with a lot of storage space. Not very popular due to it's size.</text>
+	</string>	
 </string_table>

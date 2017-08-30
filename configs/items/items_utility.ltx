@@ -34,19 +34,19 @@ $prefetch                                = 32
 class                                    = EQ_BAKPK
 cform                                    = skeleton
 visual                                   = dynamics\devices\dev_rukzak\dev_rukzak.ogf
-description                              = st_itm_backpack_desc
-inv_weight                               = 0.5
-inv_name                                 = st_itm_backpack_name
-inv_name_short                           = st_itm_backpack_name
+description                              = st_equ_backpack_desc
+inv_weight                               = 1
+inv_name                                 = st_equ_backpack_name
+inv_name_short                           = st_equ_backpack_name
 inv_grid_width                           = 2
 inv_grid_height                          = 2
 inv_grid_x                               = 16
 inv_grid_y                               = 10
-cost                                     = 700
+cost                                     = 1000
 highlight_equipped 						 = true
 slot                                     = 12
-additional_inventory_weight				 = 20
-additional_inventory_weight2			 = 40
+additional_inventory_weight				 = 10
+additional_inventory_weight2			 = 10
 use_condition							 = false
 can_stack 								 = false
 default_to_ruck                          = false
@@ -56,18 +56,45 @@ control_inertion_factor					 = 1.0
 use1_functor                             = actor_backpack.query_create_stash
 use1_action_functor                      = actor_backpack.action_create_stash
 
-
 [sect_backpack_immunities]
-burn_immunity                            = 0.025
+burn_immunity                            = 0.0
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
+shock_immunity                           = 0.0
 wound_immunity                           = 0.0
 wound_2_immunity                         = 0.0
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.025
-explosion_immunity                       = 0.03
-fire_wound_immunity                      = 0.03
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = 0.0
+fire_wound_immunity                      = 0.0
+
+[equ_small_pack]:equ_backpack
+description                              = st_equ_smallpack_desc
+inv_weight                               = 0.5
+inv_name                                 = st_equ_smallpack_name
+inv_name_short                           = st_equ_smallpack_name
+cost                                     = 600
+additional_inventory_weight				 = 5
+additional_inventory_weight2			 = 5
+
+[equ_military_pack]:equ_backpack
+description                              = st_equ_milpack_desc
+inv_weight                               = 1.2
+inv_name                                 = st_equ_milpack_name
+inv_name_short                           = st_equ_milpack_name
+cost                                     = 2000
+additional_inventory_weight				 = 20
+additional_inventory_weight2			 = 15
+
+[equ_tourist_pack]:equ_backpack
+
+description                              = st_equ_touristpack_desc
+inv_weight                               = 2
+inv_name                                 = st_equ_touristpack_name
+inv_name_short                           = st_equ_touristpack_name
+cost                                     = 3000
+additional_inventory_weight				 = 25
+additional_inventory_weight2			 = 20
 
 [test_container]:booster_script
 use1_action_functor                      = bind_container.access_inventory
