@@ -53,6 +53,7 @@ default_to_ruck                          = false
 sprint_allowed							 = true
 immunities_sect                          = sect_backpack_immunities
 control_inertion_factor					 = 1.0
+power_loss								 = 0.03
 use1_functor                             = actor_backpack.query_create_stash
 use1_action_functor                      = actor_backpack.action_create_stash
 
@@ -73,18 +74,24 @@ description                              = st_equ_smallpack_desc
 inv_weight                               = 0.5
 inv_name                                 = st_equ_smallpack_name
 inv_name_short                           = st_equ_smallpack_name
+inv_grid_x                               = 24
+inv_grid_y                               = 39
 cost                                     = 600
 additional_inventory_weight				 = 5
 additional_inventory_weight2			 = 5
+power_loss								 = 0.02
 
 [equ_military_pack]:equ_backpack
 description                              = st_equ_milpack_desc
 inv_weight                               = 1.2
 inv_name                                 = st_equ_milpack_name
 inv_name_short                           = st_equ_milpack_name
+inv_grid_x                               = 26
+inv_grid_y                               = 39
 cost                                     = 2000
-additional_inventory_weight				 = 20
+additional_inventory_weight				 = 15
 additional_inventory_weight2			 = 15
+power_loss								 = 0.04
 
 [equ_tourist_pack]:equ_backpack
 
@@ -92,9 +99,12 @@ description                              = st_equ_touristpack_desc
 inv_weight                               = 2
 inv_name                                 = st_equ_touristpack_name
 inv_name_short                           = st_equ_touristpack_name
+inv_grid_x                               = 28
+inv_grid_y                               = 39
 cost                                     = 3000
-additional_inventory_weight				 = 25
+additional_inventory_weight				 = 20
 additional_inventory_weight2			 = 20
+power_loss								 = 0.06
 
 [test_container]:booster_script
 use1_action_functor                      = bind_container.access_inventory

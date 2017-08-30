@@ -79,8 +79,7 @@ function actor_on_item_take_from_box(box,obj)
 end
 
 function query_create_stash(obj)
-	local backpack = db.actor:item_in_slot(13)
-	if (backpack and backpack:id() == obj:id()) then 
+	if (obj:clsid() == clsid.equ_backpack) then 
 		return game.translate_string("ui_st_create_stash")
 	end
 end 
