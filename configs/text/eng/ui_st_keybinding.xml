@@ -258,6 +258,9 @@
 	<string id="kb_custom6">
 		<text>Toggle HUD</text>
 	</string>
+	<string id="kb_custom7">
+		<text>Quick release backpack</text>
+	</string>
 	
 	<string id="kb_pda_tab1">
 		<text>PDA Map</text>
