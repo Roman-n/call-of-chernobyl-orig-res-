@@ -177,6 +177,7 @@ function trader_object_binder:load_state()
 	local id = self.object:id()
 	db.storage[id] = db.storage[id] or {}	
 	local st = db.storage[id]
+	st.object = self.object
 	--alun_utils.debug_write(strformat("trader_object_binder:load_state %s BEFORE",id))
 	--st.job_ini = state.xr_logic.job_ini
 	st.loaded_ini_filename = state.xr_logic.ini_filename

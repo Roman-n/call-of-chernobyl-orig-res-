@@ -602,8 +602,8 @@ function motivator_binder:save_state(m_data)
 	state.xr_logic.activation_time = (st.activation_time or time_global()) - time_global()
 	state.xr_logic.activation_game_time = st.activation_game_time
 
-	xr_sound.npc_save_state(id,m_data)
-	trade_manager.save_state(id,m_data)
+	xr_sound.npc_save_state(id,state)
+	trade_manager.save_state(id,state)
 	db.storage[id].pstor = db.storage[id].pstor or {}
 	--alun_utils.debug_write(strformat("motivator_binder:save_state %s AFTER",self.object:name()))
 end
@@ -617,6 +617,7 @@ function motivator_binder:load_state()
 	local id = self.object:id()
 	db.storage[id] = db.storage[id] or {}
 	local st = db.storage[id]
+	st.object = self.object
 	--alun_utils.debug_write(strformat("motivator_binder:load_state %s BEFORE",id))
 	--st.job_ini = state.xr_logic.job_ini
 	st.loaded_ini_filename = state.xr_logic.ini_filename
