@@ -211,6 +211,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		return string.find(v,"WP_") ~= nil
 	end
 	
+	local function is_backpack(section)
+		local v = ini:r_string_ex(section,"class","")
+		return v == "EQ_BAKPK"
+	end
+	
 	local function try_spawn_item(sec,min,max,chance,weight)
 		if (max_weight >= weight) then 
 			local new_max = math.random(min,max)
@@ -232,7 +237,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		local skip = false
 		local bWeapon = is_weapon(section)
 		local bOutfit = not bWeapon and is_outfit(section)
-		if (bWeapon or bOutfit) then
+		local bBackpack = not bWeapon and not bOutfit and is_backpack(section)
+		if (bWeapon or bOutfit or bBackpack) then
 			if (allow_item) then
 				allow_item = false
 			else 
@@ -241,51 +247,61 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		end
 		
 		if not (skip) then
-			-- decide for each section based on chance, weight and item classification
-			if (cost <= 500) then
-				if (is_consumable(section)) then
-					try_spawn_item(section,1,4,0.25,40)
-				elseif (bOutfit) then
-					try_spawn_item(section,1,1,0.25,40)
-				elseif (bWeapon) then
-					try_spawn_item(section,1,1,0.25,40)
+			if (bBackpack) then 
+				if (section == "equ_tourist_pack") then 
+					try_spawn_item(section,1,1,0.01,40)
+				elseif (section == "equ_military_pack") then
+					try_spawn_item(section,1,1,0.02,40)
 				else
-					try_spawn_item(section,1,1,0.25,40)
+					try_spawn_item(section,1,1,0.10,40)
 				end
-			elseif (cost <= 1000) then
-				if (is_consumable(section)) then
-					try_spawn_item(section,1,4,0.15,40)
-				elseif (bOutfit) then
-					try_spawn_item(section,1,1,0.15,50)
-				elseif (bWeapon) then
-					try_spawn_item(section,1,1,0.15,50)
-				else
-					try_spawn_item(section,1,1,0.20,50)
-				end
-			elseif (cost <= 3000) then
-				if (bOutfit) then
-					try_spawn_item(section,1,1,0.10,55)
-				elseif (bWeapon) then
-					try_spawn_item(section,1,1,0.10,45)
-				else 
-					try_spawn_item(section,1,1,0.15,40)
-				end
-			elseif (cost <= 5000) then
-				if (bOutfit) then
-					try_spawn_item(section,1,1,0.08,60)
-				elseif (bWeapon) then
-					try_spawn_item(section,1,1,0.12,50)
-				else 
-					try_spawn_item(section,1,1,0.08,40)
-				end
-			elseif (cost <= 10000) then
-				try_spawn_item(section,1,1,0.01,90)
-			elseif (cost <= 15000) then 
-				try_spawn_item(section,1,1,0.05,100)
-			elseif (cost <= 20000) then
-				try_spawn_item(section,1,1,0.01,110)
 			else
-				try_spawn_item(section,1,1,0.01,120)
+				-- decide for each section based on chance, weight and item classification
+				if (cost <= 500) then
+					if (is_consumable(section)) then
+						try_spawn_item(section,1,4,0.25,40)
+					elseif (bOutfit) then
+						try_spawn_item(section,1,1,0.25,40)
+					elseif (bWeapon) then
+						try_spawn_item(section,1,1,0.25,40)
+					else
+						try_spawn_item(section,1,1,0.25,40)
+					end
+				elseif (cost <= 1000) then
+					if (is_consumable(section)) then
+						try_spawn_item(section,1,4,0.15,40)
+					elseif (bOutfit) then
+						try_spawn_item(section,1,1,0.15,50)
+					elseif (bWeapon) then
+						try_spawn_item(section,1,1,0.15,50)
+					else
+						try_spawn_item(section,1,1,0.20,50)
+					end
+				elseif (cost <= 3000) then
+					if (bOutfit) then
+						try_spawn_item(section,1,1,0.10,55)
+					elseif (bWeapon) then
+						try_spawn_item(section,1,1,0.10,45)
+					else 
+						try_spawn_item(section,1,1,0.15,40)
+					end
+				elseif (cost <= 5000) then
+					if (bOutfit) then
+						try_spawn_item(section,1,1,0.08,60)
+					elseif (bWeapon) then
+						try_spawn_item(section,1,1,0.12,50)
+					else 
+						try_spawn_item(section,1,1,0.08,40)
+					end
+				elseif (cost <= 10000) then
+					try_spawn_item(section,1,1,0.01,50)
+				elseif (cost <= 15000) then 
+					try_spawn_item(section,1,1,0.05,70)
+				elseif (cost <= 20000) then
+					try_spawn_item(section,1,1,0.01,70)
+				else
+					try_spawn_item(section,1,1,0.01,70)
+				end
 			end
 		end 
 		
