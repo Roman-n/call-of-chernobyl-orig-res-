@@ -19,16 +19,16 @@
 		<text>$$ACTION_QUICK_USE_4$$</text>
 	</string>
 	<string id="st_activate_artefact">
-		<text>Активировать артефакт</text>
+		<text>активировать артефакт</text>
 	</string>
 	<string id="st_attach_gl_to_rifle">
-		<text>Прикрепить гранатомёт к</text>
+		<text>прикрепить гранатомёт к</text>
 	</string>
 	<string id="st_attach_scope_to_pistol">
-		<text>Прикрепить прицел к</text>
+		<text>прикрепить прицел к</text>
 	</string>
 	<string id="st_attach_silencer_to_pistol">
-		<text>Прикрепить глушитель к</text>
+		<text>прикрепить глушитель к</text>
 	</string>
 	<string id="st_base_cost">
 		<text>Цена</text>
@@ -40,46 +40,46 @@
 		<text>Состояние</text>
 	</string>
 	<string id="st_detach_gl">
-		<text>Отсоединить гранатомёт</text>
+		<text>отсоединить гранатомёт</text>
 	</string>
 	<string id="st_detach_scope">
-		<text>Отсоединить прицел</text>
+		<text>отсоединить прицел</text>
 	</string>
 	<string id="st_detach_silencer">
-		<text>Отсоединить глушитель</text>
+		<text>отсоединить глушитель</text>
 	</string>
 	<string id="st_use_iron">
-		<text>Использовать механические прицелы</text>
+		<text>использовать механические прицелы</text>
 	</string>
 	<string id="st_use_scope">
-		<text>Использовать оптические прицелы</text>
+		<text>использовать оптические прицелы</text>
 	</string>
 	<string id="st_dress_outfit">
-		<text>Надеть костюм</text>
+		<text>надеть костюм</text>
 	</string>
 	<string id="st_drop">
-		<text>Выбросить</text>
+		<text>выбросить</text>
 	</string>
 	<string id="st_drop_all">
-		<text>Выбросить всё</text>
+		<text>выбросить всё</text>
 	</string>
 	<string id="st_eat">
-		<text>Съесть</text>
+		<text>съесть</text>
 	</string>
 	<string id="st_donate">
-		<text>Подарить</text>
+		<text>подарить</text>
 	</string>
 	<string id="st_kg">
 		<text>кг.</text>
 	</string>
 	<string id="st_move_on_belt">
-		<text>Повесить на пояс</text>
+		<text>повесить на пояс</text>
 	</string>
 	<string id="st_move_to_bag">
-		<text>Убрать в рюкзак</text>
+		<text>убрать в рюкзак</text>
 	</string>
 	<string id="st_move_to_slot">
-		<text>Переместить в слот</text>
+		<text>переместить в слот</text>
 	</string>
 	<string id="st_no_trade_tip_1">
 		<text>Торговец не интересуется подобными предметами.</text>
@@ -88,10 +88,10 @@
 		<text>Предмет в слишком плохом состоянии для продажи.</text>
 	</string>
 	<string id="st_play">
-		<text>Проиграть</text>
+		<text>проиграть</text>
 	</string>
 	<string id="st_sell_item">
-		<text>Продать предмет</text>
+		<text>продать предмет</text>
 	</string>
 	<string id="st_ui_armor_static">
 		<text>Состояние брони</text>
@@ -100,13 +100,13 @@
 		<text>Радиационное заражение</text>
 	</string>
 	<string id="st_undress_outfit">
-		<text>Снять костюм</text>
+		<text>снять костюм</text>
 	</string>
 	<string id="st_unload_magazine">
-		<text>Разрядить</text>
+		<text>разрядить</text>
 	</string>
 	<string id="st_use">
-		<text>Использовать</text>
+		<text>использовать</text>
 	</string>
 	<string id="st_weight">
 		<text>Вес</text>
@@ -286,7 +286,7 @@
 		<text>Общий вес:</text>
 	</string>
 	<string id="st_drink">
-		<text>Выпить</text>
+		<text>выпить</text>
 	</string>
 	<string id="ui_inv_outfit_power_restore">
 		<text>Восстановление сил</text>
@@ -307,25 +307,25 @@
 		<text>Время действия</text>
 	</string>
 	<string id="ui_inv_seconds_short">
-		<text>секунд</text>
+		<text>сек.</text>
 	</string>
 	<string id="ui_inv_survive_surge">
 		<text>Позволяет пережить выброс или пси-шторм</text>
 	</string>
 	<string id="st_dress_helmet">
-		<text>Надеть шлем</text>
+		<text>надеть шлем</text>
 	</string>
 	<string id="st_undress_helmet">
-		<text>Снять шлем</text>
+		<text>снять шлем</text>
 	</string>
 	<string id="st_unequip">
-		<text>Убрать в рюкзак</text>
+		<text>убрать в рюкзак</text>
 	</string>
 	<string id="st_open">
-		<text>Открыть</text>
+		<text>открыть</text>
 	</string>
 	<string id="st_close">
-		<text>Закрыть</text>
+		<text>закрыть</text>
 	</string>
 	<string id="ui_inv_af_condition">
 		<text>Заряд</text>
@@ -337,6 +337,6 @@
 		<text>Требует ремонта</text>
 	</string>
 	<string id="ui_st_create_stash">
-		<text>Создать кошелек</text>
+		<text>Создать тайник</text>
 	</string>
 </string_table>

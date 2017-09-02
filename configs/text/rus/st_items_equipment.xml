@@ -174,27 +174,27 @@
 		<text>Флеш-карта</text>
 	</string>
 	<string id="st_equ_backpack_name">
-		<text>Backpack</text>
+		<text>Рюкзак</text>
 	</string>
 	<string id="st_equ_backpack_desc">
-		<text>A regular water resistant backpack. It has high popularity among stalkers who travel around the Zone.</text>
+		<text>Обычный водостойкий рюкзак. Популярен среди сталкеров, совершающих вылазки глубоко в Зону.</text>
 	</string>
 	<string id="st_equ_smallpack_name">
-		<text>Small Backpack</text>
+		<text>Ранец</text>
 	</string>
 	<string id="st_equ_smallpack_desc">
-		<text>Small backpack usually worn by rookies. The inside has been modified to keep water out. Not a pretty solution, but works.</text>
+		<text>Небольшой заплечный ранец, используемый, как правило, новичками. Внутренняя прокладка заменена водонепроницаемым слоем. Не очень хорош, но лучше, чем ничего.</text>
 	</string>
 	<string id="st_equ_milpack_name">
-		<text>Combat Backpack</text>
+		<text>Вещмешок</text>
 	</string>
 	<string id="st_equ_milpack_desc">
-		<text>Backpack used by the military on longer assaults.</text>
+		<text>Традиционно используется военными в длительных походах.</text>
 	</string>
 	<string id="st_equ_touristpack_name">
-		<text>Tourist Backpack</text>
+		<text>Туристический рюкзак</text>
 	</string>
 	<string id="st_equ_touristpack_desc">
-		<text>A tourist backpack with a lot of storage space. Not very popular due to it's size.</text>
+		<text>Рюкзак, хорошо подходящий для туристических походов из-за своей большой вместимости. Не очень популярен из-за своего размера.</text>
 	</string>	
 </string_table>
