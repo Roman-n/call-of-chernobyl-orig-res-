@@ -70,7 +70,7 @@ function register(object_factory)
 	-- OUTFITS ----------------------------------------------------------------------------------------------------------------------------
 
 	cs_register	(object_factory, "CCustomOutfit",  				"se_item.se_outfit",					"E_STLK",			"equ_stalker_s")
-	cs_register	(object_factory, "CHelmet",  					"se_item.se_item_w_condition",			"E_HLMET",			"equ_helmet_s")
+	cs_register	(object_factory, "CHelmet",  					"se_item.se_item",						"E_HLMET",			"equ_helmet_s")
 
 	-- WEAPONS ----------------------------------------------------------------------------------------------------------------------------
 
@@ -120,8 +120,8 @@ function register(object_factory)
 	cs_register (object_factory, "CRGD5",						"se_item.se_grenade",					"G_RGD5_S",			"wpn_grenade_rgd5_s")
 
 	-- EATABLE ---------------------------------------------------------------------------------------------------------------------------
-	cs_register (object_factory, "CFoodItem",					"se_item.se_item_w_condition",					"S_FOOD",			"obj_food_s")
-	cs_register (object_factory, "CFoodItem",					"se_item.se_item_fake_container",				"S_CONT",			"obj_cont_s")
+	cs_register (object_factory, "CFoodItem",					"se_item.se_eatable",					"S_FOOD",			"obj_food_s")
+	cs_register (object_factory, "CFoodItem",					"se_item.se_item_fake_container",		"S_CONT",			"obj_cont_s")
 	
 	-- INVENTORY BOX ---------------------------------------------------------------------------------------------------------------------
 
