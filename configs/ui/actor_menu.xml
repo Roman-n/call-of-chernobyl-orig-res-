@@ -95,12 +95,12 @@
 	; slot_dragdrop and slot_highlight are mandatory if used, progress can be absent)-->
 	<inventory_slot_wnd>
 		<slot> <!--1 KNIFE -->
-			<slot_dragdrop x="384" y="328" width="85" height="55" cell_width="33" cell_height="41" rows_num="1" cols_num="2"
+			<slot_dragdrop x="352" y="328" width="93" height="55" cell_width="33" cell_height="41" rows_num="1" cols_num="2"
 			custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-			<slot_highlight x="387" y="330" width="74" height="48" stretch="1">
+			<slot_highlight x="359" y="330" width="82" height="48" stretch="1">
 				<texture>ui_inGame2_detector_highlighter</texture>
 			</slot_highlight>
-			<slot_progress x="398" y="378" width="47" height="5" horz="1" min="0" max="1" pos="0">
+			<slot_progress x="372" y="378" width="58" height="5" horz="1" min="0" max="1" pos="0">
 				<progress>
 					<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
 				</progress>
@@ -110,12 +110,12 @@
 			</slot_progress>
 		</slot>
 		<slot> <!--2 Pistol -->
-			<slot_dragdrop x="384" y="14" width="74" height="314" cell_width="33" cell_height="41" rows_num="6" cols_num="2"
+			<slot_dragdrop x="352" y="14" width="93" height="314" cell_width="33" cell_height="41" rows_num="6" cols_num="2"
 			custom_placement="0" vertical_placement="1" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-			<slot_highlight x="389" y="17" width="65" height="297" stretch="1">
+			<slot_highlight x="359" y="17" width="82" height="297" stretch="1">
 				<texture>ui_inGame2_weapon_highlighter</texture>
 			</slot_highlight>
-			<slot_progress x="398" y="309" width="47" height="5" horz="1" min="0" max="1" pos="0">
+			<slot_progress x="372" y="309" width="58" height="5" horz="1" min="0" max="1" pos="0">
 				<progress stretch="1">
 					<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
 				</progress>
@@ -125,12 +125,12 @@
 			</slot_progress>
 		</slot>
 		<slot> <!--3 Automatic -->
-			<slot_dragdrop x="563" y="14" width="74" height="314" cell_width="33" cell_height="41" rows_num="6" cols_num="2" 
+			<slot_dragdrop x="576" y="14" width="93" height="314" cell_width="33" cell_height="41" rows_num="6" cols_num="2" 
 			custom_placement="0" vertical_placement="1" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c" />
-			<slot_highlight x="568" y="17" width="65" height="297" stretch="1">
+			<slot_highlight x="583" y="17" width="96" height="297" stretch="1">
 				<texture>ui_inGame2_weapon_highlighter</texture>
 			</slot_highlight>
-			<slot_progress x="578" y="309" width="47" height="5" horz="1" min="0" max="1" pos="0">
+			<slot_progress x="596" y="309" width="58" height="5" horz="1" min="0" max="1" pos="0">
 				<progress stretch="1">
 					<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
 				</progress>
@@ -143,12 +143,12 @@
 		<slot><!--5 Binocular --></slot> 
 		<slot><!--6 Bolt --></slot> 
 		<slot><!--7 Outfit -->
-			<slot_dragdrop x="469" y="109" width="85" height="178" cell_width="33" cell_height="41" rows_num="3" cols_num="2"
+			<slot_dragdrop x="458" y="109" width="106" height="178" cell_width="33" cell_height="41" rows_num="3" cols_num="2"
 			custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-			<slot_highlight x="472" y="114" width="78" height="161" stretch="1">
+			<slot_highlight x="463" y="114" width="96" height="161" stretch="1">
 				<texture>ui_inGame2_armor_highlighter</texture>
 			</slot_highlight>
-			<slot_progress x="488" y="281" width="47" height="5" horz="1" min="0" max="1" pos="0">
+			<slot_progress x="484" y="281" width="58" height="5" horz="1" min="0" max="1" pos="0">
 				<progress stretch="1">
 					<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
 				</progress>
@@ -159,9 +159,9 @@
 		</slot> 
 		<slot><!--8 PDA --></slot> 
 		<slot><!--9 Detector -->
-			<slot_dragdrop x="563" y="328" width="85" height="55" cell_width="33" cell_height="41" rows_num="1" cols_num="2"
+			<slot_dragdrop x="576" y="328" width="85" height="55" cell_width="33" cell_height="41" rows_num="1" cols_num="2"
 			custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
-			<slot_highlight x="566" y="330" width="74" height="48" stretch="1">
+			<slot_highlight x="583" y="330" width="74" height="48" stretch="1">
 				<texture>ui_inGame2_detector_highlighter</texture>
 			</slot_highlight>
 			<slot_progress x="578" y="378" width="47" height="5" horz="1" min="0" max="1" pos="0">
@@ -176,12 +176,12 @@
 		<slot><!--10 Torch --></slot> 
 		<slot><!--11 Artefact --></slot>
 		<slot><!--12 Helmet -->
-			<slot_dragdrop x="469" y="10" width="85" height="88" cell_width="33" cell_height="41" rows_num="2" cols_num="2"
+			<slot_dragdrop x="458" y="10" width="106" height="88" cell_width="33" cell_height="41" rows_num="2" cols_num="2"
 			custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c" />
-			<slot_highlight x="472" y="14" width="78" height="73" stretch="1">
+			<slot_highlight x="463" y="14" width="96" height="73" stretch="1">
 				<texture>ui_inGame2_helmet_highlighter</texture>
 			</slot_highlight>
-			<slot_progress x="488" y="91" width="47" height="5" horz="1" min="0" max="1" pos="0">
+			<slot_progress x="484" y="91" width="58" height="5" horz="1" min="0" max="1" pos="0">
 				<progress stretch="1">
 					<texture r="142" g="149" b="149">ui_inGame2_inventory_status_bar</texture>
 				</progress>
