@@ -1,4 +1,5 @@
 [test_container]:booster_script
+class 									 = S_CONT
 use1_action_functor                      = bind_container.access_inventory
 use1_functor                             = bind_container.can_access_inventory
 script_binding                           = bind_container.bind
@@ -24,7 +25,6 @@ GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "food and drugs\antirad"
 $prefetch                                = 32
-class                                    = S_FOOD
 cform                                    = skeleton
 visual                                   = dynamics\equipments\item_sleepbag.ogf
 inv_weight                               = 1
@@ -51,7 +51,6 @@ GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "food and drugs\antirad"
 $prefetch                                = 32
-class                                    = S_FOOD
 cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_mounted\wpn_mounted_pkm_trenoga.ogf
 description                              = st_itm_deployable_mgun_desc
