@@ -54,41 +54,6 @@ end
 function se_outfit:STATE_Read(stpk,size)
 	cse_alife_item_custom_outfit.STATE_Read(self, stpk,size)
 end
-----------------------------------------------------------------------------------------------
-class "se_item_fake_container" (cse_alife_item)
-function se_item_fake_container:__init (section) super (section)
-end
-function se_item_fake_container:on_register()
-	cse_alife_item.on_register( self )
-	story_objects.check_spawn_ini_for_story_id(self)
-end
-function se_item_fake_container:on_unregister()
-	unregister_story_object_by_id(self.id)
-	cse_alife_item.on_unregister( self )
-	if (bind_container.containers[self.id] and bind_container.containers[self.id].id and bind_container.se_inv_box_containers[bind_container.containers[self.id].id]) then 
-		bind_container.se_inv_box_containers[bind_container.containers[self.id].id] = false -- we unlink id
-	end
-end
-function se_item_fake_container:can_switch_online()
-	return cse_alife_item.can_switch_online(self)
-end
-function se_item_fake_container:STATE_Write(stpk)
-	cse_alife_item.STATE_Write(self, stpk)
-	stpk:w_stringZ(tostring(bind_container.containers[self.id] and bind_container.containers[self.id].id or nil))
-end
-function se_item_fake_container:STATE_Read(stpk,size)
-	cse_alife_item.STATE_Read(self, stpk, size)
-	if (stpk:r_elapsed() > 0) then
-		local inventory_box_id = tonumber(stpk:r_stringZ())
-		if (inventory_box_id) then 
-			bind_container.containers[self.id] = { id = inventory_box_id }
-			bind_container.se_inv_box_containers[inventory_box_id] = self.id
-		end
-	end
-end
-function se_item_fake_container:keep_saved_data_anyway()
-	return true 
-end
 -- Weapons ---------------------------------------------------------------------
 class "se_weapon" (cse_alife_item_weapon)
 function se_weapon:__init (section) super (section)

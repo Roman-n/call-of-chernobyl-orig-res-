@@ -121,7 +121,6 @@ function register(object_factory)
 
 	-- EATABLE ---------------------------------------------------------------------------------------------------------------------------
 	cs_register (object_factory, "CFoodItem",					"se_item.se_eatable",					"S_FOOD",			"obj_food_s")
-	cs_register (object_factory, "CFoodItem",					"se_item.se_item_fake_container",		"S_CONT",			"obj_cont_s")
 	
 	-- INVENTORY BOX ---------------------------------------------------------------------------------------------------------------------
 
