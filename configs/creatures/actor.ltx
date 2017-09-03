@@ -123,31 +123,31 @@ quick_item_4 = conserva
 
 [actor_immunities_gd_novice]
 burn_immunity           = 0.3                                ;коэффициенты иммунитета
-strike_immunity         = 0.3
+strike_immunity         = 0.25
 shock_immunity          = 0.3
-wound_immunity          = 0.3
+wound_immunity          = 0.2
 radiation_immunity      = 0.3
 telepatic_immunity      = 0.3
 chemical_burn_immunity  = 0.3
-explosion_immunity      = 0.25
-fire_wound_immunity 	= 0.3
+explosion_immunity      = 0.2
+fire_wound_immunity 	= 0.25
 
 [actor_immunities_gd_stalker]
 burn_immunity           = 0.6                               ;коэффициенты иммунитета
-strike_immunity         = 0.6
+strike_immunity         = 0.5
 shock_immunity          = 0.6
-wound_immunity          = 0.5
+wound_immunity          = 0.4
 radiation_immunity      = 0.6
 telepatic_immunity      = 0.6
 chemical_burn_immunity  = 0.6
-explosion_immunity      = 0.5
+explosion_immunity      = 0.4
 fire_wound_immunity 	= 0.5
 
 [actor_immunities_gd_veteran]
 burn_immunity           = 0.75                                ;коэффициенты иммунитета
-strike_immunity         = 0.75
+strike_immunity         = 0.7
 shock_immunity          = 0.75
-wound_immunity          = 0.7
+wound_immunity          = 0.6
 radiation_immunity      = 0.75
 telepatic_immunity      = 0.75
 chemical_burn_immunity  = 0.75
@@ -156,14 +156,14 @@ fire_wound_immunity     = 0.7
 
 [actor_immunities_gd_master]
 burn_immunity           = 0.9                                ;коэффициенты иммунитета
-strike_immunity         = 0.9
+strike_immunity         = 0.8
 shock_immunity          = 0.9
-wound_immunity          = 0.9
+wound_immunity          = 0.75
 radiation_immunity      = 0.9
 telepatic_immunity      = 0.9
 chemical_burn_immunity  = 0.9
 explosion_immunity      = 0.75
-fire_wound_immunity     = 0.9
+fire_wound_immunity     = 0.8
 
 [actor_condition]
 satiety_v				= 0.0000162 	;скорость уменьшения сытости со временем
@@ -281,10 +281,10 @@ eye_left                                 = 1.0, 0, 1.5
 eye_right                                = 1.0, 0, 1.5
 jaw_1                                    = 1.0, 0, 1.1
 
-bip01_l_clavicle                         = 1.0, 4, 0.8
-bip01_l_upperarm                         = 1.0, 4, 0.7
-bip01_l_forearm                          = 1.0, 4, 0.6
-bip01_l_hand                             = 1.0, 4, 0.5
+bip01_l_clavicle                         = 1.0, 4, 0.9
+bip01_l_upperarm                         = 1.0, 4, 0.8
+bip01_l_forearm                          = 1.0, 4, 0.7
+bip01_l_hand                             = 1.0, 4, 0.6
 bip01_l_finger0                          = 0.0, 4, 0.0
 bip01_l_finger01                         = 0.0, 4, 0.0
 bip01_l_finger02                         = 0.0, 4, 0.0
@@ -295,10 +295,10 @@ bip01_l_finger2                          = 0.0, 4, 0.0
 bip01_l_finger21                         = 0.0, 4, 0.0
 bip01_l_finger22                         = 0.0, 4, 0.0
 
-bip01_r_clavicle                         = 1.0, 2, 0.8
-bip01_r_upperarm                         = 1.0, 2, 0.7
-bip01_r_forearm                          = 1.0, 2, 0.6
-bip01_r_hand                             = 1.0, 2, 0.5
+bip01_r_clavicle                         = 1.0, 2, 0.9
+bip01_r_upperarm                         = 1.0, 2, 0.8
+bip01_r_forearm                          = 1.0, 2, 0.7
+bip01_r_hand                             = 1.0, 2, 0.6
 bip01_r_finger0                          = 0.0, 2, 0.0
 bip01_r_finger01                         = 0.0, 2, 0.0
 bip01_r_finger02                         = 0.0, 2, 0.0
@@ -310,13 +310,13 @@ bip01_r_finger21                         = 0.0, 2, 0.0
 bip01_r_finger22                         = 0.0, 2, 0.0
 
 bip01_l_thigh                            = 1.0, 8, 1.0
-bip01_l_calf                             = 1.0, 8, 0.5
-bip01_l_foot                             = 1.0, 8, 0.5
-bip01_l_toe0                             = 1.0, 8, 0.1
+bip01_l_calf                             = 1.0, 8, 0.6
+bip01_l_foot                             = 1.0, 8, 0.6
+bip01_l_toe0                             = 1.0, 8, 0.3
 bip01_r_thigh                            = 1.0, 6, 1.0
-bip01_r_calf                             = 1.0, 6, 0.5
-bip01_r_foot                             = 1.0, 6, 0.5
-bip01_r_toe0                             = 1.0, 6, 0.1
+bip01_r_calf                             = 1.0, 6, 0.6
+bip01_r_foot                             = 1.0, 6, 0.6
+bip01_r_toe0                             = 1.0, 6, 0.3
 
 [actor_animation]
 ;углы  дворота ног актера во время стрейфов (в градусах)
@@ -450,9 +450,6 @@ visual         			= dynamics\weapons\wpn_hand\wpn_hand_military_berill
 visual         			= dynamics\weapons\wpn_hand\wpn_hand_military_skat9
 [actor_hud_monolith_suit]:actor_hud
 visual         			= dynamics\weapons\wpn_hand\wpn_hand_monolith_suit
-
-; Addon
-
 [actor_hud_brown_trench]:actor_hud
 visual         			= dynamics\weapons\wpn_hand\wpn_hand__brown
 [actor_hud_radiation]:actor_hud
