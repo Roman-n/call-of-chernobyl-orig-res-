@@ -41,13 +41,13 @@ path_look = zat_b22_stalker_medic_look
 on_info = {-zat_b22_medic_job_tp} %+zat_b22_medic_job_tp =teleport_npc(zat_medic_home_smart_zat_b22_stalker_medic_walk)%  
 on_game_timer = 60 | remark@wait
 on_signal = medic_looks_body | remark@wait
-show_spot = false
+
 
 [remark@wait]:remark@presets
 anim = zat_b22_medic_turn_idle
 meet = no_meet
 on_actor_in_zone = zat_b22_stalker_medic_identified | remark@meet_actor %+zat_b22_actor_came_first_time%
-show_spot = false
+
 
 [remark@meet_actor]:remark@presets
 anim = zat_b22_medic_turn_out
