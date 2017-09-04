@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="yan_tonnel_snork_1">
+		<text>Еxperiment №1</text>
+	</string>
+	<string id="yan_tonnel_snork_2">
+		<text>Еxperiment №2</text>
+	</string>
+	<string id="yan_tonnel_snork_3">
+		<text>Еxperiment №3</text>
+	</string>
+	<string id="yan_tonnel_snork_4">
+		<text>Еxperiment №4</text>
+	</string>
+	<string id="yan_tonnel_snork_5">
+		<text>Еxperiment №5</text>
+	</string>
+	<string id="yan_tonnel_snork_6">
+		<text>Еxperiment №6</text>
+	</string>
+	<string id="yan_tonnel_gigant">
+		<text>Sample №8с</text>
+	</string>
+
+</string_table>
