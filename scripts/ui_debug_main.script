@@ -1014,7 +1014,7 @@ function debug_ui:OnButton_create_clicked()
 	local id = not item.no_id and self.check_to_actor:GetCheck() and 0
 	local se_obj
 	if (id) then
-		se_obj = alife():create(section, vector(), 0, 0, id)
+		se_obj = alife():create(section, vector():set(0,0,0), 0, 0, id)
 	else
 		se_obj = alife():create(section, pos, lvid, gvid)
 	end

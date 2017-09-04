@@ -78,7 +78,7 @@ function action_cover:activate_scheme()
 		--printf("cover exists but not accesible -- cover_vertex [%s] cover_position [%s]", tostring(self.cover_vertex_id), vec_to_str(self.cover_position))
 	end
 
-	local desired_direction = vector():sub(self.cover_position,self.enemy_random_position)
+	local desired_direction = vec_sub(self.cover_position,self.enemy_random_position)
 	--printf("desired_direction = %s", vec_to_str(desired_direction))
 	if desired_direction ~= nil and not utils.vector_cmp(desired_direction, vector():set(0,0,0)) then
 		desired_direction:normalize()

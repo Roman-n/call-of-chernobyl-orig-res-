@@ -67,7 +67,7 @@ function eva_state_mgr_direction:evaluate()
 			return false
 		end
 		
-		local dir = vector():sub(self.st.look_position, self.object:position())
+		local dir = vec_sub(self.st.look_position, self.object:position())
 		if (look_object_type(self.object, self.st)) then
 			dir.y = 0
 		end
@@ -234,7 +234,7 @@ function turn(npc, st,check)
 				return
 			end
 		end
-		local dir = vector():sub(st.look_position, npc:position())
+		local dir = vec_sub(st.look_position, npc:position())
 		if (look_object_type(npc,st)) then
 			dir.y = 0
 		end

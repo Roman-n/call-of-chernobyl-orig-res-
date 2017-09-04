@@ -368,7 +368,7 @@ function generic_object_binder:net_spawn(se_abstract)
 		-- fix for 'Invalid vertex for object'
 		if not (se_obj.m_level_vertex_id < 4294967295 and self.object:accessible(se_obj.m_level_vertex_id)) then
 			printf("npc %s has invalid spawning vertex, correcting",se_obj:name())
-			local v_id = self.object:accessible_nearest(level.vertex_position(se_obj.m_level_vertex_id), vector())
+			local v_id = self.object:accessible_nearest(level.vertex_position(se_obj.m_level_vertex_id), vector():set(0,0,0))
 			self.object:set_npc_position(level.vertex_position(v_id))
 		end
 		

@@ -584,7 +584,7 @@ function move_to_point(p)
 												lvid = nil
 											end
 											if (lvid and not member:accessible(lvid)) then
-												lvid = member:accessible_nearest(level.vertex_position(lvid),vector())
+												lvid = member:accessible_nearest(level.vertex_position(lvid),vector():set(0,0,0))
 											end
 										end
 										st.beh.rally_lvid = lvid

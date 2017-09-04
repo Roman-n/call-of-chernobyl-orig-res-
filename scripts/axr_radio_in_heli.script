@@ -29,7 +29,7 @@ local function lmove(npc,vid,st)
 	end
 	
 	if not (npc:accessible(vid)) then
-		local vtemp = vector()
+		local vtemp = vector():set(0,0,0)
 		vid, vtemp = npc:accessible_nearest(vid and level.vertex_position(vid) or npc:position(), vtemp )
 	end
 
@@ -55,7 +55,7 @@ local function lmove_ns(npc,vid,st)
 	end
 	
 	if not (npc:accessible(vid)) then
-		local vtemp = vector()
+		local vtemp = vector():set(0,0,0)
 		vid, vtemp = npc:accessible_nearest(vid and level.vertex_position(vid) or npc:position(), vtemp )
 	end
 

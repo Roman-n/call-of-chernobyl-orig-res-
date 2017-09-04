@@ -57,7 +57,7 @@ function get_weapon(npc,st)
 	if not (st.spawned_knife) then
 		local wpn = npc:object("wpn_knife")
 		if not (wpn) then
-			alife():create("wpn_knife",vector(),0,0,npc:id())
+			alife():create("wpn_knife",vector():set(0,0,0),0,0,npc:id())
 			st.spawned_knife = true
 		end
 	end

@@ -129,7 +129,7 @@ function action_patrol:execute()
 	
 	if (npc:see(be) and self:can_shoot()) then
 		if (self.__keep_body_state_until==nil or tg > self.__keep_body_state_until) then
-			local dir = vector():sub(alun_utils.safe_bone_pos(be,"bip01_spine"),npc:position()):normalize()
+			local dir = vec_sub(alun_utils.safe_bone_pos(be,"bip01_spine"),npc:position()):normalize()
 			self.__keep_body_state_until = tg+math.random(3000,4000)
 			if (npc:body_state() ~= move.crouch) then
 				--if not (math.abs(be:position().y-npc:position().y) > 3.5) then
@@ -171,7 +171,7 @@ function action_patrol:execute()
 			else
 				local pos = alun_utils.safe_bone_pos(bw,"wpn_body")
 				local result = rq_result()
-				level.ray_pick(pos,vector():sub(be_pos,pos):normalize(),pos:distance_to(be_pos)+0.1,rq_target.rqtObject,result,npc)
+				level.ray_pick(pos,vec_sub(be_pos,pos):normalize(),pos:distance_to(be_pos)+0.1,rq_target.rqtObject,result,npc)
 				--printf("result=%s",result.object and result.object:name())
 				if (result.object and result.object:id() ~= npc:id()) then 
 					-- tries avoid friendly fire
@@ -223,7 +223,7 @@ function action_patrol:execute()
 				if (ene_pos == nil or ene_pos:distance_to_sqr(npc:position()) <= 100) then 
 					self.stand = true
 				else
-					local dir = ene_pos and vector():sub(ene_pos,npc:position()):normalize() or npc:direction()
+					local dir = ene_pos and vec_sub(ene_pos,npc:position()):normalize() or npc:direction()
 					if (npc:body_state() ~= move.crouch) then
 						--if not (math.abs(ene_pos.y-npc:position().y) > 3.5) then
 							if (level.high_cover_in_direction(npc:level_vertex_id(),dir) >= 0.16) then 
@@ -308,7 +308,7 @@ function action_patrol:process_danger()
 
 	local bd_pos = urgent_danger and best_danger_object:position() or best_danger:position()
 	if (self.__keep_body_state_until==nil or tg > self.__keep_body_state_until) then
-		local dir = bd_pos and vector():sub(bd_pos,self.object:position()):normalize() or self.object:direction()
+		local dir = bd_pos and vec_sub(bd_pos,self.object:position()):normalize() or self.object:direction()
 		self.__keep_body_state_until = tg+3000
 		if (self.object:body_state() ~= move.crouch) then
 			if (level.high_cover_in_direction(self.object:level_vertex_id(),dir) >= 0.16) then 
@@ -363,7 +363,7 @@ function action_patrol:scan(flag)
 		local npc = self.object
 		local tg = time_global()
 		if (self.__keep_body_state_until==nil or tg > self.__keep_body_state_until) then
-			local dir = self.look_point and vector():sub(self.look_point,npc:position()) or npc:direction()
+			local dir = self.look_point and vec_sub(self.look_point,npc:position()) or npc:direction()
 			self.__keep_body_state_until = tg+3000
 			--alun_utils.debug_nearest(npc,"h_cover=%s l_cover=%s",level.high_cover_in_direction(npc:level_vertex_id(),dir),level.low_cover_in_direction(npc:level_vertex_id(),dir))
 			if (npc:body_state() ~= move.crouch) then

@@ -382,14 +382,14 @@ function heli_combat:save( packet )
 
 		packet:w_s16 (self.st.enemy_id)
 		packet:w_u32 (t - (self.enemy_last_seen_time or 0))
-		packet:w_vec3(self.enemy_last_seen_pos or vector())
+		packet:w_vec3(self.enemy_last_seen_pos or vector():set(0,0,0))
 
 		packet:w_u8(self.combat_type)
 
 		if self.combat_type == combat_type_search then
 			packet:w_u32 ((self.change_pos_time or 0) - t)
 			packet:w_bool(self.flight_direction or false)
-			packet:w_vec3(self.center_pos or vector())
+			packet:w_vec3(self.center_pos or vector():set(0,0,0))
 
 		elseif self.combat_type == combat_type_flyby then
 			packet:w_s16( self.flyby_states_for_one_pass )
@@ -668,7 +668,7 @@ function heli_combat:flyby_update( see_enemy )
 		self.flyby_initialized         = true
 		self.heliObject:SetMaxVelocity(self.max_velocity)
 		self.heliObject:SetSpeedInDestPoint(self.max_velocity)
-		self.heliObject:LookAtPoint(vector(),false)
+		self.heliObject:LookAtPoint(vector():set(0,0,0),false)
 		self.flyby_states_for_one_pass = 3
 		self.change_combat_type_allowed = false
 		self.state = flyby_state_to_enemy

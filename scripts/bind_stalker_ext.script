@@ -290,7 +290,7 @@ function actor_on_detach_vehicle(binder,obj)
 		if (se_obj) then 
 			alife():release(se_obj)
 		end
-		alife():create("itm_deployable_mgun",vector(),0,0,0)
+		alife():create("itm_deployable_mgun",vector():set(0,0,0),0,0,0)
 	end
 end
 

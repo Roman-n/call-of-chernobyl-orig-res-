@@ -228,7 +228,7 @@ function reward_random_item(actor,npc,p)
 	if (#p > 0) then 
 		local section = p[math.random(#p)]
 		if (system_ini():section_exist(section)) then
-			local se_item = alife():create(section,vector(),0,0,0)
+			local se_item = alife():create(section,vector():set(0,0,0),0,0,0)
 			local cls = se_item:clsid()
 			if (IsWeapon(nil,cls) and cls ~= clsid.wpn_knife_s) then
 				se_item.condition = math.random(60,90)/100
@@ -1256,13 +1256,13 @@ function hit_obj(actor, npc, p)
 	if p[5] then
 		sid = get_story_object(sid)
 		if sid then
-			h.direction = vector():sub(sid:position(), obj:position())
+			h.direction = vec_sub(sid:position(), obj:position())
 		end
 		if not sid then
-			h.direction = vector():sub(patrol(p[5]):point(0), obj:position())
+			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
 		end
 	else
-		h.direction = vector():sub(npc:position(), obj:position())
+		h.direction = vec_sub(npc:position(), obj:position())
 	end
 	h.draftsman = sid or npc
 	h.type = hit.wound
@@ -1287,13 +1287,13 @@ function hit_obj_chemical(actor, npc, p)
 	if p[5] then
 		sid = get_story_object(sid)
 		if sid then
-			h.direction = vector():sub(sid:position(), obj:position())
+			h.direction = vec_sub(sid:position(), obj:position())
 		end
 		if not sid then
-			h.direction = vector():sub(patrol(p[5]):point(0), obj:position())
+			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
 		end
 	else
-		h.direction = vector():sub(npc:position(), obj:position())
+		h.direction = vec_sub(npc:position(), obj:position())
 	end
 
 	h.draftsman = sid or npc
@@ -1318,13 +1318,13 @@ function hit_obj_fire_wound(actor, npc, p)
 	if p[5] then
 		sid = get_story_object(sid)
 		if sid then
-			h.direction = vector():sub(sid:position(), obj:position())
+			h.direction = vec_sub(sid:position(), obj:position())
 		end
 		if not sid then
-			h.direction = vector():sub(patrol(p[5]):point(0), obj:position())
+			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
 		end
 	else
-		h.direction = vector():sub(npc:position(), obj:position())
+		h.direction = vec_sub(npc:position(), obj:position())
 	end
 
 	h.draftsman = sid or npc
@@ -1951,7 +1951,7 @@ function spawn_object_in(actor, obj, p)
 		if box == nil then
 			printf("xr_effects.spawn_object_in There is no such object %s", p[2])
 		end
-		alife():create(spawn_sect,vector(),0,0,target_obj_id)
+		alife():create(spawn_sect,vector():set(0,0,0),0,0,target_obj_id)
 	else
 		printf("xr_effects.spawn_object_in object is nil %s", tostring(p[2]))
 	end
@@ -4240,7 +4240,7 @@ function make_a_wish(actor,npc,p)
 				if (list) then
 					for kk,vv in pairs(list) do 
 						if (sysini:section_exist(vv)) then
-							sim:create(vv,vector(),0,0,0)
+							sim:create(vv,vector():set(0,0,0),0,0,0)
 						end
 					end
 				end
@@ -4354,7 +4354,7 @@ function kill_obj_on_job(actor,npc,p)
 	h:bone("bip01_neck")
 	h.power = 1
 	h.impulse = 1
-	h.direction = vector():sub(npc:position(), obj:position())
+	h.direction = vec_sub(npc:position(), obj:position())
 	h.draftsman = npc
 	h.type = hit.wound
 	obj:hit(h)
