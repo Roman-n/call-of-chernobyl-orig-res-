@@ -1,0 +1,92 @@
+additional_inventory_weight		= 10
+additional_inventory_weight2	= 10
+power_loss						= -0.05
+
+[up_sect_firsta_backpack]
+cost 		= 300
+value 		= +10
+
+additional_inventory_weight		= 1
+additional_inventory_weight2	= 1
+
+[up_sect_firstc_backpack]
+cost 		= 600
+value		= +20
+
+additional_inventory_weight		= 2
+additional_inventory_weight2	= 2
+
+[up_sect_firstd_backpack]
+cost 		= 600
+value		= +20
+
+inv_weight						= -0.5
+power_loss                      = -0.02
+
+
+[up_firsta_backpack]
+scheme_index            = 0, 0
+known                   = 1
+effects                 = up_gr_firstcd_backpack
+section                 = up_sect_firsta_backpack
+property                = prop_tonnage
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_res_a2_name
+description             = st_up_res_a2_descr
+icon                    = ui_inGame2_upgrade_backpack_1
+
+
+[up_firstc_backpack]
+scheme_index            = 1, 0
+known                   = 1
+effects                 = 
+section                 = up_sect_firstc_backpack
+property                = prop_tonnage
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_res_b2_name
+description             = st_up_res_b2_descr
+icon                    = ui_inGame2_upgrade_backpack_2
+
+[up_firstd_backpack]
+scheme_index            = 1, 1
+known                   = 1
+effects                 = 
+section                 = up_sect_firstd_backpack
+property                = prop_tonnage, prop_weightoutfit
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_res_b3_name
+description             = st_up_res_b3_descr
+icon                    = ui_inGame2_upgrade_backpack_3
+
+[up_gr_firstab_backpack]
+elements                = up_firsta_backpack
+
+[up_gr_firstcd_backpack]
+elements                = up_firstc_backpack, up_firstd_backpack
