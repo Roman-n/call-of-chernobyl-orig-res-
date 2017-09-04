@@ -233,14 +233,9 @@ function heli_binder:update( delta )
 		end
 		
 		-- heli alife simulation
-		if (heli_alife) then
-			local veh = db.actor:get_attached_vehicle()
-			if (veh and veh:id() ~= self.object:id()) then
-				local se_obj = alife_object(self.object:id())
-				if (se_obj and se_obj.player_id) then
-					heli_alife.update(self.object,se_obj,self.st.heliObject)
-				end
-			end
+		local se_obj = alife_object(self.object:id())
+		if (se_obj and se_obj.player_id) then
+			heli_alife.update(self.object,se_obj,self.st.heliObject)
 		end
 	end
 	
