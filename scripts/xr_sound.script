@@ -20,7 +20,9 @@ function set_sound_play(npc_id, sound, faction, point)
 		printf("You trying to play sound [%s] which type is looped", sound)
 	end
 	
-	if (snd_theme.class_id == "npc_sound" and npc_id == 0) or (snd_theme.class_id == "actor_sound" and npc_id ~= 0) then 
+	if (snd_theme.class_id == "actor_sound") then 
+		npc_id = 0
+	elseif (snd_theme.class_id == "npc_sound" and npc_id == 0) then 
 		printf("set_sound_play. Trying to play wrong type. %s is %s",sound,snd_theme.class_id)
 	end
 	
