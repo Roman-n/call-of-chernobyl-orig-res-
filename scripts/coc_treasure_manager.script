@@ -351,13 +351,16 @@ function try_spawn_treasure(box)
 	local spawned_item = alun_utils.str_explode(caches[id],",")
 	caches[id] = true
 	
+	if not (valid_item_list) then 
+		valid_item_list = get_valid_item_sections()
+	end
+	
 	local sec,ammos,ct,ammo_type
 	local ini = system_ini()
 	local sim = alife()
 	for i=1,#spawned_item do
 		sec = spawned_item[i]
-		if (sec ~= "" and ini:section_exist(sec)) then
-		
+		if (valid_item_list[sec] and sec ~= "" and ini:section_exist(sec)) then
 			if (utils.is_ammo(sec)) then 
 				create_ammo(sec,box:position(),box:level_vertex_id(),box:game_vertex_id(),id,math.random(10,30))
 			else
@@ -428,9 +431,13 @@ function get_valid_item_sections()
 						if not (string.find(section,"mp_")) then
 							local name = ini:r_string_ex(section,"inv_name")
 							if (name and name ~= "" and name ~= "default") then
-								local cost = ini:r_float_ex(section,"cost") or 0
-								if (cost > 0) then
-									t[section] = cost
+								local class = ini:r_string_ex(section,"class")
+								if (class == "G_FAKE") then
+								else
+									local cost = ini:r_float_ex(section,"cost") or 0
+									if (cost > 0) then
+										t[section] = cost
+									end
 								end
 							end
 						end
