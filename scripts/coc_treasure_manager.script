@@ -34,6 +34,11 @@ local valid_map_spots = {
 	["treasure_searched"] = true,
 	["treasure_unique"] = true,
 }
+
+-- Table to put things that you wish only one of can ever only spawn
+local only_one_in_existence = {
+	["af_compass"] = true
+}
 ------------------------------------------------------------------------------------------------------------------
 --							PRIVATE
 ------------------------------------------------------------------------------------------------------------------
@@ -65,14 +70,9 @@ local function on_game_load()
 		create_random_stash(true,"stash")
 	end
 	
-	-- remove all unused stashes from the list
-	--[[
-	for k,v in pairs(caches) do 
-		if (v == false) then 
-			caches[k] = nil
-		end
+	for section,v in pairs(only_one_in_existence) do 
+		create_random_stash(true,"stash",{section})
 	end
-	--]]
 end
 
 local function actor_on_item_take_from_box(box,itm)
@@ -235,14 +235,21 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		
 		-- prevent a stash from having more than a single outfit or weapon
 		local skip = false
-		local bWeapon = is_weapon(section)
-		local bOutfit = not bWeapon and is_outfit(section)
-		local bBackpack = not bWeapon and not bOutfit and is_backpack(section)
-		if (bWeapon or bOutfit or bBackpack) then
-			if (allow_item) then
-				allow_item = false
-			else 
-				skip = true
+		
+		if (only_one_in_existence[section]) then 
+			skip = true
+		end
+		
+		if not (skip) then
+			local bWeapon = is_weapon(section)
+			local bOutfit = not bWeapon and is_outfit(section)
+			local bBackpack = not bWeapon and not bOutfit and is_backpack(section)
+			if (bWeapon or bOutfit or bBackpack) then
+				if (allow_item) then
+					allow_item = false
+				else 
+					skip = true
+				end
 			end
 		end
 		
@@ -253,7 +260,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 				elseif (section == "equ_military_pack") then
 					try_spawn_item(section,1,1,0.02,40)
 				else
-					try_spawn_item(section,1,1,0.10,40)
+					try_spawn_item(section,1,1,0.12,30)
 				end
 			else
 				-- decide for each section based on chance, weight and item classification
@@ -293,14 +300,14 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 					else 
 						try_spawn_item(section,1,1,0.08,40)
 					end
-				elseif (cost <= 10000) then
+				elseif (cost <= 9000) then
 					try_spawn_item(section,1,1,0.01,50)
 				elseif (cost <= 15000) then 
-					try_spawn_item(section,1,1,0.05,70)
-				elseif (cost <= 20000) then
+					try_spawn_item(section,1,1,0.01,60)
+				elseif (cost <= 25000) then
 					try_spawn_item(section,1,1,0.01,70)
 				else
-					try_spawn_item(section,1,1,0.01,70)
+					try_spawn_item(section,1,1,0.01,80)
 				end
 			end
 		end 
