@@ -278,22 +278,30 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 		return 
 	end
 	
-	local skip_wound
-	if (who:id() == db.actor:id()) then
+	if (who:id() == 0) then
 		xr_statistic.set_best_weapon(amount)
-		
-		-- Surprise attacks with knife don't force wound
-		if (self.object:target_mental_state() == anim.danger) then 
-			local active_item = who:active_item()
-			if (active_item and active_item:clsid() == clsid.wpn_knife_s) then 
-				skip_wound = true
-			end
-		end
 	end
 	
 	-- Only wound the stalker from powerful attacks if not a head hit and not already wounded
-	if (skip_wound == nil and bone_index ~= 15 and amount > 15 and amount >= obj.health*100 and not IsWounded(obj)) then
-		obj.health = 0.15
+	if (bone_index ~= 15 and amount > 15 and amount >= obj.health*100 and not IsWounded(obj)) then
+		local skip_wound
+		if (who:id() == 0) then 
+			-- Surprise attacks with knife don't force wound
+			if (self.object:target_mental_state() == anim.free) then 
+				local active_item = who:active_item()
+				if (active_item and active_item:clsid() == clsid.wpn_knife_s) then 
+					skip_wound = true
+				end
+			end
+			
+			-- surrendered victims should die instantly, not re-wound
+			if (utils.load_var(self.object,"victim_surrender",false) == true) then
+				skip_wound = true
+			end
+		end
+		if not (skip_wound) then
+			obj.health = 0.15
+		end
 	end
 
 	if (self.st.active_section and self.st.active_scheme) then
@@ -333,11 +341,22 @@ end
 
 function motivator_binder:death_callback(victim, who)
 	--alun_utils.debug_write(strformat("START motivator_binder:death_callback %s",victim and victim:name()))
-	if (self.object == nil and victim == nil) then
+	if (self.object == nil or victim == nil) then
 		callstack()
 		abort(strformat("CRITICAL ERROR: motivator_binder:death_callback : Game Object is nil and binder is not! %s",self.name),2)
 		--alun_utils.debug_write(strformat("END motivator_binder:death_callback %s",victim and victim:name()))
 		return 
+	end
+	
+	if (victim:has_info("npcx_is_companion")) then 
+		xr_statistic.inc_actor_reputation(-75) -- lose rep for companion death, nobody would want to hang out with a loser!
+	elseif (who and who:id() == 0) then
+		if (utils.load_var(victim,"victim_surrender",false) == true) then
+			local state = tostring(utils.load_var(victim, "wounded_state"))
+			if (state ~= "nil") then
+				xr_statistic.inc_actor_reputation(-25) -- lose rep for killing still wounded surrendered victim
+			end
+		end
 	end
 	
 	self.object:enable_vision(false)

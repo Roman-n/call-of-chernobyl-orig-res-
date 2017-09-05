@@ -79,3 +79,9 @@ function CUIActorMenu_CanMoveToPartner(obj,itm,actor_weight,partner_weight,item_
 	
 	return true
 end
+
+-- called from engine during donation. return false to refuse or return true to donate
+function CUIActorMenu_DonateCurrentItem(obj,itm)
+	xr_statistic.inc_actor_reputation(1)
+	return true
+end
