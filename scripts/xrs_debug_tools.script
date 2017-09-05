@@ -779,6 +779,13 @@ end
 
 function actor_feel_touch_hud_show(hud)
 	hud:set_header("-[ACTOR FEEL TOUCH]-")
+	local obj = level.get_target_obj()
+	if (obj) then 
+		hud:add_msg("Object At Cursor",strformat("ID=%s Name=%s",obj:id(),obj:name()))
+	end
+	
+	hud:add_msg("------------")
+	
 	if (db.actor and db.actor:alive()) then
 		local itr = function(id)
 			local o = id and alife_object(id)
