@@ -26,6 +26,7 @@ local intercepts = {
 	on_before_item_use			= {},
 	actor_on_before_hit			= {},
 	inventory_box_can_take		= {},
+	npc_on_before_hit			= {},
 	
 	-- actor_menu_inventory.script 
 	CUIActorMenu_OnItemDropped		= {},

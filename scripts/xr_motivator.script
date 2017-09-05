@@ -278,12 +278,6 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 		return 
 	end
 	
-	-- friendly fire
-	if (who and who:cast_Stalker() and obj:relation(who) < game_object.enemy) then
-		obj.health = obj.health + (amount/100)
-		return
-	end
-
 	local skip_wound
 	if (who:id() == db.actor:id()) then
 		xr_statistic.set_best_weapon(amount)

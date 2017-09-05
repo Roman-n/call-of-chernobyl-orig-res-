@@ -1434,6 +1434,20 @@ function CActor__BeforeHitCallback(actor,shit,bone_id)
 	return flags.ret_value
 end
 
+-- called in ai_stalker_fire.cpp CAI_Stalker::Hit()
+-- returning false will ignore the hit completely
+function CAI_Stalker__BeforeHitCallback(npc,shit,bone_id)
+	-- friendly fire
+	if (shit.power > 0) then 
+		if (shit.draftsman and shit.draftsman:id() ~= 0 and shit.draftsman:cast_Stalker() and shit.draftsman:relation(npc) == game_object.friend) then 
+			return false
+		end
+	end
+	flags.ret_value = true
+	SendScriptCallback("npc_on_before_hit",shit,bone_id,flags)
+	return flags.ret_value
+end 
+
 -- called in CSE_ALifeDynamicObject::on_unregister()
 -- good place to remove ids from persistent tables
 function CSE_ALifeDynamicObject_on_unregister(id)
