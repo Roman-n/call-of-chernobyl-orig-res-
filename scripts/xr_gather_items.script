@@ -422,17 +422,6 @@ local function execute_gather_item(npc,self)
 
 	if (se_itm and IsArtefact(nil,se_itm:clsid())) then
 		local tg = time_global()
-
-		if not (self.st.artifact_timer) then
-			self.st.artifact_timer = tg + ArtifactSearchTimer
-		end
-
-		if (tg > self.st.artifact_timer) then
-			state_mgr.set_state(npc, "pickup_crouch")
-			self.st.stage = 2
-			return
-		end
-
 		if (self.st.stage == 1) then
 			local state
 			if (dist < 10) then
@@ -461,6 +450,14 @@ local function execute_gather_item(npc,self)
 				self.st.stage = 1
 				self.st.timer = nil
 			end
+			-- if not (self.st.artifact_timer) then
+				-- self.st.artifact_timer = tg + ArtifactSearchTimer
+			-- end
+			-- if (tg > self.st.artifact_timer) then
+				-- state_mgr.set_state(npc, "pickup_crouch")
+				-- self.st.stage = 2
+				-- return
+			-- end
 		end
 
 		if (npc:level_vertex_id() == self.st.vid) then

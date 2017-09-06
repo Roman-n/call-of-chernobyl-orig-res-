@@ -461,7 +461,7 @@ function actor_sound:is_playing ()
 		return false
 	end
 end
-function actor_sound:play(npc, faction, point, sound)
+function actor_sound:play(obj_id, faction, point, sound)
 	--printf("PLAY ACTOR SOUND")
 	if (self.can_play_sound == false) then
 		return false
@@ -488,15 +488,7 @@ function actor_sound:play(npc, faction, point, sound)
 	self.snd_obj.volume = 0.8
 	self.can_play_sound = false
 
-	local sender, sname
-	if type(npc) ~= "userdata" then
-		sender = db.actor
-	else
-		sender = npc
-		sname = point
-	end
-	
-	if not closecaption.sound(snd, self.snd_obj:length(), sender, faction, sname, 0) then
+	if not closecaption.sound(snd, self.snd_obj:length(), db.actor, faction, nil, 0) then
 		news_manager.send_sound(nil, faction, point, snd)
 	end
 	return true

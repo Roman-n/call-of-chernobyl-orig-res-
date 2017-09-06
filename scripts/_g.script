@@ -92,6 +92,7 @@ end
 -- param 2 - Milliseconds as number
 --------------------------------------------
 function SetHudMsg(msg,n)
+	n = n or 5
 	msg = tostring(msg)
 	local hud = get_hud()
 	if (hud) then
