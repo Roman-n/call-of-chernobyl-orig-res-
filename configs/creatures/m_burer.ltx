@@ -12,9 +12,6 @@ corpse_visual			= monsters\burer\burer_dead
 
 MaxHealthValue		    = 1.0
 
-Spawn_Inventory_Item_Section = mutant_burer_hand
-Spawn_Inventory_Item_Probability = 0.0
-
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -264,8 +261,6 @@ Particle_Tele_Object	= static\fire_distort
 Particle_Gravi_Wave		= anomaly2\burer_wave
 Particle_Gravi_Prepare	= anomaly2\burer_prepare
 
-
-
 ;-------------------------------------------------------------------------
 ; Other Stuff (refactoring needed)
 ;-------------------------------------------------------------------------
@@ -288,7 +283,6 @@ bone_fire				= head						; bone name
 weapon_usage			= 0							; boolean
 actor_restrictor		= medium_monster ;medium_monster,stalker,none
 
-
 distance_to_corpse		= 1.2		; дист. до трупа, при которой он переходит в состояние еды
 
 selector_approach		=  20.0,            1.0,                 1000.0,             0.0,               0.0,              1000.0,				10000.0,
@@ -309,7 +303,6 @@ spec_rank				= weak
 community				= burer
 monster_type			= indoor
 
-
 protections_sect 		= burer_protections
 immunities_sect			= burer_immunities
 
@@ -328,20 +321,18 @@ vision_danger_section		= burer_vision_danger
 
 [burer_protections]
 
-hit_fraction_monster = 0.2
+hit_fraction_monster = 0.3
 
 [burer_immunities]
 burn_immunity			= 0.9
 strike_immunity			= 0.9
 shock_immunity			= 0.9
-wound_immunity			= 0.2
+wound_immunity			= 0.4
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.9
 chemical_burn_immunity	= 0.9
 explosion_immunity		= 0.5
-fire_wound_immunity		= 0.7
-
-
+fire_wound_immunity		= 0.8
 
 [burer_vision_free]
 min_view_distance   		= 0.4				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -402,7 +393,6 @@ ce_amplitude		= 12.0
 ce_period_number	= 2.0
 ce_power		    = 1.0 ;0.7 ; power
 
-
 ;=================================================================================
 ; Burer Step Params
 ;=================================================================================
@@ -457,8 +447,6 @@ time_release		= 0.85		; fade out
 [burer_terrain]
 	255,000,255,255
 
-
-
 ;=================================================================================
 ; *** PROFILES *******************************************************************
 ;=================================================================================
@@ -477,7 +465,7 @@ spec_rank			= normal
 
 MaxHealthValue		    = 1.0						; range [0..200]
 
-skin_armor = 0.5
+skin_armor = 0.25
 
 ;*********************************************************************************
 ; NORMAL PROFILE 2
@@ -493,7 +481,7 @@ spec_rank			= normal
 
 MaxHealthValue		    = 1.0						; range [0..200]
 
-skin_armor = 0.5
+skin_armor = 0.25
 
 ;*********************************************************************************
 ; WEAK PROFILE
@@ -509,18 +497,18 @@ spec_rank			= weak
 immunities_sect		= burer_immunities_weak
 MaxHealthValue		    = 0.75						; range [0..200]
 
-skin_armor = 0.4
+skin_armor = 0.2
 
 [burer_immunities_weak]
 burn_immunity			= 1.0
 strike_immunity			= 1.0
 shock_immunity			= 1.0
-wound_immunity			= 0.3
+wound_immunity			= 0.6
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.6
-fire_wound_immunity		= 0.8
+fire_wound_immunity		= 0.9
 
 ;*********************************************************************************
 ; WEAK PROFILE 2
@@ -537,9 +525,7 @@ immunities_sect		= burer_immunities_weak
 
 MaxHealthValue		    = 0.75						; range [0..200]
 
-skin_armor = 0.5
-
-
+skin_armor = 0.25
 
 ;----------------------------------------------------------------------------
 ;--------------------------Borovos -  May 2014 - Fire Burer -----------------

@@ -14,10 +14,10 @@ search_speed         = 1.5                       ; option for ALife Simulator
 visual				 = monsters\izlom\izlom
 corpse_visual		 = monsters\izlom\izlom
 icon = ui_npc_monster_fracture
-;Spawn_Inventory_Item_Section = mutant_fracture_hand
-;Spawn_Inventory_Item_Probability = 0.5
 
 MaxHealthValue         = 1.0              ; range [0..200]
+
+protections_sect = fracture_protections
 
 rank = 3 
 spec_rank = normal
@@ -102,7 +102,6 @@ Min_Satiety			= 0.4		; ьшэ. эюЁьр ёvЄюёЄш (ьхэ№°х - єцх уюыюфэvщ)
 Max_Satiety			= 1.0		; ьръё. эюЁьр ёvЄюёЄш (сюы№°х - юўхэ№ ёvЄvщ)
 
 distance_to_corpse	= 0.9		; фшёЄ. фю ЄЁєяр, яЁш ъюЄюЁющ юэ яхЁхїюфшЄ т ёюёЄю эшх хфv
-
 
 min_view_distance   		= 0.8				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -272,12 +271,16 @@ stand_run_fwd_0	 	=	1,	   0.01,     1,	    0.25,    0.6,
 burn_immunity = 0.8				;коэффициенты иммунитета
 strike_immunity = 0.8
 shock_immunity = 0.8
-wound_immunity = 0.50	;0.75	;1.0
-radiation_immunity = 0.5
+wound_immunity = 0.5
+radiation_immunity = 0.1
 telepatic_immunity = 1.0
 chemical_burn_immunity = 0.8
 explosion_immunity = 0.8
-fire_wound_immunity  = 4
+fire_wound_immunity  = 3
+
+[fracture_protections]
+
+hit_fraction_monster = 0.5
 
 
 ; ЗНАЧЕНИЯ visibility_threshold ДОЛЖНЫ БЫТЬ РАВНЫ для денжера и фри,

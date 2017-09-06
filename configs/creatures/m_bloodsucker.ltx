@@ -31,9 +31,6 @@ bone_eye_left	   = bip01_ponytail1
 bone_eye_right	   = bip01_ponytail2
 weapon_usage         = 0              ; boolean
 
-Spawn_Inventory_Item_Section = ;mutant_krovosos_jaw
-Spawn_Inventory_Item_Probability = 0.0
-
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -111,22 +108,6 @@ Velocity_Steal          = 0.7,    4.0,          4.0,         1,       1
 ; Speed factors while invisible
 Velocity_Invisible_Linear   = 8.0
 Velocity_Invisible_Angular  = 5.0
-
-;----------------------------------------------------------------------------
-; Movement::Velocities & Acceleration
-;----------------------------------------------------------------------------
-; speed factors       linear | angular_real | angular_path | min   |  max
-;Velocity_Stand     	 = 0,      3.05,          3.05,        1,       1
-;Velocity_RunFwdNormal   = 5.0,    4.0,           4.0,         0.5,     1
-;Velocity_RunFwdDamaged  = 1.90,   3.0,           3.0,         0.5,     1
-;Velocity_WalkFwdNormal  = 2.15,   3.5,           3.5,         0.2,     2.0
-;Velocity_WalkFwdDamaged = 1.4,    4.0,           4.0,         0.2,     2.0
-;Velocity_Drag           = 1.5,    3.0,           3.0,         1,       1
-;Velocity_Steal          = 0.7,    3.0,           3.0,         1,       1
-
-; Speed factors while invisible
-;Velocity_Invisible_Linear   = 5.0
-;Velocity_Invisible_Angular  = 4.62
 
 ; acceleration
 Accel_Generic         = 1.5
@@ -550,26 +531,9 @@ ce_period_number = 2.0;3.0
 ce_power      	= 3.0 ;0.7 ; power
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [bloodsucker_protections]
 
 hit_fraction_monster = 0.3
-
 
 ;*********************************************************************************
 ; WEAK PROFILE
@@ -650,12 +614,12 @@ skin_armor = 0.5
 burn_immunity     		= 0.1
 strike_immunity     	= 0.1
 shock_immunity      	= 0.1
-wound_immunity      	= 0.2
+wound_immunity      	= 0.3
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
 chemical_burn_immunity  = 0.1
 explosion_immunity    	= 0.4
-fire_wound_immunity   	= 0.65
+fire_wound_immunity   	= 0.75
 
 [bloodsucker_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -702,12 +666,12 @@ skin_armor = 0.75
 burn_immunity     		= 0.05
 strike_immunity    	 	= 0.05
 shock_immunity      	= 0.05
-wound_immunity      	= 0.1
+wound_immunity      	= 0.2
 radiation_immunity    	= 0.0
 telepatic_immunity    	= 0.0
 chemical_burn_immunity  = 0.05
 explosion_immunity    	= 0.2
-fire_wound_immunity  	= 0.5
+fire_wound_immunity  	= 0.6
 
 [bloodsucker_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------

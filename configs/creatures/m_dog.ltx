@@ -21,9 +21,6 @@ smart_terrain_choose_interval	= 00:15:00
 spawn_phantom 		= m_phantom_dog
 can_spawn_phantom 	= false
 
-;Spawn_Inventory_Item_Section = mutant_dog_tail
-;Spawn_Inventory_Item_Probability = 0.0
-
 cform                = skeleton					; collision class
 class                = SM_DOG_S					; AI class
 
@@ -31,7 +28,6 @@ ef_creature_type	 = 6				; option for evaluation functions
 ef_weapon_type		 = 2
 ef_detector_type			 = 1
 panic_threshold		= 0.1
-
 
 script_binding  	= bind_monster.bind
 
@@ -136,7 +132,7 @@ Melee_Rotation_Factor	= 2.6
 ;------------------------------------------------------------------------
 ; Attack On Move
 ;------------------------------------------------------------------------
-                                               
+
 aom_enabled								=	1
 aom_animation_left         				=	stand_attack_
 aom_animation_right       				=	stand_attack_
@@ -160,7 +156,6 @@ jump_max_distance			= 7.0
 jump_max_angle				= 0.1
 jump_max_height				= 2.5
 jump_auto_aim_factor		= 3
-
 
 ;-------------------------------------------------------------------------
 ; Entity Conditions
@@ -224,16 +219,12 @@ sound_distant_idle		= monsters\dog\bdog_distant_	; только для расстояний свыше 2
 
 killer_clsids				= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 
-
-
 idle_sound_delay		= 80000;50000	;20000	;15000
 eat_sound_delay			= 2000	;3000
 attack_sound_delay		= 5000	;2000; 5000	;2000
 
 distant_idle_sound_delay = 80000
 distant_idle_sound_range = 30.0
-
-
 
 SoundThreshold		 = 0.04             ; range [0..1]
 max_hear_dist		 = 100
@@ -243,7 +234,6 @@ max_hear_dist		 = 100
 ;-------------------------------------------------------------------------
 DamagedThreshold		= 0.3
 damage					= m_dog_damage
-
 
 critical_wound_threshold		= 0.3	;1.1
 critical_wound_decrease_quant	= 0.
@@ -279,13 +269,11 @@ LegsCount			= 4
 ;species of monster
 species					= dog
 
-
 terrain				 	= dog_terrain
 immunities_sect			= dog_immunities
 protections_sect 		= dog_protections
 attack_params			= m_dog_attack_params
 step_params				= m_dog_step_params
-
 
 ;-------------------------------------------------------------------------
 ; Vision
@@ -327,14 +315,14 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 	255,000,255,255
 
 [dog_protections]
-skin_armor = 0.15
+skin_armor = 0.11
 hit_fraction_monster = 0.5
 
 [dog_immunities]
 burn_immunity = 1.0				;коэффициенты иммунитета
 strike_immunity = 1.0
 shock_immunity = 1.0
-wound_immunity = 0.9	;0.75	;1.0
+wound_immunity = 0.7
 radiation_immunity = 0.001	;0.5
 telepatic_immunity = 1.0
 chemical_burn_immunity = 1.0
@@ -354,8 +342,6 @@ bip01_spine 		= 1.0, -1, 0.5
 bip01_spine1 		= 1.0, -1, 0.5
 bip01_neck 			= 1.0, -1, 1.5
 bip01_head 			= 2.0, -1, 0.5, 10
-
-
 
 ;===========================================================================
 ; Attack Animation Parameters
@@ -450,13 +436,6 @@ bip01_r_hand
 bip01_r_finger0
 bip01_r_finger01
 bip01_l_thigh
-
-
-
-
-
-
-
 
 ;*********************************************************************************
 ; NORMAL PROFILE
@@ -622,7 +601,7 @@ stand_atack_run_0   =	0.5,		0.40,	    270,       0.0, 1.0, 1.0,		 -1.6, 1.6, -1.
 
 [dog_protections_weak]
 skin_armor = 0.08
-hit_fraction_monster = 0.45
+hit_fraction_monster = 0.6
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;------------- Strong -------------
@@ -679,7 +658,6 @@ chemical_burn_immunity	= 0.6
 explosion_immunity		= 0.7
 fire_wound_immunity		= 1.0
 
-
 [dog_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, top, bottom) |	Test Dist|
@@ -695,10 +673,9 @@ jump_ataka_02  =		0.2,		0.50,	    110,       0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1
 
 stand_atack_run_0   =	0.5,		0.50,	    330,       0.0, 1.0, 1.0,		 -1.6, 1.6, -1.6, 1.6,				 3.5
 
-
 [dog_protections_strong]
 skin_armor = 0.20
-hit_fraction_monster = 0.55
+hit_fraction_monster = 0.5
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;------------- Black -------------
@@ -749,8 +726,6 @@ jump_ataka_02  =		0.2,		0.60,	    125,       0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1
 
 stand_atack_run_0   =	0.5,		0.60,	    400,       0.0, 1.0, 1.0,		 -1.6, 1.6, -1.6, 1.6,				 3.5
 
-
 [dog_protections_strong_black]
 skin_armor = 0.25
-hit_fraction_monster = 0.65
-
+hit_fraction_monster = 0.45

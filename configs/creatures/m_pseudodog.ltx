@@ -22,9 +22,6 @@ can_spawn_phantom 	= false
 
 smart_terrain_choose_interval	= 00:15:00
 
-;Spawn_Inventory_Item_Section = mutant_pseudodog_tail
-;Spawn_Inventory_Item_Probability = 0.0
-
 ef_creature_type	 = 21							; option for evaluation functions
 ef_weapon_type		 = 2
 ef_detector_type	 = 1
@@ -352,8 +349,8 @@ hit_fraction_monster	= 0.4
 burn_immunity 		= 1.0				;коэффициентv иммунитета
 strike_immunity 	= 0.5
 shock_immunity 		= 0.5
-wound_immunity 		= 0.5	;0.75	;1.0
-radiation_immunity 	= 0.0000001	;1.0
+wound_immunity 		= 0.5
+radiation_immunity 	= 0.0
 telepatic_immunity 	= 1.0
 chemical_burn_immunity 	= 0.8
 explosion_immunity 	= 0.4
@@ -402,12 +399,11 @@ community			= pseudodog
 
 skin_armor				= 0.2
 
-
 [pseudodog_immunities_normal]
 burn_immunity			= 1.0
 strike_immunity			= 1.0
 shock_immunity			= 1.0
-wound_immunity			= 0.9
+wound_immunity			= 0.5
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
@@ -579,7 +575,7 @@ attack_params		= pseudodog_attack_params_weak
 burn_immunity			= 1.1
 strike_immunity			= 1.1
 shock_immunity			= 1.1
-wound_immunity			= 1.0
+wound_immunity			= 0.6
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.1
 chemical_burn_immunity	= 1.1
@@ -628,7 +624,7 @@ attack_params		= pseudodog_attack_params_strong
 burn_immunity			= 0.9
 strike_immunity			= 0.9
 shock_immunity			= 0.9
-wound_immunity			= 0.8
+wound_immunity			= 0.4
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.9
 chemical_burn_immunity	= 0.9

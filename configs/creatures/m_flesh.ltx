@@ -24,9 +24,6 @@ smart_terrain_choose_interval	= 00:15:00
 spawn_phantom 		= m_phantom_flesh
 can_spawn_phantom 	= false
 
-;Spawn_Inventory_Item_Section = mutant_flesh_eye
-;Spawn_Inventory_Item_Probability = 0.0
-
 ef_creature_type	 = 7				; option for evaluation functions
 ef_weapon_type		 = 2
 ef_detector_type			 = 1
@@ -144,7 +141,6 @@ bleeding_v					= 0.04						;потеря крови при номинальной ране в секунду
 wound_incarnation_v			= 0.05				;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
 min_wound_size				= 0.01
 
-
 sleep_health				= 1.0		;1.5				;ъю¤ЇЇшЎшхэЄv ёъюЁюёЄхщ шчьхэхэш  ярЁрьхЄЁют тю тЁхь  ёэр
 sleep_power					= 1.0		;1.5
 sleep_satiety				= 1.0		;0.8
@@ -188,7 +184,6 @@ sound_distant_idle			= monsters\flesh\flesh_idle_
 distant_idle_sound_delay	= 80000
 distant_idle_sound_range	= 100.0
 
-
 ;---------------------------------------------------------
 ; Logic
 ;---------------------------------------------------------
@@ -197,7 +192,6 @@ DayTime_Begin		= 3			; эрўрыр фэ  фы  ьюэёЄЁр
 DayTime_End			= 23		; ъюэхЎ фэ  фы  ьюэёЄЁр
 Min_Satiety		= 0.00055	;0.6		; ьшэ. эюЁьр ёvЄюёЄш (ьхэ№°х - єцх уюыюфэvщ)
 Max_Satiety		= 0.9		; ьръё. эюЁьр ёvЄюёЄш (сюы№°х - юўхэ№ ёvЄvщ)
-
 
 ;-------------------------------------------------------------------------
 ; Morale
@@ -226,7 +220,6 @@ critical_wound_bones_torso	= flesh_critical_wound_bones_torso
 critical_wound_anim_legs	= critical_hit_torso_0
 critical_wound_bones_legs	= flesh_critical_wound_bones_legs
 
-
 distance_to_corpse	= 0.9; фшёЄ. фю ЄЁєяр, яЁш ъюЄюЁющ юэ яхЁхїюфшЄ т ёюёЄю эшх хфv
 selector_approach	=      20.0,            1.0,                1000.0,             0.0,               0.0,						1000.0,				10000.0,
 
@@ -245,7 +238,6 @@ protections_sect 	= flesh_protections
 immunities_sect		= flesh_immunities
 attack_effector		= m_flesh_attack_effector
 attack_params		= m_flesh_attack_params
-
 
 ;---------------------------------------------------------
 ; Vision
@@ -310,7 +302,7 @@ hit_fraction_monster = 0.4
 burn_immunity			= 1.0				;ъю¤ЇЇшЎшхэЄv шььєэшЄхЄр
 strike_immunity			= 1
 shock_immunity			= 1.0
-wound_immunity			= 0.15
+wound_immunity			= 0.7
 radiation_immunity 		= 0.0
 telepatic_immunity 		= 1.0
 chemical_burn_immunity 	= 1.0
@@ -369,19 +361,6 @@ ce_amplitude		= -10.0
 ce_period_number	= 2.0
 ce_power			= 1.5 ;0.7 ; power
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ;*********************************************************************************
 ; NORMAL PROFILE
 ;*********************************************************************************
@@ -400,7 +379,6 @@ community			= flesh
 
 MaxHealthValue		     = 1.0			; range [0..200]
 skin_armor = 0.1
-
 
 [flesh_immunities_normal]
 burn_immunity			= 0.3
@@ -423,7 +401,6 @@ stand_attack_0 =	  	0.25,		0.35,		    70,        0.0, 0.5, 1.0,		  -1.0, 1.0, -1
 stand_attack_1 =	  	0.30,		0.75,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
 stand_attack_2 =	  	0.30,		0.65,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
 stand_attack_3 =	  	0.40,		0.55,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
-
 
 ;*********************************************************************************
 ; STRONG PROFILE
@@ -465,8 +442,6 @@ stand_attack_0 =	  	0.25,		0.4,		    70,        0.0, 0.5, 1.0,		  -1.0, 1.0, -1.
 stand_attack_1 =	  	0.30,		0.85,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
 stand_attack_2 =	  	0.30,		0.75,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
 stand_attack_3 =	  	0.40,		0.65,		    150,        0.0, 0.5, 1.0,		 -1.0, 1.0, -1.0, 1.0,								  2.5
-
-
 
 
 [flesh_group]
@@ -512,7 +487,6 @@ bip01_r_hand
 bip01_r_finger0
 bip01_r_finger01
 bip01_l_thigh
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;Flesh population - Borovos 2013;;;;;;;;;;;;;;;;;
@@ -577,7 +551,6 @@ $spawn				= "monsters\fleshes\flesh_02a_normal"
 visual				= monsters\flesh\flesh2
 corpse_visual		= monsters\flesh\flesh2_dead
 MaxHealthValue		     = 1.0		; range [0..200]
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;------------- Strong -------------

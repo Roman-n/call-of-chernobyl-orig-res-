@@ -27,8 +27,6 @@ spawn_phantom 		= m_phantom_boar
 can_spawn_phantom 	= false
 
 smart_terrain_choose_interval	= 00:15:00
-Spawn_Inventory_Item_Section = mutant_boar_leg
-Spawn_Inventory_Item_Probability = 0.0
 
 ;------------------------------------------------------------------------
 ; Influences
@@ -93,15 +91,6 @@ Velocity_WalkFwdDamaged	= 1.3,		3.0,			2.8,		0.2,	2.0
 Velocity_WalkFwdNormal	= 1.75,		3.0,			2.8,		0.02,	3.0
 Velocity_Drag			= -1.0,		1.0,			1.0,		1,		1
 Velocity_Steal			= 1.5,		3.0,			2.5,		1,		1
-
-; speed factors			linear | angular_real | angular_path | min	 |  max
-;Velocity_Stand			= 0,		3.4,			3.0,		1,		1
-;Velocity_RunFwdNormal	= 7.5,		3.0,			2.8,		0.4,	1
-;Velocity_RunFwdDamaged	= 4.5,		3.0,			2.8,		0.2,	1
-;Velocity_WalkFwdDamaged	= 1.3,		3.0,			2.8,		0.2,	2.0
-;Velocity_WalkFwdNormal	= 1.75,		3.0,			2.8,		0.02,	3.0
-;Velocity_Drag			= -1.0,		1.0,			1.0,		1,		1
-;Velocity_Steal			= 1.5,		3.0,			2.5,		1,		1
 
 ; acceleration
 Accel_Generic			= 1.5
@@ -246,7 +235,6 @@ critical_wound_bones_legs	= boar_critical_wound_bones_legs
 ; Other
 ;------------------------------------------------------------------------
 
-
 ef_creature_type		= 11						; option for evaluation functions
 ef_weapon_type			= 2
 ef_detector_type		= 1
@@ -273,7 +261,6 @@ DayTime_End						= 23		; úþýõ¡ ôý  ôû  üþý¸ª¨ð
 distance_to_corpse				= 30		; ôø¸ª. ôþ ª¨ºÿð, ÿ¨ø úþªþ¨þù þý ÿõ¨õ¿þôøª ò ¸þ¸ªþ ýøõ õôv
 
 terrain							= boar_terrain
-
 
 material				= creatures\hoof
 DynamicObjectsCount		= 32
@@ -382,7 +369,6 @@ bip01_r_thigh		= 1.0, -1, 0.3
 bip01_neck 			= 1.5, -1, 1.5
 bip01_head	 		= 1.5, -1, 0.3
 
-
 [boar_critical_wound_bones_head]
 bip01_pelvis
 bip01_l_thigh
@@ -436,13 +422,11 @@ bip01_tail1
 [boar_critical_wound_bones_torso]
 [boar_critical_wound_bones_legs]
 
-
 ;=================================================================================
 ; Boar Terrain
 ;=================================================================================
 [boar_terrain]
 	255,000,255,255
-
 
 ;===========================================================================
 ; Step Events
@@ -458,7 +442,6 @@ stand_run_fwd_0	 	=  	  1,	0.01,   1,	     0.05,    0.7,    0.2,    1.0,     0.2
 stand_run_dmg_0		=	  4,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1.0
 stand_steal_0		=	  1,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1.0
 stand_drag_0		=	  1,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1.0
-
 
 ;===========================================================================
 ; IMMUNITIES
@@ -480,11 +463,6 @@ fire_wound_immunity		= 0.8
 [boar_protections]
 
 hit_fraction_monster	= 0.3
-
-
-
-
-
 
 ;*********************************************************************************
 ; BASE PROFILES
@@ -533,8 +511,6 @@ stand_attack_run_0 =    0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.
 stand_attack_run_left_0  =   0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
 stand_attack_run_right_0 =   0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
 
-
-
 [boar_strong]:m_boar_e
 $spawn				= "monsters\boars\boar_03_strong"
 visual				= monsters\mutant_boar\mutant_boar_strong
@@ -547,7 +523,7 @@ spec_rank			= strong
 community			= boar
 MaxHealthValue         = 1.25              ; range [0..200]
 
-skin_armor				= 0.7
+skin_armor				= 0.42
 
 ;*********************************************************************************
 ; STRONG PROFILE
@@ -561,7 +537,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.1
 explosion_immunity		= 0.2
-fire_wound_immunity		= 0.7
+fire_wound_immunity		= 0.75
 
 [boar_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -576,7 +552,6 @@ stand_attack_2 =	  	0.20,		0.7,	      50,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0
 stand_attack_run_0 =    0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,				  3.2
 stand_attack_run_left_0  =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
 stand_attack_run_right_0 =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;Boar population - Borovos 2013;;;;;;;;;;;;;;;;;
@@ -594,7 +569,7 @@ visual				= monsters\mutant_boar\mutant_boar_small
 corpse_visual			= monsters\mutant_boar\mutant_boar_small_dead
 MaxHealthValue         = 0.75              ; range [0..200]
 
-skin_armor				= 0.33
+skin_armor				= 0.26
 
 panic_threshold		= 0.3
 
@@ -658,7 +633,6 @@ panic_threshold		= 0.01
 immunities_sect		= boar_immunities_hard
 attack_params		= boar_attack_params_hard
 
-
 [boar_immunities_hard]
 burn_immunity			= 0.07
 strike_immunity			= 0.07
@@ -668,7 +642,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.07
 explosion_immunity		= 0.24
-fire_wound_immunity		= 0.6
+fire_wound_immunity		= 0.65
 
 [boar_attack_params_hard]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
