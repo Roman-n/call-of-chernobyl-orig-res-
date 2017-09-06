@@ -65,8 +65,15 @@ function send_tip(actor, news_id, timeout, sender, showtime, sender_id)
 
 	--' Играем дефолтный звук
 	xr_sound.set_sound_play(db.actor:id(), "pda_tips")
-	--sound_object(sound_theme.theme["pda_tips"].path):play_at_pos(actor, vector():set(0,0,0), timeout, sound_object.s2d)
-
+	
+	-- play script sound with matching section name to news id string
+	if (sound_theme.theme[news_id]) then
+		xr_sound.set_sound_play(db.actor:id(), news_id)
+		if (sound_theme.theme[news_id].snd_obj) then
+			local length = sound_theme.theme[news_id].snd_obj:length()
+			showtime = showtime < length and length or showtime
+		end
+	end
 
 	local texture = "ui_iconsTotal_grouping"
 	if sender ~= nil then
