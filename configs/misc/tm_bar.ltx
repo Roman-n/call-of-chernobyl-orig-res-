@@ -16,7 +16,7 @@ status_functor_params = killer,bandit
 stage_complete = 1
 on_init = %=find_smart_under_faction_control_ex(bar_dolg_general_petrenko_stalker_task_1_id:killer:bandit)%
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:killer:bandit)} true, false
-on_complete = %=complete_task_inc_goodwill(50:dolg) =reward_random_money(7000:14000) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_1) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_target_id)%
+on_complete = %=complete_task_inc_goodwill(50:dolg) =reward_random_money(7500:8500) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_1) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_target_id)%
 on_fail = %=pstor_reset(bar_dolg_general_petrenko_stalker_task_1_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_target_id)%
 on_cancel = %=pstor_reset(bar_dolg_general_petrenko_stalker_task_1_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_1_target_id)%
 
@@ -38,7 +38,7 @@ status_functor_params = freedom
 stage_complete = 1
 on_init = %=find_smart_under_faction_control(bar_dolg_general_petrenko_stalker_task_2_id:freedom)%
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:freedom)} true, false
-on_complete = %=complete_task_inc_goodwill(50:dolg) =reward_random_money(7000:14000) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_2) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_target_id)%
+on_complete = %=complete_task_inc_goodwill(50:dolg) =reward_random_money(8500:9500) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_2) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_target_id)%
 on_fail = %=pstor_reset(bar_dolg_general_petrenko_stalker_task_2_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_target_id)%
 on_cancel = %=pstor_reset(bar_dolg_general_petrenko_stalker_task_2_id) =pstor_reset(bar_dolg_general_petrenko_stalker_task_2_target_id)%
 
@@ -59,7 +59,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(bar_dolg_general_petrenko_stalker_task_3:freedom:bandit)%
-on_complete = %=reward_random_money(7000:14000) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_3) =complete_task_inc_goodwill(50:dolg)%
+on_complete = %=reward_random_money(9000:11000) =reward_stash(true) =inc_task_stage(bar_dolg_general_petrenko_stalker_task_3) =complete_task_inc_goodwill(50:dolg)%
 
 
 ;--------------------------------------------------------------------------------------------------
