@@ -33,14 +33,17 @@ function on_key_release(key)
 				alife():release(se_bpk,true)
 			end
 			
+			local ini = system_ini()
 			local function transfer_items(id)
 				local obj = level.object_by_id(id)
 				if (obj) then 
 					local function itr_inv(temp,item)
 						if (item and item:id() ~= b_id and keep_items[item:section()] == nil) then 
 							if (IsAmmo(item) ~= true) or (is_ammo_for_wpn(item:section()) ~= true) then 
-								if (db.actor:is_on_belt(item) == false and is_in_slot(item) == false) then 
-									db.actor:transfer_item(item,obj)
+								if (ini:r_bool_ex(item:section(),"quest_item",false) == false) then
+									if (db.actor:is_on_belt(item) == false and is_in_slot(item) == false) then 
+										db.actor:transfer_item(item,obj)
+									end
 								end
 							end						
 						end
