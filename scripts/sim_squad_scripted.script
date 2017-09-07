@@ -931,12 +931,23 @@ function sim_squad_scripted:check_online_status()
 					b = false
 				end
 			end
-	elseif (db.actor and not get_object_story_id(self.id) and not self.online) then	-- exclude from coming online except if already online or storied
-		local dist = axr_main.config:r_value("mm_options","excl_dist",2) or 0
-		if (dist > 0 and not db.actor:has_info("actor_is_sleeping")) then 
-			local actor = alife():actor()
-			if (self.position:distance_to(actor.position) <= dist) then
-				b = false
+	elseif (db.actor and not get_object_story_id(self.id)) then	-- exclude from coming online except if already online or storied
+		if (db.actor:has_info("enforce_online_exclusion")) then -- For story needs
+			if (self.online) then
+				if (self.position:distance_to(db.actor:position()) <= 2500) then
+					b = false -- switch online to offline
+				end
+			else
+				b = false -- all simulation already offline, refuse to come online while actor has info
+			end
+		else
+			if not (self.online) then
+				local dist = axr_main.config:r_value("mm_options","excl_dist",2) or 0
+				if (dist > 0 and not db.actor:has_info("actor_is_sleeping")) then 
+					if (self.position:distance_to(db.actor:position()) <= dist) then
+						b = false
+					end
+				end
 			end
 		end
 	end
