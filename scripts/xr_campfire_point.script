@@ -146,10 +146,21 @@ function action_point_campfire:execute()
 			npc:set_path_type(game_object.level_path)
 		end
 		self.st.vid = utils.send_to_nearest_accessible_vertex(npc,self.st.vid,"xr_campfire_point")
-		state_mgr.set_state(npc,self.st.reach_movement and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.reach_movement) or "rush")
+		
+		if (npc:character_community() == "zombied") then
+			state_mgr.set_state(npc,"walk")
+		else
+			state_mgr.set_state(npc,self.st.reach_movement and xr_logic.pick_section_from_condlist(db.actor, npc, self.st.reach_movement) or "rush")
+		end 
+		
 		return
 	end
-
+	
+	if (npc:character_community() == "zombied") then
+		state_mgr.set_state(npc,"guard")
+		return
+	end 
+	
 	local state = state_mgr.get_state(self.object)
 	local camp = sr_camp.get_current_camp(npc:position())
 	if (camp) then 

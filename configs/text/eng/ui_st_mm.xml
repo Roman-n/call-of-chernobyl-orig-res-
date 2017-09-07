@@ -518,6 +518,6 @@
 		<text>Grass shadow</text>
 	</string>
 	<string id="ui_mm_cod_pickup_mode">
-		<text>COD pickup mode</text>
+		<text>AoE pickup mode</text>
 	</string>
 </string_table>

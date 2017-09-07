@@ -61,6 +61,11 @@ function action_reach_animpoint:execute()
 	--self.object:set_desired_direction(self.st.animpoint.smart_direction)
 	self.object:set_path_type(game_object.level_path)
 
+	if (self.object:character_community() == "zombied") then
+		state_mgr.set_state(self.object,"walk")
+		return
+	end
+	
     --printf("%s animpoint position riched %s", npc:name(), npc:position():distance_to_sqr(self.vertex_position))
 	local new_state = "walk"
 	if (self.st.reach_movement) then 
@@ -100,7 +105,11 @@ function action_animpoint:execute()
 --	printf("%s animpoint action %s", self.object:name(), tostring(self.st.animpoint:get_action()))
 --	state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, nil,
 
-	state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, {look_position = self.st.animpoint.look_position},{animation_position = self.st.animpoint.position, animation_direction = self.st.animpoint.smart_direction} )
+	if (self.object:character_community() == "zombied") then
+		state_mgr.set_state(self.object,"guard")
+	else
+		state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, {look_position = self.st.animpoint.look_position},{animation_position = self.st.animpoint.position, animation_direction = self.st.animpoint.smart_direction} )
+	end
 end
 function action_animpoint:net_destroy(npc)
 	self.st.animpoint:stop()
