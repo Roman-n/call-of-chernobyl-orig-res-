@@ -481,7 +481,7 @@ function cycle_companions_move_mode(force_mode)
 end 
 
 function cycle_companions_stealth_mode()
-	for id,squad in pairs(axr_companions.companion_squads) do 
+	for id,squad in pairs(companion_squads) do 
 		if (squad and squad.commander_id) then
 			for k in squad:squad_members() do
 				if not (xrs_kill_wounded.hostage_list[k.id]) then
@@ -712,3 +712,49 @@ function set_companion_squad_loot_mode(mode,npc,squad)
 		end
 	end
 end
+
+--------------------------------
+-- keybinding
+--------------------------------
+axr_keybind.bind("kCUSTOM1",function(p)
+	if (p==1) then 
+		cycle_companions_combat_mode()
+	end
+end)
+
+axr_keybind.bind("kCUSTOM2",function(p)
+	if (p==1) then 
+		cycle_companions_move_mode()
+	end
+end)
+
+axr_keybind.bind("kCUSTOM3",function(p)
+	move_to_point(p)
+end)
+
+axr_keybind.bind("kCUSTOM4",function(p)
+	if not (p==1) then
+		return 
+	end
+	cycle_companions_stealth_mode()
+end)
+
+axr_keybind.bind("kCUSTOM5",function(p)
+	if not (p==1) then
+		return 
+	end
+	for id,squad in pairs(companion_squads) do 
+		if (squad and squad.commander_id) then
+			for k in squad:squad_members() do
+				if not (xrs_kill_wounded.hostage_list[k.id]) then
+					st = db.storage[k.id]
+					local member = st and st.object
+					if (member and member:alive()) then
+						switch_companion_gather_items(member)
+						switch_companion_loot_corpses(member)
+					end
+				end
+			end
+		end
+	end
+end)

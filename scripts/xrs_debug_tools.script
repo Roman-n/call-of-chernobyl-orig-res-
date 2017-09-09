@@ -1788,3 +1788,194 @@ function give_game_news(t,d)
 		db.actor:give_game_news("",t,"ui_iconsTotal_grouping",0,d,0)
 	end
 end
+
+
+
+---------------------------------------
+-- Keybinding
+---------------------------------------
+axr_keybind.bind("DIK_NUMPAD0",function(p)
+	if not (DEV_DEBUG) then 
+		return 
+	end
+	if (p==1) then
+		get_console():execute("demo_record t")
+	end
+end,"debug_demo_record")
+
+axr_keybind.bind("DIK_INSERT",function(p)
+	if not (DEV_DEBUG_DEV) then 
+		return 
+	end
+	if (p==1) then
+		if not (this.debug_ui_attach) then 
+			this.debug_ui_attach = ui_debug_main.debug_ui_attach()
+		end 
+		
+		if (this.debug_ui_attach) then 
+			if not (this.debug_ui_attach:IsShown()) then 
+				this.debug_ui_attach:ShowDialog(true)
+			else
+				this.debug_ui_attach:HideDialog()
+			end
+		end
+	end
+end,"debug_attachment_ui")
+
+axr_keybind.bind("DIK_NUMPAD9",function(p)
+	if not (DEV_DEBUG_DEV) then 
+		return 
+	end
+	if (p==1) then 
+		DEBUG_NPC = level.get_target_obj and level.get_target_obj()
+		if (DEBUG_NPC) then 
+			SetHudMsg(strformat("%s Hold then release key to new position",DEBUG_NPC:name()),8)
+		end
+	elseif (p==0) then
+		if (DEBUG_NPC) then
+			local r = level.get_target_dist and level.get_target_dist()
+			if (r) then
+				if (IsStalker(DEBUG_NPC) or IsMonster(DEBUG_NPC)) then
+					local lvid = level.vertex_in_direction(level.vertex_id(device().cam_pos),device().cam_dir,r)
+					if (lvid) then 
+						DEBUG_NPC:set_npc_position(level.vertex_position(lvid))
+					end
+				else
+					local pos = vector():set(device().cam_pos)
+					pos:add(device().cam_dir:mul(r))
+					
+					local lvid = level.vertex_id(pos)
+					if (lvid < 4294967295) then
+						TeleportObject(DEBUG_NPC:id(),pos,lvid,db.actor:game_vertex_id())
+					else 
+						SetHudMsg(game.translate_string("st_invalid_position"),4)
+					end
+				end
+			end
+			SetHudMsg("",1)
+		end	
+	end 
+end,"debug_hold_action")
+
+axr_keybind.bind("DIK_NUMPADENTER",function(p)
+	if not (DEV_DEBUG) then 
+		return 
+	end 
+	if (p==1) then
+		local heli
+		for id,o in pairs(db.heli) do
+			heli = o
+			break
+		end
+		if (heli) then
+			local veh = db.actor:get_attached_vehicle()
+			if not (veh) then
+				db.actor:attach_vehicle(heli)
+			elseif (veh:cast_Heli()) then 
+				db.actor:detach_vehicle()
+			else 
+				db.actor:detach_vehicle()
+				db.actor:attach_vehicle(heli)
+			end
+		end	
+		-- local npc = level.get_target_obj()
+		-- if (npc and IsStalker(npc)) then 
+			-- debug_visual_ltx = debug_visual_ltx or ini_file_ex("debug_visual.ltx",true)
+			-- debug_visual_ltx:w_value("visual_at_cursor",npc:get_visual_name())
+			-- printf("%s",npc:get_visual_name())
+			-- debug_visual_ltx:save()
+		-- end
+		--alun_utils.print_table(story_objects.get_story_objects_registry().story_id)
+		--[[ PRINT _G
+		local valid = {
+			["string"] = true,
+			["number"] = true,
+			["table"] = true,
+			["function"] = true,
+			["userdata"] = false		
+		}
+		
+		local function addTab(s,n)
+			local l = string.len(s)
+			for i=1,n-l do
+				s = s .. " "
+			end
+			return s
+		end
+	
+		local txt = ""
+		for k,v in pairs(_G) do 
+			if (valid[type(k)] == true) then 
+				txt = txt .. addTab(tostring(k),40)
+			elseif (valid[type(k)] == false) then 
+				txt = txt .. addTab("userdata",40)
+			end
+			
+			if (valid[type(v)] == true) then 
+				txt = txt ..  " = " .. tostring(v) .. "\n"
+			elseif (valid[type(v)] == false) then 
+				txt = txt .. " = userdata\n"
+			else 
+				txt = txt .. "\n"
+			end
+		end
+		
+		local f = io.open("_g_print_table.txt","wb")
+		if (f) then 
+			f:write(txt)
+			f:close()
+		end
+		--]]
+	
+		--[[ clones active weapon
+		if (db.actor) then 
+			local wpn = db.actor:active_item()
+			if (wpn and IsWeapon(wpn)) then 
+				local se_wpn = alife_object(wpn:id())
+				if (se_wpn) then 
+					alife():clone_weapon(se_wpn,se_wpn:section_name(),se_wpn.position,se_wpn.m_level_vertex_id,se_wpn.m_game_vertex_id,0)
+				end
+				
+				local function itr(section)
+					printf("%s",section)
+				end
+				
+				wpn:iterate_installed_upgrades(itr)
+			end
+		end
+		--]]
+		
+		--xr_effects.disable_generator_zones()
+		-- RELEASES TASK GIVER FOR ALL TASKS WITH task_giver_id; useful for testing how a task works when giver is dead
+		--[[
+		local debug_task_infos = task_manager.get_task_manager().task_info
+		local task_ini = task_manager.task_ini
+		for k,v in pairs(debug_task_infos) do
+			local squad = v.task_giver_id and alife_object(v.task_giver_id)
+			if (squad) then
+				if (squad:clsid() == clsid.online_offline_group_s) then
+					printf("%s removing squad task giver!",k)
+					SIMBOARD:assign_squad_to_smart(squad, nil)
+					squad:remove_squad()
+				elseif (IsStalker(squad)) then
+					printf("%s removing npc task giver!",k)
+					alife():release(squad,true)
+				end
+			end
+		end
+		--]]
+		
+		-- SET ALL ACTIVE TASKS TO COMPLETE STAGE
+
+		--[[
+		local debug_task_infos = task_manager.get_task_manager().task_info
+		local task_ini = task_manager.task_ini
+		for k,v in pairs(debug_task_infos) do
+			local stage = task_ini:r_float_ex(k, "stage_complete") or 0
+			if (stage > 0 and stage ~= 255) then 
+				v.stage = stage
+			end
+		end
+		--]]
+	end
+end,"debug_current_test")
