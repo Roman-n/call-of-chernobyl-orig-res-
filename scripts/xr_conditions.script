@@ -2953,3 +2953,11 @@ end
 function get_start_time_elapsed_ge(actor,npc,p)
 	return p[1] and tonumber(game.get_game_time():diffSec(level.get_start_time())) >= tonumber(p[1])
 end
+
+function base_defense_is_actor_on_level(actor,npc,p)
+	local name = utils.load_var(db.actor,"base_defense_level")
+	if (name) then 
+		return name == level.name()
+	end 
+	return true
+end

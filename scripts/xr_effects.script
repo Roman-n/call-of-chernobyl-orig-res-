@@ -4869,3 +4869,7 @@ function set_smart_alarm_status(actor,npc,p)
 		smart:set_alarm()
 	end
 end
+
+function setup_base_defense_fail_conditions(actor,npc,p)
+	utils.save_var(db.actor,"base_defense_level",level.name())
+end
