@@ -308,8 +308,8 @@ anim = {!npc_community(zombied)} sit_ass, guard
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -342,8 +342,8 @@ anim = {!npc_community(zombied)} sit_ass, guard
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -383,8 +383,8 @@ def_state_moving = {=dist_to_job_point_ge(25)} sprint, {=dist_to_job_point_ge(5)
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -416,8 +416,8 @@ path_main = sleep_%s
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -458,8 +458,8 @@ def_state_moving = patrol
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -500,8 +500,8 @@ def_state_moving = patrol
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -551,8 +551,8 @@ path_walk = patrol_%s_walk
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -586,8 +586,8 @@ cover_name = %s
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -620,8 +620,8 @@ cover_name = %s
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -661,8 +661,8 @@ path_walk = guard_%s_walk
 			job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -690,8 +690,8 @@ def_state_standing = wait_na
 			job_ltx2 = job_ltx2 .."out_restr = "..smart.def_restr.."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx2 = job_ltx2 .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx2 = job_ltx2 .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -815,8 +815,8 @@ def_state_campering_fire = %s
 			--job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -878,8 +878,8 @@ def_state_campering_fire = %s
 			--job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
 		end
 
-		if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+		if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+			job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 		end
 
 		ltx_size = ltx_size + 1
@@ -1127,8 +1127,8 @@ mute 			  = false
 		--job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
 	end
 
-	if (smart.base_on_actor_control and smart.base_on_actor_control.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)) then
-		job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.base_on_actor_control.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
+	if (smart.ignore_zone and xr_gulag.job_in_restrictor(smart, smart.ignore_zone, name)) then
+		job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone("..smart.ignore_zone..")} true\ncombat_ignore_keep_when_attacked = true\n"
 	end
 
 	ltx_size = ltx_size + 1
