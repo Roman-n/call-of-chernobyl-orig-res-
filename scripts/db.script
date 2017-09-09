@@ -29,6 +29,7 @@ no_weap_zones 		= {}
 spawned_vertex_by_id= {}
 dynamic_ltx			= {}
 vehicle				= nil
+actor_inside_zones 	= {}		-- only because some sr have complex shape and this also easier to see what restrictor actor in for debug
 
 function add_enemy(obj)
 	local id = obj:id()

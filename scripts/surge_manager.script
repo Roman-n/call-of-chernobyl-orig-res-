@@ -360,10 +360,13 @@ function CSurgeManager:pos_in_cover(pos)
 	end
 	local sr
 	for name,condlist in pairs(self.covers) do 
-		sr = db.zone_by_name[name]
-		if (sr and sr:inside(pos)) then 
-			return true 
+		if (db.actor_inside_zones[name]) then 
+			return true
 		end
+		-- sr = db.zone_by_name[name]
+		-- if (sr and sr:inside(pos)) then 
+			-- return true 
+		-- end
 	end
 	return false
 end 

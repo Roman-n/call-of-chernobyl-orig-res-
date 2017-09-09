@@ -572,11 +572,13 @@ function try_switch_to_another_section(npc, st, actor)
 				switched = switch_to_section(npc, st.ini, pick_section_from_condlist(actor, npc, c.condlist))
 			end
 		elseif (c.name == "on_actor_in_zone") then
-			if utils.npc_in_zone(actor, db.zone_by_name[c.v1]) then
+			if (db.actor_inside_zones[c.v1]) then
+			--if utils.npc_in_zone(actor, db.zone_by_name[c.v1]) then
 				switched = switch_to_section(npc, st.ini, pick_section_from_condlist(actor, npc, c.condlist))
 			end
 		elseif (c.name == "on_actor_not_in_zone") then
-			if not utils.npc_in_zone(actor, db.zone_by_name[c.v1]) then
+			--if not utils.npc_in_zone(actor, db.zone_by_name[c.v1]) then
+			if not (db.actor_inside_zones[c.v1]) then
 				switched = switch_to_section(npc, st.ini, pick_section_from_condlist(actor, npc, c.condlist))
 			end
 		elseif (c.name == "on_npc_in_zone") then

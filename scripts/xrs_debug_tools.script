@@ -801,14 +801,18 @@ end
 function actor_inside_zone_hud_show(hud)
 	hud:set_header("-[ACTOR INSIDE ZONE INFO]-")
 	if (db.actor and db.actor:alive()) then
-		local itr = function(id)
-			local st = id and db.storage[id]
-			local o = st and st.object 
-			if (o and o:cast_SpaceRestrictor()) then
-				hud:add_msg(o:name(),strformat("ID=%s Section=%s",id,st.active_section))
-			end
+		-- local itr = function(id)
+			-- local st = id and db.storage[id]
+			-- local o = st and st.object 
+			-- if (o and o:cast_SpaceRestrictor()) then
+				-- hud:add_msg(o:name(),strformat("ID=%s Section=%s",id,st.active_section))
+			-- end
+		-- end
+		-- db.actor:iterate_feel_touch(itr)
+		for name,zone in pairs(db.actor_inside_zones) do
+			local st = db.storage[zone:id()]
+			hud:add_msg(zone:name(),strformat("ID=%s Section=%s",zone:id(),st and st.active_section))
 		end
-		db.actor:iterate_feel_touch(itr)
 	end
 	hud:display()
 end 

@@ -23,7 +23,7 @@ function register(object_factory)
 	cs_register	(object_factory, "CActor", 						"se_actor.se_actor",					"S_ACTOR",			"script_actor")
 	cs_register	(object_factory, "CAI_Stalker", 				"se_stalker.se_stalker",				"AI_STL_S", 		"script_stalker")
 	cs_register	(object_factory, "CHelicopter", 				"se_heli.se_heli",						"C_HLCP_S", 		"script_heli")
-	cs_register	(object_factory, "ce_smart_zone", 				"se_zones.se_restrictor",				"SPC_RS_S", 		"script_restr") -- changed from ce_smart_zone to ce_script_zone for enter_zone and exit_zone callbacks
+	cs_register	(object_factory, "ce_script_zone", 				"se_zones.se_restrictor",				"SPC_RS_S", 		"script_restr") -- changed from ce_smart_zone to ce_script_zone for enter_zone and exit_zone callbacks
 	cs_register	(object_factory, "CPhysicObject", 				"se_item.se_physic", 					"O_PHYS_S", 		"script_phys")
 	cs_register	(object_factory, "smart_cover_object",			"se_smart_cover.se_smart_cover",		"SMRT_C_S", 		"smartcover_s")
 	cs_register	(object_factory, "CDestroyablePhysicsObject", 	"se_item.se_physic", 					"O_DSTR_S", 		"destrphys_s")
