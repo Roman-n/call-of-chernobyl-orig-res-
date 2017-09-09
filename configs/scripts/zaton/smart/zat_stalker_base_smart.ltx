@@ -2,12 +2,13 @@
 squad_id = 1
 def_restr = zat_a2_sr_noweap
 safe_restr = zat_a2_sr_light
-smart_control = smart_control
 respawn_params = respawn@zat_stalker_base_smart
 max_population = 6
 ;arrive_dist = 65
 respawn_idle = 86400
-
+ignore_zone = zat_a2_sr_light
+alarm_start_sound = zat_a2_base_alarm
+alarm_stop_sound = zat_a2_base_relax
 
 [respawn@zat_stalker_base_smart]
 spawn_stalker@master
@@ -15,12 +16,6 @@ spawn_stalker@master
 [spawn_stalker@master]
 spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_advanced
 spawn_num = {+bar_deactivate_radar_done} 2, 0
-
-[smart_control]
-noweap_zone = zat_a2_sr_noweap
-ignore_zone = zat_a2_sr_light
-alarm_start_sound = zat_a2_base_alarm
-alarm_stop_sound = zat_a2_base_relax
 
 [exclusive]
 zat_a2_stalker_barmen = zaton\zat_a2_stalker_barmen.ltx

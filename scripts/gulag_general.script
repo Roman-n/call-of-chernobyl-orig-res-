@@ -169,11 +169,11 @@ local function precond_safe_job_sleeper(se_obj, smart, job)
 		return false
 	end
 
-	return smart.smart_alarm_time == nil
+	return true--smart.smart_alarm_time == nil
 end
 
 local function precond_safe_job(se_obj, smart, job)
-	return smart.smart_alarm_time == nil
+	return true--smart.smart_alarm_time == nil
 end
 
 local function precond_safe_job_patrol(se_obj, smart, job)
@@ -185,7 +185,7 @@ local function precond_safe_job_patrol(se_obj, smart, job)
 		return false
 	end
 
-	return smart.smart_alarm_time == nil
+	return true--smart.smart_alarm_time == nil
 end
 
 local function precond_collector(se_obj, smart, job)
@@ -217,7 +217,7 @@ local function precond_animpoint(se_obj, smart, job)
 end
 
 local function precond_safe_job_guard(se_obj, smart, job)
-	return smart.smart_alarm_time == nil
+	return true--smart.smart_alarm_time == nil
 end
 
 local function precond_guard_follower(se_obj, smart, job, npc_info)

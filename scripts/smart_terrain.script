@@ -1244,10 +1244,13 @@ function se_smart_terrain:update()
 end
 
 function se_smart_terrain:set_alarm()
-	if (self.smart_alarm_time == nil and self.alarm_start_sound) then
-		local sound = xr_logic.pick_section_from_condlist(db.actor, self, self.alarm_start_sound)
-		if (sound) then
-			xr_sound.set_sound_play(db.actor:id(), sound)
+	if (self.smart_alarm_time) then 
+		return 
+	end
+	if (self.alarm_start_sound) then
+		local sound_str = xr_logic.pick_section_from_condlist(db.actor, self, self.alarm_start_sound)
+		if (sound_str) then
+			xr_sound.set_sound_play(db.actor:id(), sound_str)
 		end
 	end
 	self.smart_alarm_time = game.get_game_time()
@@ -1260,9 +1263,9 @@ function se_smart_terrain:check_alarm()
 	if game.get_game_time():diffSec(self.smart_alarm_time) > self.alarm_length then
 		self.smart_alarm_time = nil
 		if (self.alarm_stop_sound) then
-			local sound = xr_logic.pick_section_from_condlist(db.actor, self, self.alarm_stop_sound)
-			if (sound) then
-				xr_sound.set_sound_play(db.actor:id(), sound)
+			local sound_str = xr_logic.pick_section_from_condlist(db.actor, self, self.alarm_stop_sound)
+			if (sound_str) then
+				xr_sound.set_sound_play(db.actor:id(), sound_str)
 			end
 		end
 		return false

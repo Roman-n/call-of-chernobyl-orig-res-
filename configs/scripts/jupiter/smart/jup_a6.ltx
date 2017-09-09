@@ -1,13 +1,14 @@
 [smart_terrain]
 def_restr = jup_a6_sr_noweap
 safe_restr = jup_a6_sr_light
-smart_control = smart_control
 squad_id = 4
 max_population = 6
 respawn_params = respawn@jup_a6   
 ;arrive_dist = 75
 respawn_idle = 86400
- 
+ignore_zone = jup_a6_sr_light
+alarm_start_sound = jup_a6_base_alarm
+alarm_stop_sound = jup_a6_base_relax
 
 [respawn@jup_a6]
 spawn_stalker@advanced
@@ -20,12 +21,6 @@ spawn_num = {+bar_deactivate_radar_done} 2, 0
 [spawn_stalker@master]
 spawn_squads = stalker_sim_squad_veteran, freedom_sim_squad_veteran
 spawn_num = {+bar_deactivate_radar_done} 2, 0
-
-[smart_control]
-noweap_zone = jup_a6_sr_noweap
-ignore_zone = jup_a6_sr_light
-alarm_start_sound = jup_a6_base_alarm
-alarm_stop_sound = jup_a6_base_relax
 
 [exclusive]
 ; still exists in CoC
