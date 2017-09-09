@@ -1237,10 +1237,7 @@ function se_smart_terrain:update()
 		
 		self:check_smart_faction()
 		
-		-- for quest needs 
-		if (self:check_alarm()) then
-			
-		end
+		--self:check_alarm()
 	end
 	
 	SendScriptCallback("smart_terrain_on_update", self)
