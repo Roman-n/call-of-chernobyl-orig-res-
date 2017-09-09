@@ -31,7 +31,7 @@ function on_game_start()
 	local need_save
 	for dik_or_bind,t in pairs(binded_actions) do 
 		for functor,alias in pairs(t) do
-			if not (key_bindings[dik_or_bind]) then
+			if (key_bindings[dik_or_bind] == nil and alias ~= dik_to_bind) then
 				if not (axr_main.config:line_exist("global_keybinds",alias)) then 
 					axr_main.config:w_value("global_keybinds",alias,dik_or_bind)
 					need_save = true
