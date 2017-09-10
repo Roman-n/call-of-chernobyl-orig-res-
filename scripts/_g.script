@@ -1323,8 +1323,7 @@ function get_object_squad(object,caller)
 end
 
 function get_story_squad(story_id)
-	local squad_id = get_story_object_id(story_id)
-	return squad_id and alife_object(squad_id)
+	return get_story_se_object(story_id)
 end
 
 --Проверка по временному интервалу.

@@ -1058,6 +1058,10 @@ function teleport_npc_by_story_id(actor, npc, p)
 	end
 end
 
+-- Teleports a squad, by story id, to another location
+-- param1 - squad story id 
+-- param2 - path name
+-- param3 - optional path index
 function teleport_squad(actor, npc, p)
 	local squad = p[1] and get_story_squad(p[1])
 	if not (squad) then
@@ -1076,6 +1080,49 @@ function teleport_squad(actor, npc, p)
 	TeleportSquad(squad,path:point(idx),path:level_vertex_id(idx),path:game_vertex_id(idx))
 	--squad:set_squad_position(path:point(idx))
 	printf("after tele squad %s",p[1])
+end
+
+-- Teleports a server object, by story id, to another location
+-- param1 - squad story id 
+-- param2 - path name
+-- param3 - optional path index
+function teleport_object(actor,npc,p)
+	local se_obj = p[1] and get_story_se_object(p[1])
+	if not (se_obj) then
+		printf("There is no se_obj with story id [%s]", p[1])
+		return
+	end
+	
+	local path = patrol(p[2])
+	if not (path) then
+		printf("Wrong parameters in 'teleport_object' function!!!")
+		return 
+	end
+	
+	printf("before tele obj %s",p[1])
+	local idx = tonumber(p[3]) or 0
+	TeleportObject(se_obj.id,path:point(idx),path:level_vertex_id(idx),path:game_vertex_id(idx))
+	printf("after tele obj %s",p[1])
+end
+
+-- param1 - path name
+-- param2 - optional look path
+-- param3 - optional path index; default is 0
+function change_level(actor,npc,p)
+	local path = p[1] and patrol(p[1])
+	if not (path) then 
+		printf("xr_effects.teleport_actor no patrol path %s exists!",p[1])
+		return 
+	end 
+	
+	local idx = p[3] and tonumber(p[3]) or 0
+	if (p[2]) then
+		local look = patrol(p[2])
+		local dir = -look:point(idx):sub(path:point(idx)):getH()
+		db.actor:set_actor_direction(dir)
+	end
+	
+	ChangeLevel(path:point(idx), path:level_vertex_id(idx), path:game_vertex_id(idx), db.actor:direction())
 end
 
 function jup_teleport_actor(actor, npc)

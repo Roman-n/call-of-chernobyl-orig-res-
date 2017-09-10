@@ -263,6 +263,7 @@ function remove_from_actor_squad(npc)
 		companion_squads[squad.id] = nil
 	end
 	
+	stalker_generic.remove_level_spot(npc:id())
 	non_task_companions[npc:id()] = nil
 	npc:disable_info_portion("npcx_is_companion")
 	npc:disable_info_portion("npcx_beh_cannot_dismiss")
@@ -284,6 +285,7 @@ function remove_all_from_actor_squad()
 			for k in squad:squad_members() do 
 				local se_obj = k.object or alife():object(k.id)
 				if (se_obj) then 
+					stalker_generic.remove_level_spot(se_obj.id)
 					squad.scripted_target = nil
 					utils.se_obj_save_var(se_obj.id,se_obj:name(),"companion",nil)
 					utils.se_obj_save_var(se_obj.id,se_obj:name(),"companion_cannot_dismiss",nil)
@@ -302,6 +304,7 @@ function remove_all_from_actor_squad()
 	end
 
 	for id,b in pairs(non_task_companions) do
+		stalker_generic.remove_level_spot(id)
 		non_task_companions[id] = nil
 	end
 end
