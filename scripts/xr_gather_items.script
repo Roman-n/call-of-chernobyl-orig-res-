@@ -50,7 +50,7 @@ local function npc_on_item_take(npc,item)
 		return
 	end 
 	
-	local story_name = story_objects.get_story_objects_registry():get_story_id(npc:id())
+	local story_name = get_object_story_id(npc:id())
 	if (story_name ~= nil) then
 		return
 	end

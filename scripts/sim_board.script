@@ -233,7 +233,7 @@ function simulation_board:assign_squad_to_smart(squad, smart_id)
 
 	--' Прописываем отряд в новом смарте.
 	if not (self.smarts[smart_id].squads[squad.id]) then
-		self.smarts[smart_id].squads[squad.id] = squad
+		self.smarts[smart_id].squads[squad.id] = true
 		if not (squad:get_script_target()) then
 			-- don't count squads with target_smart
 			self.smarts[smart_id].population = self.smarts[smart_id].population + 1

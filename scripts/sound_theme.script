@@ -858,7 +858,7 @@ function init_npc_sound(npc)
 		if v.init_npc then
 			--printf("checking %s for %s (%s)", v.section, npc:name(), character_community(npc))
 			if (v.avail_communities == nil or v.avail_communities[character_community(npc)]) then
-				if (v.story_ids == nil or v.story_ids[story_objects.get_story_objects_registry():get_story_id(npc:id()) or ""]) then
+				if (v.story_ids == nil or v.story_ids[ get_object_story_id(npc:id()) or ""]) then
 					v:init_npc(npc)
 				end
 			end

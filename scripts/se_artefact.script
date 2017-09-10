@@ -18,7 +18,7 @@ function se_artefact:on_unregister()
 	if (m_data.se_object) then
 		m_data.se_object[self.id] = nil
 	end
-	unregister_story_object_by_id(self.id)
+	story_objects.unregister(self.id)
 	cse_alife_item_artefact.on_unregister(self)
 end
 --------------------

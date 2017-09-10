@@ -1,7 +1,7 @@
 ------ CoC Jup A6 Ashot and Yar 
 function dm_ashot_and_yar_generate_dialog(a,b)
 	local npc = dialogs.who_is_npc(a,b)
-	local sid = story_objects.get_story_objects_registry():get_story_id(npc:id())
+	local sid = get_object_story_id(npc:id())
 	local text = {}
 	local target_name = ""
 	
@@ -39,8 +39,7 @@ function is_message_receiver(a,b)
 		return false 
 	end 
 	
-	local sid = story_objects.get_story_objects_registry():get_story_id(npc:id())
-		
+	local sid = get_object_story_id(npc:id())
 	return sid == "jup_a6_freedom_trader_ashot" and tsk.stage == 0 or sid == "jup_b19_freedom_yar" and tsk.stage == 1 or false
 end
 

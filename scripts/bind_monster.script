@@ -88,8 +88,7 @@ function generic_object_binder:psy_influence_radius(victim)
 		return 
 	end 
 	
-	local sor = story_objects.get_story_objects_registry()
-	if (sor:get_story_id(victim:id())) then 
+	if (get_object_story_id(victim:id())) then 
 		return
 	end
 		

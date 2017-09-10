@@ -431,7 +431,7 @@ function CPsiStormManager:kill_obj_at_pos(pos)
 		["zombied"]					= true
 	}
 	for k,v in pairs(board.squads) do
-		local squad = v
+		local squad = alife_object(k)
 		if (squad:clsid() == clsid.online_offline_group_s and surge_manager.can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)) then
 			local squad_npcs = surge_manager.get_squad_members(squad.id)
 			local fate = atmosfear_options.config:r_value("atmosfear_current_parameters","opt_psi_storm_fate",0,"kill")

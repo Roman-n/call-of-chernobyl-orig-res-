@@ -112,8 +112,6 @@ function restrictor_binder:load(reader)
 	set_save_marker(reader, "load", false, "restrictor_binder")
 	self.loaded = true
 
-	--printf( "restrictor_binder:load" )
-
 	object_binder.load(self, reader)
 
 	xr_logic.load_obj(self.object, reader)

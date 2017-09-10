@@ -1113,8 +1113,7 @@ function position_hud_show(hud)
 	local gvid = cam and nil or db.actor:game_vertex_id()
 
 	local dir = device().cam_dir
-	local pos2 = level.vertex_position(lvid)
-	local valid = lvid < 4294967295 and pos2:distance_to(pos) <= 0.7
+	local valid = level.valid_vertex(lvid)
 
 	local se_actor = not cam and alife_object(db.actor:id())
 
@@ -1315,7 +1314,7 @@ function stalker_info_hud_show(hud)
 					return true 
 				end 
 
-				local squad = obj.group_id and SIMBOARD.squads[obj.group_id]
+				local squad = obj.group_id ~= 65535 and alife_object(obj.group_id)
 				if (squad) then
 					if (squad.m_game_vertex_id == smart.m_game_vertex_id) then 
 						return true 
@@ -1885,48 +1884,7 @@ axr_keybind.bind("DIK_NUMPADENTER",function(p)
 			-- printf("%s",npc:get_visual_name())
 			-- debug_visual_ltx:save()
 		-- end
-		--alun_utils.print_table(story_objects.get_story_objects_registry().story_id)
-		--[[ PRINT _G
-		local valid = {
-			["string"] = true,
-			["number"] = true,
-			["table"] = true,
-			["function"] = true,
-			["userdata"] = false		
-		}
-		
-		local function addTab(s,n)
-			local l = string.len(s)
-			for i=1,n-l do
-				s = s .. " "
-			end
-			return s
-		end
-	
-		local txt = ""
-		for k,v in pairs(_G) do 
-			if (valid[type(k)] == true) then 
-				txt = txt .. addTab(tostring(k),40)
-			elseif (valid[type(k)] == false) then 
-				txt = txt .. addTab("userdata",40)
-			end
-			
-			if (valid[type(v)] == true) then 
-				txt = txt ..  " = " .. tostring(v) .. "\n"
-			elseif (valid[type(v)] == false) then 
-				txt = txt .. " = userdata\n"
-			else 
-				txt = txt .. "\n"
-			end
-		end
-		
-		local f = io.open("_g_print_table.txt","wb")
-		if (f) then 
-			f:write(txt)
-			f:close()
-		end
-		--]]
-	
+
 		--[[ clones active weapon
 		if (db.actor) then 
 			local wpn = db.actor:active_item()

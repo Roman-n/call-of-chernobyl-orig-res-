@@ -18,7 +18,8 @@ function find_smart_under_faction_control(actor,npc,p)
 		if (smart.online) and (simulation_objects.available_by_id[smart.id] == true) then 
 			local smrt = SIMBOARD.smarts[smart.id]
 			if (smrt) then 
-				for k,squad in pairs(smrt.squads) do
+				for k,v in pairs(smrt.squads) do
+					local squad = alife_object(k)
 					if (squad and squad.stay_time and squad.current_target_id and squad.current_target_id == smart.id and not squad:get_script_target()) then
 						for i=2,#p do
 							if (p[i] == "monster" and is_squad_monster[squad.player_id] or squad.player_id == p[i]) then
@@ -48,7 +49,8 @@ function find_smart_under_faction_control_ex(actor,npc,p)
 		if (simulation_objects.available_by_id[smart.id] == true) then 
 			local smrt = SIMBOARD.smarts[smart.id]
 			if (smrt) then 
-				for k,squad in pairs(smrt.squads) do
+				for k,v in pairs(smrt.squads) do
+					local squad = alife_object(k)
 					if (squad and squad.current_target_id and squad.current_target_id == smart.id and not squad:get_script_target()) then
 						for i=2,#p do
 							if (p[i] == "monster" and is_squad_monster[squad.player_id] or squad.player_id == p[i]) then
@@ -1060,6 +1062,7 @@ function teleport_squad(actor, npc, p)
 	local squad = p[1] and get_story_squad(p[1])
 	if not (squad) then
 		printf("There is no squad with story id [%s]", p[1])
+		return
 	end
 	
 	local path = patrol(p[2])
@@ -1068,9 +1071,11 @@ function teleport_squad(actor, npc, p)
 		return 
 	end
 	
-	local idx = p[3] or 0
+	printf("before tele squad %s",p[1])
+	local idx = tonumber(p[3]) or 0
 	TeleportSquad(squad,path:point(idx),path:level_vertex_id(idx),path:game_vertex_id(idx))
 	--squad:set_squad_position(path:point(idx))
+	printf("after tele squad %s",p[1])
 end
 
 function jup_teleport_actor(actor, npc)
@@ -2143,16 +2148,16 @@ end
 ]]--
 
 function create_squad(actor, obj, p)
-	-- if obj ~= nil then
-		-- printf("pl:creating_squad from obj [%s] in section [%s]", tostring(obj:name()), tostring(db.storage[obj:id()].active_section))
-	-- end
+
 	local squad_id = p[1]
 	if squad_id == nil then
 		printf("Wrong squad identificator [NIL] in create_squad function")
+		return
 	end
 	local smart_name = p[2]
 	if smart_name == nil then
 		printf("Wrong smart name [NIL] in create_squad function")
+		return
 	end
 
 	local ltx = system_ini()
@@ -2185,7 +2190,6 @@ function create_squad(actor, obj, p)
 	end
 
 	--squad:update()
-	return squad
 end
 
 function create_squad_member(actor, obj, p)
@@ -2322,22 +2326,6 @@ function heal_squad(actor, obj, p)
 	end
 end
 
---[[
-function update_squad(actor, obj, p)
-	local squad_id = p[1]
-	if squad_id == nil then
-		printf("Wrong squad identificator [NIL] in remove_squad function")
-	end
-	local board = SIMBOARD
-	local squad = board.squads[squad_id]
-	if squad == nil then
-		assert("Wrong squad identificator [%s]. squad doesnt exist", tostring(squad_id))
-		return
-	end
-	squad:update()
-end
-]]--
-
 -- this deletes squads from a smart
 function clear_smart_terrain(actor, obj, p)
 	local smart_name = p[1]
@@ -2349,11 +2337,14 @@ function clear_smart_terrain(actor, obj, p)
 	local smart = board.smarts_by_names[smart_name]
 	local smart_id = smart.id
 	for k,v in pairs(board.smarts[smart_id].squads) do
-		if p[2] and p[2] == "true" then
-			board:remove_squad(v)
-		else
-			if not get_object_story_id(v.id) then
-				board:remove_squad(v)
+		local squad = alife_object(k)
+		if (squad) then
+			if p[2] and p[2] == "true" then
+				board:remove_squad(squad)
+			else
+				if not get_object_story_id(squad.id) then
+					board:remove_squad(squad)
+				end
 			end
 		end
 	end
@@ -2364,15 +2355,14 @@ function flush_smart_terrain(actor,obj,p)
 	local smart_name = p[1]
 	if smart_name == nil then
 		printf("Wrong squad identificator [NIL] in clear_smart_terrain function")
+		return
 	end
 
-	local board = SIMBOARD
-	
 	local function unregister(squad)
 		squad.assigned_target_id = nil
 		squad.current_target_id = nil
 		squad.current_action = nil
-		board:assign_squad_to_smart(squad, nil)
+		SIMBOARD:assign_squad_to_smart(squad, nil)
 		for k in squad:squad_members() do
 			local se_obj = alife_object(k.id)
 			if (se_obj) then
@@ -2387,14 +2377,17 @@ function flush_smart_terrain(actor,obj,p)
 		end
 	end
 	
-	local smart = board.smarts_by_names[smart_name]
+	local smart = SIMBOARD.smarts_by_names[smart_name]
 	local smart_id = smart.id
-	for k,v in pairs(board.smarts[smart_id].squads) do
-		if p[2] and p[2] == "true" then
-			unregister(v)
-		else
-			if not get_object_story_id(v.id) then
-				unregister(v)
+	for k,v in pairs(SIMBOARD.smarts[smart_id].squads) do
+		local squad = alife_object(k)
+		if (squad) then
+			if p[2] and p[2] == "true" then
+				unregister(squad)
+			else
+				if not get_object_story_id(k) then
+					unregister(squad)
+				end
 			end
 		end
 	end	

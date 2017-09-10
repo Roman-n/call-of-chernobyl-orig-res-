@@ -151,7 +151,7 @@ function msg_box_ui:InitControls(obj,disable_msg,item)
 	self.item = item
 
 	if (string.find(self.name,obj:id())) then
-		local story_name = story_objects.get_story_objects_registry():get_story_id(obj:id())
+		local story_name = get_object_story_id(obj:id())
 		self.name = story_name or self.name
 	end
 

@@ -29,7 +29,7 @@ end
 
 function arrived_to_smart(se_obj, smart)
 	--alun_utils.debug_nearest(se_obj,"check arrived_to_smart %s",smart:name())
-	local squad = se_obj.group_id and SIMBOARD.squads[se_obj.group_id]
+	local squad = se_obj.group_id and se_obj.group_id ~= 65535 and alife_object(se_obj.group_id)
 	if (squad) then 
 		if (squad.current_action == 1 and squad.assigned_target_id == smart.id) then 
 			return true
@@ -115,7 +115,7 @@ end
 
 function se_smart_terrain:on_unregister()
 	SIMBOARD:unregister_smart(self)
-	unregister_story_object_by_id(self.id)
+	story_objects.unregister(self.id)
 	simulation_objects.unregister(self)
 	db.del_smart_terrain(self)
 	--if (USE_MARSHAL) then 
@@ -625,6 +625,7 @@ function se_smart_terrain:select_npc_job(npc_info,now,surge_started)
 
 					if (npc_info.current_index > #jobs) then
 						npc_info.current_index = 1
+						break
 					end
 
 					-- Step through job table one step at a time looking for a higher prior job
@@ -685,6 +686,7 @@ function se_smart_terrain:select_npc_job(npc_info,now,surge_started)
 
 			if (npc_info.current_index > STEP_SIZE_NO_JOB) then
 				npc_info.current_index = 1
+				break
 			end
 
 			-- Step through job table one step at a time looking for a high prior job
@@ -1072,7 +1074,8 @@ function se_smart_terrain:stayed_squad_count()
 	local smrt = SIMBOARD.smarts[self.id]
 	if (smrt) then
 		local count = 0
-		for k,squad in pairs(smrt.squads) do
+		for k,v in pairs(smrt.squads) do
+			local squad = alife_object(k)
 			if (squad and squad.current_target_id and squad.current_target_id == self.id) then
 				count = count + 1
 			end
@@ -1124,7 +1127,7 @@ function se_smart_terrain:get_smart_props()
 			
 		--' Добавляем информацию о находящихся в смарте отрядах
 		for k,v in pairs(SIMBOARD.smarts[self.id].squads) do
-			props = props .. tostring(v.id) .. "\\n"
+			props = props .. tostring(k) .. "\\n"
 		end
 
 		if (self.props) then
@@ -1442,8 +1445,9 @@ end
 
 function smart_terrain_squad_count(board_smart_squads)
 	local count = 0
-	for k,v in pairs(board_smart_squads) do
-		if v:get_script_target() == nil then
+	for id,v in pairs(board_smart_squads) do
+		local squad = alife_object(id)
+		if (squad and squad:get_script_target() == nil) then
 			count = count + 1
 		end
 	end

@@ -100,7 +100,7 @@ function se_monster:on_unregister()
 	end
 	
 	db.offline_objects[self.id] = nil
-	unregister_story_object_by_id(self.id)
+	story_objects.unregister(self.id)
 	cse_alife_monster_base.on_unregister(self)
 end
 --------------------

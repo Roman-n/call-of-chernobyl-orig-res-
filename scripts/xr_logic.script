@@ -375,14 +375,14 @@ function check_action(npc, st, event_fn, p)
 	return true
 end
 
-function pick_section_from_condlist(actor, npc, condlist)
+function pick_section_from_condlist(obj, npc, condlist)
 	if not (condlist) then
 		return ""
 	end
 	
-	actor = actor or db.actor
+	local actor = db.actor
 	
-	local npc_id = npc and type(npc.id) == "function" and npc:id()
+	local npc_id = npc and IsStalker(npc) and type(npc.id) == "function" and npc:id()
 	npc_id = npc_id == 0 and nil or npc_id -- we want only npc not actor
 
 	local sim = alife()
@@ -401,9 +401,11 @@ function pick_section_from_condlist(actor, npc, condlist)
 								break
 							end
 						end
-					elseif not (sim:has_info(0,infop[1])) then
-						infop_conditions_met = false
-						break
+					elseif (actor) then 
+						if not (actor:has_info(infop[1])) then
+							infop_conditions_met = false
+							break
+						end
 					end
 				elseif (infop[2] == 2) then 
 					if (infop[3]) then
@@ -413,15 +415,17 @@ function pick_section_from_condlist(actor, npc, condlist)
 								break
 							end
 						end
-					elseif (sim:has_info(0,infop[1])) then
-						infop_conditions_met = false
-						break
+					elseif (actor) then 
+						if (actor:has_info(infop[1])) then
+							infop_conditions_met = false
+							break
+						end
 					end
 				elseif (infop[2] == 3) then
 					if not (xr_conditions[infop[1]]) then
 						printf("pick_section_from_condlist xr_conditions fail! obj=%s functor=%s",npc and npc:name(),infop[1])
 					end
-					if not xr_conditions[infop[1]](actor, npc, infop[3]) then
+					if not xr_conditions[infop[1]](obj, npc, infop[3]) then
 						infop_conditions_met = false
 						break
 					end
@@ -429,7 +433,7 @@ function pick_section_from_condlist(actor, npc, condlist)
 					if not (xr_conditions[infop[1]]) then
 						printf("pick_section_from_condlist xr_conditions fail! obj=%s functor=%s",npc and npc:name(),infop[1])
 					end
-					if xr_conditions[infop[1]](actor, npc, infop[3]) then
+					if xr_conditions[infop[1]](obj, npc, infop[3]) then
 						infop_conditions_met = false
 						break
 					end
@@ -453,9 +457,9 @@ function pick_section_from_condlist(actor, npc, condlist)
 									npc:give_info_portion(infop[1])
 								end
 							end
-						elseif (db.actor) then
-							if not (db.actor:has_info(infop[1])) then 
-								db.actor:give_info_portion(infop[1])
+						elseif (actor) then
+							if not (actor:has_info(infop[1])) then 
+								actor:give_info_portion(infop[1])
 							end
 						end
 					elseif (infop[2] == 2) then 
@@ -465,16 +469,16 @@ function pick_section_from_condlist(actor, npc, condlist)
 									npc:disable_info_portion(infop[1])
 								end
 							end
-						elseif (db.actor) then
-							if (db.actor:has_info(infop[1])) then 
-								db.actor:disable_info_portion(infop[1])
+						elseif (actor) then
+							if (actor:has_info(infop[1])) then 
+								actor:disable_info_portion(infop[1])
 							end
 						end
 					elseif (infop[2] == 3 or infop[2] == 4) then
 						if not (xr_effects[infop[1]]) then
 							printf("pick_section_from_condlist xr_effects fail! obj=%s functor=%s",npc and npc:name(),infop[1])
 						end
-						xr_effects[infop[1]](actor, npc, infop[3])
+						xr_effects[infop[1]](obj, npc, infop[3])
 					end
 				end
 			end
