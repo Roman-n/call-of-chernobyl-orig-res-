@@ -271,15 +271,13 @@ function action_car:reset_scheme(loading)
 	            --printf("car <state>: firetarget = points")
 		        self.path_fire = patrol(self.st.path_fire)
 		        if not self.path_fire then
-			        --printf("object '%s': unable to find path_fire '%s' on the map",
-				        self.object:name(), self.st.path_fire)
+			        --printf("object '%s': unable to find path_fire '%s' on the map", self.object:name(), self.st.path_fire)
 		        end
 
 	            if not self.path_fire_info then
 		            self.path_fire_info = utils.path_parse_waypoints(self.st.path_fire)
 	                if not self.path_fire_info then
-		                --printf("object '%s': path_fire ('%s'): unable to obtain path_fire_info from path",
-			                self.object:name(), self.st.path_fire)
+		                --printf("object '%s': path_fire ('%s'): unable to obtain path_fire_info from path",self.object:name(), self.st.path_fire)
 	                end
 	            end
         	    
