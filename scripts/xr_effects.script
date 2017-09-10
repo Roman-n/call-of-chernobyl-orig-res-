@@ -2362,6 +2362,7 @@ function flush_smart_terrain(actor,obj,p)
 		squad.assigned_target_id = nil
 		squad.current_target_id = nil
 		squad.current_action = nil
+		squad.was_forced_offline = true
 		SIMBOARD:assign_squad_to_smart(squad, nil)
 		for k in squad:squad_members() do
 			local se_obj = alife_object(k.id)
