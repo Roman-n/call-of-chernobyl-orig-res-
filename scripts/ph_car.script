@@ -137,8 +137,7 @@ function action_car:reset_scheme(loading)
 	        --if not self.path_walk_info then
 		    self.path_walk_info = utils.path_parse_waypoints(self.st.path_walk)
 	        if not self.path_walk_info then
-		        --printf("object '%s': path_walk ('%s'): unable to obtain path_walk_info from path",
-			        self.object:name(), self.st.path_walk)
+		        --printf("object '%s': path_walk ('%s'): unable to obtain path_walk_info from path",self.object:name(), self.st.path_walk)
 	        end
 	        --end
 
