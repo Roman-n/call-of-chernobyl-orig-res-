@@ -18,6 +18,8 @@ function npc_is_tech(a,b)
 end
 
 function rescue_hostage(a,b)
+	a:stop_talk()
+	b:stop_talk()
 	local npc = who_is_npc(a,b)
 	local squad = get_object_squad(npc)
 	if (squad) then 

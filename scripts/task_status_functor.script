@@ -205,7 +205,7 @@ function hostage_task(tsk,task_id)
 			tsk.stage = 1
 		end
 	elseif (tsk.stage == 1) then
-		if not (axr_task_manager.is_task_giver_valid(tsk)) then
+		if not (axr_task_manager.is_task_giver_valid(tsk) and db.actor:is_talking()) then -- is_talking necessary or crash
 			local hud = get_hud()
 			if (hud) then
 				hud:HideActorMenu()
