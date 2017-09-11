@@ -157,7 +157,7 @@
 		<text>Сейчас</text>
 	</string>
 	<string id="ui_inv_health">
-		<text>Восстановление здоровья</text>
+		<text>Восст. здоровья</text>
 	</string>
 	<string id="ui_inv_heavy_weapons">
 		<text>Тяжёлое</text>
@@ -214,7 +214,7 @@
 		<text>Взрыв</text>
 	</string>
 	<string id="ui_inv_power">
-		<text>Восстановление сил</text>
+		<text>Восст. сил</text>
 	</string>
 	<string id="ui_inv_preset1(F1)">
 		<text>Набор 1 (F1)</text>

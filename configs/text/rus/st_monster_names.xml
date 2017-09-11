@@ -23,4 +23,20 @@
 		<text>Образец №8с</text>
 	</string>
 
+	<string id="bar_arena_savage">
+		<text>Зомбированный</text>
+	</string>
+	<string id="bar_arena_bloodsucker">
+		<text>Кровосос</text>
+	</string>
+	<string id="bar_arena_burer">
+		<text>Бюрер</text>
+	</string>
+	<string id="bar_arena_pseudodog">
+		<text>Псевдопёс</text>
+	</string>
+	<string id="bar_arena_snork">
+		<text>Снорк</text>
+	</string>
+
 </string_table>
