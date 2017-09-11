@@ -108,7 +108,6 @@ end
 function calculate_max_hit_power_value()
 	local sections_by_hit_power_value = DEV_DEBUG_DEV and {} or nil
 	max_hit_power_value = 0
-	local max_sect,min_sect
 	local gd = level.get_game_difficulty()+1
 	local ini = system_ini()
 	ini:section_for_each(function(section)
@@ -146,7 +145,7 @@ function calculate_max_hit_power_value()
 			end
 	
 			for k,v in spairs(sections_by_hit_power_value, function(t,a,b) return t[a] < t[b] end) do 
-				cfg:write(addTab(k,40).." = " .. v .. "\n")
+				cfg:write(addTab(k,40).." = " .. v .. " | " .. string.format("%.2f",normalize(v,0,max_hit_power_value)) .. "% of max\n")
 			end
 			cfg:close()
 			printf("successfully created weapons_hit_power.ltx")
