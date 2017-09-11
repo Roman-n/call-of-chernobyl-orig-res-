@@ -48,7 +48,8 @@ function read_float(wpn_section, upgr_sections, param)
 	end 
 	
 	if (upgr_sections and upgr_sections ~= "") then
-		for k, sect in pairs(parse_names(upgr_sections)) do
+		local upgrades = parse_names(upgr_sections)
+		for i, sect in ipairs(upgrades) do
 			if param == "hit_power" then
 				local t = parse_names(ltx:r_string_ex(sect,param) or "")
 				res = res + (tonumber(t[gd] or t[1]) or 0)
@@ -113,19 +114,30 @@ function calculate_max_hit_power_value()
 	ini:section_for_each(function(section)
 		if (ini:line_exist(section,"hit_power") and ini:line_exist(section,"ammo_class") and ini:line_exist(section,"hud")) then
 			local class = ini:r_string_ex(section,"class")
-			if (class ~= "WP_RPG7" and class ~= "WP_RG6" and class ~= "W_MOUNTD" and class ~= "W_STMGUN" and class ~= "WP_BINOC") then
+			if (class ~= "WP_RPG7" and class ~= "WP_RG6" and class ~= "W_MOUNTD" and class ~= "W_STMGUN" and class ~= "WP_BINOC" and class ~= "WP_KNIFE") then
 				local t = parse_names(ini:r_string_ex(section,"hit_power") or "")
 				local hit_power = tonumber(t[gd] or t[1]) or 0
 				local ammo_section = parse_names(ini:r_string_ex(section,"ammo_class") or "")[1] or ""
 				local k_hit = ini:r_float_ex(ammo_section,"k_hit",0.5)
-				local new_hit_power = (hit_power * k_hit) * ini:r_float_ex(ammo_section,"buck_shot",1)
+				
+				local upgrade_list = ini:r_list(section,"upgrades")
+				if (upgrade_list) then 
+					for i,sect in ipairs(upgrade_list) do 
+						local hit_power_list = ini:r_list(sect,"hit_power")
+						if (hit_power_list) then 
+							hit_power = hit_power + (tonumber(hit_power_list[gd] or hit_power_list[1]) or 0)
+						end
+					end				
+				end
+		
+				hit_power = (hit_power * k_hit) * ini:r_float_ex(ammo_section,"buck_shot",1)
 				
 				if (DEV_DEBUG_DEV) then
-					sections_by_hit_power_value[section] = new_hit_power
+					sections_by_hit_power_value[section] = hit_power
 				end
 				
-				if (new_hit_power > max_hit_power_value) then 
-					max_hit_power_value = new_hit_power
+				if (hit_power > max_hit_power_value) then 
+					max_hit_power_value = hit_power
 				end
 			end
 		end
