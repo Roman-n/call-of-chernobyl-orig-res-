@@ -106,22 +106,50 @@ function GetAccuracy(wpn_section, upgr_sections) --' точность
 end
 
 function calculate_max_hit_power_value()
+	local sections_by_hit_power_value = DEV_DEBUG_DEV and {} or nil
 	max_hit_power_value = 0
+	local max_sect,min_sect
 	local gd = level.get_game_difficulty()+1
 	local ini = system_ini()
 	ini:section_for_each(function(section)
-		if (ini:line_exist(section,"hit_power") and ini:line_exist(section,"ammo_class")) then
+		if (ini:line_exist(section,"hit_power") and ini:line_exist(section,"ammo_class") and ini:line_exist(section,"hud")) then
 			local class = ini:r_string_ex(section,"class")
-			if (class ~= "WP_RPG7" and class ~= "WP_RG6") then
+			if (class ~= "WP_RPG7" and class ~= "WP_RG6" and class ~= "W_MOUNTD" and class ~= "W_STMGUN" and class ~= "WP_BINOC") then
 				local t = parse_names(ini:r_string_ex(section,"hit_power") or "")
 				local hit_power = tonumber(t[gd] or t[1]) or 0
 				local ammo_section = parse_names(ini:r_string_ex(section,"ammo_class") or "")[1] or ""
 				local k_hit = ini:r_float_ex(ammo_section,"k_hit",0.5)
 				local new_hit_power = (hit_power * k_hit) * ini:r_float_ex(ammo_section,"buck_shot",1)
+				
+				if (DEV_DEBUG_DEV) then
+					sections_by_hit_power_value[section] = new_hit_power
+				end
+				
 				if (new_hit_power > max_hit_power_value) then 
 					max_hit_power_value = new_hit_power
 				end
 			end
 		end
 	end)
+	
+	-- List of all weapons and their calculated hit_power values
+	if (DEV_DEBUG_DEV) then
+		local cfg,err = io.open("weapons_hit_power.ltx","w+")
+		if not (err) then
+			local function addTab(s,n)
+				local padding = {}
+				local l = string.len(s)
+				for i=1,n-l do 
+					padding[#padding+1] = " "
+				end 
+				return s .. table.concat(padding)
+			end
+	
+			for k,v in spairs(sections_by_hit_power_value, function(t,a,b) return t[a] < t[b] end) do 
+				cfg:write(addTab(k,40).." = " .. v .. "\n")
+			end
+			cfg:close()
+			printf("successfully created weapons_hit_power.ltx")
+		end
+	end
 end
