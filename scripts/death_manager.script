@@ -251,13 +251,19 @@ function set_weapon_drop_condition(npc,itm)
 		end
 		-- spawn grenade ammo if there is launcher attached
 		if (ini:r_float_ex(itm:section(),"grenade_launcher_status") > 0) then
-			ammo_class = alun_utils.parse_list(ini,itm:section(),"grenade_class")
-			for i=1,#ammo_class do
-				sec = ammo_class[i]
-				if (sec and item_count[sec]) then 
-					number = math.random(item_count[sec][1], item_count[sec][2])
-					if (number > 0 and system_ini():section_exist(sec)) then 
-						create_ammo(sec,npc:position(),npc:level_vertex_id(),npc:game_vertex_id(),npc:id(),number)
+			local se_item = alife_object(itm:id())
+			if (se_item) then
+				local flags = se_item:get_addon_flags()
+				if (flags:is(cse_alife_item_weapon.eWeaponAddonGrenadeLauncher)) then
+					ammo_class = alun_utils.parse_list(ini,itm:section(),"grenade_class")
+					for i=1,#ammo_class do
+						sec = ammo_class[i]
+						if (sec and item_count[sec]) then 
+							number = math.random(item_count[sec][1], item_count[sec][2])
+							if (number > 0 and system_ini():section_exist(sec)) then 
+								create_ammo(sec,npc:position(),npc:level_vertex_id(),npc:game_vertex_id(),npc:id(),number)
+							end
+						end
 					end
 				end
 			end
