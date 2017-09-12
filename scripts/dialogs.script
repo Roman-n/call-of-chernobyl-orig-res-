@@ -664,7 +664,7 @@ function transfer_bandage(first_speaker, second_speaker)
 	second_speaker:set_relation(game_object.friend, first_speaker)
 end
 function kill_yourself(first_speaker, second_speaker)
-local npc = who_is_npc(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
 	npc:kill(actor)
 end
 

@@ -59,10 +59,13 @@ function heli_binder:reinit()
 	self.flame_start_health   = system_ini():r_float_ex("helicopter","flame_start_health") or 0.1
 
 	local spawn_ini = self.object:spawn_ini()
-	self.snd_hit	= spawn_ini and spawn_ini:r_string_ex("helicopter","snd_hit") or "heli_hit"
-	self.snd_damage = spawn_ini and spawn_ini:r_string_ex("helicopter","snd_damage") or "heli_damaged"
-	self.snd_down	= spawn_ini and spawn_ini:r_string_ex("helicopter","snd_down") or "heli_down"
-
+	if (spawn_ini) then
+		self.snd_hit	= spawn_ini:r_string_ex("helicopter","snd_hit") or "heli_hit"
+		self.snd_damage = spawn_ini:r_string_ex("helicopter","snd_damage") or "heli_damaged"
+		self.snd_down	= spawn_ini:r_string_ex("helicopter","snd_down") or "heli_down"
+		self.is_story_heli = spawn_ini:section_exist("logic")
+	end 
+	
 	-- на случай загрузки
 	self.st.last_alt       = self.st.heliObject:GetRealAltitude()
 	self.st.alt_check_time = time_global() + 1000
@@ -217,25 +220,21 @@ function heli_binder:update( delta )
 			xr_logic.issue_event( self.object, self.st[self.st.active_scheme], "update", delta )
 		end
 
-		self.object:info_clear()
-		local active_section = db.storage[self.object:id()].active_section
-		if active_section then
-			self.object:info_add('section -- ' .. active_section)
-		end
-		
-		-- Down to Earth achievement
-		-- Kills off any remaining strong helicopters.
-		if (has_alife_info("achieved_down_to_earth")) then
-			local self_destruct = system_ini():r_bool_ex(self.object:section(), "kill_with_achievement", false)
-			if (not self.st.heliObject.m_dead and self_destruct == true) then
-				self.self_destruct = true
+		if not (self.is_story_heli) then -- has custom logic from spawn
+			-- Down to Earth achievement
+			-- Kills off any remaining strong helicopters.
+			if (has_alife_info("achieved_down_to_earth")) then
+				local self_destruct = system_ini():r_bool_ex(self.object:section(), "kill_with_achievement", false)
+				if (not self.st.heliObject.m_dead and self_destruct == true) then
+					self.self_destruct = true
+				end
 			end
-		end
-		
-		-- heli alife simulation
-		local se_obj = alife_object(self.object:id())
-		if (se_obj and se_obj.player_id) then
-			heli_alife.update(self.object,se_obj,self.st.heliObject)
+			
+			-- heli alife simulation
+			local se_obj = alife_object(self.object:id())
+			if (se_obj and se_obj.player_id) then
+				heli_alife.update(self.object,se_obj,self.st.heliObject)
+			end
 		end
 	end
 	
@@ -251,19 +250,20 @@ function heli_binder:net_spawn( se_abstract )
 		return false
 	end
 	
-	local se_obj = alife_object(se_abstract.id)
-	if (se_obj.m_smart_terrain_id) then
-		smart_terrain.setup_gulag_and_logic_on_spawn(self.object, self.st, se_obj, modules.stype_heli, self.loaded)
+	if not (self.is_story_heli) then
+		local se_obj = alife_object(se_abstract.id)
+		if (se_obj.m_smart_terrain_id) then
+			smart_terrain.setup_gulag_and_logic_on_spawn(self.object, self.st, se_obj, modules.stype_heli, self.loaded)
+		end
+			if (axr_main.config:r_value("mm_options","enable_heli_spawn",1,true) == false) then 
+			self.self_destruct = true
+		end
 	end
 
 	db.add_obj(self.object)
 	db.add_heli(self.object)
 	
 	self.st.heliObject = self.object:get_helicopter()
-	
-	if (axr_main.config:r_value("mm_options","enable_heli_spawn",1,true) == false) then 
-		self.self_destruct = true
-	end
 	
 	return true
 end
@@ -367,15 +367,27 @@ function heli_binder:on_hit( power, impulse, hit_type, enemy_id )
 	end
 	
 	-- is simulation heli
-	local se_obj = alife_object(self.object:id())
-	if (se_obj and se_obj.player_id) then
-		if (enemy_id == 0) then 
-			utils.save_var(db.actor,"heli_enemy_flag",true)
-		else 
-			db.storage[enemy_id].heli_enemy_flag = true
+	if not (self.is_story_heli) then
+		local se_obj = alife_object(self.object:id())
+		if (se_obj and se_obj.player_id) then
+			if (enemy_id == 0) then 
+				utils.save_var(db.actor,"heli_enemy_flag",true)
+			else 
+				db.storage[enemy_id].heli_enemy_flag = true
+			end
+			if (db.storage[self.object:id()]) then
+				db.storage[self.object:id()].hitted_by = enemy_id
+			end
 		end
-		if (db.storage[self.object:id()]) then
-			db.storage[self.object:id()].hitted_by = enemy_id
+		
+		-- Down to Earth achievement
+		local helicopter_health = get_heli_health(self.st.heliObject,self.st)
+		local weapon = db.actor:active_item()
+		if (enemy_id == 0 and helicopter_health <= 0.005) then
+			xr_statistic.inc_counter("heli_kills")
+			if (IsLauncher(weapon)) then
+				xr_statistic.inc_counter("heli_rocket_kills")
+			end
 		end
 	end
 	
@@ -383,16 +395,6 @@ function heli_binder:on_hit( power, impulse, hit_type, enemy_id )
 	if self.last_hit_snd_timeout < time_global() then
 		xr_sound.set_sound_play(self.object:id(), self.snd_hit)
 		self.last_hit_snd_timeout = time_global() + math.random( 4000, 8000 )
-	end
-	
-	-- Down to Earth achievement
-	local helicopter_health = get_heli_health(self.st.heliObject,self.st)
-	local weapon = db.actor:active_item()
-	if (enemy_id == 0 and helicopter_health <= 0.005) then
-		xr_statistic.inc_counter("heli_kills")
-		if (IsLauncher(weapon)) then
-			xr_statistic.inc_counter("heli_rocket_kills")
-		end
 	end
 	
 	SendScriptCallback("heli_on_hit_callback",self.object,power,nil,enemy,nil)
