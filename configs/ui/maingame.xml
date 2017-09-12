@@ -209,17 +209,13 @@
 	        </progress>
 	    </progress_bar_stamina>
 
+		<static_wpn_icon x="971" y="735" width="30" height="30" align="c" alignment="c"/>
 
-
-
-
-
-
-	<static_wpn_icon x="971" y="735" width="30" height="30" align="c" alignment="c"/>
-
-
-
-	<static_cur_ammo x="930" y="699" width="26" height="15">
+		<!-- For ammo text -->
+		<active_ammo_color r="238" g="155" b="23" a="255"/>
+		<inactive_ammo_color r="238" g="155" b="23" a="150"/>
+		
+		<static_cur_ammo x="930" y="699" width="26" height="15">
 			<text complex_mode="0" font="graffiti19" r="179" g="152" b="109"  align="c" 	vert_align="l">ammo</text>
 		</static_cur_ammo>
 
