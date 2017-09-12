@@ -242,7 +242,7 @@ function activate_by_section(npc, ini, section, gulag_name, loading)
 	end
 
 	-- Загрузить оверрайды:
-	db.storage[npc_id].overrides = cfg_get_overrides(ini, section, npc)
+	db.storage[npc_id].overrides = cfg_get_overrides(ini, section, npc, db.storage[npc_id].overrides)
 
 	-- Сбросить общие схемы:
 	reset_generic_schemes_on_scheme_switch(npc, scheme, section)
@@ -502,7 +502,7 @@ function switch_to_section(npc, ini, section)
 		return false
 	end
 	
-	db.storage[npc_id].overrides = cfg_get_overrides(ini, section, npc)
+	db.storage[npc_id].overrides = cfg_get_overrides(ini, section, npc, db.storage[npc_id].overrides)
 	
 	if (axr_beh) then utils.save_var(npc,"path_index",1) end
 	
@@ -880,10 +880,10 @@ function cfg_get_switch_conditions(ini, section, npc)
 	return lst
 end
 
-function cfg_get_overrides(ini, section, npc)
-	local l = {}
+function cfg_get_overrides(ini, section, npc, l)
+	l = empty_table(l) -- reuse to not create GC waste
 	l.combat_ignore     = cfg_get_condlist(ini, section, "combat_ignore_cond", npc)
-	l.enemy_ignore 		= cfg_get_condlist(ini, section, "enemy_ignore_cond", npc)
+	l.combat_ignore_me	= cfg_get_condlist(ini, section, "combat_ignore_me_cond", npc)
 	l.no_combat_job		= cfg_get_condlist(ini, section, "no_combat_job", npc)
 	l.combat_ignore_keep_when_attacked = ini:r_bool_ex(section, "combat_ignore_keep_when_attacked",false)
 	l.combat_type       = cfg_get_condlist(ini, section, "combat_type", npc)
@@ -1189,9 +1189,10 @@ function set_new_scheme_and_logic(npc,scheme,section,logic,gulag,ini_filename)
 	-- Select new active section
 	local new_section = section or xr_logic.determine_section_to_activate(npc, st.ini, st.section_logic)
 
+	db.storage[npc:id()].overrides = cfg_get_overrides(st.ini, new_section, npc, db.storage[npc:id()].overrides)
+	
 	-- Switch to new section
 	xr_logic.switch_to_section(npc, st.ini, new_section)
-	db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, new_section, npc)
 end
 
 function restore_scheme_and_logic(npc)
@@ -1202,29 +1203,6 @@ function restore_scheme_and_logic(npc)
 	st.active_scheme = nil
 	st.section_logic = "logic"
 	xr_logic.switch_to_section(npc,nil,nil)
-	-- Load old logic
-	--[[
-	st.ini_filename = utils.load_var(npc,"old_ini_filename", st.loaded_ini_filename)
-	--st.ini = ini_file(st.ini_filename)
-	if (not st.ini_filename) or (string.find(st.ini_filename,"*")) or (string.find(st.ini_filename,"<customdata>")) then
-		st.ini_filename = "<customdata>"
-		st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
-		st.active_section = nil
-		st.active_scheme = nil
-		st.section_logic = "logic"
-		xr_logic.switch_to_section(npc,nil,nil)
-	else
-		local active_section = utils.load_var(npc,"old_active_section", st.active_section)
-		local section_logic = utils.load_var(npc,"old_section_logic", st.section_logic)
-
-		st.ini = ini_file(st.ini_filename)
-		local section = st.ini:section_exist(active_section) and active_section or xr_logic.determine_section_to_activate(npc, st.ini, section_logic)
-		st.section = section
-
-		xr_logic.switch_to_section(npc,st.ini,section)
-		db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, section, npc)
-	end
-	--]]
 end
 
 function reset_logic(npc,st)

@@ -15,7 +15,7 @@ path_walk = agr_duty_commander_walk
 path_look = agr_duty_commander_look
 meet = meet@agr_military_colonel_kovalski
 on_actor_dist_le = 20 | {+agr_military_colonel_kovalski_talk  =actor_in_zone(agr_smart_terrain_1_6_surge_hide_a1)} remark@1
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 invulnerable = {!actor_enemy} true, false
 

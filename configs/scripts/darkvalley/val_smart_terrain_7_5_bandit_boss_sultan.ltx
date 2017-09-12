@@ -10,7 +10,7 @@ avail_animations = animpoint_sit_normal
 cover_name = val_smart_terrain_7_5_sc_sultan
 ;reach_distance = 1.5
 meet = meet@base
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 invulnerable = {!actor_enemy} true, false
 gather_items_enabled = false

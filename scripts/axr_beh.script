@@ -163,7 +163,7 @@ function action_beh:set_desired_target()
 	
 	self.st.target = target
 
-	local t = self.st.desired_target and empty_table(self.st.desired_target) or {}
+	local t = empty_table(self.st.desired_target)
 	local function set_position_data(id)
 		local obj = level.object_by_id(id)
 		local sobj = alife_object(id)

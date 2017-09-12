@@ -22,7 +22,7 @@ trade_enable = true
 
 [walker@generic]
 meet = meet@default
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 invulnerable = {!actor_enemy} true, false
 out_restr = jup_b41_sr_light

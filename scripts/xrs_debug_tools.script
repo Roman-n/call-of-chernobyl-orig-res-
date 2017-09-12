@@ -678,20 +678,17 @@ function monster_hud_show(hud)
 		hud:add_msg("Best Enemy",be and be:name())
 		hud:add_msg("GetEnemy",near:get_enemy() and near:get_enemy():name())
 		
-		if (st.overrides and st.overrides.combat_ignore) then
-			hud:add_msg("CombatIgnoreCond",xr_logic.pick_section_from_condlist(be, near, st.overrides.combat_ignore.condlist))
-		end
-		
-		be = near:get_enemy()
-		hud:add_msg("Enemy",be and be:name())
+		if (be) then
+			hud:add_msg("CombatIgnoreCond",st.overrides == nil and "overrides is nil!" or st.overrides.combat_ignore == nil and "overrides.combat_ignore is nil!" or xr_logic.pick_section_from_condlist(be, near, st.overrides.combat_ignore.condlist))
+			local ene_st = be and db.storage[be:id()] and db.storage[be:id()].overrides and db.storage[be:id()].overrides.combat_ignore_me and db.storage[be:id()].overrides.combat_ignore_me.condlist
+			if (ene_st) then
+				hud:add_msg("CombatIgnoreMeCond",xr_logic.pick_section_from_condlist(be, near, ene_st))
+			end
+		end 
 		
 		local ce = near:get_corpse()
 		hud:add_msg("Corpse",ce and ce:name())
 		
-		if (st.overrides and st.overrides.combat_ignore and be) then
-			hud:add_msg("CombatIgnoreCond",xr_logic.pick_section_from_condlist(be, near, st.overrides.combat_ignore.condlist))
-		end
-
 		local smart = sobj.m_smart_terrain_id and sobj.m_smart_terrain_id ~= 65535 and alife_object(sobj.m_smart_terrain_id)
 		local npc_info = smart and smart.npc_info[near:id()]
 		if (npc_info) then 
@@ -1470,15 +1467,16 @@ function enemy_hud_show(hud)
 				hud:add_msg("Best Enemy",be and be:name())
 				hud:add_msg("Can See",near:see(be))
 			end
-			
-			hud:add_msg("GetEnemy",near:get_enemy() and near:get_enemy():name())
 
 			local ene = st.enemy_id and level.object_by_id(st.enemy_id)
 			if (ene) then
 				-- What I call pure enemy is an evaluated enemy before combat ignore condition check
 				hud:add_msg("Pure Enemy",ene and ene:name())
-				if (st.overrides and st.overrides.combat_ignore) then
-					hud:add_msg("combat_ignore_cond",xr_logic.pick_section_from_condlist(ene, near, st.overrides.combat_ignore.condlist))
+				
+				hud:add_msg("CombatIgnoreCond",st.overrides == nil and "overrides is nil!" or st.overrides.combat_ignore == nil and "overrides.combat_ignore is nil!" or xr_logic.pick_section_from_condlist(ene, near, st.overrides.combat_ignore.condlist))
+				local ene_st = db.storage[ene:id()] and db.storage[ene:id()].overrides and db.storage[ene:id()].overrides.combat_ignore_me and db.storage[ene:id()].overrides.combat_ignore_me.condlist
+				if (ene_st) then
+					hud:add_msg("CombatIgnoreMeCond",xr_logic.pick_section_from_condlist(ene, near, ene_st))
 				end
 			end
 			

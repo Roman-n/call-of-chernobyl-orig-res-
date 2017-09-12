@@ -8,7 +8,7 @@ turn_on_campfire = false
 reach_movement = walk_noweap
 use_camp = false
 meet = meet@bar_visitors_animpoint_meet
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 invulnerable = {!actor_enemy} true, false
 gather_items_enabled = false
@@ -130,7 +130,7 @@ prior = 65
 
 [beh@general]
 meet = meet@bar_visitors_animpoint_meet
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 invulnerable = {!actor_enemy} true, false
 gather_items_enabled = false
@@ -431,7 +431,7 @@ path_walk = bar_arena_manager_walk
 path_look = bar_arena_manager_look
 meet = meet@bar_arena_manager
 invulnerable = {!actor_enemy} true, false
-combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_cond = {=is_enemy_actor_or_companion} false, true
 combat_ignore_keep_when_attacked = true
 
 [meet@bar_arena_manager]
