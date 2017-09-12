@@ -63,7 +63,7 @@ function action_point_campfire:activate_scheme()
 			local campfire
 			local t = {}
 			local function create_campfire_point(pos,dir)
-				local radius = 2
+				local radius = 1.5
 				local vertex_id = 4294967295
 				local tmp_pos = vector():set(0,0,0)
 				while (level.valid_vertex(vertex_id) ~= true) do
@@ -72,12 +72,13 @@ function action_point_campfire:activate_scheme()
 					tmp_pos.y = pos.y
 
 					vertex_id = level.vertex_id(tmp_pos)
-					if (level.valid_vertex(vertex_id) or used_vids[vertex_id]) then
-						if (radius > 1) then
-							radius = radius - 1
-						else
-							break
-						end
+					if (level.valid_vertex(vertex_id) and not used_vids[vid]) then
+						break
+					end
+					if (radius < 6) then
+						radius = radius + 1
+					else
+						break
 					end
 				end
 				return vertex_id
