@@ -188,10 +188,12 @@
 				<precondition>dialogs.actor_have_medkit</precondition>
 				<text>axr_phrase_actor_has_medkit</text>
 				<action>dialogs.transfer_medkit</action>
+				<action>dialogs.break_dialog</action>
 			</phrase>
 			<phrase id="2">
 				<precondition>dialogs.actor_hasnt_medkit</precondition>
 				<text>axr_phrase_actor_dont_has_medkit</text>
+				<action>dialogs.break_dialog</action>
 			</phrase>
 		</phrase_list>
 	</dialog>
