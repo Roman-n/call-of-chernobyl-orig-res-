@@ -254,6 +254,10 @@ function add_to_actor_squad(npc)
 	utils.se_obj_save_var(id,npc:name(),"companion",true)
 	npc:inactualize_patrol_path()
 	setup_companion_logic(npc,db.storage[id],false)
+	
+	cycle_companions_combat_mode(_current_combat_mode)
+	cycle_companions_move_mode(_current_move_mode)
+	cycle_companions_stealth_mode(_current_stealth_mode)
 end
 
 function remove_from_actor_squad(npc)

@@ -676,6 +676,7 @@ function monster_hud_show(hud)
 		hud:add_msg("Ini",st.ini_filename)
 		local be = near:best_enemy()
 		hud:add_msg("Best Enemy",be and be:name())
+		hud:add_msg("GetEnemy",near:get_enemy() and near:get_enemy():name())
 		
 		if (st.overrides and st.overrides.combat_ignore) then
 			hud:add_msg("CombatIgnoreCond",xr_logic.pick_section_from_condlist(be, near, st.overrides.combat_ignore.condlist))
@@ -1469,6 +1470,8 @@ function enemy_hud_show(hud)
 				hud:add_msg("Best Enemy",be and be:name())
 				hud:add_msg("Can See",near:see(be))
 			end
+			
+			hud:add_msg("GetEnemy",near:get_enemy() and near:get_enemy():name())
 
 			local ene = st.enemy_id and level.object_by_id(st.enemy_id)
 			if (ene) then

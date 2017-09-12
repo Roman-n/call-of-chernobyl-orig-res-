@@ -120,19 +120,23 @@ function is_enemy(obj,enemy,no_memory)
 
 	local ene_companion = enemy:has_info("npcx_is_companion")
 	if (ene_companion and enemy:has_info("npcx_beh_substate_stealth") and not fighting_with_actor_npcs[id]) then
-		if (enemy:position():distance_to_sqr(obj:position()) < 900) then 
+		if (enemy:position():distance_to_sqr(obj:position()) > 900) then 
 			return false
 		end
 	end
 	
 	local is_companion = obj:has_info("npcx_is_companion")
-	if (is_companion and not fighting_with_actor_npcs[ene_id]) then 
-		if (obj:has_info("npcx_beh_ignore_combat") and not obj:has_info("npcx_beh_ignore_actor_enemies")) then 
-			return false
+	if (is_companion and not fighting_with_actor_npcs[ene_id]) then
+		-- Enemy is not targetting actor, ignore him unless he is targetting us [+npcx_beh_ignore_combat -npcx_beh_ignore_actor_enemies] defensive mode
+		if (obj:has_info("npcx_beh_ignore_combat") and not obj:has_info("npcx_beh_ignore_actor_enemies")) then
+			local enemy_of_my_enemy = enemy:best_enemy()
+			if not (enemy_of_my_enemy and enemy_of_my_enemy:id() == id) then
+				return false
+			end
 		end
 		-- If companion is in stealth mode then ignore combat greater than 30m unless enemy is in combat with actor
 		if (obj:has_info("npcx_beh_substate_stealth")) then 
-			if (enemy:position():distance_to_sqr(obj:position()) < 900) then 
+			if (enemy:position():distance_to_sqr(obj:position()) > 900) then 
 				return false
 			end
 		end

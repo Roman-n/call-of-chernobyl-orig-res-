@@ -286,27 +286,19 @@ end
 
 function action_patrol:process_danger()
 	local best_danger = self.object:best_danger()
-	if best_danger == nil then
+	if not (best_danger and xr_danger.has_danger(self.object)) then
 		return false
 	end
-	local best_danger_object = best_danger:object()
-	local bd_type = best_danger:type()
-	local tg = time_global()
-	local passed_time = tg - best_danger:time()
 	
-	local urgent_danger = best_danger_object and (not IsStalker(best_danger_object) or self.object:relation(best_danger_object) >= game_object.enemy) and (bd_type == danger_object.attacked) and passed_time < 3000
-	if not (urgent_danger) then 
-		if not (xr_danger.has_danger(self.object)) then
-			return false
-		end
-	end 
+	local best_danger_object = best_danger:object()
+	local tg = time_global()
 	
 	if self.danger ~= true then
 		self.danger = true
 		self.object:play_sound(stalker_ids.sound_alarm, 1, 0, 1, 0)
 	end
 
-	local bd_pos = urgent_danger and best_danger_object:position() or best_danger:position()
+	local bd_pos = best_danger_object and (IsStalker(best_danger_object) or IsMonster(best_danger_object)) and best_danger_object:position() or best_danger:position()
 	if (self.__keep_body_state_until==nil or tg > self.__keep_body_state_until) then
 		local dir = bd_pos and vec_sub(bd_pos,self.object:position()):normalize() or self.object:direction()
 		self.__keep_body_state_until = tg+3000
