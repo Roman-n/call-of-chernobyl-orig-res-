@@ -1,17 +1,4 @@
 -- Alundaio
-local function sstpk_write(sstpk,self)
-	if (axr_dynamic_spawn) then
-		sstpk:w_stringZ(self.dynamic_name)
-	end
-end
-local function sstpk_read(sstpk,size,self)
-	if (axr_dynamic_spawn) then
-		self.dynamic_name = sstpk:r_stringZ()
-		if (self.dynamic_name == "nil") then
-			self.dynamic_name = nil
-		end
-	end
-end
 --[[
 local function	repack(self,stpk)
 	if (self.repack) then
