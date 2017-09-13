@@ -174,7 +174,7 @@ function se_smart_terrain:read_params()
 	self.ignore_zone = ini:r_string_ex(smart_sect,"ignore_zone")
 	self.alarm_start_sound 	= ini:r_string_to_condlist(smart_sect,"alarm_start_sound")
 	self.alarm_stop_sound 	= ini:r_string_to_condlist(smart_sect,"alarm_stop_sound")
-	self.alarm_length = ini:r_float_ex(smart_sect,"alarm_length") or 30000
+	self.alarm_length = ini:r_float_ex(smart_sect,"alarm_length") or 20000
 	
 	if (self.faction_controlled) then
 		local spawn_num_condlist = ini:r_string_to_condlist(smart_sect,"faction_respawn_num")
