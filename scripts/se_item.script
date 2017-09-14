@@ -1,19 +1,4 @@
--- Alundaio
---[[
-local function	repack(self,stpk)
-	if (self.repack) then
-		local data = stpk_utils.get_abstract_data(stpk)
-		if (data) then
-			for k,v in pairs(self.repack) do
-				data[k] = v
-			end
-			stpk_utils.set_abstract_data(data,stpk)
-			self.repack = nil
-		end
-	end
-end
---]]
--- Alundaio
+
 -- Outfits ---------------------------------------------------------------------
 class "se_outfit" (cse_alife_item_custom_outfit)
 function se_outfit:__init (section) super (section)
@@ -50,8 +35,14 @@ function se_weapon:on_register()
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	story_objects.check_spawn_ini_for_story_id(self)
 	-- Собираем статистику по предметам.
+	-- persistent storage
+	alife_storage_manager.get_se_obj_state(self,true)
 end
 function se_weapon:on_unregister()
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.se_object) then
+		m_data.se_object[self.id] = nil
+	end
 	--' Отрегистрация в таскменеджере
 	story_objects.unregister(self.id)
 	cse_alife_item_weapon.on_unregister( self )
@@ -77,8 +68,14 @@ function se_weapon_shotgun:on_register()
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	story_objects.check_spawn_ini_for_story_id(self)
 	-- Собираем статистику по предметам.
+		-- persistent storage
+	alife_storage_manager.get_se_obj_state(self,true)
 end
 function se_weapon_shotgun:on_unregister()
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.se_object) then
+		m_data.se_object[self.id] = nil
+	end
 	--' Отрегистрация в таскменеджере
 	story_objects.unregister(self.id)
 	cse_alife_item_weapon_shotgun.on_unregister( self )
@@ -104,8 +101,14 @@ function se_weapon_automatic_shotgun:on_register()
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	story_objects.check_spawn_ini_for_story_id(self)
 	-- Собираем статистику по предметам.
+		-- persistent storage
+	alife_storage_manager.get_se_obj_state(self,true)
 end
 function se_weapon_automatic_shotgun:on_unregister()
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.se_object) then
+		m_data.se_object[self.id] = nil
+	end
 	--' Отрегистрация в таскменеджере
 	story_objects.unregister(self.id)
 	cse_alife_item_weapon_auto_shotgun.on_unregister( self )
@@ -131,8 +134,14 @@ function se_weapon_magazined:on_register()
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	story_objects.check_spawn_ini_for_story_id(self)
 	-- Собираем статистику по предметам.
+	-- persistent storage
+	alife_storage_manager.get_se_obj_state(self,true)
 end
 function se_weapon_magazined:on_unregister()
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.se_object) then
+		m_data.se_object[self.id] = nil
+	end
 	--' Отрегистрация в таскменеджере
 	story_objects.unregister(self.id)
 	cse_alife_item_weapon_magazined.on_unregister( self )
@@ -159,8 +168,14 @@ function se_weapon_magazined_w_gl:on_register()
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	story_objects.check_spawn_ini_for_story_id(self)
 	-- Собираем статистику по предметам.
+	-- persistent storage
+	alife_storage_manager.get_se_obj_state(self,true)
 end
 function se_weapon_magazined_w_gl:on_unregister()
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.se_object) then
+		m_data.se_object[self.id] = nil
+	end
 	--' Отрегистрация в таскменеджере
 	story_objects.unregister(self.id)
 	cse_alife_item_weapon_magazined_w_gl.on_unregister( self )
