@@ -178,19 +178,19 @@
 		<text>PSO-1m scope</text>
   </string>
   <string id="st_addon_scope_descr">
-		<text>A common Soviet-made 5.0x fixed zoom optical scope with a range scale. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
+		<text>A common Soviet-made 4x fixed zoom optical scope with a range scale. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
   </string>
   <string id="st_addon_scope_detector">
 		<text>PSS-2x scope</text>
   </string>
   <string id="st_addon_scope_detector_descr">
-		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by special forces. Attached to weapons by means of a dovetail mount.</text>
+		<text>A 4x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by special forces. Attached to weapons by means of a dovetail mount.</text>
   </string>
   <string id="st_addon_scope_night_vision">
 		<text>NSPU-3 scope</text>
   </string>
   <string id="st_addon_scope_night_vision_descr">
-		<text>An image intensifier night vision 5.0x fixed zoom scope for combat in darkness. Attached to weapons by means of a dovetail mount.</text>
+		<text>An image intensifier night vision 4x fixed zoom scope for combat in darkness. Attached to weapons by means of a dovetail mount.</text>
   </string>
   <string id="st_addon_scope_susat">
 		<text>SUSAT 4x scope</text>
