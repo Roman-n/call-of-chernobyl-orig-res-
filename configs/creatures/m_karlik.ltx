@@ -13,6 +13,9 @@ visual							=	monsters\karlik\karlik_green
 spawn_phantom 					=	m_phantom_karlik
 can_spawn_phantom 				=	true
 
+hit_fraction_monster = 0.25
+skin_armor = 0.25
+
 ; Influences.
 fire_linear_factor				=	0
 fire_max_distance				=	0
@@ -191,7 +194,7 @@ terrain							=	zombie_terrain
 hit_type						=	shock
 material						=	creatures\medium
 
-DamagedThreshold				=	0.5
+DamagedThreshold				=	0.2
 LegsCount						=	2
 
 spec_rank						=	normal
@@ -201,7 +204,6 @@ rank							=	17
 community						=	karlik
 monster_type					=	indoor
 
-protections_sect 				=	karlik_protections
 immunities_sect					=	karlik_immunities
 
 DynamicObjectsCount				=	32
@@ -319,10 +321,6 @@ bip01_neck 						=	1.5,		-1,		1.5
 bip01_pelvis 					=	1.0,		-1,		0.5
 bip01_spine 					=	1.0,		-1,		0.5
 bip01_spine1 					=	1.0,		-1,		0.5
-
-; Default protections.
-[karlik_protections]
-hit_fraction_monster = 0.2
 
 ; Default immunities.
 [karlik_immunities]

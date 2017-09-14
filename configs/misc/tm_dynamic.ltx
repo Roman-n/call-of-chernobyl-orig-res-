@@ -1,19 +1,19 @@
 ; --------------------------------------------------------------------------------------------------
-; FIND SUPPLIES FOR STALKER, CLEAR SKY, DUTY, OR ECOG TASK-
+; FIND SUPPLIES FOR STALKER, CLEAR SKY, OR ECOG TASK-
 
 [simulation_task_1]
 icon = ui_inGame2_PD_Opitniy_stalker
 prior = 90
 repeat_timeout = 86400
 storyline = false
-sim_communities = stalker, csky, dolg, ecolog
+sim_communities = stalker, csky, ecolog
 title = simulation_task_1_name
 title_functor = general_fetch_task
 descr = simulation_task_1_text
 descr_functor = general_fetch_task
 job_descr = simulation_task_1_about
 fetch_descr = simulation_task_1_fetch_about
-fetch_func = %=setup_supplies_fetch_task(simulation_task_1_fetch:3:8)%
+fetch_func = %=setup_supplies_fetch_task(simulation_task_1_fetch:3:5)%
 stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
@@ -40,7 +40,7 @@ descr = simulation_task_2_text
 descr_functor = general_fetch_task
 job_descr = simulation_task_2_about
 fetch_descr = simulation_task_2_fetch_about
-fetch_func = %=setup_supplies_fetch_task(simulation_task_2_fetch:3:8)%
+fetch_func = %=setup_supplies_fetch_task(simulation_task_2_fetch:3:5)%
 stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
@@ -98,7 +98,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_4_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_random_item(wpn_vintorez:wpn_abakan:wpn_groza:wpn_pkm) =complete_task_inc_goodwill(50:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
+on_complete = %=reward_random_item(wpn_vintorez:wpn_abakan:wpn_groza:wpn_sig550) =complete_task_inc_goodwill(50:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_4)} fail
 
@@ -315,7 +315,7 @@ descr = simulation_task_13_text
 descr_functor = general_fetch_task
 job_descr = simulation_task_13_about
 fetch_descr = simulation_task_13_fetch_about
-fetch_func = %=setup_supplies_fetch_task(simulation_task_13_fetch:3:8)%
+fetch_func = %=setup_supplies_fetch_task(simulation_task_13_fetch:3:5)%
 stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
@@ -328,21 +328,21 @@ condlist_0 = {!task_giver_alive(simulation_task_13)} fail
 
 
 ; --------------------------------------------------------------------------------------------------
-; FIND SUPPLIES FOR MILITARY TASK-
+; FIND SUPPLIES FOR MILITARY & DUTY TASK-
 
 [simulation_task_14]
 icon = ui_inGame2_PD_Opitniy_stalker
 prior = 90
 repeat_timeout = 86400
 storyline = false
-sim_communities = army
+sim_communities = army, dolg
 title = simulation_task_14_name
 title_functor = general_fetch_task
 descr = simulation_task_14_text
 descr_functor = general_fetch_task
 job_descr = simulation_task_14_about
 fetch_descr = simulation_task_14_fetch_about
-fetch_func = %=setup_supplies_fetch_task(simulation_task_14_fetch:3:8)%
+fetch_func = %=setup_supplies_fetch_task(simulation_task_14_fetch:3:5)%
 stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
@@ -375,7 +375,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_15_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_random_item(wpn_abakan:wpn_svd:wpn_val:wpn_sig550) =complete_task_inc_goodwill(50:army) =remove_fetch_item(simulation_task_15_fetch) =reward_stash(true) =inc_task_stage(simulation_task_15)%
+on_complete = %=reward_random_item(wpn_abakan:wpn_svd:wpn_val:wpn_pkm) =complete_task_inc_goodwill(50:army) =remove_fetch_item(simulation_task_15_fetch) =reward_stash(true) =inc_task_stage(simulation_task_15)%
 on_fail = %=fail_task_dec_goodwill(25:army)%
 condlist_0 = {!task_giver_alive(simulation_task_15)} fail
 
@@ -450,6 +450,7 @@ on_job_descr = %=on_init_bounty_hunt(simulation_task_18:stalker:army:dolg)%
 on_complete = %=reward_random_money(9000:10000) =reward_stash(true) =inc_task_stage(simulation_task_18)%
 condlist_0 = {!task_giver_alive(simulation_task_18)} fail
 
+
 ;--------------------------------------------------------------------------------------------------
 ; FACTION BASE DEFENSE VS MUTANTS-
 [faction_base_defense]
@@ -465,3 +466,4 @@ on_init = %=setup_base_defense_fail_conditions%
 on_complete = %=actor_surge_immuned(false)%
 on_fail = %=actor_surge_immuned(false)%
 on_cancel = %=actor_surge_immuned(false)%
+

@@ -21,6 +21,9 @@ smart_terrain_choose_interval	= 00:15:00
 spawn_phantom 		= m_phantom_tushkano
 can_spawn_phantom 	= false
 
+hit_fraction_monster = 1
+skin_armor = 0.01
+
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -94,11 +97,11 @@ ImpulseMax			 = 35.0
 ; speed factors			linear | angular_real | angular_path | min |  max
 Velocity_Stand			= 0,		3.5,			3.5,		1,		1
 Velocity_WalkFwdNormal	= 1.0,		7.5,			7.5,		0.02,	1.8	
-Velocity_RunFwdNormal	= 5.0,		6.5,			6.5,		0.3,	1	
+Velocity_RunFwdNormal	= 5.5,		6.5,			6.5,		0.3,	1	
 Velocity_WalkFwdDamaged	= 1.0,		4.5,			4.5,		0.2,	1.8	
-Velocity_RunFwdDamaged	= 3.0,  	3.0,			3.0,		0.5,	1
+Velocity_RunFwdDamaged	= 3.5,  	3.0,			3.0,		0.5,	1
 Velocity_Drag			= 1.0,		3.0,			3.0,		1,		1
-Velocity_Steal			= 1.5,		3.0,			3.0,		1,		1
+Velocity_Steal			= 1.75,		3.0,			3.0,		1,		1
 
 
 ; acceleration
@@ -107,8 +110,8 @@ Accel_Calm				= 2.5
 Accel_Aggressive		= 7.5
 
 ;attack parameters
-MinAttackDist		= 1.2	;0.5
-MaxAttackDist		= 1.8	;3.8
+MinAttackDist		= 1.0	;0.5
+MaxAttackDist		= 1.5	;3.8
 
 as_min_dist				= 0.9
 as_step					= 0.1
@@ -219,7 +222,6 @@ community				= tushkano
 
 terrain				 	= tushkan_terrain
 damage					= m_tushkano_damage
-protections_sect 		= tushkano_protections
 immunities_sect			= tushkano_immunities
 attack_params			= m_tushkano_attack_params
 step_params				= m_tushkano_step_params
@@ -254,10 +256,6 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 [tushkan_terrain]
 	255,000,255,255
 
-[tushkano_protections]
-skin_armor = 0
-hit_fraction_monster = 1.0
-
 [m_tushkano_damage]
 ;bone_name		 = <hit_scale>,-1,<wound_scale>
 ;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья) 
@@ -270,23 +268,23 @@ bip01_neck 			= 1.0, -1, 1.5
 bip01_head 			= 2.0, -1, 0.5, 10
 
 [tushkano_immunities]
-burn_immunity			= 1			;коэффициенты иммунитета 
+burn_immunity			= 1
 strike_immunity			= 1
 shock_immunity			= 1
 wound_immunity			= 0.8
-radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
+radiation_immunity		= 0
+telepatic_immunity		= 0
 chemical_burn_immunity	= 1
 explosion_immunity		= 1
-fire_wound_immunity		= 6
+fire_wound_immunity		= 2
 
 [m_tushkano_attack_params]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.25,		0.55,		    20,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_1 =	  	0.25,		0.55,		    30,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_2 =	  	0.25,		0.55,		    35,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
+stand_attack_0 =	  	0.25,		0.3,		    20,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_1 =	  	0.25,		0.3,		    20,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_2 =	  	0.25,		0.3,		    20,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
 
 [m_tushkano_step_params]
 ;---------------------------------------------------------------------------
@@ -294,9 +292,6 @@ stand_attack_2 =	  	0.25,		0.55,		    35,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.
 ;---------------------------------------------------------------------------
 stand_walk_fwd_0 	=	1,	   0.2,     0.5,     0.7,    1,   
 stand_run_0	 		=	1,	   0.25,     1,	    0.25,    1,    
-
-
-
 
 
 [tushkano_normal]:m_tushkano_e
@@ -346,24 +341,24 @@ immunities_sect			= tushkano_weak_immunities
 attack_params			= m_tushkano_weak_attack_params
 
 [tushkano_weak_immunities]
-burn_immunity			= 1.2			;коэффициенты иммунитета 
-strike_immunity			= 1.2
-shock_immunity			= 1.2
-wound_immunity			= 0.9
-radiation_immunity		= 0.0
-telepatic_immunity		= 1.2
-chemical_burn_immunity	= 1.2
-explosion_immunity		= 1.2
-fire_wound_immunity		= 6
+burn_immunity			= 1
+strike_immunity			= 1
+shock_immunity			= 1
+wound_immunity			= 1
+radiation_immunity		= 0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 1
+explosion_immunity		= 1
+fire_wound_immunity		= 2.5
 
 
 [m_tushkano_weak_attack_params]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.25,		0.45,		    15,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_1 =	  	0.25,		0.45,		    20,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_2 =	  	0.25,		0.45,		    25,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
+stand_attack_0 =	  	0.25,		0.25,		    15,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_1 =	  	0.25,		0.25,		    15,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_2 =	  	0.25,		0.25,		    15,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
 
 [tushkano_weak_a]:tushkano_weak
 $spawn				= "monsters\tushkanos\tushkano_weak_a"
@@ -396,23 +391,23 @@ immunities_sect			= tushkano_strong_immunities
 attack_params			= m_tushkano_strong_attack_params
 
 [tushkano_strong_immunities]
-burn_immunity			= 0.8			;коэффициенты иммунитета 
-strike_immunity			= 0.8
-shock_immunity			= 0.8
+burn_immunity			= 1
+strike_immunity			= 1
+shock_immunity			= 1
 wound_immunity			= 0.7
-radiation_immunity		= 0.0
-telepatic_immunity		= 0.8
-chemical_burn_immunity	= 0.8
-explosion_immunity		= 0.8
-fire_wound_immunity		= 6
+radiation_immunity		= 0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 1
+explosion_immunity		= 1
+fire_wound_immunity		= 1.5
 
 [m_tushkano_strong_attack_params]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.25,		0.65,		    30,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_1 =	  	0.25,		0.65,		    40,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-stand_attack_2 =	  	0.25,		0.65,		    45,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
+stand_attack_0 =	  	0.25,		0.35,		    25,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_1 =	  	0.25,		0.35,		    25,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
+stand_attack_2 =	  	0.25,		0.35,		    25,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.5
 
 [tushkano_strong_a]:tushkano_strong
 $spawn				= "monsters\tushkanos\tushkano_strong_a"
@@ -428,7 +423,3 @@ corpse_visual		 = monsters\tushkano\tushkano_big3_dead
 $spawn				= "monsters\tushkanos\tushkano_strong_"
 visual				 = monsters\tushkano\tushkano_big4
 corpse_visual		 = monsters\tushkano\tushkano_big4_dead
-
-
-
-

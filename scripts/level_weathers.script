@@ -126,24 +126,17 @@ function WeatherManager:__init()
 								{-170,-110},	{-80,-20},		{-190,-150},	{-60,-20},
 								{-60,-30},		{-190,-150},	{-80,-20},		{50,110}
 							}
-	self.distant_sounds={	"nature\\new_thunder1_hec",
-							"nature\\new_thunder2_hec",
-							"nature\\new_thunder3_hec",
-							"nature\\storm_1",
-							"nature\\storm_2",
-							"nature\\storm_3",
-							"nature\\storm_4",
-							"nature\\storm_5",
-							"nature\\pre_storm_1",
-							"nature\\pre_storm_2",
-							"nature\\pre_storm_3",
-							"nature\\pre_storm_4",
-							"nature\\pre_storm_5",
-							"nature\\thunder-3-hec",
-							"nature\\thunder-4",
-							"nature\\thundernew1",
-							"nature\\thundernew2",
-							"nature\\thunder-3-hec"
+	self.distant_sounds={	"nature\\pre_storm_6",
+							"nature\\pre_storm_7",
+							"nature\\pre_storm_new_1",
+							"nature\\pre_storm_new_2",
+							"nature\\pre_storm_new_3",
+							"nature\\pre_storm_new_4",
+							"nature\\pre_storm_new_5",
+							"nature\\pre_storm_new_6",
+							"nature\\pre_storm_new_7",
+							"nature\\pre_storm_new_8",
+							"nature\\pre_storm_new_9"
 						}
 	self.thunders={}
 	self.thunder_index=1

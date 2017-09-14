@@ -15,9 +15,10 @@ visual				 = monsters\izlom\izlom
 corpse_visual		 = monsters\izlom\izlom
 icon = ui_npc_monster_fracture
 
-MaxHealthValue         = 1.0              ; range [0..200]
+hit_fraction_monster = 0.75
+skin_armor = 0.1
 
-protections_sect = fracture_protections
+MaxHealthValue         = 1.0              ; range [0..200]
 
 rank = 3 
 spec_rank = normal
@@ -185,7 +186,7 @@ sound_distant_idle			= monsters\zombie\zombie_idle_
 distant_idle_sound_delay	= 80000
 distant_idle_sound_range	= 100.0
 
-DamagedThreshold		= 0.5
+DamagedThreshold		= 0.3
 critical_wound_threshold		= -1
 critical_wound_decrease_quant	= 0.
 
@@ -210,13 +211,13 @@ community				= fracture
 ;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья)
 ;<wound_scale>	- коэфф. изменения величины открытой раны
 
-default				= 1.00,	-1,	0.10
+default				= 1.0,	-1,	0.1
 
-bip01_pelvis 		= 1, -1, 0.1
-bip01_spine 		= 1, -1, 0.1
-bip01_spine1 		= 1, -1, 0.1
-bip01_neck 			= 1.0, -1, 0.1
-bip01_head 			= 10, -1, 0.50
+bip01_pelvis 		= 1, -1, 0.2
+bip01_spine 		= 1, -1, 0.2
+bip01_spine1 		= 1, -1, 0.2
+bip01_neck 			= 1.5, -1, 0.5
+bip01_head 			= 3, -1, 0.1
 
 [fracture_terrain]
 	255,000,255,255
@@ -225,14 +226,13 @@ bip01_head 			= 10, -1, 0.50
 ;---EVALUATION FUNCTIONS----------------------------------------------
 
 
-
 [fracture_normal_attack_params]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.45,		0.40,		    100,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
-stand_attack_1 =	  	0.45,		0.40,		    140,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
-stand_attack_2 =	  	0.45,		0.60,		    120,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
+stand_attack_0 =	  	0.45,		0.4,		    75,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
+stand_attack_1 =	  	0.45,		0.4,		    75,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
+stand_attack_2 =	  	0.45,		0.4,		    75,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,							  3.5
 
 [fracture_normal_attack_effector]
 
@@ -268,19 +268,15 @@ stand_run_fwd_0	 	=	1,	   0.01,     1,	    0.25,    0.6,
 ; IMMUNITIES
 ;===========================================================================
 [fracture_normal_immunities]
-burn_immunity = 0.8				;коэффициенты иммунитета
-strike_immunity = 0.8
-shock_immunity = 0.8
-wound_immunity = 0.5
-radiation_immunity = 0.1
-telepatic_immunity = 1.0
-chemical_burn_immunity = 0.8
-explosion_immunity = 0.8
-fire_wound_immunity  = 3
-
-[fracture_protections]
-
-hit_fraction_monster = 0.5
+burn_immunity = 0.9
+strike_immunity = 0.9
+shock_immunity = 0.9
+wound_immunity = 0.8
+radiation_immunity = 0.0
+telepatic_immunity = 0.0
+chemical_burn_immunity = 0.9
+explosion_immunity = 0.9
+fire_wound_immunity  = 1
 
 
 ; ЗНАЧЕНИЯ visibility_threshold ДОЛЖНЫ БЫТЬ РАВНЫ для денжера и фри,
@@ -313,25 +309,23 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 visual				 = monsters\izlom\izlam
 MaxHealthValue		 = 0.75			; range [0..200]
 
-skin_armor				= 0.01
-
 rank = 1 
 spec_rank = weak
+
+hit_fraction_monster = 0.6
 
 [fracture_strong]:fracture_normal
 visual				 = monsters\izlom\izlim
 MaxHealthValue		 = 1.5			; range [0..200]
 
-skin_armor				= 0.05
-
 rank = 6 
 spec_rank = strong
+
+hit_fraction_monster = 0.4
 
 [fracture_2]:fracture_normal
 visual				 = monsters\izlom\izlum
 MaxHealthValue		 = 1.0			; range [0..200]
-
-skin_armor				= 0.03
 
 rank = 3 
 spec_rank = normal
@@ -340,7 +334,7 @@ spec_rank = normal
 visual				 = monsters\izlom\izlem
 MaxHealthValue		 = 1.25			; range [0..200]
 
-skin_armor				= 0.03
-
 rank = 3 
 spec_rank = normal
+
+hit_fraction_monster = 0.45

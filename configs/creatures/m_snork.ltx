@@ -11,6 +11,9 @@ icon					= ui_npc_monster_snork
 spawn_phantom 		= m_phantom_snork
 can_spawn_phantom 	= false
 
+hit_fraction_monster = 0.3
+skin_armor = 0.15
+
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -107,8 +110,8 @@ Accel_Aggressive		= 12.0
 ;--------------------------------------------------------------------------
 ; Attack parameters
 ;--------------------------------------------------------------------------
-MinAttackDist			= 1.9	;0.5
-MaxAttackDist			= 2.9	;3.8
+MinAttackDist			= 1.8	;0.5
+MaxAttackDist			= 3.0	;3.8
 as_min_dist				= 1.9
 as_step					= 0
 hit_type				= wound				; type of attack
@@ -254,7 +257,6 @@ terrain					 	= snork_terrain
 step_params					= m_snork_step_params
 damage						= m_snork_damage
 immunities_sect				= snork_immunities
-protections_sect 			= snork_protections
 
 ;-------------------------------------------------------------------------
 ; Vision
@@ -291,10 +293,6 @@ velocity_factor		     	= 1.0				;Higher value = greater bonus to detection speed
 luminocity_factor			= 0.8				;Low value = easier to see at night
 transparency_threshold	 	= 0.3				;Low value = easier to see through objects (if greater then 1 then enemies are blind)
 still_visible_time          = 0					;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
-[snork_protections]
-
-skin_armor = 0.25
-hit_fraction_monster = 0.3
 
 ;=================================================================================
 ; SNORK Damage
@@ -308,7 +306,7 @@ bip01_pelvis 		= 1.0, -1, 0.1
 bip01_spine 		= 1.0, -1, 0.1
 bip01_spine1 		= 1.0, -1, 0.1
 bip01_neck 			= 1.0, -1, 0.5
-bip01_head 			= 4.0, -1, 0.1, 10
+bip01_head 			= 2.0, -1, 0.1, 10
 
 [m_snork_attack_effector]
 duality_h			= 0.05;0.01
@@ -350,15 +348,15 @@ stand_steal_0		=	  1,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1
 ; IMMUNITIES
 ;===========================================================================
 [snork_immunities]
-burn_immunity			= 0.8								;коэффициенты иммунитета
-strike_immunity			= 0.8
-shock_immunity			= 0.8
+burn_immunity			= 0.7
+strike_immunity			= 0;0.5
+shock_immunity			= 0.7
 wound_immunity			= 0.6
-radiation_immunity		= 0.01
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 0.8
-explosion_immunity		= 0.8
-fire_wound_immunity		= 1.0
+radiation_immunity		= 0.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.7
+explosion_immunity		= 0.7
+fire_wound_immunity		= 0.7
 
 
 ;*********************************************************************************
@@ -377,29 +375,27 @@ spec_rank			= weak
 community			= snork
 MaxHealthValue					= 0.8			; range [0..200]
 
-skin_armor = 0.2
-
 [snork_immunities_weak]
-burn_immunity			= 0.4								;коэффициенты иммунитета
-strike_immunity			= 0.4
-shock_immunity			= 0.4
-wound_immunity			= 0.65
+burn_immunity			= 0.8
+strike_immunity			= 0;0.55
+shock_immunity			= 0.8
+wound_immunity			= 0.7
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.4
-explosion_immunity		= 0.4
-fire_wound_immunity		= 1.0
+chemical_burn_immunity	= 0.8
+explosion_immunity		= 0.8
+fire_wound_immunity		= 0.85
 
 [snork_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.30,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
-stand_attack_2_1 =	  	0.30,		0.7,			70,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_attack_0 =	  	0.30,		0.45,			35,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_attack_2_1 =	  	0.30,		0.5,			35,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,		3.5
 
 
-stand_run_attack_left_0  =	  	0.40,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
-stand_run_attack_right_0  =	  	0.40,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_run_attack_left_0  =	  	0.40,		0.55,			45,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_run_attack_right_0  =	  	0.40,		0.55,			45,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
 
 ;*********************************************************************************
 ; WEAK PROFILE 2
@@ -417,8 +413,6 @@ spec_rank			= weak
 community			= snork
 MaxHealthValue					= 0.8			; range [0..200]
 
-skin_armor = 0.2
-
 ;*********************************************************************************
 ; WEAK PROFILE 3
 ;*********************************************************************************
@@ -434,8 +428,6 @@ attack_params		= snork_attack_params_weak
 spec_rank			= weak
 community			= snork
 MaxHealthValue					= 0.8			; range [0..200]
-
-skin_armor = 0.2
 
 ;*********************************************************************************
 ; NORMAL PROFILE
@@ -453,28 +445,26 @@ spec_rank			= normal
 community			= snork
 MaxHealthValue					= 1.0			; range [0..200]
 
-skin_armor = 0.25
-
 [snork_immunities_normal]
-burn_immunity			= 0.3								;коэффициенты иммунитета
-strike_immunity			= 0.3
-shock_immunity			= 0.3
+burn_immunity			= 0.7
+strike_immunity			= 0;0.5
+shock_immunity			= 0.7
 wound_immunity			= 0.6
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.3
-explosion_immunity		= 0.3
-fire_wound_immunity		= 1.0
+chemical_burn_immunity	= 0.7
+explosion_immunity		= 0.7
+fire_wound_immunity		= 0.7
 
 [snork_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.30,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,				3.5
-stand_attack_2_1 =	  	0.30,		0.7,			70,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,				3.5
+stand_attack_0 =	  	0.30,		0.5,			40,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,				3.5
+stand_attack_2_1 =	  	0.30,		0.55,			40,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,				3.5
 
-stand_run_attack_left_0  =	  	0.40,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
-stand_run_attack_right_0  =	  	0.40,		0.6,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_run_attack_left_0  =	  	0.40,		0.6,			50,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_run_attack_right_0  =	  	0.40,		0.6,			50,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
 
 ;*********************************************************************************
 ; NORMAL PROFILE 2
@@ -492,8 +482,6 @@ spec_rank			= normal
 community			= snork
 MaxHealthValue					= 1.0			; range [0..200]
 
-skin_armor = 0.25
-
 ;*********************************************************************************
 ; NORMAL PROFILE 3
 ;*********************************************************************************
@@ -509,9 +497,6 @@ attack_params		= snork_attack_params_normal
 spec_rank			= normal
 community			= snork
 MaxHealthValue					= 1.0			; range [0..200]
-
-skin_armor = 0.25
-
 
 ;*********************************************************************************
 ; STRONG PROFILE
@@ -529,29 +514,26 @@ spec_rank			= strong
 community			= snork
 MaxHealthValue					= 1.33			; range [0..200]
 
-skin_armor = 0.3
-
-
 [snork_immunities_strong]
-burn_immunity			= 0.2								;коэффициенты иммунитета
-strike_immunity			= 0.2
-shock_immunity			= 0.2
+burn_immunity			= 0.6
+strike_immunity			= 0;0.45
+shock_immunity			= 0.6
 wound_immunity			= 0.5
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.2
-explosion_immunity		= 0.2
-fire_wound_immunity		= 1.0
+chemical_burn_immunity	= 0.6
+explosion_immunity		= 0.6
+fire_wound_immunity		= 0.6
 
 [snork_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
-stand_attack_0 =	  	0.30,		0.7,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,				3.5
-stand_attack_2_1 =	  	0.30,		0.8,			70,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,				3.5
-                                                                                                                          
-stand_run_attack_left_0  =	  	0.40,		0.7,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
-stand_run_attack_right_0  =	  	0.40,		0.7,			30,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_attack_0 =	  	0.30,		0.55,			50,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,				3.5
+stand_attack_2_1 =	  	0.30,		0.6,			50,        0.0, 1.0, 2.0,		-1.8, 1.8, -1.8, 1.8,				3.5
+
+stand_run_attack_left_0  =	  	0.40,		0.65,			60,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
+stand_run_attack_right_0  =	  	0.40,		0.65,			60,        0.0, 0.5, 0.5,		-1.8, 1.8, -1.8, 1.8,		3.5
 
 ;*********************************************************************************
 ; STRONG PROFILE 2
@@ -569,8 +551,6 @@ spec_rank			= strong
 community			= snork
 MaxHealthValue					= 1.33			; range [0..200]
 
-skin_armor = 0.3
-
 ;*********************************************************************************
 ; STRONG PROFILE 3
 ;*********************************************************************************
@@ -587,15 +567,11 @@ spec_rank			= strong
 community			= snork
 MaxHealthValue					= 1.33			; range [0..200]
 
-skin_armor = 0.3
-
-
 ;=================================================================================
 ; Terrain
 ;=================================================================================
 [snork_terrain]
 	255,000,255,255
-
 
 
 ;*********************************************************************************

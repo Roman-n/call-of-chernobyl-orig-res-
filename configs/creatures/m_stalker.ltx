@@ -72,6 +72,7 @@ cl_run_fwd_0				=	1,	  0.2,	    1,       0.4,     1
 ;transparency_threshold is done during ray_query
 ;Note that improper values, no matter how high transparency_threshold will result in stalkers shooting at walls
 
+
 [stalker_vision_free]
 min_view_distance   		= 0.1				; min range of cone based on eye_range
 max_view_distance	 		= 0.5				; max range of cone based on eye_range
@@ -103,56 +104,56 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 	anomaly					= 0.0	; коэффициент усиления приоритета\силы звука
 	world					= 0.1	; коэффициент усиления приоритета\силы звука
 
-[stalker_damage]
-default						= 1.0, -1, 0.5
+[stalker_damage] ; revert to CoP default
+default						= 1.0, -1, 1.0
 
-bip01_pelvis 				= 1.0, 1, 1.0
-bip01_spine 		 		= 1.0, 1, 1.0
-bip01_spine1 		 		= 1.0, 1, 1.1
-bip01_spine2 		 		= 1.0, 1, 1.1
-bip01_neck 			 		= 1.5, 0, 1.5
-bip01_head 			 		= 2.0, 0, 1.5, 	3
-eyelid_1 			 		= 2.0, 0, 1.5, 	3
-eye_left 			 		= 2.0, 0, 1.5, 	3
-eye_right 			 		= 2.0, 0, 1.5, 	3
-jaw_1 		 		 		= 2.0, 0, 1.1
+bip01_pelvis 				= 1, 1, 0.3
+bip01_spine 		 		= 1, 1, 0.8
+bip01_spine1 		 		= 1, 1, 0.8
+bip01_spine2 		 		= 1, 1, 0.8
+bip01_neck 			 		= 1, 0, 1.0
+bip01_head 			 		= 4, 0, 1.0 , 3
+eyelid_1 			 		= 4, 0, 1.0 , 3
+eye_left 			 		= 4, 0, 1.0 , 3
+eye_right 			 		= 4, 0, 1.0 , 3
+jaw_1 		 		 		= 4, 0, 1.0
 
-bip01_l_clavicle	 		= 1.0, 10, 0.9
-bip01_l_upperarm	 		= 1.0, 10, 0.8
-bip01_l_forearm	 	 	    = 1.0, 10, 0.7
-bip01_l_hand	 	 	    = 1.0, -1, 0.6
-bip01_l_finger0	 	 	    = 0.05, -1, 0.01
-bip01_l_finger01	 		= 0.05, -1, 0.01
-bip01_l_finger02	 		= 0.05, -1, 0.01
-bip01_l_finger1	 	 	    = 0.05, -1, 0.01
-bip01_l_finger11	 		= 0.05, -1, 0.01
-bip01_l_finger12	 		= 0.05, -1, 0.01
-bip01_l_finger2	 	 	    = 0.05, -1, 0.01
-bip01_l_finger21	 		= 0.05, -1, 0.01
-bip01_l_finger22	 		= 0.05, -1, 0.01
+bip01_l_clavicle	 		= 1, 10, 0.7
+bip01_l_upperarm	 		= 1, 10, 0.6
+bip01_l_forearm	 	 	    = 1, 10, 0.5
+bip01_l_hand	 	 	    = 0.1, -1, 0.2
+bip01_l_finger0	 	 	    = 0.05, -1, 0.1
+bip01_l_finger01	 		= 0.05, -1, 0.1
+bip01_l_finger02	 		= 0.05, -1, 0.1
+bip01_l_finger1	 	 	    = 0.05, -1, 0.1
+bip01_l_finger11	 		= 0.05, -1, 0.1
+bip01_l_finger12	 		= 0.05, -1, 0.1
+bip01_l_finger2	 	 	    = 0.05, -1, 0.1
+bip01_l_finger21	 		= 0.05, -1, 0.1
+bip01_l_finger22	 		= 0.05, -1, 0.1
 
-bip01_r_clavicle	 		= 1.0, 10, 0.9
-bip01_r_upperarm	 		= 1.0, 10, 0.8
-bip01_r_forearm	 	 		= 1.0, 10, 0.7
-bip01_r_hand	 	 		= 1.0, -1, 0.6
-bip01_r_finger0	 	 		= 0.05, -1, 0.01
-bip01_r_finger01	 		= 0.05, -1, 0.01
-bip01_r_finger02	 		= 0.05, -1, 0.01
-bip01_r_finger1	 	 		= 0.05, -1, 0.01
-bip01_r_finger11	 		= 0.05, -1, 0.01
-bip01_r_finger12	 		= 0.05, -1, 0.01
-bip01_r_finger2	 	 	 	= 0.05, -1, 0.01
-bip01_r_finger21	 		= 0.05, -1, 0.01
-bip01_r_finger22	 		= 0.05, -1, 0.01
+bip01_r_clavicle	 		= 1, 8, 0.7
+bip01_r_upperarm	 		= 1, 8, 0.6
+bip01_r_forearm	 	 		= 1, 8, 0.5
+bip01_r_hand	 	 		= 0.1, -1, 0.2
+bip01_r_finger0	 	 		= 0.05, -1, 0.1
+bip01_r_finger01	 		= 0.05, -1, 0.1
+bip01_r_finger02	 		= 0.05, -1, 0.1
+bip01_r_finger1	 	 		= 0.05, -1, 0.1
+bip01_r_finger11	 		= 0.05, -1, 0.1
+bip01_r_finger12	 		= 0.05, -1, 0.1
+bip01_r_finger2	 	 	 	= 0.05, -1, 0.1
+bip01_r_finger21	 		= 0.05, -1, 0.1
+bip01_r_finger22	 		= 0.05, -1, 0.1
 
-bip01_l_thigh	 	 		= 1.0,  4, 1.0
-bip01_l_calf	 	 		= 1.0,  4, 0.6
-bip01_l_foot	 	 		= 1.0,  4, 0.6
-bip01_l_toe0	 	 		= 1.0, -1, 0.3
-bip01_r_thigh	 	 		= 1.0,  6, 1.0
-bip01_r_calf	 	 		= 1.0,  6, 0.6
-bip01_r_foot	 	 		= 1.0,  6, 0.6
-bip01_r_toe0	 	 		= 1.0, -1, 0.3
+bip01_l_thigh	 	 		= 1, 4, 0.5
+bip01_l_calf	 	 		= 1, 4, 0.4
+bip01_l_foot	 	 		= 0.1, 4, 0.3
+bip01_l_toe0	 	 		= 0.1, -1, 0.2
+bip01_r_thigh	 	 		= 1, 6, 0.5
+bip01_r_calf	 	 		= 1, 6, 0.4
+bip01_r_foot	 	 		= 0.1, 6, 0.3
+bip01_r_toe0	 	 		= 0.1, -1, 0.2
 
 [critical_wound_head_section]
 	bip01_head
@@ -199,6 +200,7 @@ bip01_r_toe0	 	 		= 1.0, -1, 0.3
 	bip01_r_finger21
 	bip01_r_finger22
 
+
 [critical_wound_leg_left_section]
 	bip01_l_thigh
 	bip01_l_calf
@@ -219,17 +221,17 @@ bip01_r_toe0	 	 		= 1.0, -1, 0.3
 	leg_left			= critical_wound_leg_left_section
 	leg_right			= critical_wound_leg_right_section
 
-[stalker_immunities]
-burn_immunity 				= 0.8
-strike_immunity 			= 0.8
-shock_immunity 				= 0.8
-wound_immunity				= 0.6
-radiation_immunity 			= 0.8
-telepatic_immunity 			= 0.8
-chemical_burn_immunity 		= 0.8
-explosion_immunity 			= 0.7
-fire_wound_immunity  		= 0.9
-wound_2_immunity  			= 0.9
+[stalker_immunities] ; revert to CoP default
+burn_immunity 				= 0.5
+strike_immunity 			= 0.5
+shock_immunity 				= 0.5
+wound_immunity				= 0.5
+radiation_immunity 			= 0.5
+telepatic_immunity 			= 0.5
+chemical_burn_immunity 		= 0.5
+explosion_immunity 			= 0.5
+fire_wound_immunity  		= 1.0
+wound_2_immunity  			= 1.0
 
 [stalker_condition]
 satiety_v				= 0.00001
@@ -530,7 +532,10 @@ ph_character_have_wounded_state = false; имеет ли персонаж состояние раненый
 ;kill_enertion           = ragdoll_inertion_front_0/ragdoll_inertion_front_3/ragdoll_inertion_front_2/ragdoll_inertion_front_1
 
 
+
+
 ;kill_burst				= ragdoll_burst_front_0,ragdoll_burst_front_1/ragdoll_burst_back_0/ragdoll_burst_left_0/ragdoll_burst_right_0
+
 
 
 ;kill_shortgun	        = ragdoll_shortgun_front_0,ragdoll_shortgun_front_1,ragdoll_shortgun_front_2,ragdoll_shortgun_front_3,ragdoll_shortgun_front_4,ragdoll_shortgun_front_5,ragdoll_shortgun_front_6,ragdoll_shortgun_front_7,ragdoll_shortgun_front_8/ragdoll_shortgun_back_0,ragdoll_shortgun_back_1,ragdoll_shortgun_back_2,ragdoll_shortgun_back_3,ragdoll_shortgun_back_4,ragdoll_shortgun_back_5,ragdoll_shortgun_back_6/ragdoll_shortgun_left_0,ragdoll_shortgun_left_1,ragdoll_shortgun_left_2/ragdoll_shortgun_right_0,ragdoll_shortgun_right_1
@@ -606,8 +611,6 @@ wound_incarnation_v			= 0.0025					;крутизна кривой заживления (какой процент ра
 min_wound_size				= 0.01
 
 
-
-
 [stalker_immunities_strelok]
 burn_immunity 				= 0.0
 strike_immunity 			= 0.0
@@ -644,7 +647,7 @@ immunities_sect				= stalker_immunities_strong
 burn_immunity 				= 0.25
 strike_immunity 			= 0.25
 shock_immunity 				= 0.25
-wound_immunity				= 0.15
+wound_immunity				= 0.25
 radiation_immunity 			= 0.25
 telepatic_immunity 			= 0.25
 chemical_burn_immunity 		= 0.25
@@ -660,7 +663,7 @@ immunities_sect				= stalker_immunities_anomaly
 burn_immunity 				= 0
 strike_immunity 			= 0
 shock_immunity 				= 0
-wound_immunity				= 0.15
+wound_immunity				= 0.25
 radiation_immunity 			= 0
 telepatic_immunity 			= 0
 chemical_burn_immunity 		= 0
@@ -736,7 +739,6 @@ bip01_r_thigh	 	 		= 10000.0, 1000, 0.5
 bip01_r_calf	 	 		= 10000.0, 1000, 0.4
 bip01_r_foot	 	 		= 10000.0, 1000, 0.3
 bip01_r_toe0	 	 		= 10000.0, 1000, 0.2
-
 
 
 [fire_queue_params]  ; min < 15 < medium < 30 < max

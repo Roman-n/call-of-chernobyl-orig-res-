@@ -18,6 +18,9 @@ icon				 = ui_npc_monster_rat
 MaxHealthValue		 = 1			; range [0..200]
 smart_terrain_choose_interval	= 00:15:00
 
+hit_fraction_monster = 1
+skin_armor = 0
+
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -104,8 +107,8 @@ Accel_Calm				= 2.5
 Accel_Aggressive		= 7.5
 
 ;attack parameters
-MinAttackDist		= 1.2	;0.5
-MaxAttackDist		= 1.8	;3.8
+MinAttackDist		= 0.5	;0.5
+MaxAttackDist		= 1.0	;3.8
 
 as_min_dist				= 0.9
 as_step					= 0.1
@@ -196,7 +199,7 @@ sound_distant_idle			= monsters\rat\idle_
 distant_idle_sound_delay	= 80000
 distant_idle_sound_range	= 100.0
 
-DamagedThreshold		= 0.4
+DamagedThreshold		= 0.5
 critical_wound_threshold		= -1
 critical_wound_decrease_quant	= 0.
 
@@ -216,7 +219,6 @@ community				= rat
 
 terrain				 	= rat_terrain
 damage					= rat_damage
-protections_sect 		= rat_protections
 immunities_sect			= rat_immunities
 attack_params			= rat_attack_params
 step_params				= rat_step_params
@@ -251,10 +253,6 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 [rat_terrain]
 	255,000,255,255
 
-[rat_protections]
-skin_armor = 0
-hit_fraction_monster = 1.0
-
 [rat_damage]
 ;bone_name		 = <hit_scale>,-1,<wound_scale>
 ;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья)
@@ -272,10 +270,10 @@ strike_immunity			= 1
 shock_immunity			= 1
 wound_immunity			= 1
 radiation_immunity		= 0.0
-telepatic_immunity		= 1
+telepatic_immunity		= 0
 chemical_burn_immunity	= 1
 explosion_immunity		= 1
-fire_wound_immunity		= 6
+fire_wound_immunity		= 2
 
 [rat_attack_params]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -293,9 +291,6 @@ stand_walk_fwd_0 	=	1,	   0.2,     0.5,     0.7,    1,
 stand_run_0	 		=	1,	   0.25,     1,	    0.25,    1,
 
 
-
-
-
 [rat_weak]:m_rat_e
 $spawn				= "monsters\rats\rat_weak"
 visual				 = monsters\rat\rat_normal1
@@ -308,17 +303,16 @@ immunities_sect			= rat_immunities_weak
 attack_params			= rat_attack_params_weak
 
 
-
 [rat_immunities_weak]
-burn_immunity			= 1.0			;коэффициенты иммунитета
-strike_immunity			= 1.0
-shock_immunity			= 1.0
-wound_immunity			= 1.0
+burn_immunity			= 1			;коэффициенты иммунитета
+strike_immunity			= 1
+shock_immunity			= 1
+wound_immunity			= 1
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 1.0
-explosion_immunity		= 1.0
-fire_wound_immunity		= 3.0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 1
+explosion_immunity		= 1
+fire_wound_immunity		= 3
 
 [rat_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -327,7 +321,6 @@ fire_wound_immunity		= 3.0
 stand_attack_0 =	  	0.25,		0.06,		    2,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
 stand_attack_1 =	  	0.25,		0.10,		    3,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
 stand_attack_2 =	  	0.25,		0.14,		    4,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-
 
 
 [rat_normal]:m_rat_e
@@ -342,17 +335,16 @@ immunities_sect			= rat_immunities_normal
 attack_params			= rat_attack_params_normal
 
 
-
 [rat_immunities_normal]
-burn_immunity			= 0.9			;коэффициенты иммунитета
-strike_immunity			= 0.9
-shock_immunity			= 0.9
-wound_immunity			= 0.9
+burn_immunity			= 1			;коэффициенты иммунитета
+strike_immunity			= 1
+shock_immunity			= 1
+wound_immunity			= 1
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 0.9
-explosion_immunity		= 0.9
-fire_wound_immunity		= 2.0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 1
+explosion_immunity		= 1
+fire_wound_immunity		= 2
 
 
 [rat_attack_params_normal]
@@ -362,7 +354,6 @@ fire_wound_immunity		= 2.0
 stand_attack_0 =	  	0.25,		0.08,		    3,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
 stand_attack_1 =	  	0.25,		0.12,		    4,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
 stand_attack_2 =	  	0.25,		0.16,		    5,        0.0, 1.0, 0.0,		 -1.2, 1.2, -1.6, 1.6,							  1.0
-
 
 
 [rat_strong]:m_rat_e
@@ -377,17 +368,16 @@ immunities_sect			= rat_immunities_strong
 attack_params			= rat_attack_params_strong
 
 
-
 [rat_immunities_strong]
-burn_immunity			= 0.8			;коэффициенты иммунитета
-strike_immunity			= 0.8
-shock_immunity			= 0.8
-wound_immunity			= 0.8
+burn_immunity			= 1			;коэффициенты иммунитета
+strike_immunity			= 1
+shock_immunity			= 1
+wound_immunity			= 1
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 0.8
-explosion_immunity		= 0.8
-fire_wound_immunity		= 1.0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 1
+explosion_immunity		= 1
+fire_wound_immunity		= 1.5
 
 [rat_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -413,22 +403,22 @@ Health			     = 33
 MaxHealthValue		 = 1.25			; range [0..200]
 
 radiation_max_distance		=	3
-radiation_max_power			=	0.5
+radiation_max_power			=	0.005
 radiation_linear_factor		=	1
 radiation_quadratic_factor	=	1
 radiation_pp_effector_name	= 	postprocess_rad
-radiation_pp_highest_at		= 	0.1
+radiation_pp_highest_at		= 	0.001
 
 [rat_immunities_wolf]
-burn_immunity			= 0.6			;коэффициенты иммунитета
-strike_immunity			= 0.6
-shock_immunity			= 0.6
-wound_immunity			= 0.6
+burn_immunity			= 0.9
+strike_immunity			= 0.9
+shock_immunity			= 0.9
+wound_immunity			= 0.9
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 0.6
-explosion_immunity		= 0.6
-fire_wound_immunity		= 1.0
+telepatic_immunity		= 0
+chemical_burn_immunity	= 0.9
+explosion_immunity		= 0.9
+fire_wound_immunity		= 1
 
 [rat_attack_params_wolf]
 ;---------------------------------------------------------------------------------------------------------------------------------------------

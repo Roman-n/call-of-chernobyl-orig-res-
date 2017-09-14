@@ -15,6 +15,9 @@ visual			= monsters\zombi\zombi_1
 corpse_visual		= monsters\zombi\zombi_1
 icon                    = ui_npc_monster_kontroler	
 
+hit_fraction_monster = 0.75
+skin_armor = 0.1
+
 spawn_phantom 		= m_phantom_zombi
 can_spawn_phantom 	= false
 MaxHealthValue		     = 100			;-- range [0..200]
@@ -96,10 +99,6 @@ still_visible_time          = 0 				;The time (milliseconds) that the object is 
 [zombie_terrain]
 	255,000,255,255
 
-[zombie_protections]
-skin_armor           = 0.1
-hit_fraction_monster = 0.5
-
 ; speed factors		linear | angular_real | angular_path | min  |  max
 Velocity_Stand		= 0,		1.4,		1.4,	   1,	  1
 Velocity_WalkFwdNormal	= 0.9,		0.6,		0.6,    0.02,	2.0	
@@ -115,8 +114,8 @@ Accel_Calm		= 2.5
 Accel_Aggressive	= 7.5
 
 ;attack parameters
-MinAttackDist		= 1.7	;--0.5
-MaxAttackDist		= 2.3	;--3.8
+MinAttackDist		= 1.4	;--0.5
+MaxAttackDist		= 2.2	;--3.8
 
 Melee_Rotation_Factor	= 1.6
 
@@ -208,7 +207,7 @@ sound_distant_idle		= monsters\zombie\zombie_idle_
 distant_idle_sound_delay	= 80000
 distant_idle_sound_range	= 100.0	
 
-DamagedThreshold		= 0.5
+DamagedThreshold		= 0.4
 critical_wound_threshold	= -1
 critical_wound_decrease_quant	= 0.
 
@@ -553,12 +552,12 @@ Morale_Despondent_Threashold	= 0.1
 burn_immunity			= 1.0
 strike_immunity			= 1.0
 shock_immunity			= 1.0
-wound_immunity			= 0.20
+wound_immunity			= 0.4
 radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
-explosion_immunity		= 0.55
-fire_wound_immunity		= 4
+explosion_immunity		= 0.6
+fire_wound_immunity		= 1
 
 [zombie_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------

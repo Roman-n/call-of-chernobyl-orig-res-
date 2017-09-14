@@ -160,6 +160,8 @@ bip01_r_finger12			= 1, 0, 1
 bip01_r_finger2 			= 1, 0, 1
 bip01_r_finger21			= 1, 0, 1
 bip01_r_finger22			= 1, 0, 1
+bip01_l_hand				= 1, 0, 1
+bip01_r_hand				= 1, 0, 1
 ;***************************************************************
 ; HEAD SECTIONS
 ;***************************************************************
@@ -215,19 +217,19 @@ hit_fraction_npc				= 0.1
 hit_fraction_npc				= 0.9
 
 [stalker_bandit_2]:body_damage_25,head_damage_1, fingerpass
-hit_fraction_npc				= 0.7
+hit_fraction_npc				= 0.6
 
 [stalker_bandit_3]:body_damage_2,head_damage_1, fingerpass
-hit_fraction_npc				= 0.85
-
-[stalker_bandit_4]:body_damage_2,head_damage_1, fingerpass
 hit_fraction_npc				= 0.8
 
-[stalker_bandit_5]:body_damage_25,head_damage_1, fingerpass
+[stalker_bandit_4]:body_damage_2,head_damage_1, fingerpass
 hit_fraction_npc				= 0.75
 
+[stalker_bandit_5]:body_damage_25,head_damage_1, fingerpass
+hit_fraction_npc				= 0.65
+
 [stalker_bandit_6]:body_damage_25,head_damage_15, fingerpass
-hit_fraction_npc				= 0.7
+hit_fraction_npc				= 0.6
 
 [stalker_dolg_1]:body_damage_2,head_damage_15, fingerpass
 hit_fraction_npc				= 0.7
@@ -236,38 +238,38 @@ hit_fraction_npc				= 0.7
 hit_fraction_npc				= 0.7
 
 [stalker_dolg_3]:body_damage_5,head_damage_4, fingerpass
-hit_fraction_npc				= 0.55
-
-[stalker_dolg_4]:body_damage_4,head_damage_4, fingerpass
 hit_fraction_npc				= 0.4
 
-[stalker_freedom_1]:body_damage_2,head_damage_1, fingerpass
-hit_fraction_npc				= 0.8
+[stalker_dolg_4]:body_damage_4,head_damage_4, fingerpass
+hit_fraction_npc				= 0.25
 
-[stalker_freedom_2]:body_damage_2,head_damage_1, fingerpass
+[stalker_freedom_1]:body_damage_2,head_damage_1, fingerpass
 hit_fraction_npc				= 0.75
 
+[stalker_freedom_2]:body_damage_2,head_damage_1, fingerpass
+hit_fraction_npc				= 0.7
+
 [stalker_freedom_3]:body_damage_3,head_damage_2, fingerpass
-hit_fraction_npc				= 0.6
+hit_fraction_npc				= 0.5
 
 [stalker_freedom_4]:body_damage_4,head_damage_4, fingerpass
-hit_fraction_npc				= 0.45
+hit_fraction_npc				= 0.25
 
 [stalker_freedom_5]:body_damage_5,head_damage_3, fingerpass
-hit_fraction_npc				= 0.55
+hit_fraction_npc				= 0.4
 
 ;[stalker_merc_1]:body_damage_2,head_damage_1, fingerpass
 ;hit_fraction_npc				= 0.8
 ;There are no mercs with novice armor
 
 [stalker_merc_2]:body_damage_25,head_damage_15, fingerpass
-hit_fraction_npc				= 0.7
+hit_fraction_npc				= 0.6
 
 [stalker_merc_3]:body_damage_3,head_damage_3, fingerpass
-hit_fraction_npc				= 0.7
+hit_fraction_npc				= 0.5
 
 [stalker_merc_4]:body_damage_4,head_damage_4, fingerpass
-hit_fraction_npc				= 0.4
+hit_fraction_npc				= 0.25
 
 [stalker_monolith_1]:body_damage_2,head_damage_15, fingerpass
 hit_fraction_npc				= 0.7
@@ -276,22 +278,22 @@ hit_fraction_npc				= 0.7
 hit_fraction_npc				= 0.7
 
 [stalker_monolith_3]:body_damage_5,head_damage_3, fingerpass
-hit_fraction_npc				= 0.5
-
-[stalker_monolith_4]:body_damage_4,head_damage_3, fingerpass
 hit_fraction_npc				= 0.4
 
-[stalker_nebo_1]:body_damage_2,head_damage_1, fingerpass
-hit_fraction_npc				= 0.8
+[stalker_monolith_4]:body_damage_4,head_damage_3, fingerpass
+hit_fraction_npc				= 0.25
 
-[stalker_nebo_2]:body_damage_25,head_damage_15, fingerpass
+[stalker_nebo_1]:body_damage_2,head_damage_1, fingerpass
 hit_fraction_npc				= 0.7
 
+[stalker_nebo_2]:body_damage_25,head_damage_15, fingerpass
+hit_fraction_npc				= 0.65
+
 [stalker_nebo_3]:body_damage_3,head_damage_3, fingerpass
-hit_fraction_npc				= 0.6
+hit_fraction_npc				= 0.5
 
 [stalker_nebo_4]:body_damage_5,head_damage_3, fingerpass
-hit_fraction_npc				= 0.5
+hit_fraction_npc				= 0.4
 
 [stalker_neutral_1]:body_damage_1,head_damage_1, fingerpass
 hit_fraction_npc				= 0.9
@@ -303,19 +305,19 @@ hit_fraction_npc				= 0.7
 hit_fraction_npc				= 0.7
 
 [stalker_neutral_3]:body_damage_5,head_damage_3, fingerpass
-hit_fraction_npc				= 0.5
+hit_fraction_npc				= 0.4
 
 [stalker_neutral_4]:body_damage_4,head_damage_4, fingerpass
-hit_fraction_npc				= 0.4
+hit_fraction_npc				= 0.25
 
 [stalker_neutral_nauchniy]:body_damage_2, head_damage_15, fingerpass
 hit_fraction_npc				= 0.7
 
 [stalker_ecolog_1]:body_damage_2,head_damage_15, fingerpass
-hit_fraction_npc				= 0.85
+hit_fraction_npc				= 0.75
 
 [stalker_ecolog_2]:body_damage_25,head_damage_15, fingerpass
-hit_fraction_npc				= 0.8
+hit_fraction_npc				= 0.7
 
 [stalker_oon_1]:body_damage_2,head_damage_1
 hit_fraction_npc				= 0.1
@@ -327,25 +329,25 @@ hit_fraction_npc				= 0.1
 hit_fraction_npc				= 0.75
 
 [stalker_soldier_2]:body_damage_3,head_damage_2, fingerpass
-hit_fraction_npc				= 0.6
-
-[stalker_soldier_3]:body_damage_3,head_damage_3, fingerpass
-hit_fraction_npc				= 0.55
-
-[stalker_soldier_4]:body_damage_5,head_damage_3, fingerpass
 hit_fraction_npc				= 0.5
 
-[stalker_soldier_beret]:body_damage_3,head_damage_1, fingerpass
-hit_fraction_npc				= 0.55
-
-[stalker_soldier_skat9m]:body_damage_5,head_damage_4, fingerpass
+[stalker_soldier_3]:body_damage_3,head_damage_3, fingerpass
 hit_fraction_npc				= 0.45
 
-[stalker_soldier_exo]:body_damage_4,head_damage_4, fingerpass
+[stalker_soldier_4]:body_damage_5,head_damage_3, fingerpass
+hit_fraction_npc				= 0.4
+
+[stalker_soldier_beret]:body_damage_3,head_damage_1, fingerpass
+hit_fraction_npc				= 0.45
+
+[stalker_soldier_skat9m]:body_damage_5,head_damage_4, fingerpass
 hit_fraction_npc				= 0.35
 
+[stalker_soldier_exo]:body_damage_4,head_damage_4, fingerpass
+hit_fraction_npc				= 0.2
+
 [stalker_zombied_1]:body_damage_1,head_damage_1, fingerpass
-hit_fraction_npc				= 0.6
+hit_fraction_npc				= 0.7
 
 [stalker_zombied_2]:body_damage_2,head_damage_1, fingerpass
 hit_fraction_npc				= 0.5

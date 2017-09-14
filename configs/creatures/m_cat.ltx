@@ -15,6 +15,9 @@ visual				= monsters\cat\cat
 corpse_visual		= monsters\cat\cat
 icon = ui_npc_monster_cat	
 
+hit_fraction_monster = 0.4
+skin_armor = 0.15
+
 cform                = skeleton					; collision class
 class                = SM_CAT_S					; AI class
 
@@ -69,7 +72,6 @@ eye_range			 = 90
 max_hear_dist		 = 100
 
 
-
 ; speed factors			linear | angular_real | angular_path | min |  max
 Velocity_Stand			= 0,		3.0,			3.0,		1,		1		;0,	1.79,	1,		1
 Velocity_WalkFwdNormal	= 1.2,		1.5,			1.5,		0.2,	2.0
@@ -86,7 +88,7 @@ Accel_Aggressive		= 4.5
 
 ;attack parameters
 MinAttackDist		= 1.4
-MaxAttackDist		= 4.0
+MaxAttackDist		= 2.5
 
 as_min_dist				= 0.3
 as_step					= 0.4
@@ -253,16 +255,16 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 
 default				= 1.0, -1, 0.3
 
-bip01_pelvis 		= 2.0, -1, 0.8
-bip01_spine 		= 2.0, -1, 0.5
-bip01_spine1 		= 2.0, -1, 0.8
-bip01_neck 			= 2.5, -1, 1.5
-bip01_head 			= 3.5, -1, 0.5, 10
-bone01 				= 2.0, -1, 0.5
-bone03 				= 2.0, -1, 0.5
-bone05 				= 2.0, -1, 0.5
-bip01_ponytail1 	= 0.3, -1, 0.8
-bip01_ponytail2		= 0.3, -1, 0.8
+bip01_pelvis 		= 1.0, -1, 0.5
+bip01_spine 		= 1.0, -1, 0.5
+bip01_spine1 		= 1.0, -1, 0.5
+bip01_neck 			= 1.5, -1, 1.5
+bip01_head 			= 2.0, -1, 0.5, 10
+bone01 				= 1.0, -1, 0.5
+bone03 				= 1.0, -1, 0.5
+bone05 				= 1.0, -1, 0.5
+bip01_ponytail1 	= 0.3, -1, 0.5
+bip01_ponytail2		= 0.3, -1, 0.5
 
 
 [cat_test_attack_params]
@@ -271,11 +273,11 @@ bip01_ponytail2		= 0.3, -1, 0.8
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, top, bottom) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left leg strike
-stand_attack_0 =	  	0.35,		0.20,		    100,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.5
+stand_attack_0 =	  	0.35,		0.4,		    85,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
 ;Both leg strike
-stand_attack_1 =	  	0.30,		0.20,		    100,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  3.5
-stand_attack_rat_0  =	0.40,		0.25,			120,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
-jump_attack_2		=	0.50,		0.35,			180,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+stand_attack_1 =	  	0.30,		0.35,		    85,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
+stand_attack_rat_0  =	0.40,		0.4,			85,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+jump_attack_2		=	0.50,		0.5,			125,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								1.5
 
 
 [cat_test_attack_effector]
@@ -316,32 +318,14 @@ stand_drag_0		=	   1,	    0.2,     1,	    0.25,    0.7,    0.7,     1.0,     0.7
 ;===========================================================================
 [cat_immunities]
 burn_immunity			= 0.8
-strike_immunity			= 0.8
+strike_immunity			= 0;0.8
 shock_immunity			= 0.8
 wound_immunity			= 0.7
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.8
-explosion_immunity		= 0.85
-fire_wound_immunity		= 0.9
-
-
-[cat_protections]
-skin_armor = 0.1
-hit_fraction_monster = 0.7
-
-[cat_weak]:cat_test	
-;monster_type		= outdoor
-visual = monsters\cat\ca1
-
-
-[cat_normal]:cat_test
-visual = monsters\cat\ca2
-skin_armor = 0.1
-
-[cat_strong]:cat_test
-$spawn = "monsters\cat"	
-visual = monsters\cat\ca2
+explosion_immunity		= 0.9
+fire_wound_immunity		= 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;Cat population - Borovos 2013;;;;;;;;;;;;;;;;;
@@ -393,22 +377,20 @@ spec_rank				= weak
 
 immunities_sect					= cat_weak_immunities
 attack_params			= cat_weak_attack_params
-
-skin_armor = 0.08
-
+hit_fraction_monster = 0.45
 ;===========================================================================
 ; IMMUNITIES
 ;===========================================================================
 [cat_weak_immunities]
-burn_immunity			= 1.0 ;0.7
-strike_immunity			= 1.0 ;0.7
-shock_immunity			= 1.0 ;0.7
-wound_immunity			= 0.75
-radiation_immunity		= 0.0 ;0.0
-telepatic_immunity		= 0.0 ;0.7
-chemical_burn_immunity	= 1.0 ;0.7
-explosion_immunity		= 1.0 ;0.7
-fire_wound_immunity		= 0.9 ;0.7
+burn_immunity			= 0.9
+strike_immunity			= 0;0.9
+shock_immunity			= 0.9
+wound_immunity			= 0.8
+radiation_immunity		= 0.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.9
+explosion_immunity		= 1
+fire_wound_immunity		= 1
 
 [cat_weak_attack_params]
 
@@ -416,11 +398,11 @@ fire_wound_immunity		= 0.9 ;0.7
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, top, bottom) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left leg strike
-stand_attack_0 =	  	0.35,		0.20,		    80,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.5
+stand_attack_0 =	  	0.35,		0.35,		    75,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
 ;Both leg strike
-stand_attack_1 =	  	0.30,		0.20,		    80,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  3.5
-stand_attack_rat_0  =	0.40,		0.25,			90,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
-jump_attack_2		=	0.50,		0.35,			120,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+stand_attack_1 =	  	0.30,		0.3,		    75,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
+stand_attack_rat_0  =	0.40,		0.35,			75,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+jump_attack_2		=	0.50,		0.45,			100,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								1.4
 
 
 
@@ -455,21 +437,19 @@ spec_rank				= strong
 immunities_sect					= cat_strong_immunities
 attack_params			= cat_strong_attack_params
 
-skin_armor = 0.2
-
 ;===========================================================================
 ; IMMUNITIES
 ;===========================================================================
 [cat_strong_immunities]
-burn_immunity			= 0.6 ;0.66
-strike_immunity			= 0.6 ;0.66
-shock_immunity			= 0.6 ;0.66
+burn_immunity			= 0.7
+strike_immunity			= 0;0.7
+shock_immunity			= 0.7
 wound_immunity			= 0.6
-radiation_immunity		= 0.0 ;0.0
-telepatic_immunity		= 0.0 ;0.5
-chemical_burn_immunity	= 0.6 ;0.66
-explosion_immunity		= 0.7 ;0.66
-fire_wound_immunity		= 0.8 ;0.70
+radiation_immunity		= 0.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.7
+explosion_immunity		= 0.7
+fire_wound_immunity		= 0.8
 
 [cat_strong_attack_params]
 
@@ -477,11 +457,11 @@ fire_wound_immunity		= 0.8 ;0.70
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, top, bottom) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left leg strike
-stand_attack_0 =	  	0.35,		0.30,		    110,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.5
+stand_attack_0 =	  	0.35,		0.45,		    100,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
 ;Both leg strike
-stand_attack_1 =	  	0.30,		0.30,		    110,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  3.5
-stand_attack_rat_0  =	0.40,		0.30,			130,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
-jump_attack_2		=	0.50,		0.45,			200,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+stand_attack_1 =	  	0.30,		0.4,		    100,        0.0, 0.5, 1.0,		 -1.2, 1.2, -1.2, 1.2,								  2.0
+stand_attack_rat_0  =	0.40,		0.45,			100,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								2.0
+jump_attack_2		=	0.50,		0.55,			150,		0.0, -0.5,1.0,       -0.6, 0.6, -1.6, 0.6,								1.6
 
 
 [cat_strong_a]:cat_strong_base
@@ -506,3 +486,15 @@ visual = monsters\cat\cat_strong4
 [cat_strong_e]:cat_strong_base
 $spawn        = "monsters\cat\cat_strong_e"
 visual = monsters\cat\cat_strong5
+
+
+[cat_weak]:cat_weak_base	
+;monster_type		= outdoor
+visual = monsters\cat\ca1
+
+[cat_normal]:cat_test
+visual = monsters\cat\ca2
+
+[cat_strong]:cat_strong_base
+$spawn = "monsters\cat"	
+visual = monsters\cat\ca2

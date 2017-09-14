@@ -11,6 +11,9 @@ visual					= monsters\mutant_boar\mutant_boar
 corpse_visual			= monsters\mutant_boar\mutant_boar_dead
 icon					= ui_npc_monster_mutant_boar
 
+hit_fraction_monster = 0.3
+skin_armor = 0.42
+
 ;------------------------------------------------------------------------
 ; Offline Alife
 ;------------------------------------------------------------------------
@@ -104,8 +107,8 @@ Accel_Aggressive		= 6.5
 attack_effector			= m_boar_attack_effector
 attack_params			= m_boar_attack_params
 ;attack parameters
-MinAttackDist			= 2.6
-MaxAttackDist			= 4.0
+MinAttackDist			= 2.0
+MaxAttackDist			= 3.5
 as_min_dist				= 1.6
 as_step					= 0.5
 
@@ -148,7 +151,6 @@ psy_health_v			= 0.1								;скорость восстановления psy-здоровья
 
 ;Immunities
 immunities_sect			= boar_immunities
-protections_sect		= boar_protections
 
 ;открытые раны
 bleeding_v					= 0.05						;потеря крови при номинальной ране в секунду
@@ -316,7 +318,7 @@ stand_attack_0 =	  	0.30,		0.65,	      150,        0.0, 0.5, 0.5,	 -0.6, 0.6, -0
 ;Bite2
 stand_attack_1 =	  	0.30,		0.65,	      150,        0.0, 0.5, 0.5,	 -0.6, 0.6, -0.6, 0.6,	3.2
 ;Right Leg Attack
-stand_attack_2 =	  	0.30,		0.65,	      200,        0.0, 1.0, 2.0,	 -0.6, 0.6, -0.6, 0.6,	3.2
+stand_attack_2 =	  	0.30,		0.65,	      150,        0.0, 1.0, 2.0,	 -0.6, 0.6, -0.6, 0.6,	3.2
 
 stand_attack_run_0	=    0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
 
@@ -447,22 +449,15 @@ stand_drag_0		=	  1,	0.2,    1,	     0.25,    0.7,    0.7,    1.0,     0.7,   1.
 ; IMMUNITIES
 ;===========================================================================
 [boar_immunities]
-burn_immunity			= 1.0								;коэффициенты иммунитета
-strike_immunity			= 0.8
-shock_immunity			= 0.8
+burn_immunity			= 0.6								;коэффициенты иммунитета
+strike_immunity			= 0.5
+shock_immunity			= 0.5
 wound_immunity			= 0.5
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 0.8
-explosion_immunity		= 0.15
-fire_wound_immunity		= 0.8
-
-;*********************************************************************************
-; PROTECTIONS
-;*********************************************************************************
-[boar_protections]
-
-hit_fraction_monster	= 0.3
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.6
+explosion_immunity		= 0.4
+fire_wound_immunity		= 0.4
 
 ;*********************************************************************************
 ; BASE PROFILES
@@ -484,32 +479,30 @@ spec_rank			= normal
 community			= boar
 MaxHealthValue         = 1.0              ; range [0..200]
 
-skin_armor				= 0.5
-
 [boar_immunities_normal]
-burn_immunity			= 0.2
-strike_immunity			= 0.2
-shock_immunity			= 0.2
-wound_immunity			= 0.4
+burn_immunity			= 0.6
+strike_immunity			= 0.5
+shock_immunity			= 0.5
+wound_immunity			= 0.5
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.2
-explosion_immunity		= 0.3
-fire_wound_immunity		= 0.85
+chemical_burn_immunity	= 0.6
+explosion_immunity		= 0.4
+fire_wound_immunity		= 0.4
 
 [boar_attack_params_normal]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Bite
-stand_attack_0 =	  	0.30,		0.65,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_0 =	  	0.30,		0.5,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.4
 ;Bite2
-stand_attack_1 =	  	0.30,		0.65,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_1 =	  	0.30,		0.5,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.4
 ;Right Leg Attack
-stand_attack_2 =	  	0.30,		0.65,	      50,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.5
-stand_attack_run_0 =    0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,					  3.2
-stand_attack_run_left_0  =   0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
-stand_attack_run_right_0 =   0.40,		0.65,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
+stand_attack_2 =	  	0.30,		0.5,	      50,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.4
+stand_attack_run_0 =    0.40,		0.6,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,					  3.3
+stand_attack_run_left_0  =   0.40,		0.6,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.3
+stand_attack_run_right_0 =   0.40,		0.6,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.3
 
 [boar_strong]:m_boar_e
 $spawn				= "monsters\boars\boar_03_strong"
@@ -523,35 +516,33 @@ spec_rank			= strong
 community			= boar
 MaxHealthValue         = 1.25              ; range [0..200]
 
-skin_armor				= 0.42
-
 ;*********************************************************************************
 ; STRONG PROFILE
 ;*********************************************************************************
 [boar_immunities_strong]
-burn_immunity			= 0.1
-strike_immunity			= 0.1
-shock_immunity			= 0.1
-wound_immunity			= 0.3
+burn_immunity			= 0.5
+strike_immunity			= 0.4
+shock_immunity			= 0.4
+wound_immunity			= 0.4
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.1
-explosion_immunity		= 0.2
-fire_wound_immunity		= 0.75
+chemical_burn_immunity	= 0.5
+explosion_immunity		= 0.3
+fire_wound_immunity		= 0.3
 
 [boar_attack_params_strong]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Bite
-stand_attack_0 =	  	0.20,		0.7,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_0 =	  	0.20,		0.6,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.5
 ;Bite2
-stand_attack_1 =	  	0.20,		0.7,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_1 =	  	0.20,		0.6,	      50,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.5
 ;Right Leg Attack
-stand_attack_2 =	  	0.20,		0.7,	      50,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.5
-stand_attack_run_0 =    0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,				  3.2
-stand_attack_run_left_0  =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
-stand_attack_run_right_0 =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
+stand_attack_2 =	  	0.20,		0.6,	      50,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.5
+stand_attack_run_0 =    0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,				  3.4
+stand_attack_run_left_0  =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.4
+stand_attack_run_right_0 =   0.40,		0.7,	      1800,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.4
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;Boar population - Borovos 2013;;;;;;;;;;;;;;;;;
@@ -569,37 +560,35 @@ visual				= monsters\mutant_boar\mutant_boar_small
 corpse_visual			= monsters\mutant_boar\mutant_boar_small_dead
 MaxHealthValue         = 0.75              ; range [0..200]
 
-skin_armor				= 0.26
-
 panic_threshold		= 0.3
 
 immunities_sect		= boar_immunities_weak
 attack_params		= boar_attack_params_weak
 
 [boar_immunities_weak]
-burn_immunity			= 0.3
-strike_immunity			= 0.3
-shock_immunity			= 0.3
-wound_immunity			= 0.5
+burn_immunity			= 0.7
+strike_immunity			= 0.6
+shock_immunity			= 0.6
+wound_immunity			= 0.6
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.3
-explosion_immunity		= 0.4
-fire_wound_immunity		= 1.0
+chemical_burn_immunity	= 0.7
+explosion_immunity		= 0.6
+fire_wound_immunity		= 0.55
 
 [boar_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Bite
-stand_attack_0 =	  	0.30,		0.55,	      40,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_0 =	  	0.30,		0.4,	      40,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
 ;Bite2
-stand_attack_1 =	  	0.30,		0.55,	      40,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_1 =	  	0.30,		0.4,	      40,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
 ;Right Leg Attack
-stand_attack_2 =	  	0.30,		0.55,	      40,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.5
-stand_attack_run_0 =    0.40,		0.55,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,					  3.2
-stand_attack_run_left_0  =   0.40,		0.55,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
-stand_attack_run_right_0 =   0.40,		0.55,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
+stand_attack_2 =	  	0.30,		0.4,	      40,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.3
+stand_attack_run_0 =    0.40,		0.5,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,					  3.2
+stand_attack_run_left_0  =   0.40,		0.5,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
+stand_attack_run_right_0 =   0.40,		0.5,	      1600,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
 
 [boar_02a_weak]:boar_01a_weak
 $spawn				= "monsters\boars\boar_02a_weak"
@@ -634,29 +623,29 @@ immunities_sect		= boar_immunities_hard
 attack_params		= boar_attack_params_hard
 
 [boar_immunities_hard]
-burn_immunity			= 0.07
-strike_immunity			= 0.07
-shock_immunity			= 0.07
-wound_immunity			= 0.4
+burn_immunity			= 0.45
+strike_immunity			= 0.35
+shock_immunity			= 0.35
+wound_immunity			= 0.35
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
-chemical_burn_immunity	= 0.07
-explosion_immunity		= 0.24
-fire_wound_immunity		= 0.65
+chemical_burn_immunity	= 0.45
+explosion_immunity		= 0.25
+fire_wound_immunity		= 0.25
 
 [boar_attack_params_hard]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Bite
-stand_attack_0 =	  	0.20,		0.8,	      60,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_0 =	  	0.20,		0.65,	      60,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.6
 ;Bite2
-stand_attack_1 =	  	0.20,		0.8,	      60,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.3
+stand_attack_1 =	  	0.20,		0.65,	      60,        0.0, 0.5, 0.5,	 -1.0, 1.0, -1.0, 1.0,					  2.6
 ;Right Leg Attack
-stand_attack_2 =	  	0.20,		0.8,	      60,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.5
-stand_attack_run_0 =    0.40,		0.8,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,				  3.2
-stand_attack_run_left_0  =   0.40,		0.8,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
-stand_attack_run_right_0 =   0.40,		0.8,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.2
+stand_attack_2 =	  	0.20,		0.65,	      60,        0.0, 1.0, 2.0,	 -0.8, 0.8, -1.0, 1.0,					  2.6
+stand_attack_run_0 =    0.40,		0.75,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,				  3.5
+stand_attack_run_left_0  =   0.40,		0.75,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.5
+stand_attack_run_right_0 =   0.40,		0.75,	      2100,        0.0, 1.0, 2.0,	 -1.0, 1.0, -1.0, 1.0,	3.5
 
 
 [boar_02a_hard]:boar_01a_hard

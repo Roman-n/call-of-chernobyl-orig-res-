@@ -12,6 +12,9 @@ corpse_visual			= monsters\burer\burer_dead
 
 MaxHealthValue		    = 1.0
 
+hit_fraction_monster = 0.4
+skin_armor = 0.25
+
 ;------------------------------------------------------------------------
 ; Influences
 ;------------------------------------------------------------------------
@@ -289,7 +292,7 @@ selector_approach		=  20.0,            1.0,                 1000.0,             
 terrain					= burer_terrain
 hit_type				= wound
 
-DamagedThreshold		= 0.5
+DamagedThreshold		= 0.3
 
 material				= creatures\large
 step_params				= m_burer_step_params
@@ -303,7 +306,6 @@ spec_rank				= weak
 community				= burer
 monster_type			= indoor
 
-protections_sect 		= burer_protections
 immunities_sect			= burer_immunities
 
 ;-------------------------------------------------------------------------
@@ -319,20 +321,16 @@ vision_danger_section		= burer_vision_danger
 ; ЗНАЧЕНИЯ visibility_threshold ДОЛЖНЫ БЫТЬ РАВНЫ для денжера и фри,
 ; иначе возникают артефакты с потерей видимости при переходе от денжера во фри.
 
-[burer_protections]
-
-hit_fraction_monster = 0.3
-
 [burer_immunities]
-burn_immunity			= 0.9
-strike_immunity			= 0.9
-shock_immunity			= 0.9
-wound_immunity			= 0.4
+burn_immunity			= 0.8
+strike_immunity			= 0.7
+shock_immunity			= 0.8
+wound_immunity			= 0.7
 radiation_immunity		= 0.0
-telepatic_immunity		= 0.9
-chemical_burn_immunity	= 0.9
-explosion_immunity		= 0.5
-fire_wound_immunity		= 0.8
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.8
+explosion_immunity		= 0.8
+fire_wound_immunity		= 0.75
 
 [burer_vision_free]
 min_view_distance   		= 0.4				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -364,7 +362,7 @@ transparency_threshold		= 0.66
 ;	anim					| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left hand Strike
-stand_attack_0			 =	  	0.4,		  0.70,	     1000,        2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
+stand_attack_0			 =	  	0.4,		  0.7,	     1000,        2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 stand_stamina_attack_0 	 =	  	0.4,		  0.0,	     0,          2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 
 ;=================================================================================
@@ -465,8 +463,6 @@ spec_rank			= normal
 
 MaxHealthValue		    = 1.0						; range [0..200]
 
-skin_armor = 0.25
-
 ;*********************************************************************************
 ; NORMAL PROFILE 2
 ;*********************************************************************************
@@ -480,8 +476,6 @@ rank				= 19
 spec_rank			= normal
 
 MaxHealthValue		    = 1.0						; range [0..200]
-
-skin_armor = 0.25
 
 ;*********************************************************************************
 ; WEAK PROFILE
@@ -497,18 +491,16 @@ spec_rank			= weak
 immunities_sect		= burer_immunities_weak
 MaxHealthValue		    = 0.75						; range [0..200]
 
-skin_armor = 0.2
-
 [burer_immunities_weak]
-burn_immunity			= 1.0
-strike_immunity			= 1.0
-shock_immunity			= 1.0
-wound_immunity			= 0.6
+burn_immunity			= 0.9
+strike_immunity			= 0.8
+shock_immunity			= 0.9
+wound_immunity			= 0.8
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 1.0
-explosion_immunity		= 0.6
-fire_wound_immunity		= 0.9
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.9
+explosion_immunity		= 0.9
+fire_wound_immunity		= 1
 
 ;*********************************************************************************
 ; WEAK PROFILE 2
@@ -524,8 +516,6 @@ spec_rank			= weak
 immunities_sect		= burer_immunities_weak
 
 MaxHealthValue		    = 0.75						; range [0..200]
-
-skin_armor = 0.25
 
 ;----------------------------------------------------------------------------
 ;--------------------------Borovos -  May 2014 - Fire Burer -----------------
