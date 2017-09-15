@@ -966,16 +966,16 @@ function action_car:fast_update()
 			self.last_pos_time = cur_time
 		else
 			local cur_pos = self.object:position()
-			local diff = self.last_pos:distance_to(cur_pos)
-			if diff < self.min_delta_per_sec then
-                --printf("car <move>: got stuck (%s < %s) - stop.", diff, self.min_delta_per_sec)
-                self:stop_car()
-				--self:car_explode()
-				self.state_moving = state_moving_end
-				--return false
-			else
+			-- local diff = self.last_pos:distance_to(cur_pos)
+			-- if diff < self.min_delta_per_sec then
+                -- --printf("car <move>: got stuck (%s < %s) - stop.", diff, self.min_delta_per_sec)
+                -- self:stop_car()
+				-- --self:car_explode()
+				-- self.state_moving = state_moving_end
+				-- --return false
+			-- else
 			    self.last_pos = cur_pos
-			end
+			--end
 			self.last_pos_time = cur_time
 		end
 	end

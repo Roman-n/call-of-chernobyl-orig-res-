@@ -74,7 +74,6 @@ end
 class "weapon_binder" (object_binder)
 -- Class constructor
 function weapon_binder:__init(obj) super(obj)
-	printf("weapon_binder %s",obj:name())
 end
 -- Class update
 function weapon_binder:update(delta)

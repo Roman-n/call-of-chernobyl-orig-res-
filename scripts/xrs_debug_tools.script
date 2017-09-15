@@ -1346,13 +1346,13 @@ function stalker_info_hud_show(hud)
 		hud:add_msg("AnimState",state_mgr.get_state(near))
 
 		local pt_index = near.get_current_point_index and near:get_current_point_index()
-		if (not pt_index or pt_index == 4294967296 ) then
+		if (pt_index and pt_index ~= 4294967296) then 
+			hud:add_msg("PT index",pt_index)
+		else
 			pt_index = st.active_scheme and (st.active_scheme == "camper" or st.active_scheme == "beh") and utils.load_var(near,"path_index",nil)
+			hud:add_msg(st.active_scheme.."|PT index",pt_index)
 		end
 
-		if (pt_index) then
-			hud:add_msg("PT index",pt_index)
-		end
 		--[[
 		local smart = xr_gulag.get_npc_smart(near)
 		if (smart) then
