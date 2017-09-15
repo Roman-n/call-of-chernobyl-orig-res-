@@ -286,15 +286,24 @@ function eva_gather_itm:find_valid_item()
 	self.st.index = self.st.index + 1
 
 	local itm = itm_id and itm_id ~= 0 and itm_id ~= 65535 and level.object_by_id(itm_id)
-	local se_itm = itm and loot_table[itm:section()] and Items[itm_id] == nil and alife_object(itm_id)
-
-	if not (se_itm and se_itm.parent_id == 65535) then
+	if not (itm and loot_table[itm:section()] and Items[itm_id] == nil) then 
+		return false 
+	end 
+	
+	if (itm:parent()) then
 		return false
 	end
 	
 	if (get_object_story_id(itm_id)) then
 		return false
 	end
+	
+	local itm_pos = itm:position()
+	local dist = npc:position():distance_to_sqr(itm_pos)
+	
+	if (dist > MaxDetectDistance) then 
+		return false 
+	end 
 	
 	if (npc:best_enemy()) then
 		if not (IsWeapon(itm)) then 
@@ -305,7 +314,7 @@ function eva_gather_itm:find_valid_item()
 		end
 	end
 
-	if (IsArtefact(nil,se_itm:clsid())) then
+	if (IsArtefact(itm)) then
 		if not (ArtifactDectection) then
 			return false
 		end
@@ -326,10 +335,7 @@ function eva_gather_itm:find_valid_item()
 		end
 	end
 
-	local itm_pos = itm:position()
-	local dist = npc:position():distance_to_sqr(itm_pos)
-
-	if (self.st.nearest_dist == nil or dist < self.st.nearest_dist) and (dist < MaxDetectDistance) then
+	if (self.st.nearest_dist == nil or dist < self.st.nearest_dist) then
 		local vid = level.vertex_id(itm_pos)
 		if (vid and level.valid_vertex(vid)) then
 			if (level.vertex_position(vid):distance_to_sqr(itm_pos) > 16) then

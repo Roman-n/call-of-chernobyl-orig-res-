@@ -158,7 +158,7 @@ local function is_danger(npc,best_danger,script)
 		return false
 	end
 
-	if (xrs_kill_wounded and xrs_kill_wounded.hostage_list[npc:id()]) then 
+	if (xrs_kill_wounded and axr_task_manager.hostages_by_id[npc:id()]) then 
 		return false 
 	end 
 	
@@ -706,6 +706,59 @@ local function script_action_danger_attacked(npc,st,bd,best_danger_object,depend
 	end
 end
 
+local function script_action_react_to_alarm(npc,st,smart)
+	printf("[%s] script_action_react_to_alarm %s",smart:name(),npc:name())
+	local tg = time_global()
+
+	if not (st.lvid) then 
+		st.stage = 1
+	end
+	
+	if (st.stage == 1) then
+		local bdo,nearest_dist
+		-- get closest alarm setter
+		for id,pos in pairs(smart.smart_alarm_position) do 
+			local obj = db.storage[id] and db.storage[id].object
+			if (obj and obj:alive()) then 
+				local dist = obj:position():distance_to_sqr(npc:position())
+				if (nearest_dist == nil or dist < nearest_dist) then 
+					bdo = obj
+					nearest_dist = dist
+				end
+			else
+				smart.smart_alarm_position[id] = nil
+			end
+		end
+	
+		st.last_pos = bdo and vector():set(bdo:position())
+		local target_vertex_id = random_choice(alun_utils.try_to_strafe(npc),alun_utils.try_go_cover(npc,st.last_pos or npc:position()))
+
+		if (target_vertex_id) then
+			st.lvid = utils.send_to_nearest_accessible_vertex(npc,target_vertex_id)
+			state_mgr.set_state(npc,"assault",nil,nil,{look_position = st.last_pos})
+			st.stage = 2
+			return
+		end
+
+		st.dtimer = tg + math_random(5000,6000)
+		st.stage = 3
+		return
+	elseif (st.stage == 2) then
+		if (npc:level_vertex_id() == st.lvid) then
+			st.dtimer = tg + math_random(5000,7000)
+			st.stage = 3
+			return
+		end
+		st.lvid = utils.send_to_nearest_accessible_vertex(npc,st.lvid)
+	elseif (st.stage == 3) then
+		if (st.dtimer and tg < st.dtimer) then
+			state_mgr.set_state(npc,"threat_danger",nil,nil,{look_position = st.last_pos})
+			return
+		end
+		st.stage = 1
+	end
+end
+
 function action_danger:execute()
 	action_base.execute(self)
 	
@@ -717,15 +770,24 @@ function action_danger:execute()
 		return
 	end
 	
+	if (npc:path_type() ~= game_object.level_path) then 
+		npc:set_path_type(game_object.level_path)
+	end
+
 	if (check_script_danger(npc:id())) then
 		script_action_danger_scripted(npc,self.a)
 		return
 	end
 	
-	if (npc:path_type() ~= game_object.level_path) then 
-		npc:set_path_type(game_object.level_path)
+	local se_obj = alife_object(id)
+	if (se_obj and se_obj.m_smart_terrain_id ~= 65535) then
+		local smart = alife_object(se_obj.m_smart_terrain_id)
+		if (smart and smart.npc_info[id] and smart:check_alarm() and smart.smart_alarm_position) then
+			script_action_react_to_alarm(npc,self.a,smart)
+			return
+		end
 	end
-
+	
 	local best_danger_object = best_danger:object()
 	local bd_type = best_danger:type()
 	local dependent_object = best_danger:dependent_object()
@@ -801,6 +863,14 @@ function evaluator_check_danger:evaluate()
 	
 	if (check_script_danger(id)) then
 		return true 
+	end
+	
+	local se_obj = alife_object(id)
+	if (se_obj and se_obj.m_smart_terrain_id ~= 65535) then
+		local smart = alife_object(se_obj.m_smart_terrain_id)
+		if (smart and smart.npc_info[id] and smart:check_alarm() and smart.smart_alarm_position) then
+			return true
+		end 
 	end
 
 	local bd_type = bd:type()
