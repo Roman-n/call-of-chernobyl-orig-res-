@@ -19,7 +19,7 @@ by Alundaio
 ---------------------------------------------------------------------------------------------------------
 
 local toggle_hud_list = 	{
-							["top"]  = { "actor_inside_zone_hud", "actor_condition_hud", "feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
+							["top"]  = { "current_test_hud","actor_inside_zone_hud", "actor_condition_hud", "feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
 							["left"] = { "team_squad_group_hud","surge_hud","arena_hud","actor_feel_touch_hud", "enemy_hud", "trader_hud", "monster_hud", "weapon_hud", "anim_hud", "behavior_hud"},
 							["right"] = { "space_restrictor_hud","npc_memory_hud","npc_info_hud", "actor_info_hud", "planner_hud", "gulag_info_hud", "heli_hud", "wounded_hud","corpse_hud", "position_hud"}
 							}
@@ -1776,12 +1776,23 @@ function task_hud_show(hud)
 	hud:display()
 end
 
-function get_debug_hud()
-	return debug_ui
+function current_test_hud_show(hud)
+	local task_id = "yan_ecolog_semenov_task_1"
+	local count = utils.load_var(db.actor,task_id.."_tissue_count",0)
+	local need = utils.load_var(db.actor,task_id.."_tissue_need",0)
+	hud:add_msg("count",count)
+	hud:add_msg("need",need)
+	
+	hud:set_header("-[DEV TEST]-")
+	hud:display()
 end
 
 --[[	Misc. Functions
 --]]
+
+function get_debug_hud()
+	return debug_ui
+end
 
 function give_game_news(t,d)
 	if db.actor then
