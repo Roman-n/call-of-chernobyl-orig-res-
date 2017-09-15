@@ -537,8 +537,10 @@ function CSurgeManager:update()
 				end
 				self:launch_rockets()
 
-				if (atmosfear_options.config:r_value("atmosfear_current_parameters","opt_blowout_task",0,"give")=="give") then
-					self:give_surge_hide_task()
+				if not (utils.load_var(db.actor,"surge_immuned",false)) then -- special surged immuned for tasks
+					if (atmosfear_options.config:r_value("atmosfear_current_parameters","opt_blowout_task",0,"give")=="give") then
+						self:give_surge_hide_task()
+					end
 				end
 				self.task_given = true
 				--self.debugMessages[2]:SetText("task given at: "..tostring(diff_sec))
@@ -617,51 +619,54 @@ function CSurgeManager:update()
 			self.stages['quake100']=true
 			--self.debugMessages[2]:SetText("quake100 at: "..tostring(diff_sec))
 		end
-		-- 1st wave sound -----------------------------------------------------------------------------------------------------------------------------------------
-		if(diff_sec>=108) and (self.stages['1stwavesnd']==nil)  then
-			--xr_sound.set_sound_play(db.actor:id(), "blowout_wave_1")
-			if rnd_sound==1 then
-				self:play_blowout_sound("wave01")
-			elseif rnd_sound==2 then
-				self:play_blowout_sound("wave02")
-			elseif rnd_sound==3 then
-				self:play_blowout_sound("wave03")
-			elseif rnd_sound==4 then
-				self:play_blowout_sound("wave04")
+		
+		if not (utils.load_var(db.actor,"surge_immuned",false)) then -- special surged immuned for tasks
+			-- 1st wave sound -----------------------------------------------------------------------------------------------------------------------------------------
+			if(diff_sec>=108) and (self.stages['1stwavesnd']==nil)  then
+				--xr_sound.set_sound_play(db.actor:id(), "blowout_wave_1")
+				if rnd_sound==1 then
+					self:play_blowout_sound("wave01")
+				elseif rnd_sound==2 then
+					self:play_blowout_sound("wave02")
+				elseif rnd_sound==3 then
+					self:play_blowout_sound("wave03")
+				elseif rnd_sound==4 then
+					self:play_blowout_sound("wave04")
+				end
+				self.stages['1stwavesnd']=true
+				--self.debugMessages[2]:SetText("1st wave snd at: "..tostring(diff_sec).." rnd: "..tostring(rnd_sound))
 			end
-			self.stages['1stwavesnd']=true
-			--self.debugMessages[2]:SetText("1st wave snd at: "..tostring(diff_sec).." rnd: "..tostring(rnd_sound))
-		end
-		-- 1st wave -----------------------------------------------------------------------------------------------------------------------------------------
-		if(diff_sec>=120) and (self.stages['1stwave']==nil)  then
-			self:start_wave(1,diff_game_sec)
-			self.stages['1stwave']=true
-			--self.debugMessages[2]:SetText("1st wave at: "..tostring(diff_sec))
-		end
-		-- 2nd wave sound -----------------------------------------------------------------------------------------------------------------------------------------
-		if(diff_sec>=156) and (self.stages['2ndwavesnd']==nil)  then
-			--xr_sound.set_sound_play(db.actor:id(), "blowout_wave_1")
-			if rnd_sound==1 then
-				self:play_blowout_sound("wave01")
-			elseif rnd_sound==2 then
-				self:play_blowout_sound("wave02")
-			elseif rnd_sound==3 then
-				self:play_blowout_sound("wave03")
-			elseif rnd_sound==4 then
-				self:play_blowout_sound("wave04")
+			-- 1st wave -----------------------------------------------------------------------------------------------------------------------------------------
+			if(diff_sec>=120) and (self.stages['1stwave']==nil)  then
+				self:start_wave(1,diff_game_sec)
+				self.stages['1stwave']=true
+				--self.debugMessages[2]:SetText("1st wave at: "..tostring(diff_sec))
 			end
-			self.stages['2ndwavesnd']=true
-			--self.debugMessages[2]:SetText("2nd wave snd at: "..tostring(diff_sec))
-		end
-		-- 2nd wave -----------------------------------------------------------------------------------------------------------------------------------------
-		--if(diff_sec>=2) and (self.stages['2ndwave']==nil)  then
-		if(diff_sec>=168) and (self.stages['2ndwave']==nil)  then
-			self:start_wave(2,diff_game_sec)
-			self.stages['2ndwave']=true
-			if (atmosfear_options.config:r_value("atmosfear_current_parameters","opt_blowout_fate",0,"killonwave")=="killonwave") then
-			  self:get_objects_to_kill()
+			-- 2nd wave sound -----------------------------------------------------------------------------------------------------------------------------------------
+			if(diff_sec>=156) and (self.stages['2ndwavesnd']==nil)  then
+				--xr_sound.set_sound_play(db.actor:id(), "blowout_wave_1")
+				if rnd_sound==1 then
+					self:play_blowout_sound("wave01")
+				elseif rnd_sound==2 then
+					self:play_blowout_sound("wave02")
+				elseif rnd_sound==3 then
+					self:play_blowout_sound("wave03")
+				elseif rnd_sound==4 then
+					self:play_blowout_sound("wave04")
+				end
+				self.stages['2ndwavesnd']=true
+				--self.debugMessages[2]:SetText("2nd wave snd at: "..tostring(diff_sec))
 			end
-			--self.debugMessages[2]:SetText("2nd wave at: "..tostring(diff_sec))
+			-- 2nd wave -----------------------------------------------------------------------------------------------------------------------------------------
+			--if(diff_sec>=2) and (self.stages['2ndwave']==nil)  then
+			if(diff_sec>=168) and (self.stages['2ndwave']==nil)  then
+				self:start_wave(2,diff_game_sec)
+				self.stages['2ndwave']=true
+				if (atmosfear_options.config:r_value("atmosfear_current_parameters","opt_blowout_fate",0,"killonwave")=="killonwave") then
+				  self:get_objects_to_kill()
+				end
+				--self.debugMessages[2]:SetText("2nd wave at: "..tostring(diff_sec))
+			end
 		end
 		-- earthquakes fade-----------------------------------------------------------------------------------------------------------------------------------------
 		if (diff_sec>=200) and (self.stages['quake100']==true) then
