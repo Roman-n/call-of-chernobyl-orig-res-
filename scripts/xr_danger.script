@@ -779,10 +779,10 @@ function action_danger:execute()
 		return
 	end
 	
-	local se_obj = alife_object(id)
+	local se_obj = alife_object(npc:id())
 	if (se_obj and se_obj.m_smart_terrain_id ~= 65535) then
 		local smart = alife_object(se_obj.m_smart_terrain_id)
-		if (smart and smart.npc_info[id] and smart:check_alarm() and smart.smart_alarm_position) then
+		if (smart and smart.npc_info[npc:id()] and smart:check_alarm() and smart.smart_alarm_position) then
 			script_action_react_to_alarm(npc,self.a,smart)
 			return
 		end
