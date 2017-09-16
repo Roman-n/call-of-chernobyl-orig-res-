@@ -774,6 +774,21 @@ function action_danger:execute()
 		npc:set_path_type(game_object.level_path)
 	end
 
+	local best_danger_object = best_danger:object()
+	local bd_type = best_danger:type()
+	local dependent_object = best_danger:dependent_object()
+
+	if (bd_type == danger_object.grenade) then
+		script_action_danger_grenade(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
+		return
+	elseif (bd_type == danger_object.entity_corpse) then
+		script_action_danger_corpse(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
+		return
+	elseif (bd_type == danger_object.attacked) then
+		script_action_danger_attacked(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
+		return
+	end
+
 	if (check_script_danger(npc:id())) then
 		script_action_danger_scripted(npc,self.a)
 		return
@@ -786,18 +801,6 @@ function action_danger:execute()
 			script_action_react_to_alarm(npc,self.a,smart)
 			return
 		end
-	end
-	
-	local best_danger_object = best_danger:object()
-	local bd_type = best_danger:type()
-	local dependent_object = best_danger:dependent_object()
-
-	if (bd_type == danger_object.grenade) then
-		script_action_danger_grenade(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
-	elseif (bd_type == danger_object.entity_corpse) then
-		script_action_danger_corpse(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
-	elseif (bd_type == danger_object.attacked) then
-		script_action_danger_attacked(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
 	end
 	--alun_utils.debug_write("AFTER scripted_danger_action_planner")
 end
@@ -861,6 +864,15 @@ function evaluator_check_danger:evaluate()
 		return false 
 	end
 	
+	local bd_type = bd:type()
+	if (self.object:has_info("npcx_is_companion") and bd_type == danger_object.entity_corpse) then 
+		return false
+	end 
+	
+	if (bd_type == danger_object.attacked or bd_type == danger_object.entity_corpse or bd_type == danger_object.grenade) then
+		return true
+	end
+
 	if (check_script_danger(id)) then
 		return true 
 	end
@@ -872,17 +884,8 @@ function evaluator_check_danger:evaluate()
 			return true
 		end 
 	end
-
-	local bd_type = bd:type()
-	if (self.object:has_info("npcx_is_companion") and bd_type == danger_object.entity_corpse) then 
-		return false
-	end 
 	
-	if not (bd_type == danger_object.attacked or bd_type == danger_object.entity_corpse or bd_type == danger_object.grenade) then
-		return false
-	end
-	
-	return true
+	return false
 end
 class "position_node"
 function position_node:__init(amt)
