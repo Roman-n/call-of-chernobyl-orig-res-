@@ -210,9 +210,7 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 
 	st.suggested_state = {}
 	st.suggested_state.standing = ini:r_string_ex(section,"def_state_standing")
-
-	st.suggested_state.moving  = ini:r_string_ex(section,"def_state_moving1")
-	st.suggested_state.moving  = ini:r_string_ex(section,"def_state_moving") or st.suggested_state.moving
+	st.suggested_state.moving  = ini:r_string_ex(section,"def_state_moving") or ini:r_string_ex(section,"def_state_moving1") or st.suggested_state.moving
 
 	st.path_walk_info = nil -- Будут инициализированы в reset(), сейчас пути могут быть еще
 	st.path_look_info = nil -- не загружены.

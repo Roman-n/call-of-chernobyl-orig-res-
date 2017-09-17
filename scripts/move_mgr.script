@@ -58,6 +58,8 @@ function move_mgr:__init(npc)
 		printf("move_mgr:__init() - npc is nil, please update the script")
 	end
 	self.object = npc
+	self.target = {}
+	self.cbs = {}
 end
 
 function move_mgr:initialize(npc)
@@ -376,6 +378,11 @@ function move_mgr:set_current_state_moving(state)
 	self:update_movement_state()
 end
 
+function move_mgr:set_current_state_standing(state)
+	self.cur_state_standing = state
+	self:update_standing_state()
+end 
+
 function move_mgr:finalize(npc)
 	if self.team then
 		sync[self.team][self.object:id()] = nil
@@ -409,17 +416,36 @@ function move_mgr:update_movement_state()
 	end
 	--]]
 
-	state_mgr.set_state(self.object, self.cur_state_moving,nil, nil, nil, { fast_set = true})
+	state_mgr.set_state(self.object, self.cur_state_moving,nil, nil, self.target)
 end
+
+function move_mgr:set_target(pos,obj,dir)
+	self.target.look_position = pos 
+	self.target.look_object = obj 
+	self.target.look_dir = dir
+end
+function move_mgr:clear_target()
+	self.target.look_position = nil 
+	self.target.look_object = nil 
+	self.target.look_dir = nil
+end 
 
 function move_mgr:update_standing_state(look_pos, snd)
 	--printf("_bp [%s]: update_standing_state: snd='%s', pt_wait_time = %s path = %s", self.object:name(), utils.to_str(snd), utils.to_str(self.pt_wait_time),  self.path_walk)
-	state_mgr.set_state(self.object, self.cur_state_standing,
-		{ obj = self, func = self.time_callback, turn_end_func = self.turn_end_callback },
-		self.pt_wait_time,
-		{ look_position = look_pos },
-		nil,
-		snd )
+	
+	-- absurd, but it's just to avoid continous table creation
+	local old_pos = self.target.look_position
+	self.target.look_position = look_pos 
+	self.cbs.obj = self
+	self.cbs.func = self.time_callback
+	self.cbs.turn_end_func = self.turn_end_callback
+	
+	state_mgr.set_state(self.object, self.cur_state_standing,self.cbs,self.pt_wait_time,self.target,nil,snd)
+		
+	self.target.look_position = old_pos
+	self.cbs.obj = nil
+	self.cbs.func = nil
+	self.cbs.turn_end_func = nil
 end
 
 function move_mgr:time_callback()

@@ -142,11 +142,6 @@ function motivator_binder:net_spawn(se_abstract)
 	-- Cannot build GAME path! error
 	npc:set_dest_game_vertex_id(npc:game_vertex_id()) 
 	
-	-- hack!
-	npc:set_movement_type(move.walk)
-	npc:set_body_state(move.standing)
-	npc:set_mental_state(anim.free)
-	
 	xr_reach_task.add_reach_task_action(npc)
 	
 	local squad = se_obj.group_id and se_obj.group_id ~= 65535 and alife_object(se_obj.group_id)

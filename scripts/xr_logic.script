@@ -55,9 +55,7 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 		return
 	end
 	
-	--st.job_ini = nil
-
-	-- если какая-то схема была до этого активна, деактивировать её
+	-- if some scheme was previously active, deactivate it
 	if st.active_section then
 		issue_event(npc, st[st.active_scheme], "deactivate", npc)
 	end
@@ -82,32 +80,18 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 				abort("ERROR: object '%s' configuration file [%s] NOT FOUND or section [logic] isn't assigned ", npc:name(), filename)
 				return
 			end
-			--printf("_bp: enable_scripts: object '%s' has external configuration file '%s'", npc:name(), filename)
-			-- Рекурсивно обработать конфигурационный файл, на который ссылается поле cfg
-			return configure_schemes(npc, actual_ini, actual_ini_filename, stype, section_logic, gulag_name)
-		else
-			--[[
-			if stype == modules.stype_stalker or stype == modules.stype_mobile then
-				local current_smart = xr_gulag.get_npc_smart(npc)
-				if current_smart ~= nil then
-					local t = current_smart:getJob(npc_id)
-					if t then
-						st.job_ini = t.ini_path
-					else
-						st.job_ini = nil
-					end
-				end
-			end
-			--]]
-			--printf("_bp: enable_scripts: object '%s' has NO external configuration file, using '%s'", npc:name(), ini_filename)
+		elseif (ini_filename == "<customdata>") then -- the case where custom_data in object section exists
+			actual_ini_filename = system_ini():r_string_ex(npc:section(),"custom_data") or ini_filename
+			actual_ini = ini
+		else -- usually job_ini from setup_gulag_and_logic_on_spawn
 			actual_ini_filename = ini_filename
 			actual_ini = ini
 		end
 	end
 
-	-- Поскольку в момент активации схемы могли работать ранее установленные общие схемы, нужно их все отключить:
+	-- Since at the moment of schema activation the previously installed common schemes could work, all of them should be disabled:
 	disable_generic_schemes(npc, stype)
-	-- Включаем все общие схемы (раненный, коллбек на попадание и т.д.):
+	-- We include all the general schemes (wounded, callback for hit, etc.):
 	enable_generic_schemes(actual_ini, npc, stype, section_logic)
 
 	st.active_section = nil
@@ -1149,6 +1133,7 @@ function initialize_obj(obj, st, loaded, actor, stype)
 	
 	local ini_filename = loaded and st.loaded_ini_filename or "<customdata>"
 	local ini = get_customdata_or_ini_file(obj, ini_filename)
+	
 	ini = xr_logic.configure_schemes(obj, ini, ini_filename, stype, loaded and st.loaded_section_logic or "logic", loaded and st.loaded_gulag_name or "")
 	
 	local section = loaded and st.loaded_active_section or xr_logic.determine_section_to_activate(obj, ini, "logic", actor)
