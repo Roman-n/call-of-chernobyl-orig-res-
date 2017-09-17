@@ -87,11 +87,11 @@ local function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power,sound_pos
 		return
 	end
 	
-	if (has_danger(npc)) then 
-		return 
-	end 
-	
 	if (npc:best_enemy()) then 
+		return 
+	end
+	
+	if (has_danger(npc)) then 
 		return 
 	end
 

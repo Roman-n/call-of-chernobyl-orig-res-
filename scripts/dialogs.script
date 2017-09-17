@@ -696,7 +696,7 @@ end
 function relocate_money(victim, num, type)
 	if db.actor then
 		if type == "in" then
-			db.actor:give_money(num)
+			db.actor:give_money(utils.round100(num))
 			-- game_stats.money_quest_update (num)
 
 		elseif type == "out" then

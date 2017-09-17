@@ -267,10 +267,7 @@ function activate_by_section(npc, ini, section, gulag_name, loading)
 	db.storage[npc_id].active_scheme = scheme
 
 	if db.storage[npc_id].stype == modules.stype_stalker then
-		npc:inactualize_game_path()
-		npc:inactualize_level_path()
-		npc:inactualize_patrol_path()
-		npc:set_path_type(game_object.level_path)
+		utils.send_to_nearest_accessible_vertex(npc,npc:level_vertex_id())
 		issue_event(npc, db.storage[npc_id][scheme], "activate_scheme", loading, npc)
 	else
 		issue_event(npc, db.storage[npc_id][scheme], "reset_scheme", loading, npc)
