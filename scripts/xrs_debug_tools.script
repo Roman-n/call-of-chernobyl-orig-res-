@@ -1486,11 +1486,13 @@ function enemy_hud_show(hud)
 				hud:add_msg("Post Combat Idle",pcw)
 			end
 
-			if (be and not new_enemy) then
+			if (be) then
 				hud:add_msg("Memory Time",tg - near:memory_time(be))
 				if (st.combat_ignore and st.combat_ignore.search_time) then
 					hud:add_msg("Search Time",st.combat_ignore.search_time)
 				end
+				local mem_pos = near:memory_position(be)
+				hud:add_msg("MemoryPosition",mem_pos and strformat("%s, %s, %s",mem_pos.x,mem_pos.y,mem_pos.z) or "nil")
 			end
 
 			local squad = get_object_squad(near)

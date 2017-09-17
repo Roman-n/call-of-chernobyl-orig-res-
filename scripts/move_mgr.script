@@ -374,13 +374,17 @@ function move_mgr:update()
 end
 
 function move_mgr:set_current_state_moving(state)
-	self.cur_state_moving = state
-	self:update_movement_state()
+	self.ovr_state_moving = state
+	if (state) then
+		self:update_movement_state()
+	end
 end
 
 function move_mgr:set_current_state_standing(state)
-	self.cur_state_standing = state
-	self:update_standing_state()
+	self.ovr_state_standing = state
+	if (state) then
+		self:update_standing_state()
+	end
 end 
 
 function move_mgr:finalize(npc)
@@ -416,7 +420,7 @@ function move_mgr:update_movement_state()
 	end
 	--]]
 
-	state_mgr.set_state(self.object, self.cur_state_moving,nil, nil, self.target)
+	state_mgr.set_state(self.object, self.ovr_state_moving or self.cur_state_moving,nil, nil, self.target)
 end
 
 function move_mgr:set_target(pos,obj,dir)
@@ -440,7 +444,7 @@ function move_mgr:update_standing_state(look_pos, snd)
 	self.cbs.func = self.time_callback
 	self.cbs.turn_end_func = self.turn_end_callback
 	
-	state_mgr.set_state(self.object, self.cur_state_standing,self.cbs,self.pt_wait_time,self.target,nil,snd)
+	state_mgr.set_state(self.object, self.ovr_state_standing or self.cur_state_standing,self.cbs,self.pt_wait_time,self.target,nil,snd)
 		
 	self.target.look_position = old_pos
 	self.cbs.obj = nil

@@ -108,14 +108,16 @@ function action_patrol:execute()
 
 			if not (self.move_mgr:standing_on_terminal_waypoint()) then
 				if (self.scantime and tg > self.scantime) then
+					self.move_mgr:set_current_state_moving(nil)
+					self.move_mgr:set_current_state_standing(nil)
 					self.move_mgr:continue()
 					self.move_mgr:update()
 				end
 			end
-		else 
+		else
 			local bd_pos = self:check_danger_position()
-			self.move_mgr:set_current_state_moving(bd_pos and "raid" or self.st.suggested_state.moving)
-			self.move_mgr:set_current_state_standing(bd_pos and "threat_na" or self.st.suggested_state.standing)
+			self.move_mgr:set_current_state_moving(bd_pos and "raid" or nil)
+			self.move_mgr:set_current_state_standing(bd_pos and "threat_na" or nil)
 			self.move_mgr:set_target(bd_pos)
 			self.move_mgr:continue()
 			self.move_mgr:update()
@@ -210,6 +212,7 @@ function action_patrol:execute()
 		self.st.scan_table[-1][3].pos = point_2
 		
 		self.memory_position = memory_position
+		self.look_pos = vector():set(memory_position.x,npc:position().y,memory_position.z)
 	end
 	
 	if (memory_position) then
@@ -224,7 +227,7 @@ function action_patrol:execute()
 
 	self.move_mgr:set_current_state_moving("raid")
 	self.move_mgr:set_current_state_standing("threat_na")
-	self.move_mgr:set_target(memory_position)
+	self.move_mgr:set_target(self.look_pos)
 	self.move_mgr:continue()
 	self.move_mgr:update()
 	self.scantime = nil
@@ -270,7 +273,7 @@ function action_patrol:process_danger()
 	
 	if (self.__keep_body_state_until==nil or tg > self.__keep_body_state_until) then
 		local dir = bd_pos and vec_sub(bd_pos,self.object:position()):normalize() or self.object:direction()
-		self.__keep_body_state_until = tg+3000
+		self.__keep_body_state_until = tg+6000
 		if (self.object:body_state() ~= move.crouch) then
 			if (level.high_cover_in_direction(self.object:level_vertex_id(),dir) >= 0.16) then 
 				self.stand = false
@@ -462,8 +465,8 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 
 	st.radius = ini:r_float_ex(section,"radius",100)^2
 	st.suggested_state = {}
-	st.suggested_state.moving = ini:r_string_ex(section,"def_state_moving")
-	st.suggested_state.standing = ini:r_string_ex(section,"def_state_standing") or st.suggested_state.campering
+	st.suggested_state.moving = ini:r_string_ex(section,"def_state_moving") or "patrol"
+	st.suggested_state.standing = ini:r_string_ex(section,"def_state_standing") or "guard"
 
 	st.scantime_free = ini:r_float_ex(section,"scantime_free") or math.random(10000,30000)
 	st.attack_sound = ini:r_string_ex(section,"attack_sound") or "fight_attack"
