@@ -26,7 +26,6 @@ will find the <filename>.lua in your savegame folder. Search the file for 'cache
 caches = {}
 local caches_count = 0
 
-local ltx = ini_file("plugins\\treasure_blacklist.ltx")
 local valid_item_list = nil
 local valid_map_spots = {
 	["treasure"] = true,
@@ -216,11 +215,20 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		return v == "EQ_BAKPK"
 	end
 	
+	local function is_toolkit(section)
+		return section == "itm_repairkit_tier_1" or section == "itm_repairkit_tier_2" or section == "itm_repairkit_tier_3"
+	end
+	
+	local function is_artefact(section)
+		local v = ini:r_string_ex(section,"class","")
+		return v == "SCRPTART"		
+	end
+	
 	local function try_spawn_item(sec,min,max,chance,weight)
 		if (max_weight >= weight) then 
 			local new_max = math.random(min,max)
 			for i=1,new_max do
-				if ((math.random(1,100)/100) <= chance) then 
+				if ((math.random(1,1000)/1000) <= chance) then 
 					spawned_item[#spawned_item+1] = sec
 					max_weight = max_weight - weight
 				end
@@ -232,88 +240,91 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	-- iterate most expensive to least expensive or visa versa. Highest cost has highest weight. Consumables have higher max. Outfits have high weights.
 	local functor = random_choice(function(t,a,b) return t[a] > t[b] end,function(t,a,b) return t[a] < t[b] end)
 	for section,cost in spairs(valid_item_list,functor) do
-		
-		-- prevent a stash from having more than a single outfit or weapon
-		local skip = false
-		
-		if (only_one_in_existence[section]) then 
-			skip = true
-		end
-		
-		if not (skip) then
-			local bWeapon = is_weapon(section)
+		if not (only_one_in_existence[section]) then 
+			local skip = false
+			local bArtefact = is_artefact(section)
+			local bToolkit = not bArtefact and is_toolkit(section)
+			local bWeapon = not bToolkit and is_weapon(section)
 			local bOutfit = not bWeapon and is_outfit(section)
 			local bBackpack = not bWeapon and not bOutfit and is_backpack(section)
-			if (bWeapon or bOutfit or bBackpack) then
+			if (bWeapon or bOutfit or bBackpack or bToolkit or bArtefact) then
 				if (allow_item) then
 					allow_item = false
 				else 
 					skip = true
 				end
 			end
-		end
-		
-		if not (skip) then
-			if (bBackpack) then 
-				if (section == "equ_tourist_pack") then 
-					try_spawn_item(section,1,1,0.01,40)
-				elseif (section == "equ_military_pack") then
-					try_spawn_item(section,1,1,0.02,40)
-				else
-					try_spawn_item(section,1,1,0.12,30)
-				end
-			else
-				-- decide for each section based on chance, weight and item classification
-				if (cost <= 500) then
-					if (is_consumable(section)) then
-						try_spawn_item(section,1,4,0.25,40)
-					elseif (bOutfit) then
-						try_spawn_item(section,1,1,0.25,40)
-					elseif (bWeapon) then
-						try_spawn_item(section,1,1,0.25,40)
+			
+			if not (skip) then
+				if (bBackpack) then 
+					if (section == "equ_tourist_pack") then 
+						try_spawn_item(section,1,1,0.01,40)
+					elseif (section == "equ_military_pack") then
+						try_spawn_item(section,1,1,0.02,40)
 					else
-						try_spawn_item(section,1,1,0.25,40)
+						try_spawn_item(section,1,1,0.12,30)
 					end
-				elseif (cost <= 1000) then
-					if (is_consumable(section)) then
-						try_spawn_item(section,1,4,0.15,40)
-					elseif (bOutfit) then
-						try_spawn_item(section,1,1,0.15,50)
-					elseif (bWeapon) then
-						try_spawn_item(section,1,1,0.15,50)
+				elseif (bToolkit) then 
+					if (section == "itm_repairkit_tier_3") then 
+						try_spawn_item(section,1,1,0.01,30)
+					elseif (section == "itm_repairkit_tier_2") then
+						try_spawn_item(section,1,1,0.03,30)
 					else
-						try_spawn_item(section,1,1,0.20,50)
+						try_spawn_item(section,1,1,0.05,30)
 					end
-				elseif (cost <= 3000) then
-					if (bOutfit) then
-						try_spawn_item(section,1,1,0.10,55)
-					elseif (bWeapon) then
-						try_spawn_item(section,1,1,0.10,45)
-					else 
-						try_spawn_item(section,1,1,0.15,40)
-					end
-				elseif (cost <= 5000) then
-					if (bOutfit) then
-						try_spawn_item(section,1,1,0.08,60)
-					elseif (bWeapon) then
-						try_spawn_item(section,1,1,0.12,50)
-					else 
-						try_spawn_item(section,1,1,0.08,40)
-					end
-				elseif (cost <= 9000) then
-					try_spawn_item(section,1,1,0.01,50)
-				elseif (cost <= 15000) then 
-					try_spawn_item(section,1,1,0.01,60)
-				elseif (cost <= 25000) then
-					try_spawn_item(section,1,1,0.01,70)
 				else
-					try_spawn_item(section,1,1,0.01,80)
+					-- decide for each section based on chance, weight and item classification
+					if (cost <= 500) then
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,4,0.20,20)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.20,40)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.20,40)
+						else
+							try_spawn_item(section,1,1,0.20,40)
+						end
+					elseif (cost <= 1000) then
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,3,0.15,20)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.15,50)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.15,50)
+						else
+							try_spawn_item(section,1,1,0.15,50)
+						end
+					elseif (cost <= 3000) then
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.10,50)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.10,50)
+						else 
+							try_spawn_item(section,1,1,0.10,40)
+						end
+					elseif (cost <= 5000) then
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.08,60)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.08,50)
+						else 
+							try_spawn_item(section,1,1,0.08,40)
+						end
+					elseif (cost <= 9000) then
+						try_spawn_item(section,1,1,0.015,50)
+					elseif (cost <= 15000) then 
+						try_spawn_item(section,1,1,0.010,60)
+					elseif (cost <= 25000) then
+						try_spawn_item(section,1,1,0.005,70)
+					else
+						try_spawn_item(section,1,1,0.005,80)
+					end
 				end
+			end 
+			
+			if (max_weight <= 0) then
+				break
 			end
-		end 
-		
-		if (max_weight <= 0) then
-			break
 		end
 	end
 	
@@ -421,6 +432,7 @@ function load(pk)
 end
 
 function get_valid_item_sections()
+	local ltx = ini_file("plugins\\coc_treasure_manager.ltx")
 	local t = {}
 	local ini = system_ini()
 	ini:section_for_each(function(section)
