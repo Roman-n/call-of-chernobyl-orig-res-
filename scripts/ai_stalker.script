@@ -62,7 +62,7 @@ function update_best_weapon(npc,cur_wpn)
 	if (be) then 
 		if (be:position():distance_to_sqr(npc:position()) > 2500) then 
 			prior = priority_far
-		elseif (be:position():distance_to_sqr(npc:position()) > 90) then 
+		elseif (be:position():distance_to_sqr(npc:position()) > 900) then 
 			prior = priority_medium
 		else
 			prior = priority_close
