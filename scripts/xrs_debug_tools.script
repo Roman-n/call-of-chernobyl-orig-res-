@@ -19,9 +19,9 @@ by Alundaio
 ---------------------------------------------------------------------------------------------------------
 
 local toggle_hud_list = 	{
-							["top"]  = { "current_test_hud","actor_inside_zone_hud", "actor_condition_hud", "feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
+							["top"]  = { "actor_condition_hud", "current_test_hud","actor_inside_zone_hud","feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
 							["left"] = { "team_squad_group_hud","surge_hud","arena_hud","actor_feel_touch_hud", "enemy_hud", "trader_hud", "monster_hud", "weapon_hud", "anim_hud", "behavior_hud"},
-							["right"] = { "space_restrictor_hud","npc_memory_hud","npc_info_hud", "actor_info_hud", "planner_hud", "gulag_info_hud", "heli_hud", "wounded_hud","corpse_hud", "position_hud"}
+							["right"] = { "stalker_condition_hud","space_restrictor_hud","npc_memory_hud","npc_info_hud", "actor_info_hud", "planner_hud", "gulag_info_hud", "heli_hud", "wounded_hud","corpse_hud", "position_hud"}
 							}
 --------------------------------------------------------------------------------------------------
 
@@ -1052,10 +1052,71 @@ end
 function actor_condition_hud_show(hud)
 	hud:set_header("-[Actor Condition]-")
 	
-	local t = {"health","bleeding","psy_health","radiation","power", "morale"}
+	local actor_condition = db.actor:cast_Actor():conditions()
+	local properties = {
+		"m_fAccelK",
+		"m_fJumpPower",
+		"m_fJumpWeightPower",
+		"m_fOverweightJumpK",
+		"m_fOverweightWalkK",
+		"m_fSprintK",
+		"m_fStandPower",
+		"m_fWalkWeightPower",
+	    "m_MaxWalkWeight"	
+	}
 	
-	for i=1,#t do 
-		hud:add_msg(t[i],db.actor[t[i]])
+	local functors = {
+		"V_Satiety",
+		"V_SatietyPower",
+		"V_SatietyHealth",
+		"SatietyCritical",
+		"BleedingSpeed",
+		"GetEntityMorale",
+		"GetHealthLost",
+		"GetMaxPower",
+		"GetPower",
+		"GetPsyHealth",
+		"GetRadiation",
+		"GetSatiety",
+		"GetWhoHitLastTimeID",		
+		"IsCantSprint",
+		"IsCantWalk",
+		"IsCantWalkWeight",
+		"IsLimping"	
+	}
+	
+	for i=1,#properties do 
+		hud:add_msg(properties[i],actor_condition[ properties[i] ])
+	end
+	
+	for i=1,#functors do 
+		hud:add_msg(functors[i],actor_condition[ functors[i] ] and actor_condition[ functors[i] ](actor_condition))
+	end
+	
+	hud:display()
+end 
+
+function stalker_condition_hud_show(hud)
+	hud:set_header("-[Stalker Condition]-")
+	
+	local near = get_debug_npc()
+	if (near and near:alive()) then
+		local entity_condition = near:cast_Stalker():conditions()
+		local functors = {
+			"BleedingSpeed",
+			"GetEntityMorale",
+			"GetHealthLost",
+			"GetMaxPower",
+			"GetPower",
+			"GetPsyHealth",
+			"GetRadiation",
+			"GetSatiety",
+			"GetWhoHitLastTimeID",		
+			"IsLimping"	
+		}
+		for i=1,#functors do 
+			hud:add_msg(functors[i],entity_condition[ functors[i] ] and entity_condition[ functors[i] ](entity_condition))
+		end
 	end
 	
 	hud:display()
