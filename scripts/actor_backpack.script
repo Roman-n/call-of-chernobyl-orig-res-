@@ -76,6 +76,7 @@ function actor_on_item_take_from_box(box,obj)
 			if (m_data.player_created_stashes and m_data.player_created_stashes[id]) then 
 				local section = m_data.player_created_stashes[id]
 				alife():create(section,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id())
+				m_data.player_created_stashes[id] = nil
 			end
 		end
 	end
