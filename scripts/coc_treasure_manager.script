@@ -228,7 +228,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	
 	local function is_detector(section)
 		local v = ini:r_string_ex(section,"class","")
-		return v == "DET_ADVA" or v == "DET_ELIT" or v == "DET_SCIE"
+		return v == "DET_ADVA" or v == "DET_ELIT" or v == "DET_SCIE" or v == "DET_SIMP"
 	end
 	
 	local function try_spawn_item(sec,min,max,chance,weight)
@@ -279,8 +279,10 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						try_spawn_item(section,1,1,0.001,10)
 					elseif (v == "DET_ELIT") then 
 						try_spawn_item(section,1,1,0.01,10)
+					elseif (v == "DET_ADVA") then
+						try_spawn_item(section,1,1,0.04,10)
 					else 
-						try_spawn_item(section,1,1,0.05,10)
+						try_spawn_item(section,1,1,0.07,10)
 					end
 				elseif (bToolkit) then 
 					if (section == "itm_repairkit_tier_3") then 
