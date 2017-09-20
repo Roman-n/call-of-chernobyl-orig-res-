@@ -369,7 +369,6 @@ function state_manager:__init(npc)
 	self.target_state = "idle"
 	self.current_direction = nil
 	self.target_position = nil
-	self.current_object = nil
 	self.combat = false
 	self.alife = true
 	self.need_reweapon = false
@@ -389,16 +388,12 @@ function state_manager:set_state(state_name, callback, timeout, target, extra)
 	self.look_object = target and target.look_object and (type(target.look_object) == "number" and target.look_object or target.look_object.id and target.look_object:id()) or nil
 	self.look_dir = target and target.look_dir or nil
 
-	local switched = false
 	local last_state = self.target_state
-
-	if (self.target_state == state_name) then
+	if (last_state == state_name) then
 		return
 	end
 
-	self.current_object = nil
-
-	if (state_lib.states[self.target_state].weapon == "fire" or state_lib.states[self.target_state].weapon == "sniper_fire") then
+	if (state_lib.states[last_state].weapon == "fire" or state_lib.states[last_state].weapon == "sniper_fire") then
 		if (state_lib.states[state_name].weapon ~= "fire" and state_lib.states[state_name].weapon ~= "sniper_fire") then
 			if (self.npc:active_item() and self.npc:best_weapon() and self.npc:weapon_unstrapped()) then
 				self.npc:set_item(object.idle, state_mgr_weapon.get_weapon(self.npc, state_name))

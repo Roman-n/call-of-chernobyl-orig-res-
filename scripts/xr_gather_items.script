@@ -404,7 +404,7 @@ function act_gather_itm:initialize()
 	npc:set_desired_direction()
 	npc:set_path_type(game_object.level_path)
 	--npc:set_dest_level_vertex_id(self.st.vid)
-	state_mgr.set_state(npc,self.st.state,nil,nil,nil,{fast_set = true})
+	state_mgr.set_state(npc,self.st.state)
 	self.st.vid = utils.send_to_nearest_accessible_vertex(npc,self.st.vid,"gather_items")
 	action_base.initialize(self)
 end

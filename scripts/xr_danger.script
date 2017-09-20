@@ -115,7 +115,7 @@ local function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power,sound_pos
 			return
 		end
 
-		if (who_id == 0 or npc:relation(who) >= 2) then
+		if (who_id == 0 or IsMonster(who) or (who:cast_Stalker() and npc:relation(who) == game_object.enemy)) then
 			set_script_danger(npc,7000,who_id,utils.vector_copy_by_val(sound_position))
 		end
 	end
@@ -213,21 +213,24 @@ local function is_danger(npc,best_danger,script)
 		best_danger_object = best_danger:dependent_object()
 	end
 
-	if not (best_danger_object and (IsMonster(best_danger_object) or IsStalker(best_danger_object)) and npc:relation(best_danger_object) >= 2) then
-		return false
-	end
-
-	if (xr_corpse_detection.is_under_corpse_detection(npc) or xr_help_wounded.is_under_help_wounded(npc)) then
-		return false
-	elseif (xrs_kill_wounded and xrs_kill_wounded.is_under_kill_wounded(npc)) then
-		return false
-	end
-
-	if (best_danger_object and (IsMonster(best_danger_object) or IsStalker(best_danger_object))) then
+	if (best_danger_object) then 
+		if (best_danger_object:cast_Stalker()) then 
+			if not (npc:relation(best_danger_object) == game_object.enemy) then 
+				return false
+			end
+		elseif not (IsMonster(best_danger_object)) then
+			return false
+		end
 		if not (best_danger_object:alive() and xr_combat_ignore.is_enemy(npc, best_danger_object,true)) then
 			return false
 		end
 	end
+
+	-- if (xr_corpse_detection.is_under_corpse_detection(npc) or xr_help_wounded.is_under_help_wounded(npc)) then
+		-- return false
+	-- elseif (xrs_kill_wounded and xrs_kill_wounded.is_under_kill_wounded(npc)) then
+		-- return false
+	-- end
 
 	return danger_in_radius(npc,best_danger,bd_type)
 end

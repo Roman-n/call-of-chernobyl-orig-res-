@@ -29,7 +29,7 @@ function set_active_subdialog(section)
 end 
 
 local map_spot_property = {}
-function property_box_clicked(property_ui)
+function property_box_clicked(property_ui,cur_map_location)
 	local list_item = property_ui:GetSelectedItem()
 	if not (list_item) then 
 		return 
@@ -40,7 +40,7 @@ function property_box_clicked(property_ui)
 	SendScriptCallback("map_spot_menu_property_clicked",property_ui,map_spot_property.id,map_spot_property.level_name,prop)
 end 
 
-function property_box_add_properties(property_ui,id,level_name,hint)
+function property_box_add_properties(property_ui,id,level_name,hint,cur_map_location)
 	map_spot_property.id = id 
 	map_spot_property.level_name = level_name
 	-- if (hint and hint ~= "") then

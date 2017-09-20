@@ -475,7 +475,12 @@
 	<string id="st_pda_display_values">
 		<text>Показ значений</text>
 	</string>
-	
+	<string id="st_pda_change_spot_hint">
+		<text>изменять</text>
+	</string>
+	<string id="st_pda_delete_spot">
+		<text>Удалить</text>
+	</string>
 	<string id="st_distance_to">
 		<text>Расстояние</text>
 	</string>

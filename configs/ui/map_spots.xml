@@ -181,8 +181,27 @@
                 <texture r="10" g="250" b="250">ui_pda2_exit_point</texture>
         </level_changer_spot_mini>
 
+		<user_defined>
+			<level_map spot="user_defined_spot" point="quest_pointer"/>
+			<mini_map spot="user_defined_spot_mini"/>
+		</user_defined>
+		<user_defined_spot width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1.0" scale_max="1.2">
+			<texture>ui_icons_newPDA_perssign_h</texture>
+		</user_defined_spot>
+		<user_defined_spot_mini width="8" height="8" alignment="c" stretch="1">
+			<texture>ui_icons_newPDA_perssign_h</texture>
+		</user_defined_spot_mini>
 
-
+        <treasure_loc hint="st_ui_pda_secret">
+                <level_map spot="treasure_spot_loc"  pointer="quest_pointer"/>
+                <mini_map  spot="treasure_spot_loc_mini"/>
+        </treasure_loc>
+		<treasure_spot_loc width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1" scale_max="1.5">
+                <texture>ui_inGame2_PDA_icon_secret</texture>
+        </treasure_spot_loc>
+        <treasure_spot_loc_mini width="8" height="8" alignment="c" stretch="1">
+                <texture>ui_inGame2_PDA_icon_secret</texture>
+        </treasure_spot_loc_mini>
 
         <treasure hint="st_ui_pda_secret">
                 <level_map spot="treasure_spot" pointer="quest_pointer"/>

@@ -70,7 +70,7 @@ function register(object_factory)
 	-- OUTFITS ----------------------------------------------------------------------------------------------------------------------------
 
 	cs_register	(object_factory, "CCustomOutfit",  				"se_item.se_outfit",					"E_STLK",			"equ_stalker_s")
-	cs_register	(object_factory, "CHelmet",  					"se_item.se_item",						"E_HLMET",			"equ_helmet_s")
+	cs_register	(object_factory, "CHelmet",  					"se_item.se_helmet",					"E_HLMET",			"equ_helmet_s")
 
 	-- WEAPONS ----------------------------------------------------------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ function register(object_factory)
 	cs_register	(object_factory, "CRadioactiveZone",			"se_zones.se_zone_anom",				"ZS_RADIO",			"zone_radio_s")
 	cs_register	(object_factory, "CTorridZone",					"se_zones.se_zone_torrid",				"ZS_TORRD",			"zone_torrid_s")
 	cs_register (object_factory, "CNoGravityZone",				"se_zones.se_zone_anom",				"ZS_NGRAV",			"zone_nograv_s")
-	
+	cs_register (object_factory, "CAmebaZone",					"se_zones.se_zone_visual",				"ZS_AMEBA",			"zone_ameba_s")
 
 
 	-- AMMO ------------------------------------------------------------------------------------------------------------------------------

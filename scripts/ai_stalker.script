@@ -85,6 +85,10 @@ function update_best_weapon(npc,cur_wpn)
 	
 	npc:iterate_inventory(itr,npc)
 	
+	if (#weapon_list == 0) then 
+		return 
+	end
+	
 	local cur_best_weapon
 	local ini = system_ini()
 	for i=1,#prior do
