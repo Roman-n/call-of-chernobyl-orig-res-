@@ -343,7 +343,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 				end
 			end
 			
-			if (has_spawned) then
+			if (has_spawned) and (bWeapon or bOutfit or bBackpack or bArtefact) then
 				if (allow_item) then 
 					allow_item = false 
 				end

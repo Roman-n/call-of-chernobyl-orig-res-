@@ -1,5 +1,5 @@
 local coc_ranking_array_size = 100				-- Top100
-local coc_ranking_list = {}
+coc_ranking_list = {}
 local actor_rank_place
 dialog_closed = false
 

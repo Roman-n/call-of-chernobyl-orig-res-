@@ -36,7 +36,18 @@ function opt_menu_on_init(menu)
 			end
 		end
 	end}
-	
+	-- debug_hud_map
+	menu.gameplay_ui_options["debug_map_hud"]			= {default=false, 	debug_only=true, 	typ="check",
+		on_accept=function(handler,optMgr,ctrl)
+			if (level.present() and ui_map_debug_ex) then
+				if (ctrl:GetCheck()) then
+					ui_map_debug_ex.activate_feature()
+				else 
+					ui_map_debug_ex.deactivate_feature()
+				end
+			end
+		end
+	}	
 	-- slot Hud
 	if (slot_hud) then
 		menu.gameplay_ui_options["slot_hud"]		= {default=false, 	debug_only=false, 	typ="check", on_accept=function(handler,optMgr,ctrl)
