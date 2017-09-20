@@ -231,6 +231,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		return v == "DET_ADVA" or v == "DET_ELIT" or v == "DET_SCIE" or v == "DET_SIMP"
 	end
 	
+	local has_spawned = false
 	local function try_spawn_item(sec,min,max,chance,weight)
 		if (max_weight >= weight) then 
 			local new_max = math.random(min,max)
@@ -238,6 +239,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 				if ((math.random(1,1000)/1000) <= chance) then 
 					spawned_item[#spawned_item+1] = sec
 					max_weight = max_weight - weight
+					has_spawned = true
 				end
 			end
 		end
@@ -247,19 +249,18 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	-- iterate most expensive to least expensive or visa versa. Highest cost has highest weight. Consumables have higher max. Outfits have high weights.
 	local functor = random_choice(function(t,a,b) return t[a] > t[b] end,function(t,a,b) return t[a] < t[b] end)
 	for section,cost in spairs(valid_item_list,functor) do
-		if not (only_one_in_existence[section]) then 
+		if not (only_one_in_existence[section]) then
+			has_spawned = false
 			local skip = false
-			local bDetector = is_detector(section)
-			local bToolkit =  is_toolkit(section)
 			
-			local bArtefact = is_artefact(section)
+			local bDetector = is_detector(section)
+			local bToolkit = not bDetector and is_toolkit(section)
+			local bArtefact = not bToolkit and is_artefact(section)
 			local bWeapon = not bArtefact and is_weapon(section)
 			local bOutfit = not bWeapon and is_outfit(section)
 			local bBackpack = not bWeapon and not bOutfit and is_backpack(section)
 			if (bWeapon or bOutfit or bBackpack or bArtefact) then
-				if (allow_item) then
-					allow_item = false
-				else 
+				if not (allow_item) then
 					skip = true
 				end
 			end
@@ -340,7 +341,13 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						try_spawn_item(section,1,1,0.005,80)
 					end
 				end
-			end 
+			end
+			
+			if (has_spawned) then
+				if (allow_item) then 
+					allow_item = false 
+				end
+			end
 			
 			if (max_weight <= 0) then
 				break
