@@ -226,6 +226,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		return v == "SCRPTART"		
 	end
 	
+	local function is_detector(section)
+		local v = ini:r_string_ex(section,"class","")
+		return v == "DET_ADVA" or v == "DET_ELIT" or v == "DET_SCIE"
+	end
+	
 	local function try_spawn_item(sec,min,max,chance,weight)
 		if (max_weight >= weight) then 
 			local new_max = math.random(min,max)
@@ -244,6 +249,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	for section,cost in spairs(valid_item_list,functor) do
 		if not (only_one_in_existence[section]) then 
 			local skip = false
+			local bDetector = is_detector(section)
 			local bArtefact = is_artefact(section)
 			local bToolkit = not bArtefact and is_toolkit(section)
 			local bWeapon = not bToolkit and is_weapon(section)
@@ -265,6 +271,15 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						try_spawn_item(section,1,1,0.02,40)
 					else
 						try_spawn_item(section,1,1,0.12,30)
+					end
+				elseif (bDetector) then
+					local v = ini:r_string_ex(section,"class","")
+					if (v == "DET_SCIE") then
+						try_spawn_item(section,1,1,0.001,10)
+					elseif (v == "DET_ELIT") then 
+						try_spawn_item(section,1,1,0.01,10)
+					else 
+						try_spawn_item(section,1,1,0.05,10)
 					end
 				elseif (bToolkit) then 
 					if (section == "itm_repairkit_tier_3") then 
