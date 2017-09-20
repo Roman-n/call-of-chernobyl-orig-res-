@@ -134,7 +134,7 @@ function se_helmet:on_register()
 	story_objects.check_spawn_ini_for_story_id(self)
 end
 function se_helmet:on_unregister()
-	unregister_story_object_by_id(self.id)
+	story_objects.unregister(self.id)
 	cse_alife_item.on_unregister( self )
 end
 function se_helmet:can_switch_online()
