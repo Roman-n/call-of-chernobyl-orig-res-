@@ -1268,7 +1268,7 @@
     <visual>actors\stalker_bandit\stalker_bandit5a</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1291,7 +1291,7 @@
     <visual>actors\stalker_bandit\stalker_bandit5b</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1314,7 +1314,7 @@
     <visual>actors\stalker_bandit\stalker_bandit5c</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1337,7 +1337,7 @@
     <visual>actors\stalker_bandit\stalker_bandit5d</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1498,7 +1498,7 @@
     <visual>actors\stalker_bandit\stalker_bandit_4</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1682,7 +1682,7 @@
     <visual>actors\stalker_bandit\stalker_bandit4c</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1751,7 +1751,7 @@
     <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -1774,7 +1774,7 @@
     <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"
@@ -2027,7 +2027,7 @@
     <visual>actors\stalker_bandit\stalker_bandit_2a</visual>
     <supplies>
 #include "gameplay\loadouts\bandit_base.ltx"
-#include "gameplay\loadouts\bandit_tier_1.ltx"
+#include "gameplay\loadouts\bandit_tier_2.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_2.xml"

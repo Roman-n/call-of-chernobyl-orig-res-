@@ -1078,6 +1078,14 @@ eye_left 			 		= 1.0, -1
 eye_right 			 		= 1.0, -1
 jaw_1 		 		 		= 1.0, -1
 
+[actor_head_damage_none]
+bip01_neck 			 		= 1.0, 0
+bip01_head 			 		= 1.0, 0
+eyelid_1 			 		= 1.0, 0
+eye_left 			 		= 1.0, 0
+eye_right 			 		= 1.0, 0
+jaw_1 		 		 		= 1.0, 0
+
 [actor_head_damage_0500]
 bip01_neck 			 		= 1.0, 0.0500
 bip01_head 			 		= 1.0, 0.0500
@@ -1260,7 +1268,7 @@ jaw_1 		 		 		= 1.0, 0.4500
 ; ACTOR HELM SECTIONS
 ;***************************************************************
 
-[actor_helm_mask]:actor_body_damage_absent, actor_head_damage_absent
+[actor_helm_mask]:actor_body_damage_absent, actor_head_damage_none
 
 [actor_helm_respirator]:actor_body_damage_absent, actor_head_damage_0500
 

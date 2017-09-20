@@ -1,7 +1,7 @@
 [up_sect_firsta_svd]
 ;Удобство(1)10%
 ;--------------
-cost		      		= 1400
+cost		      		= 1600
 value					= +10
 
 crosshair_inertion			= -1
@@ -13,16 +13,16 @@ PDM_disp_accel_factor 		= -0.5
 [up_sect_firstc_svd]
 ;Точность(2)20%
 ;---------------
-cost		      		= 1800
+cost		      		= 3200
 value					= +20
 
-fire_dispersion_base    = -0.02  	;0.15
-fire_dispersion_condition_factor    = -1
+fire_dispersion_base    = -0.03
+fire_dispersion_condition_factor    = -0.25
 
 [up_sect_firstd_svd]
 ;Удобство(2)15%
 ;--------------
-cost		      		= 1800
+cost		      		= 3200
 value					= +20
 
 crosshair_inertion			= -1
@@ -35,16 +35,17 @@ PDM_disp_accel_factor 		= -1.2
 [up_sect_firste_svd]
 ;Настильность(3)30%
 ;------------------ 
-cost		      		= 2200
+cost		      		= 6400
 value					= +30
 
-bullet_speed			= +200
+bullet_speed			= +100
+hit_power				= +0.05
 fire_dispersion_base    = -0.01  	;0.15
 
 [up_sect_firstf_svd]
 ;Скорострельность(3)25%
 ;----------------------
-cost		      		= 2200
+cost		      		= 6400
 value					= +25
 
 rpm						= +35
@@ -52,11 +53,11 @@ rpm						= +35
 [up_sect_secona_svd]
 ;Надежность(1)10%
 ;---------------
-cost		      		= 1400
+cost		      		= 1600
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1.5 ;15
+fire_dispersion_condition_factor    = -0.5 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0007 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -69,7 +70,7 @@ misfire_end_prob	     	= -0.007 ;0.03
 [up_sect_seconc_svd]
 ;Отдача(2)-20%
 ;------------
-cost		      		= 1800
+cost		      		= 3200
 value					= -20
 
 zoom_cam_dispersion         = -0.18		;1.8
@@ -80,15 +81,15 @@ zoom_cam_relax_speed        = +0.035
 [up_sect_second_svd]
 ;Точность(2)20%
 ;---------------
-cost		      		= 1800
+cost		      		= 3200
 value					= +20
-fire_dispersion_base    = -0.02  	;0.15
-fire_dispersion_condition_factor    = -1
+fire_dispersion_base    = -0.03
+fire_dispersion_condition_factor    = -0.25
 
 [up_sect_thirda_svd]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 1400
+cost		      		= 1600
 value					= -10
 
 zoom_cam_dispersion         = -0.12		;1.8
@@ -99,7 +100,7 @@ zoom_cam_relax_speed        = +0.02
 [up_sect_thirdc_svd]
 ;Удобство(2)15%
 ;--------------
-cost		      		= 1800
+cost		      		= 3200
 value					= +15
 
 crosshair_inertion			= -1
@@ -112,7 +113,7 @@ PDM_disp_accel_factor 		= -1.2
 [up_sect_thirde_svd]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 2200
+cost		      		= 6400
 value					= -30
 
 zoom_cam_dispersion         = -0.25		;1.8
@@ -123,28 +124,28 @@ zoom_cam_relax_speed        = +0.05
 [up_sect_fourta_svd]
 ;6икс прицел.
 ;------------
-cost		      		= 2100
+cost		      		= 3500
 
 scope_zoom_factor       = +2 
 
 [up_sect_fourtc_svd]
 ;Контрастный прицел
 ;------------
-cost		      		= 3200
+cost		      		= 4500
 
 scope_nightvision = scope_contrast
 
 [up_sect_fourte_svd]
 ;ПНВ
 ;------------
-cost		      		= 5000
+cost		      		= 9000
 
 scope_nightvision = scope_nightvision
 
 [up_sect_fourtf_svd]
 ;Тепловизор
 ;------------
-cost		      		= 14000
+cost		      		= 15000
 
 scope_alive_detector = scope_detector
 

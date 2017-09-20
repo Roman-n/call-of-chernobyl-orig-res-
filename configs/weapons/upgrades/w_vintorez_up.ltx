@@ -1,11 +1,11 @@
 [up_sect_firsta_vintorez]
 ;Надежность(1)10%
 ;--------------
-cost		      		= 1000
+cost		      		= 1400
 value					= +10
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.25 ;15
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.001
 ;шанс осечки при изношености больше чем misfireEndCondition
@@ -13,7 +13,7 @@ misfire_end_prob	     	= -0.013 ;0.03
 
 [up_sect_firstc_vintorez]
 ;Отдача(2)-15%
-cost		      		= 1500
+cost		      		= 2800
 value					= -20
 
 cam_dispersion              = -0.1		;0.1
@@ -28,16 +28,16 @@ zoom_cam_step_angle_horz     = -0.06	;0.5
 [up_sect_firstd_vintorez]
 ;Настильность(2)20%
 ;------------------
-cost		      		= 1500
+cost		      		= 2800
 value					= +20
 
-bullet_speed            = +85
+bullet_speed            = +80
 fire_dispersion_base    = -0.01 
 
 [up_sect_firste_vintorez]
 ;Удобство(3)25%
 ;--------------
-cost		      		= 2000
+cost		      		= 5600
 value					= +25
 
 crosshair_inertion			= -1.5
@@ -49,33 +49,33 @@ PDM_disp_accel_factor 		= -0.4
 [up_sect_firstf_vintorez]
 ;Точность(3)30%
 ;--------------
-cost		      		= 2000
+cost		      		= 5600
 value					= +30
 
-fire_dispersion_base	= -0.03 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.04 ;0.7
+fire_dispersion_condition_factor    = -0.25 ;15
 
 [up_sect_secona_vintorez]
 ;Настильность(1)10%
 ;------------------
-cost		      		= 1000
+cost		      		= 1400
 value					= +10
 
-bullet_speed            = +55
+bullet_speed            = +50
 fire_dispersion_base    = -0.01
 
 [up_sect_seconc_vintorez]
 ;Надежность(2)15%
 ;---------------
-cost		      		= 1500
+cost		      		= 2800
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.5 ;15
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.0001 ;0.0013
+condition_queue_shot_dec	= -0.00015 ;0.0013
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.0001 ;0.0011
+condition_shot_dec      	= -0.00015 ;0.0011
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.002
 ;шанс осечки при изношености больше чем misfireEndCondition
@@ -84,25 +84,25 @@ misfire_end_prob	     	= -0.023 ;0.03
 [up_sect_second_vintorez]
 ;Точность(2)20%
 ;--------------
-cost		      		= 1500
+cost		      		= 2800
 value					= +20
 
-fire_dispersion_base	= -0.02 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_base	= -0.03 ;0.7
+fire_dispersion_condition_factor    = -0.25 ;15
 
 [up_sect_secone_vintorez]
 ;Настильность(3)30%
 ;------------------
-cost		      		= 2000
+cost		      		= 5600
 value					= +30
 
-bullet_speed            = +125
+bullet_speed            = +120
 fire_dispersion_base    = -0.02
 
 [up_sect_thirda_vintorez]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 1000
+cost		      		= 1400
 value					= -10
 
 cam_dispersion              = -0.05		;0.1
@@ -116,7 +116,7 @@ zoom_cam_step_angle_horz     = -0.04	;0.5
 [up_sect_thirdc_vintorez]
 ;Удобство(2)15%
 ;--------------
-cost		      		= 1500
+cost		      		= 2800
 value					= +15
 
 crosshair_inertion			= -1.5
@@ -128,7 +128,7 @@ PDM_disp_accel_factor 		= -0.2
 [up_sect_thirde_vintorez]
 ;Удобство(3)25%
 ;--------------
-cost		      		= 2000
+cost		      		= 5600
 value					= +25
 
 crosshair_inertion			= -1.5
@@ -140,7 +140,7 @@ PDM_disp_accel_factor 		= -0.4
 [up_sect_thirdf_vintorez]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 2000
+cost		      		= 5600
 value					= -30
 
 cam_dispersion              = -0.15		;0.1
@@ -154,28 +154,28 @@ zoom_cam_step_angle_horz     = -0.1	;0.5
 [up_sect_fourta_vintorez]
 ;Оптика 4.0икс
 ;------------------
-cost		      		= 1500
+cost		      		= 3000
 
 scope_zoom_factor       = +1 
 
 [up_sect_fourtc_vintorez]
 ;Контрастный прицел
 ;------------------
-cost		      		= 3000
+cost		      		= 4000
 
 scope_nightvision = scope_contrast
 
 [up_sect_fourte_vintorez]
 ;ПНВ
 ;------------------
-cost		      		= 4500
+cost		      		= 7500
 
 scope_nightvision = scope_nightvision
 
 [up_sect_fourtf_vintorez]
 ;Тепловизор
 ;------------------
-cost		      		= 10000
+cost		      		= 12500
 
 scope_alive_detector = scope_detector
 

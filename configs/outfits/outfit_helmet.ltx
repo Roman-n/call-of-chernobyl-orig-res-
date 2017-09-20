@@ -39,6 +39,39 @@ installed_upgrades                       =
 
 power_restore_speed = 0
 
+[sect_helm_burn_immunity_add]
+burn_immunity                            = -0.015
+strike_immunity                          = 0
+shock_immunity                           = 0
+wound_immunity                           = 0
+radiation_immunity                       = 0
+telepatic_immunity                       = 0
+chemical_burn_immunity                   = 0
+explosion_immunity                       = 0
+fire_wound_immunity                      = 0
+
+[sect_helm_chem_immunity_add]
+burn_immunity                            = 0
+strike_immunity                          = 0
+shock_immunity                           = 0
+wound_immunity                           = 0
+radiation_immunity                       = 0
+telepatic_immunity                       = 0
+chemical_burn_immunity                   = -0.01
+explosion_immunity                       = 0
+fire_wound_immunity                      = 0
+
+[sect_helm_both_immunity_add]
+burn_immunity                            = -0.015
+strike_immunity                          = 0
+shock_immunity                           = 0
+wound_immunity                           = 0
+radiation_immunity                       = 0
+telepatic_immunity                       = 0
+chemical_burn_immunity                   = -0.015
+explosion_immunity                       = 0
+fire_wound_immunity                      = 0
+
 ;---------------------------------------------------------------------------------------------
 ;		Gas Mask
 ;---------------------------------------------------------------------------------------------
@@ -74,16 +107,16 @@ upgrades                                 = up_gr_firstab_helm_respirator
 upgrade_scheme                           = upgrade_scheme_helm_respirator
 mask_hud                                 = helm_respirator
 [sect_helm_respirator_immunities]
-burn_immunity                            = 0.025
+burn_immunity                            = 0.08
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.08
+wound_2_immunity                         = 0.08
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.025
-explosion_immunity                       = 0.03
-fire_wound_immunity                      = 0.03
+chemical_burn_immunity                   = 0.08
+explosion_immunity                       = 0.15
+fire_wound_immunity                      = 0.1
 
 ;---------------------------------------------------------------------------------------------
 ;		—“¿À‹ÕŒ… ÿÀ≈Ã
@@ -119,16 +152,16 @@ mask_hud                                 = helm_hardhat
 mask_hud_no_respi                        = true
 
 [sect_helm_hardhat_immunities]
-burn_immunity                            = 0.02
+burn_immunity                            = 0.08
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.05
+wound_2_immunity                         = 0.05
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.02
-explosion_immunity                       = 0.02
-fire_wound_immunity                      = 0.02
+chemical_burn_immunity                   = 0.08
+explosion_immunity                       = 0.1
+fire_wound_immunity                      = 0.075
 
 ;---------------------------------------------------------------------------------------------
 ;		ÿÀ≈Ã "«¿—ÀŒÕ"
@@ -168,16 +201,16 @@ upgrade_scheme                           = upgrade_scheme_helm_protective
 mask_hud                                 = helm_scientific
 
 [sect_helm_protective_immunities]
-burn_immunity                            = 0.015
+burn_immunity                            = 0.04
 strike_immunity                          = 0.0
-shock_immunity                           = 0.008
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.005
+wound_immunity                           = 0.05
+wound_2_immunity                         = 0.05
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.015
-explosion_immunity                       = 0.025
-fire_wound_immunity                      = 0.025
+chemical_burn_immunity                   = 0.04
+explosion_immunity                       = 0.075
+fire_wound_immunity                      = 0.05
 
 ;---------------------------------------------------------------------------------------------
 ;		“¿ “»◊≈— »… ÿÀ≈Ã
@@ -218,16 +251,16 @@ upgrades                                 = up_gr_firstab_helm_tactic, up_gr_seco
 upgrade_scheme                           = upgrade_scheme_helm_tactic
 mask_hud                                 = helm_tactic
 [sect_helm_tactic_immunities]
-burn_immunity                            = 0.022
+burn_immunity                            = 0.08
 strike_immunity                          = 0.0
-shock_immunity                           = 0.008
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.04
+wound_2_immunity                         = 0.04
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.022
-explosion_immunity                       = 0.015
-fire_wound_immunity                      = 0.015
+chemical_burn_immunity                   = 0.08
+explosion_immunity                       = 0.065
+fire_wound_immunity                      = 0.04
 
 ;---------------------------------------------------------------------------------------------
 ;		ÿÀ≈Ã "—‘≈–¿ Ã12"
@@ -269,16 +302,16 @@ upgrade_scheme                           = upgrade_scheme_helm_battle
 mask_hud                                 = helm_battle
 
 [sect_helm_battle_immunities]
-burn_immunity                            = 0.023
+burn_immunity                            = 0.07
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.04
+wound_2_immunity                         = 0.04
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.023
-explosion_immunity                       = 0.013
-fire_wound_immunity                      = 0.013
+chemical_burn_immunity                   = 0.07
+explosion_immunity                       = 0.06
+fire_wound_immunity                      = 0.04
 
 ;---------------------------------------------------------------------------------------------
 ;		M40 "Merc Mask" by –ËÍÓ¯Â“
@@ -319,16 +352,16 @@ upgrades                                 = up_gr_firstab_helm_m40
 upgrade_scheme                           = upgrade_scheme_helm_respirator
 mask_hud                                 = helm_protective
 [sect_helm_m40_immunities]
-burn_immunity                            = 0.023
+burn_immunity                            = 0.08
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.06
+wound_2_immunity                         = 0.06
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.023
-explosion_immunity                       = 0.025
-fire_wound_immunity                      = 0.025
+chemical_burn_immunity                   = 0.08
+explosion_immunity                       = 0.1
+fire_wound_immunity                      = 0.075
 
 ;---------------------------------------------------------------------------------------------
 ;		Tactical M12 helmet
@@ -370,16 +403,16 @@ upgrade_scheme                           = upgrade_scheme_helm_battle
 mask_hud                                 = helm_tactic
 
 [sect_helm_tactic_2_immunities]
-burn_immunity                            = 0.025
+burn_immunity                            = 0.07
 strike_immunity                          = 0.0
-shock_immunity                           = 0.008
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.04
+wound_2_immunity                         = 0.04
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.025
-explosion_immunity                       = 0.012
-fire_wound_immunity                      = 0.012
+chemical_burn_immunity                   = 0.07
+explosion_immunity                       = 0.05
+fire_wound_immunity                      = 0.035
 
 ;---------------------------------------------------------------------------------------------
 ;		Gas Mask Old
@@ -418,16 +451,16 @@ upgrade_scheme                           = upgrade_scheme_helm_respirator
 mask_hud                                 = helm_respirator
 
 [sect_helm_respirator_2_immunities]
-burn_immunity                            = 0.027
+burn_immunity                            = 0.085
 strike_immunity                          = 0.0
-shock_immunity                           = 0.011
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.085
+wound_2_immunity                         = 0.085
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.027
-explosion_immunity                       = 0.032
-fire_wound_immunity                      = 0.032
+chemical_burn_immunity                   = 0.085
+explosion_immunity                       = 0.16
+fire_wound_immunity                      = 0.11
 
 ;---------------------------------------------------------------------------------------------
 ;		Mask
@@ -449,7 +482,7 @@ upgr_icon_y                              = 622
 upgr_icon_width                          = 100
 upgr_icon_height                         = 138
 
-cost                                     = 375
+cost                                     = 150
 
 immunities_sect                          = sect_helm_facemask_immunities
 bones_koeff_protection                   = actor_helm_mask
@@ -462,16 +495,16 @@ radiation_protection                     = 0.001
 chemical_burn_protection                 = 0.005
 
 [sect_helm_facemask_immunities]
-burn_immunity                            = 0.04
+burn_immunity                            = 0.15
 strike_immunity                          = 0.0
 shock_immunity                           = 0.0
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+wound_immunity                           = 0.1
+wound_2_immunity                         = 0.1
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.04
-explosion_immunity                       = 0.05
-fire_wound_immunity                      = 0.05
+chemical_burn_immunity                   = 0.15
+explosion_immunity                       = 0.2
+fire_wound_immunity                      = 0.125
 
 ;---------------------------------------------------------------------------------------------
 ;		Respirator (half mask)
@@ -507,16 +540,16 @@ chemical_burn_protection                 = 0.01
 mask_hud                                 = helm_invisible
 
 [sect_helm_respirator_half_immunities]
-burn_immunity                            = 0.022
+burn_immunity                            = 0.07
 strike_immunity                          = 0.0
 shock_immunity                           = 0.0
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+wound_immunity                           = 0.06
+wound_2_immunity                         = 0.06
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.025
-explosion_immunity                       = 0.03
-fire_wound_immunity                      = 0.03
+chemical_burn_immunity                   = 0.07
+explosion_immunity                       = 0.1
+fire_wound_immunity                      = 0.075
 
 ;---------------------------------------------------------------------------------------------
 ;		GP-5
@@ -553,13 +586,13 @@ upgrade_scheme                           = upgrade_scheme_helm_respirator
 mask_hud                                 = helm_respirator
 
 [sect_helm_respirator_gp5_immunities]
-burn_immunity                            = 0.023
+burn_immunity                            = 0.075
 strike_immunity                          = 0.0
-shock_immunity                           = 0.01
-wound_immunity                           = 0.0
-wound_2_immunity                         = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.075
+wound_2_immunity                         = 0.075
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.023
-explosion_immunity                       = 0.028
-fire_wound_immunity                      = 0.028
+chemical_burn_immunity                   = 0.075
+explosion_immunity                       = 0.13
+fire_wound_immunity                      = 0.08

@@ -5,12 +5,12 @@
 		</auto_static>
 	</background>
 
-	<btn_cancel x="520" y="386" width="70" height="28" check_mode="0">
+	<btn_cancel x="515" y="390" width="60" height="28" check_mode="0">
 		<text font="letterica18">ui_inv_cancel</text>
 		<texture>ui_inGame2_Mp_bigbuttone</texture>
 	</btn_cancel>
 
-	<btn_apply x="450" y="386" width="70" height="28" check_mode="0">
+	<btn_apply x="455" y="390" width="70" height="28" check_mode="0">
 		<text font="letterica18">ui_inv_ok</text>
 		<texture>ui_inGame2_Mp_bigbuttone</texture>
 	</btn_apply>

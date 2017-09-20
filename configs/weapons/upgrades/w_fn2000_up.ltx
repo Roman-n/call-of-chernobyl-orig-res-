@@ -1,11 +1,11 @@
 [up_sect_firsta_fn2000]
 ;Надежность(1)10%
 ;---------------
-cost		      		= 1500
+cost		      		= 1400
 value					= +10
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.25 ;15
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.001
 ;шанс осечки при изношености больше чем misfireEndCondition
@@ -14,11 +14,11 @@ misfire_end_prob	     	= -0.016 ;0.03
 [up_sect_firstc_fn2000]
 ;Надежность(2)15%
 ;---------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.5 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -31,16 +31,16 @@ misfire_end_prob	     	= -0.016 ;0.03
 [up_sect_firstd_fn2000]
 ;Настильность(2)20%
 ;------------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +20
 
-bullet_speed            = +75
+bullet_speed            = +60
 fire_dispersion_base	= -0.01
 
 [up_sect_firste_fn2000]
 ;Удобство(3)25%
 ;--------------
-cost		      		= 2500
+cost		      		= 5600
 value					= +25
 
 crosshair_inertion		   = -2
@@ -52,51 +52,51 @@ PDM_disp_accel_factor 		= -0.75 ;1.5
 [up_sect_firstf_fn2000]
 ;Точность(3)30%
 ;---------------
-cost		      		= 2500
+cost		      		= 5600
 value					= +30
 
 fire_dispersion_base	= -0.04 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -0.5 ;15
 
 [up_sect_secona_fn2000]
 ;Настильность(1)10%
 ;------------------
-cost		      		= 1500
+cost		      		= 1400
 value					= +10
 
-bullet_speed            = +50
+bullet_speed            = +40
 fire_dispersion_base	= -0.01
 
 [up_sect_seconc_fn2000]
 ;Настильность(2)20%
 ;------------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +20
 
-bullet_speed            = +75
+bullet_speed            = +60
 fire_dispersion_base	= -0.01
 
 [up_sect_second_fn2000]
 ;Скорострельность(2)15%
 ;----------------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +15
 
-rpm          = +85
+rpm          = +75
 
 [up_sect_secone_fn2000]
 ;Точность(3)30%
 ;---------------
-cost		      		= 2500
+cost		      		= 5600
 value					= +30
 
 fire_dispersion_base	= -0.04 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -0.5 ;15
 
 [up_sect_seconf_fn2000]
 ;Отдача(3)-30%
 ;------------
-cost		      		= 2500
+cost		      		= 5600
 value					= -30
 
 cam_dispersion              = -0.14		;0.5
@@ -110,7 +110,7 @@ zoom_cam_step_angle_horz    = -0.55 	;1.0 [0.505 в остатке]
 [up_sect_thirda_fn2000]
 ;Отдача(1)-10%
 ;------------
-cost		      		= 1500
+cost		      		= 1400
 value					= -10
 
 cam_dispersion              = -0.09		;0.5
@@ -124,11 +124,11 @@ zoom_cam_step_angle_horz    = -0.28 	;1.0 [0.505 в остатке]
 [up_sect_thirdc_fn2000]
 ;Надежность(2)15%
 ;---------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +10
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.75 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0001 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -141,47 +141,47 @@ misfire_end_prob	     	= -0.016 ;0.03
 [up_sect_thirdd_fn2000]
 ;Точность(2)20%
 ;---------------
-cost		      		= 2000
+cost		      		= 2800
 value					= +20
 
 fire_dispersion_base	= -0.02 ;0.7
-fire_dispersion_condition_factor    = -1 ;15
+;fire_dispersion_condition_factor    = -0.5 ;15
 
 [up_sect_thirde_fn2000]
 ;Скорострельность(3)25%
 ;----------------------
-cost		      		= 2500
+cost		      		= 5600
 value					= +30
 
-rpm          = +135
+rpm          = +100
 
 [up_sect_thirdf_fn2000]
 ;Настильность(3)30%
 ;------------------
-cost		      		= 2500
+cost		      		= 5600
 value					= +30
 
-bullet_speed            = +100
+bullet_speed            = +80
 fire_dispersion_base    = -0.01
 
 [up_sect_fourta_fn2000]
-cost		      		= 1800
+cost		      		= 3000
 
 scope_zoom_factor       = +2.4   
 
 [up_sect_fourtc_fn2000]
-cost		      		= 3000
+cost		      		= 3500
 
 scope_nightvision = scope_contrast
 
 
 [up_sect_fourte_fn2000]
-cost		      		= 12500
+cost		      		= 10000
 
 scope_alive_detector = scope_detector
 
 [up_sect_fourtf_fn2000]
-cost		      		= 5500
+cost		      		= 5000
 
 scope_dynamic_zoom = on
 

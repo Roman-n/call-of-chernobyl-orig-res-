@@ -9,11 +9,11 @@ rpm						= +40
 [up_sect_firstc_sig220]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 900
+cost		      		= 1000
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.55 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0005 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -26,11 +26,11 @@ misfire_end_prob	     	= -0.015 ;0.03
 [up_sect_firstd_sig220]
 ;Ќастильность(2)20%
 ;------------------
-cost		      		= 900
+cost		      		= 1000
 value					= +20
 
-bullet_speed		 	= +60
-fire_dispersion_base	= -0.02 
+bullet_speed		 	= +50
+fire_dispersion_base	= -0.01
 
 [up_sect_firste_sig220]
 ;–ежим автоматической стрельбы по три выстрела
@@ -51,17 +51,17 @@ cam_step_angle_horz		= -0.45		;1.2
 cost		      		= 500
 value					= +10
 
-bullet_speed		 	= +40
+bullet_speed		 	= +35
 fire_dispersion_base	= -0.01 
 
 [up_sect_seconc_sig220]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 900
+cost		      		= 1000
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.55 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0005 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -74,7 +74,7 @@ misfire_end_prob	     	= -0.015 ;0.03
 [up_sect_secone_sig220]
 ;—корострельность(3)25%
 ;----------------------
-cost		      		= 1300
+cost		      		= 2000
 value					= +25
 
 rpm						= +65
@@ -82,11 +82,11 @@ rpm						= +65
 [up_sect_seconf_sig220]
 ;Ќастильность(3)30%
 ;------------------
-cost		      		= 1300
+cost		      		= 2000
 value					= +30
 
-bullet_speed		 	= +80
-fire_dispersion_base	= -0.03 
+bullet_speed		 	= +70
+fire_dispersion_base	= -0.02
 
 [up_sect_thirda_sig220]
 ;¬ес
@@ -105,7 +105,7 @@ PDM_disp_accel_factor 		= -0.15
 [up_sect_thirdc_sig220]
 ;”добство(2)15%
 ;--------------
-cost		      		= 900
+cost		      		= 1000
 value					= +15
 
 crosshair_inertion			= -0.7
@@ -117,7 +117,7 @@ PDM_disp_accel_factor 		= -0.35
 [up_sect_thirdd_sig220]
 ;ќтдача(2)-20%
 ;------------
-cost		      		= 900
+cost		      		= 1000
 value					= -20
 
 cam_dispersion          = -0.45		;1.2
@@ -131,16 +131,16 @@ cost		      		= 500
 value					= +10
 
 fire_dispersion_base	= -0.03
-fire_dispersion_condition_factor    = -1
+fire_dispersion_condition_factor    = -0.3
 
 [up_sect_fourtc_sig220]
 ;Ќадежность(2)15%
 ;---------------
-cost		      		= 900
+cost		      		= 1000
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -1 ;15
+fire_dispersion_condition_factor    = -0.55 ;15
 ;увеличение изношености при выстреле очередью
 condition_queue_shot_dec	= -0.0005 ;0.0013
 ;увеличение изношености при одиночном выстреле
@@ -153,7 +153,7 @@ misfire_end_prob	     	= -0.015 ;0.03
 [up_sect_fourte_sig220]
 ;—корострельность(3)25%
 ;----------------------
-cost		      		= 1300
+cost		      		= 2000
 value					= +25
 
 rpm						= +65
@@ -161,7 +161,7 @@ rpm						= +65
 [up_sect_fiftha_sig220]
 ;”величенный объем магазина
 ;---------------
-cost		      		= 1500
+cost		      		= 2000
 value					= +4
 
 ammo_mag_size		 	= +4

@@ -48,7 +48,7 @@ ph_box2_center                                                 = 0.0,  0.6,  0.0
 ph_box2_size                                                 = 0.30, 0.6,  0.30
 stalker_restrictor_radius                       = 0.25
 stalker_small_restrictor_radius                	= 0.25
-medium_monster_restrictor_radius       	 		= 0.25
+medium_monster_restrictor_radius       	 		= 0.2
 ph_crash_speed_min                              = 13
 ph_crash_speed_max                              = 30
 ph_collision_damage_factor                      = 1.0
@@ -60,10 +60,10 @@ weapon_bone2                                = bip01_r_finger11
 
 damage                                                = actor_damage
 
-hit_probability_gd_novice	= 0.20
-hit_probability_gd_stalker	= 0.30
-hit_probability_gd_veteran	= 0.40
-hit_probability_gd_master	= 0.50
+hit_probability_gd_novice	= 0.3 ;0.20
+hit_probability_gd_stalker	= 0.4 ;0.30
+hit_probability_gd_veteran	= 0.5 ;0.40
+hit_probability_gd_master	= 0.6 ;0.50
 
 hit_sounds                                        = actor_hit_snds
 ;actor condition
@@ -170,7 +170,7 @@ satiety_v				= 0.0000162 	;скорость уменьшения сытости со временем
 radiation_v				= 0.0	;скорость уменьшения радиации
 satiety_power_v			= 0.005		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
-satiety_critical		= 0.3       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+satiety_critical		= 0.4       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v		= 0.002     ;уменьшение здоровья при воздействии радиации
 morale_v				= 0.0001	;скорость восстановления морали
 psy_health_v			= 0.001		;скорость восстановления psy-здоровья
@@ -335,7 +335,7 @@ strike               =actor\pain1,actor\pain2,actor\pain3; ,actor\hurt4
 wound                =actor\pain1,actor\pain2,actor\pain3; ,actor\hurt4
 radiation            =monsters\biting\def_0; actor\hurt1,actor\hurt2,actor\hurt3,actor\hurt4
 telepatic            =actor\pain1,actor\pain2,actor\pain3;  ,actor\hurt4
-fire_wound           =actor\bullet_hit_1,actor\bullet_hit_2,actor\bullet_hit_3,actor\bullet_hit_4
+fire_wound           =actor\bullet_hit_1,actor\bullet_hit_2,actor\bullet_hit_3,actor\bullet_hit_4,actor\bullet_hit_pain_1,actor\bullet_hit_pain_2,actor\bullet_hit_pain_3
 ; actor\pain_1,actor\pain_3,actor\pain_4,actor\pain_5,actor\pain_6,actor\pain_7,actor\pain_8
 chemical_burn        =actor\pain1,actor\pain2,actor\pain3;  ,actor\hurt4
 explosion            =affects\tinnitus3a
