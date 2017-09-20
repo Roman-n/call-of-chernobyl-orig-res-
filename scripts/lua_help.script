@@ -1,3 +1,6 @@
+* Log file has been cleaned successfully!
+@ lua_help
+ 
 List of the classes exported to LUA
 
 C++ class entity_memory_object : memory_object {
@@ -214,6 +217,7 @@ C++ class vector {
 
 C++ class spawn_story_ids {
     const INVALID_SPAWN_STORY_ID = -1;
+    
 };
 
 C++ class story_ids {
@@ -284,6 +288,7 @@ C++ class story_ids {
     const yan_specnaz_corpse = 922;
     const yan_vasilyev = 903;
     const yan_zombie_zone_mapspot = 906;
+    
 };
 
 C++ class callback {
@@ -338,6 +343,7 @@ C++ class callback {
     const weapon_zoom_out = 44;
     const zone_enter = 4;
     const zone_exit = 5;
+    
 };
 
 C++ class EDDListType {
@@ -351,6 +357,7 @@ C++ class EDDListType {
     const iPartnerTradeBag = 5;
     const iQuickSlot = 8;
     const iTrashSlot = 9;
+    
 };
 
 C++ class key_bindings {
@@ -421,6 +428,7 @@ C++ class key_bindings {
     const kWPN_NEXT = 29;
     const kWPN_RELOAD = 34;
     const kWPN_ZOOM = 31;
+    
 };
 
 C++ class GAME_TYPE {
@@ -429,6 +437,7 @@ C++ class GAME_TYPE {
     const eGameIDCaptureTheArtefact = 16;
     const eGameIDDeathmatch = 2;
     const eGameIDTeamDeathmatch = 4;
+    
 };
 
 C++ class game_difficulty {
@@ -436,6 +445,7 @@ C++ class game_difficulty {
     const novice = 0;
     const stalker = 1;
     const veteran = 2;
+    
 };
 
 C++ class snd_type {
@@ -485,6 +495,7 @@ C++ class snd_type {
     const world_object_break = 134218752;
     const world_object_collide = 134218240;
     const world_object_explode = 134217984;
+    
 };
 
 C++ class task {
@@ -494,6 +505,7 @@ C++ class task {
     const in_progress = 1;
     const storyline = 0;
     const task_dummy = 65535;
+    
 };
 
 C++ class ui_events {
@@ -528,6 +540,7 @@ C++ class ui_events {
     const WINDOW_MOUSE_MOVE = 6;
     const WINDOW_RBUTTON_DOWN = 1;
     const WINDOW_RBUTTON_UP = 4;
+    
 };
 
 C++ class rq_target {
@@ -538,26 +551,31 @@ C++ class rq_target {
     const rqtObstacle = 8;
     const rqtShape = 4;
     const rqtStatic = 2;
+    
 };
 
 C++ class GameGraph__LEVEL_MAP__value_type {
     property id;
     property level;
+    
 };
 
 C++ class MEMBERS__value_type {
     property id;
     property object;
+    
 };
 
 C++ class award_pair_t {
     property first;
     property second;
+    
 };
 
 C++ class best_scores_pair_t {
     property first;
     property second;
+    
 };
 
 C++ class hit_memory_object : entity_memory_object {
@@ -573,8 +591,8 @@ C++ class hit_memory_object : entity_memory_object {
 };
 
 C++ class clsid {
-    const actor = 95;
-    const ameba_zone = 211;
+    const actor = 93;
+    const ameba_zone = 210;
     const art_bast_artefact = 0;
     const art_black_drops = 1;
     const art_cta = 3;
@@ -590,23 +608,23 @@ C++ class clsid {
     const art_thorn = 12;
     const art_zuda = 13;
     const artefact = 42;
-    const artefact_s = 108;
+    const artefact_s = 106;
     const bloodsucker = 14;
-    const bloodsucker_s = 115;
+    const bloodsucker_s = 113;
     const boar = 15;
-    const boar_s = 116;
+    const boar_s = 114;
     const burer = 16;
-    const burer_s = 117;
+    const burer_s = 115;
     const car = 53;
-    const car_s = 109;
+    const car_s = 107;
     const cat = 17;
-    const cat_s = 118;
+    const cat_s = 116;
     const chimera = 29;
-    const chimera_s = 119;
+    const chimera_s = 117;
     const controller = 18;
-    const controller_s = 120;
+    const controller_s = 118;
     const crow = 19;
-    const destrphys_s = 98;
+    const destrphys_s = 96;
     const detector_advanced_s = 54;
     const detector_elite_s = 55;
     const detector_scientific_s = 56;
@@ -618,185 +636,185 @@ C++ class clsid {
     const device_flare = 60;
     const device_pda = 61;
     const device_torch = 64;
-    const device_torch_s = 151;
+    const device_torch_s = 149;
     const dog_black = 20;
     const dog_red = 23;
-    const dog_s = 123;
-    const equ_exo = 65;
-    const equ_helmet_s = 70;
-    const equ_military = 66;
-    const equ_scientific = 67;
-    const equ_stalker = 68;
-    const equ_stalker_s = 71;
+    const dog_s = 121;
+    const equ_backpack = 66;
+    const equ_helmet_s = 68;
+    const equ_stalker = 65;
+    const equ_stalker_s = 69;
     const flesh = 24;
     const flesh_group = 25;
-    const flesh_s = 124;
+    const flesh_s = 122;
     const fracture = 26;
-    const fracture_s = 126;
-    const game = 76;
+    const fracture_s = 124;
+    const game = 74;
     const game_cl_artefact_hunt = 46;
     const game_cl_capture_the_artefact = 47;
     const game_cl_deathmatch = 48;
     const game_cl_single = 49;
     const game_cl_team_deathmatch = 50;
-    const game_sv_artefact_hunt = 138;
-    const game_sv_capture_the_artefact = 139;
-    const game_sv_deathmatch = 140;
-    const game_sv_single = 141;
-    const game_sv_team_deathmatch = 142;
-    const game_ui_artefact_hunt = 152;
-    const game_ui_capture_the_artefact = 153;
-    const game_ui_deathmatch = 154;
-    const game_ui_single = 155;
-    const game_ui_team_deathmatch = 156;
-    const gigant_s = 125;
+    const game_sv_artefact_hunt = 136;
+    const game_sv_capture_the_artefact = 137;
+    const game_sv_deathmatch = 138;
+    const game_sv_single = 139;
+    const game_sv_team_deathmatch = 140;
+    const game_ui_artefact_hunt = 150;
+    const game_ui_capture_the_artefact = 151;
+    const game_ui_deathmatch = 152;
+    const game_ui_single = 153;
+    const game_ui_team_deathmatch = 154;
+    const gigant_s = 123;
     const graph_point = 28;
-    const hanging_lamp = 99;
+    const hanging_lamp = 97;
     const helicopter = 51;
-    const helmet = 69;
-    const hlamp_s = 134;
-    const hud_manager = 80;
-    const inventory_box = 101;
-    const inventory_box_s = 146;
-    const karlik_s = 127;
-    const level = 75;
-    const level_changer = 90;
-    const level_changer_s = 91;
-    const main_menu = 92;
-    const mp_players_bag = 93;
-    const nogravity_zone = 218;
-    const obj_antirad = 81;
-    const obj_attachable = 82;
-    const obj_bandage = 83;
-    const obj_bolt = 84;
-    const obj_bottle = 85;
-    const obj_breakable = 96;
-    const obj_climable = 97;
-    const obj_document = 86;
-    const obj_explosive = 87;
-    const obj_explosive_s = 144;
-    const obj_food = 88;
-    const obj_food_s = 145;
-    const obj_holder_ent = 100;
-    const obj_medkit = 89;
-    const obj_pda_s = 149;
-    const obj_phskeleton = 106;
-    const obj_phys_destroyable = 105;
-    const obj_physic = 102;
-    const online_offline_group = 94;
+    const helmet = 67;
+    const hlamp_s = 132;
+    const hud_manager = 78;
+    const inventory_box = 99;
+    const inventory_box_s = 144;
+    const karlik_s = 125;
+    const level = 73;
+    const level_changer = 88;
+    const level_changer_s = 89;
+    const main_menu = 90;
+    const mp_players_bag = 91;
+    const nogravity_zone = 217;
+    const obj_antirad = 79;
+    const obj_attachable = 80;
+    const obj_bandage = 81;
+    const obj_bolt = 82;
+    const obj_bottle = 83;
+    const obj_breakable = 94;
+    const obj_climable = 95;
+    const obj_document = 84;
+    const obj_explosive = 85;
+    const obj_explosive_s = 142;
+    const obj_food = 86;
+    const obj_food_s = 143;
+    const obj_holder_ent = 98;
+    const obj_medkit = 87;
+    const obj_pda_s = 147;
+    const obj_phskeleton = 104;
+    const obj_phys_destroyable = 103;
+    const obj_physic = 100;
+    const online_offline_group = 92;
     const phantom = 30;
     const poltergeist = 31;
-    const poltergeist_s = 128;
-    const projector = 104;
+    const poltergeist_s = 126;
+    const projector = 102;
     const pseudo_gigant = 27;
-    const pseudodog_s = 129;
+    const pseudodog_s = 127;
     const psy_dog = 22;
     const psy_dog_phantom = 21;
-    const psy_dog_phantom_s = 121;
-    const psy_dog_s = 122;
+    const psy_dog_phantom_s = 119;
+    const psy_dog_s = 120;
     const rat = 32;
-    const rat_s = 130;
-    const script_actor = 143;
+    const rat_s = 128;
+    const script_actor = 141;
     const script_heli = 52;
-    const script_object = 110;
-    const script_phys = 103;
-    const script_restr = 136;
+    const script_object = 108;
+    const script_phys = 101;
+    const script_restr = 134;
     const script_stalker = 35;
     const script_trader = 37;
-    const script_zone = 107;
-    const smart_cover = 111;
-    const smart_terrain = 112;
-    const smart_zone = 113;
-    const smartcover_s = 114;
+    const script_zone = 105;
+    const smart_cover = 109;
+    const smart_terrain = 110;
+    const smart_zone = 111;
+    const smartcover_s = 112;
     const snork = 33;
-    const snork_s = 131;
-    const space_restrictor = 135;
-    const spectator = 137;
+    const snork_s = 129;
+    const space_restrictor = 133;
+    const spectator = 135;
     const stalker = 34;
-    const team_base_zone = 221;
-    const torrid_zone = 222;
+    const team_base_zone = 220;
+    const torrid_zone = 221;
     const trader = 36;
     const tushkano = 38;
-    const tushkano_s = 132;
-    const wpn_ak74 = 178;
-    const wpn_ak74_s = 157;
+    const tushkano_s = 130;
+    const wpn_ak74 = 176;
+    const wpn_ak74_s = 155;
     const wpn_ammo = 40;
     const wpn_ammo_m209 = 43;
-    const wpn_ammo_m209_s = 147;
+    const wpn_ammo_m209_s = 145;
     const wpn_ammo_og7b = 44;
-    const wpn_ammo_og7b_s = 148;
+    const wpn_ammo_og7b_s = 146;
     const wpn_ammo_s = 41;
     const wpn_ammo_vog25 = 45;
-    const wpn_ammo_vog25_s = 150;
-    const wpn_auto_shotgun_s = 158;
-    const wpn_binocular = 179;
-    const wpn_binocular_s = 159;
-    const wpn_bm16 = 180;
-    const wpn_bm16_s = 160;
-    const wpn_fn2000 = 181;
-    const wpn_fort = 182;
-    const wpn_grenade_f1 = 72;
-    const wpn_grenade_f1_s = 73;
-    const wpn_grenade_fake = 74;
-    const wpn_grenade_launcher = 183;
-    const wpn_grenade_launcher_s = 161;
-    const wpn_grenade_rgd5 = 77;
-    const wpn_grenade_rgd5_s = 78;
-    const wpn_grenade_rpg7 = 79;
-    const wpn_groza = 184;
-    const wpn_groza_s = 162;
-    const wpn_hpsa = 185;
-    const wpn_hpsa_s = 163;
-    const wpn_knife = 186;
-    const wpn_knife_s = 164;
-    const wpn_lr300 = 187;
-    const wpn_lr300_s = 165;
-    const wpn_pm = 188;
-    const wpn_pm_s = 166;
-    const wpn_rg6 = 189;
-    const wpn_rg6_s = 167;
-    const wpn_rpg7 = 190;
-    const wpn_rpg7_s = 168;
-    const wpn_scope = 191;
-    const wpn_scope_s = 169;
-    const wpn_shotgun = 192;
-    const wpn_shotgun_s = 170;
-    const wpn_silencer = 193;
-    const wpn_silencer_s = 171;
-    const wpn_stat_mgun = 194;
-    const wpn_svd = 195;
-    const wpn_svd_s = 172;
-    const wpn_svu = 196;
-    const wpn_svu_s = 173;
-    const wpn_usp45 = 197;
-    const wpn_usp45_s = 174;
-    const wpn_val = 198;
-    const wpn_val_s = 175;
-    const wpn_vintorez = 199;
-    const wpn_vintorez_s = 176;
-    const wpn_walther = 200;
-    const wpn_walther_s = 177;
-    const wpn_wmagaz = 201;
-    const wpn_wmaggl = 202;
+    const wpn_ammo_vog25_s = 148;
+    const wpn_auto_shotgun_s = 156;
+    const wpn_binocular = 177;
+    const wpn_binocular_s = 157;
+    const wpn_bm16 = 178;
+    const wpn_bm16_s = 158;
+    const wpn_fn2000 = 179;
+    const wpn_fort = 180;
+    const wpn_grenade_f1 = 70;
+    const wpn_grenade_f1_s = 71;
+    const wpn_grenade_fake = 72;
+    const wpn_grenade_launcher = 181;
+    const wpn_grenade_launcher_s = 159;
+    const wpn_grenade_rgd5 = 75;
+    const wpn_grenade_rgd5_s = 76;
+    const wpn_grenade_rpg7 = 77;
+    const wpn_groza = 182;
+    const wpn_groza_s = 160;
+    const wpn_hpsa = 183;
+    const wpn_hpsa_s = 161;
+    const wpn_knife = 184;
+    const wpn_knife_s = 162;
+    const wpn_lr300 = 185;
+    const wpn_lr300_s = 163;
+    const wpn_pm = 186;
+    const wpn_pm_s = 164;
+    const wpn_rg6 = 187;
+    const wpn_rg6_s = 165;
+    const wpn_rpg7 = 188;
+    const wpn_rpg7_s = 166;
+    const wpn_scope = 189;
+    const wpn_scope_s = 167;
+    const wpn_shotgun = 190;
+    const wpn_shotgun_s = 168;
+    const wpn_silencer = 191;
+    const wpn_silencer_s = 169;
+    const wpn_stat_mgun = 192;
+    const wpn_svd = 193;
+    const wpn_svd_s = 170;
+    const wpn_svu = 194;
+    const wpn_svu_s = 171;
+    const wpn_usp45 = 195;
+    const wpn_usp45_s = 172;
+    const wpn_val = 196;
+    const wpn_val_s = 173;
+    const wpn_vintorez = 197;
+    const wpn_vintorez_s = 174;
+    const wpn_walther = 198;
+    const wpn_walther_s = 175;
+    const wpn_wmagaz = 199;
+    const wpn_wmaggl = 200;
     const zombie = 39;
-    const zombie_s = 133;
-    const zone = 223;
-    const zone_acid_fog = 210;
-    const zone_bfuzz = 212;
-    const zone_bfuzz_s = 203;
-    const zone_campfire = 213;
-    const zone_dead = 214;
-    const zone_galant_s = 204;
-    const zone_galantine = 215;
-    const zone_mbald_s = 205;
-    const zone_mincer = 217;
-    const zone_mincer_s = 206;
-    const zone_mosquito_bald = 216;
-    const zone_nograv_s = 207;
-    const zone_radio_s = 208;
-    const zone_radioactive = 219;
-    const zone_rusty_hair = 220;
-    const zone_torrid_s = 209;
+    const zombie_s = 131;
+    const zone = 222;
+    const zone_acid_fog = 209;
+    const zone_ameba_s = 201;
+    const zone_bfuzz = 211;
+    const zone_bfuzz_s = 202;
+    const zone_campfire = 212;
+    const zone_dead = 213;
+    const zone_galant_s = 203;
+    const zone_galantine = 214;
+    const zone_mbald_s = 204;
+    const zone_mincer = 216;
+    const zone_mincer_s = 205;
+    const zone_mosquito_bald = 215;
+    const zone_nograv_s = 206;
+    const zone_radio_s = 207;
+    const zone_radioactive = 218;
+    const zone_rusty_hair = 219;
+    const zone_torrid_s = 208;
+    
 };
 
 C++ class memory_info : visible_memory_object {
@@ -817,6 +835,7 @@ C++ class MonsterSpace {
     const head_anim_kind = 3;
     const head_anim_normal = 0;
     const sound_script = 128;
+    
 };
 
 C++ class not_yet_visible_object {
@@ -861,6 +880,7 @@ C++ class CSightParams {
     property m_vector;
     
     CSightParams ();
+    
 };
 
 C++ class sound_memory_object : game_memory_object {
@@ -922,6 +942,7 @@ C++ class duality {
 C++ class memory_object {
     property last_level_time;
     property level_time;
+    
 };
 
 C++ class noise {
@@ -938,6 +959,7 @@ C++ class noise {
 C++ class object_params {
     property level_vertex;
     property position;
+    
 };
 
 C++ class effector_params {
@@ -957,6 +979,7 @@ C++ class effector_params {
 C++ class rotation {
     property pitch;
     property yaw;
+    
 };
 
 C++ class StaticDrawableWrapper {
@@ -968,6 +991,7 @@ C++ class StaticDrawableWrapper {
 C++ class award_data {
     property m_count;
     property m_last_reward_date;
+    
 };
 
 C++ class fs_file {
@@ -977,6 +1001,7 @@ C++ class fs_file {
     property size_compressed;
     property size_real;
     property vfs;
+    
 };
 
 C++ class DIK_keys {
@@ -1104,6 +1129,7 @@ C++ class DIK_keys {
     const MOUSE_1 = 337;
     const MOUSE_2 = 338;
     const MOUSE_3 = 339;
+    
 };
 
 C++ class color_animator {
@@ -1137,6 +1163,7 @@ C++ class rq_result {
     property range;
     
     rq_result ();
+    
 };
 
 C++ class token {
@@ -1144,6 +1171,7 @@ C++ class token {
     property name;
     
     token ();
+    
 };
 
 C++ class action_base {
@@ -1282,6 +1310,7 @@ C++ class Fbox {
     property min;
     
     Fbox ();
+    
 };
 
 C++ class suggest_nicks_cb {
@@ -1413,6 +1442,7 @@ C++ class CAI_Stalker : CGameObject {
     function use(CGameObject*);
     function Visual() const;
     function net_Export(net_packet&);
+    function conditions() const;
     function GetWeaponAccuracy() const;
     function getEnabled() const;
     function _construct();
@@ -1499,7 +1529,7 @@ C++ class alife_simulator {
     function object(const alife_simulator*, number);
     function object(const alife_simulator*, number, boolean);
     function set_switch_online(number, boolean);
-    function iterate_info(const alife_simulator*, const number&, function<void>);
+    function iterate_info(const alife_simulator*, const number&, const function<boolean>&);
     function add_in_restriction(alife_simulator*, cse_alife_monster_abstract*, number);
     function set_interactive(number, boolean);
     function set_switch_offline(number, boolean);
@@ -1513,6 +1543,7 @@ C++ class alife_simulator {
     function add_out_restriction(alife_simulator*, cse_alife_monster_abstract*, number);
     function remove_in_restriction(alife_simulator*, cse_alife_monster_abstract*, number);
     function release(alife_simulator*, cse_abstract*, boolean);
+    function release(alife_simulator*, cse_abstract*);
     function story_object(const alife_simulator*, number);
     function create(alife_simulator*, number);
     function create(alife_simulator*, string, const vector&, number, number, number);
@@ -1576,34 +1607,38 @@ C++ class CActorCondition : CEntityCondition {
     function BoostRadiationRestore(number);
     function BoostBleedingRestore(number);
     function BoostChemicalBurnProtection(number);
-    function SetMaxPower(number);
+    function SatietyCritical();
     function ChangeHealth(number);
     function ChangeAlcohol(number);
     function BoostHpRestore(number);
     function BoostRadiationImmunity(number);
     function GetWhoHitLastTimeID();
+    function V_Satiety();
     function ChangePsyHealth(number);
-    function GetMaxPower() const;
     function IsCantSprint() const;
+    function GetMaxPower() const;
     function IsCantWalk() const;
-    function BoostStrikeImmunity(number);
+    function BoostChemicalBurnImmunity(number);
+    function BoostWoundImmunity(number);
     function IsLimping() const;
     function BoostTelepaticImmunity(number);
-    function BoostWoundImmunity(number);
+    function BoostMaxWeight(number);
+    function V_SatietyPower();
+    function BoostStrikeImmunity(number);
     function BoostRadiationProtection(number);
     function ChangeRadiation(number);
     function ChangeBleeding(number);
     function GetPower() const;
     function GetPsyHealth() const;
-    function ChangeSatiety(number);
+    function V_SatietyHealth();
     function GetEntityMorale() const;
-    function BoostMaxWeight(number);
-    function BoostPowerRestore(number);
+    function ChangeSatiety(number);
+    function SetMaxPower(number);
     function ChangePower(number);
     function BoostFireWoundImmunity(number);
-    function BoostShockImmunity(number);
-    function BoostChemicalBurnImmunity(number);
     function BleedingSpeed();
+    function BoostPowerRestore(number);
+    function BoostShockImmunity(number);
 };
 
 C++ class CAdvancedDetector : CGameObject {
@@ -2035,7 +2070,7 @@ C++ class CEatableItem : CInventoryItem {
     function CanDelete() const;
     function SetRemainingUses(number);
     function Cost() const;
-    function GetMaxUses() const;
+    function GetMaxUses();
 };
 
 C++ class CElectricBall : CArtefact {
@@ -2211,6 +2246,7 @@ C++ class CGameFont {
     const alCenter = 2;
     const alLeft = 0;
     const alRight = 1;
+    
 };
 
 C++ class CGameGraph {
@@ -2375,7 +2411,8 @@ C++ class CHelicopter : CGameObject {
     function net_Import(net_packet&);
     function use(CGameObject*);
     function GetState();
-    function SetBarrelDirTolerance(number);
+    function GetPosition();
+    function SetfHealth(number);
     function GoPatrolByRoundPath(vector, number, boolean);
     function _construct();
     function GetBodyState();
@@ -2386,25 +2423,31 @@ C++ class CHelicopter : CGameObject {
     function getVisible() const;
     function GetSpeedInDestPoint(number);
     function GetOnPointRangeDist();
+    function TurnLighting(boolean);
+    function SetCameraType(number);
     function GetMaxVelocity();
     function GoPatrolByPatrolPath(string, number);
     function TurnEngineSound(boolean);
     function GetSafeAltitude();
     function GetHuntState();
-    function TurnLighting(boolean);
-    function Visual() const;
+    function GetRealAltitude();
+    function GetPathAltitude(vector&, number);
+    function AlreadyOnPoint();
+    function GetEnemy();
+    function GetCameraType();
+    function GetDestPosition();
     function net_Export(net_packet&);
     function SetFireTrailLength(number);
-    function GetRealAltitude();
-    function SetDestPosition(vector*);
     function isVisible(game_object*);
+    function SetDestPosition(vector*);
     function Explode();
+    function Die();
     function GetMovementState();
     function getEnabled() const;
-    function Die();
+    function SetBarrelDirTolerance(number);
     function SetMaxVelocity(number);
     function SetSpeedInDestPoint(number);
-    function SetfHealth(number);
+    function Visual() const;
     function SetLinearAcc(number, number);
 };
 
@@ -2541,6 +2584,44 @@ C++ class CMainMenu {
     function GetDemoInfo(string);
 };
 
+C++ class CMapLocation {
+    function Collidable() const;
+    function GetHint();
+    function DisablePointer();
+    function GetType() const;
+    function IsUserDefined() const;
+    function SpotEnabled();
+    function EnablePointer();
+    function GetLevelName();
+    function GetOwnerTaskID();
+    function PointerEnabled();
+    function SetUserDefinedFlag(number);
+    function GetPosition();
+    function SpotSize();
+    function SetHint(const class shared_str&);
+    function EnableSpot();
+    function ObjectID();
+    function DisableSpot();
+    function HintEnabled();
+    function GetLastPosition();
+    function HighlightSpot(boolean, const fcolor&);
+};
+
+C++ class CMapManager {
+    CMapManager ();
+    
+    function AllLocationsForEach(const function<boolean>&);
+    function DisableAllPointers();
+    function HasMapLocation(string, number);
+    function AddMapLocation(string, number);
+    function MapLocationsForEach(string, number, const function<boolean>&);
+    function RemoveMapLocation(string, number);
+    function RemoveMapLocation(CMapLocation*);
+    function GetMapLocation(string, number);
+    function RemoveMapLocationByObjectID(number);
+    function AddUserLocation(string, string, vector);
+};
+
 C++ class CMedkit : CGameObject {
     CMedkit ();
     
@@ -2629,6 +2710,7 @@ C++ class particle_params {
     particle_params (const vector&);
     particle_params (const vector&, const vector&);
     particle_params (const vector&, const vector&, const vector&);
+    
 };
 
 C++ class patrol {
@@ -5665,6 +5747,7 @@ C++ class cond {
     cond ();
     cond (number);
     cond (number, double);
+    
 };
 
 C++ class anim {
@@ -5813,23 +5896,25 @@ C++ class game_object {
     function run_talk_dialog(game_object*, boolean);
     function remove_home();
     function in_current_loophole_fov(vector) const;
+    function set_actor_runback_coef(number);
     function set_smart_cover_target_default(boolean);
     function deadbody_can_take(boolean);
     function is_inv_upgrade_enabled();
     function set_relation(enum ALife::ERelationType, game_object*);
     function item_on_belt(number) const;
-    function set_actor_runback_coef(number);
     function get_actor_runback_coef() const;
+    function set_actor_run_coef(number);
+    function get_actor_run_coef() const;
     function name() const;
     function get_max_uses();
-    function set_actor_run_coef(number);
+    function cast_Antirad();
     function best_cover(const vector&, const vector&, number, number, number);
-    function get_actor_run_coef() const;
+    function get_actor_sprint_koef() const;
     function get_current_holder();
     function best_item();
-    function deadbody_can_take_status();
-    function get_actor_sprint_koef() const;
     function story_id() const;
+    function get_actor_jump_speed() const;
+    function get_total_weight() const;
     function character_community();
     function set_patrol_path(string, enum PatrolPathManager::EPatrolStartType, enum PatrolPathManager::EPatrolRouteType, boolean);
     function set_fov(number);
@@ -5843,49 +5928,49 @@ C++ class game_object {
     function aim_time(game_object*);
     function actor_look_at_point(vector);
     function safe_cover(const vector&, number, number);
-    function get_actor_jump_speed() const;
-    function get_total_weight() const;
-    function cast_InventoryOwner();
     function set_additional_max_walk_weight(number);
     function get_additional_max_walk_weight() const;
+    function cast_InventoryOwner();
     function set_additional_max_weight(number);
+    function get_additional_max_weight() const;
+    function set_actor_max_walk_weight(number);
     function cast_CustomOutfit();
     function skip_transfer_enemy(boolean);
     function target_mental_state() const;
-    function get_additional_max_weight() const;
+    function drop_item(game_object*);
     function squad() const;
     function set_main_weapon_type(number);
     function set_dest_loophole(string);
     function set_dest_loophole();
     function detail_path_type() const;
-    function set_actor_max_walk_weight(number);
+    function get_actor_max_weight() const;
     function set_visual_memory_enabled(boolean);
-    function drop_item(game_object*);
+    function cast_Medkit();
     function get_ammo_count_for_type(number);
     function set_collision_off(boolean);
     function binded_object();
-    function get_actor_max_weight() const;
+    function give_talk_message2(string, string, string, string);
     function can_throw_grenades() const;
     function can_throw_grenades(boolean);
     function inside(const vector&, number) const;
     function inside(const vector&) const;
-    function cast_Antirad();
-    function give_talk_message2(string, string, string, string);
     function cast_InventoryBox();
     function cast_WeaponMagazinedWGrenade();
     function cast_Torch();
     function cast_PhysicsShellHolder();
-    function remove_all_restrictions();
     function cast_Ammo();
+    function cast_Artefact();
+    function remove_all_restrictions();
+    function cast_FoodItem();
     function buy_condition(ini_file*, string);
     function buy_condition(number, number);
-    function cast_Artefact();
-    function cast_FoodItem();
-    function patrol();
     function cast_HudItem();
     function set_active_task(CGameTask*);
-    function switch_to_trade();
+    function patrol();
     function weapon_silencer_status();
+    function cast_Explosive();
+    function switch_to_trade();
+    function cast_Monster();
     function set_sight(enum SightManager::ESightType, vector*, number);
     function set_sight(enum SightManager::ESightType, boolean, boolean);
     function set_sight(enum SightManager::ESightType, vector&, boolean);
@@ -5894,21 +5979,21 @@ C++ class game_object {
     function set_sight(game_object*, boolean);
     function set_sight(game_object*, boolean, boolean);
     function set_sight(game_object*, boolean, boolean, boolean);
-    function cast_Explosive();
-    function memory_time(const game_object&);
-    function cast_Monster();
-    function give_talk_message(string, string, string);
     function get_task_state(string);
+    function memory_time(const game_object&);
     function cast_Stalker();
-    function base_out_restrictions();
+    function give_talk_message(string, string, string);
     function cast_SpaceRestrictor();
+    function set_nonscript_usable(boolean);
+    function base_out_restrictions();
+    function cast_GrenadeLauncher();
     function change_character_rank(number);
     function see(const game_object*);
     function see(string);
-    function set_nonscript_usable(boolean);
-    function cast_GrenadeLauncher();
-    function set_actor_sprint_koef(number);
+    function deadbody_can_take_status();
     function cast_Scope();
+    function set_actor_sprint_koef(number);
+    function cast_EatableItem();
     function set_condition(number);
     function enable_trade();
     function lock_door_for_npc();
@@ -5920,53 +6005,53 @@ C++ class game_object {
     function set_movement_selection_type(enum ESelectionType);
     function active_sound_count();
     function active_sound_count(boolean);
-    function cast_EatableItem();
+    function cast_Weapon();
     function bone_visible(string);
-    function cast_Medkit();
+    function cast_Actor();
     function set_artefact_bleeding(number);
     function idle_max_time(number);
     function idle_max_time() const;
-    function cast_Weapon();
-    function cast_Actor();
     function set_actor_relation_flags(flags32);
-    function not_yet_visible_objects() const;
     function inactualize_patrol_path();
     function cast_HolderCustom();
-    function body_state() const;
-    function get_corpse() const;
+    function not_yet_visible_objects() const;
     function stop_particles(string, string);
     function cast_Car();
+    function body_state() const;
+    function get_corpse() const;
+    function get_state();
+    function info_clear();
     function disable_show_hide_sounds(boolean);
     function get_current_point_index();
-    function switch_state(number);
-    function info_clear();
+    function phantom_set_enemy(game_object*);
+    function weapon_in_grenade_mode();
     function set_body_state(enum MonsterSpace::EBodyState);
     function set_character_community(string, number, number);
     function set_smart_cover_target_selector(function<void>);
     function set_smart_cover_target_selector(function<void>, object);
     function set_smart_cover_target_selector();
     function external_sound_stop();
-    function set_actor_position(vector);
+    function set_actor_position(vector, boolean);
     function in_smart_cover() const;
-    function phantom_set_enemy(game_object*);
+    function switch_state(number);
     function spawn_ini() const;
     function cast_GameObject();
     function set_remaining_uses(number);
     function external_sound_start(string);
-    function get_state();
+    function play_hud_motion(string, boolean, number);
     function use_smart_covers_only() const;
     function use_smart_covers_only(boolean);
     function get_remaining_uses();
-    function play_hud_motion(string, boolean, number);
+    function iterate_installed_upgrades(const function<boolean>&);
     function detach_vehicle(boolean);
     function kill(game_object*, boolean);
     function has_info(string);
     function reset_action_queue();
-    function weapon_in_grenade_mode();
-    function iterate_installed_upgrades(function<void>);
-    function get_physics_shell() const;
     function has_upgrade(string);
     function install_upgrade(string);
+    function get_physics_shell() const;
+    function fov() const;
+    function weapon_set_scope(number);
     function weapon_addon_detach(string);
     function weapon_addon_attach(game_object*);
     function is_talking();
@@ -5990,7 +6075,7 @@ C++ class game_object {
     function script(boolean, string);
     function restore_max_ignore_monster_distance();
     function set_weapon_type(number);
-    function iterate_feel_touch(function<void>);
+    function iterate_feel_touch(const function<boolean>&);
     function reset_bone_protections(string, string);
     function get_weapon_type();
     function set_start_dialog(string);
@@ -6031,7 +6116,7 @@ C++ class game_object {
     function unload_magazine();
     function restore_sound_threshold();
     function get_actor_max_walk_weight() const;
-    function mark_item_dropped(game_object*);
+    function mark_item_dropped(game_object*, boolean);
     function explode(number);
     function iterate_inventory_box(function<boolean>, object);
     function in_loophole_fov(string, string, vector) const;
@@ -6190,7 +6275,7 @@ C++ class game_object {
     function poltergeist_set_actor_ignore(boolean);
     function is_talk_enabled();
     function get_movement_speed() const;
-    function inventory_for_each(const function<void>&);
+    function inventory_for_each(const function<boolean>&);
     function ammo_box_size();
     function add_restrictions(string, string);
     function get_task(string, boolean);
@@ -6324,7 +6409,7 @@ C++ class game_object {
     function movement_type() const;
     function set_force_anti_aim(boolean);
     function cast_EntityAlive();
-    function fov() const;
+    function weapon_get_scope();
     function group_throw_time_interval() const;
     function group_throw_time_interval(number);
     function get_force_anti_aim();
@@ -6407,12 +6492,14 @@ C++ class act {
     act ();
     act (enum MonsterSpace::EScriptMonsterGlobalAction);
     act (enum MonsterSpace::EScriptMonsterGlobalAction, game_object*);
+    
 };
 
 C++ class MonsterHitInfo {
     property direction;
     property time;
     property who;
+    
 };
 
 C++ class move {
@@ -6632,6 +6719,7 @@ C++ class SoundInfo {
     property power;
     property time;
     property who;
+    
 };
 
 C++ class token_list {
@@ -6796,6 +6884,7 @@ C++ class sound_params {
     property min_distance;
     property position;
     property volume;
+    
 };
 
 C++ class CSpaceRestrictor : CGameObject {
@@ -6810,19 +6899,6 @@ C++ class CSpaceRestrictor : CGameObject {
     function _construct();
     function getVisible() const;
     function net_Spawn(cse_abstract*);
-};
-
-C++ class CStalkerOutfit : CGameObject {
-    CStalkerOutfit ();
-    
-    function net_Import(net_packet&);
-    function use(CGameObject*);
-    function Visual() const;
-    function net_Export(net_packet&);
-    function _construct();
-    function net_Spawn(cse_abstract*);
-    function getVisible() const;
-    function getEnabled() const;
 };
 
 C++ class stalker_ids {
@@ -6948,6 +7024,7 @@ C++ class stalker_ids {
     const sound_search1_with_allies = 10;
     const sound_tolls = 17;
     const sound_wounded = 18;
+    
 };
 
 C++ class CThornArtefact : CArtefact {
@@ -7020,17 +7097,18 @@ C++ class CUI3tButton : CUIButton {
     
     function AttachChild(CUIWindow*);
     function GetTextureColor() const;
-    function TextControl();
     function GetTextureRect();
-    function SetTextureColor(number);
-    function InitTexture(string);
+    function TextControl();
     function SetStretchTexture(boolean);
+    function InitTexture(string);
+    function SetTextureColor(number);
+    function GetHeight() const;
     function Show(boolean);
     function IsShown();
     function GetWndPos(CUIWindow*);
     function GetWidth() const;
-    function WindowName();
-    function GetHeight() const;
+    function SetWndSize(vector2);
+    function InitTextureEx(string, string);
     function SetWindowName(string);
     function SetTextureRect(Frect*);
     function DetachChild(CUIWindow*);
@@ -7046,7 +7124,7 @@ C++ class CUI3tButton : CUIButton {
     function IsCursorOverWindow() const;
     function FocusReceiveTime() const;
     function SetWndRect(Frect);
-    function SetWndSize(vector2);
+    function WindowName();
     function AdjustWidthToText();
     function AdjustHeightToText();
 };
@@ -7071,7 +7149,7 @@ C++ class CUIActorMenu : CUIDialogWnd {
     function SetWndRect(Frect);
     function refresh_current_cell_item();
     function ToSlot(game_object*, boolean, number);
-    function highlight_for_each_in_slot(function<boolean>, number, number);
+    function highlight_for_each_in_slot(const function<boolean>&, number, number);
     function ShowDialog(boolean);
     function SetWndSize(vector2);
     function SetActor(CUIActorMenu*, game_object*);
@@ -7098,17 +7176,18 @@ C++ class CUIButton : CUIStatic {
     
     function AttachChild(CUIWindow*);
     function GetTextureColor() const;
-    function TextControl();
     function GetHeight() const;
-    function SetTextureColor(number);
+    function TextControl();
     function WindowName();
+    function InitTexture(string);
     function SetPPMode();
     function AdjustWidthToText();
+    function Show(boolean);
     function IsShown();
     function GetWndPos(CUIWindow*);
     function GetWidth() const;
     function SetWndSize(vector2);
-    function Show(boolean);
+    function InitTextureEx(string, string);
     function SetWindowName(string);
     function AdjustHeightToText();
     function SetWndPos(vector2);
@@ -7124,8 +7203,8 @@ C++ class CUIButton : CUIStatic {
     function DetachChild(CUIWindow*);
     function FocusReceiveTime() const;
     function SetWndRect(Frect);
+    function SetTextureColor(number);
     function SetStretchTexture(boolean);
-    function InitTexture(string);
     function GetTextureRect();
 };
 
@@ -7150,12 +7229,13 @@ C++ class CUICheckButton : CUI3tButton {
     function AdjustHeightToText();
     function TextControl();
     function InitTexture(string);
-    function SetWndSize(vector2);
+    function WindowName();
+    function InitTextureEx(string, string);
     function SetDependControl(CUIWindow*);
     function DetachChild(CUIWindow*);
     function SetAutoDelete(boolean);
     function SetTextureRect(Frect*);
-    function Show(boolean);
+    function GetTextureRect();
     function IsCursorOverWindow() const;
     function SetStretchTexture(boolean);
     function IsEnabled();
@@ -7163,8 +7243,8 @@ C++ class CUICheckButton : CUI3tButton {
     function GetAbsoluteRect(Frect&);
     function Enable(boolean);
     function SetWndPos(vector2);
-    function GetTextureRect();
-    function WindowName();
+    function SetWndSize(vector2);
+    function Show(boolean);
     function GetHeight() const;
 };
 
@@ -7676,22 +7756,23 @@ C++ class CUIMessageBox : CUIStatic {
     function GetPassword();
     function InitTexture(string);
     function WindowName();
+    function InitTextureEx(string, string);
     function GetHost();
     function SetText(string);
-    function GetTextureRect();
+    function IsCursorOverWindow() const;
     function DetachChild(CUIWindow*);
     function SetAutoDelete(boolean);
     function SetTextureRect(Frect*);
-    function SetStretchTexture(boolean);
+    function GetTextureRect();
     function SetWndPos(vector2);
+    function SetStretchTexture(boolean);
     function IsEnabled();
-    function GetAbsoluteRect(Frect&);
     function SetPPMode();
+    function GetAbsoluteRect(Frect&);
     function Enable(boolean);
-    function IsCursorOverWindow() const;
     function InitMessageBox(string);
-    function Show(boolean);
     function SetWndSize(vector2);
+    function Show(boolean);
     function GetHeight() const;
 };
 
@@ -7883,17 +7964,18 @@ C++ class CUISleepStatic : CUIStatic {
     
     function AttachChild(CUIWindow*);
     function GetTextureColor() const;
-    function TextControl();
     function GetHeight() const;
-    function SetTextureColor(number);
+    function TextControl();
     function WindowName();
+    function InitTexture(string);
     function SetPPMode();
     function AdjustWidthToText();
+    function Show(boolean);
     function IsShown();
     function GetWndPos(CUIWindow*);
     function GetWidth() const;
     function SetWndSize(vector2);
-    function Show(boolean);
+    function InitTextureEx(string, string);
     function SetWindowName(string);
     function AdjustHeightToText();
     function SetWndPos(vector2);
@@ -7909,8 +7991,8 @@ C++ class CUISleepStatic : CUIStatic {
     function DetachChild(CUIWindow*);
     function FocusReceiveTime() const;
     function SetWndRect(Frect);
+    function SetTextureColor(number);
     function SetStretchTexture(boolean);
-    function InitTexture(string);
     function GetTextureRect();
 };
 
@@ -8000,17 +8082,18 @@ C++ class CUIStatic : CUIWindow {
     
     function AttachChild(CUIWindow*);
     function GetTextureColor() const;
-    function TextControl();
     function GetTextureRect();
-    function SetTextureColor(number);
+    function TextControl();
     function SetStretchTexture(boolean);
+    function SetTextureColor(number);
     function SetTextureRect(Frect*);
+    function InitTexture(string);
     function Show(boolean);
     function IsShown();
     function GetWndPos(CUIWindow*);
     function GetWidth() const;
     function SetWndSize(vector2);
-    function InitTexture(string);
+    function InitTextureEx(string, string);
     function SetWindowName(string);
     function GetStretchTexture();
     function AdjustWidthToText();
@@ -8036,17 +8119,18 @@ C++ class CUITabButton : CUIButton {
     
     function AttachChild(CUIWindow*);
     function GetTextureColor() const;
-    function TextControl();
     function GetTextureRect();
-    function SetTextureColor(number);
-    function InitTexture(string);
+    function TextControl();
     function SetStretchTexture(boolean);
+    function InitTexture(string);
+    function SetTextureColor(number);
+    function GetHeight() const;
     function Show(boolean);
     function IsShown();
     function GetWndPos(CUIWindow*);
     function GetWidth() const;
-    function WindowName();
-    function GetHeight() const;
+    function SetWndSize(vector2);
+    function InitTextureEx(string, string);
     function SetWindowName(string);
     function SetTextureRect(Frect*);
     function DetachChild(CUIWindow*);
@@ -8062,7 +8146,7 @@ C++ class CUITabButton : CUIButton {
     function IsCursorOverWindow() const;
     function FocusReceiveTime() const;
     function SetWndRect(Frect);
-    function SetWndSize(vector2);
+    function WindowName();
     function AdjustWidthToText();
     function AdjustHeightToText();
 };
@@ -8207,6 +8291,20 @@ C++ class GameGraph__CVertex {
     function game_point(const GameGraph__CVertex*);
 };
 
+C++ class CWeapon : CGameObject {
+    CWeapon ();
+    
+    function net_Import(net_packet&);
+    function use(CGameObject*);
+    function Visual() const;
+    function net_Export(net_packet&);
+    function getEnabled() const;
+    function _construct();
+    function getVisible() const;
+    function can_kill() const;
+    function net_Spawn(cse_abstract*);
+};
+
 C++ class CWeaponAK74 : CGameObject {
     CWeaponAK74 ();
     
@@ -8346,6 +8444,32 @@ C++ class CWeaponKnife : CGameObject {
 
 C++ class CWeaponLR300 : CGameObject {
     CWeaponLR300 ();
+    
+    function net_Import(net_packet&);
+    function use(CGameObject*);
+    function Visual() const;
+    function net_Export(net_packet&);
+    function _construct();
+    function net_Spawn(cse_abstract*);
+    function getVisible() const;
+    function getEnabled() const;
+};
+
+C++ class CWeaponMagazined : CGameObject {
+    CWeaponMagazined ();
+    
+    function net_Import(net_packet&);
+    function use(CGameObject*);
+    function Visual() const;
+    function net_Export(net_packet&);
+    function _construct();
+    function net_Spawn(cse_abstract*);
+    function getVisible() const;
+    function getEnabled() const;
+};
+
+C++ class CWeaponMagazinedWGrenade : CGameObject {
+    CWeaponMagazinedWGrenade ();
     
     function net_Import(net_packet&);
     function use(CGameObject*);
@@ -8570,6 +8694,7 @@ C++ class FS_file_list_ex {
 
 C++ class ICollidable {
     ICollidable ();
+    
 };
 
 C++ class IKinematicsAnimated {
@@ -8701,6 +8826,7 @@ C++ class SServerFilters {
     property without_pass;
     
     SServerFilters ();
+    
 };
 
 C++ class UIHint : CUIWindow {
@@ -8943,42 +9069,54 @@ namespace  {
     function IsImportantSave();
     function alife();
     function user_name();
-    function GetFontLetterica16Russian();
     function GetFontDI();
     function GetFontGraffiti22Russian();
     function create_ini_file(string);
+    function create_ini_file(string, string);
     function get_console();
     function cast_planner(action_base*);
     function SetCursorPosition(vector2&);
     function error_log(string);
-    function ef_storage();
     function GetCursorPosition();
-    function print_stack();
-    function editor();
     function prefetch(string);
     function GetFontSmall();
     function show_condition(ini_file*, string);
     function device();
+    function print_stack();
+    function GetFontGraffiti50Russian();
+    function GetFontGraffiti32Russian();
     function game_graph();
-    function command_line();
+    function GetFontLetterica18Russian();
+    function system_ini();
+    function editor();
+    function bit_not(number);
     function FitInRect(CUIWindow*, const Frect&, number, number);
     function IsGameTypeSingle();
     function get_hud();
+    function script_server_object_version();
     function GetARGB(number, number, number, number);
     function render_get_dx_level();
-    function GetFontGraffiti50Russian();
-    function system_ini();
-    function GetFontLetterica18Russian();
+    function command_line();
+    function GetFontLetterica16Russian();
     function time_global_async();
-    function bit_not(number);
-    function script_server_object_version();
+    function ef_storage();
     function reload_system_ini();
-    function GetFontGraffiti32Russian();
  
     namespace actor_stats {
         function get_points(string);
         function add_points(string, string, number, number);
         function add_points_str(string, string, string);
+    };
+ 
+    namespace game {
+        function start_tutorial(string);
+        function stop_tutorial();
+        function reload_language();
+        function has_active_tutorial();
+        function get_game_time();
+        function time();
+        function log_stack_trace(string);
+        function translate_string(string);
     };
  
     namespace main_menu {
@@ -9011,10 +9149,10 @@ namespace  {
         function get_target_element();
         function map_remove_object_spot(number, string);
         function patrol_path_exists(string);
-        function add_cam_effector(string, number, boolean, string);
+        function get_view_entity();
         function present();
         function get_weather();
-        function add_pp_effector(string, number, boolean);
+        function set_view_entity(game_object*);
         function map_add_object_spot(number, string, string);
         function disable_input();
         function get_target_obj();
@@ -9022,9 +9160,9 @@ namespace  {
         function show_weapon(boolean);
         function prefetch_sound(string);
         function set_weather_fx(string);
-        function add_cam_effector2(string, number, boolean, string, number);
+        function debug_object(string);
         function get_time_hours();
-        function set_weather(string, boolean);
+        function set_active_cam(number);
         function enable_input();
         function get_start_time();
         function vertex_position(number);
@@ -9033,64 +9171,57 @@ namespace  {
         function get_target_dist();
         function remove_pp_effector(number);
         function remove_cam_effector(number);
-        function environment();
+        function map_manager();
+        function set_time_factor(number);
         function get_active_cam();
         function client_spawn_manager();
         function game_id();
         function low_cover_in_direction(number, const vector&);
-        function set_snd_volume(number);
+        function remove_dialog_to_render(CUIDialogWnd*);
         function get_time_factor();
         function physics_world();
         function set_pp_effector_factor(number, number, number);
         function set_pp_effector_factor(number, number);
         function ray_pick(const vector&, const vector&, number, enum collide::rq_target, rq_result&, game_object*);
-        function map_change_spot_hint(number, string, string);
         function vertex_id(vector);
-        function set_game_difficulty(enum ESingleGameDifficulty);
         function add_complex_effector(string, number);
-        function get_game_difficulty();
+        function add_pp_effector(string, number, boolean);
+        function map_change_spot_hint(number, string, string);
+        function add_cam_effector2(string, number, boolean, string, number);
+        function set_game_difficulty(enum ESingleGameDifficulty);
+        function add_cam_effector(string, number, boolean, string);
+        function set_snd_volume(number);
         function show_indicators();
-        function u_event_send(net_packet&);
-        function map_has_object_spot(number, string);
+        function get_game_difficulty();
+        function set_weather(string, boolean);
         function stop_weather_fx();
         function add_dialog_to_render(CUIDialogWnd*);
         function rain_factor();
-        function get_time_days();
+        function environment();
         function iterate_sounds(string, number, function<void>);
         function iterate_sounds(string, number, object, function<void>);
         function add_call(const function<boolean>&, const function<void>&);
         function add_call(object, const function<boolean>&, const function<void>&);
         function add_call(object, string, string);
-        function u_event_gen(net_packet&, number, number);
-        function spawn_item(string, vector, number, number, boolean);
+        function valid_vertex(number);
+        function map_add_object_spot_ser(number, string, string);
         function vertex_in_direction(number, vector, number);
-        function set_active_cam(number);
+        function u_event_send(net_packet&);
         function start_weather_fx_from_time(string, number);
-        function debug_object(string);
+        function u_event_gen(net_packet&, number, number);
         function get_time_minutes();
         function change_game_time(number, number, number);
         function remove_calls_for_object(object);
-        function set_time_factor(number);
-        function map_add_object_spot_ser(number, string, string);
+        function spawn_item(string, vector, number, number, boolean);
+        function get_time_days();
         function spawn_phantom(const vector&);
-        function remove_dialog_to_render(CUIDialogWnd*);
+        function map_has_object_spot(number, string);
         function get_wfx_time();
         function hide_indicators();
         function get_bounding_volume();
         function remove_call(const function<boolean>&, const function<void>&);
         function remove_call(object, const function<boolean>&, const function<void>&);
         function remove_call(object, string, string);
-    };
- 
-    namespace game {
-        function start_tutorial(string);
-        function stop_tutorial();
-        function reload_language();
-        function has_active_tutorial();
-        function get_game_time();
-        function time();
-        function log_stack_trace(string);
-        function translate_string(string);
     };
 };
 End of list of the namespaces exported to LUA

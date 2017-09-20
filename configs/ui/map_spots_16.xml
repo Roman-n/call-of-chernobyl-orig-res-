@@ -78,6 +78,18 @@
                 <texture_above r="255" g="0" b="0">ui_mini_sn_spot_above</texture_above>
         </red_mini_spot>
 
+		<explo_location>
+                <level_map spot="explo_spot"                        pointer="quest_pointer"/>
+                <mini_map spot="explo_mini_spot"                pointer="quest_pointer"/>
+        </explo_location>
+		<explo_spot  x="0" y="0" width="19" height="19" stretch="1" alignment="c" xform_anim="map_spot_new_xform" xform_anim_cyclic="0">
+                <texture r="255" g="0" b="0">ui_pda2_upgrades</texture>
+        </explo_spot>
+        <explo_mini_spot  x="0" y="0" width="11" height="11" stretch="1" alignment="c" xform_anim="map_spot_new_xform" xform_anim_cyclic="0">
+                <texture r="255" g="0" b="0">ui_mmap_upgrades</texture>
+                <texture_below r="255" g="0" b="0">ui_mini_sn_spot_below</texture_below>
+                <texture_above r="255" g="0" b="0">ui_mini_sn_spot_above</texture_above>
+        </explo_mini_spot>
 		
         <level_map_spot_border x="0" y="0" width="37" height="37" alignment="c" stretch="1" xform_anim="map_spot_border_xform" xform_anim_cyclic="1">
             <texture a="0">ui_pda2_hl_quest_base</texture>
