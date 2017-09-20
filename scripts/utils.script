@@ -907,9 +907,7 @@ function file_for_each(node,ext,func,nonrecursive,...)
 							end
 						end
 					elseif (mode == "directory" and nonrecursive ~= true) then
-						if not (file_exists(fullpath.."\\.ignore")) then
-							table.insert(stack,fullpath)
-						end
+						table.insert(stack,fullpath)
 					end
 				end
 			end
