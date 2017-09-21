@@ -204,16 +204,20 @@
 			<texture>ui_icons_newPDA_perssign_h</texture>
 		</user_defined_spot_mini>
 
-        <treasure_loc hint="st_ui_pda_secret">
-                <level_map spot="treasure_spot_loc"  pointer="quest_pointer"/>
-                <mini_map  spot="treasure_spot_loc_mini"/>
-        </treasure_loc>
-		<treasure_spot_loc width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1" scale_max="1.5">
+        <treasure_all hint="st_ui_pda_secret">
+                <level_map spot="treasure_spot_all"  pointer="quest_pointer"/>
+                <mini_map  spot="treasure_spot_all_mini"/>
+        </treasure_all>
+		<treasure_all_opened hint="st_ui_pda_secret">
+                <level_map spot="treasure_spot_all"  pointer="quest_pointer"/>
+                <mini_map  spot="treasure_spot_all_mini"/>
+        </treasure_all_opened>
+		<treasure_spot_all width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1" scale_max="1.5">
                 <texture>ui_inGame2_PDA_icon_secret</texture>
-        </treasure_spot_loc>
-        <treasure_spot_loc_mini width="8" height="8" alignment="c" stretch="1">
+        </treasure_spot_all>
+        <treasure_spot_all_mini width="8" height="8" alignment="c" stretch="1">
                 <texture>ui_inGame2_PDA_icon_secret</texture>
-        </treasure_spot_loc_mini>
+        </treasure_spot_all_mini>
 
         <treasure hint="st_ui_pda_secret">
                 <level_map spot="treasure_spot" pointer="quest_pointer"/>

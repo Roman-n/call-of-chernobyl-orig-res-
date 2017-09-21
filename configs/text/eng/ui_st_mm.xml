@@ -442,6 +442,9 @@
 	<string id="ui_mm_debug_hud">
 		<text>Debug HUD</text>
 	</string>
+	<string id="ui_mm_debug_map_hud">
+		<text>Debug HUD Mapspots</text>
+	</string>
 	<string id="ui_mm_radio_mod">
 		<text>Radio music</text>
 	</string>
