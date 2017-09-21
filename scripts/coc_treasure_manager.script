@@ -340,6 +340,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.01,40)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.01,40)
+						else 
+							try_spawn_item(section,1,1,0.15,40)
 						end
 					elseif (cost <= 5000) then
 						if (is_consumable(section)) then
@@ -350,6 +352,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.01,50)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.01,50)
+						else 
+							try_spawn_item(section,1,1,0.10,40)
 						end
 					elseif (cost <= 9000) then
 						if (is_consumable(section)) then
@@ -360,6 +364,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.005,50)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.003,50)
+						else 
+							try_spawn_item(section,1,1,0.05,40)
 						end
 					elseif (cost <= 15000) then 
 						if (is_consumable(section)) then
@@ -370,6 +376,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.008,50)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.006,50)
+						else 
+							try_spawn_item(section,1,1,0.03,40)
 						end
 					elseif (cost <= 25000) then
 						if (is_consumable(section)) then
@@ -380,6 +388,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.006,60)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.004,60)
+						else 
+							try_spawn_item(section,1,1,0.01,40)
 						end
 					else
 						if (is_consumable(section)) then
@@ -390,6 +400,8 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.001,60)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.001,70)
+						else 
+							try_spawn_item(section,1,1,0.005,40)
 						end
 					end
 				end
