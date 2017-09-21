@@ -318,31 +318,65 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 							try_spawn_item(section,1,1,0.25,40)
 						end
 					elseif (cost <= 3000) then
-						if (bOutfit) then
-							try_spawn_item(section,1,1,0.07,50)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.15,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.07,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.05,60)
-						else 
-							try_spawn_item(section,1,1,0.15,50)
+							try_spawn_item(section,1,1,0.05,40)
+						elseif (bArtefact) then
+							try_spawn_item(section,1,1,0.03,40)
 						end
 					elseif (cost <= 5000) then
-						if (bOutfit) then
-							try_spawn_item(section,1,1,0.05,60)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.10,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.05,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.03,80)
+							try_spawn_item(section,1,1,0.05,40)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.05,80)
-						else 
-							try_spawn_item(section,1,1,0.10,50)
+							try_spawn_item(section,1,1,0.03,40)
 						end
 					elseif (cost <= 9000) then
-						try_spawn_item(section,1,1,0.01,80)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.05,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.02,40)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.02,40)
+						elseif (bArtefact) then
+							try_spawn_item(section,1,1,0.02,40)
+						end
 					elseif (cost <= 15000) then 
-						try_spawn_item(section,1,1,0.006,90)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.03,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.006,40)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.008,40)
+						elseif (bArtefact) then
+							try_spawn_item(section,1,1,0.006,40)
+						end
 					elseif (cost <= 25000) then
-						try_spawn_item(section,1,1,0.004,100)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.01,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.004,40)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.006,40)
+						elseif (bArtefact) then
+							try_spawn_item(section,1,1,0.004,40)
+						end
 					else
-						try_spawn_item(section,1,1,0.002,120)
+						if (is_consumable(section)) then
+							try_spawn_item(section,1,2,0.005,40)
+						elseif (bOutfit) then
+							try_spawn_item(section,1,1,0.001,40)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.001,40)
+						elseif (bArtefact) then
+							try_spawn_item(section,1,1,0.001,40)
+						end
 					end
 				end
 			end
