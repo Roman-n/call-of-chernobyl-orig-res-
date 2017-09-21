@@ -299,7 +299,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.20,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.10,50)
+							try_spawn_item(section,1,1,0.04,50)
 						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.20,40)
 						else
@@ -309,7 +309,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.15,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.10,50)
+							try_spawn_item(section,1,1,0.03,50)
 						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.15,50)
 						else
@@ -317,7 +317,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						end
 					elseif (cost <= 3000) then
 						if (bOutfit) then
-							try_spawn_item(section,1,1,0.10,50)
+							try_spawn_item(section,1,1,0.02,50)
 						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.10,50)
 						else 
@@ -325,20 +325,36 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						end
 					elseif (cost <= 5000) then
 						if (bOutfit) then
-							try_spawn_item(section,1,1,0.08,60)
+							try_spawn_item(section,1,1,0.01,60)
 						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.08,50)
 						else 
 							try_spawn_item(section,1,1,0.08,40)
 						end
 					elseif (cost <= 9000) then
-						try_spawn_item(section,1,1,0.015,50)
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.008,50)
+						else
+							try_spawn_item(section,1,1,0.015,50)
+						end
 					elseif (cost <= 15000) then 
-						try_spawn_item(section,1,1,0.010,60)
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.005,50)
+						else
+							try_spawn_item(section,1,1,0.010,60)
+						end
 					elseif (cost <= 25000) then
-						try_spawn_item(section,1,1,0.005,70)
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.003,70)
+						else 
+							try_spawn_item(section,1,1,0.005,70)
+						end
 					else
-						try_spawn_item(section,1,1,0.005,80)
+						if (bOutfit) then
+							try_spawn_item(section,1,1,0.001,70)
+						else 
+							try_spawn_item(section,1,1,0.005,70)
+						end
 					end
 				end
 			end
