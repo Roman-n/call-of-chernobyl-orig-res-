@@ -229,9 +229,14 @@ function is_enemy(obj,enemy,no_memory)
 	end
 
 	if (is_actor) then
-		if (level.get_time_hours() < 4 or level.get_time_hours() > 19 or level.rain_factor() >= 0.4) and (pos1:distance_to_sqr(pos2) > 10000) then 
-			-- limit combat range to 100m during night hours or heavy rain for stalker v actor
+		local dist = pos1:distance_to_sqr(pos2)
+		if (dist > 22500) then -- limit combat ignore to 150m unless of course actor attacks
 			return false
+		elseif (dist > 10000) then	
+			if (level.get_time_hours() < 4 or level.get_time_hours() > 19 or level.rain_factor() >= 0.4) then 
+				-- limit combat range to 100m during night hours or heavy rain for stalker v actor
+				return false
+			end
 		end
 	elseif (is_monster) then
 		if (math.abs(pos1.y-pos2.y) > 30) then
