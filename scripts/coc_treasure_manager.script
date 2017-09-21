@@ -27,6 +27,7 @@ caches = {}
 local caches_count = 0
 
 local valid_item_list = nil
+local valid_item_list_array = nil
 local valid_map_spots = {
 	["treasure"] = true,
 	["treasure_player"] = true,
@@ -188,7 +189,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	end
 	
 	if not (valid_item_list) then 
-		valid_item_list = get_valid_item_sections()
+		valid_item_list,valid_item_list_array = get_valid_item_sections()
 	end
 	
 	local spawned_item = bonus_items or {}
@@ -248,9 +249,9 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	end
 	
 	local allow_item = true
-	-- iterate most expensive to least expensive or visa versa. Highest cost has highest weight. Consumables have higher max. Outfits have high weights.
-	local functor = random_choice(function(t,a,b) return t[a] > t[b] end,function(t,a,b) return t[a] < t[b] end)
-	for section,cost in spairs(valid_item_list,functor) do
+	utils.shuffle(valid_item_list_array)
+	for i,section in ipairs(valid_item_list_array) do
+		local cost = valid_item_list[section]
 		if not (only_one_in_existence[section]) then
 			has_spawned = false
 			local skip = false
@@ -270,112 +271,112 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 			if not (skip) then
 				if (bBackpack) then 
 					if (section == "equ_tourist_pack") then 
-						try_spawn_item(section,1,1,0.05,40)
+						try_spawn_item(section,1,1,0.03,80)
 					elseif (section == "equ_military_pack") then
-						try_spawn_item(section,1,1,0.08,40)
+						try_spawn_item(section,1,1,0.05,80)
 					else
-						try_spawn_item(section,1,1,0.12,30)
+						try_spawn_item(section,1,1,0.10,40)
 					end
 				elseif (bDetector) then
 					local v = ini:r_string_ex(section,"class","")
 					if (v == "DET_SCIE") then
-						try_spawn_item(section,1,1,0.02,40)
+						try_spawn_item(section,1,1,0.005,80)
 					elseif (v == "DET_ELIT") then 
-						try_spawn_item(section,1,1,0.06,40)
+						try_spawn_item(section,1,1,0.05,50)
 					elseif (v == "DET_ADVA") then
-						try_spawn_item(section,1,1,0.10,30)
+						try_spawn_item(section,1,1,0.10,40)
 					else 
-						try_spawn_item(section,1,1,0.12,20)
+						try_spawn_item(section,1,1,0.15,30)
 					end
 				elseif (bToolkit) then 
 					if (section == "itm_repairkit_tier_3") then 
-						try_spawn_item(section,1,1,0.03,40)
+						try_spawn_item(section,1,1,0.04,80)
 					elseif (section == "itm_repairkit_tier_2") then
-						try_spawn_item(section,1,1,0.06,30)
+						try_spawn_item(section,1,1,0.08,80)
 					else
-						try_spawn_item(section,1,1,0.10,30)
+						try_spawn_item(section,1,1,0.12,40)
 					end
 				else
 					-- decide for each section based on chance, weight and item classification
 					if (cost <= 500) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.30,40)
+							try_spawn_item(section,1,2,0.50,40)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.10,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.15,40)
+							try_spawn_item(section,1,1,0.20,40)
 						else
-							try_spawn_item(section,1,1,0.30,40)
+							try_spawn_item(section,1,1,0.40,40)
 						end
 					elseif (cost <= 1000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.25,40)
+							try_spawn_item(section,1,2,0.40,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.08,40)
+							try_spawn_item(section,1,1,0.01,40)
 						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.10,40)
 						else
-							try_spawn_item(section,1,1,0.25,40)
+							try_spawn_item(section,1,1,0.30,40)
 						end
 					elseif (cost <= 3000) then
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.15,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.07,40)
+							try_spawn_item(section,1,1,0.01,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.01,40)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.03,40)
+							try_spawn_item(section,1,1,0.01,40)
 						end
 					elseif (cost <= 5000) then
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.10,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.01,50)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.01,50)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.03,40)
+							try_spawn_item(section,1,1,0.01,50)
 						end
 					elseif (cost <= 9000) then
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.05,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.02,40)
+							try_spawn_item(section,1,1,0.005,50)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.02,40)
+							try_spawn_item(section,1,1,0.005,50)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.02,40)
+							try_spawn_item(section,1,1,0.003,50)
 						end
 					elseif (cost <= 15000) then 
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.03,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.006,40)
+							try_spawn_item(section,1,1,0.006,50)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.008,40)
+							try_spawn_item(section,1,1,0.008,50)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.006,40)
+							try_spawn_item(section,1,1,0.006,50)
 						end
 					elseif (cost <= 25000) then
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.01,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.004,40)
+							try_spawn_item(section,1,1,0.004,60)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.006,40)
+							try_spawn_item(section,1,1,0.006,60)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.004,40)
+							try_spawn_item(section,1,1,0.004,60)
 						end
 					else
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.005,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.001,40)
+							try_spawn_item(section,1,1,0.001,50)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.001,40)
+							try_spawn_item(section,1,1,0.001,60)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.001,40)
+							try_spawn_item(section,1,1,0.001,70)
 						end
 					end
 				end
@@ -498,7 +499,7 @@ end
 
 function get_valid_item_sections()
 	local ltx = ini_file("plugins\\coc_treasure_manager.ltx")
-	local t = {}
+	local t,tt = {},{}
 	local ini = system_ini()
 	ini:section_for_each(function(section)
 		if not (ltx:line_exist("ignore_sections",section)) then
@@ -514,6 +515,7 @@ function get_valid_item_sections()
 									local cost = ini:r_float_ex(section,"cost") or 0
 									if (cost > 0) then
 										t[section] = cost
+										tt[#tt+1] = section
 									end
 								end
 							end
@@ -533,5 +535,5 @@ function get_valid_item_sections()
 		end
 		cfg:close()
 	end
-	return t
+	return t,tt
 end
