@@ -32,21 +32,20 @@ local valid_map_spots = {
 	["treasure"] = true,
 	["treasure_player"] = true,
 	["treasure_searched"] = true,
-	["treasure_unique"] = true,
+	["treasure_unique"] = true
 }
 
 -- Table to put things that you wish only the specific count can ever only spawn
 local always_in_existence = {
 	["af_compass"] = 1,
-	["af_dummy_pellicle"] = 1,
-	["detector_advanced"] = 5,
-	["detector_elite"] = 2,
+	["detector_advanced"] = 10,
+	["detector_elite"] = 4,
 	["detector_scientific"] = 1,
-	["equ_military_pack"] = 3,
-	["equ_tourist_pack"] = 2,
-	["itm_repairkit_tier_1"] = 5,
-	["itm_repairkit_tier_2"] = 4,
-	["itm_repairkit_tier_3"] = 3,
+	["equ_military_pack"] = 5,
+	["equ_tourist_pack"] = 3,
+	["itm_repairkit_tier_1"] = 10,
+	["itm_repairkit_tier_2"] = 7,
+	["itm_repairkit_tier_3"] = 4,
 	["wpn_gauss"] = 1
 }
 ------------------------------------------------------------------------------------------------------------------
@@ -315,9 +314,9 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.50,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.10,40)
+							try_spawn_item(section,1,1,0.05,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.20,40)
+							try_spawn_item(section,1,1,0.05,40)
 						else
 							try_spawn_item(section,1,1,0.40,40)
 						end
@@ -325,9 +324,9 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.40,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.01,40)
+							try_spawn_item(section,1,1,0.04,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.10,40)
+							try_spawn_item(section,1,1,0.05,40)
 						else
 							try_spawn_item(section,1,1,0.30,40)
 						end
@@ -335,9 +334,9 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.15,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.01,40)
+							try_spawn_item(section,1,1,0.03,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.01,40)
+							try_spawn_item(section,1,1,0.02,50)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.01,40)
 						else 
@@ -349,7 +348,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.01,50)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.01,50)
+							try_spawn_item(section,1,1,0.01,60)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.01,50)
 						else 
@@ -359,11 +358,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.05,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.005,50)
+							try_spawn_item(section,1,1,0.005,80)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.005,50)
+							try_spawn_item(section,1,1,0.005,80)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.003,50)
+							try_spawn_item(section,1,1,0.005,60)
 						else 
 							try_spawn_item(section,1,1,0.05,40)
 						end
@@ -371,11 +370,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.03,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.006,50)
+							try_spawn_item(section,1,1,0.005,80)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.008,50)
+							try_spawn_item(section,1,1,0.004,80)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.006,50)
+							try_spawn_item(section,1,1,0.003,70)
 						else 
 							try_spawn_item(section,1,1,0.03,40)
 						end
@@ -383,11 +382,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.01,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.004,60)
+							try_spawn_item(section,1,1,0.003,90)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.006,60)
+							try_spawn_item(section,1,1,0.003,80)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.004,60)
+							try_spawn_item(section,1,1,0.001,80)
 						else 
 							try_spawn_item(section,1,1,0.01,40)
 						end
@@ -395,11 +394,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						if (is_consumable(section)) then
 							try_spawn_item(section,1,2,0.005,40)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.001,50)
+							try_spawn_item(section,1,1,0.001,90)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.001,60)
+							try_spawn_item(section,1,1,0.001,80)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.001,70)
+							try_spawn_item(section,1,1,0.001,90)
 						else 
 							try_spawn_item(section,1,1,0.005,40)
 						end
