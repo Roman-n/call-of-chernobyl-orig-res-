@@ -35,11 +35,19 @@ local valid_map_spots = {
 	["treasure_unique"] = true,
 }
 
--- Table to put things that you wish only one of can ever only spawn
-local only_one_in_existence = {
-	["af_compass"] = true,
-	["af_dummy_pellicle"] = true,
-	["wpn_gauss"] = true
+-- Table to put things that you wish only the specific count can ever only spawn
+local always_in_existence = {
+	["af_compass"] = 1,
+	["af_dummy_pellicle"] = 1,
+	["detector_advanced"] = 5,
+	["detector_elite"] = 2,
+	["detector_scientific"] = 1,
+	["equ_military_pack"] = 3,
+	["equ_tourist_pack"] = 2,
+	["itm_repairkit_tier_1"] = 5,
+	["itm_repairkit_tier_2"] = 4,
+	["itm_repairkit_tier_3"] = 3,
+	["wpn_gauss"] = 1
 }
 ------------------------------------------------------------------------------------------------------------------
 --							PRIVATE
@@ -72,8 +80,13 @@ local function on_game_load()
 		create_random_stash(true,"stash")
 	end
 	
-	for section,v in pairs(only_one_in_existence) do 
-		create_random_stash(true,"stash",{section})
+	local temp = {}
+	for section,count in pairs(always_in_existence) do
+		for i=1,count do
+			iempty_table(temp)
+			temp[1] = section
+			create_random_stash(true,"stash",temp)
+		end
 	end
 end
 
@@ -252,7 +265,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	utils.shuffle(valid_item_list_array)
 	for i,section in ipairs(valid_item_list_array) do
 		local cost = valid_item_list[section]
-		if not (only_one_in_existence[section]) then
+		if not (always_in_existence[section]) then
 			has_spawned = false
 			local skip = false
 			
