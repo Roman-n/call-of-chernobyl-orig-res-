@@ -132,10 +132,10 @@ function send_sound(npc, faction, point, str, str2, delay_sound)
 		if npc ~= nil and is_npc_stalker(npc:clsid()) then
 			texture = npc:character_icon()
 		else
-			if tips_icons[faction] then
+			if faction and tips_icons[faction] then
 				texture = tips_icons[faction]
 			end
-			if tips_icons[point] then
+			if point and tips_icons[point] then
 				texture = tips_icons[point]
 			end
 		end

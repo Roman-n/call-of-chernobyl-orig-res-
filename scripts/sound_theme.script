@@ -489,8 +489,9 @@ function actor_sound:play(obj_id, faction, point, sound)
 	self.can_play_sound = false
 
 	if not closecaption.sound(snd, self.snd_obj:length(), db.actor, faction, nil, 0) then
-		news_manager.send_sound(nil, faction, point, snd)
+		news_manager.send_sound(nil, faction, point, snd, nil, 0)
 	end
+	
 	return true
 end
 function actor_sound:reset(npc_id)

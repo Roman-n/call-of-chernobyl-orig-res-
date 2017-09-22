@@ -453,7 +453,7 @@ function try_spawn_treasure(box)
 	caches[id] = true
 	
 	if not (valid_item_list) then 
-		valid_item_list = get_valid_item_sections()
+		valid_item_list,valid_item_list_array = get_valid_item_sections()
 	end
 	
 	local sec,ammos,ct,ammo_type
