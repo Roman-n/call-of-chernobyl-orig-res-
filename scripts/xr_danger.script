@@ -19,7 +19,7 @@ ini = nil
 
 
 --[[
-danger:danger_perceive_type()
+danger:perceive_type()
 	[danger_object.hit]				= "hit",
 	[danger_object.sound]			= "sound",
 	[danger_object.visual]			= "visual"
@@ -80,45 +80,6 @@ function get_danger_time(danger,npc)
 	end
 
 	return danger:time()
-end
-
-local function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power,sound_position)
-	if not (IsStalker(npc)) then
-		return
-	end
-	
-	if (npc:best_enemy()) then 
-		return 
-	end
-	
-	if (has_danger(npc)) then 
-		return 
-	end
-
-	--alun_utils.debug_write("xr_danger:hear_callback",true)
-	
-	if (IsWounded(npc) or npc:character_community() == "zombied" or xr_combat_ignore.npc_in_safe_zone(npc)) then
-		return
-	end
-	
-	if (s_type == "NPC_step" and dist <= 25) or ((s_type == "WPN_hit" or s_type == "MST_attack" or s_type == "MST_damage") and dist < 900) then
-		local who = who_id and (db.storage[who_id] and db.storage[who_id].object)
-		if not (who) then
-			return
-		end
-
-		if not (IsStalker(who) or IsMonster(who)) then
-			return
-		end
-
-		if (xr_combat_ignore.ignore_enemy_by_overrides(npc,who)) then
-			return
-		end
-
-		if (who_id == 0 or IsMonster(who) or (who:cast_Stalker() and npc:relation(who) == game_object.enemy)) then
-			set_script_danger(npc,7000,who_id,utils.vector_copy_by_val(sound_position))
-		end
-	end
 end
 
 local function npc_on_death_callback(npc,who)
@@ -213,16 +174,25 @@ local function is_danger(npc,best_danger,script)
 		best_danger_object = best_danger:dependent_object()
 	end
 
-	if (best_danger_object) then 
-		if (best_danger_object:cast_Stalker()) then 
+	if (best_danger_object) then
+		local cls = best_danger_object:clsid()
+		if (IsStalker(nil,cls)) then
 			if not (npc:relation(best_danger_object) == game_object.enemy) then 
 				return false
 			end
-		elseif not (IsMonster(best_danger_object)) then
+		elseif (IsMonster(nil,cls)) then
+			-- always enemy no relation check
+		else 
 			return false
 		end
-		if not (best_danger_object:alive() and xr_combat_ignore.is_enemy(npc, best_danger_object,true)) then
+		if not (best_danger_object:alive()) then
 			return false
+		end
+		if (best_danger:perceive_type() == danger_object.hit) then -- bypass combat ignore radius for attacked, entity_attacked, ricochet
+			return danger_in_radius(npc,best_danger,bd_type)
+		end
+		if not (xr_combat_ignore.is_enemy(npc, best_danger_object,true)) then 
+			return false 
 		end
 	end
 
@@ -250,7 +220,6 @@ end
 -- 															ON GAME START
 -----------------------------------------------------------------------------
 function on_game_start()
-	RegisterScriptCallback("npc_on_hear_callback",npc_on_hear_callback)
 	RegisterScriptCallback("npc_on_death_callback",npc_on_death_callback)
 end
 
