@@ -90,6 +90,7 @@ local function is_wounded(npc)
 		if (squad and squad:commander_id() == npc:id()) then
 			return true
 		end
+		return false
 	end
 	
 	if (npc:id() ~= 0 and IsStalker(npc) and IsWounded(npc)) then
