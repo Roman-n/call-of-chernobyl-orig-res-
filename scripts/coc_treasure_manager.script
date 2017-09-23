@@ -41,6 +41,7 @@ local always_in_existence = {
 	["detector_advanced"] = 10,
 	["detector_elite"] = 4,
 	["detector_scientific"] = 1,
+	["detector_simple"] = 20,
 	["equ_military_pack"] = 5,
 	["equ_tourist_pack"] = 3,
 	["itm_repairkit_tier_1"] = 10,
@@ -227,6 +228,11 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		return string.find(v,"WP_") ~= nil
 	end
 	
+	local function is_ammo(section)
+		local v = ini:r_string_ex(section,"class","")
+		return v == "AMMO" or v == "AMMO_S"
+	end
+	
 	local function is_backpack(section)
 		local v = ini:r_string_ex(section,"class","")
 		return v == "EQ_BAKPK"
@@ -287,18 +293,18 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 					elseif (section == "equ_military_pack") then
 						try_spawn_item(section,1,1,0.05,80)
 					else
-						try_spawn_item(section,1,1,0.10,40)
+						try_spawn_item(section,1,1,0.10,50)
 					end
 				elseif (bDetector) then
 					local v = ini:r_string_ex(section,"class","")
 					if (v == "DET_SCIE") then
 						try_spawn_item(section,1,1,0.005,80)
 					elseif (v == "DET_ELIT") then 
-						try_spawn_item(section,1,1,0.05,50)
+						try_spawn_item(section,1,1,0.05,60)
 					elseif (v == "DET_ADVA") then
-						try_spawn_item(section,1,1,0.10,40)
+						try_spawn_item(section,1,1,0.10,50)
 					else 
-						try_spawn_item(section,1,1,0.15,30)
+						try_spawn_item(section,1,1,0.15,40)
 					end
 				elseif (bToolkit) then 
 					if (section == "itm_repairkit_tier_3") then 
@@ -306,57 +312,67 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 					elseif (section == "itm_repairkit_tier_2") then
 						try_spawn_item(section,1,1,0.08,80)
 					else
-						try_spawn_item(section,1,1,0.12,40)
+						try_spawn_item(section,1,1,0.12,50)
 					end
 				else
 					-- decide for each section based on chance, weight and item classification
 					if (cost <= 500) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.50,40)
+							try_spawn_item(section,1,3,0.50,40)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.20,50)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.05,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.05,50)
 						else
 							try_spawn_item(section,1,1,0.40,40)
 						end
 					elseif (cost <= 1000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.40,40)
+							try_spawn_item(section,1,2,0.20,50)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.10,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.04,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.05,60)
 						else
-							try_spawn_item(section,1,1,0.30,40)
+							try_spawn_item(section,1,1,0.30,50)
 						end
 					elseif (cost <= 3000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.15,40)
+							try_spawn_item(section,1,1,0.10,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.05,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.03,40)
 						elseif (bWeapon) then
-							try_spawn_item(section,1,1,0.02,50)
+							try_spawn_item(section,1,1,0.02,70)
 						elseif (bArtefact) then
-							try_spawn_item(section,1,1,0.01,40)
+							try_spawn_item(section,1,1,0.01,50)
 						else 
-							try_spawn_item(section,1,1,0.15,40)
+							try_spawn_item(section,1,1,0.15,50)
 						end
 					elseif (cost <= 5000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.10,40)
+							try_spawn_item(section,1,1,0.10,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.03,60)
 						elseif (bOutfit) then
-							try_spawn_item(section,1,1,0.01,50)
-						elseif (bWeapon) then
 							try_spawn_item(section,1,1,0.01,60)
+						elseif (bWeapon) then
+							try_spawn_item(section,1,1,0.01,80)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.01,50)
 						else 
-							try_spawn_item(section,1,1,0.10,40)
+							try_spawn_item(section,1,1,0.10,50)
 						end
 					elseif (cost <= 9000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.05,40)
+							try_spawn_item(section,1,1,0.05,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.01,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.005,80)
 						elseif (bWeapon) then
@@ -364,11 +380,13 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.005,60)
 						else 
-							try_spawn_item(section,1,1,0.05,40)
+							try_spawn_item(section,1,1,0.05,50)
 						end
 					elseif (cost <= 15000) then 
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.03,40)
+							try_spawn_item(section,1,1,0.03,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.01,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.005,80)
 						elseif (bWeapon) then
@@ -376,11 +394,13 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.003,70)
 						else 
-							try_spawn_item(section,1,1,0.03,40)
+							try_spawn_item(section,1,1,0.03,50)
 						end
 					elseif (cost <= 25000) then
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.01,40)
+							try_spawn_item(section,1,1,0.01,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.005,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.003,90)
 						elseif (bWeapon) then
@@ -388,11 +408,13 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.001,80)
 						else 
-							try_spawn_item(section,1,1,0.01,40)
+							try_spawn_item(section,1,1,0.01,50)
 						end
 					else
 						if (is_consumable(section)) then
-							try_spawn_item(section,1,2,0.005,40)
+							try_spawn_item(section,1,1,0.005,60)
+						elseif (is_ammo(section)) then
+							try_spawn_item(section,1,1,0.003,60)
 						elseif (bOutfit) then
 							try_spawn_item(section,1,1,0.001,90)
 						elseif (bWeapon) then
@@ -400,7 +422,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 						elseif (bArtefact) then
 							try_spawn_item(section,1,1,0.001,90)
 						else 
-							try_spawn_item(section,1,1,0.005,40)
+							try_spawn_item(section,1,1,0.005,50)
 						end
 					end
 				end
@@ -463,7 +485,7 @@ function try_spawn_treasure(box)
 		sec = spawned_item[i]
 		if (valid_item_list[sec] and sec ~= "" and ini:section_exist(sec)) then
 			if (utils.is_ammo(sec)) then 
-				create_ammo(sec,box:position(),box:level_vertex_id(),box:game_vertex_id(),id,math.random(10,30))
+				create_ammo(sec,box:position(),box:level_vertex_id(),box:game_vertex_id(),id,math.random(10,20))
 			else
 				-- since we spawning on parent, we don't want to register object or packetdata will be inaccurate
 				local se_obj = sim:create(sec,box:position(),0,0,id)
