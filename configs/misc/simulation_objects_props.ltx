@@ -5,7 +5,6 @@ resource 		= 0
 surge			= 0
 lair			= 0
 actor			= 0
-squad 			= 0
 bandit 			= 0
 dolg			= 0
 ecolog			= 0
@@ -54,11 +53,6 @@ monster_special			= 1
 [default_territory]:default
 territory 	= 1
 all			= 1
-
-[default_squad]:default
-sim_avail = false
-squad 		= 1
-all 		= 1
 
 [actor]:default
 actor		= 1
@@ -219,34 +213,6 @@ dolg		= 1
 freedom		= 1 
 bandit 		= 1
 
-;---------	MARSH UNIQUE SQUADS	--------
-[mar_doctor_squad]:default_squad
-sim_avail = false
-
-[mar_smart_terrain_base_dog_doctor_squad]:default_squad
-sim_avail = false
-
-[mar_base_stalker_barmen_squad]:default_squad
-sim_avail = false
-
-[mar_base_owl_stalker_trader_squad]:default_squad
-sim_avail = false
-
-[mar_base_stalker_tech_squad]:default_squad
-sim_avail = false
-
-[mar_smart_terrain_base_lager_squad]:default_squad
-sim_avail = false
-
-[mar_smart_terrain_base_stalker_leader_marsh_squad]:default_squad
-sim_avail = false
-
-[mar_smart_terrain_doc_squad]:default_squad
-sim_avail = false
-
-[mar_smart_terrain_doc_dog_squad]:default_squad
-sim_avail = false
-
 ;--------- <<  ESCAPE >> ----------------
 ;---------	SIMULATION	--------
 ;sim smarties
@@ -350,20 +316,6 @@ sim_avail = true
 
 [esc_smart_terrain_9_7]:default_lair
 sim_avail = true
-
-;---------	ESCAPE UNIQUE SQUADS	--------
-[esc_2_12_stalker_nimble_squad]:default_squad
-sim_avail = false
-
-[esc_2_12_stalker_wolf_squad]:default_squad
-sim_avail = false
-
-[esc_2_12_stalker_fanat_squad]:default_squad
-sim_avail = false
-
-[esc_smart_terrain_5_7_loner_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
 
 ;----------- << GARBAGE >> ------------
 ;---------	SIMULATION	--------
@@ -509,16 +461,6 @@ sim_avail = true
 surge = 1
 
 ;----------- << AGROPROM >> ------------
-;---------	AGROPROM UNIQUE SQUADS	--------
-[agr_smart_terrain_1_6_army_trader_stalker_squad]:default_squad
-sim_avail = false
-
-[agr_smart_terrain_1_6_army_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
-[agr_smart_terrain_1_6_near_2_military_colonel_kovalski_squad]:default_squad
-sim_avail = false
-
 ;---------	SIMULATION	--------
 ;sim smarties
 ;exit to Yantar
@@ -613,32 +555,6 @@ sim_avail = true
 
 
 ;----------- << AGROPROM UNDERGROUND >> ------------
-;---------	AGROPROM UNDERGROUND UNIQUE SQUADS	--------
-[agr_u_bloodsucker_1_squad]:default_squad
-sim_avail = false
-
-[agr_u_bloodsucker_2_squad]:default_squad
-sim_avail = false
-
-[agr_u_soldiers_controller_squad]:default_squad
-sim_avail = false
-
-[agru_controller_1_squad]:default_squad
-sim_avail = false
-
-[agr_u_soldiers_squad]:default_squad
-sim_avail = false
-
-[agr_u_bandits_squad]:default_squad
-sim_avail = false
-
-[agru_poltergeist_squad]:default_squad
-sim_avail = false
-
-[agru_end_poltergeist_squad]:default_squad
-sim_avail = false
-
-
 ;---------	AGROPROM UNDERGROUND SMART TERRAINS	--------
 [agr_u_bandits]:default_territory
 sim_avail = {+agr_u_bandits_dead} true, false
@@ -664,13 +580,6 @@ sim_avail = {+agr_u_soldiers_dead +agru_end_poltergeist_squad_dead} true, false
 
 
 ;----------- << DARK VALLEY >> ------------
-;---------	DARK VALLEY UNIQUE SQUADS	--------
-[val_smart_terrain_7_4_bandit_trader_stalker_squad]:default_squad
-sim_avail = false
-
-[val_smart_terrain_7_3_bandit_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
 ;---------	SIMULATION	--------
 ;sim smarties
 ;smaller base, x18 entrance building
@@ -808,28 +717,6 @@ ecolog		= 1
 stalker 	= 1 
 territory 	= 1
 
-;---------	LAB X-18 UNIQUE SQUADS	--------
-[dar_angar_gigant_squad]:default_squad
-sim_avail = false
-
-[dar_control_poltergeist_squad]:default_squad
-sim_avail = false
-
-[dar_military_scout_squad]:default_squad
-sim_avail = false
-
-[dar_poltergeist_ring_squad_1]:default_squad
-sim_avail = false
-
-[dar_poltergeist_ring_squad_2]:default_squad
-sim_avail = false
-
-[dar_poltergeist_tele_squad]:default_squad
-sim_avail = false
-
-[dar_poltergeist_tele_round_squad]:default_squad
-sim_avail = false
-
 ;----------- << BAR >> ------------
 ;---------	SIMULATION	--------
 ;sim smarties
@@ -871,40 +758,6 @@ sim_avail = {+bar_zastava_2_minigunner_dead +bar_zastava_2_duty2_guard1_dead +ba
 surge = 1
 dolg = 1
 lair = 1
-
-;---------	BAR UNIQUE SQUADS	--------
-[bar_visitors_barman_stalker_trader_squad]:default_squad
-sim_avail = false
-
-[bar_visitors_garik_stalker_guard_squad]:default_squad
-sim_avail = false
-
-[bar_visitors_zhorik_stalker_guard2_squad]:default_squad
-sim_avail = false
-
-[bar_duty_security_squad_leader_squad]:default_squad
-sim_avail = false
-
-[bar_zastava_2_commander_squad]:default_squad
-sim_avail = false
-
-[bar_visitors_cardan_tech_squad]:default_squad
-sim_avail = false
-
-[bar_dolg_general_zoneguard_stalker_squad]:default_squad
-sim_avail = false
-
-[bar_dolg_general_petrenko_stalker_squad]:default_squad
-sim_avail = false
-
-[bar_arena_manager_squad]:default_squad
-sim_avail = false
-
-[bar_arena_guard_squad]:default_squad
-sim_avail = false
-
-[bar_dolg_leader_squad]:default_squad
-sim_avail = false
 
 ;----------- << ROSTOK >> ------------
 ;---------	SIMULATION	--------
@@ -1030,22 +883,6 @@ territory	= 1
 [yan_smart_terrain_snork_u]:default_lair
 sim_avail = {+yantar_tunnel_finish} true, false
 
-;---------	YANTAR UNIQUE SQUADS	--------
-[yan_stalker_sakharov_squad]:default_squad
-sim_avail = false
-
-[yan_ecolog_kruglov_squad]:default_squad
-sim_avail = false
-
-[yan_ecolog_semenov_squad]:default_squad
-sim_avail = false
-
-[yan_ecolog_vasilyev_squad]:default_squad
-sim_avail = false
-
-[yan_bunker_guards_squad]:default_squad
-sim_avail = false
-
 ;----------- << LAB X-16 SMARTIES >> ------------
 [x162_st_burer]:default_lair
 sim_avail = {+yan_kill_brain_done} true, false
@@ -1070,16 +907,6 @@ sim_avail = {+yan_kill_brain_done} true, false
 sim_avail = {+yan_kill_brain_done} true, false
 
 ;----------- << ARMY WAREHOUSES >> ------------
-;---------	ARMY WAREHOUSES UNIQUE SQUADS	--------
-[mil_smart_terrain_7_7_freedom_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
-[mil_smart_terrain_7_10_freedom_trader_stalker_squad]:default_squad
-sim_avail = false
-
-[mil_smart_terrain_7_7_freedom_leader_stalker_squad]:default_squad
-sim_avail = false
-
 ;---------	SIMULATION	--------
 [mil_smart_terrain_2_1]:default_lair
 sim_avail = true
@@ -1335,13 +1162,6 @@ monolith_heli	= 1
 
 
 ;----------- << DEAD CITY >> ------------
-;---------	DEAD CITY UNIQUE SQUADS	--------
-[cit_killers_merc_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
-[cit_killers_merc_trader_stalker_squad]:default_squad
-sim_avail = false
-
 ;---------	SIMULATION	--------
 [cit_bandits]:default_base
 sim_avail 	= true
@@ -1476,18 +1296,7 @@ army		= 1
 territory 	= 1
 
 
-;---------	BUNKER-LAB X-19 UNIQUE SQUADS	--------
-[bun_krovosos_nest_squad]:default_squad
-sim_avail = false
-
 ;----------- << PRIPYAT >> ------------
-;---------	PRIPYAT UNIQUE SQUADS	--------
-[pri_monolith_monolith_mechanic_stalker_squad]:default_squad
-sim_avail = false
-
-[pri_monolith_monolith_trader_stalker_squad]:default_squad
-sim_avail = false
-
 ;---------	SIMULATION	--------
 [pri_depot]:default_base
 sim_avail 		= true
@@ -1624,12 +1433,6 @@ army		= 1
 ecolog		= 1
 territory	= 1
 
-[sar_monolith_general_squad]:default_squad
-sim_avail = false
-
-[sar_monolith_sklad_squad]:default_squad
-sim_avail = false
-
 ;----------- << MONOLITH CONTROL >> ------------
 [sar_monolith_guard]:default_territory
 sim_avail = {+sar_monolith_generator_find} true, false
@@ -1646,9 +1449,6 @@ stalker		= 1
 army		= 1
 ecolog		= 1
 territory 	= 1
-
-[sar_monolith_guard_squad]:default_squad
-sim_avail = false
 
 ;----------- << STANCIA_2 >> ------------
 ;---------	SIMULATION	--------
@@ -1717,177 +1517,6 @@ sim_avail = true
 ;----------- << WARLAB >> ------------
 [warlab_common_consciousness_smart_terrain]:default_base
 sim_avail = false
-
-[warlab_pod_stalker_squad]:default_squad
-sim_avail = false
-
-[warlab_main_polter_squad]:default_squad
-sim_avail = false
-
-[warlab_main_psysucker_squad]:default_squad
-sim_avail = false
-
-[warlab_main_psycontroller_squad]:default_squad
-sim_avail = false
-
-;---------------------------------------------------------------------------------
-;------------------------------- Simulation SQUADS -------------------------------
-
-[stalker_sim_squad_novice]:default_squad
-sim_avail = true
-
-[stalker_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[stalker_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[bandit_sim_squad_novice]:default_squad
-sim_avail = true
-
-[bandit_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[bandit_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[merc_sim_squad_novice]:default_squad
-sim_avail = true
-
-[merc_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[merc_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[duty_sim_squad_novice]:default_squad
-sim_avail = true
-
-[duty_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[duty_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[freedom_sim_squad_novice]:default_squad
-sim_avail = true
-
-[freedom_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[freedom_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[monolith_sim_squad_novice]:default_squad
-sim_avail = true
-
-[monolith_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[monolith_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[monolith_sim_squad_sniper]:default_squad
-sim_avail = true
-
-[zombied_sim_squad_novice]:default_squad
-sim_avail = true
-
-[zombied_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[zombied_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[army_sim_squad_novice]:default_squad
-sim_avail = true
-
-[army_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[army_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[army_sim_squad_sniper]:default_squad
-sim_avail = true
-
-[csky_sim_squad_novice]:default_squad
-sim_avail = true
-
-[csky_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[csky_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[ecolog_sim_squad_novice]:default_squad
-sim_avail = true
-
-[ecolog_sim_squad_advanced]:default_squad
-sim_avail = true
-
-[ecolog_sim_squad_veteran]:default_squad
-sim_avail = true
-
-[simulation_bloodsucker]:default_squad
-sim_avail = true
-
-[simulation_boar]:default_squad
-sim_avail = true
-
-[simulation_burer]:default_squad
-sim_avail = true
-
-[simulation_controller]:default_squad
-sim_avail = true
-
-[simulation_dog]:default_squad
-sim_avail = true
-
-[simulation_pseudodog]:default_squad
-sim_avail = true
-
-[simulation_flesh]:default_squad
-sim_avail = true
-
-[simulation_snork]:default_squad
-sim_avail = true
-
-[simulation_mix_dogs]:default_squad
-sim_avail = true
-
-[simulation_mix_boar_flesh]:default_squad
-sim_avail = true
-
-[simulation_poltergeist_tele]:default_squad
-sim_avail = true
-
-[simulation_chimera]:default_squad
-sim_avail = true
-
-[simulation_psy_dog]:default_squad
-sim_avail = true
-
-[simulation_tushkano]:default_squad
-sim_avail = true
-
-[simulation_gigant]:default_squad
-sim_avail = true
-
-[simulation_cat]:default_squad
-sim_avail = true
-
-[simulation_zombie]:default_squad
-sim_avail = true
-
-[simulation_rat]:default_squad
-sim_avail = true
-
-[simulation_rats]:default_squad
-sim_avail = true
-
-[simulation_fracture]:default_squad
-sim_avail = true
 
 ;--------------------------------------------------------------------------------
 ;Zaton
@@ -2471,24 +2100,6 @@ sim_avail = {+lx8_actor_in_lab +actor_left_labx8} true, false
 all  = 1
 lair = 1
 
-[lx8_snork_down_squad]:default_squad
-sim_avail = false
-
-[lx8_snork_up_squad]:default_squad
-sim_avail = false
-
-[lx8_burers_squad]:default_squad
-sim_avail = false
-
-[lx8_toilet_burer_squad]:default_squad
-sim_avail = false
-
-[lx8_tushkano_1_squad]:default_squad
-sim_avail = false
-
-[lx8_tushkano_2_squad]:default_squad
-sim_avail = false
-
 ;underpass
 [pas_b400_elevator]:default_lair
 sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, false
@@ -2517,42 +2128,6 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 
 [pas_b400_fake]:default_lair
 sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, false
-
-[pas_b400_stalkers_squad]:default_squad
-sim_avail = false
-
-[pas_b400_stalkers_squad_strong]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_squad]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_2_squad]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_sniper_1]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_sniper_2]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_sniper_3]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_sniper_4]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_after_fwd_squad]:default_squad
-sim_avail = false
-
-[pas_b400_hall_monolith_after_bwd_squad]:default_squad
-sim_avail = false
-
-[pas_b400_canalisation_3_zombied]:default_squad
-sim_avail = false
-
-[pas_b400_canalisation_5_zombied]:default_squad
-sim_avail = false
 
 ;TRUCKS CEMETERY
 
@@ -2643,22 +2218,3 @@ army		= 1
 
 [trc_sim_21]:default_lair
 sim_avail =  true
-
-;quest
-[faction_base_defense_flesh_squad]:default_squad
-sim_avail = false
-
-[faction_base_defense_boar_squad]:default_squad
-sim_avail = false
-
-[faction_base_defense_dog_squad]:default_squad
-sim_avail = false
-
-[faction_base_defense_flesh_second_squad]:default_squad
-sim_avail = false
-
-[faction_base_defense_boar_second_squad]:default_squad
-sim_avail = false
-
-[faction_base_defense_dog_second_squad]:default_squad
-sim_avail = false
