@@ -43,7 +43,7 @@ function anomaly_zone_binder:__init(obj) super(obj)
 	self.forces_table = {}
 	self.spawned_count = 0
 
-	self.respawn_artefacts = true
+	self.respawn_artefacts = math.random() <= 0.50
 	self.forced_spawn = false
 	self.forced_spawn_override = false
 	self.forced_artefact = ""
@@ -265,6 +265,10 @@ function anomaly_zone_binder:spawn_artefact_randomly()
 			end
 			rnd = rnd - chance
 		end
+	end
+	
+	if not (rnd_artefact) then 
+		return 
 	end
 
 	local rnd_path_name			= self:get_artefact_path()

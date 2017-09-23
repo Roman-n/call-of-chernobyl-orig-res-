@@ -193,6 +193,29 @@
                 <texture r="10" g="250" b="250">ui_pda2_exit_point</texture>
         </level_changer_spot_mini>
 
+		
+		<anom_zone>
+			<level_map spot="anom_zone_spot" point="quest_pointer"/>
+			<mini_map spot="anom_zone_spot_mini"/>
+		</anom_zone>
+		<anom_zone_spot width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1.0" scale_max="1.2">
+			<texture>ui_task_bt_visible_d</texture>
+		</anom_zone_spot>
+		<anom_zone_spot_mini width="8" height="8" alignment="c" stretch="1">
+			<texture>ui_task_bt_visible_d</texture>
+		</anom_zone_spot_mini>
+
+		<artefact>
+			<level_map spot="artefact_spot" point="quest_pointer"/>
+			<mini_map spot="artefact_spot_mini"/>
+		</artefact>
+		<artefact_spot width="12" height="12" alignment="c" stretch="1" scale="1" scale_min="1.0" scale_max="1.2">
+			<texture>ui_task_bt_center_d</texture>
+		</artefact_spot>
+		<artefact_spot_mini width="8" height="8" alignment="c" stretch="1">
+			<texture>ui_task_bt_center_d</texture>
+		</artefact_spot_mini>
+		
 		<user_defined>
 			<level_map spot="user_defined_spot" point="quest_pointer"/>
 			<mini_map spot="user_defined_spot_mini"/>
