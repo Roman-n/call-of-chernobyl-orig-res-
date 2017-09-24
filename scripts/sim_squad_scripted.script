@@ -906,26 +906,30 @@ function sim_squad_scripted:check_online_status()
 	elseif not (level_weathers.valid_levels[level.name()]) then -- force online in underground levels
 		b = true
 	elseif (self.assigned_target_id and is_squad_monster[self.player_id]) then
-			local hour = level.get_time_hours()
-			if (self.player_id == "monster_predatory_day") then 
-				-- Monster will not come online during the hours of (9PM till 5AM)
-				if (hour <= 5 or hour >= 22) then
-					b = false 
-				end
-			elseif (self.player_id == "monster_zombied_day") then 
-				-- Monster will not come online during the hours of (7PM till 5AM)
-				if (hour <= 5 or hour >= 19) then
-					b = false
-				end
-			elseif (self.player_id == "monster_predatory_night") then 
-				-- Monster will not come online during the hours of (5AM till 7PM)
-				if (hour >= 5 and hour <= 19) then
-					b = false
-				end
-			elseif (self.player_id == "monster_zombied_night") then 
-				-- Monster will not come online during the hours of (5AM till 7PM)
-				if (hour >= 5 and hour <= 19) then
-					b = false
+			if (self.assigned_target_id == self.id) then 
+				b = false
+			else
+				local hour = level.get_time_hours()
+				if (self.player_id == "monster_predatory_day") then 
+					-- Monster will not come online during the hours of (9PM till 5AM)
+					if (hour <= 5 or hour >= 22) then
+						b = false 
+					end
+				elseif (self.player_id == "monster_zombied_day") then 
+					-- Monster will not come online during the hours of (7PM till 5AM)
+					if (hour <= 5 or hour >= 19) then
+						b = false
+					end
+				elseif (self.player_id == "monster_predatory_night") then 
+					-- Monster will not come online during the hours of (5AM till 7PM)
+					if (hour >= 5 and hour <= 19) then
+						b = false
+					end
+				elseif (self.player_id == "monster_zombied_night") then 
+					-- Monster will not come online during the hours of (5AM till 7PM)
+					if (hour >= 5 and hour <= 19) then
+						b = false
+					end
 				end
 			end
 	elseif (db.actor and not get_object_story_id(self.id)) then	-- exclude from coming online except if already online or storied
