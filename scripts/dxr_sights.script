@@ -132,7 +132,7 @@ function context_functor(weapon)
 	
 	-- Return if the weapon has no parent section.
 	local parent_section = system_ini():r_string_ex(weapon:section(), "parent_section")
-	if (not parent_section or weapon:section() == parent_section) then
+	if (parent_section == nil or parent_section == "" or weapon:section() == parent_section) then
 		return
 	end
 	
@@ -156,7 +156,7 @@ function context_functor_sight(sight, slot)
 	
 	-- A sight has already been attached or none can be used.
 	local parent_section = system_ini():r_string_ex(weapon:section(), "parent_section")
-	if (not parent_section or weapon:section() ~= parent_section) then return end
+	if (parent_section == nil or parent_section == "" or weapon:section() ~= parent_section) then return end
 	
 	-- Determine whether the weapon is valid for the sight selected.
 	if not (check_sight(string.sub(sight:section(), 17), weapon:section())) then
@@ -197,7 +197,9 @@ function on_item_focus(item)
 	
 	-- A sight has already been attached or none can be used.
 	local parent_section = system_ini():r_string_ex(item:section(), "parent_section")
-	if (not parent_section or item:section() ~= parent_section) then return end
+	if (parent_section == nil or parent_section == "" or item:section() ~= parent_section) then 
+		return 
+	end
 	
 	-- Highlight all sights this item can use.
 	local sights = alun_utils.parse_list(system_ini(), item:section(), "sights")
@@ -229,7 +231,9 @@ function attach_sight(item, weapon)
 	
 	-- A sight has already been attached or none can be used.
 	local parent_section = system_ini():r_string_ex(weapon:section(), "parent_section")
-	if (not parent_section or weapon:section() ~= parent_section) then return end
+	if (parent_section == nil or parent_section == "" or weapon:section() ~= parent_section) then 
+		return 
+	end
 	
 	-- Modified weapon does not exist and as such can't be used.
 	local child_section = (parent_section .. "_" .. string.sub(item:section(), 17))
@@ -266,7 +270,9 @@ function detach_sight(weapon)
 	local wpn_sect = weapon:section()
 	-- A sight has not been attached or none can be detached.
 	local parent_section = system_ini():r_string_ex(wpn_sect, "parent_section")
-	if (not parent_section or wpn_sect == parent_section) then return end
+	if (parent_section == nil or parent_section == "" or wpn_sect == parent_section) then 
+		return 
+	end
 	
 	-- Determine which sight is attached to the weapon.
 	-- Create the item in the actor's inventory when found.
