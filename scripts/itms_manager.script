@@ -404,7 +404,7 @@ function loot_mutant(obj,cls,t,npc)
 		[clsid.cat_s]			= "cat",
 		[clsid.chimera_s]		= "chimera",
 		[clsid.controller_s]	= "controller",
-		[clsid.crow]			= "crow",
+		--[clsid.crow]			= "crow",			-- only because in binder it is not saved
 		[clsid.dog_s]			= "dog",
 		[clsid.flesh_s]			= "flesh",
 		[clsid.fracture_s]		= "fracture",
