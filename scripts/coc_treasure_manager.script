@@ -200,6 +200,10 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		caches_count = caches_count - 1
 		return
 	end
+
+	if not (valid_item_list) then 
+		valid_item_list,valid_item_list_array = get_valid_item_sections()
+	end
 	
 	--\\ FOR DEBUG
     local cost_lvls = {500,1000,3000,5000,9000,15000,25000}
@@ -242,10 +246,6 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
         sorted = true
     end
 	--//
-	
-	if not (valid_item_list) then 
-		valid_item_list,valid_item_list_array = get_valid_item_sections()
-	end
 	
 	local spawned_item = bonus_items or {}
 	local max_weight = math.random(80,130)
