@@ -325,7 +325,7 @@
 		<text>Слушайте, этот прототип не защитит Вас от мощного пси-воздействия. Я ожидал нечто подобное, поэтому каждый раз при попадании в мощное пси-поле активируется таймер. Когда закончится время, устройство больше не будет защищать Вас, так что будьте осторожны и следите за временем.</text>
 	</string>
 	<string id="st_yan_saharov_message_3">
-		<text>Отличная работа. Излучение отключено, и Вы всё еще живы.</text>
+		<text>Отличная работа. Излучение отключено, и Вы всё ещё живы.</text>
 	</string>
 	<string id="tips_warlab_switcher_press">
 		<text>Выключить Генераторы ($$ACTION_USE$$)</text>
@@ -343,31 +343,31 @@
 		<text>Бой отменён! Претендент струсил и не выходил, чтобы бороться вообще!</text>
 	</string>
 	<string id="bar_arena_fight_10">
-		<text>Осталось 10 секунд!</text>
+		<text>Прошло 10 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_20">
-		<text>Осталось 20 секунд!</text>
+		<text>Прошло 20 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_30">
-		<text>Осталось 30 секунд!</text>
+		<text>Прошло 30 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_40">
-		<text>Осталось 40 секунд!</text>
+		<text>Прошло 40 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_50">
-		<text>Осталось 50 секунд!</text>
+		<text>Прошло 50 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_60">
-		<text>Осталась 1 минута!</text>
+		<text>Прошла минута!</text>
 	</string>
 	<string id="bar_arena_fight_70">
-		<text>Осталась 1 минута и 10 секунд!</text>
+		<text>Прошла минута и 10 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_80">
-		<text>Осталась 1 минута и 20 секунд!</text>
+		<text>Прошла минута и 20 секунд!</text>
 	</string>
 	<string id="bar_arena_fight_90">
-		<text>Осталась 1 минута и 30 секунд!</text>
+		<text>Прошло полторы минуты!</text>
 	</string>
 	<string id="bar_arena_fight_begin">
 		<text>Бой!</text>

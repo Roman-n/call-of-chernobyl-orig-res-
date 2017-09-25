@@ -57,7 +57,7 @@
 	</string>
 	<!-- FIND LEVEL 1 TOOLS FOR XENOTECH TASK -->
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_1_name">
-		<text>Найти Фургону "%s"</text>
+		<text>Найти Фургону %s</text>
 	</string>
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_1_text">
 		<text>Необходимо принести Фургону %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -73,7 +73,7 @@
 	</string>
 	<!-- FIND LEVEL 2 TOOLS FOR XENOTECH TASK -->
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_2_name">
-		<text>Найти Фургону "%s"</text>
+		<text>Найти Фургону %s</text>
 	</string>
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_2_text">
 		<text>Необходимо принести Фургону %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -89,7 +89,7 @@
 	</string>
 	<!-- FIND LEVEL 3 TOOLS FOR XENOTECH TASK -->
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_3_name">
-		<text>Найти Фургону "%s"</text>
+		<text>Найти Фургону %s</text>
 	</string>
 	<string id="esc_smart_terrain_5_7_loner_mechanic_stalker_task_3_text">
 		<text>Необходимо принести Фургону %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
