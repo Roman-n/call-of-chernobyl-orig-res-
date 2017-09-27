@@ -4,13 +4,13 @@
 cost		      		= 800
 value					= -10
 
-cam_dispersion              = -0.07		;0.5
-cam_dispersion_inc         	= -0.03		;0.5
-cam_step_angle_horz        	= -0.07		;1.5 [0.73 в остатке]
+cam_dispersion              = -0.07
+cam_dispersion_inc         	= -0.04
+cam_step_angle_horz        	= -0.1
 
-zoom_cam_dispersion         = -0.09		;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc     = -0.045		;0.5
-zoom_cam_step_angle_horz    = -0.09 	;1.0 [0.505 в остатке]
+zoom_cam_dispersion         = -0.07
+zoom_cam_dispersion_inc     = -0.04
+zoom_cam_step_angle_horz    = -0.09
 
 [up_sect_firstc_abakan]
 ;Ќадежность(2)15%
@@ -19,15 +19,15 @@ cost		      		= 1600
 value					= +15
 
 ;увеличение дисперсии в процентах при максимальном износе
-fire_dispersion_condition_factor    = -0.5 ;15
+fire_dispersion_condition_factor    = -0.75
 ;увеличение изношености при выстреле очередью
-condition_queue_shot_dec	= -0.00015 ;0.0013
+condition_queue_shot_dec	= -0.00015
 ;увеличение изношености при одиночном выстреле
-condition_shot_dec      	= -0.00015 ;0.0011
+condition_shot_dec      	= -0.00015
 ;шанс осечки при изношености больше чем misfireStartCondition
 misfire_start_prob	     	= -0.0015
 ;шанс осечки при изношености больше чем misfireEndCondition
-misfire_end_prob	     	= -0.02 ;0.03
+misfire_end_prob	     	= -0.02
 
 [up_sect_firste_abakan]
 ;—корострельность(3)25%
@@ -44,13 +44,13 @@ rpm                     = +100
 cost		      		= 3200
 value					= -30
 
-cam_dispersion              = -0.3		;0.1
-cam_dispersion_inc         	= -0.1		;0.6
-cam_step_angle_horz        	= -0.15		;0.6
+cam_dispersion              = -0.21
+cam_dispersion_inc         	= -0.12
+cam_step_angle_horz        	= -0.3
 
-zoom_cam_dispersion          = -0.27	;0.1
-zoom_cam_dispersion_inc      = -0.11	;0.5
-zoom_cam_step_angle_horz     = -0.16	;0.5
+zoom_cam_dispersion          = -0.21
+zoom_cam_dispersion_inc      = -0.12
+zoom_cam_step_angle_horz     = -0.27
 
 [up_sect_secona_abakan]
 ;Ќастильность(1)10%
@@ -66,8 +66,8 @@ fire_dispersion_base    = -0.01
 cost		      		= 1600
 value					= +20
 
-fire_dispersion_base    = -0.06 ;0.07
-fire_dispersion_condition_factor    = -0.5 ;15
+fire_dispersion_base    = -0.06
+fire_dispersion_condition_factor    = -0.25
 
 [up_sect_second_abakan]
 ;—корострельность(2)15%
@@ -114,21 +114,21 @@ fire_dispersion_base    = -0.01
 cost		      		= 1600
 value					= -20
 
-cam_dispersion              = -0.16		;0.1
-cam_dispersion_inc         	= -0.07		;0.6
-cam_step_angle_horz        	= -0.11		;0.6
+cam_dispersion              = -0.14
+cam_dispersion_inc         	= -0.08
+cam_step_angle_horz        	= -0.2
 
-zoom_cam_dispersion          = -0.18	;0.1
-zoom_cam_dispersion_inc      = -0.08	;0.5
-zoom_cam_step_angle_horz     = -0.13	;0.5
+zoom_cam_dispersion         = -0.14
+zoom_cam_dispersion_inc     = -0.08
+zoom_cam_step_angle_horz    = -0.18
 
 
 [up_sect_thirde_abakan]
 ;“очность(3)30%
 cost		      		= 3200
 value					= +30
-fire_dispersion_base    = -0.09 ;0.07
-fire_dispersion_condition_factor    = -0.5 ;15
+fire_dispersion_base    = -0.09
+fire_dispersion_condition_factor    = -0.25
 
 [up_sect_fourta_abakan]
 ;¬ес
@@ -140,10 +140,12 @@ inv_weight              = -1 ;3.6
 
 crosshair_inertion		   = -0.5
  
-PDM_disp_base 				= -0.05 ;0.5
-PDM_disp_vel_factor 		= -0.1 ;1.5
-PDM_disp_accel_factor 		= -0.1 ;1.5
+PDM_disp_base 				= -0.1
+PDM_disp_vel_factor 		= -0.23
+PDM_disp_accel_factor 		= -0.23
 
+crosshair_inertion		   = -0.35
+ 
 [up_sect_fourtc_abakan]
 ;”добство(2)15%
 ;--------------
@@ -152,10 +154,12 @@ value					= +15
 
 crosshair_inertion		   = -0.5
  
-PDM_disp_base 				= -0.1 ;0.5
-PDM_disp_vel_factor 		= -0.33 ;1.5
-PDM_disp_accel_factor 		= -0.33 ;1.5
+PDM_disp_base 				= -0.2
+PDM_disp_vel_factor 		= -0.46
+PDM_disp_accel_factor 		= -0.46
 
+crosshair_inertion		   = -0.7
+ 
 [up_sect_fourte_abakan]
 ;”добство(3)25%
 ;--------------
@@ -164,10 +168,12 @@ value					= +25
  
 crosshair_inertion		   = -0.7
  
-PDM_disp_base 				= -0.12 ;0.5
-PDM_disp_vel_factor 		= -0.42 ;1.5
-PDM_disp_accel_factor 		= -0.42 ;1.5
+PDM_disp_base 				= -0.3
+PDM_disp_vel_factor 		= -0.69
+PDM_disp_accel_factor 		= -0.69
 
+crosshair_inertion		   = -1
+ 
 
 [up_sect_fourtf_abakan]
 ;Ќастильность(3)30%

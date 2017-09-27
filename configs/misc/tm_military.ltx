@@ -11,14 +11,14 @@ descr = mil_smart_terrain_7_10_freedom_trader_stalker_task_1_text
 descr_functor = general_fetch_task
 job_descr = mil_smart_terrain_7_10_freedom_trader_stalker_task_1_about
 fetch_descr = mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch_about
-fetch_func = %=setup_generic_fetch_task(mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch:12:mutant_part_boar_chop:mutant_part_dog_meat:mutant_part_flesh_meat:mutant_part_psevdodog_meat:mutant_part_tushkano_meat)%
+fetch_func = %=setup_generic_fetch_task(mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch:12:mutant_part_boar_chop:mutant_part_dog_meat:mutant_part_flesh_meat:mutant_part_psevdodog_meat)%
 stage_complete = 1
 ; precondition = true
 repeat_timeout = 86400
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch_finish
-on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_item_cost_mult_and_remove(mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch:12:12) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_10_freedom_trader_stalker_task_1)%
+on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_item_cost_mult_and_remove(mil_smart_terrain_7_10_freedom_trader_stalker_task_1_fetch:6) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_10_freedom_trader_stalker_task_1)%
 
 
 ;--------------------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ status_functor_params = dolg
 stage_complete = 1
 on_init = %=find_smart_under_faction_control(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_id:dolg)%
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:dolg)} true, false
-on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_random_money(7500:9500) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_2) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_target_id)%
+on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_random_money(7500:8500) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_2) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_target_id)%
 on_fail = %=pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_target_id) =fail_task_dec_goodwill(25:freedom)%
 on_cancel = %=pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_2_target_id)%
 
@@ -83,7 +83,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(mil_smart_terrain_7_7_freedom_leader_stalker_task_3:monolith)%
-on_complete = %=reward_random_money(9000:11000) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_3) =complete_task_inc_goodwill(50:freedom)%
+on_complete = %=reward_random_money(8500:10000) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_3) =complete_task_inc_goodwill(50:freedom)%
 
 
 ;--------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_4_text
 job_descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_4_about
 task_complete_descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_4_finish
 precondition = true
-repeat_timeout = 86400
+repeat_timeout = 172800
 status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
@@ -125,7 +125,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_5_fetch_finish
 ; precondition = true
-repeat_timeout = 86400
+repeat_timeout = 172800
 on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_item_cost_mult_and_remove(mil_smart_terrain_7_7_freedom_leader_stalker_task_5_fetch:1.2) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_5)%
 on_fail = %=fail_task_dec_goodwill(25:freedom)%
 

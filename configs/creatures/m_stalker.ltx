@@ -75,12 +75,12 @@ cl_run_fwd_0				=	1,	  0.2,	    1,       0.4,     1
 
 [stalker_vision_free]
 min_view_distance   		= 0.1				; min range of cone based on eye_range
-max_view_distance	 		= 0.5				; max range of cone based on eye_range
+max_view_distance	 		= 0.6				; max range of cone based on eye_range
 visibility_threshold	 	= 30				;Threshold in which object becomes visible based on factors
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
 time_quant					= 0.005				;step increment to for sight calculations
 decrease_value				= 0.1 				;Decrease over time to overall threshold
-velocity_factor		     	= 0.4				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 0.5				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.70				;Low value = easier to see at night
 transparency_threshold	 	= 0.6 			    ;Low value = easier to see through objects
 still_visible_time          = 0 				;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
@@ -92,7 +92,7 @@ visibility_threshold	 	= 30				;Threshold in which object becomes visible based 
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
 time_quant					= 0.0054			;step increment to for sight calculations
 decrease_value				= 0.1				;Decrease over time to overall threshold
-velocity_factor		     	= 0.5				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 0.75				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.60				;Low value = easier to see at night
 transparency_threshold	 	= 0.6				;Low value = easier to see through objects (if greater then 1 then enemies are blind)
 still_visible_time          = 0					;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
@@ -320,7 +320,7 @@ min_wound_size				= 0.01
 	;; stand
 	;;; run
 	;;;; forward
-	panic_stand_run_forward		= 7.0
+	panic_stand_run_forward		= 6.0
 
 [stalker]:common_ph_friction_params_on_npc_death
 class					= AI_STL_S	;Class identifier
@@ -399,7 +399,7 @@ vision_free_section				= stalker_vision_free
 eye_fov							= 140
 eye_range						= 250
 far_plane_factor				= 1.0		; фактор дальности тумана
-fog_density_factor				= 0.05		; фактор плотности тумана
+fog_density_factor				= 1.5		; фактор плотности тумана
 
 
 ;---MEMORY------------------------------------------------------------
@@ -421,8 +421,8 @@ sound_alarm				= fight\enemy\enemy_
 sound_backup				= fight\backup\backup_,fight\threat\threat_close_
 sound_detour				= fight\detour\detour_,fight\fire\fire_,fight\threat\threat_close_
 sound_friendly_fire			= fight\friendly_fire\friendly_fire_
-sound_panic_human			= states\panic_human\panic_human_
-sound_panic_monster			= states\panic_monster\panic_monster_
+sound_panic_human			= ;states\panic_human\panic_human_
+sound_panic_monster			= ;states\panic_monster\panic_monster_
 sound_tolls				= fight\tolls\tolls_
 sound_wounded				= fight\friend_hitted\hit_friend_
 sound_grenade_alarm			= fight\grenade\grenade_
@@ -476,8 +476,8 @@ disp_run_stand					= 10
 disp_run_crouch					= 8
 disp_stand_stand				= 3
 disp_stand_crouch				= 2
-disp_stand_stand_zoom			= 2
-disp_stand_crouch_zoom			= 1
+disp_stand_stand_zoom			= 1
+disp_stand_crouch_zoom			= 0.75
 
 FireRandomMin 		 =     	1
 FireRandomMax 		 =     	12
@@ -744,8 +744,8 @@ bip01_r_toe0	 	 		= 10000.0, 1000, 0.2
 [fire_queue_params]  ; min < 15 < medium < 30 < max
 pstl_min_queue_size_far			= 1
 pstl_max_queue_size_far			= 1
-pstl_min_queue_interval_far		= 700
-pstl_max_queue_interval_far		= 1000
+pstl_min_queue_interval_far		= 600
+pstl_max_queue_interval_far		= 800
 
 pstl_min_queue_size_medium		= 1
 pstl_max_queue_size_medium		= 1
@@ -754,7 +754,7 @@ pstl_max_queue_interval_medium	= 600
 
 pstl_min_queue_size_close		= 1
 pstl_max_queue_size_close		= 1
-pstl_min_queue_interval_close	= 400
+pstl_min_queue_interval_close	= 350
 pstl_max_queue_interval_close	= 450
 
 ;-------------------------------
@@ -779,7 +779,7 @@ shtg_max_queue_interval_close	= 750
 snp_min_queue_size_far			= 1
 snp_max_queue_size_far			= 1
 snp_min_queue_interval_far		= 2000
-snp_max_queue_interval_far		= 5000
+snp_max_queue_interval_far		= 4000
 
 snp_min_queue_size_medium		= 1
 snp_max_queue_size_medium		= 1
@@ -796,12 +796,12 @@ snp_max_queue_interval_close	= 1000
 auto_min_queue_size_far			= 1
 auto_max_queue_size_far			= 3
 auto_min_queue_interval_far		= 500
-auto_max_queue_interval_far		= 900
+auto_max_queue_interval_far		= 800
 
 auto_min_queue_size_medium		= 2
 auto_max_queue_size_medium		= 3
 auto_min_queue_interval_medium	= 400
-auto_max_queue_interval_medium	= 700
+auto_max_queue_interval_medium	= 600
 
 auto_min_queue_size_close		= 3
 auto_max_queue_size_close		= 3
@@ -812,13 +812,13 @@ auto_max_queue_interval_close	= 400
 
 mchg_min_queue_size_far			= 2
 mchg_max_queue_size_far			= 3
-mchg_min_queue_interval_far		= 300
-mchg_max_queue_interval_far		= 500
+mchg_min_queue_interval_far		= 400
+mchg_max_queue_interval_far		= 700
 
 mchg_min_queue_size_medium		= 3
 mchg_max_queue_size_medium		= 3
 mchg_min_queue_interval_medium	= 300
-mchg_max_queue_interval_medium	= 400
+mchg_max_queue_interval_medium	= 500
 
 mchg_min_queue_size_close		= 3
 mchg_max_queue_size_close		= 3

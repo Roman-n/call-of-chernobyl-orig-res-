@@ -387,7 +387,13 @@ function setup_artefact_fetch_task(actor,npc,p)
 		"af_electra_moonlight",
 		"af_dummy_battery",
 		"af_dummy_dummy",
-		"af_ice"
+		"af_ice",
+		"af_rusty_thorn",
+		"af_rusty_kristall",
+		"af_rusty_sea",
+		"af_ameba_slime",
+		"af_ameba_slug",
+		"af_ameba_mica"
 		}
 	
 		artefact = arts[math.random(#arts)]
@@ -403,7 +409,6 @@ function setup_weapon_fetch_task(actor,npc,p)
 		dialogs._FETCH_TEXT = game.translate_string(system_ini():r_string_ex(wpn,"inv_name") or "")
 	else
 		local itm = {
-				"wpn_bm16",
 				"wpn_toz34",
 				"wpn_wincheaster1300",
 				"wpn_spas12",
@@ -420,8 +425,6 @@ function setup_weapon_fetch_task(actor,npc,p)
 				"wpn_vintorez",
 				"wpn_svu",
 				"wpn_svd",
-				"wpn_rg-6",
-				"wpn_rpg7",
 				"wpn_g36",
 				"wpn_fn2000",
 				"wpn_pkm"
