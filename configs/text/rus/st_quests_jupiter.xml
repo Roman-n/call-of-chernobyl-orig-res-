@@ -105,7 +105,7 @@
 	</string>
 	<!-- FIND LEVEL 1 TOOLKIT FOR NITRO TASK -->
 	<string id="jup_b217_stalker_tech_task_1_name">
-		<text>Найти для Азота "%s"</text>
+		<text>Найти для Азота %s</text>
 	</string>
 	<string id="jup_b217_stalker_tech_task_1_text">
 		<text>Необходимо принести Азоту %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -121,7 +121,7 @@
 	</string>
 	<!-- FIND LEVEL 2 TOOLKIT FOR NITRO TASK -->
 	<string id="jup_b217_stalker_tech_task_2_name">
-		<text>Найти для Азота "%s"</text>
+		<text>Найти для Азота %s</text>
 	</string>
 	<string id="jup_b217_stalker_tech_task_2_text">
 		<text>Необходимо принести Азоту %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -137,7 +137,7 @@
 	</string>
 	<!-- FIND LEVEL 3 TOOLKIT FOR NITRO TASK -->
 	<string id="jup_b217_stalker_tech_task_3_name">
-		<text>Найти для Азота "%s"</text>
+		<text>Найти для Азота %s</text>
 	</string>
 	<string id="jup_b217_stalker_tech_task_3_text">
 		<text>Необходимо принести Азоту %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>

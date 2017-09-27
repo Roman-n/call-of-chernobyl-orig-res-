@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+	
 	<string id="yan_tonnel_snork_1">
-		<text>Эксперимент №1</text>
+		<text>Подопытный №1</text>
 	</string>
 	<string id="yan_tonnel_snork_2">
-		<text>Эксперимент №2</text>
+		<text>Подопытный №2</text>
 	</string>
 	<string id="yan_tonnel_snork_3">
-		<text>Эксперимент №3</text>
+		<text>Подопытный №3</text>
 	</string>
 	<string id="yan_tonnel_snork_4">
-		<text>Эксперимент №4</text>
+		<text>Подопытный №4</text>
 	</string>
 	<string id="yan_tonnel_snork_5">
-		<text>Эксперимент №5</text>
+		<text>Подопытный №5</text>
 	</string>
 	<string id="yan_tonnel_snork_6">
-		<text>Эксперимент №6</text>
+		<text>Подопытный №6</text>
 	</string>
 	<string id="yan_tonnel_gigant">
-		<text>Эксперимент №7</text>
+		<text>Образец №8с</text>
 	</string>
+
 	<string id="bar_arena_savage">
 		<text>Зомбированный</text>
 	</string>
@@ -36,4 +38,5 @@
 	<string id="bar_arena_snork">
 		<text>Снорк</text>
 	</string>
+
 </string_table>

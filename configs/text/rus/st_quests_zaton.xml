@@ -44,7 +44,7 @@
 	</string>
 	<!-- FIND LEVEL 1 TOOLKIT FOR CARDAN TASK -->
 	<string id="zat_a2_stalker_mechanic_task_1_name">
-		<text>Найти "%s" для Кардана</text>
+		<text>Найти %s для Кардана</text>
 	</string>
 	<string id="zat_a2_stalker_mechanic_task_1_text">
 		<text>Нужно принести Кардану %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -60,7 +60,7 @@
 	</string>
 	<!-- FIND LEVEL 2 TOOLKIT FOR CARDAN TASK -->
 	<string id="zat_a2_stalker_mechanic_task_2_name">
-		<text>Найти "%s" для Кардана</text>
+		<text>Найти %s для Кардана</text>
 	</string>
 	<string id="zat_a2_stalker_mechanic_task_2_text">
 		<text>Нужно принести Кардану %s, чтобы он мог обеспечить более серьёзную модернизацию оружия или бронежилета.</text>
@@ -76,7 +76,7 @@
 	</string>
 	<!-- FIND LEVEL 3 TOOLKIT FOR CARDAN TASK -->
 	<string id="zat_a2_stalker_mechanic_task_3_name">
-		<text>Найти "%s" для Кардана</text>
+		<text>Найти %s для Кардана</text>
 	</string>
 	<string id="zat_a2_stalker_mechanic_task_3_text">
 		<text>%s нужны Кардану для проведения элитных модификаций. Найдите их.</text>
