@@ -262,7 +262,7 @@ function coc_rankings_can_show(index)
 		return false
 	end
 	local se_obj = coc_ranking_list[index] ~= nil and alife_object(coc_ranking_list[index])
-	if (se_obj) then
+	if (se_obj and se_obj.character_name) then
 		return true
 	end
 	return false
@@ -271,7 +271,7 @@ end
 -- called from engine! must return string!
 function coc_rankings_set_name(index)
 	local se_obj = coc_ranking_list[index] ~= nil and alife_object(coc_ranking_list[index])
-	if (se_obj) then
+	if (se_obj and se_obj.character_name) then
 		return strformat("%s. %s",se_obj.id == 0 and actor_rank_place or index,se_obj:character_name())
 	end
 	return ""

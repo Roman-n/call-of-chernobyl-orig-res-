@@ -64,6 +64,10 @@ function heli_binder:reinit()
 		self.snd_damage = spawn_ini:r_string_ex("helicopter","snd_damage") or "heli_damaged"
 		self.snd_down	= spawn_ini:r_string_ex("helicopter","snd_down") or "heli_down"
 		self.is_story_heli = spawn_ini:section_exist("logic")
+	else 
+		self.snd_hit	= "heli_hit"
+		self.snd_damage = "heli_damaged"
+		self.snd_down	= "heli_down"
 	end 
 	
 	-- на случай загрузки
@@ -392,7 +396,7 @@ function heli_binder:on_hit( power, impulse, hit_type, enemy_id )
 	end
 	
 	-- пилоты ругаются по рации
-	if self.last_hit_snd_timeout < time_global() then
+	if (self.snd_hit and self.last_hit_snd_timeout < time_global()) then
 		xr_sound.set_sound_play(self.object:id(), self.snd_hit)
 		self.last_hit_snd_timeout = time_global() + math.random( 4000, 8000 )
 	end
