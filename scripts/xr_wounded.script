@@ -34,7 +34,7 @@ function evaluator_wound:evaluate ()
 	end
 	
 	local state = tostring(utils.load_var(o, "wounded_state"))
-	if (state == "nil") then
+	if (state == "" or state == "nil") then
 		return false
 	end
 	
@@ -108,10 +108,6 @@ function action_wounded:execute()
 		return
 	end
 
-	if (self.a.use_medkit and wound_manager:eat_medkit()) then
-		return 
-	end
-	
 	local id = npc:id()
 	local pid = db.storage[id].victim_surrender
 	local po = pid and pid < 65534 and db.storage[pid] and db.storage[pid].object
@@ -135,6 +131,10 @@ function action_wounded:execute()
 	local cur_state = state_mgr.get_state(npc)
 	if (cur_state ~= wound_manager_state) then
 		state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,{fast_set = true})
+	end
+	
+	if (self.a.use_medkit) then
+		wound_manager:eat_medkit()
 	end
 end
 function action_wounded:finalize()
