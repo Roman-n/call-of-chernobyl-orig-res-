@@ -62,12 +62,6 @@ function actor_on_net_spawn()
 				--printf("release phantom hack!")
 				sim:release(se_obj,true)
 			end
-			
-			-- hack to remove statically placed outfits (Really this should be done in level editor FIX ME!)
-			if (remove_outfits and se_obj.parent_id == 65535 and IsOutfit(nil,se_obj:clsid())) then
-				--printf("release outfit hack! %s",se_obj:name())
-				sim:release(se_obj,true)
-			end
 		end
 	end
 	if (remove_outfits) then
