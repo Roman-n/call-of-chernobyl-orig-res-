@@ -82,7 +82,10 @@ end
 
 -- called from engine during donation. return false to refuse or return true to donate
 function CUIActorMenu_DonateCurrentItem(obj,itm)
-	local inc = utils.round(ui_wpn_params.normalize(itm:cost()*itm:condition(),1,100000))
-	xr_statistic.inc_actor_reputation(inc)
+	-- Reputation and rank increase for donating items.
+	-- Uses the condition of the item as a multiplier (damage reduces the gain).
+	local rnk_inc = utils.round(xr_statistic.rank_rep["donations"].rnk * itm:condition(), 1)
+	local rpt_inc = utils.round(xr_statistic.rank_rep["donations"].rpt * itm:condition(), 1)
+	xr_statistic.inc_counter("donations", rnk_inc, rpt_inc)
 	return true
 end

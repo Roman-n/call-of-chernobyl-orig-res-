@@ -650,7 +650,6 @@ function transfer_medkit(first_speaker, second_speaker)
 		npc:set_relation(game_object.friend,db.actor)
 	end
 
-	xr_statistic.inc_actor_reputation(1)
 	xr_statistic.inc_counter("help_wounded")
 end
 function transfer_bandage(first_speaker, second_speaker)

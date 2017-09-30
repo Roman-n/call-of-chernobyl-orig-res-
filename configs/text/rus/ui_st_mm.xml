@@ -46,22 +46,22 @@
 		<text>КАРТА</text>
 	</string>
 	<string id="renderer_r1">
-		<text>Статичное освещение</text>
+		<text>DirectX 8 (Basic)</text>
 	</string>
 	<string id="renderer_r2a">
-		<text>Динам. освещение объектов</text>
+		<text>DirectX 9 (Basic)</text>
 	</string>
 	<string id="renderer_r2">
-		<text>Полное динамич. освещение</text>
+		<text>DirectX 9 (Normal)</text>
 	</string>
 	<string id="renderer_r2.5">
-		<text>Улучш. полное освещение</text>
+		<text>DirectX 9 (Enhanced)</text>
 	</string>
 	<string id="renderer_r3">
-		<text>Ул. полное освещение (DX10)</text>
+		<text>DirectX 10 (Enhanced)</text>
 	</string>
 	<string id="renderer_r4">
-		<text>Ул. полное освещение (DX11)</text>
+		<text>DirectX 11 (Enhanced)</text>
 	</string>
 	<string id="st_opt_high">
 		<text>высоко</text>
@@ -439,14 +439,11 @@
 	<string id="st_cap_check_azazel_mode">
 		<text>Жизнь после жизни</text>
 	</string>
-	<string id="st_cap_check_hardcore_aim">
-		<text>Меткие НПС</text>
-	</string>
 	<string id="ui_mm_debug_hud">
-		<text>Debug Hud</text>
+		<text>Debug HUD</text>
 	</string>
 	<string id="ui_mm_debug_map_hud">
-		<text>Debug HUD Mapspots</text>
+		<text>Debug режим глоб.карты</text>
 	</string>
 	<string id="ui_mm_radio_mod">
 		<text>Музыка радио</text>
