@@ -8,11 +8,22 @@
 
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
-	RegisterScriptCallback("actor_on_item_use", on_item_use)
+	-- Loading the game.
+	--RegisterScriptCallback("on_game_load", on_game_load)
+	
+	-- Entering a vehicle.
+	--RegisterScriptCallback("actor_on_attach_vehicle", on_attach_vehicle)
+	--RegisterScriptCallback("actor_on_use_vehicle", on_attach_vehicle)
+
+	-- Item interaction and acquisition.
+	RegisterScriptCallback("actor_on_item_take", on_item_interact)
+	RegisterScriptCallback("actor_on_item_take_from_box", on_item_interact)
+	RegisterScriptCallback("actor_on_item_use", on_item_interact)
+	RegisterScriptCallback("actor_on_trade", on_item_interact)
 end
 
--- Unlocks an article when an item is used.
-function on_item_use(item)
+-- Called when interacting with an item.
+function on_item_interact(item)
 	-- Ensure that we can proceed safely.
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local interactivity = guide.interactivity or {}
