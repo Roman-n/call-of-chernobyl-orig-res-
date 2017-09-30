@@ -8,13 +8,14 @@
 
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
-	-- Characters, levels, mutants and vehicles.
+	-- Note that not all interactivity is done via callbacks.
+
+	-- Characters, mutants and vehicles.
 	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
-	RegisterScriptCallback("on_game_load", on_interact_level)
 	RegisterScriptCallback("monster_on_death_callback", on_interact_mutant)
 	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
 	
-	-- Items.
+	-- Items can be interacted with multiple ways.
 	--RegisterScriptCallback("actor_on_item_take", on_interact_item)
 	--RegisterScriptCallback("actor_on_item_take_from_box", on_interact_item)
 	RegisterScriptCallback("actor_on_item_use", on_interact_item)
@@ -49,11 +50,6 @@ function on_interact_item(item)
 	on_interact("items", item:section())
 end
 
--- Called when finished loading a level.
-function on_interact_level()
-	on_interact("levels", level.name())
-end
-
 -- Called when killing a mutant.
 function on_interact_mutant(mutant, killer)
 	-- Return if the player did not kill the mutant.
@@ -84,6 +80,12 @@ function on_interact_mutant(mutant, killer)
 		[clsid.zombie_s]			= "zombie",
 	}
 	on_interact("mutants", clsid_to_section[mutant:clsid()])
+end
+
+-- Called when near a smart terrain.
+-- Uses the smart terrain's update, not a callback.
+function on_interact_smart(smart)
+	on_interact("smarts", smart:name())
 end
 
 -- Called when entering a vehicle.

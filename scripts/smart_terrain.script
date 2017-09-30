@@ -1219,6 +1219,7 @@ function se_smart_terrain:update()
 		
 		if (self.dist_to_actor <= 50) then
 			xr_statistic.smart_terrain_mark_visited(self)
+			dxr_encyclopedia.on_interact_smart(self)
 		end	
 		if (nearest_to_actor_smart.id) then 
 			if (nearest_to_actor_smart.id == self.id) then 
