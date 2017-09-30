@@ -344,12 +344,12 @@ function motivator_binder:death_callback(victim, who)
 	end
 	
 	if (victim:has_info("npcx_is_companion")) then 
-		xr_statistic.inc_actor_reputation(-75) -- lose rep for companion death, nobody would want to hang out with a loser!
+		xr_statistic.inc_counter("killed_companions") -- lose rep for companion death, nobody would want to hang out with a loser!
 	elseif (who and who:id() == 0) then
 		if (utils.load_var(victim,"victim_surrender",false) == true) then
 			local state = tostring(utils.load_var(victim, "wounded_state"))
 			if (state ~= "nil") then
-				xr_statistic.inc_actor_reputation(-25) -- lose rep for killing still wounded surrendered victim
+				xr_statistic.inc_counter("killed_prisoners") -- lose rep for killing still wounded surrendered victim
 			end
 		end
 	end

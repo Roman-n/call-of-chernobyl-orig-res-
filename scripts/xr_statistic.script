@@ -10,6 +10,7 @@ actor_statistic = {
 					best_monster = nil,
 					boxes_smashed = 0,
 					deaths = 0,
+					donations = 0,
 					enemies_surrendered = 0,
 					favorite_weapon_sect = nil,
 					field_dressings = 0,
@@ -17,7 +18,9 @@ actor_statistic = {
 					heli_kills = 0,
 					heli_rocket_kills = 0,
 					help_wounded = 0,
+					killed_companions = 0,
 					killed_monsters = 0,
+					killed_prisoners = 0,
 					killed_stalkers = 0,
 					level_changes = -1, -- Increases on start relocation.
 					pdas_delivered = 0,
@@ -71,13 +74,16 @@ rank_rep = {
 			artefacts_detected	=	{rnk=5,		rpt=0},
 			artefacts_found		=	{rnk=5,		rpt=0},
 			boxes_smashed		=	{rnk=1,		rpt=0},
+			donations			=	{rnk=0,		rpt=20},	-- When at maximum condition.
 			enemies_surrendered	=	{rnk=10,	rpt=0},
 			field_dressings		=	{rnk=1,		rpt=0},
 			guide_articles		=	{rnk=10,	rpt=0},
 			heli_kills			=	{rnk=50,	rpt=25},
 			heli_rocket_kills	=	{rnk=25,	rpt=0},		-- Extra points.
 			help_wounded		=	{rnk=10,	rpt=10},
+			killed_companions	=	{rnk=0,		rpt=-75},
 			killed_monsters		=	{rnk=5,		rpt=0},
+			killed_prisoners	=	{rnk=0,		rpt=-25},
 			killed_stalkers		=	{rnk=0,		rpt=0},		-- Not used; see below.
 			level_changes		=	{rnk=0,		rpt=0},
 			pdas_delivered		=	{rnk=10,	rpt=10},
@@ -208,20 +214,16 @@ function load_state(data)
 end
 
 function inc_achievement(achievement)
-	inc_counter("achievements")
-	if rank_rep[achievement] then
-		inc_actor_rank(rank_rep[achievement].rnk)
-		inc_actor_reputation(rank_rep[achievement].rpt)
-	end
+	inc_counter("achievements", rank_rep[achievement].rnk, rank_rep[achievement].rpt)
 end
 
-function inc_counter(statistic)
+function inc_counter(statistic, cstm_rnk, cstm_rpt)
 	if actor_statistic[statistic] and type(actor_statistic[statistic]) == "number" then
 		actor_statistic[statistic] = actor_statistic[statistic] + 1
 	end
 	if rank_rep[statistic] then
-		inc_actor_rank(rank_rep[statistic].rnk)
-		inc_actor_reputation(rank_rep[statistic].rpt)
+		inc_actor_rank(cstm_rnk or rank_rep[statistic].rnk)
+		inc_actor_reputation(cstm_rpt or rank_rep[statistic].rpt)
 	end
 end
 
