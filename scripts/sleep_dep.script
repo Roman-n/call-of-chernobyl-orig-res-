@@ -60,7 +60,7 @@ function activate_feature()
 	caff_chk 				= 0	
 	
 	force 					= 60				--// time between sleeps that triggers passing out
-	start_blur 				= 16				--// time between sleeps when vision blur starts 
+	start_blur 				= 20				--// time between sleeps when vision blur starts 
 	itn_mul 				= 0.2				--// blur intensity multiplier
 	pwr_rate,rng_factor 	= -0.00065, 0.08		--// power reduction rate ,high/low range multiplier - lower is flatter
 	caff_max				= 3					--// max energy drinks per hr

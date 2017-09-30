@@ -756,9 +756,9 @@ function action_danger:execute()
 	elseif (bd_type == danger_object.entity_corpse) then
 		script_action_danger_corpse(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
 		return
-	elseif (bd_type == danger_object.attacked) then
-		script_action_danger_attacked(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
-		return
+	-- elseif (bd_type == danger_object.attacked) then
+		-- script_action_danger_attacked(npc,self.a,best_danger,best_danger_object,dependent_object,bd_type)
+		-- return
 	end
 
 	if (check_script_danger(npc:id())) then
@@ -841,7 +841,7 @@ function evaluator_check_danger:evaluate()
 		return false
 	end 
 	
-	if (bd_type == danger_object.attacked or bd_type == danger_object.entity_corpse or bd_type == danger_object.grenade) then
+	if (--[[bd_type == danger_object.attacked or --]] bd_type == danger_object.entity_corpse or bd_type == danger_object.grenade) then
 		return true
 	end
 
