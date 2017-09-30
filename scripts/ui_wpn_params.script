@@ -3,7 +3,7 @@ function normalize(val, min, max)
 	if d < 0 then
 		return 0
 	end
-	return d
+	return utils.clamp(d,0,100)
 end
 
 function normalizeMP(val)

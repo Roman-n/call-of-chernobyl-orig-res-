@@ -82,6 +82,7 @@ end
 
 -- called from engine during donation. return false to refuse or return true to donate
 function CUIActorMenu_DonateCurrentItem(obj,itm)
-	xr_statistic.inc_actor_reputation(1)
+	local inc = utils.round(ui_wpn_params.normalize(itm:cost()*itm:condition(),1,100000))
+	xr_statistic.inc_actor_reputation(inc)
 	return true
 end
