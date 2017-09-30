@@ -8,35 +8,87 @@
 
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
-	-- Loading the game.
-	--RegisterScriptCallback("on_game_load", on_game_load)
+	-- Characters, levels, mutants and vehicles.
+	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
+	RegisterScriptCallback("on_game_load", on_interact_level)
+	RegisterScriptCallback("monster_on_death_callback", on_interact_mutant)
+	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
 	
-	-- Entering a vehicle.
-	--RegisterScriptCallback("actor_on_attach_vehicle", on_attach_vehicle)
-	--RegisterScriptCallback("actor_on_use_vehicle", on_attach_vehicle)
+	-- Items.
+	--RegisterScriptCallback("actor_on_item_take", on_interact_item)
+	--RegisterScriptCallback("actor_on_item_take_from_box", on_interact_item)
+	RegisterScriptCallback("actor_on_item_use", on_interact_item)
+	--RegisterScriptCallback("actor_on_trade", on_interact_item)
+end
 
-	-- Item interaction and acquisition.
-	RegisterScriptCallback("actor_on_item_take", on_item_interact)
-	RegisterScriptCallback("actor_on_item_take_from_box", on_item_interact)
-	RegisterScriptCallback("actor_on_item_use", on_item_interact)
-	RegisterScriptCallback("actor_on_trade", on_item_interact)
+-- Generic method to save repeating code.
+function on_interact(key, section)
+	local guide = ui_pda_encyclopedia_tab.get_ui()
+	local interactivity = guide.interactivity or {}
+	if not (section and interactivity[key]) then
+		return
+	end
+	for k, v in pairs(interactivity[key]) do
+		if (k == section) then
+			unlock_article(v)
+			break
+		end
+	end
+end
+
+-- Called when closing dialog with a character.
+function on_interact_character(character)
+	local story_id = get_object_story_id(character) or nil
+	if (story_id) then
+		on_interact("characters", story_id)
+	end
 end
 
 -- Called when interacting with an item.
-function on_item_interact(item)
-	-- Ensure that we can proceed safely.
-	local guide = ui_pda_encyclopedia_tab.get_ui()
-	local interactivity = guide.interactivity or {}
-	if not (item and interactivity["items"]) then
+function on_interact_item(item)
+	on_interact("items", item:section())
+end
+
+-- Called when finished loading a level.
+function on_interact_level()
+	on_interact("levels", level.name())
+end
+
+-- Called when killing a mutant.
+function on_interact_mutant(mutant, killer)
+	-- Return if the player did not kill the mutant.
+	if not (killer:id() == db.actor:id()) then
 		return
 	end
-	-- Find the article matched with the item.
-	for k, v in pairs(interactivity["items"]) do
-		if (k == item:section()) then
-			unlock_article(v)
-		end
-	end
-	
+	-- Figure out which mutant died from its class id.
+	local clsid_to_section = {
+		[clsid.bloodsucker_s] 		= "bloodsucker",
+		[clsid.boar_s] 				= "boar",
+		[clsid.burer_s] 			= "burer",
+		[clsid.cat_s]				= "cat",
+		[clsid.chimera_s]			= "chimera",
+		[clsid.controller_s]		= "controller",
+		[clsid.crow]				= "crow",
+		[clsid.dog_s]				= "dog",
+		[clsid.flesh_s]				= "flesh",
+		[clsid.fracture_s]			= "fracture",
+		[clsid.gigant_s]			= "gigant",
+		[clsid.karlik_s]			= "karlik",
+		[clsid.poltergeist_s]		= "poltergeist",
+		[clsid.pseudodog_s]			= "pseudodog",
+		[clsid.psy_dog_phantom_s]	= "psy_dog",
+		[clsid.psy_dog_s]			= "psy_dog",
+		[clsid.rat_s]				= "rat",
+		[clsid.snork_s]				= "snork",
+		[clsid.tushkano_s]			= "tushkano",
+		[clsid.zombie_s]			= "zombie",
+	}
+	on_interact("mutants", clsid_to_section[mutant:clsid()])
+end
+
+-- Called when entering a vehicle.
+function on_interact_vehicle(vehicle)
+	on_interact("vehicles", vehicle:section())
 end
 
 ---------------------------
