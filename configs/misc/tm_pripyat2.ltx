@@ -108,7 +108,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = pri_monolith_monolith_trader_stalker_task_5_fetch_finish
 ; precondition = {=random_chance(60)} true, false
-on_complete = %=reward_item_cost_mult_and_remove(pri_monolith_monolith_trader_stalker_task_5_fetch:4) =reward_stash(true) =remove_fetch_item(pri_monolith_monolith_trader_stalker_task_5_fetch) =inc_task_stage(pri_monolith_monolith_trader_stalker_task_5) =pstor_reset(pri_monolith_monolith_trader_stalker_task_5_fetch)%
+on_complete = %=reward_item_cost_mult_and_remove(pri_monolith_monolith_trader_stalker_task_5_fetch:4) =reward_stash(true) =inc_task_stage(pri_monolith_monolith_trader_stalker_task_5) =pstor_reset(pri_monolith_monolith_trader_stalker_task_5_fetch)%
 
 
 ;--------------------------------------------------------------------------------------------------

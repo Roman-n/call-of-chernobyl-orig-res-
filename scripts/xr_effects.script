@@ -223,7 +223,9 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 		return 
 	end 
 	dialogs.relocate_money(db.actor, (tonumber(p[2]) or 1)*item:cost()*item:condition() ,"in")
-	remove_item(actor, npc, {sec,p[3]})
+	
+	local amt = utils.load_var(db.actor,p[1].."_count") or 1
+	remove_item(actor, npc, {sec,amt})
 end 
 
 function reward_random_item(actor,npc,p)
