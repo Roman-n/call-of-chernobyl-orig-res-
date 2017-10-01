@@ -2,25 +2,34 @@
 ----- Written by Darryl123 -----
 --------------------------------
 
----------------------
------ Callbacks -----
----------------------
+--------------------------
+----- Initialisation -----
+--------------------------
 
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
 	-- Note that not all interactivity is done via callbacks.
+	-- Examples: Entering smart terrains and field-dressing (successfully) mutants.
 
-	-- Characters, mutants and vehicles.
-	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
+	-- Killing mutants and entering vehicles.
 	RegisterScriptCallback("monster_on_death_callback", on_interact_mutant)
 	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
 	
-	-- Items can be interacted with multiple ways.
+	-- Talking-to, killing and looting important characters.
+	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
+	RegisterScriptCallback("npc_on_death_callback", on_interact_character2)
+	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character3)
+	
+	-- Taking, stealing, using and trading items.
 	--RegisterScriptCallback("actor_on_item_take", on_interact_item)
 	--RegisterScriptCallback("actor_on_item_take_from_box", on_interact_item)
 	RegisterScriptCallback("actor_on_item_use", on_interact_item)
 	--RegisterScriptCallback("actor_on_trade", on_interact_item)
 end
+
+-------------------------
+----- Interactivity -----
+-------------------------
 
 -- Generic method to save repeating code.
 function on_interact(key, section)
@@ -37,7 +46,7 @@ function on_interact(key, section)
 	end
 end
 
--- Called when closing dialog with a character.
+-- Characters: Talking-to.
 function on_interact_character(character)
 	local story_id = get_object_story_id(character) or nil
 	if (story_id) then
@@ -45,12 +54,36 @@ function on_interact_character(character)
 	end
 end
 
--- Called when interacting with an item.
+-- Characters: Killing.
+function on_interact_character2(character, killer)
+	-- Return if the player did not kill the character.
+	if not (killer:id() == db.actor:id()) then
+		return
+	end
+	local story_id = get_object_story_id(character:id()) or nil
+	if (story_id) then
+		on_interact("characters", story_id)
+	end
+end
+
+-- Characters: Looting.
+function on_interact_character3()
+	local character = ActorMenu.get_actor_menu():GetPartner()
+	if (not character or character:alive()) then
+		return
+	end
+	local story_id = get_object_story_id(character:id()) or nil
+	if (story_id) then
+		on_interact("characters", story_id)
+	end
+end
+
+-- Items: Interacting.
 function on_interact_item(item)
 	on_interact("items", item:section())
 end
 
--- Called when killing a mutant.
+-- Mutants: Killing.
 function on_interact_mutant(mutant, killer)
 	-- Return if the player did not kill the mutant.
 	if not (killer:id() == db.actor:id()) then
@@ -82,13 +115,19 @@ function on_interact_mutant(mutant, killer)
 	on_interact("mutants", clsid_to_section[mutant:clsid()])
 end
 
--- Called when near a smart terrain.
--- Uses the smart terrain's update, not a callback.
+-- Mutants: Field-dressing.
+-- Does not use a script callback to function.
+function on_interact_mutant2(mutant)
+	on_interact("mutants", mutant)
+end
+
+-- Smart terrains: Entering.
+-- Does not use a script callback to function.
 function on_interact_smart(smart)
 	on_interact("smarts", smart:name())
 end
 
--- Called when entering a vehicle.
+-- Vehicles: Entering.
 function on_interact_vehicle(vehicle)
 	on_interact("vehicles", vehicle:section())
 end
