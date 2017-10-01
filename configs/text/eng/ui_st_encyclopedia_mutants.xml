@@ -5,15 +5,28 @@
 		<text>Mutants</text>
 	</string>
 	
+	<string id="encyclopedia_mutants_blind_dog">
+		<text>Blind dog</text>
+	</string>
+	<string id="encyclopedia_mutants_blind_dog_text">
+		<text>
+			Blind dogs are the most familiar representative of the Zone.\n
+			\nMutations and evolutionary adaptation have led to the strengthening of previously weakly expressed canine abilities, mainly at the expense of those that share their habitat.\n
+			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey literally through the walls.\n
+			\nOn their own they aren't too much of a worry and can quickly be dispatched, but they can easily overwhelm effectively anything when hunting in large enough numbers.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_mutants_bloodsucker">
 		<text>Bloodsucker</text>
 	</string>
 	<string id="encyclopedia_mutants_bloodsucker_text">
 		<text>
-			Bloodsuckers are semi-legendary nocturnal monsters and some of the most dangerous found in the Zone.\n
-			\nThose who have encountered the creature and lived to tell about it have often described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
-			\nSaid tentacles are used to simultaneously dig into the necks of their prey and deliver a paralysing toxin whilst also sucking out as much blood from the victim as it can - not all too different from the traditional vampire.\n
-			\nMany variants of this creature exist with black, green and red colouring, but it is believed that there are no behavioural differences between them and is likely just warning colouration.
+			Bloodsuckers are semi-legendary monsters and some of the most dangerous in the Zone.\n
+			\nThose who have encountered them and lived to tell about it have described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
+			\nThese tentacles are used by the creatures to simultaneously dig into the necks of their prey and deliver a paralysing toxin, while also draining the victim of as much blood as possible.\n
+			\nSomehow they have also developed a rather unique ability, being able to temporarily turn almost completely invisible until just before they attack.\n 
+			\nMany variants of this creature exist with black, green and red colouring, but it is believed that there are no behavioural differences between them.
 		</text>
 	</string>
 	
@@ -22,10 +35,11 @@
 	</string>
 	<string id="encyclopedia_mutants_boar_text">
 		<text>
-			Boars are aggressive and very lively beasts far surpassing their relatives outsize of the Zone.\n
+			Boars are aggressive and very lively beasts far surpassing their relatives outside of the Zone.\n
 			\nMutagenic processes have largely affected the appearance of these mammals: in places the latter were bald, the other on the contrary are overgrown with very long and thick wool.\n
-			\nThey are rapid breeders and as such extremely common to find in almost any corner of the Zone, and whilst very territorial they are also quite harmless if you keep your distance and try not to bother them.\n
-			\nFortunately natural selection hasn't had enough time to have had much effect, and their most vulnerable spot is exposed to you if they decide to charge. A few shotgun blasts or knife wounds to the head can quickly kill this creature.
+			\nThey are rapid breeders and as such extremely common to find in almost any corner of the Zone, and whilst very territorial they are also quite harmless if distance is kept and they aren't antagonised.\n
+			\nFortunately natural selection hasn't had enough time to play its part, and their most vulnerable spot is exposed when they decide to charge.\n
+			\nA few shotgun blasts or knife wounds to the head can quickly kill these creatures.
 		</text>
 	</string>
 	
@@ -34,10 +48,10 @@
 	</string>
 	<string id="encyclopedia_mutants_burer_text">
 		<text>
-			Burers are huge lumbering creatures, capable of extremely powerful telekenetic abilities.\n
-			\nCreated as a result of the many genetic experiments carried out on criminals before the second disaster, the burer has hypertrophic and exaggerated features and are mainly found in and around underground laboratories.\n
+			Burers are large, lumbering creatures, capable of extremely powerful telekenetic abilities.\n
+			\nCreated as a result of the many genetic experiments carried out on criminals before the second disaster, burers have hypertrophic and exaggerated features and are mainly found in and around underground laboratories.\n
 			\nLike most psychic mutants they are capable of indirect and distant attacks, launching large waves of energy (often electrical or thermal) at their targets, and being able to lift and hurl large, heavy objects with their telekinesis.\n
-			\nStories exist of stalkers allegedly stabbing these creatures to death, claiming they can create a psychic field protecting them from projectiles - but not many are willing to put this to the test given what burers are capable of.\n
+			\nStories exist of stalkers allegedly stabbing these creatures to death, claiming they can create a psychic field protecting them from projectiles - but not many are willing to put this to the test given what they are capable of.
 		</text>
 	</string>
 	
@@ -49,8 +63,7 @@
 			Cats in the Zone are a mutated form of the Eurasian Lynx.\n
 			\nLike dogs, they are usually considered to be nothing more than an annoyance when on their own, but incredibly dangerous if there are multiple working together.\n
 			\nA group of cats will frequently try to make use of diversionary tactics, taking turns to distract whilst the rest will attempt to use their claws and teeth to slash their prey from behind - until it eventually tires or bleeds out.\n
-			\nOne good approach for dealing with multiple cats at once is to avoid fighting them in an open area, this hinders their manoeuvrability and prevents them from easily avoiding gunfire.\n
-			\nEnclosed spaces such as housing is not recommended, as they will soon realise that they can easily entrap you.
+			\nOne good approach for dealing with multiple cats at once is to avoid fighting them in an open area, this hinders their manoeuvrability and prevents them from easily avoiding gunfire.
 		</text>
 	</string>
 	
@@ -61,10 +74,69 @@
 		<text>
 			Chimeras are extremely clever, strong and cunning, and considered one of the Zone's most dangerous predators.\n
 			\nIf the lion is the king of the jungle then the chimera is the king of the Zone - it is an almost evolutionarily perfect killing machine.\n
-			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera is extremely smart and can easily shrug off organ failure and massive blood loss.\n
+			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
 			\nAs if it nature didn't favour it enough, its second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour - and it mostly does all this at night when nobody can see it.\n
-			\nThey are primarily seen within the Red Forest, and from time-to-time Jupiter and Zaton, but they frequently search for new hunting grounds when they run out of things left to kill at their old one.\n
-			\nThere is no easy way to kill a chimera as they have killed even the most experienced hunters such as Fox and Danila, however you will likely fare better when confronting the beast in a well-armed and well-equipped group.
+			\nThey are primarily seen within the Red Forest, and from time-to-time Jupiter and Zaton, but they frequently search for new hunting grounds when they run out of things to kill.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_controller">
+		<text>Controller</text>
+	</string>
+	<string id="encyclopedia_mutants_controller_text">
+		<text>
+			Controllers are powerful psychic creatures, and are equally just as deadly.\n
+			\nOutwardly resembling a human being with a disproportionately enlarged head, a controller is capable of influencing and often directly controlling another living being's actions.\n
+			\nUnlike other psychic mutants a controller won't manipulate physical objects, but will instead fight with its brain - in a very literal sense - often easily killing entire squads of stalkers.\n
+			\nDespite the horrible stories about them told by survivors, it is alleged that they can only attack what they can see.\n
+			\nMaking good use of cover could potentially make all the difference between life and death.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_crow">
+		<text>Crow</text>
+	</string>
+	<string id="encyclopedia_mutants_crow_text">
+		<text>
+			Crows are the only bird species to have survived in the Zone.\n
+			\nIn order not to perish in a labyrinth of gravitational anomalies, military pilots use sophisticated detectors, but the secret of how crows safely navigate the Zone's skies remains a mystery.\n
+			\nLittle else known about what makes the Zone's crows so special, or why they have remained almost completely genetically intact when compared to the rest of the local wildlife.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_flesh">
+		<text>Flesh</text>
+	</string>
+	<string id="encyclopedia_mutants_flesh_text">
+		<text>
+			Flesh are heavily mutated pigs, but one of the most harmless mutants of the Zone.\n
+			\nDomesticated pigs have undergone strong mutations in the Zone like many other animals, however they are have come out of it almost completely unrecognisable.\n
+			\nTheir forelimbs have turned into insect-like legs which the flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
+			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is cornered and has nowhere else to run.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_fracture">
+		<text>Fracture</text>
+	</string>
+	<string id="encyclopedia_mutants_fracture_text">
+		<text>
+			Fractures are former - seemingly devolved - human beings with an animalistic mindset.\n
+			\nUnlike other mutant humanoids the fracture has retained a rather familiar appearance, looking like a hunchbacked old man in tattered clothing, despite being over two meters tall.\n
+			\nNot much is known about these creatures, it is believed they were either former residents who illegally lived in the area before the second disaster, or early test subjects involved in genetic experimentation.\n
+			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with little to no effort.\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_pseudogiant">
+		<text>Pseudogiant</text>
+	</string>
+	<string id="encyclopedia_mutants_pseudogiant_text">
+		<text>
+			Pseudogiants are one of the rarest and most fearsome mutants in the Zone.\n
+			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before dying.\n
+			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it.\n
+			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back.\n
 		</text>
 	</string>
 	

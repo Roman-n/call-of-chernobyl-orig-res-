@@ -11,14 +11,12 @@ function on_game_start()
 	-- Note that not all interactivity is done via callbacks.
 	-- Examples: Entering smart terrains and field-dressing (successfully) mutants.
 
-	-- Killing mutants and entering vehicles.
-	RegisterScriptCallback("monster_on_death_callback", on_interact_mutant)
+	-- Entering vehicles.
 	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
 	
 	-- Talking-to, killing and looting important characters.
 	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
-	RegisterScriptCallback("npc_on_death_callback", on_interact_character2)
-	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character3)
+	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character2)
 	
 	-- Taking, stealing, using and trading items.
 	--RegisterScriptCallback("actor_on_item_take", on_interact_item)
@@ -54,20 +52,8 @@ function on_interact_character(character)
 	end
 end
 
--- Characters: Killing.
-function on_interact_character2(character, killer)
-	-- Return if the player did not kill the character.
-	if not (killer:id() == db.actor:id()) then
-		return
-	end
-	local story_id = get_object_story_id(character:id()) or nil
-	if (story_id) then
-		on_interact("characters", story_id)
-	end
-end
-
 -- Characters: Looting.
-function on_interact_character3()
+function on_interact_character2()
 	local character = ActorMenu.get_actor_menu():GetPartner()
 	if (not character or character:alive()) then
 		return
@@ -83,41 +69,9 @@ function on_interact_item(item)
 	on_interact("items", item:section())
 end
 
--- Mutants: Killing.
-function on_interact_mutant(mutant, killer)
-	-- Return if the player did not kill the mutant.
-	if not (killer:id() == db.actor:id()) then
-		return
-	end
-	-- Figure out which mutant died from its class id.
-	local clsid_to_section = {
-		[clsid.bloodsucker_s] 		= "bloodsucker",
-		[clsid.boar_s] 				= "boar",
-		[clsid.burer_s] 			= "burer",
-		[clsid.cat_s]				= "cat",
-		[clsid.chimera_s]			= "chimera",
-		[clsid.controller_s]		= "controller",
-		[clsid.crow]				= "crow",
-		[clsid.dog_s]				= "dog",
-		[clsid.flesh_s]				= "flesh",
-		[clsid.fracture_s]			= "fracture",
-		[clsid.gigant_s]			= "gigant",
-		[clsid.karlik_s]			= "karlik",
-		[clsid.poltergeist_s]		= "poltergeist",
-		[clsid.pseudodog_s]			= "pseudodog",
-		[clsid.psy_dog_phantom_s]	= "psy_dog",
-		[clsid.psy_dog_s]			= "psy_dog",
-		[clsid.rat_s]				= "rat",
-		[clsid.snork_s]				= "snork",
-		[clsid.tushkano_s]			= "tushkano",
-		[clsid.zombie_s]			= "zombie",
-	}
-	on_interact("mutants", clsid_to_section[mutant:clsid()])
-end
-
 -- Mutants: Field-dressing.
 -- Does not use a script callback to function.
-function on_interact_mutant2(mutant)
+function on_interact_mutant(mutant)
 	on_interact("mutants", mutant)
 end
 
