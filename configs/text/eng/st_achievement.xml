@@ -187,10 +187,10 @@
 		<text>Bookworm Food</text>
 	</string>
 	<string id="st_achievement_15_hint">
-		<text>Add text to this later - I'm unsure what the reward should be.</text>
+		<text>Memory sticks will be replaced by rare PDAs when found.</text>
 	</string>
 	<string id="st_achievement_15_descr">
-		<text>Add text to this later - achievement is unlocked for unlocking all encyclopedia articles.</text>
+		<text>Through your own endeavours or by reading about those of others, you have come to learn a lot about the Zone and its many inhabitants. Perhaps you should consider sharing some of this knowledge?</text>
 	</string>
 	<string id="st_achievement_15_unlock">
 		<text>You have unlocked the "Bookworm Food" achievement.</text>

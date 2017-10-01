@@ -124,6 +124,13 @@ function pda_encyclopedia_tab:InitArticles(category)
 		section = articles[i]
 		if (section) then
 			item.sect:SetText(game.translate_string(section))
+			-- Hide the article's title if it isn't unlocked.
+			for k, v in pairs(self.locked_articles) do
+				if (v == section) then
+					item.sect:SetText("??????????")
+					break
+				end
+			end
 			self.article_list:AddExistingItem(item)
 		end
 	end
