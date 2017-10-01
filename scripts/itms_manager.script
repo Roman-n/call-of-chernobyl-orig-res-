@@ -421,7 +421,11 @@ function loot_mutant(obj,cls,t,npc)
 	}
 
 	local loot_table = alun_utils.collect_section(ini,clsid_to_section[cls])
-	dxr_encyclopedia.on_interact_mutant(clsid_to_section[cls])
+	
+	-- Unlock relevant mutant article in guide.
+	if not npc then
+		dxr_encyclopedia.on_interact_mutant(clsid_to_section[cls])
+	end
 
 	local loot,sec
 	for i=1,#loot_table do
