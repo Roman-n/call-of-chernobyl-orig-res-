@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_mutants">
+		<text>Mutants</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_bloodsucker">
+		<text>Bloodsucker</text>
+	</string>
+	<string id="encyclopedia_mutants_bloodsucker_text">
+		<text>
+			Bloodsuckers are semi-legendary nocturnal monsters and some of the most dangerous found in the Zone.\n
+			\nThose who have encountered the creature and lived to tell about it have often described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
+			\nSaid tentacles are used to simultaneously dig into the necks of their prey and deliver a paralysing toxin whilst also sucking out as much blood from the victim as it can - not all too different from the traditional vampire.\n
+			\nMany variants of this creature exist with black, green and red colouring, but it is believed that there are no behavioural differences between them and is likely just warning colouration.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_boar">
+		<text>Boar</text>
+	</string>
+	<string id="encyclopedia_mutants_boar_text">
+		<text>
+			Boars are aggressive and very lively beasts far surpassing their relatives outsize of the Zone.\n
+			\nMutagenic processes have largely affected the appearance of these mammals: in places the latter were bald, the other on the contrary are overgrown with very long and thick wool.\n
+			\nThey are rapid breeders and as such extremely common to find in almost any corner of the Zone, and whilst very territorial they are also quite harmless if you keep your distance and try not to bother them.\n
+			\nFortunately natural selection hasn't had enough time to have had much effect, and their most vulnerable spot is exposed to you if they decide to charge. A few shotgun blasts or knife wounds to the head can quickly kill this creature.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_burer">
+		<text>Burer</text>
+	</string>
+	<string id="encyclopedia_mutants_burer_text">
+		<text>
+			Burers are huge lumbering creatures, capable of extremely powerful telekenetic abilities.\n
+			\nCreated as a result of the many genetic experiments carried out on criminals before the second disaster, the burer has hypertrophic and exaggerated features and are mainly found in and around underground laboratories.\n
+			\nLike most psychic mutants they are capable of indirect and distant attacks, launching large waves of energy (often electrical or thermal) at their targets, and being able to lift and hurl large, heavy objects with their telekinesis.\n
+			\nStories exist of stalkers allegedly stabbing these creatures to death, claiming they can create a psychic field protecting them from projectiles - but not many are willing to put this to the test given what burers are capable of.\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_cat">
+		<text>Cat</text>
+	</string>
+	<string id="encyclopedia_mutants_cat_text">
+		<text>
+			Cats in the Zone are a mutated form of the Eurasian Lynx.\n
+			\nLike dogs, they are usually considered to be nothing more than an annoyance when on their own, but incredibly dangerous if there are multiple working together.\n
+			\nA group of cats will frequently try to make use of diversionary tactics, taking turns to distract whilst the rest will attempt to use their claws and teeth to slash their prey from behind - until it eventually tires or bleeds out.\n
+			\nOne good approach for dealing with multiple cats at once is to avoid fighting them in an open area, this hinders their manoeuvrability and prevents them from easily avoiding gunfire.\n
+			\nEnclosed spaces such as housing is not recommended, as they will soon realise that they can easily entrap you.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_chimera">
+		<text>Chimera</text>
+	</string>
+	<string id="encyclopedia_mutants_chimera_text">
+		<text>
+			Chimeras are extremely clever, strong and cunning, and considered one of the Zone's most dangerous predators.\n
+			\nIf the lion is the king of the jungle then the chimera is the king of the Zone - it is an almost evolutionarily perfect killing machine.\n
+			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera is extremely smart and can easily shrug off organ failure and massive blood loss.\n
+			\nAs if it nature didn't favour it enough, its second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour - and it mostly does all this at night when nobody can see it.\n
+			\nThey are primarily seen within the Red Forest, and from time-to-time Jupiter and Zaton, but they frequently search for new hunting grounds when they run out of things left to kill at their old one.\n
+			\nThere is no easy way to kill a chimera as they have killed even the most experienced hunters such as Fox and Danila, however you will likely fare better when confronting the beast in a well-armed and well-equipped group.
+		</text>
+	</string>
+	
+</string_table>

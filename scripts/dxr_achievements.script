@@ -13,7 +13,7 @@ end
 
 -- Returns how many achievements are available.
 function get_achievements_available()
-	local available = 14
+	local available = 15
 	
 	-- 'Duga Free' and 'Wishful Thinking'.
 	if (has_alife_info("story_mode_disabled")) then
@@ -26,6 +26,23 @@ end
 --------------------
 ----- Functors -----
 --------------------
+
+-- Bookworm Food
+function bookworm_food_functor()
+	-- Check if it can be unlocked.
+	if (not can_unlock()) then
+		return false
+	end
+	-- Check if it is already unlocked.
+	if (has_alife_info("achieved_bookworm_food")) then
+		return true
+	end
+	-- Unlock the achievement.
+	if (bookworm_food_requirements()) then
+		bookworm_food_rewards()
+		return true
+	end
+end
 
 -- Completionist.
 function completionist_functor()
@@ -275,13 +292,23 @@ end
 ----- Requirements -----
 ------------------------
 
+-- Bookworm Food
+-- Requires all encyclopedia articles be unlocked.
+function bookworm_food_requirements()
+	return (
+				(dxr_encyclopedia.get_locked_articles_count() == 0)
+		)
+end
+
+
 -- Completionist.
 -- Requires all other achievements to be unlocked.
 -- Exception to 'Duga Free' if story mode is disabled.
 -- Exception to 'Wishful Thinking' if story mode is disabled.
 function completionist_requirements()
 	return (
-				(has_alife_info("achieved_duga_free") or has_alife_info("story_mode_disabled"))
+				(has_alife_info("achieved_bookworm_food"))
+			and (has_alife_info("achieved_duga_free") or has_alife_info("story_mode_disabled"))
 			and (has_alife_info("achieved_down_to_earth"))
 			and (has_alife_info("achieved_geologist"))
 			and (has_alife_info("achieved_heavy_pockets"))
@@ -422,6 +449,16 @@ end
 ----- Rewards -----
 -------------------
 
+-- Bookworm Food.
+-- Future memory sticks become rare PDAs.
+-- Reputation and rank point increase.
+function bookworm_food_rewards()
+	db.actor:give_info_portion("achieved_bookworm_food")
+	news_manager.send_tip(db.actor, "st_achievement_15_unlock", nil, "bookworm_food", nil, nil)
+	xr_statistic.inc_achievement("bookworm_food")
+	SendScriptCallback("on_achievement_earned","bookworm_food","st_achievement_15_unlock")
+end
+
 -- Completionist.
 -- Reputation and rank point increase.
 function completionist_rewards()
@@ -532,11 +569,11 @@ function silver_or_lead_rewards()
 end
 
 -- Tourist.
--- 3 "Curious stashes" are revealed.
+-- 3 "Tourist's stashes" are revealed.
 -- Reputation and rank point increase.
 function tourist_rewards()
 	for i=1,3 do
-		coc_treasure_manager.create_random_stash(nil, "Curious stash", nil, "treasure_unique")
+		coc_treasure_manager.create_random_stash(nil, "Tourist's stash", nil, "treasure_unique")
 	end
 	db.actor:disable_info_portion("achieved_tourist_delay")
 	db.actor:give_info_portion("achieved_tourist")
@@ -556,6 +593,7 @@ function well_dressed_rewards()
 end
 
 -- Wishful Thinking.
+-- Bonus reputation and rank point increase.
 -- Reputation and rank point increase.
 function wishful_thinking_rewards()
 	xr_statistic.inc_actor_rank(1000)
