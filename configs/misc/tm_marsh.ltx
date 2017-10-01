@@ -46,7 +46,7 @@ task_complete_descr = mar_base_owl_stalker_trader_task_3_finish
 on_init = %=setup_companion_task(ecolog_companion_task_1:mar_smart_terrain_base) =setup_task_target_anomaly -ecolog_companion_task_1_started -ecolog_companion_task_1_force_started%
 precondition = {!squad_exist(ecolog_companion_task_1)} true, false
 repeat_timeout = 172800
-on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_1) =reward_stash(true) =reset_task_target_anomaly =reward_random_item(af_ameba_slug:af_dummy_glassbeads:af_fireball:af_soul:af_rusty_kristall:af_dummy_battery:detector_advanced)%
+on_complete = %=complete_task_inc_goodwill(50:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_1) =reward_stash(true) =reset_task_target_anomaly =reward_random_item(af_ameba_slug:1:af_dummy_glassbeads:1:af_fireball:1:af_soul:1:af_rusty_kristall:1:af_dummy_battery:1:detector_advanced:1)%
 on_fail = %=fail_task_dec_goodwill(25:ecolog:csky) =remove_special_task_squad(ecolog_companion_task_1) =reset_task_target_anomaly%
 on_cancel = %=remove_special_task_squad(ecolog_companion_task_1) =reset_task_target_anomaly%
 condlist_0 = {!squad_exist(ecolog_companion_task_1)} fail

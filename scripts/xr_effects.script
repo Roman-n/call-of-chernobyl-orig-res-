@@ -222,22 +222,35 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 	if not (item) then 
 		return 
 	end 
-	dialogs.relocate_money(db.actor, (tonumber(p[2]) or 1)*item:cost()*item:condition() ,"in")
 	
 	local amt = utils.load_var(db.actor,p[1].."_count") or 1
+	dialogs.relocate_money(db.actor, amt*(tonumber(p[2]) or 1)*item:cost()*item:condition() ,"in")
 	remove_item(actor, npc, {sec,amt})
 end 
 
 function reward_random_item(actor,npc,p)
-	if (#p > 0) then 
-		local section = p[math.random(#p)]
-		if (system_ini():section_exist(section)) then
-			local se_item = alife():create(section,vector():set(0,0,0),0,0,0)
-			local cls = se_item:clsid()
-			if (IsWeapon(nil,cls) and cls ~= clsid.wpn_knife_s) then
-				se_item.condition = math.random(60,90)/100
+	if (#p > 0) then
+		local item_list = {}
+		local i = #p
+		while i > 1 do 
+			local section = p[i-1]
+			if (system_ini():section_exist(section)) then
+				item_list[section] = tonumber(p[i]) or 1
 			end
-			news_manager.relocate_item(db.actor, "in", section)
+			table.remove(p,i)
+			i = i - 2
+		end
+		local section = p[math.random(1,#p)]
+		local amt = item_list[section]
+		if (amt) then
+			for j=1,amt do
+				local se_item = alife():create(section,vector():set(0,0,0),0,0,0)
+				local cls = se_item:clsid()
+				if (IsWeapon(nil,cls) and cls ~= clsid.wpn_knife_s) then
+					se_item.condition = math.random(60,90)/100
+				end
+			end
+			news_manager.relocate_item(db.actor,"in",section,amt)
 		end
 	end
 end
