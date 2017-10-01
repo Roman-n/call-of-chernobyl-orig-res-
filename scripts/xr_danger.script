@@ -188,10 +188,10 @@ local function is_danger(npc,best_danger,script)
 		if not (best_danger_object:alive()) then
 			return false
 		end
-		if (best_danger:perceive_type() == danger_object.hit) then -- bypass combat ignore radius for attacked, entity_attacked, ricochet
-			return danger_in_radius(npc,best_danger,bd_type)
-		end
-		if not (xr_combat_ignore.is_enemy(npc, best_danger_object,true)) then 
+		-- if (best_danger:perceive_type() == danger_object.hit) then -- bypass combat ignore radius for attacked, entity_attacked, ricochet
+			-- return danger_in_radius(npc,best_danger,bd_type)
+		-- end
+		if not (xr_combat_ignore.is_enemy(npc, best_danger_object,true,true)) then 
 			return false 
 		end
 	end
@@ -679,7 +679,7 @@ local function script_action_danger_attacked(npc,st,bd,best_danger_object,depend
 end
 
 local function script_action_react_to_alarm(npc,st,smart)
-	printf("[%s] script_action_react_to_alarm %s",smart:name(),npc:name())
+	--printf("[%s] script_action_react_to_alarm %s",smart:name(),npc:name())
 	local tg = time_global()
 
 	if not (st.lvid) then 
@@ -832,8 +832,12 @@ function evaluator_check_danger:evaluate()
 	end
 	
 	local id = self.object:id()
-	if not (db.storage[id].danger_flag) then 
+	if not (db.storage[id].danger_flag) then
 		return false 
+	end
+	
+	if (get_object_story_id(id)) then 
+		return false
 	end
 	
 	local bd_type = bd:type()

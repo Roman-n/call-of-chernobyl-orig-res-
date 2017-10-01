@@ -67,9 +67,12 @@ function on_interact_character2(character, killer)
 end
 
 -- Characters: Looting.
-function on_interact_character3()
+function on_interact_character3(mode,last_mode)
+	if (mode ~= 4) then 
+		return 
+	end
 	local character = ActorMenu.get_actor_menu():GetPartner()
-	if (not character or character:alive()) then
+	if not (character and character:alive()) then
 		return
 	end
 	local story_id = get_object_story_id(character:id()) or nil

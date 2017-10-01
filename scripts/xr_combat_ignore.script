@@ -44,7 +44,7 @@ function on_game_start()
 	RegisterScriptCallback("squad_on_npc_death",squad_on_npc_death)
 end
 
-function is_enemy(obj,enemy,no_memory)
+function is_enemy(obj,enemy,no_memory,is_danger_check)
 	--alun_utils.debug_write("eval_is_enemy")
 	if(device().precache_frame > 1) then
 		return false -- fix actor dying before game loads from enemies. Also fixes strange crash on game load when in combat sometimes.
@@ -227,13 +227,15 @@ function is_enemy(obj,enemy,no_memory)
 	end
 
 	if (is_actor) then
-		local dist = pos1:distance_to_sqr(pos2)
-		if (dist > 22500) then -- limit combat ignore to 150m unless of course actor attacks
-			return false
-		elseif (dist > 10000) then	
-			if (level.get_time_hours() < 4 or level.get_time_hours() > 19 or level.rain_factor() >= 0.4) then 
-				-- limit combat range to 100m during night hours or heavy rain for stalker v actor
+		if not (is_danger_check) then
+			local dist = pos1:distance_to_sqr(pos2)
+			if (dist > 22500) then -- limit combat ignore to 150m unless of course actor attacks
 				return false
+			elseif (dist > 10000) then	
+				if (level.get_time_hours() < 4 or level.get_time_hours() > 19 or level.rain_factor() >= 0.4) then 
+					-- limit combat range to 100m during night hours or heavy rain for stalker v actor
+					return false
+				end
 			end
 		end
 	elseif (is_monster) then
