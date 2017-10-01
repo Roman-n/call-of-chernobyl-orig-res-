@@ -19,7 +19,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_1_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(ammo_5.56x45_ap:1:ammo_5.56x45_ap:1:ammo_12x70_buck:1:ammo_12x70_buck:1) =reward_item_cost_mult_and_remove(simulation_task_1_fetch:2) =reward_stash(true) =inc_task_stage(simulation_task_1) =pstor_reset(simulation_task_1_fetch)%
+on_complete = %=reward_item_cost_mult_and_remove(simulation_task_1_fetch:2) =reward_random_item(ammo_5.56x45_ss190:1:ammo_5.45x39_fmj:1) =reward_stash(true) =inc_task_stage(simulation_task_1) =pstor_reset(simulation_task_1_fetch)%
 on_fail = %=pstor_reset(simulation_task_1_fetch)%
 on_cancel = %=pstor_reset(simulation_task_1_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_1)} fail
@@ -46,7 +46,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_2_fetch_finish
 precondition = true
-on_complete = %=reward_item_cost_mult_and_remove(simulation_task_2_fetch:2) =reward_stash(true) =inc_task_stage(simulation_task_2) =pstor_reset(simulation_task_2_fetch)%
+on_complete = %=reward_item_cost_mult_and_remove(simulation_task_2_fetch:2) =reward_random_item(ammo_5.56x45_ss190:1) =reward_stash(true) =inc_task_stage(simulation_task_2) =pstor_reset(simulation_task_2_fetch)%
 on_fail = %=pstor_reset(simulation_task_2_fetch)%
 on_cancel = %=pstor_reset(simulation_task_2_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_2)} fail
@@ -73,7 +73,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_3_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(ammo_9x39_ap:1:ammo_9x39_ap:1:ammo_9x39_ap:1:ammo_5.56x45_ap:1:ammo_5.56x45_ap:1) =reward_item_cost_mult_and_remove(simulation_task_3_fetch:5) =reward_stash(true) =inc_task_stage(simulation_task_3)%
+on_complete = %=reward_random_item(ammo_12x70_buck:2) =reward_item_cost_mult_and_remove(simulation_task_3_fetch:2) =reward_stash(true) =inc_task_stage(simulation_task_3)%
 condlist_0 = {!task_giver_alive(simulation_task_3)} fail
 
 
@@ -248,7 +248,7 @@ target_functor = simulation_task_target
 on_init = %=find_smart_under_faction_control_ex(simulation_task_10_id:bandit) =setup_companion_task(hostage_companion_task_1_ecolog:nil:simulation_task_10_id:true:true) +hostage_companion_task_1_started%
 precondition = {=random_chance =is_faction_enemy_to_actor(bandit) -hostage_companion_task_1_started -hostage_companion_task_1_hostage_rescued =all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:bandit) !squad_exist(hostage_companion_task_1)} true, false
 repeat_timeout = 86400
-on_complete = %=reward_random_item(af_soul:1:af_gravi:1:af_fuzz_kolobok:1:af_electra_moonlight:1:af_fireball:1:af_rusty_kristall:1:af_ameba_slug:1) =complete_task_inc_goodwill(50:ecolog) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_10) =unlock_smart(simulation_task_10_id)%
+on_complete = %=reward_random_item(af_soul:1:af_gravi:1:af_fuzz_kolobok:1:af_electra_moonlight:1:af_fireball:1:af_rusty_kristall:1:af_ameba_slug:1) =reward_stash(true) =complete_task_inc_goodwill(50:ecolog) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_10) =unlock_smart(simulation_task_10_id)%
 on_fail = %=unlock_smart(simulation_task_10_id) =fail_task_dec_goodwill(25:ecolog) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 on_cancel = %=unlock_smart(simulation_task_10_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 condlist_0 = {!squad_exist(hostage_companion_task_1)} fail
@@ -272,7 +272,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_11:killer:army:bandit)%
-on_complete = %=reward_random_money(9000:10000) =reward_stash(true) =inc_task_stage(simulation_task_11) =complete_task_inc_goodwill(50:stalker)%
+on_complete = %=reward_random_money(8000:10000) =reward_stash(true) =inc_task_stage(simulation_task_11) =complete_task_inc_goodwill(50:stalker)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_11)} fail
 
@@ -295,7 +295,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_12:bandit)%
-on_complete = %=reward_random_item(wpn_ak74:1:wpn_lr300:1:wpn_wincheaster1300:1) %=reward_random_money(2000:3000) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(50:stalker)%
+on_complete = %=reward_random_item(wpn_ak74:1:wpn_lr300:1:wpn_wincheaster1300:1) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(50:stalker)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_12)} fail
 
@@ -321,7 +321,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_13_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(equ_backpack:1:ammo_9x39_pab9:1:ammo_9x39_pab9:1:ammo_5.45x39_ap:1:ammo_vog-25:1) =reward_item_cost_mult_and_remove(simulation_task_13_fetch:1) =reward_stash(true) =inc_task_stage(simulation_task_13) =pstor_reset(simulation_task_13_fetch)%
+on_complete = %=reward_item_cost_mult_and_remove(simulation_task_13_fetch:2) =reward_random_item(ammo_12x70_buck:2:ammo_5.56x45_ss190:1:ammo_5.45x39_fmj:1) =reward_stash(true) =inc_task_stage(simulation_task_13) =pstor_reset(simulation_task_13_fetch)%
 on_fail = %=pstor_reset(simulation_task_13_fetch)%
 on_cancel = %=pstor_reset(simulation_task_13_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_13)} fail
@@ -348,7 +348,7 @@ status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = simulation_task_14_fetch_finish
 precondition = true
-on_complete = %=reward_random_item(equ_backpack:1:ammo_5.45x39_ap:1:ammo_5.45x39_fmj:1:ammo_5.45x39_fmj:1:ammo_9x19_pbp:1) =reward_item_cost_mult_and_remove(simulation_task_14_fetch:1) =reward_stash(true) =inc_task_stage(simulation_task_14) =pstor_reset(simulation_task_14_fetch)%
+on_complete = %=reward_item_cost_mult_and_remove(simulation_task_14_fetch:2) =reward_random_item(ammo_9x39_pab9:1:ammo_5.45x39_fmj:1) =reward_stash(true) =inc_task_stage(simulation_task_14) =pstor_reset(simulation_task_14_fetch)%
 on_fail = %=pstor_reset(simulation_task_14_fetch)%
 on_cancel = %=pstor_reset(simulation_task_14_fetch)%
 condlist_0 = {!task_giver_alive(simulation_task_14)} fail
@@ -424,7 +424,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_17:bandit:freedom:csky)%
-on_complete = %=reward_random_item(wpn_ak74:1:wpn_abakan:1:wpn_groza:1:wpn_val:1:wpn_vintorez:1) =inc_task_stage(simulation_task_17) =complete_task_inc_goodwill(50:army)%
+on_complete = %=reward_random_item(wpn_ak74:1:wpn_abakan:1:wpn_groza:1:wpn_val:1:wpn_vintorez:1) =reward_stash(true) =inc_task_stage(simulation_task_17) =complete_task_inc_goodwill(50:army)%
 on_fail = %=fail_task_dec_goodwill(25:army)%
 condlist_0 = {!task_giver_alive(simulation_task_17)} fail
 
@@ -447,7 +447,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_18:stalker:army:dolg)%
-on_complete = %=reward_random_money(9000:10000) =reward_stash(true) =inc_task_stage(simulation_task_18)%
+on_complete = %=reward_random_money(8000:10000) =reward_stash(true) =inc_task_stage(simulation_task_18)%
 condlist_0 = {!task_giver_alive(simulation_task_18)} fail
 
 
