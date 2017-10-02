@@ -55,7 +55,7 @@
 			Burers are stocky, almost dwarf-like monsters that usually stick to underground areas.\n
 			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and generally afraid of bright lights.\n
 			\nCreated as the result of genetic experiments on criminals under the program of human telekinetic development, burers naturally posses powerful telekinetic abilities.\n
-			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be a difficult foe even when trying to hide from them.\n
+			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
 			\n• Attacks: Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Abilities: Psi-powers, Telekinesis
 		</text>
 	</string>
@@ -84,7 +84,7 @@
 			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
 			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
 			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: Regeneration, Distant leaps
+			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Abilities: Regeneration, Distant leaps
 		</text>
 	</string>
 	
@@ -161,10 +161,10 @@
 		<text>
 			Pseudogiants are one of the rarest and most fearsome mutants in the Zone.\n
 			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before succumbing to its wounds and dying.\n
-			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it. Being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
+			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it - being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
 			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back, only attacking when another target gets within range.\n
 			\nThe pseudogiant also may retreat from a battle after having lost only about half or even a fourth of its health, such events bring into question the nature of the creature, as it's not as relentless and persistent as more predatory mutants despite its strength.\n
-			\n• Attacks: Melee\n• Health: High\n• Speed: Slow\n• Abilities: Immense strength
+			\n• Attacks: Melee\n• Health: Very high\n• Speed: Slow\n• Abilities: Immense strength
 		</text>
 	</string>
 	
