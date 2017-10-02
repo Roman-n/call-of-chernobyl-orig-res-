@@ -14,7 +14,7 @@
 			\nSeveral generations of dogs have lived and died since the second disaster, with each being more affected by the Zone than the previous.\n
 			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - primarily at the expense of those that also share their habitat.\n
 			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey literally through the walls.\n
-			\nLike their wild ancestors - the wolves - blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
+			\nLike their wolf ancestors, blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Abilities: None
 		</text>
 	</string>
@@ -84,7 +84,7 @@
 			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
 			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
 			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
-			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Abilities: Regeneration, Distant leaps
+			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Abilities: Regeneration, Very agile
 		</text>
 	</string>
 	
@@ -132,7 +132,7 @@
 	</string>
 	<string id="encyclopedia_mutants_fracture_text">
 		<text>
-			Fractures are former - seemingly devolved - human beings with an animalistic mindset.\n
+			Fractures are former, seemingly devolved human beings with an animalistic mindset.\n
 			\nUnlike other mutant humanoids the fracture has retained a rather familiar appearance, looking like a hunchbacked old man in tattered clothing, despite being over two meters tall.\n
 			\nNot much is known about these creatures, it is believed they were either former residents who illegally lived in the area before the second disaster, or early test subjects involved in genetic experimentation.\n
 			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with very little effort.\n
@@ -147,8 +147,8 @@
 		<text>
 			Karliks are very rare dwarf-like mutants which hide away in seclusion.\n
 			\nAs if having the ultimate case of short man syndrome, what a karlik lacks in height it makes up for tenfold with its psychic abilities.\n
-			\nIt is unclear whether or not they are related to burers, but between them they share a great many similarities making it difficult to dismiss as just coincidence - for example all abilities of the burer are also shared by the karlik.\n
-			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts as if they have tasked themselves with their responsibility - attacking and killing everything that comes too close.\n
+			\nIt is unclear whether or not they are related to burers, but between them they share a great many similarities making it difficult to dismiss as just coincidence. For example all abilities of the burer are also shared by the karlik.\n
+			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts as if they have tasked themselves with their responsibility - attacking anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
 			\n• Attacks: Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Abilities: Passive damage, Phantom projection, Psi-powers, Telekinesis
 		</text>
@@ -163,7 +163,7 @@
 			\nSupernatural in the eyes of some, usually haunting old, abandoned buildings. Nothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive wave of radiation.\n
 			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
 			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Abilities: Near-invisibility, Telekinesis
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Abilities: Psi-powers, Telekinesis
 		</text>
 	</string>
 	
@@ -173,8 +173,8 @@
 	<string id="encyclopedia_mutants_pseudodog_text">
 		<text>
 			Pseudodogs are relatively common canine mutants.\n
-			\nDespite the name, pseudodogs did not come from dogs, but rather from wolves that lived in the forests of the Zone at the time of the disaster.\n
-			\nStrictly speaking there is not much left of the wolf in the pseudodog, its head is more round, with huge, but not very prominent jaws, armed with numerous huge teeth growing throughout the life of the animal.\n
+			\nDespite the name, pseudodogs did not come from dogs, but rather from wolves that lived in the forests of the Zone at the time of the second disaster.\n
+			\nStrictly speaking there is not much left of the wolf in the pseudodog, its head is more round, with huge but not very prominent jaws, armed with numerous huge teeth growing throughout the life of the animal.\n
 			\nPseudodogs are often seen together with blind dogs, though they are much faster, stronger, and more aggressive than their blind relatives. They are also viciously territorial and will not hesitate to attack intruders.\n
 			\nIts powerful muscles and reshaped skeleton allow this monster to move with incredible speed and make huge swift jumps, allowing it to be far more agile than most other animals of its kind.\n
 			\n\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: None
@@ -189,8 +189,9 @@
 			Pseudogeists are a rare cloud-like subspecies of poltergeists.\n
 			\nEssentially nothing is known about these creatures, as they are only a recent occurrence and have not been around long enough to document.\n
 			\nAppearing as a a pulsating burgundy-coloured series of clouds, they will attempt to kill anything unfortunate enough to wander into them.\n
-			\nThere is no specific places they are found as they tend to appear in the most unsuspecting places. Upon death they explode into multiple cloud-like formations before dissipating.\n
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Abilities: Near-invisibility
+			\nThere are no specific locations they are found as they tend to appear in the most unsuspecting of places.\n
+			\nUpon death they explode into multiple cloud-like formations before dissipating.\n
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Abilities: Psi-powers
 		</text>
 	</string>
 	
@@ -229,7 +230,61 @@
 			Pyrogeists are a rare pyrokinetic subspecies of poltergeists.\n
 			\nAppearing as a floating form of heat haze surrounded by a fiery glow, they are easily distinguishable from regular poltergeists. On death, they explode in a mess of blood and fire.\n
 			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it has no telekinetic ability.\n
-			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Abilities: Near-invisibility
+			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Abilities: Psi-powers
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_rat">
+		<text>Rat</text>
+	</string>
+	<string id="encyclopedia_mutants_rat_text">
+		<text>
+			Rats are quadrupedal animals of the rodent family.\n
+			\nMostly found in packs, and in rare cases alone, rats are the constant companion of man - in the places that people leave behind the rats will soon replace them.\n
+			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides, has very little chance of surviving.\n
+			\nThey usually live in abandoned places and are able to feel danger and carefully bypass it.\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Abilities: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_snork">
+		<text>Snork</text>
+	</string>
+	<string id="encyclopedia_mutants_snork_text">
+		<text>
+			Snorks are horrifically mutated soldiers and stalkers.\n
+			\nThese creatures were apparently once people as they still wear the tattered remains of their uniforms, although it is difficult to imagine what conditions could bring a person to this state.\n
+			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground and constantly sniffing the air to catch the smell of their next meal.\n
+			\nThey hunt cleverly and prudently, waiting for stalkers like predatory animals. Lightning reflexes and hypertrophied muscles allow snorks to make long, precise jumps and within seconds tear their victims to shreds.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: Very agile
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_tushkano">
+		<text>Tushkano</text>
+	</string>
+	<string id="encyclopedia_mutants_tushkano_text">
+		<text>
+			Tushkano are a small rat-like creatures which move about on their two hind legs.\n
+			\nTheir name is in reference to the dipodidae rodent, called tushkanchikovye in Russian, which move about in a very similar manner.\n
+			\nDespite their behaviour, tushkano are widely believed to have originated from trained and domesticated rats which were experimented on before the second disaster.\n
+			\nThey live mostly in ruined buildings, feeding on everything that they can catch - both mutants and stalkers - and often in groups of up to ten individuals.\n
+			\nLike rats they are also very smart creatures and will attack their victims from all sides, and because of their small stature they can quickly overwhelm most prey when working together.\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Abilities: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_zombie">
+		<text>Zombie</text>
+	</string>
+	<string id="encyclopedia_mutants_zombie_text">
+		<text>
+			Zombies are people who have been reduced to their most residual and animal reflexes.\n
+			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of the people they used to be.\n
+			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psi-fields, having lost even the ability to operate basic tools and weaponry.\n
+			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
+			\nThis mutant only spawns when playing in survival mode.\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Abilities: None
 		</text>
 	</string>
 	
