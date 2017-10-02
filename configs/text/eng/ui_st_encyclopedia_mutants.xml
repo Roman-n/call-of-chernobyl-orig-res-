@@ -11,9 +11,11 @@
 	<string id="encyclopedia_mutants_blind_dog_text">
 		<text>
 			Blind dogs are the most familiar representative of the Zone.\n
-			\nMutations and evolutionary adaptation have led to the strengthening of previously weakly expressed canine abilities, mainly at the expense of those that share their habitat.\n
+			\nSeveral generations of dogs have lived and died since the second disaster, with each being more affected by the Zone than the previous.\n
+			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - primarily at the expense of those that also share their habitat.\n
 			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey literally through the walls.\n
-			\nOn their own they aren't too much of a worry and can quickly be dispatched, but they can easily overwhelm effectively anything when hunting in large enough numbers.
+			\nLike their wild ancestors - the wolves - blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Abilities: None
 		</text>
 	</string>
 	
@@ -22,11 +24,12 @@
 	</string>
 	<string id="encyclopedia_mutants_bloodsucker_text">
 		<text>
-			Bloodsuckers are semi-legendary monsters and some of the most dangerous in the Zone.\n
-			\nThose who have encountered them and lived to tell about it have described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
-			\nThese tentacles are used by the creatures to simultaneously dig into the necks of their prey and deliver a paralysing toxin, while also draining the victim of as much blood as possible.\n
-			\nSomehow they have also developed a rather unique ability, being able to temporarily turn almost completely invisible until just before they attack.\n 
-			\nMany variants of this creature exist with black, green and red colouring, but it is believed that there are no behavioural differences between them.
+			\nBloodsuckers, as the name would suggest, are hematophagous monsters.\n
+			\nThe bloodsucker is semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
+			\nThis status has been achieved thanks to the species' relative rarity and the low survival rate of its victims.\n
+			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
+			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: Camouflage, Blood-sucking
 		</text>
 	</string>
 	
@@ -35,11 +38,12 @@
 	</string>
 	<string id="encyclopedia_mutants_boar_text">
 		<text>
-			Boars are aggressive and very lively beasts far surpassing their relatives outside of the Zone.\n
-			\nMutagenic processes have largely affected the appearance of these mammals: in places the latter were bald, the other on the contrary are overgrown with very long and thick wool.\n
-			\nThey are rapid breeders and as such extremely common to find in almost any corner of the Zone, and whilst very territorial they are also quite harmless if distance is kept and they aren't antagonised.\n
-			\nFortunately natural selection hasn't had enough time to play its part, and their most vulnerable spot is exposed when they decide to charge.\n
-			\nA few shotgun blasts or knife wounds to the head can quickly kill these creatures.
+			Boars are a common mutant found in the Zone.\n
+			\nWhile less touched by mutation physically, the boars here have developed serious taste for human flesh and much sharper intelligence.\n
+			\nThey are large animals, and their ability to survive and their aggression surpasses all of their living relatives outsize of the Zone.\n
+			\nMutagenic processes have played a significant part in shaping these mammals: they have lost all fur in a few places and grown long, bristly fur in others.\n
+			\nUsually if distance is kept and they aren't antagonised, they will stick with their herd of other boars and flesh.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Abilities: None
 		</text>
 	</string>
 	
@@ -48,10 +52,11 @@
 	</string>
 	<string id="encyclopedia_mutants_burer_text">
 		<text>
-			Burers are large, lumbering creatures, capable of extremely powerful telekenetic abilities.\n
-			\nCreated as a result of the many genetic experiments carried out on criminals before the second disaster, burers have hypertrophic and exaggerated features and are mainly found in and around underground laboratories.\n
-			\nLike most psychic mutants they are capable of indirect and distant attacks, launching large waves of energy (often electrical or thermal) at their targets, and being able to lift and hurl large, heavy objects with their telekinesis.\n
-			\nStories exist of stalkers allegedly stabbing these creatures to death, claiming they can create a psychic field protecting them from projectiles - but not many are willing to put this to the test given what they are capable of.
+			Burers are stocky, almost dwarf-like monsters that usually stick to underground areas.\n
+			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and generally afraid of bright lights.\n
+			\nCreated as the result of genetic experiments on criminals under the program of human telekinetic development, burers naturally posses powerful telekinetic abilities.\n
+			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be a difficult foe even when trying to hide from them.\n
+			\n• Attacks: Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Abilities: Psi-powers, Telekinesis
 		</text>
 	</string>
 	
@@ -60,10 +65,12 @@
 	</string>
 	<string id="encyclopedia_mutants_cat_text">
 		<text>
-			Cats in the Zone are a mutated form of the Eurasian Lynx.\n
-			\nLike dogs, they are usually considered to be nothing more than an annoyance when on their own, but incredibly dangerous if there are multiple working together.\n
-			\nA group of cats will frequently try to make use of diversionary tactics, taking turns to distract whilst the rest will attempt to use their claws and teeth to slash their prey from behind - until it eventually tires or bleeds out.\n
-			\nOne good approach for dealing with multiple cats at once is to avoid fighting them in an open area, this hinders their manoeuvrability and prevents them from easily avoiding gunfire.
+			Cats in the Zone are heavily mutated from local wildcats.\n
+			\nOriginally ordinary pets, under the influence of the Zone they have changed quite remarkably, becoming very dangerous even to people.\n
+			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet, secluded places such as forest thickets.\n
+			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until it tires and/or bleeds out.\n
+			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to attack.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: None
 		</text>
 	</string>
 	
@@ -72,11 +79,12 @@
 	</string>
 	<string id="encyclopedia_mutants_chimera_text">
 		<text>
-			Chimeras are extremely clever, strong and cunning, and considered one of the Zone's most dangerous predators.\n
-			\nIf the lion is the king of the jungle then the chimera is the king of the Zone - it is an almost evolutionarily perfect killing machine.\n
+			Chimeras are hairless monsters, close to the size of an adult lion.\n
+			\nAn almost evolutionarily perfect killing machine, though not physically the strongest, they account for this through extreme speed and aggressiveness.\n
 			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
-			\nAs if it nature didn't favour it enough, its second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour - and it mostly does all this at night when nobody can see it.\n
-			\nThey are primarily seen within the Red Forest, and from time-to-time Jupiter and Zaton, but they frequently search for new hunting grounds when they run out of things to kill.
+			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
+			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: Regeneration, Distant leaps
 		</text>
 	</string>
 	
@@ -85,11 +93,12 @@
 	</string>
 	<string id="encyclopedia_mutants_controller_text">
 		<text>
-			Controllers are powerful psychic creatures, and are equally just as deadly.\n
+			Controllers are some of the most dangerous psychic mutants in the Zone.\n
 			\nOutwardly resembling a human being with a disproportionately enlarged head, a controller is capable of influencing and often directly controlling another living being's actions.\n
-			\nUnlike other psychic mutants a controller won't manipulate physical objects, but will instead fight with its brain - in a very literal sense - often easily killing entire squads of stalkers.\n
-			\nDespite the horrible stories about them told by survivors, it is alleged that they can only attack what they can see.\n
-			\nMaking good use of cover could potentially make all the difference between life and death.
+			\nUnlike other psychic mutants a controller won't manipulate physical objects, but will instead fight with its brain - in a very literal sense - often taking its enemies through surprise and confusion.\n
+			\nThe controller attacks mainly with a directed psi-bolt, which causes severe damage to the brain of its recipient, whilst passive exposure to the mutant can ultimately lead to suicide or zombification.\n
+			\nIt is widely believed that they can only attack what they can see, so making good use of cover to conceal yourself from its view could make all the difference in the outcome of fighting this creature.\n
+			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Slow\n• Abilities: Passive damage, Psi-powers, Mind control
 		</text>
 	</string>
 	
@@ -100,7 +109,8 @@
 		<text>
 			Crows are the only bird species to have survived in the Zone.\n
 			\nIn order not to perish in a labyrinth of gravitational anomalies, military pilots use sophisticated detectors, but the secret of how crows safely navigate the Zone's skies remains a mystery.\n
-			\nLittle else known about what makes the Zone's crows so special, or why they have remained almost completely genetically intact when compared to the rest of the local wildlife.
+			\nLittle else known about what makes the Zone's crows so special, or why they have remained almost completely genetically intact when compared to the rest of the local wildlife.\n
+			\n• Attacks: None\n• Health: Low\n• Speed: Fast\n• Abilities: None
 		</text>
 	</string>
 	
@@ -110,9 +120,10 @@
 	<string id="encyclopedia_mutants_flesh_text">
 		<text>
 			Flesh are heavily mutated pigs, but one of the most harmless mutants of the Zone.\n
-			\nDomesticated pigs have undergone strong mutations in the Zone like many other animals, however they are have come out of it almost completely unrecognisable.\n
-			\nTheir forelimbs have turned into insect-like legs which the flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
-			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is cornered and has nowhere else to run.
+			\nLike many other living creatures, domestic pigs in the Zone underwent serious mutations following the second disaster, affecting genes responsible for their metabolism.\n
+			\nThis eventually caused the animal's phenotype to change significantly, their forelimbs have turned into insect-like legs which the flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
+			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is attacked or cornered and has nowhere else to run.\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Abilities: None
 		</text>
 	</string>
 	
@@ -124,7 +135,22 @@
 			Fractures are former - seemingly devolved - human beings with an animalistic mindset.\n
 			\nUnlike other mutant humanoids the fracture has retained a rather familiar appearance, looking like a hunchbacked old man in tattered clothing, despite being over two meters tall.\n
 			\nNot much is known about these creatures, it is believed they were either former residents who illegally lived in the area before the second disaster, or early test subjects involved in genetic experimentation.\n
-			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with little to no effort.\n
+			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with very little effort.\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Abilities: None
+		</text>
+	</string>
+	
+	<string id="encyclopedia_mutants_karlik">
+		<text>Karlik</text>
+	</string>
+	<string id="encyclopedia_mutants_karlik_text">
+		<text>
+			Karliks are very rare dwarf-like mutants which hide away in seclusion.\n
+			\nAs if having the ultimate case of short man syndrome, what a karlik lacks in height it makes up for tenfold with its psychic abilities.\n
+			\nIt is unclear whether or not they are related to burers, but between them they share a great many similarities making it difficult to dismiss as just coincidence - for example all abilities of the burer are also shared by the karlik.\n
+			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts as if they have tasked themselves with their responsibility - attacking and killing everything that comes too close.\n
+			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
+			\n• Attacks: Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Abilities: Passive damage, Phantom projection, Psi-powers, Telekinesis
 		</text>
 	</string>
 	
@@ -134,9 +160,11 @@
 	<string id="encyclopedia_mutants_pseudogiant_text">
 		<text>
 			Pseudogiants are one of the rarest and most fearsome mutants in the Zone.\n
-			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before dying.\n
-			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it.\n
-			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back.\n
+			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before succumbing to its wounds and dying.\n
+			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it. Being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
+			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back, only attacking when another target gets within range.\n
+			\nThe pseudogiant also may retreat from a battle after having lost only about half or even a fourth of its health, such events bring into question the nature of the creature, as it's not as relentless and persistent as more predatory mutants despite its strength.\n
+			\n• Attacks: Melee\n• Health: High\n• Speed: Slow\n• Abilities: Immense strength
 		</text>
 	</string>
 	
