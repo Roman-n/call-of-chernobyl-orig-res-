@@ -186,7 +186,7 @@
 			Sleep deprivation allows time and the use of consumables to fatigue the player.\n
 			\nThroughout the Zone you will find many beds and sleeping bags, normally they are only used to allow the player to skip time by sleeping, however with this feature enabled they become an essential part of gameplay.\n
 			\nAs time passes your character will slowly begin to feel tired, with the screen beginning to blur and shake. These effects will proceed to get worse until you find a suitable place to rest or the effects of sleep deprivation cause you to collapse from exhaustion.\n
-			\nTiredness can be accelerated through consumable items such as medical kits and vodka, and negated with those such as high-caffeine energy drinks - however using too much will leave you unable to rest until their effects wear off.\n
+			\nTiredness can be accelerated through consumable items such as medical kits and vodka, and negated with those such as high-caffeine energy drinks - however using too many will leave you unable to rest until their effects wear off.\n
 			\nThis feature can be toggled from the game options menu and is disabled by default.
 		</text>
 	</string>
@@ -198,7 +198,7 @@
 		<text>
 			\nStory mode enables a non-linear story based on the events of Shadow of Chernobyl.\n
 			\nWith this mode enabled you start the game with the 'Mysteries of the Zone' storyline and the tasks of disabling the Brain Scorcher and Miracle Machine.\n
-			\nTo begin the story you will need to find an important individual hiding somewhere within the Zone, who after a brief dialogue will provide with multiple tasks which you can complete it any order.\n
+			\nTo begin the story you will need to find an important individual hiding somewhere within the Zone, who after a brief dialogue will provide you with multiple tasks which can be completed in any order.\n
 			\nThis mode can only be enabled from the character creation screen.\n
 			\nThis mode is only available to the following factions:\n
 			\n• Clear Sky\n• Duty\n• Ecologist\n• Freedom\n• Loner\n• Mercenary
