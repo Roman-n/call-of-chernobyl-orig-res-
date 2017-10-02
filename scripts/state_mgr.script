@@ -303,16 +303,15 @@ end
 function act_state_mgr_end:execute()
 	action_base.execute(self)
 	--alun_utils.debug_write(strformat("act_state_mgr_end:weapon_update %s",self.object:name()))
-	if self.st.callback and self.st.callback.timeout then
+	if (self.st.callback.func and self.st.callback.timeout) then
+		local tg = time_global()
 		if self.st.callback.begin == nil then
 			self.st.callback.begin = time_global()
-		end
-
-		if time_global() - self.st.callback.begin >= self.st.callback.timeout then
-			if self.st.callback.func ~= nil then
-				self.st.callback.func(self.st.callback.obj)
-			end
-			self.st.callback = nil
+		elseif tg - self.st.callback.begin >= self.st.callback.timeout then
+			self.st.callback.func()
+			self.st.callback.begin = nil
+			self.st.callback.func = nil
+			self.st.callback.timeout = nil
 		end
 	end
 	
@@ -372,6 +371,7 @@ function state_manager:__init(npc)
 	self.combat = false
 	self.alife = true
 	self.need_reweapon = false
+	self.callback = {}
 end
 function state_manager:set_state(state_name, callback, timeout, target, extra)
 	if (DEV_DEBUG and db.storage[self.npc:id()].debug_state) then 
@@ -424,30 +424,32 @@ function state_manager:set_state(state_name, callback, timeout, target, extra)
 		self.fast_set = nil
 	end
 
-	if (callback) then
-		self.callback = callback
-		if (timeout and timeout >= 0) then
-			self.callback.timeout = timeout
-			self.callback.begin = nil
-		else
-			self.callback.func = nil
-			self.callback.timeout = nil
-		end
+	if (callback and timeout and timeout >= 0) then
+		self.callback.begin = nil
+		self.callback.func = callback.func
+		self.callback.timeout = timeout
+		self.callback.turn_end_func = callback.turn_end_func
+	else 
+		self.callback.begin = nil
+		self.callback.func = nil
+		self.callback.timeout = nil
+		self.callback.turn_end_func = nil
 	end
 end
 function state_manager:get_state()
 	return self.target_state
 end
 function state_manager:update()
-	if (self.callback and self.callback.func and self.animation.states.current_state == state_lib.states[self.target_state].animation) then
+	if (self.callback.func and self.callback.timeout and self.animation.states.current_state == state_lib.states[self.target_state].animation) then
 		local tg = time_global()
 		if not (self.callback.begin) then
 			self.callback.begin = tg
 		else
 			if (tg - self.callback.begin >= self.callback.timeout) then
-				self.callback.func(self.callback.obj)
+				self.callback.func()
 				self.callback.begin = nil
 				self.callback.func = nil
+				self.callback.timeout = nil
 			end
 		end
 	end

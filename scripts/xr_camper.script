@@ -399,7 +399,7 @@ function action_patrol:on_place()
 		return false
 	end
 
-	local path = patrol(self.st.path_walk)
+	local path = self.st.path_walk and patrol(self.st.path_walk)
 	if path ~= nil then
 		for k = 0, path:count() - 1 do
 			if utils.stalker_at_waypoint(self.object, patrol(self.st.path_walk), k) then
