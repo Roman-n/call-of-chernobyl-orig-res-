@@ -5,6 +5,16 @@
 		<text>Features</text>
 	</string>
 	
+	<string id="encyclopedia_features_aoe_pickup_mode">
+		<text>AoE pickup mode</text>
+	</string>
+	<string id="encyclopedia_features_aoe_pickup_mode_text">
+		<text>Area-of-effect pickup mode enables picking up of multiple items at once.\n
+			\nWhen enabled, this feature allows the player to pick up multiple items and put them in their inventory with a single key-press, just as you could in Call of Pripyat.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_features_artefact_degradation">
 		<text>Artefact degradation</text>
 	</string>

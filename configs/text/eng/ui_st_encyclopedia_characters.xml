@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_characters">
+		<text>Characters</text>
+	</string>
+	
+	<string id="encyclopedia_characters_barkeep">
+		<text>Barkeep</text>
+	</string>
+	<string id="encyclopedia_characters_barkeep_text">
+		<text>
+			Barkeep is the proprietor of the 100 Rads bar in Rostok.\n
+			\nIn addition to the obvious functions of managing the bar and serving drinks - he rents rooms, pays out bribes and supplies stalkers with plenty of equipment and work.\n
+			\nAlong with Sidorovich and Strelok, he was instrumental in the opening of roads leading toward the center of the Zone.\n
+			\nHe is neither a saint nor a scoundrel, but is highly respected among stalkers, especially those in the Duty faction - his main patrons.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_beard">
+		<text>Beard</text>
+	</string>
+	<string id="encyclopedia_characters_beard_text">
+		<text>
+			Beard smuggles artifacts and tends bar aboard the Skadovsk.\n
+			\nConducting his personal artifact smuggling business from his bar, he has no shortage of people in need of work, and is a regular employer to many near the Zone's center.\n
+			\nHe often finds himself at odds with Owl, who always seems to have a hand in disrupting his business enterprises one way or the other.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_nimble">
+		<text>Nimble</text>
+	</string>
+	<string id="encyclopedia_characters_nimble_text">
+		<text>
+			Nimble is a profiteer who sells smuggled weapons and outfits.\n
+			\nStarting out as a member of Clear Sky, and then as a courier for Sidorovich, he has assembled a list of important contacts allowing him to build his own business.\n
+			\nHaving learned from the best and survived everything thrown at him, he has become one of the most proficient and well-known traders in the Zone.\n
+			\nUnlike other traders however, he specialises in the sale of rare equipment, items that can be very difficult to obtain, but almost always worth the money invested.\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_sidorovich">
+		<text>Sidorovich</text>
+	</string>
+	<string id="encyclopedia_characters_sidorovich_text">
+		<text>
+			Sidorovich trades out of an old bunker near the rookie village.\n
+			\nHe enjoys a reputation of being a fairly honest businessman who gives newcomers a chance to survive, and his wealth of contacts allows him to smuggle in goods many here consider a luxury.\n
+			\nHowever many also see him as greedy and tight-fisted, those who try to compete with him on his own territory, or just disgruntle him in general, often end up on the wrong side of an assassination contract.\n
+			\nWhether for good or bad, he continues to play an integral role within the Zone's economy and its faction's politics, as such he is a great source of work for those wanting to earn a quick payday.
+		</text>
+	</string>
+	
+</string_table>
