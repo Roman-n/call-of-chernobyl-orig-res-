@@ -83,19 +83,20 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 		end
 	end
 	
-	-- Set the interface asset sizes.
+	-- Set the interface object sizes.
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
-	
-	-- Stops memory leaks? Certainly stops crashes.
-	self.information:SetAutoDelete(false)
-	self.image:SetAutoDelete(false)
-	self.image_container:SetAutoDelete(false)
+	self.image_container:SetWndSize(vector2():set(self.image:GetTextureRect().x2, math.floor(self.image:GetTextureRect().y2 * 0.75)))
 	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
 	self.scrollbar:AddWindow(self.image_container, true)
+	
+	-- Prevent objects from being deleted while used.
+	self.information:SetAutoDelete(false)
+	self.image_container:SetAutoDelete(false)
+	self.image:SetAutoDelete(false)
 end
 
 -- Called when a category is selected.
@@ -181,11 +182,20 @@ function pda_encyclopedia_tab:InitControls()
 	self.category_list = xml:InitListBox("category_list", self)
 	self:Register(self.category_list, "category_list")
 	
-	-- Information window and its scrollbar.
+	-- Text information, footer image (and container), and the scrollbar.
 	self.information = xml:InitTextWnd("description:information", nil)
 	self.image_container = xml:InitStatic("description:image_container", nil)
-	self.image = xml:InitStatic("description:image", self.image_container)
+	self.image = xml:InitStatic("description:image_container:image", self.image_container)
 	self.scrollbar = xml:InitScrollView("description:scrollbar", self)
+	
+	-- Adding components to the scrollbar.
+	self.scrollbar:AddWindow(self.information, true)
+	self.scrollbar:AddWindow(self.image_container, true)
+	
+	-- Prevent objects being deleted while used.
+	self.information:SetAutoDelete(false)
+	self.image_container:SetAutoDelete(false)
+	self.image:SetAutoDelete(false)
 end
 
 -- Load the encyclopedia categories and articles.

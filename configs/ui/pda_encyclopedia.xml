@@ -47,13 +47,12 @@
 	</category_list>
 	
 	<description>
-		<scrollbar x="326" y="163" width="650" height="519" right_ident="0" left_ident="0" top_indent="0" bottom_indent="0" vert_interval="0" always_show_scroll="1"/>
+		<scrollbar x="326" y="163" width="650" height="519" right_ident="0" left_ident="0" top_indent="0" bottom_indent="0" vert_interval="0" always_show_scroll="0"/>
 		<information width="628" height="1">
 			<text font="letterica16" color="ui_6" complex_mode="1" align="l" vert_align="t" x="5" y="5"/>
 		</information>
-		<image_container width="0" height="0">
+		<image_container>
+			<image x="5" y="25" width="0" height="0"></image>
 		</image_container>
-		<image x="5" y="5" width="0" height="0">
-		</image>
 	</description>
 </w>
