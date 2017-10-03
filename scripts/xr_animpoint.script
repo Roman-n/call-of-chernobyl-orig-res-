@@ -37,7 +37,7 @@ function evaluator_reach_animpoint:evaluate()
 	if (xr_danger.has_danger(self.object)) then
 		return false
 	end
-	return self.st.am_i_reached == true -- self.st.animpoint:position_riched() == true
+	return self.st.am_i_reached == true
 end
 --------------------------------------------------------------------------------
 class "action_reach_animpoint" (action_base)
@@ -56,8 +56,6 @@ function action_reach_animpoint:execute()
 		return
 	end
 
-	self.object:set_dest_level_vertex_id(self.st.animpoint.position_vertex)
-
 	--self.object:set_desired_direction(self.st.animpoint.smart_direction)
 	self.object:set_path_type(game_object.level_path)
 
@@ -74,16 +72,18 @@ function action_reach_animpoint:execute()
 			new_state = reach_movement
 		end
 	end
-	if (self.object:position():distance_to_sqr(self.st.animpoint.vertex_position) <= self.st.reach_distance) then
+	local dist = self.object:position():distance_to_sqr(self.st.animpoint.vertex_position)
+	if (dist <= self.st.reach_distance) then
 		local cur_state = state_mgr.get_state(self.object)
-		if (cur_state ~= "animpoint_reach") then
+		if (cur_state ~= "wait_na") then
 			local function turn_end_callback()
 				self.st.am_i_reached = true
 			end
-			state_mgr.set_state(self.object, "animpoint_reach", { turn_end_func = turn_end_callback } , nil, {look_position = self.st.animpoint.look_position}  )
+			state_mgr.set_state(self.object, "wait_na", { turn_end_func = turn_end_callback } , nil, {look_dir = self.st.animpoint.smart_direction}  )
 		end
 	else
 		state_mgr.set_state(self.object, new_state)
+		self.object:set_dest_level_vertex_id(self.st.animpoint.position_vertex)
 	end
 end
 function action_reach_animpoint:finalize()
@@ -453,6 +453,9 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	st.cover_name		= ini:r_string_ex(section,"cover_name") or "$script_id$_cover"
 	st.use_camp 		= ini:r_bool_ex(section,"use_camp",true)
 	st.reach_distance	= ini:r_float_ex(section,"reach_distance") or 0.8
+	if (st.reach_distance < 0.8) then 
+		st.reach_distance = 0.8
+	end
 	st.reach_movement 	= ini:r_string_to_condlist(section,"reach_movement")
 	st.reach_distance 	= st.reach_distance*st.reach_distance
 
