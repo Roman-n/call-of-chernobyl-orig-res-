@@ -424,16 +424,16 @@ function state_manager:set_state(state_name, callback, timeout, target, extra)
 		self.fast_set = nil
 	end
 
-	if (callback and timeout and timeout >= 0) then
+	self.callback.turn_end_func = callback and callback.turn_end_func or nil -- because it's used separately in state_mgr_direction unlike below
+	
+	if (callback) then
 		self.callback.begin = nil
 		self.callback.func = callback.func
 		self.callback.timeout = timeout
-		self.callback.turn_end_func = callback.turn_end_func
 	else 
 		self.callback.begin = nil
 		self.callback.func = nil
 		self.callback.timeout = nil
-		self.callback.turn_end_func = nil
 	end
 end
 function state_manager:get_state()
