@@ -52,7 +52,7 @@
 			<text font="letterica16" color="ui_6" complex_mode="1" align="l" vert_align="t" x="5" y="5"/>
 		</information>
 		<image_container>
-			<image x="5" y="25" width="0" height="0"></image>
+			<image x="5" y="15" width="0" height="0"></image>
 		</image_container>
 	</description>
 </w>

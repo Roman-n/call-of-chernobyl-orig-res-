@@ -83,17 +83,17 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 		end
 	end
 	
-	-- Set the interface object sizes.
+	-- Set the interface component sizes.
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
-	self.image_container:SetWndSize(vector2():set(self.image:GetTextureRect().x2, math.floor(self.image:GetTextureRect().y2 * 0.75)))
+	self.image_container:SetWndSize(vector2():set(self.image:GetTextureRect().x2, self.image:GetTextureRect().y2 + 30))
 	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
 	self.scrollbar:AddWindow(self.image_container, true)
 	
-	-- Prevent objects from being deleted while used.
+	-- Prevent components from being deleted while used.
 	self.information:SetAutoDelete(false)
 	self.image_container:SetAutoDelete(false)
 	self.image:SetAutoDelete(false)
@@ -188,11 +188,11 @@ function pda_encyclopedia_tab:InitControls()
 	self.image = xml:InitStatic("description:image_container:image", self.image_container)
 	self.scrollbar = xml:InitScrollView("description:scrollbar", self)
 	
-	-- Adding components to the scrollbar.
+	-- Add components to the scrollbar.
 	self.scrollbar:AddWindow(self.information, true)
 	self.scrollbar:AddWindow(self.image_container, true)
 	
-	-- Prevent objects being deleted while used.
+	-- Prevent components being deleted while used.
 	self.information:SetAutoDelete(false)
 	self.image_container:SetAutoDelete(false)
 	self.image:SetAutoDelete(false)
