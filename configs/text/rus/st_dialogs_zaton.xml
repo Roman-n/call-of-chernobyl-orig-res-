@@ -99,4 +99,47 @@
 		<text>Есть третья бутылка... Если надо ещё.</text>
 	</string>
 
+	
+	<string id="zat_b52_robbery_port_bandits_1_0">
+		<text>Привет! Есть деньги, которые я могу взять?</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_1">
+		<text>Гм ... Нет.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_11">
+		<text>Эй, парень, почему так жадно? Дай нам добычу ...</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_111">
+		<text>Я ничего тебе не должен.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_111111">
+		<text>Да, хорошо. Мы не суки.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_1111111">
+		<text>Пока!</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_11112">
+		<text>Нет!</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_111121">
+		<text>Подумайте внимательно. Если у вас есть половина мозга, вы поймете, что лучше играть красиво, когда вас превосходит численность.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_1111211">
+		<text>Я сказал нет!</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_2">
+		<text>...Хорошо.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_1111">
+		<text>Я не держу дерьмо. Передать его!</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_1111212">
+		<text>Ладно, ты здесь.</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_21">
+		<text>Сдай свои деньги, дебил!</text>
+	</string>
+	<string id="zat_b52_robbery_port_bandits_1_11111">
+		<text>Легко, легко ... Вот так.</text>
+	</string>
 </string_table>
