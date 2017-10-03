@@ -71,25 +71,31 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	local section = category and category.articles[index2] or nil
 	if not (section) then return end
 	
-	-- Set the text of the article.
+	-- Set the image and text of the article.
 	self.information:SetText(game.translate_string(section .. "_text"))
+	self.image:InitTexture(section .. "_image")
 	
-	-- Lock the required articles if the guide wasn't cheated.
-	if not has_alife_info("unlocked_guide") then
-		for k, v in pairs (self.locked_articles) do
-			if (section == v) then
-				self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
-				break
-			end
+	-- Hide the article if it isn't unlocked.
+	for k, v in pairs (self.locked_articles) do
+		if (section == v) then
+			self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
+			break
 		end
 	end
 	
-	-- Set the information window and adjust the scrollbar as appropriate.
+	-- Set the interface asset sizes.
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
+	
+	-- Stops memory leaks? Certainly stops crashes.
+	self.information:SetAutoDelete(false)
+	self.image:SetAutoDelete(false)
+	self.image_container:SetAutoDelete(false)
+	
+	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
-	self.information:SetAutoDelete(false)
+	self.scrollbar:AddWindow(self.image_container, true)
 end
 
 -- Called when a category is selected.
@@ -177,9 +183,9 @@ function pda_encyclopedia_tab:InitControls()
 	
 	-- Information window and its scrollbar.
 	self.information = xml:InitTextWnd("description:information", nil)
+	self.image_container = xml:InitStatic("description:image_container", nil)
+	self.image = xml:InitStatic("description:image", self.image_container)
 	self.scrollbar = xml:InitScrollView("description:scrollbar", self)
-	self.scrollbar:AddWindow(self.information, true)
-	self.information:SetAutoDelete(false)
 end
 
 -- Load the encyclopedia categories and articles.
@@ -210,8 +216,8 @@ function pda_encyclopedia_tab:InitPlugin()
 				local junk1, section, value = ini:r_line(self.categories[i].section, k, "", "")
 				-- Unlocked articles table must exist, and must not contain this article.
 				if (unlocked_articles and not unlocked_articles[section]) then
-					-- Guide cheat infoportion must not exist, and article must not have "unlocked" tag.
-					if (not has_alife_info("unlocked_guide") and not (value == "unlocked")) then
+					-- Article must not have "unlocked" tag.
+					if not (value == "unlocked") then
 						table.insert(self.locked_articles, section)
 					end
 				end
@@ -219,7 +225,7 @@ function pda_encyclopedia_tab:InitPlugin()
 				
 				-- Keep any unlocked articles permanently unlocked.
 				-- When a counter is added to the interface this will make things simpler.
-				if (has_alife_info("unlocked_guide") or value == "unlocked") then
+				if (value == "unlocked") then
 					unlocked_articles[section] = true
 				end
 			end
