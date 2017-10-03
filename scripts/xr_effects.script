@@ -4540,9 +4540,11 @@ function yan_saharov_message(actor, npc, p)
 	elseif (p[1] == 2) then
 		news_manager.send_tip(db.actor, "st_yan_saharov_message_2", nil, "saharov", 20000, nil)
 	elseif (p[1] == 3) then
-		 news_manager.send_tip(db.actor, "st_yan_saharov_message_3", nil, "saharov", 15000, nil)
+		news_manager.send_tip(db.actor, "st_yan_saharov_message_3", nil, "saharov", 15000, nil)
 	elseif (p[1] == "free_upgrade") then
-		 news_manager.send_tip(db.actor, "st_yan_saharov_message_free_upgrade", nil, "saharov", 15000, nil)
+		news_manager.send_tip(db.actor, "st_yan_saharov_message_free_upgrade", nil, "saharov", 15000, nil)
+	elseif (p[1] == "about_storm") then 
+		news_manager.send_tip(db.actor, "st_yan_saharov_message_about_storm", nil, "saharov", 15000, nil)
 	end
 end
 
