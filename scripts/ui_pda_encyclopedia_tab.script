@@ -86,7 +86,10 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- Set the interface component sizes.
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
-	self.image_container:SetWndSize(vector2():set(self.image:GetTextureRect().x2, self.image:GetTextureRect().y2 + 30))
+	
+	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
+	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
+	self.image_container:SetWndSize(vector2():set(image_width, image_height + 30))
 	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
