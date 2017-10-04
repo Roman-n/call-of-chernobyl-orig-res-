@@ -41,18 +41,6 @@ function evaluator_wound:evaluate ()
 	return true
 end
 
-class "evaluator_can_fight" (property_evaluator)
-function evaluator_can_fight:__init(name, storage) super(nil, name)
-		self.a = storage
-end
-function evaluator_can_fight:evaluate ()
-	if self.object:critically_wounded() == true then
-		return true
-	end
-
-	return utils.load_var(self.object, "wounded_fight") ~= "false"
-end
-
 ----------------------------------------------------------------------------------------------------------------------
 --Actions
 ----------------------------------------------------------------------------------------------------------------------
@@ -314,7 +302,6 @@ end
 function add_to_binder(npc,ini,scheme,section,st,temp)
 	local manager = npc:motivation_action_manager ()
 	manager:add_evaluator(xr_evaluators_id.sidor_wounded_base, evaluator_wound("wounded", st))
-	manager:add_evaluator(xr_evaluators_id.sidor_wounded_base + 1, evaluator_can_fight("can_fight", st))
 
 	temp.action = action_wounded("wounded_action", st)
 
@@ -323,7 +310,6 @@ function add_to_binder(npc,ini,scheme,section,st,temp)
 	
 	temp.action:add_effect(world_property(xr_evaluators_id.sidor_wounded_base,false))
 	temp.action:add_effect(world_property(stalker_ids.property_enemy,false))
-	temp.action:add_effect(world_property(xr_evaluators_id.sidor_wounded_base + 1,true))
 	
 	manager:add_action(xr_actions_id.sidor_act_wounded_base,temp.action)
 end
@@ -340,10 +326,10 @@ function configure_actions(npc,ini,scheme,section,stype,temp)
 	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
 	
 	action = manager:action(stalker_ids.action_combat_planner)
-	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base + 1,true))
+	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
 
 	action = manager:action(stalker_ids.action_danger_planner)
-	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base + 1,true))
+	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
 end
 
 function reset_generic_scheme(npc,scheme,section,stype,st)
