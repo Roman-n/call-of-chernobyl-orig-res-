@@ -76,9 +76,11 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	self.image:InitTexture(section .. "_image")
 	
 	-- Hide the article if it isn't unlocked.
+	local display_image = true
 	for k, v in pairs (self.locked_articles) do
 		if (section == v) then
 			self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
+			display_image = nil
 			break
 		end
 	end
@@ -94,7 +96,9 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
-	self.scrollbar:AddWindow(self.image_container, true)
+	if (display_image) then
+		self.scrollbar:AddWindow(self.image_container, true)
+	end
 	
 	-- Prevent components from being deleted while used.
 	self.information:SetAutoDelete(false)
