@@ -334,27 +334,27 @@
 		<text>I don't have anything to talk about right now, alright?</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_default_2">
-		<text>Sorry, I don't want to have a conversation.</text>
+		<text>Sorry, I'd rather not speak right now.</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_default_3">
 		<text>Don't bother me with any chit-chat, please.</text>
 	</string>
 	
 	<string id="cc_generic-ecolog-meet_use_no_fight_1">
-		<text>You want to talk? Hide, idiot!</text>
+		<text>You seriously want to talk? Get down, idiot!</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_fight_2">
-		<text>Less yapping, more shooting!</text>
+		<text>Later! We'll talk later!</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_fight_3">
-		<text>You picked a good time to talk...</text>
+		<text>Have you got a head on your shoulders? Not now!</text>
 	</string>
 	
 	<string id="cc_generic-ecolog-meet_use_no_talk_leader_1">
 		<text>I don't have anything to talk about right now, alright?</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_default_2">
-		<text>Sorry, I don't want to have a conversation.</text>
+		<text>Sorry, I'd rather not speak right now.</text>
 	</string>
 	<string id="cc_generic-ecolog-meet_use_no_default_3">
 		<text>Don't bother me with any chit-chat, please.</text>
@@ -797,23 +797,23 @@
 	<!-- Monolith -->
 	
 	<string id="cc_generic-monolith-meet_hello_1">
-		<text>Do not believe in anyone other than the Monolith and your fellow brothers. Nobody.</text>
+		<text>Trust no one other than the Monolith and your fellow brothers. No one.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_hello_2">
-		<text>It is too quiet here.</text>
+		<text>It's too quiet here.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_hello_3">
 		<text>I believe I've been here before at some point. I cannot remember.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_hello_4">
-		<text>Strange... everything here is strange.</text>
+		<text>Strange... Everything here is strange.</text>
 	</string>
 	
 	<string id="cc_generic-monolith-meet_use_no_fight_1">
 		<text>Monolith... Great Monolith.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_use_no_fight_2">
-		<text>The enemies are close... Such is the will of the Monolith.</text>
+		<text>The enemies are near... Such is the will of the Monolith.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_use_no_fight_3">
 		<text>Monolith... I am your faithful servant.</text>
@@ -823,10 +823,10 @@
 		<text>Let's keep to ourselves.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_use_no_talk_leader_2">
-		<text>It is not worth speaking in vain.</text>
+		<text>It is not worth it to speak in vain.</text>
 	</string>
 	<string id="cc_generic-monolith-meet_use_no_talk_leader_3">
-		<text>I do not want to talk right now.</text>
+		<text>I do not want to speak right now.</text>
 	</string>
 	
 </string_table>
