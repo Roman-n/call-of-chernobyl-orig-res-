@@ -71,9 +71,8 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	local section = category and category.articles[index2] or nil
 	if not (section) then return end
 	
-	-- Set the image and text of the article.
+	-- Set the article's text.
 	self.information:SetText(game.translate_string(section .. "_text"))
-	self.image:InitTexture(section .. "_image")
 	
 	-- Hide the article if it isn't unlocked.
 	local display_image = true
@@ -89,9 +88,23 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
 	
+	-- Set the article's image.
+	-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
+	-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
+	-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
+	-- The coefficient_x variable is used to fix image stretchiness when using widescreen resolutions.
+	self.image:InitTexture(section .. "_image")
+	
+	-- Grab the dimensions of the image and the x coefficient.
 	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
 	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
-	self.image_container:SetWndSize(vector2():set(image_width, image_height + 25))
+	local coefficient_x = (device().height / device().width) / (768 / 1204)
+	
+	-- Resize the image and container, and then reinitialise the texture.
+	self.image_container:SetWndSize(vector2():set(image_width, image_height + 20))
+	self.image:SetWndSize(vector2():set(image_width * coefficient_x, image_height))
+	self.image:SetStretchTexture(true)
+	self.image:InitTexture(section .. "_image")
 	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
