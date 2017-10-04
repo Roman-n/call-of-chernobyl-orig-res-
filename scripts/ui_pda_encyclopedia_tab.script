@@ -98,10 +98,10 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- Grab the dimensions of the image and the x coefficient.
 	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
 	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
-	local coefficient_x = (device().height / device().width) / (768 / 1204)
+	local coefficient_x = (device().height / device().width) / (768 / 1024)
 	
 	-- Resize the image and container, and then reinitialise the texture.
-	self.image_container:SetWndSize(vector2():set(image_width, image_height + 20))
+	self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
 	self.image:SetWndSize(vector2():set(image_width * coefficient_x, image_height))
 	self.image:SetStretchTexture(true)
 	self.image:InitTexture(section .. "_image")
