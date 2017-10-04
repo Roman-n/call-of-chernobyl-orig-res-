@@ -12,7 +12,7 @@
 		<text>
 			Blind dogs are the most familiar representative of the Zone.\n
 			\nSeveral generations of dogs have lived and died since the second disaster, with each being more affected by the Zone than the previous.\n
-			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - primarily at the expense of those that also share their habitat.\n
+			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - at the expense of those that share their habitat.\n
 			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey literally through the walls.\n
 			\nLike their wolf ancestors, blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Abilities: None
@@ -27,6 +27,7 @@
 			\nBloodsuckers, as the name would suggest, are hematophagous monsters.\n
 			\nThe bloodsucker is semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
 			\nThis status has been achieved thanks to the species' relative rarity and the low survival rate of its victims.\n
+			\nThose who have encountered them and lived to tell about it have described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
 			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
 			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
 			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Abilities: Camouflage, Blood-sucking
@@ -84,7 +85,7 @@
 			\nWith a duplicate set of organs, no central circulatory system, and its whole body permeated with capillaries, the chimera can easily shrug off organ failure and massive blood loss.\n
 			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
 			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
-			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Abilities: Fleet-footed, Regeneration
+			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Abilities: Fleet-footed, Regenerative
 		</text>
 	</string>
 	
@@ -146,8 +147,7 @@
 	<string id="encyclopedia_mutants_karlik_text">
 		<text>
 			Karliks are very rare dwarf-like mutants which hide away in seclusion.\n
-			\nAs if having the ultimate case of short man syndrome, what a karlik lacks in height it makes up for tenfold with its psychic abilities.\n
-			\nIt is unclear whether or not they are related to burers, but between them they share a great many similarities making it difficult to dismiss as just coincidence. For example, all psychic abilities of the burer are also shared by the karlik.\n
+			\nIt is unclear whether or not they are related to burers, but between them they share a great many psychic similarities making it difficult to dismiss as just coincidence.\n
 			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts as if they have tasked themselves with their responsibility - attacking anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
 			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Abilities: Passive damage, Phantom projection, Psi-powers, Telekinesis

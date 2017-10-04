@@ -1,0 +1,59 @@
+<w>
+	<!-- Characters -->
+	<file name="ui\guide\encyclopedia_characters">
+		<texture id="encyclopedia_characters_barkeep_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_characters_beard_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_characters_nimble_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_characters_sidorovich_image" x="0" y="0" width="0" height="0"/>
+	</file>
+	
+	<!-- Features -->
+	<!-- No images -->
+	<file name="ui\guide\encyclopedia_characters">
+		<texture id="encyclopedia_features_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_azazel_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_delayed_repairs_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_dynamic_news_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_extended_hud_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_hardcore_ai_aim_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_helicopter_patrols_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_ironman_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_online_exclusion_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_population_factors_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_portrait_by_outfit_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_radio_music_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_rank_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_reputation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_sleep_deprivation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_story_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_survival_mode_image" x="0" y="0" width="0" height="0"/>
+	</file>
+	
+	<!-- Mutants -->
+	<file name="ui\guide\encyclopedia_mutants">
+		<texture id="encyclopedia_mutants_blind_dog_image" x="0" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_bloodsucker_image" x="0" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_boar_image" x="0" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_burer_image" x="300" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_cat_image" x="300" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_chimera_image" x="300" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_controller_image" x="600" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_crow_image" x="600" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_flesh_image" x="600" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_fracture_image" x="600" y="1200" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_karlik_image" x="0" y="1200" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_poltergeist_image" x="600" y="1500" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_pseudodog_image" x="300" y="1500" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_pseudogeist_image" x="300" y="900" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_pseudogiant_image" x="300" y="1200" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_psydog_image" x="900" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_pyrogeist_image" x="900" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_rat_image" x="900" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_snork_image" x="0" y="900" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_tushkano_image" x="0" y="1500" width="300" height="300"/>
+		<texture id="encyclopedia_mutants_zombie_image" x="600" y="900" width="300" height="300"/>
+	</file>
+	
+	
+</w>
