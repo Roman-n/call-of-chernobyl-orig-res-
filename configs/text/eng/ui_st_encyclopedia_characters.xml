@@ -11,9 +11,9 @@
 	<string id="encyclopedia_characters_barkeep_text">
 		<text>
 			Barkeep is the proprietor of the 100 Rads bar in Rostok.\n
-			\nIn addition to the obvious functions of managing the bar and serving drinks - he rents rooms, pays out bribes and supplies stalkers with plenty of equipment and work.\n
-			\nAlong with Sidorovich and Strelok, he was instrumental in the opening of roads leading toward the center of the Zone.\n
-			\nHe is neither a saint nor a scoundrel, but is highly respected among stalkers, especially those in the Duty faction - his main patrons.
+			\nDue to Rostok's central location in the busier parts of the Zone, he is a very important trader - a lifeline for stalkers headed to or returning from battle.\n
+			\nAside from the obvious functions of managing the bar - he rents rooms, pays out bribes and supplies stalkers with plenty of equipment and work.\n
+			\nHe is respected greatly by many stalkers as he was integral to the opening of roads leading to the Zone's center.
 		</text>
 	</string>
 	
@@ -22,9 +22,22 @@
 	</string>
 	<string id="encyclopedia_characters_beard_text">
 		<text>
-			Beard smuggles artifacts and tends bar aboard the Skadovsk.\n
-			\nConducting his personal artifact smuggling business from his bar, he has no shortage of people in need of work, and is a regular employer to many near the Zone's center.\n
-			\nHe often finds himself at odds with Owl, who always seems to have a hand in disrupting his business enterprises one way or the other.
+			Beard is an artifact dealer and bartender aboard the Skadovsk.\n
+			\nArguably the leader of the local loners in Zaton, he is a central figure near the Zone's center.\n
+			\nHe offers various fields of work to stalkers, though mainly artifact recovery, and is always willing to lend a helping hand.\n
+			\nHis bar is one of the busiest in the Zone - second only to the 100 Rads - and is effectively synonymous with the Skadovsk.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_ivan_trodnik">
+		<text>Ivan Trodnik</text>
+	</string>
+	<string id="encyclopedia_characters_ivan_trodnik_text">
+		<text>
+			Ivan Trodnik is the former guide, and now medic of Clear Sky.\n
+			\nOnce a guide leading his fellow faction members through the unexplored marshes, Ivan now spends his days patching up the wounded.\n
+			\nForced into his position out of necessity rather than by choice, he was Clear Sky's most experienced medic following their near-collapse.\n
+			\nNow wishing he had succumb to wounds from his earlier time exploring, his only remaining joys in life are drinking and blaming the mercenary Scar for his troubles.
 		</text>
 	</string>
 	
@@ -34,9 +47,9 @@
 	<string id="encyclopedia_characters_nimble_text">
 		<text>
 			Nimble is a profiteer who sells smuggled weapons and outfits.\n
-			\nStarting out as a member of Clear Sky, and then as a courier for Sidorovich, he has assembled a list of important contacts allowing him to build his own business.\n
-			\nHaving learned from the best and survived everything thrown at him, he has become one of the most proficient and well-known traders in the Zone.\n
-			\nUnlike other traders however, he specialises in the sale of rare equipment, items that can be very difficult to obtain, but almost always worth the money invested.\n
+			\nStarting out as a member of Clear Sky, and then as a courier for Sidorovich, he has assembled a list of important contacts allowing him to build his own smuggling business.\n
+			\nUnlike other traders in the Zone he specialises in the sale of rare equipment, items that can be very difficult to obtain, never knowing what he'll get his hands on next.\n
+			\nHe originally set up shop at the Skadovsk, in Zaton, but following the resurgence of the Monolith faction has relocated to the Cordon, not far from Sidorovich's bunker.
 		</text>
 	</string>
 	
@@ -46,7 +59,7 @@
 	<string id="encyclopedia_characters_sidorovich_text">
 		<text>
 			Sidorovich trades out of an old bunker near the rookie village.\n
-			\nHe enjoys a reputation of being a fairly honest businessman who gives newcomers a chance to survive, and his wealth of contacts allows him to smuggle in goods many here consider a luxury.\n
+			\nHe enjoys a reputation of being a fairly honest businessman who gives newcomers a chance to survive, and his wealth of contacts allows him to smuggle in luxury goods.\n
 			\nHowever many also see him as greedy and tight-fisted, those who try to compete with him on his own territory, or just disgruntle him in general, often end up on the wrong side of an assassination contract.\n
 			\nWhether for good or bad, he continues to play an integral role within the Zone's economy and its faction's politics, as such he is a great source of work for those wanting to earn a quick payday.
 		</text>
