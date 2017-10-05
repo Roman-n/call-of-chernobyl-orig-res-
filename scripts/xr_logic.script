@@ -603,11 +603,12 @@ function is_active(npc, st)
 	return st.section == db.storage[npc:id()].active_section
 end
 
-function abort_syntax_error_in_cond(npc, section, field)
-	printf("object '%s': section '%s': field '%s': syntax error in switch condition",npc:name(), section, field)
+function abort_syntax_error_in_cond(section,field,c)
+	callstack()
+	abort("section '%s': field '%s': syntax error in switch condition [%s]",section,field,c)
 end
 
-function extract_conditions(npc,c,lst,n,index)
+function extract_conditions(c,lst,n,index)
 	for sign,infop in c:gmatch("([=%-%+!~]+)([^=%-%+!~%s]+)") do
 		if not (lst[n][index]) then
 			lst[n][index] = {} -- because we don't want empty tables
@@ -632,7 +633,7 @@ function extract_conditions(npc,c,lst,n,index)
 					end
 					table.insert(lst[n][index],{infop,sign == sign_equ and 3 or 4,t})
 				else
-					abort_syntax_error_in_cond(npc, section, field)
+					abort_syntax_error_in_cond(section,field,c)
 				end
 			else
 				table.insert(lst[n][index],{infop,sign == sign_equ and 3 or 4})
@@ -640,7 +641,7 @@ function extract_conditions(npc,c,lst,n,index)
 		elseif (sign == sign_prb) then 
 			table.insert(lst[n][index],{infop,5,tonumber(infop)})
 		else 
-			abort_syntax_error_in_cond(npc, section, field)
+			abort_syntax_error_in_cond(section,field,c)
 		end
 	end
 end
@@ -694,13 +695,13 @@ function parse_condlist(npc, section, field, src)
 		local a,b,c = string.find(fld, "{%s*(.*)%s*}")
 		if (c) then
 			fld = string.sub(fld,1,a-1) .. string.sub(fld,b+1)
-			extract_conditions(npc, c,lst,n,2)
+			extract_conditions(c,lst,n,2)
 		end
 		
 		a,b,c = string.find(fld, "%%%s*(.*)%s*%%")
 		if (c) then
 			fld = string.sub(fld,1,a-1) .. string.sub(fld,b+1)
-			extract_conditions(npc, c,lst,n,3)
+			extract_conditions(c,lst,n,3)
 		end
 		
 		fld = fld:trim()
@@ -720,7 +721,7 @@ function cfg_get_number_and_condlist(ini, section, field, npc,cond_name)
 
 	local par = utils.parse_params(str)
 	if not par[1] or not par[2] then
-		abort_syntax_error_in_cond(npc, section, field)
+		abort_syntax_error_in_cond(section,field,str)
 	end
 
 	local t = {}
@@ -740,7 +741,7 @@ function cfg_get_string_and_condlist(ini, section, field, npc,cond_name)
 
 	local par = utils.parse_params(str)
 	if not par[1] or not par[2] then
-		abort_syntax_error_in_cond(npc, section, field)
+		abort_syntax_error_in_cond(section,field,str)
 	end
 
 	local t = {}
@@ -760,7 +761,7 @@ function cfg_get_two_strings_and_condlist(ini, section, field, npc,cond_name)
 
 	local par = utils.parse_params(str)
 	if not par[1] or not par[2] or not par[3] then
-		abort_syntax_error_in_cond(npc, section, field)
+		abort_syntax_error_in_cond(section,field,str)
 	end
 
 	local t = {}
@@ -783,7 +784,7 @@ function cfg_get_condlist(ini, section, field, npc,cond_name)
 
 	local par = utils.parse_params(str)
 	if not par[1] then
-		abort_syntax_error_in_cond(npc, section, field)
+		abort_syntax_error_in_cond(section,field,str)
 	end
 
 	local t = {}
