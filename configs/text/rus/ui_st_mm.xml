@@ -523,4 +523,7 @@
 	<string id="ui_mm_cod_pickup_mode">
 		<text>Автоподбор лута</text>
 	</string>
+	<string id="ui_mm_invert_zoom">
+		<text>Перевернутое масштабирование</text>
+	</string>
 </string_table>

@@ -607,6 +607,11 @@
 			<texture>ui_inGame2_checkbox</texture>
 			<options_item entry="cl_cod_pickup_mode" group="mm_opt_gameplay"/>
 		</check_cod_pickup_mode>
+
+		<check_invert_zoom x="162" y="3" width="35" height="29" stretch="1">
+			<texture>ui_inGame2_checkbox</texture>
+			<options_item entry="g_invert_zoom" group="mm_opt_gameplay"/>
+		</check_invert_zoom>
 		
         <cap_check_axr x="45" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c"></text>
