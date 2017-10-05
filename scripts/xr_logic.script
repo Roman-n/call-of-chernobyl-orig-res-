@@ -607,7 +607,7 @@ function abort_syntax_error_in_cond(npc, section, field)
 	printf("object '%s': section '%s': field '%s': syntax error in switch condition",npc:name(), section, field)
 end
 
-function extract_conditions(c,lst,n,index)
+function extract_conditions(npc,c,lst,n,index)
 	for sign,infop in c:gmatch("([=%-%+!~]+)([^=%-%+!~%s]+)") do
 		if not (lst[n][index]) then
 			lst[n][index] = {} -- because we don't want empty tables
@@ -694,13 +694,13 @@ function parse_condlist(npc, section, field, src)
 		local a,b,c = string.find(fld, "{%s*(.*)%s*}")
 		if (c) then
 			fld = string.sub(fld,1,a-1) .. string.sub(fld,b+1)
-			extract_conditions(c,lst,n,2)
+			extract_conditions(npc, c,lst,n,2)
 		end
 		
 		a,b,c = string.find(fld, "%%%s*(.*)%s*%%")
 		if (c) then
 			fld = string.sub(fld,1,a-1) .. string.sub(fld,b+1)
-			extract_conditions(c,lst,n,3)
+			extract_conditions(npc, c,lst,n,3)
 		end
 		
 		fld = fld:trim()
