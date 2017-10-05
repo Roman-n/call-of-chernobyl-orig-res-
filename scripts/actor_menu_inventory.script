@@ -82,6 +82,14 @@ end
 
 -- called from engine during donation. return false to refuse or return true to donate
 function CUIActorMenu_DonateCurrentItem(obj,itm)
+	-- Prevent quest and untradeable items from being donated.
+	local ini = system_ini()
+	local can_trade = ini:r_bool_ex(itm:section(), "can_trade", true)
+	local quest_item = ini:r_bool_ex(itm:section(), "quest_item", false)
+	if (can_trade == false or quest_item == true) then
+		return false
+	end
+
 	-- Reputation and rank increase for donating items.
 	-- Uses the condition of the item as a multiplier (damage reduces the gain).
 	local rnk_inc = utils.round(xr_statistic.rank_rep["donations"].rnk * itm:condition(), 1)
