@@ -1,13 +1,19 @@
 <w>
 	<!-- Characters -->
 	<file name="ui\guide\encyclopedia_characters">
+		<texture id="encyclopedia_characters_axel_image" x="600" y="1200" width="300" height="300"/>
 		<texture id="encyclopedia_characters_barkeep_image" x="300" y="0" width="300" height="300"/>
 		<texture id="encyclopedia_characters_beard_image" x="600" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_characters_cardan_image" x="0" y="1500" width="300" height="300"/>
 		<texture id="encyclopedia_characters_cold_image" x="600" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_characters_doctor_image" x="300" y="1200" width="300" height="300"/>
+		<texture id="encyclopedia_characters_druzhok_image" x="300" y="1500" width="300" height="300"/>
+		<texture id="encyclopedia_characters_gonta_image" x="0" y="1200" width="300" height="300"/>
 		<texture id="encyclopedia_characters_ivan_trodnik_image" x="0" y="600" width="300" height="300"/>
 		<texture id="encyclopedia_characters_librarian_image" x="600" y="600" width="300" height="300"/>
 		<texture id="encyclopedia_characters_nimble_image" x="0" y="300" width="300" height="300"/>
 		<texture id="encyclopedia_characters_novikov_image" x="300" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_characters_owl_image" x="600" y="900" width="300" height="300"/>
 		<texture id="encyclopedia_characters_sidorovich_image" x="0" y="0" width="300" height="300"/>
 		<texture id="encyclopedia_characters_spore_image" x="0" y="900" width="300" height="300"/>
 		<texture id="encyclopedia_characters_wolf_image" x="300" y="300" width="300" height="300"/>
