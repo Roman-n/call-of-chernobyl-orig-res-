@@ -353,12 +353,6 @@
 	<string id="cc_generic-ecolog-meet_use_no_talk_leader_1">
 		<text>I don't have anything to talk about right now, alright?</text>
 	</string>
-	<string id="cc_generic-ecolog-meet_use_no_default_2">
-		<text>Sorry, I'd rather not speak right now.</text>
-	</string>
-	<string id="cc_generic-ecolog-meet_use_no_default_3">
-		<text>Don't bother me with any chit-chat, please.</text>
-	</string>
 	
 	<string id="cc_generic-ecolog-meet_use_no_weapon_1">
 		<text>If you wanna talk, put down that weapon.</text>
