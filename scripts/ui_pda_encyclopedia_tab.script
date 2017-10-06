@@ -92,15 +92,15 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
 	-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
 	-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
-	-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
 	self.image:InitTexture(section .. "_image")
 	
 	-- Grab the dimensions of the image and the x coefficient.
 	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
 	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
-	local x_coefficient = (device().height / device().width) / (768 / 1024)
 	
 	-- Resize the image and container, and then reinitialise the texture.
+	-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
+	local x_coefficient = (device().height / device().width) / (768 / 1024)
 	self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
 	self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
 	self.image:SetStretchTexture(true)

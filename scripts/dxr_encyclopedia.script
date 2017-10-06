@@ -102,8 +102,9 @@ end
 
 -- Text displayed for USB memory sticks.
 function context_functor(item)
-	-- Return if the weapon is invalid.
-	if (not item) then
+	-- Return if the item is not in the player inventory.
+	local parent = item:parent()
+	if not (parent and parent:id() == db.actor:id()) then
 		return
 	end
 	
@@ -216,7 +217,9 @@ function unlock_article(section)
 	table.remove(locked_articles, index)
 	
 	-- Notify the player and update the PDA selection.
-	news_manager.send_tip(db.actor, "pda_btn_encyclopedia_notify", nil, "guide_unlock", nil, nil)
+	local article = game.translate_string(section)
+	local message = game.translate_string("pda_btn_encyclopedia_notify")
+	news_manager.send_tip(db.actor, strformat(message, article), nil, "guide_unlock", nil, nil)
 	xr_statistic.inc_counter("guide_articles")
 	set_article(section)
 end
