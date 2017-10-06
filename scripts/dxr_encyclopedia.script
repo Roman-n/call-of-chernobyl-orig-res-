@@ -102,8 +102,9 @@ end
 
 -- Text displayed for USB memory sticks.
 function context_functor(item)
-	-- Return if the weapon is invalid.
-	if (not item) then
+	-- Return if the item is not in the player inventory.
+	local parent = item:parent()
+	if not (parent and parent:id() == db.actor:id()) then
 		return
 	end
 	
