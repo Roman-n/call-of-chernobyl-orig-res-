@@ -45,6 +45,10 @@ function action_door:reset_scheme(loading)
 		self.st.script_used_more_than_once = true
 	end
 	
+	if not (self.st.slider) then
+		self.object:register_door_for_npc()
+	end
+	
 	if self.st.closed then
 		--' ≈сли дверь уже закрыта - то нужно закрыть без звука
 		if self:is_closed() then
@@ -274,8 +278,6 @@ end
 function add_to_binder(npc, ini, scheme, section, storage)
 	--printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
 
-	npc:register_door_for_npc()
-	
 	db.level_doors[npc:id()] = npc:position()
 
 	local new_action = action_door(npc, storage)
@@ -326,6 +328,10 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	st.tip_open  			= ini:r_string_ex(section,"tip_open") or "tip_door_open"		
 	st.tip_unlock  			= ini:r_string_ex(section,"tip_open") or "tip_door_locked"
 	st.unlock_for_npc   	= ini:r_bool_ex(section,"unlock_for_npc",false)	
+	
+	if not (st.slider) then
+		npc:register_door_for_npc()
+	end 
 	
 	if (st.unlock_for_npc and npc:is_door_locked_for_npc()) then 
  		npc:unlock_door_for_npc()
