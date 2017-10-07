@@ -69,7 +69,7 @@ on_init = %=find_smart_under_faction_control(mar_base_stalker_barmen_task_1_id:m
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:monster)} true, false
 repeat_timeout = 86400
 stage_complete = 1
-on_complete = %=reward_random_money(4000:4500) =reward_stash(true) =inc_task_stage(mar_base_stalker_barmen_task_1) =complete_task_inc_goodwill(50:csky) =pstor_reset(mar_base_stalker_barmen_task_1_id) =pstor_reset(mar_base_stalker_barmen_task_1_target_id)%
+on_complete = %=reward_random_money(2000:3000) =reward_stash(true) =inc_task_stage(mar_base_stalker_barmen_task_1) =complete_task_inc_goodwill(50:csky) =pstor_reset(mar_base_stalker_barmen_task_1_id) =pstor_reset(mar_base_stalker_barmen_task_1_target_id)%
 on_fail = %=pstor_reset(mar_base_stalker_barmen_task_1_id) =pstor_reset(mar_base_stalker_barmen_task_1_target_id) =fail_task_dec_goodwill(25:csky)%
 on_cancel = %=pstor_reset(mar_base_stalker_barmen_task_1_id) =pstor_reset(mar_base_stalker_barmen_task_1_target_id)%
 
@@ -92,7 +92,7 @@ status_functor_params = bandit
 on_init = %=find_smart_under_faction_control(mar_base_stalker_barmen_task_2_id:bandit)%
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:bandit)} true, false
 stage_complete = 1
-on_complete = %=reward_random_money(4000:5000) =reward_stash(true) =inc_task_stage(mar_base_stalker_barmen_task_2) =complete_task_inc_goodwill(50:csky) =pstor_reset(mar_base_stalker_barmen_task_2_id) =pstor_reset(mar_base_stalker_barmen_task_2_target_id)%
+on_complete = %=reward_random_money(3000:4000) =reward_stash(true) =inc_task_stage(mar_base_stalker_barmen_task_2) =complete_task_inc_goodwill(50:csky) =pstor_reset(mar_base_stalker_barmen_task_2_id) =pstor_reset(mar_base_stalker_barmen_task_2_target_id)%
 on_fail = %=pstor_reset(mar_base_stalker_barmen_task_2_id) =pstor_reset(mar_base_stalker_barmen_task_2_target_id) =fail_task_dec_goodwill(25:csky)%
 on_cancel = %=pstor_reset(mar_base_stalker_barmen_task_2_id) =pstor_reset(mar_base_stalker_barmen_task_2_target_id)%
 
@@ -116,7 +116,7 @@ repeat_timeout = 43200
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = mar_base_stalker_barmen_task_3_fetch_finish
-on_complete = %=complete_task_inc_goodwill(50:csky) =reward_stash(true) =reward_item_cost_mult_and_remove(mar_base_stalker_barmen_task_3_fetch:5) =inc_task_stage(mar_base_stalker_barmen_task_3)%
+on_complete = %=complete_task_inc_goodwill(50:csky) =reward_stash(true) =reward_item_cost_mult_and_remove(mar_base_stalker_barmen_task_3_fetch:3) =reward_random_item(ammo_12x70_buck:1:ammo_5.56x45_ss190:1:ammo_5.45x39_fmj:1) =inc_task_stage(mar_base_stalker_barmen_task_3)%
 
 
 ;--------------------------------------------------------------------------------------------------
