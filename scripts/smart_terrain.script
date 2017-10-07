@@ -1208,7 +1208,7 @@ function se_smart_terrain:update()
 	
 	local sim = alife()
 	local se_actor = sim:actor()
-	self.dist_to_actor = self.position:distance_to(se_actor.position)
+	self.dist_to_actor = self.online and self.position:distance_to(se_actor.position) or math.huge
 	
 	if self.respawn_params ~= nil then
 		self:try_respawn()

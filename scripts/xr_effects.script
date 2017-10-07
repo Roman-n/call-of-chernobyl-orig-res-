@@ -42,7 +42,7 @@ function find_smart_under_faction_control_ex(actor,npc,p)
 	
 	local sim = alife()
 	local gg = game_graph()
-	local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
+	--local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
 		
 	local target_id
 	for name,smart in pairs(SIMBOARD.smarts_by_names) do 
@@ -223,9 +223,40 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 		return 
 	end 
 	
+	local mult = tonumber(p[2]) or 1
 	local amt = utils.load_var(db.actor,p[1].."_count") or 1
-	dialogs.relocate_money(db.actor, amt*(tonumber(p[2]) or 1)*item:cost()*item:condition() ,"in")
-	remove_item(actor, npc, {sec,amt})
+	local cur_amt = amt
+	local total_cost = 0
+	local function add_up_items(itm)
+		if (itm:section() == sec and cur_amt > 0) then
+			total_cost = total_cost + mult*item:cost()*item:condition()
+			cur_amt = cur_amt - 1
+		end
+		if (cur_amt <= 0) then
+			return true
+		end
+		return false
+	end
+	db.actor:inventory_for_each(add_up_items)
+	
+	dialogs.relocate_money(db.actor, total_cost ,"in")
+	
+	local trade_npc = inventory_upgrades.victim_id and db.storage[inventory_upgrades.victim_id] and db.storage[inventory_upgrades.victim_id].object
+	if (trade_npc) then 
+		local function transfer_object_item(itm)
+			if (itm:section() == sec and amt > 0) then
+				db.actor:transfer_item(itm, trade_npc)
+				amt = amt - 1
+			end
+			if (amt <= 0) then 
+				return true
+			end
+			return false
+		end
+		db.actor:inventory_for_each(transfer_object_item)
+	else
+		remove_item(actor, npc, {sec,amt})	
+	end
 end 
 
 function reward_random_item(actor,npc,p)
@@ -490,7 +521,22 @@ function remove_fetch_item(actor,npc,p)
 	local section = utils.load_var(db.actor,p[1])
 	if (section and db.actor:object(section)) then
 		local amt = p[2] or utils.load_var(db.actor,p[1].."_count") or 1
-		remove_item(actor, npc, {section,amt})
+		local trade_npc = inventory_upgrades.victim_id and db.storage[inventory_upgrades.victim_id] and db.storage[inventory_upgrades.victim_id].object
+		if (trade_npc) then 
+			local function transfer_object_item(itm)
+				if (itm:section() == section and amt > 0) then
+					db.actor:transfer_item(itm, trade_npc)
+					amt = amt - 1
+				end
+				if (amt <= 0) then 
+					return true
+				end
+				return false
+			end
+			db.actor:inventory_for_each(transfer_object_item)
+		else
+			remove_item(actor, npc, {section,amt})	
+		end
 	end
 end
 

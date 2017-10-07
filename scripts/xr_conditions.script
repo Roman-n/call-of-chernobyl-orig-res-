@@ -2577,7 +2577,7 @@ function all_avail_smart_stayed_squad_count_ge_by_faction_ex(actor,npc,p)
 	
 		local sim = alife()
 		local gg = game_graph()
-		local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
+		--local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
 
 		for name,v in pairs(SIMBOARD.smarts_by_names) do
 			if (simulation_objects.available_by_id[v.id] == true) then
