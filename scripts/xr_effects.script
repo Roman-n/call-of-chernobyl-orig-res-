@@ -218,10 +218,6 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 	if not (sec) then 
 		return 
 	end 
-	local item = db.actor:object(sec)
-	if not (item) then 
-		return 
-	end 
 	
 	local mult = tonumber(p[2]) or 1
 	local amt = utils.load_var(db.actor,p[1].."_count") or 1
@@ -229,7 +225,7 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 	local total_cost = 0
 	local function add_up_items(itm)
 		if (itm:section() == sec and cur_amt > 0) then
-			total_cost = total_cost + mult*item:cost()*item:condition()
+			total_cost = total_cost + mult*itm:cost()*itm:condition()
 			cur_amt = cur_amt - 1
 		end
 		if (cur_amt <= 0) then
@@ -238,6 +234,10 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 		return false
 	end
 	db.actor:inventory_for_each(add_up_items)
+	
+	if (total_cost == 0) then 
+		return 
+	end 
 	
 	dialogs.relocate_money(db.actor, total_cost ,"in")
 	
