@@ -92,6 +92,7 @@ function weapon_binder:update(delta)
 				end 
 				if (m_data.offline_ammo_type) then 
 					self.object:set_ammo_type(tonumber(m_data.offline_ammo_type) or 0)
+					m_data.offline_ammo_type = nil
 				end
 			end
 		end
