@@ -97,6 +97,10 @@ function evaluator_radio_in_heli:evaluate()
 		return false 
 	end
 	
+	if (xr_conditions.surge_started()) then
+		return false
+	end
+	
 	local squad = get_object_squad(npc)
 	if not (squad) then 
 		return false 
@@ -119,8 +123,16 @@ function evaluator_radio_in_heli:evaluate()
 		return false 
 	end
 	
-	if (xr_conditions.surge_started()) then
+	if (IsWounded(be)) then 
 		return false
+	end
+	
+	if (self.st.keep_until) then 
+		return true 
+	end
+	
+	if (self.st.dont_spam) then 
+		return false 
 	end
 	
 	local comm = character_community(npc)
@@ -160,6 +172,14 @@ function action_radio_in_heli:execute()
 	action_base.execute(self)
 
 	--alun_utils.debug_write("act_radio_in_heli")
+	local tg = time_global()
+	if (self.st.keep_until) then 
+		if (tg < self.st.keep_until) then
+		else
+			self.st.keep_until = nil
+		end
+		return
+	end
 	
 	local npc = self.object
 	local be = npc:best_enemy()
@@ -177,7 +197,8 @@ function action_radio_in_heli:execute()
 	end
 	
 	if (self.st.vid == nil or npc:level_vertex_id() == self.st.vid or npc:position():distance_to_sqr(level.vertex_position(self.st.vid)) <= 3) then
-		local tg = time_global()
+		
+		self.st.keep_until = tg+6000
 		self.st.state = not self.st.state and random_choice("guard_rac","hide_rac") or self.st.state
 		state_mgr.set_state(npc,self.st.state)
 		
@@ -222,6 +243,7 @@ function action_radio_in_heli:execute()
 end
 
 function action_radio_in_heli:finalize()
+	self.st.keep_until = nil
     action_base.finalize(self)
 end
 

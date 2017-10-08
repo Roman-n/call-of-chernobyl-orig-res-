@@ -332,7 +332,7 @@ function is_hostage_task_giver(a,b)
 	local tsk
 	for k,task_id in pairs(t) do
 		tsk = task_info[task_id]
-		if (tsk) and (tsk.task_giver_id == se_obj.group_id or tsk.task_giver_id == id) then
+		if (tsk and tsk.stage == 0) and (tsk.task_giver_id == se_obj.group_id or tsk.task_giver_id == id) then
 			return true
 		end
 	end

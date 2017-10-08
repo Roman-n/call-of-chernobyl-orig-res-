@@ -8,12 +8,12 @@ function get_visible_value(npc,who,time_delta,time_quant,luminocity,velocity_fac
 	distance = distance <= 0 and 0.00001 or distance
 	
 	if (level_weathers.bLevelUnderground) then
-		luminocity = luminocity + 0.30
+		luminocity = luminocity + 0.15
 	end
 	if (who and who:id() == 0) then 
 		local torch = db.actor:object("device_torch")
 		if (torch and torch:torch_enabled()) then 
-			luminocity = luminocity + 0.30
+			luminocity = luminocity + 0.15
 		end
 	end
 	
