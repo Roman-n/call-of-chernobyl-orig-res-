@@ -4436,10 +4436,6 @@ function set_new_scheme_and_logic(actor,npc,p)
 	st.overrides = xr_logic.cfg_get_overrides(st.ini, new_section, npc)
 end
 
-function set_script_danger(actor,npc,p)
-	xr_danger.set_script_danger(npc,p and tonumber(p[1]) or 5000)
-end
-
 function spawn_npc_at_position(actor,npc,p)
 	if not (p) then return end
 	local pos = vector():set(tonumber(p[2]),tonumber(p[3]),tonumber(p[4]))

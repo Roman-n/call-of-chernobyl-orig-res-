@@ -194,29 +194,32 @@ end
 function act_state_mgr_to_idle:initialize()
 	action_base.initialize(self)
 
-	self.object:inactualize_patrol_path()
-	self.object:set_path_type(game_object.level_path)
+	if (self.object:path_type() ~= game_object.level_path) then
+		self.object:inactualize_patrol_path()
+		self.object:set_path_type(game_object.level_path)
+	end
 	utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id() )
 
-	if (self.object:best_enemy() or self.object:best_danger()) then
+	--if (self.object:best_enemy() or self.object:best_danger()) then
 		self.st:set_state("idle", nil, nil, nil, self.fast_set_true)
-		return
-	end
+	--else 
+	--	self.st:set_state("idle")
+	--end
 
-	self.st:set_state("idle")
+	--self.st:set_state("idle")
 end
 
 function act_state_mgr_to_idle:execute()
 	--alun_utils.debug_write(strformat("act_state_mgr_to_idle:execute %s",self.object:name()))
-	self.object:inactualize_patrol_path()
-	self.object:set_path_type(game_object.level_path)
-	utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id() )
+	--self.object:inactualize_patrol_path()
+	--self.object:set_path_type(game_object.level_path)
+	--utils.send_to_nearest_accessible_vertex( self.object, self.object:level_vertex_id() )
 
-	if (self.object:best_enemy() or self.object:best_danger()) then
+	--if (self.object:best_enemy() or self.object:best_danger()) then
 		self.st:set_state("idle", nil, nil, nil, self.fast_set_true)
-	else 
-		self.st:set_state("idle")
-	end
+	--else 
+	--	self.st:set_state("idle")
+	--end
 	
 	action_base.execute(self)
 end

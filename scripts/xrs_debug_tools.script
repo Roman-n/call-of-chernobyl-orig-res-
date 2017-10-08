@@ -1445,7 +1445,8 @@ function stalker_info_hud_show(hud)
 		hud:add_msg("A.Section",st.active_section)
 		hud:add_msg("Logic",st.section_logic)
 		hud:add_msg("Ini",st.ini_filename)
-		hud:add_msg("AnimState",state_mgr.get_state(near))
+		hud:add_msg("current_state",st.state_mgr.current_state)
+		hud:add_msg("target_state",st.state_mgr.target_state)
 
 		local pt_index = near.get_current_point_index and near:get_current_point_index()
 		if (pt_index and pt_index ~= 4294967296) then 
