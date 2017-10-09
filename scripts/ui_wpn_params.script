@@ -116,22 +116,9 @@ function calculate_max_hit_power_value()
 			local class = ini:r_string_ex(section,"class")
 			if (class ~= "WP_RPG7" and class ~= "WP_RG6" and class ~= "W_MOUNTD" and class ~= "W_STMGUN" and class ~= "WP_BINOC" and class ~= "WP_KNIFE") then
 				local t = parse_names(ini:r_string_ex(section,"hit_power") or "")
-				local hit_power = tonumber(t[gd] or t[1]) or 0
-				local ammo_section = parse_names(ini:r_string_ex(section,"ammo_class") or "")[1] or ""
-				local k_hit = ini:r_float_ex(ammo_section,"k_hit",0.5)
-				
-				local upgrade_list = ini:r_list(section,"upgrades")
-				if (upgrade_list) then 
-					for i,sect in ipairs(upgrade_list) do 
-						local hit_power_list = ini:r_list(sect,"hit_power")
-						if (hit_power_list) then 
-							hit_power = hit_power + (tonumber(hit_power_list[gd] or hit_power_list[1]) or 0)
-						end
-					end				
-				end
+
+				local hit_power = GetMaxPotential(section,"hit_power")
 		
-				hit_power = (hit_power * k_hit) * ini:r_float_ex(ammo_section,"buck_shot",1)
-				
 				if (DEV_DEBUG_DEV) then
 					sections_by_hit_power_value[section] = hit_power
 				end
@@ -163,4 +150,48 @@ function calculate_max_hit_power_value()
 			printf("successfully created weapons_hit_power.ltx")
 		end
 	end
+end
+
+function get_all_upgrade_sections(wpn_section)
+	local ini = system_ini()
+	
+	local stack = ini:r_list(wpn_section,"upgrades")
+	if not (stack) then
+		return ""
+	end 
+	
+	local t = {}
+	local deepest
+	while not deepest do
+		if (node) then
+			local elements = ini:r_list(node,"elements")
+			if (elements) then 
+				for i,element in ipairs(elements) do 
+					local upgr_sect = ini:r_string_ex(element,"section","")
+					if (upgr_sect ~= "") then 
+						table.insert(t,upgr_sect)
+					end
+					local next_sect = ini:r_string_ex(element,"effects","")
+					if (next_sect ~= "") then 
+						table.insert(stack,next_sect)
+					end
+				end
+			end
+		end
+		if (#stack > 0) then
+			node = stack[#stack]
+			stack[#stack] = nil
+		else
+			deepest = true
+		end
+	end
+	
+	local str = table.concat(t,",")
+	return str
+end 
+
+function GetMaxPotential(wpn_section,prop)
+	local upgr_sections = get_all_upgrade_sections(wpn_section)
+	local total = read_float(wpn_section, upgr_sections, prop)
+	return total
 end
