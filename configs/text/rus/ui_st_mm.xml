@@ -46,22 +46,22 @@
 		<text>КАРТА</text>
 	</string>
 	<string id="renderer_r1">
-		<text>DirectX 8 (Basic)</text>
+		<text>Статичное освещение DX8</text>
 	</string>
 	<string id="renderer_r2a">
-		<text>DirectX 9 (Basic)</text>
+		<text>Динамическое освещение DX9</text>
 	</string>
 	<string id="renderer_r2">
-		<text>DirectX 9 (Normal)</text>
+		<text>Полное динам.освещение DX9</text>
 	</string>
 	<string id="renderer_r2.5">
-		<text>DirectX 9 (Enhanced)</text>
+		<text>Улучш.динамич.освещение DX9</text>
 	</string>
 	<string id="renderer_r3">
-		<text>DirectX 10 (Enhanced)</text>
+		<text>Улуч.динамич.освещение DX10</text>
 	</string>
 	<string id="renderer_r4">
-		<text>DirectX 11 (Enhanced)</text>
+		<text>Улуч.динамич.освещение DX11</text>
 	</string>
 	<string id="st_opt_high">
 		<text>высоко</text>
@@ -440,7 +440,7 @@
 		<text>Жизнь после жизни</text>
 	</string>
 	<string id="ui_mm_debug_hud">
-		<text>Debug HUD</text>
+		<text>Debug Hud</text>
 	</string>
 	<string id="ui_mm_debug_map_hud">
 		<text>Debug режим глоб.карты</text>
@@ -524,6 +524,6 @@
 		<text>Автоподбор лута</text>
 	</string>
 	<string id="ui_mm_invert_zoom">
-		<text>Перевернутое масштабирование</text>
+		<text>Инвертировать зум</text>
 	</string>
 </string_table>

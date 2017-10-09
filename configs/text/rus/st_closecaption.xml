@@ -4,13 +4,13 @@
 	<!-- UI STRINGS FOR CLOSED CAPTION MODS -->
 
 	<string id="ui_mm_cc_icc">
-		<text>Субтитры</text>
+		<text>Скрытые субтитры</text>
 	</string>
 	<string id="ui_mm_cc_icc_chktext">
 		<text>Звуковые эффекты</text>
 	</string>
 	<string id="ui_mm_cc_captioning">
-		<text>Субтитры</text>
+		<text>Игровые субтитры</text>
 	</string>
 	<string id="ui_mm_cc_none">
 		<text>Без субтитров</text>
@@ -26,31 +26,31 @@
 	<!-- STRING TABLE ADDITIONS FOR GAME -->
 
 	<string id="st_sending_msg">
-		<text>Sending Message</text>
+		<text>Отправка сообщения</text>
 	</string>
 	<string id="st_memo">
-		<text>Memo</text>
+		<text>Мемо</text>
 	</string>
 	<string id="st_msgfrom_err1">
-		<text>[sender unknown]</text>
+		<text>[отправитель неизвестен]</text>
 	</string>
 	<string id="st_msgfrom_err2">
 		<text>&lt;!DATA_ERROR!&gt;</text>
 	</string>
 	<string id="st_msgfrom_err3">
-		<text>=?Network failure</text>
+		<text>=?Ошибка сети</text>
 	</string>
 	<string id="st_joker_name">
-		<text>Joker</text>
+		<text>Шутник</text>
 	</string>
 	<string id="st_soldier_name">
-		<text>Soldier</text>
+		<text>Солдат</text>
 	</string>
 	<string id="st_hq_general_name">
-		<text>General</text>
+		<text>Генерал</text>
 	</string>
 	<string id="st_ssu_commander_name">
-		<text>USS Command</text>
+		<text>Командир СБУ</text>
 	</string>
 
 
@@ -198,28 +198,28 @@
 	<!-- Zaton -->
 
 	<string id="zat_a2_base_alarm">
-		<text>Attention stalkers, Skadovsk is under attack! We've been forced to batten down the hatches until things quiet down.</text>
+		<text>Сталкеры, внимание, «Скадовск» атакован! Мы задраиваем люки, пока всё не утихнет.</text>
 	</string>
 	<string id="zat_a2_base_guard_1">
-		<text>Come on, man, put that shooter away. This is our camp, you don't need it here.</text>
+		<text>Ты бы оружие убрал, мужик. У нас здесь лагерь, как-никак.</text>
 	</string>
 	<string id="zat_a2_base_guard_2">
-		<text>Hey, man, this here place is as peaceful as it gets. So holster that shooter of yours and keep it that way.</text>
+		<text>Мужик, здесь места тихие. Так что, не шуми и спрячь ствол.</text>
 	</string>
 	<string id="zat_a2_base_guard_3">
-		<text>Look it, weapons are for killing mutants and you won't find any in here. So, put it away now, would you?</text>
+		<text>С оружием в поле шарится будешь, а здесь лагерь. Сечёшь разницу?</text>
 	</string>
 	<string id="zat_a2_base_relax">
-		<text>Attention stalkers, the doors of Skadovsk are open to you once more.</text>
+		<text>Сталкеры, внимание, сообщаю: двери «Скадовска» вновь открыты для вас.</text>
 	</string>
 	<string id="zat_a2_linker_b29_take_order">
-		<text>Great! Here's the cash.</text>
+		<text>Отлично! Держи бабло.</text>
 	</string>
 	<string id="zat_a2_stalker_barmen_after_surge">
 		<text>Всё, ребята. Выброс, слава Богу, закончился. Надеюсь, никто не пострадал?</text>
 	</string>
 	<string id="zat_a2_stalker_barmen_farewell_1">
-		<text>Будет чего интересного - заходи. Наш "Скадовск" всегда на месте. Никуда не уплывёт...</text>
+		<text>Будет чего интересного - заходи. Наш «Скадовск» всегда на месте. Никуда не уплывёт...</text>
 	</string>
 	<string id="zat_a2_stalker_barmen_farewell_2">
 		<text>Найдёшь артефакты - заглядывай, посмотрим.</text>
@@ -249,82 +249,82 @@
 		<text>Сталкеры, внимание! Выброс начнётся с минуты на минуту. Ищите глубокую нору, если жить охота!</text>
 	</string>
 	<string id="zat_a23_about_x8">
-		<text>The documents refer to a central laboratory, designated X8, which yould contain information about secret experiments conducted in the Zone. Our analysts have been interested in this issue for quite some time.</text>
+		<text>Здесь упоминается центральная лаборатория Х-8, возможно, в ней найдётся информация о секретных экспериментах на территории Зоны. Наши аналитики давно интерисуются этим вопросом.</text>
 	</string>
 	<string id="zat_b100_heli_2_maps">
-		<text>Looks like the crew died in mid-air, and the helicopter simply crashed because there was nobody there to fly it. The on-board computer was a little luckier. I wonder if there's anything useful here... Ah, there's something...! A map of the area, with certain locations marked. That should come in handy.</text>
+		<text>Судя по всему, экипаж погиб ещё в воздухе и вертолёт падал без управления. Бортовому компьютеру повезло больше. Так, сейчас погледим, что в нём полезного... Ага...! Карта местности с какими-то пометками. Пригодится.</text>
 	</string>
 	<string id="zat_b101_both_heli_info">
-		<text>The electronics are the same here, but the emission protection system is intact. What could've caused this?</text>
+		<text>С электроникой здесь то же самое, при этом система защиты от выбросов цела. Хм, что же это было?</text>
 	</string>
 	<string id="zat_b101_one_heli_info">
-		<text>All the electronics inside burned out. Even the power cable sheathe is melted.</text>
+		<text>Вся электроника внутри погорела. Даже изоляция на проводах расплавилась.</text>
 	</string>
 	<string id="zat_b103_merc_come_here_now">
-		<text>There, that's better! Now you can come on over, and we'll talk.</text>
+		<text>О! Вот теперь подходи, пообщаемся.</text>
 	</string>
 	<string id="zat_b103_merc_count_1">
-		<text>One!</text>
+		<text>Раз!</text>
 	</string>
 	<string id="zat_b103_merc_count_2">
-		<text>Two!</text>
+		<text>Два!</text>
 	</string>
 	<string id="zat_b103_merc_count_3">
-		<text>Three!</text>
+		<text>Три!</text>
 	</string>
 	<string id="zat_b103_merc_hide_weapon_1">
-		<text>Put your shooter away!</text>
+		<text>Ты пушку-то спрячь!</text>
 	</string>
 	<string id="zat_b103_merc_hide_weapon_2">
-		<text>I told you to put your shooter away. I'm going to count to three, and if you don't do it, I'll blow your freakin' head off!</text>
+		<text>Спрячь ствол, говорю. Считаю до трёх!</text>
 	</string>
 	<string id="zat_b103_merc_talk_to_commander_1">
-		<text>I don't feel like beating gums. Talk to the commander!</text>
+		<text>Да неохота мне болтать. Иди с командиром говори!</text>
 	</string>
 	<string id="zat_b103_merc_talk_to_commander_2">
-		<text>The commander is the one to speak to if something comes up.</text>
+		<text>Если что - к командиру. С ним беседуй.</text>
 	</string>
 	<string id="zat_b103_merc_warning">
-		<text>Are you dumb? Get back, before I blow your brains out!</text>
+		<text>Ты что, не понял? Назад, мозги вышибу!</text>
 	</string>
 	<string id="zat_b106_dont_receipt_reward">
-		<text>All right, people, it's time to head back. You're useless, so don't expect a reward.</text>
+		<text>Всё, возвращаемся. Помощи от тебя не было ни какой, потому на награду не рассчитывай.</text>
 	</string>
 	<string id="zat_b106_garmata_refuse_talk">
-		<text>Talk to the boss. I'm more into shooting than beating gums.</text>
+		<text>Это не ко мне. Со старшим говори.</text>
 	</string>
 	<string id="zat_b106_garmata_story_reply">
-		<text>I've asked everywhere, but it's useless. Nobody knows a thing. It's like he's a poltergeist or something.</text>
+		<text>Да где ни спрашивал - всё до задницы. Вообще ни каких слухов. Будто и не было его никогда.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_complete">
-		<text>It's over. Our job is done, let's head back. Remember to pop in to see Trapper at Yanov, and tell him the wounded chimera is done with to get your share.</text>
+		<text>Так, ребята. Мы своё дело сделали, возвращаемся. А ты не забудь заглянуть к Зверобою на «Янове». Скажешь, что раненая химера склеила ласты. И долю свою получишь.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_great">
-		<text>Nicely done! You should look into hunting chimeras as a profession.</text>
+		<text>Ого! Очень и очень... Слушай, ты не думал заделаться охотником на химер?</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_kill">
-		<text>We're there. It's close, I can sense it. If you see it, aim for the head. Don't get too close though, chimeras can smell you a mile off, even when they're sleeping.</text>
+		<text>Так, мы на месте. Где-то она совсем близко, блин, прям чувствую. Кто её увидит, сразу бейте в голову, близко подходить нельзя, нюх у химеры - что надо, он и во сне на полную работает.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_plan">
-		<text>Listen now! The chimera hunts at night and returns to its lair in the morning for some beauty rest. We can catch it off-guard at dawn, when it's at rest. All we have to do is get close to it and kill it while it's still sleeping. Simple enough. We'll have to get up early though. Let's meet at the bar at... 3 in the morning.</text>
+		<text>Короче, план такой. Химера - она охотится ночью, а потом к утру валит в логово друхнуть. Застукать её можно на рассвете, она в это время как раз ляжет отдыхать. Мы подползём ближе да и прикончим её, пока сопит в две дырки! В общем, только собраться надо пораньше. Пересечься предлагаю в три ночи в баре.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_sneak">
-		<text>Careful! We got to be real quiet, we can't let it hear us.</text>
+		<text>Подойти надо не заметно. Нельзя, чтобы она нас хоть как учуяла.</text>
 	</string>
 	<string id="zat_b106_gonta_see_chimera">
-		<text>The bastard is sleeping... Crab says hello. Fire!</text>
+		<text>Спишь, тварь... Ну, что, привет тебе от Краба. Давай!</text>
 	</string>
 	<string id="zat_b106_gonta_story_angry">
-		<text>That son of a bitch is going to regret running away.</text>
+		<text>Эта скотина ещё пожалеет, что сбежала.</text>
 	</string>
 	<string id="zat_b106_gonta_story_ask">
-		<text>So, did you find anything out about Magpie?</text>
+		<text>Ну, как, узнал что-нибудь о Сороке?</text>
 	</string>
 	<string id="zat_b106_gonta_story_calm">
-		<text>Hang in there, buddy, the doc said you'll be up on your feet in a couple of days. You might as well use this time to rest up and chill.</text>
+		<text>Ничего, потерпи, доктор сказал, уже через пару дней бегать сможешь. Пока давай отлёживайся, сил набирайся - пригодятся.</text>
 	</string>
 	<string id="zat_b106_gonta_to_actor">
-		<text>Hey stalker! Come here! I got a question for you.</text>
+		<text>Эй, сталкер! К тебе вопрос есть.</text>
 	</string>
 	<string id="zat_b14_robbery_after_pay_snd_1">
 		<text>Good! Now turn around, slowly, and piss off back to where you came from!</text>
@@ -381,7 +381,7 @@
 		<text>Тогда вали отсюда, псих!</text>
 	</string>
 	<string id="zat_b18_noah_greetings_1">
-		<text>Пошли вон, мутанты долбанные!</text>
+		<text>Пошли вон, мутанты долбаные!</text>
 	</string>
 	<string id="zat_b18_noah_greetings_2">
 		<text>Убирайтесь, твари, сейчас перестреляю всех!</text>
@@ -465,7 +465,7 @@
 		<text>Там, вон... Ты наливай!</text>
 	</string>
 	<string id="zat_b3_tech_realy_drunk">
-		<text>Стоп... Вы п-по процедурному вопросу?...</text>
+		<text>Стоп! Вы п-по процедурному вопросу?..</text>
 	</string>
 	<string id="zat_b3_tech_realy_drunk_discount">
 		<text>А-а... Ты... Ну, заходи!</text>

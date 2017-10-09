@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
-<!------------------- yan_ecolog_kruglov   -------------->
+<!-- yan_ecolog_kruglov   -->
 	<string id="yan_ecolog_kruglov_start_dialog_1">
 		<text>Приветствую, сталкер.</text>
 	</string>
-<!------------------- yan_ecolog_semenov   -------------->
+<!-- yan_ecolog_semenov   -->
 	<string id="yan_ecolog_semenov_start_dialog_1">
 		<text>Да, Вам что-то надо?</text>
 	</string>
 	<string id="yan_ecolog_semenov_start_dialog_yan_ecolog_semenov_task_1">
 		<text>Всё ещё недостаточно данных. Нужно найти ещё парочку мутантов.</text>
 	</string>
-<!------------------- yan_ecolog_vasilyev   -------------->
+<!-- yan_ecolog_vasilyev   -->
 	<string id="yan_ecolog_vasilyev_start_dialog_1">
 		<text>Здравствуй, сталкер.</text>
 	</string>
-<!------------------- yan_stalker_sakharov -------------->
+<!-- yan_stalker_sakharov -->
 	<string id="st_yan_saharov_message_about_storm">
-		<text>Сталкер, помоги нам! Наш бункер находится под атакой зомби! Вы должны уметь выжить в этой слабой эмиссии!</text>
+		<text>Сталкер, помоги нам! Наш бункер атакуют зомби! Вы ведь в состоянии пережить этот всплеск пси-излучения!</text>
 	</string>
 	<string id="st_yan_saharov_message_free_upgrade">
 		<text>Сталкер, Вы спасли нас! Наш бункер определённо ждала гибель, если бы не Ваша помощь. В качестве благодарности, я берусь отладить Ваш пси-шлем.</text>
