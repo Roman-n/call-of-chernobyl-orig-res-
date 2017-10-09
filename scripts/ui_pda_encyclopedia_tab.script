@@ -36,7 +36,7 @@ function pda_encyclopedia_tab:__init() super()
 	self:InitCategories()
 end
 
--- Finalize.
+-- Finalize the encyclopedia interface.
 function pda_encyclopedia_tab:__finalize()
 	SINGLETON = nil 
 end
@@ -94,11 +94,11 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
 	self.image:InitTexture(section .. "_image")
 	
-	-- Grab the dimensions of the image and the x coefficient.
+	-- Grab the dimensions of the image to resize the container.
 	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
 	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
 	
-	-- Resize the image and container, and then reinitialise the texture.
+	-- Resize the image and container, and then reinitialise the texture so it gets drawn.
 	-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
 	local x_coefficient = (device().height / device().width) / (768 / 1024)
 	self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
@@ -218,11 +218,10 @@ function pda_encyclopedia_tab:InitControls()
 	self.image:SetAutoDelete(false)
 end
 
--- Load the encyclopedia categories and articles.
+-- Load the encyclopedia content plugin.
 function pda_encyclopedia_tab:InitPlugin()
-	local ini = ini_file("plugins\\encyclopedia.ltx")
-	
 	-- Return if the encyclopedia plugin does not exist.
+	local ini = ini_file("plugins\\encyclopedia.ltx")
 	local plugin_section = "encyclopedia"
 	if not (ini:section_exist(plugin_section)) then
 		printf("Encyclopedia section \"" .. plugin_section .. "\" does not exist.")
@@ -252,9 +251,7 @@ function pda_encyclopedia_tab:InitPlugin()
 					end
 				end
 				table.insert(self.categories[i].articles, section)
-				
 				-- Keep any unlocked articles permanently unlocked.
-				-- When a counter is added to the interface this will make things simpler.
 				if (value == "unlocked") then
 					unlocked_articles[section] = true
 				end
@@ -263,11 +260,10 @@ function pda_encyclopedia_tab:InitPlugin()
 	end
 end
 
--- Load the match-lists for interacting with in-game entities.
+-- Load the encyclopedia interactivity plugin.
 function pda_encyclopedia_tab:InitPlugin2()
-	local ini = ini_file("plugins\\encyclopedia_interactivity.ltx")
-	
 	-- Return if the encyclopedia interactivity plugin does not exist.
+	local ini = ini_file("plugins\\encyclopedia_interactivity.ltx")
 	local plugin_section = "encyclopedia_interactivity"
 	if not (ini:section_exist(plugin_section)) then
 		printf("Encyclopedia interactivity section \"" .. plugin_section .. "\" does not exist.")
@@ -288,7 +284,11 @@ function pda_encyclopedia_tab:InitPlugin2()
 		line_count = ini:line_count(match_section) or 0
 		for i = 0, line_count - 1 do
 			local junk1, section, value = ini:r_line(match_section, i, "", "")
-			self.interactivity[match_key][section] = value
+			local values = alun_utils.str_explode(value, ",")
+			self.interactivity[match_key][section] = {}
+			for j = 1, #values do
+				table.insert(self.interactivity[match_key][section], values[j])
+			end
 		end
 	end
 end
