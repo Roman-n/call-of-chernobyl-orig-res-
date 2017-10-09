@@ -57,31 +57,28 @@ end
 ---------------------
 
 -- Called when an article is selected.
-function pda_encyclopedia_tab:SelectArticle(index1, index2)
+function pda_encyclopedia_tab:SelectArticle(index_a)
 	-- GetSelectedIndex() starts counting at 0.
-	index1 = index1 or (self.category_list:GetSelectedIndex() + 1)
-	index2 = index2 or (self.article_list:GetSelectedIndex() + 1)
-	
-	-- Calls to this method may require a forced index change.
-	self.category_list:SetSelectedIndex(index1 - 1)
-	self.article_list:SetSelectedIndex(index2 - 1)
+	index_a = index_a or (self.article_list:GetSelectedIndex() + 1)
+	index_c = (self.category_list:GetSelectedIndex() + 1)
 	
 	-- Establish the section of the article selected.
-	local category = self.categories[index1]
-	local section = category and category.articles[index2] or nil
+	local category = self.categories[index_c]
+	local section = category and category.articles[index_a] or nil
 	if not (section) then return end
+	
+	-- Calls to this method may require a forced index change.
+	-- This is only to update the selection visually after an unlock.
+	self.article_list:SetSelectedIndex(index_a - 1)
+	self.category_list:SetSelectedIndex(index_c - 1)
 	
 	-- Set the article's text.
 	self.information:SetText(game.translate_string(section .. "_text"))
 	
 	-- Hide the article if it isn't unlocked.
-	local display_image = true
-	for k, v in pairs (self.locked_articles) do
-		if (section == v) then
-			self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
-			display_image = nil
-			break
-		end
+	local locked = (self.locked_articles[section] ~= nil)
+	if (locked) then
+		self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
 	end
 	
 	-- Set the interface component sizes.
@@ -109,7 +106,7 @@ function pda_encyclopedia_tab:SelectArticle(index1, index2)
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
-	if (display_image) then
+	if (not locked) then
 		self.scrollbar:AddWindow(self.image_container, true)
 	end
 	
@@ -150,13 +147,11 @@ function pda_encyclopedia_tab:InitArticles(category)
 		item = pda_encyclopedia_entry()
 		section = articles[i]
 		if (section) then
-			item.sect:SetText(game.translate_string(section))
 			-- Hide the article's title if it isn't unlocked.
-			for k, v in pairs(self.locked_articles) do
-				if (v == section) then
-					item.sect:SetText("??????????")
-					break
-				end
+			if (self.locked_articles[section]) then
+				item.sect:SetText("??????????")
+			else
+				item.sect:SetText(game.translate_string(section))
 			end
 			self.article_list:AddExistingItem(item)
 		end
@@ -246,7 +241,7 @@ function pda_encyclopedia_tab:InitPlugin()
 				-- Unlocked articles table must not contain this article.
 				-- Article must not also be assigned the "unlocked" value.
 				if not (unlocked_articles[section] or value == "unlocked") then
-					table.insert(self.locked_articles, section)
+					self.locked_articles[section] = true
 				end
 				table.insert(self.categories[i].articles, section)
 				-- Keep any unlocked articles permanently unlocked.
