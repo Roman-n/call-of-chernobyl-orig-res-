@@ -1,18 +1,6 @@
----------------------------------
------ Written by Darryl123 ------
----------------------------------
-
--------------------------
------ Miscellaneous -----
--------------------------
-
--- Initialises (if necessary) and returns the encyclopedia interface.
--- Used by pda.script and dxr_encyclopedia.script.
-local SINGLETON = nil
-function get_ui()
-	SINGLETON = SINGLETON or pda_encyclopedia_tab()
-	return SINGLETON
-end
+--------------------------------
+----- Written by Darryl123 -----
+--------------------------------
 
 ------------------------
 ----- Constructors -----
@@ -36,11 +24,6 @@ function pda_encyclopedia_tab:__init() super()
 	self:InitCategories()
 end
 
--- Finalize.
-function pda_encyclopedia_tab:__finalize()
-	SINGLETON = nil 
-end
-
 -- Article and category items.
 class "pda_encyclopedia_entry" (CUIListBoxItem)
 function pda_encyclopedia_entry:__init() super(22)
@@ -52,71 +35,82 @@ function pda_encyclopedia_entry:__init() super(22)
 	self.sect:SetEllipsis(true)
 end
 
+-------------------------
+----- Miscellaneous -----
+-------------------------
+
+-- Initialises the encyclopedia interface.
+local SINGLETON = nil
+function get_ui()
+	SINGLETON = SINGLETON or pda_encyclopedia_tab()
+	return SINGLETON
+end
+
+-- Finalizes the encyclopedia interface.
+function pda_encyclopedia_tab:__finalize()
+	SINGLETON = nil 
+end
+
 ---------------------
 ----- Callbacks -----
 ---------------------
 
 -- Called when an article is selected.
-function pda_encyclopedia_tab:SelectArticle(index1, index2)
+function pda_encyclopedia_tab:SelectArticle(index_a)
 	-- GetSelectedIndex() starts counting at 0.
-	index1 = index1 or (self.category_list:GetSelectedIndex() + 1)
-	index2 = index2 or (self.article_list:GetSelectedIndex() + 1)
-	
-	-- Calls to this method may require a forced index change.
-	self.category_list:SetSelectedIndex(index1 - 1)
-	self.article_list:SetSelectedIndex(index2 - 1)
+	index_a = index_a or (self.article_list:GetSelectedIndex() + 1)
+	index_c = (self.category_list:GetSelectedIndex() + 1)
 	
 	-- Establish the section of the article selected.
-	local category = self.categories[index1]
-	local section = category and category.articles[index2] or nil
+	local category = self.categories[index_c]
+	local section = category and category.articles[index_a] or nil
 	if not (section) then return end
 	
-	-- Set the article's text.
-	self.information:SetText(game.translate_string(section .. "_text"))
+	-- Calls to this method may require a forced index change.
+	-- This is only to update the selection visually after an unlock.
+	self.article_list:SetSelectedIndex(index_a - 1)
+	self.category_list:SetSelectedIndex(index_c - 1)
 	
-	-- Hide the article if it isn't unlocked.
-	local display_image = true
-	for k, v in pairs (self.locked_articles) do
-		if (section == v) then
-			self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
-			display_image = nil
-			break
-		end
+	-- Load the article text and image if it is unlocked.
+	local locked = (self.locked_articles[section] ~= nil)
+	if (not locked) then
+		-- Set the article's text.
+		self.information:SetText(game.translate_string(section .. "_text"))
+	
+		-- Set the article's image.
+		-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
+		-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
+		-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
+		self.image:InitTexture(section .. "_image")
+		
+		-- Grab the dimensions of the image to resize the container.
+		local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
+		local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
+		
+		-- Resize the image and container, and then reinitialise the texture so it gets drawn.
+		-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
+		local x_coefficient = (device().height / device().width) / (768 / 1024)
+		self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
+		self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
+		self.image:SetStretchTexture(true)
+		self.image:InitTexture(section .. "_image")
+	else
+		self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
 	end
 	
 	-- Set the interface component sizes.
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
 	
-	-- Set the article's image.
-	-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
-	-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
-	-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
-	self.image:InitTexture(section .. "_image")
-	
-	-- Grab the dimensions of the image and the x coefficient.
-	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
-	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
-	
-	-- Resize the image and container, and then reinitialise the texture.
-	-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
-	local x_coefficient = (device().height / device().width) / (768 / 1024)
-	self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
-	self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
-	self.image:SetStretchTexture(true)
-	self.image:InitTexture(section .. "_image")
-	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
-	if (display_image) then
-		self.scrollbar:AddWindow(self.image_container, true)
-	end
-	
-	-- Prevent components from being deleted while used.
 	self.information:SetAutoDelete(false)
-	self.image_container:SetAutoDelete(false)
-	self.image:SetAutoDelete(false)
+	if (not locked) then
+		self.scrollbar:AddWindow(self.image_container, true)
+		self.image_container:SetAutoDelete(false)
+		self.image:SetAutoDelete(false)
+	end
 end
 
 -- Called when a category is selected.
@@ -150,13 +144,11 @@ function pda_encyclopedia_tab:InitArticles(category)
 		item = pda_encyclopedia_entry()
 		section = articles[i]
 		if (section) then
-			item.sect:SetText(game.translate_string(section))
 			-- Hide the article's title if it isn't unlocked.
-			for k, v in pairs(self.locked_articles) do
-				if (v == section) then
-					item.sect:SetText("??????????")
-					break
-				end
+			if (self.locked_articles[section]) then
+				item.sect:SetText("??????????")
+			else
+				item.sect:SetText(game.translate_string(section))
 			end
 			self.article_list:AddExistingItem(item)
 		end
@@ -165,8 +157,8 @@ end
 
 -- Add the callbacks for the article and category lists.
 function pda_encyclopedia_tab:InitCallbacks()
-	self:AddCallback("article_list", ui_events.WINDOW_LBUTTON_DB_CLICK, self.SelectArticle, self)
-	self:AddCallback("category_list", ui_events.WINDOW_LBUTTON_DB_CLICK, self.SelectCategory, self)
+	self:AddCallback("article_list", ui_events.LIST_ITEM_SELECT, self.SelectArticle, self)
+	self:AddCallback("category_list", ui_events.LIST_ITEM_SELECT, self.SelectCategory, self)
 end
 
 -- Add all of the required categories to a list box.
@@ -218,11 +210,10 @@ function pda_encyclopedia_tab:InitControls()
 	self.image:SetAutoDelete(false)
 end
 
--- Load the encyclopedia categories and articles.
+-- Load the encyclopedia content plugin.
 function pda_encyclopedia_tab:InitPlugin()
-	local ini = ini_file("plugins\\encyclopedia.ltx")
-	
 	-- Return if the encyclopedia plugin does not exist.
+	local ini = ini_file("plugins\\encyclopedia.ltx")
 	local plugin_section = "encyclopedia"
 	if not (ini:section_exist(plugin_section)) then
 		printf("Encyclopedia section \"" .. plugin_section .. "\" does not exist.")
@@ -244,17 +235,13 @@ function pda_encyclopedia_tab:InitPlugin()
 			self.categories[i].articles = {}
 			for k = 0, line_count - 1 do
 				local junk1, section, value = ini:r_line(self.categories[i].section, k, "", "")
-				-- Unlocked articles table must exist, and must not contain this article.
-				if (unlocked_articles and not unlocked_articles[section]) then
-					-- Article must not have "unlocked" tag.
-					if not (value == "unlocked") then
-						table.insert(self.locked_articles, section)
-					end
+				-- Unlocked articles table must not contain this article.
+				-- Article must not also be assigned the "unlocked" value.
+				if not (unlocked_articles[section] or value == "unlocked") then
+					self.locked_articles[section] = true
 				end
 				table.insert(self.categories[i].articles, section)
-				
 				-- Keep any unlocked articles permanently unlocked.
-				-- When a counter is added to the interface this will make things simpler.
 				if (value == "unlocked") then
 					unlocked_articles[section] = true
 				end
@@ -263,11 +250,10 @@ function pda_encyclopedia_tab:InitPlugin()
 	end
 end
 
--- Load the match-lists for interacting with in-game entities.
+-- Load the encyclopedia interactivity plugin.
 function pda_encyclopedia_tab:InitPlugin2()
-	local ini = ini_file("plugins\\encyclopedia_interactivity.ltx")
-	
 	-- Return if the encyclopedia interactivity plugin does not exist.
+	local ini = ini_file("plugins\\encyclopedia_interactivity.ltx")
 	local plugin_section = "encyclopedia_interactivity"
 	if not (ini:section_exist(plugin_section)) then
 		printf("Encyclopedia interactivity section \"" .. plugin_section .. "\" does not exist.")
@@ -288,7 +274,11 @@ function pda_encyclopedia_tab:InitPlugin2()
 		line_count = ini:line_count(match_section) or 0
 		for i = 0, line_count - 1 do
 			local junk1, section, value = ini:r_line(match_section, i, "", "")
-			self.interactivity[match_key][section] = value
+			local values = alun_utils.str_explode(value, ",")
+			self.interactivity[match_key][section] = {}
+			for j = 1, #values do
+				table.insert(self.interactivity[match_key][section], values[j])
+			end
 		end
 	end
 end

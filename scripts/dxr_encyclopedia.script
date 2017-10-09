@@ -14,15 +14,12 @@ function on_game_start()
 	-- Entering vehicles.
 	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
 	
-	-- Talking-to, killing and looting important characters.
+	-- Talking-to and looting important characters.
 	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
 	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character2)
 	
-	-- Taking, stealing, using and trading items.
-	--RegisterScriptCallback("actor_on_item_take", on_interact_item)
-	--RegisterScriptCallback("actor_on_item_take_from_box", on_interact_item)
+	-- Using items from the inventory.
 	RegisterScriptCallback("actor_on_item_use", on_interact_item)
-	--RegisterScriptCallback("actor_on_trade", on_interact_item)
 end
 
 -------------------------
@@ -33,14 +30,11 @@ end
 function on_interact(key, section)
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local interactivity = guide.interactivity or {}
-	if not (section and interactivity[key]) then
+	if not (section and interactivity[key] and interactivity[key][section]) then
 		return
 	end
-	for k, v in pairs(interactivity[key]) do
-		if (k == section) then
-			unlock_article(v)
-			break
-		end
+	for k, v in pairs(interactivity[key][section]) do
+		unlock_article(v)
 	end
 end
 
@@ -53,7 +47,7 @@ function on_interact_character(character)
 end
 
 -- Characters: Looting.
-function on_interact_character2(mode,last_mode)
+function on_interact_character2(mode, last_mode)
 	if (mode ~= 4) then 
 		return 
 	end
@@ -111,7 +105,7 @@ function context_functor(item)
 	-- Return if there are no articles to unlock.
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local locked_articles = guide.locked_articles or {}
-	if (#locked_articles == 0) then
+	if (get_locked_articles_count() == 0) then
 		return
 	end
 	
@@ -132,14 +126,18 @@ end
 function get_locked_articles_count()
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local locked_articles = guide.locked_articles or {}
-	return #locked_articles
+	local count = 0
+	for k, v in pairs(locked_articles) do
+		count = count + 1
+	end
+	return count
 end
 
 -- Counts how many articles are unlocked.
 function get_unlocked_articles_count()
-	local guide = ui_pda_encyclopedia_tab.get_ui()
+	local unlocked_articles = xr_statistic.actor_statistic.guide_articles or {}
 	local count = 0
-	for k, v in pairs(xr_statistic.actor_statistic.guide_articles) do
+	for k, v in pairs(unlocked_articles) do
 		count = count + 1
 	end
 	return count
@@ -158,16 +156,16 @@ function set_article(section)
 	-- Discover the category of the article.
 	local article = nil
 	local category = nil
-	for index1 = 1, #guide.categories do
-		category = guide.categories[index1]
+	for index_c = 1, #guide.categories do
+		category = guide.categories[index_c]
 		-- Determine if the article is in this category.
 		if (category) then
-			for index2 = 1, #category.articles do
-				article = category.articles[index2]
+			for index_a = 1, #category.articles do
+				article = category.articles[index_a]
 				-- Set the category and article if correct.
 				if (article and article == section) then
-					guide:SelectCategory(index1)
-					guide:SelectArticle(index1, index2)
+					guide:SelectCategory(index_c)
+					guide:SelectArticle(index_a)
 					return
 				end
 			end
@@ -187,34 +185,31 @@ function unlock_article(section)
 	local unlocked_articles = xr_statistic.actor_statistic.guide_articles
 	
 	-- Return if all articles have been unlocked.
-	if (#locked_articles == 0) then
+	if (get_locked_articles_count() == 0) then
 		return
 	end
 	
-	-- Select a random article if no section was provided.
-	local index = nil
-	if (not section) then
-		index = math.random(#locked_articles)
-		section = locked_articles[index]
-		
-	-- Otherwise determine the section index.
-	else for k, v in pairs(locked_articles) do
-			if (v == section) then
-				index = k
+	-- Return if the specified article is already unlocked.
+	if (section) then
+		if (unlocked_articles[section]) then
+			return
+		end
+	-- Should no article be specified, select one at random to unlock.
+	else
+		local index = 1
+		local selection = math.random(get_locked_articles_count())
+		for k, v in pairs(locked_articles) do
+			if (index == selection) then
+				section = k
 				break
 			end
+			index = index + 1
 		end
-	end
-	
-	-- Return if the index is nil.
-	-- Caused when the requested article is already unlocked or doesn't exist.
-	if (not index) then
-		return
 	end
 	
 	-- Update the required tables.
 	unlocked_articles[section] = true
-	table.remove(locked_articles, index)
+	locked_articles[section] = nil
 	
 	-- Notify the player and update the PDA selection.
 	local article = game.translate_string(section)
