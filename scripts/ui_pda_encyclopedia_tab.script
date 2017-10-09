@@ -1,6 +1,6 @@
----------------------------------
------ Written by Darryl123 ------
----------------------------------
+--------------------------------
+----- Written by Darryl123 -----
+--------------------------------
 
 ------------------------
 ----- Constructors -----
@@ -157,8 +157,8 @@ end
 
 -- Add the callbacks for the article and category lists.
 function pda_encyclopedia_tab:InitCallbacks()
-	self:AddCallback("article_list", ui_events.WINDOW_LBUTTON_DB_CLICK, self.SelectArticle, self)
-	self:AddCallback("category_list", ui_events.WINDOW_LBUTTON_DB_CLICK, self.SelectCategory, self)
+	self:AddCallback("article_list", ui_events.LIST_ITEM_SELECT, self.SelectArticle, self)
+	self:AddCallback("category_list", ui_events.LIST_ITEM_SELECT, self.SelectCategory, self)
 end
 
 -- Add all of the required categories to a list box.
