@@ -2,18 +2,6 @@
 ----- Written by Darryl123 ------
 ---------------------------------
 
--------------------------
------ Miscellaneous -----
--------------------------
-
--- Initialises (if necessary) and returns the encyclopedia interface.
--- Used by pda.script and dxr_encyclopedia.script.
-local SINGLETON = nil
-function get_ui()
-	SINGLETON = SINGLETON or pda_encyclopedia_tab()
-	return SINGLETON
-end
-
 ------------------------
 ----- Constructors -----
 ------------------------
@@ -36,11 +24,6 @@ function pda_encyclopedia_tab:__init() super()
 	self:InitCategories()
 end
 
--- Finalize the encyclopedia interface.
-function pda_encyclopedia_tab:__finalize()
-	SINGLETON = nil 
-end
-
 -- Article and category items.
 class "pda_encyclopedia_entry" (CUIListBoxItem)
 function pda_encyclopedia_entry:__init() super(22)
@@ -50,6 +33,22 @@ function pda_encyclopedia_entry:__init() super(22)
 	self.sect:SetFont(GetFontLetterica18Russian())
 	self.sect:SetWndSize(vector2():set(400, 22))
 	self.sect:SetEllipsis(true)
+end
+
+-------------------------
+----- Miscellaneous -----
+-------------------------
+
+-- Initialises the encyclopedia interface.
+local SINGLETON = nil
+function get_ui()
+	SINGLETON = SINGLETON or pda_encyclopedia_tab()
+	return SINGLETON
+end
+
+-- Finalizes the encyclopedia interface.
+function pda_encyclopedia_tab:__finalize()
+	SINGLETON = nil 
 end
 
 ---------------------
@@ -72,12 +71,30 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 	self.article_list:SetSelectedIndex(index_a - 1)
 	self.category_list:SetSelectedIndex(index_c - 1)
 	
-	-- Set the article's text.
-	self.information:SetText(game.translate_string(section .. "_text"))
-	
-	-- Hide the article if it isn't unlocked.
+	-- Load the article text and image if it is unlocked.
 	local locked = (self.locked_articles[section] ~= nil)
-	if (locked) then
+	if (not locked) then
+		-- Set the article's text.
+		self.information:SetText(game.translate_string(section .. "_text"))
+	
+		-- Set the article's image.
+		-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
+		-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
+		-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
+		self.image:InitTexture(section .. "_image")
+		
+		-- Grab the dimensions of the image to resize the container.
+		local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
+		local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
+		
+		-- Resize the image and container, and then reinitialise the texture so it gets drawn.
+		-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
+		local x_coefficient = (device().height / device().width) / (768 / 1024)
+		self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
+		self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
+		self.image:SetStretchTexture(true)
+		self.image:InitTexture(section .. "_image")
+	else
 		self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
 	end
 	
@@ -85,35 +102,15 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 	self.information:AdjustHeightToText()
 	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
 	
-	-- Set the article's image.
-	-- A bit hacky, but to allow for dynamic width/height we have to initialise the texture twice.
-	-- We load the texture, grab its dimensions, set the window size then reinitialise it a second time.
-	-- If we don't do this then for whatever weird and wonderful reason the image refuses to draw on the UI.
-	self.image:InitTexture(section .. "_image")
-	
-	-- Grab the dimensions of the image to resize the container.
-	local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
-	local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
-	
-	-- Resize the image and container, and then reinitialise the texture so it gets drawn.
-	-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
-	local x_coefficient = (device().height / device().width) / (768 / 1024)
-	self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
-	self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
-	self.image:SetStretchTexture(true)
-	self.image:InitTexture(section .. "_image")
-	
 	-- Clear the scrollbar and add the text and image container.
 	self.scrollbar:Clear()
 	self.scrollbar:AddWindow(self.information, true)
+	self.information:SetAutoDelete(false)
 	if (not locked) then
 		self.scrollbar:AddWindow(self.image_container, true)
+		self.image_container:SetAutoDelete(false)
+		self.image:SetAutoDelete(false)
 	end
-	
-	-- Prevent components from being deleted while used.
-	self.information:SetAutoDelete(false)
-	self.image_container:SetAutoDelete(false)
-	self.image:SetAutoDelete(false)
 end
 
 -- Called when a category is selected.
