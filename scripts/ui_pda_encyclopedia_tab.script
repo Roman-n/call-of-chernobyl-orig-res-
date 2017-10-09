@@ -243,12 +243,10 @@ function pda_encyclopedia_tab:InitPlugin()
 			self.categories[i].articles = {}
 			for k = 0, line_count - 1 do
 				local junk1, section, value = ini:r_line(self.categories[i].section, k, "", "")
-				-- Unlocked articles table must exist, and must not contain this article.
-				if (unlocked_articles and not unlocked_articles[section]) then
-					-- Article must not have "unlocked" tag.
-					if not (value == "unlocked") then
-						table.insert(self.locked_articles, section)
-					end
+				-- Unlocked articles table must not contain this article.
+				-- Article must not also be assigned the "unlocked" value.
+				if not (unlocked_articles[section] or value == "unlocked") then
+					table.insert(self.locked_articles, section)
 				end
 				table.insert(self.categories[i].articles, section)
 				-- Keep any unlocked articles permanently unlocked.

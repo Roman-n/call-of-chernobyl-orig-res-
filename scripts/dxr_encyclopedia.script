@@ -185,6 +185,12 @@ function unlock_article(section)
 		return
 	end
 	
+	-- Return if the specified article is already unlocked.
+	-- Faster to determine this now than by waiting to check if index is nil later.
+	if (section and unlocked_articles[section]) then
+		return
+	end
+	
 	-- Select a random article if no section was provided.
 	local index = nil
 	if (not section) then
@@ -201,7 +207,7 @@ function unlock_article(section)
 	end
 	
 	-- Return if the index is nil.
-	-- Caused when the requested article is already unlocked or doesn't exist.
+	-- Caused when the specified article doesn't exist.
 	if (not index) then
 		return
 	end
