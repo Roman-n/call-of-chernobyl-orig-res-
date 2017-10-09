@@ -893,8 +893,7 @@ local lfs = require("lfs")
 lfs_ignore_exact_ext_match = false
 function file_for_each(node,ext,func,nonrecursive,...)
 	local stack = {}
-	local deepest
-	while not deepest do
+	while true do
 		if (node) then
 			for file in lfs.dir(node) do
 				if (file ~= ".." and file ~= ".") then
@@ -916,7 +915,7 @@ function file_for_each(node,ext,func,nonrecursive,...)
 			node = stack[#stack]
 			stack[#stack] = nil
 		else
-			deepest = true
+			break
 		end
 	end
 	if lfs_ignore_exact_ext_match then

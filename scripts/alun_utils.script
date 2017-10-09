@@ -1419,9 +1419,9 @@ end
 ---- utils 
 function XmlFindNodeWithAttribute(n,node_name,prop_name,val)
 	local node = n.ChildNodes
-	local deepest,p,c
+	local p,c
 	local stack = {}
-	while not deepest do
+	while true do
 		if (node and #node > 0) then
 			for i=1,#node do
 				if (node[i].Name == node_name and node[i].Attributes[prop_name] == val) then
@@ -1438,7 +1438,7 @@ function XmlFindNodeWithAttribute(n,node_name,prop_name,val)
 			node = stack[#stack]
 			stack[#stack] = nil
 		else
-			deepest = true
+			break
 		end
 	end
 end

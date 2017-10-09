@@ -161,8 +161,7 @@ function get_all_upgrade_sections(wpn_section)
 	end 
 	
 	local t = {}
-	local deepest
-	while not deepest do
+	while true do
 		if (node) then
 			local elements = ini:r_list(node,"elements")
 			if (elements) then 
@@ -182,7 +181,7 @@ function get_all_upgrade_sections(wpn_section)
 			node = stack[#stack]
 			stack[#stack] = nil
 		else
-			deepest = true
+			break
 		end
 	end
 	
