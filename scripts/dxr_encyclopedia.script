@@ -30,11 +30,10 @@ end
 function on_interact(key, section)
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local interactivity = guide.interactivity or {}
-	if not (section and interactivity[key] and interactivity[key][section]) then
-		return
-	end
-	for k, v in pairs(interactivity[key][section]) do
-		unlock_article(v)
+	if (key and section and interactivity[key] and interactivity[key][section]) then
+		for k, v in pairs(interactivity[key][section]) do
+			unlock_article(v)
+		end
 	end
 end
 
