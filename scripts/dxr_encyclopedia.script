@@ -18,8 +18,11 @@ function on_game_start()
 	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
 	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character2)
 	
-	-- Using items from the inventory.
+	-- Using items.
 	RegisterScriptCallback("actor_on_item_use", on_interact_item)
+	
+	-- Equipping outfits.
+	RegisterScriptCallback("actor_item_to_slot", on_interact_outfit)
 end
 
 -------------------------
@@ -60,9 +63,14 @@ function on_interact_character2(mode, last_mode)
 	end
 end
 
--- Items: Interacting.
+-- Items: Using.
 function on_interact_item(item)
 	on_interact("items", item:section())
+end
+
+-- Outfits: Equipping.
+function on_interact_outfit(outfit)
+	on_interact("outfits", outfit:section())
 end
 
 -- Mutants: Field-dressing.
@@ -212,7 +220,7 @@ function unlock_article(section)
 	
 	-- Notify the player and update the PDA selection.
 	local article = game.translate_string(section)
-	local message = game.translate_string("pda_btn_encyclopedia_notify")
+	local message = game.translate_string("pda_encyclopedia_notify")
 	news_manager.send_tip(db.actor, strformat(message, article), nil, "guide_unlock", nil, nil)
 	xr_statistic.inc_counter("guide_articles")
 	set_article(section)

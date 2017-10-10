@@ -55,6 +55,12 @@ end
 ----- Callbacks -----
 ---------------------
 
+-- Called when the "images above text" checkbox is clicked.
+function pda_encyclopedia_tab:SaveCheckBoxSettings()
+	axr_main.config:w_value("pda_encyclopedia", "images_above_text",  self.image_checkbox:GetCheck())
+	axr_main.config:save()
+end
+
 -- Called when an article is selected.
 function pda_encyclopedia_tab:SelectArticle(index_a)
 	-- GetSelectedIndex() starts counting at 0.
@@ -73,6 +79,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 	
 	-- Load the article text and image if it is unlocked.
 	local locked = (self.locked_articles[section] ~= nil)
+	local images_above_text = self.image_checkbox:GetCheck()
 	if (not locked) then
 		-- Set the article's text.
 		self.information:SetText(game.translate_string(section .. "_text"))
@@ -87,26 +94,45 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 		local image_width = self.image:GetTextureRect().x2 - self.image:GetTextureRect().x1
 		local image_height = self.image:GetTextureRect().y2 - self.image:GetTextureRect().y1
 		
+		-- Offset is used to add "padding" around the image when text is present.
+		-- If images appear above text and there is no height to the image, then use no offset.
+		local image_offset = ((images_above_text and image_height == 0) and 0 or 17)
+		
 		-- Resize the image and container, and then reinitialise the texture so it gets drawn.
 		-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
 		local x_coefficient = (device().height / device().width) / (768 / 1024)
-		self.image_container:SetWndSize(vector2():set(image_width, image_height + 22))
+		self.image_container:SetWndSize(vector2():set(image_width, image_height + image_offset))
 		self.image:SetWndSize(vector2():set(image_width * x_coefficient, image_height))
 		self.image:SetStretchTexture(true)
 		self.image:InitTexture(section .. "_image")
 	else
-		self.information:SetText(game.translate_string("pda_btn_encyclopedia_locked"))
+		self.information:SetText(game.translate_string("pda_encyclopedia_locked"))
 	end
+	
+	-- Same reasoning as the offset for the image height.
+	-- Creates a "better-looking" padding between the text and the image.
+	local information_offset = images_above_text and 7 or 17
 	
 	-- Adjust the text component size.
 	self.information:AdjustHeightToText()
-	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + 7))
+	self.information:SetWndSize(vector2():set(self.information:GetWidth(), self.information:GetHeight() + information_offset))
 	
-	-- Clear the scrollbar and add the text and image container.
+	-- Clear the scrollbar.
 	self.scrollbar:Clear()
+	
+	-- Add the image above text depending on checkbox.
+	if (not locked and images_above_text) then
+		self.scrollbar:AddWindow(self.image_container, true)
+		self.image_container:SetAutoDelete(false)
+		self.image:SetAutoDelete(false)
+	end
+	
+	-- Add the text to the article's text.
 	self.scrollbar:AddWindow(self.information, true)
 	self.information:SetAutoDelete(false)
-	if (not locked) then
+	
+	-- Add the image below text depending on checkbox.
+	if not (locked or images_above_text) then
 		self.scrollbar:AddWindow(self.image_container, true)
 		self.image_container:SetAutoDelete(false)
 		self.image:SetAutoDelete(false)
@@ -157,6 +183,7 @@ end
 
 -- Add the callbacks for the article and category lists.
 function pda_encyclopedia_tab:InitCallbacks()
+	self:AddCallback("images_above_text", ui_events.BUTTON_CLICKED, self.SaveCheckBoxSettings, self)
 	self:AddCallback("article_list", ui_events.LIST_ITEM_SELECT, self.SelectArticle, self)
 	self:AddCallback("category_list", ui_events.LIST_ITEM_SELECT, self.SelectCategory, self)
 end
@@ -187,6 +214,11 @@ function pda_encyclopedia_tab:InitControls()
 	xml:InitFrame("frame2", self)
 	xml:InitFrame("border", self)
 	xml:InitStatic("frame1:caption", self)
+	
+	-- "Images above text" checkbox.
+	self.image_checkbox = xml:InitCheck("image_checkbox", self)
+	self.image_checkbox:SetCheck(axr_main.config:r_value("pda_encyclopedia", "images_above_text", 1, true))
+	self:Register(self.image_checkbox, "images_above_text")
 	
 	-- Article and category lists.
 	self.article_list = xml:InitListBox("article_list", self)

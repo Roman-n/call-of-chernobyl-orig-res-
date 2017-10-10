@@ -10,15 +10,20 @@
 		<text>Show the user guide</text>
 	</string>
 	
-	<string id="pda_btn_encyclopedia_title">
+	<!-- Interface components -->
+	<string id="pda_encyclopedia_title">
 		<text>Guide to the Zone</text>
 	</string>
 	
-	<string id="pda_btn_encyclopedia_notify">
+	<string id="pda_encyclopedia_image_checkbox">
+		<text>Images above text</text>
+	</string>
+	
+	<string id="pda_encyclopedia_notify">
 		<text>Article unlocked: %s</text>
 	</string>
 	
-	<string id="pda_btn_encyclopedia_locked">
+	<string id="pda_encyclopedia_locked">
 		<text>
 			You have not yet unlocked this article.\n
 			\nArticles can be unlocked in ways such as the following:\n
