@@ -319,8 +319,8 @@ function configure_actions(npc,ini,scheme,section,stype,temp)
 	local action = manager:action(xr_actions_id.alife)
 	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
 	
-	-- action = manager:action(xr_actions_id.state_mgr + 1)
-	-- action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
+	action = manager:action(xr_actions_id.state_mgr + 1)
+	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
 
 	action = manager:action(xr_actions_id.state_mgr + 2)
 	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))

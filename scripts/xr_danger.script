@@ -46,6 +46,44 @@ end
 -----------------------------------------------------------------------------
 -- 																PRIVATE
 -----------------------------------------------------------------------------
+local function remove_memory_object(npc,obj,perceive_type)
+	if (perceive_type == danger_object.hit) then 
+		npc:remove_memory_hit_object(obj)
+	elseif (perceive_type == danger_object.visual) then 
+		npc:remove_memory_visible_object(obj)
+	elseif (perceive_type == danger_object.sound) then 
+		npc:remove_memory_sound_object(obj)
+	end
+end
+
+-- Called from Engine!!
+function CDangerManager__on_before_add(npc,mem_obj,pos,lvl_time,danger_type,perceive_type)
+	local who = mem_obj:object()
+	if (danger_type == danger_object.grenade) then
+		if (character_community(npc) ~= "zombied" and danger_in_radius(npc,who,danger_type)) then 
+			return true
+		end
+		return false
+	elseif (danger_type == danger_object.entity_corpse) then 
+		if (who:cast_Stalker() and character_community(npc) == character_community(who) and danger_in_radius(npc,who,danger_type)) then
+			return true
+		end
+		return false
+	end
+	
+	if (IsStalker(who) and npc:relation(who) ~= game_object.enemy) then
+		remove_memory_object(npc,mem_obj,perceive_type)
+		return false
+	end
+	
+	if not (danger_in_radius(npc,who,danger_type)) then 
+		remove_memory_object(npc,mem_obj,perceive_type)
+		return false
+	end
+	
+	return true
+end
+
 local function get_danger_name(best_danger)
 	local best_danger_object = best_danger:object()
 	local bd_type = best_danger:type()
@@ -117,7 +155,7 @@ local function is_danger(npc,best_danger,script)
 		if not (best_danger:dependent_object() and character_community(npc) ~= "zombied") then
 			return false
 		end
-		return danger_in_radius(npc,best_danger,bd_type)
+		return true --danger_in_radius(npc,best_danger,bd_type)
 	end
 
 	-- only react to grenade and attacked for story, companion and safe zoned npcs
@@ -144,7 +182,7 @@ local function is_danger(npc,best_danger,script)
 			if (game.get_game_time():diffSec(corpse_st.death_time) > 12000) then
 				return false
 			end
-			return danger_in_radius(npc,best_danger,bd_type)
+			return true --danger_in_radius(npc,best_danger,bd_type)
 		end
 		return false
 	end
@@ -154,6 +192,10 @@ local function is_danger(npc,best_danger,script)
 		return false
 	end
 
+	if not (best_danger_object:alive()) then
+		return false
+	end
+	
 	local cls = best_danger_object:clsid()
 	if (IsStalker(nil,cls)) then
 		if not (npc:relation(best_danger_object) == game_object.enemy) then 
@@ -164,14 +206,12 @@ local function is_danger(npc,best_danger,script)
 	else 
 		return false
 	end
-	if not (best_danger_object:alive()) then
-		return false
-	end
+
 	if not (xr_combat_ignore.is_enemy(npc, best_danger_object,true,true)) then 
 		return false 
 	end
 
-	return danger_in_radius(npc,best_danger,bd_type)
+	return true --danger_in_radius(npc,best_danger,bd_type)
 end
 
 -----------------------------------------------------------------------------

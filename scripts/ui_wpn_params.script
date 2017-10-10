@@ -122,7 +122,6 @@ function calculate_max_hit_power_value()
 	max_control_inertion_factor_value = 0
 	
 	local sections_by_hit_power_value = DEV_DEBUG_DEV and {} or nil
-	local gd = level.get_game_difficulty()+1
 	local ini = system_ini()
 	ini:section_for_each(function(section)
 		if (ini:line_exist(section,"hit_power") and ini:line_exist(section,"ammo_class") and ini:line_exist(section,"hud")) then
