@@ -184,6 +184,11 @@ function action_radio_in_heli:execute()
 		return
 	end
 	
+	local be = npc:best_enemy()
+	if not (be) then 
+		return 
+	end 
+	
 	local npc = self.object
 	
 	if (self.st.vid == nil) then
