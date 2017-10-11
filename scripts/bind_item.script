@@ -90,10 +90,6 @@ function weapon_binder:update(delta)
 					self.object:weapon_set_scope(tonumber(m_data.offline_scope_type) or 0)
 					m_data.offline_scope_type = nil
 				end 
-				if (m_data.offline_ammo_type) then 
-					self.object:set_ammo_type(tonumber(m_data.offline_ammo_type) or 0)
-					m_data.offline_ammo_type = nil
-				end
 			end
 		end
 	end
@@ -131,10 +127,6 @@ function weapon_binder:save(stpk)
 			--printf("weapon_binder %s  typ=%s",self.object:name(),typ)
 			if (typ ~= 255) then
 				m_data.offline_scope_type = typ
-			end
-			typ = self.object:get_ammo_type()
-			if (typ ~= 0) then 
-				m_data.offline_ammo_type = typ
 			end
 		end
 	end
