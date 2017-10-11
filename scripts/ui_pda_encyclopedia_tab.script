@@ -9,6 +9,11 @@
 -- Encyclopedia interface.
 class "pda_encyclopedia_tab" (CUIScriptWnd)
 function pda_encyclopedia_tab:__init() super()
+	-- Counters.
+	self.articles_count = 0
+	self.articles_locked_count = 0
+	self.articles_unlocked_count = 0
+
 	-- Tables.
 	self.categories = {}
 	self.interactivity = {}
@@ -57,6 +62,7 @@ end
 
 -- Called when the "images above text" checkbox is clicked.
 function pda_encyclopedia_tab:SaveCheckBoxSettings()
+	-- Write the updated value to axr_options so it is remembered.
 	axr_main.config:w_value("pda_encyclopedia", "images_above_text",  self.image_checkbox:GetCheck())
 	axr_main.config:save()
 end
@@ -273,12 +279,18 @@ function pda_encyclopedia_tab:InitPlugin()
 						unlocked_articles[section] = true
 					else
 						self.locked_articles[section] = true
+						self.articles_locked_count = self.articles_locked_count + 1
 					end
 				end
+				-- Add the article to its category.
 				table.insert(self.categories[i].articles, section)
+				self.articles_count = self.articles_count + 1
 			end
 		else printf("Encyclopedia category \"" .. self.categories[i].section .. "\" does not exist.") end
 	end
+	
+	-- Calculate how many articles must logically be unlocked.
+	self.articles_unlocked_count = (self.articles_count - self.articles_locked_count)
 end
 
 -- Load the encyclopedia interactivity plugin.
