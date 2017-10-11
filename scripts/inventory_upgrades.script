@@ -422,12 +422,12 @@ function property_functor_a(param1, name)
 			val = sysini:r_float_ex(section_table[i],"zoom_cam_dispersion") or 0
 			if (val ~= 0) then
 				local base_val = sysini:r_float_ex(cur_section,"zoom_cam_dispersion") or 3
-				sum = sum + ui_wpn_params.normalize(math.abs(val),0,base_val)/2
+				sum = sum - ui_wpn_params.normalize(math.abs(val),0,base_val)/2
 			end
 			val = sysini:r_float_ex(section_table[i],"cam_dispersion") or 0
 			if (val ~= 0) then		
 				local base_val = sysini:r_float_ex(cur_section,"cam_dispersion") or 3
-				sum = sum + ui_wpn_params.normalize(math.abs(val),0,base_val)/2
+				sum = sum - ui_wpn_params.normalize(math.abs(val),0,base_val)/2
 			end
 		elseif (name == "prop_reliability") then 
 			val = sysini:r_float_ex(section_table[i],"misfire_start_prob") or 0
