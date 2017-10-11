@@ -76,11 +76,11 @@ cl_run_fwd_0				=	1,	  0.2,	    1,       0.4,     1
 [stalker_vision_free]
 min_view_distance   		= 0.1				; min range of cone based on eye_range
 max_view_distance	 		= 0.6				; max range of cone based on eye_range
-visibility_threshold	 	= 100				;Threshold in which object becomes visible based on factors
+visibility_threshold	 	= 80				;Threshold in which object becomes visible based on factors
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
 time_quant					= 0.005				;step increment to for sight calculations
 decrease_value				= 0.1 				;Decrease over time to overall threshold
-velocity_factor		     	= 1.0				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 1.1				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.8				;Low value = easier to see at night
 transparency_threshold	 	= 0.6 			    ;Low value = easier to see through objects
 still_visible_time          = 0 				;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
@@ -88,19 +88,19 @@ still_visible_time          = 0 				;The time (milliseconds) that the object is 
 [stalker_vision_danger]
 min_view_distance   		= 0.3				; min range of cone based on eye_range
 max_view_distance	 		= 1.0				; max range of cone based on eye_range
-visibility_threshold	 	= 100				;Threshold in which object becomes visible based on factors
+visibility_threshold	 	= 80				;Threshold in which object becomes visible based on factors
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
-time_quant					= 0.005				;step increment to for sight calculations
+time_quant					= 0.0052			;step increment to for sight calculations
 decrease_value				= 0.1				;Decrease over time to overall threshold
-velocity_factor		     	= 1.0				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
-luminocity_factor			= 0.7				;Low value = easier to see at night
+velocity_factor		     	= 1.1				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+luminocity_factor			= 0.8				;Low value = easier to see at night
 transparency_threshold	 	= 0.6				;Low value = easier to see through objects (if greater then 1 then enemies are blind)
 still_visible_time          = 0					;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
 
 [stalker_sound_perceive]
-	weapon					= 1.2	; коэффициент усиления приоритета\силы звука
-	item					= 0.2	; коэффициент усиления приоритета\силы звука
-	npc						= 1 	; коэффициент усиления приоритета\силы звука
+	weapon					= 1.0	; коэффициент усиления приоритета\силы звука
+	item					= 0.1	; коэффициент усиления приоритета\силы звука
+	npc						= 0.5 	; коэффициент усиления приоритета\силы звука
 	anomaly					= 0.0	; коэффициент усиления приоритета\силы звука
 	world					= 0.1	; коэффициент усиления приоритета\силы звука
 
