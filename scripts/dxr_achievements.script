@@ -1,6 +1,6 @@
----------------------------------
------ Written by Darryl123 ------
----------------------------------
+--------------------------------
+----- Written by Darryl123 -----
+--------------------------------
 
 -------------------------
 ----- Miscellaneous -----
@@ -296,7 +296,7 @@ end
 -- Requires all encyclopedia articles be unlocked.
 function bookworm_food_requirements()
 	return (
-				(dxr_encyclopedia.get_locked_articles_count() == 0)
+				(dxr_encyclopedia.get_articles_locked_count() == 0)
 		)
 end
 
