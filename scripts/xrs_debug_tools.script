@@ -1634,8 +1634,7 @@ function enemy_hud_show(hud)
 						local bd_type = st.danger.type
 						hud:add_msg("Type",bd_type and danger_types[bd_type])
 						local danger_time = st.danger.danger_time
-						local inertion = st.danger.inertion
-						local timr = inertion and danger_time and (danger_time + inertion) - time_global()
+						local timr = danger_time and danger_time - time_global()
 						hud:add_msg("Timer",timr and timr > 0 and timr or 0)
 					end
 				end

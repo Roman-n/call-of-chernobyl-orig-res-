@@ -155,10 +155,10 @@ function action_patrol:execute()
 		
 		if (self.stand) then 
 			npc:set_body_state(move.standing)
-			--state_mgr.set_state(npc,self.st.sniper and "threat_sniper_fire" or "threat_fire", nil, nil, {look_object = be}, {fast_set = true})
+			--state_mgr.set_state(npc,self.st.sniper and "threat_sniper_fire" or "threat_fire", nil, nil, {look_object = be}, state_mgr.fast_set_true)
 		else 
 			npc:set_body_state(move.crouch)
-			--state_mgr.set_state(npc,self.st.sniper and "hide_sniper_fire" or "hide_fire", nil, nil, {look_object = be}, {fast_set = true})
+			--state_mgr.set_state(npc,self.st.sniper and "hide_sniper_fire" or "hide_fire", nil, nil, {look_object = be}, state_mgr.fast_set_true)
 		end
 		
 		local bw = npc:best_weapon()

@@ -277,24 +277,7 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 	
 	-- Only wound the stalker from powerful attacks if not a head hit and not already wounded
 	if (bone_index ~= 15 and amount > 15 and amount >= obj.health*100 and not IsWounded(obj)) then
-		local skip_wound
-		if (who:id() == 0) then 
-			-- Surprise attacks with knife don't force wound
-			if (self.object:target_mental_state() == anim.free) then 
-				local active_item = who:active_item()
-				if (active_item and active_item:clsid() == clsid.wpn_knife_s) then 
-					skip_wound = true
-				end
-			end
-			
-			-- surrendered victims should die instantly, not re-wound
-			if (utils.load_var(self.object,"victim_surrender",false) == true) then
-				skip_wound = true
-			end
-		end
-		if not (skip_wound) then
-			obj.health = 0.15
-		end
+		obj:set_health_ex(0.15)
 	end
 
 	if (self.st.active_section and self.st.active_scheme) then

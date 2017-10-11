@@ -99,7 +99,7 @@ function action_wounded:execute()
 	if (po and not utils.load_var(npc,"victim_surrender") and npc.psy_health > 0.15) then
 		local cur_state = state_mgr.get_state(npc)
 		if (cur_state ~= "prisoner") then
-			state_mgr.set_state(npc,"prisoner",nil,nil,nil,{fast_set = true})
+			state_mgr.set_state(npc,"prisoner",nil,nil,nil,state_mgr.fast_set_true)
 		end
 		return
 	end
@@ -115,7 +115,7 @@ function action_wounded:execute()
 
 	local cur_state = state_mgr.get_state(npc)
 	if (cur_state ~= wound_manager_state) then
-		state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,{fast_set = true})
+		state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,state_mgr.fast_set_true)
 	end
 	
 	if (self.a.use_medkit) then
@@ -206,7 +206,7 @@ function Cwound_manager:eat_medkit()
 	db.storage[self.npc:id()].wounded_already_selected = nil
 	--self:update()
 	
-	state_mgr.set_state(self.npc,"hide_no_wpn",nil,nil,nil,{fast_set = true})
+	state_mgr.set_state(self.npc,"hide_no_wpn",nil,nil,nil,state_mgr.fast_set_true)
 end
 function Cwound_manager:process_fight(hp)
 	local key

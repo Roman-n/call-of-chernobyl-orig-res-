@@ -1021,7 +1021,7 @@ local function reset_animation(npc)
 	state_mgr.animstate:set_state(nil, true)
 	state_mgr.animstate:set_control()
 
-	state_mgr:set_state("idle", nil, nil, nil, {fast_set = true})
+	state_mgr:set_state("idle", nil, nil, nil, state_mgr.fast_set_true)
 
 --	planner:update()
 --	planner:update()

@@ -271,7 +271,7 @@ function act_kill_wounded:execute()
 			db.used_level_vertex_ids[st.vertex_id] = npc:id()
 			self:begin_kill_wounded(vo)
 		else
-			state_mgr.set_state(npc,"assault",nil,nil,{look_position = vo:position()},{fast_set = true})
+			state_mgr.set_state(npc,"assault",nil,nil,{look_position = vo:position()},state_mgr.fast_set_true)
 			if (db.used_level_vertex_ids[st.vertex_id]) then
 				db.used_level_vertex_ids[st.vertex_id] = nil
 			end
@@ -397,6 +397,7 @@ function configure_actions(npc,ini,scheme,section,stype,temp)
 				stalker_ids.action_combat_planner,
 			--	stalker_ids.action_danger_planner,
 				xr_actions_id.stohe_meet_base+1,
+				xr_actions_id.state_mgr + 1,
 				xr_actions_id.state_mgr + 2,
 				xr_actions_id.alife
 	}
