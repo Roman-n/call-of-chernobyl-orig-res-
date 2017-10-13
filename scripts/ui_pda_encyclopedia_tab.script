@@ -102,7 +102,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 		
 		-- Offset is used to add "padding" around the image when text is present.
 		-- If images appear above text and there is no height to the image, then use no offset.
-		local image_offset = ((images_above_text and image_height == 0) and 0 or 17)
+		local image_offset = images_above_text and (image_height > 0 and 7 or 0) or (image_height > 0 and 15 or 0)
 		
 		-- Resize the image and container, and then reinitialise the texture so it gets drawn.
 		-- The x_coefficient variable is used to fix image stretchiness when using widescreen resolutions.
@@ -117,7 +117,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 	
 	-- Same reasoning as the offset for the image height.
 	-- Creates a "better-looking" padding between the text and the image.
-	local information_offset = images_above_text and 7 or 17
+	local information_offset = images_above_text and 10 or 3
 	
 	-- Adjust the text component size.
 	self.information:AdjustHeightToText()

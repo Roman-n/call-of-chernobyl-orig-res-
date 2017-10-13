@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<!-- When changing text here, don't forget to update st_achievement.xml too. -->
+	
+	<string id="encyclopedia_achievements">
+		<text>Achievements</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_bookworm_food">
+		<text>Bookworm Food</text>
+	</string>
+	<string id="encyclopedia_achievements_bookworm_food_text">
+		<text>
+			"Through your own endeavours or by reading about those of others, you have come to learn a lot about the Zone and its many inhabitants. Perhaps you should consider sharing some of this knowledge?"\n
+			\nRequirements: Unlock all article for the in-game guide.\nRewards: Memory sticks will be replaced by rare PDAs when found.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_completionist">
+		<text>Completionist</text>
+	</string>
+	<string id="encyclopedia_achievements_completionist_text">
+		<text>
+			"All there is to achieve has been achieved. You know the Zone better than the Zone knows itself. And despite all odds being stacked against you, and every threat you've faced - you still remain undefeated."\n
+			\nRequirements: Unlock all other achievements.\nRewards: Your rank and reputation will greatly increase.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_down_to_earth">
+		<text>Down to Earth</text>
+	</string>
+	<string id="encyclopedia_achievements_down_to_earth_text">
+		<text>
+			"The higher they fly the harder they fall. Not willing to waste any more expensive equipment, the Zone's helicopters now seem to be of a much weaker variety. But are no less tempting to destroy."\n
+			\nRequirements: Destroy 3 helicopters, or just 1 with an explosive weapon.\nRewards: Mi-2 helicopters will spawn in place of Mi-24s.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_duga_free">
+		<text>Duga Free</text>
+	</string>
+	<string id="encyclopedia_achievements_duga_free_text">
+		<text>
+			"After seeing what reckless experimentation has brought to the Zone you have taken action into your own hands. Paths through Yantar and Radar are now open since disabling the Miracle Machine and Brain Scorcher."\n
+			\nRequirements: Disable the Brain Scorcher and Miracle Machine.\nRewards: Paths through Yantar and Radar are now easier to access.\n
+			\nThis achievement is only available in story mode.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_geologist">
+		<text>Geologist</text>
+	</string>
+	<string id="encyclopedia_achievements_geologist_text">
+		<text>
+			"Humming, buzzing and spitting - the anomalies of the Zone do not scare you any longer. After so many successful endeavours, you can't help but notice that artefacts seem more numerous than ever before."\n
+			\nRequirements: Detect at least 50 artefacts.\nRewards: Artefacts have an increased chance of respawning.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_heavy_pockets">
+		<text>Heavy Pockets</text>
+	</string>
+	<string id="encyclopedia_achievements_heavy_pockets_text">
+		<text>
+			"Through trading, looting and stealing you have accumulated a small fortune. Your personal wealth is well known and traders will favour your patronage."\n
+			\nRequirements: Possess 1,000,000 RU at any one moment.\nRewards: Traders may offer you more rare and expensive goods.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_infopreneur">
+		<text>Infopreneur</text>
+	</string>
+	<string id="encyclopedia_achievements_infopreneur_text">
+		<text>
+			"Whether selling or buying, to many people information is just as valuable as artefacts. Word has spread that you are a reliable source of such a commodity."\n
+			\nRequirements: Deliver at least 50 PDAs to information brokers.\nRewards: Brokers will pay a small additional bonus for PDAs delivered to them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_mechanized_warfare">
+		<text>Mechanized Warfare</text>
+	</string>
+	<string id="encyclopedia_achievements_mechanized_warfare_text">
+		<text>
+			"Forester's services have never been cheap, but at least now he has some competition. That mechanic should make good use of those tools you brought him."\n
+			\nRequirements: Deliver all 3 sets of tools to a mechanic.\nRewards: You can fully upgrade equipment at a mechanic far cheaper than Forester.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_patriarch">
+		<text>Patriarch</text>
+	</string>
+	<string id="encyclopedia_achievements_patriarch_text">
+		<text>
+			"Destroyer of helicopters. Deliverer of PDAs. Stories of your experiences and abilities are renowned throughout the Zone. You have become immortalised; your tales forever spoken of over the Zone's many campfires."\n
+			\nRequirements: Reach the rank of "Legend" (28000).\nRewards: More stalkers can be recruited as companions at one time.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_radiotherapy">
+		<text>Radiotherapy</text>
+	</string>
+	<string id="encyclopedia_achievements_radiotherapy_text">
+		<text>
+			"Strangely, you no longer feel haunted by the groans of an approaching emission. You believe there to be a chance they may be more forgiving towards you."\n
+			\nRequirements: Survive 25 emission and 25 psi-storms.\nRewards: There is a small chance of surviving emissions and psi-vortices.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_rag_and_bone">
+		<text>Rag and Bone</text>
+	</string>
+	<string id="encyclopedia_achievements_rag_and_bone_text">
+		<text>
+			"What's theirs is yours, or so you like to think. You have a knack for finding other people's stashes. Despite some misfortune here and there, you feel that for the most part your luck is improving."\n
+			\nRequirements: Find and loot (at least partially) 100 stashes.\nRewards: Future stashes have more chance of containing valuable items.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_silver_or_lead">
+		<text>Silver or Lead</text>
+	</string>
+	<string id="encyclopedia_achievements_silver_or_lead_text">
+		<text>
+			"Bodies and bullet casings litter the tracks behind you. The stories you leave are infamous. You often wonder why some place possessions above their lives. Perhaps things will soon begin to change."\n
+			\nRequirements: Kill 500 stalkers, or make 50 stalkers surrender to you.\nRewards: Surrendering stalkers may give you an additional stash coordinate.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_tourist">
+		<text>Tourist</text>
+	</string>
+	<string id="encyclopedia_achievements_tourist_text">
+		<text>
+			"Despite the dangers, you have explored all accessible parts of the Zone. From the murky depths of the Great Swamp to the metal maze of the Truck Cemetery - you know the Zone like the back of your hand."\n
+			\nRequirements: Visit all 32 levels in the Zone at least once.\nRewards: Three unique coordinates for a "Tourist's stash" will be received.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_well_dressed">
+		<text>Well Dressed</text>
+	</string>
+	<string id="encyclopedia_achievements_well_dressed_text">
+		<text>
+			"Rightly so does the Zone's wildlife fear you - more than a fair share has fallen at your hands. Lately, you have noticed your bloody harvest has become more bountiful than usual."\n
+			\nRequirements: Kill 500 mutants, or field dress 250 mutant parts.\nRewards: There is a small chance of field dressing additional mutant parts.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_wishful_thinking">
+		<text>Wishful Thinking</text>
+	</string>
+	<string id="encyclopedia_achievements_wishful_thinking_text">
+		<text>
+			"At first you heard the rumours, then you saw it for yourself, and then you destroyed it. There will always who will doubt what you accomplished, but the fact remains. The Wish Granter is no more."\n
+			\nRequirements: Defeat all waves of the Wish Granter's illusions.\nRewards: Your rank and reputation will greatly increase.\n
+			\nThis achievement is only available in story mode.
+		</text>
+	</string>
+	
+</string_table>

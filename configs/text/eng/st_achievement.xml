@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+
+	<!-- When changing text here, don't forget to update ui_st_encyclopedia_achievements.xml too. -->
 	
 	<string id="st_achievement_1_name">
 		<text>Heavy Pockets</text>
@@ -31,7 +33,7 @@
 		<text>Infopreneur</text>
 	</string>
 	<string id="st_achievement_3_hint">
-		<text>Traders will now pay you a small additional bonus for each PDA delivered to them.</text>
+		<text>Brokers will now pay you a small additional bonus for future PDA delivered to them.</text>
 	</string>
 	<string id="st_achievement_3_descr">
 		<text>Whether selling or buying, to many people information is just as valuable as artefacts. Word has spread that you are a reliable source of such a commodity.</text>
@@ -83,7 +85,7 @@
 		<text>Mechanized Warfare</text>
 	</string>
 	<string id="st_achievement_7_hint">
-		<text>You are able to fully upgrade equipment at a technician other than Forester.</text>
+		<text>You are able to fully upgrade equipment at a mechanic other than Forester.</text>
 	</string>
 	<string id="st_achievement_7_descr">
 		<text>Forester's services have never been cheap, but at least now he has some competition. That mechanic should make good use of those tools you brought him.</text>
@@ -125,7 +127,7 @@
 		<text>All available achievements have been unlocked.</text>
 	</string>
 	<string id="st_achievement_10_descr">
-		<text>All there is to achieve has been achieved. You know the Zone better than the Zone knows itself. And despite all odds being stacked against you and every threat you've faced - you still remain undefeated.</text>
+		<text>All there is to achieve has been achieved. You know the Zone better than the Zone knows itself. And despite all odds being stacked against you, and every threat you've faced - you still remain undefeated.</text>
 	</string>
 	<string id="st_achievement_10_unlock">
 		<text>You have unlocked the "Completionist" achievement.</text>
@@ -148,7 +150,7 @@
 		<text>Down to Earth</text>
 	</string>
 	<string id="st_achievement_12_hint">
-		<text>Mi-2 helicopters will replace destroyed Mi-24s.</text>
+		<text>Mi-2 helicopters will spawn in place of Mi-24s.</text>
 	</string>
 	<string id="st_achievement_12_descr">
 		<text>The higher they fly the harder they fall. Not willing to waste any more expensive equipment, the Zone's helicopters now seem to be of a much weaker variety. But are no less tempting to destroy.</text>

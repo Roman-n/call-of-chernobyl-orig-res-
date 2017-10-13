@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_factions">
+		<text>Factions</text>
+	</string>
+	
+	<string id="encyclopedia_factions_bandit">
+		<text>Bandit</text>
+	</string>
+	<string id="encyclopedia_factions_bandit_text">
+		<text>
+			Bandits are members of the criminal underworld who operate in the Zone.\n
+			\nWhether to flee from their past crimes or to make money from selling artefacts and dealing firearms, their actions leave them despised by almost everybody foreign to their ranks.\n
+			\nThe faction consists of the Zone's many numerous gangs, operating separately of one another, and guided first by opportunity before any form of organised leadership.\n
+			\nAmbushing unsuspecting stalkers, blocking routes and "taxing" those who pass, and even entrapping stalkers into debt are just but a few of their many illicit activities in the Zone.\n
+			\nHere, criminals and gangsters can do whatever they want with little fear of consequence.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_clear_sky">
+		<text>Clear Sky</text>
+	</string>
+	<string id="encyclopedia_factions_clear_sky_text">
+		<text>
+			Clear Sky are a scientific faction dedicated to learning about the Zone's inner workings.\n
+			\nDespite recent history they are generally considered to be a peaceful faction, preferring to invest their time and resources into research, rather than in playing politics.\n
+			\nThey view the Zone and its creation as both a gift and a curse - an incredible event with unappreciated potential - and a threat to humanity if not properly kept in balance.\n
+			\nIt was this latter part of their ideology which led them to near destruction, in chasing a stalker who they believed would greatly upset this balance, they fielded one of the largest forces ever seen in the Zone.\n
+			\nWith the ensuing battles against the Monolith in their path, and the emission that followed them, the faction was left leaderless and in a state of disrepair.\n
+			\nToday however they are led by Cold, who has helped them to rebuild and recover - carrying on the research of their predecessors and keeping the peace in the far southern reaches of the Zone.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_duty">
+		<text>Duty</text>
+	</string>
+	<string id="encyclopedia_factions_duty_text">
+		<text>
+			Duty is a paramilitary organisation formed by former soldiers.\n
+			\nCharacterised by their strict discipline and military attributes, their ideology is built upon the protection of humanity from the dangers of the Zone.\n
+			\nIn view of this, Duty deals with the Zone's internal problems - the destruction of mutants and bandits - which greatly facilitates the daily lives of ordinary stalkers.\n
+			\nDespite taking this hardline approach they have been known to cooperate with Ecologists, handing over artefacts in return for knowledge which could assist them in their ideological crusade.\n
+			\nBecause of their actions they find themselves at constant odds with Freedom, a faction similar in size and strength, but whose attitude toward the Zone is of coexistence and preservation.\n
+			\nAfter a short-lived truce at Yanov Station bloodily collapsed, their bitter rivalry has yet again embroiled them both in another deadly conflict with no clear end in sight.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_ecologist">
+		<text>Ecologist</text>
+	</string>
+	<string id="encyclopedia_factions_ecologist_text">
+		<text>
+			Ecologists are an institute of government-backed research organisations.\n
+			\nThere is no ecosystem anywhere else quite like the one found in the Zone, so naturally there is also a great interest expressed in it by the government.\n
+			\nIt is for this reason that the faction exists - to study the artefacts, anomalies, mutants and other unnatural objects that can be found only here.\n
+			\nThus far they have established two research labs, one in Yantar and the other in Jupiter, from which they conduct most of their secretive experiments.\n
+			\nWhen working out in the field they are often accompanied by an escort, usually hired mercenaries or stalkers, or are otherwise armed themselves.\n
+			\nMany stalkers who hunt for artefacts and rare mutant parts sell them to the Ecologists, as they are usually willing to pay much more than anybody else for them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_freedom">
+		<text>Freedom</text>
+	</string>
+	<string id="encyclopedia_factions_freedom_text">
+		<text>
+			Freedom
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_loner">
+		<text>Loner</text>
+	</string>
+	<string id="encyclopedia_factions_loner_text">
+		<text>
+			Loner
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_mercenary">
+		<text>Mercenary</text>
+	</string>
+	<string id="encyclopedia_factions_mercenary_text">
+		<text>
+			Mercenary
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_military">
+		<text>Military</text>
+	</string>
+	<string id="encyclopedia_factions_military_text">
+		<text>
+			Military
+		</text>
+	</string>
+	
+	<string id="encyclopedia_factions_monolith">
+		<text>Monolith</text>
+	</string>
+	<string id="encyclopedia_factions_monolith_text">
+		<text>
+			Monolith
+		</text>
+	</string>
+	
+</string_table>

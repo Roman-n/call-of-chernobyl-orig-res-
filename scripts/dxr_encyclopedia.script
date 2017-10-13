@@ -192,9 +192,11 @@ function unlock_article(section)
 		return
 	end
 	
-	-- Return if the specified article is already unlocked.
+	-- Return if the specified article is already unlocked, or doesn't exist.
 	if (section) then
 		if (unlocked_articles[section]) then
+			return
+		elseif (not locked_articles[section]) then
 			return
 		end
 		

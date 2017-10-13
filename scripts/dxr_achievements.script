@@ -352,10 +352,10 @@ function geologist_requirements()
 end
 
 -- Heavy Pockets.
--- Requires player to possess 500,000 RU.
+-- Requires player to possess 1,000,000 RU.
 function heavy_pockets_requirements()
 	return (
-				(db.actor:money() >= 500000)
+				(db.actor:money() >= 1000000)
 		)	
 end
 

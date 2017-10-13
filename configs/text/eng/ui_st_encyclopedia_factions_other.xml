@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_factions_other">
+		<text>Factions (Other)</text>
+	</string>
+	
+	<string id="encyclopedia_factions_other_zombified">
+		<text>Zombified</text>
+	</string>
+	<string id="encyclopedia_factions_other_zombified_text">
+		<text>
+			Zombified
+		</text>
+	</string>
+	
+</string_table>
