@@ -6,6 +6,7 @@
 ; Do not touch this section unless you know what you are doing!
 [encyclopedia_interactivity]
 characters = encyclopedia_interactivity_characters
+factions = encyclopedia_interactivity_factions
 items = encyclopedia_interactivity_items
 mutants = encyclopedia_interactivity_mutants
 outfits = encyclopedia_interactivity_outfits
@@ -13,19 +14,35 @@ smarts = encyclopedia_interactivity_smarts
 vehicles = encyclopedia_interactivity_vehicles
 
 ; Characters - triggered by looting or talking-to.
+; Faction articles should also trigger if a character is technically in the trader faction.
 [encyclopedia_interactivity_characters]
 bar_visitors_barman_stalker_trader = encyclopedia_characters_barkeep
 esc_2_12_stalker_nimble = encyclopedia_characters_nimble
 esc_2_12_stalker_wolf = encyclopedia_characters_wolf
-esc_m_trader = encyclopedia_characters_sidorovich
+esc_m_trader = encyclopedia_characters_sidorovich, encyclopedia_factions_loner
 esc_smart_terrain_5_7_loner_mechanic_stalker = encyclopedia_characters_xenotech
 mar_base_owl_stalker_trader = encyclopedia_characters_spore
 mar_base_stalker_barmen = encyclopedia_characters_librarian
 mar_base_stalker_tech = encyclopedia_characters_novikov
 mar_smart_terrain_base_doctor = encyclopedia_characters_ivan_trodnik
 mar_smart_terrain_base_stalker_leader_marsh = encyclopedia_characters_cold
-mar_smart_terrain_doc_doctor = encyclopedia_characters_doctor
+mar_smart_terrain_doc_doctor = encyclopedia_characters_doctor, encyclopedia_factions_loner
+red_forester_tech = encyclopedia_factions_loner
+yan_stalker_sakharov = encyclopedia_factions_ecologist
 zat_a2_stalker_barmen = encyclopedia_characters_beard
+
+; Factions - triggered by looting or talking-to.
+[encyclopedia_interactivity_factions]
+army = encyclopedia_factions_military
+bandit = encyclopedia_factions_bandit
+csky = encyclopedia_factions_clear_sky
+dolg = encyclopedia_factions_duty
+ecolog = encyclopedia_factions_ecologist
+freedom = encyclopedia_factions_freedom
+killer = encyclopedia_factions_mercenary
+monolith = encyclopedia_factions_monolith
+stalker = encyclopedia_factions_loner
+zombied = encyclopedia_factions_other_zombified
 
 ; Items - triggered by using.
 [encyclopedia_interactivity_items]
