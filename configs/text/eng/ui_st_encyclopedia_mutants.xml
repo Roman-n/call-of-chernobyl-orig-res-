@@ -204,7 +204,7 @@
 			Pseudogiants are one of the rarest and most fearsome mutants in the Zone.\n
 			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before succumbing to its wounds and dying.\n
 			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it - being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
-			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back, only attacking when another target gets within range.\n
+			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back.\n
 			\n• Attacks: Melee\n• Health: Very high\n• Speed: Slow\n• Traits: Immense strength
 		</text>
 	</string>
@@ -279,7 +279,7 @@
 	</string>
 	<string id="encyclopedia_mutants_zombie_text">
 		<text>
-			Zombies are people who have been reduced to their most residual and animal reflexes.\n
+			Zombies are people who have been reduced to their most residual reflexes.\n
 			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of the people they used to be.\n
 			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psi-fields, having lost even the ability to operate basic tools and weaponry.\n
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n

@@ -47,12 +47,10 @@
 		<texture id="encyclopedia_factions_duty_image" x="600" y="0" width="300" height="300"/>
 		<texture id="encyclopedia_factions_ecologist_image" x="0" y="300" width="300" height="300"/>
 		<texture id="encyclopedia_factions_freedom_image" x="300" y="300" width="300" height="300"/>
-		<texture id="encyclopedia_factions_loner_image" x="600" y="300" width="0" height="0"/>
-		<texture id="encyclopedia_factions_mercenary_image" x="0" y="600" width="0" height="0"/>
-		<texture id="encyclopedia_factions_military_image" x="300" y="600" width="0" height="0"/>
-		<texture id="encyclopedia_factions_monolith_image" x="600" y="600" width="0" height="0"/>
-		<texture id="encyclopedia_factions_renegade_image" x="0" y="900" width="300" height="300"/>
-		<texture id="encyclopedia_factions_unisg_image" x="300" y="900" width="0" height="0"/>
+		<texture id="encyclopedia_factions_loner_image" x="600" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_factions_mercenary_image" x="0" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_factions_military_image" x="300" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_factions_monolith_image" x="600" y="600" width="300" height="300"/>
 	</file>
 	
 	<!-- Factions (Historic) -->

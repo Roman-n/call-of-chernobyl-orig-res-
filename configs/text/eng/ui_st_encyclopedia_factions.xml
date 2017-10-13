@@ -27,7 +27,7 @@
 			\nDespite recent history they are generally considered to be a peaceful faction, preferring to invest their time and resources into research, rather than in playing politics.\n
 			\nThey view the Zone and its creation as both a gift and a curse - an incredible event with unappreciated potential - and a threat to humanity if not properly kept in balance.\n
 			\nIt was this latter part of their ideology which led them to near destruction, in chasing a stalker who they believed would greatly upset this balance, they fielded one of the largest forces ever seen in the Zone.\n
-			\nWith the ensuing battles against the Monolith in their path, and the emission that followed them, the faction was left leaderless and in a state of disrepair.\n
+			\nAfter the ensuing battles against the Monolith in their path, and the emission that followed them, the faction was left leaderless and in a state of near disrepair.\n
 			\nToday however they are led by Cold, who has helped them to rebuild and recover - carrying on the research of their predecessors and keeping the peace in the far southern reaches of the Zone.
 		</text>
 	</string>
@@ -65,7 +65,10 @@
 	</string>
 	<string id="encyclopedia_factions_freedom_text">
 		<text>
-			Freedom
+			Freedom are anarchists and daredevils who fight for free access to the Zone.\n
+			\nMembers of this faction believe that the Zone should be a separate and free territory without laws and rulers, seeing it as a scientific marvel, and opposing all who would try to exploit or work against its nature.\n
+			\nThese views put them in direct contrast with Clear Sky and the Military, who seek its containment, and Duty, who want nothing less than to see the destruction of the Zone and everything spawned of it.\n
+			\nDespite finding enemies in almost everybody, they remain one of the most powerful factions in the Zone, which has allowed them to survive through their long-running and brutal fight against Duty's ambitions.\n
 		</text>
 	</string>
 	
@@ -74,7 +77,11 @@
 	</string>
 	<string id="encyclopedia_factions_loner_text">
 		<text>
-			Loner
+			Loners, or "free stalkers", are those who aren't aligned to a faction.\n
+			\nStalkers who come to the Zone entail a variety of motives: a thirst for adventure, the urge to explore the unknown, or the desire to start a new life from scratch.\n
+			\nThe majority of factions take a neutral or friendly stance towards them, seeing them as potential recruits, or as workers to perform jobs they are unable or unwilling to do themselves.\n
+			\nMost of their income is from the collection of artefacts, mutant parts, and miscellaneous weapons and items discovered when looting abandoned buildings and deceased stalkers.\n
+			\nHowever, most of the time loners prefer to crowd around bars or at a bonfire, listening to tales, jokes and playing the guitar or harmonica to pass the time.
 		</text>
 	</string>
 	
@@ -83,7 +90,10 @@
 	</string>
 	<string id="encyclopedia_factions_mercenary_text">
 		<text>
-			Mercenary
+			Mercenaries are a faction of private military contractors.\n
+			\nThey are very serious about their tasks and work in general, with well-planned operations and excellent preparation being the keys to their success.\n
+			\nContrary to popular belief they are not just hired killers, but carry out various contracts involving finding rare artefacts and equipment, and escorting valuable cargo through the most dangerous areas of the Zone.\n
+			\nFor a small reward, they have been known to subcontract parts of their work to other stalkers, usually jobs they consider too small or simple to involve professionals.
 		</text>
 	</string>
 	
@@ -92,7 +102,10 @@
 	</string>
 	<string id="encyclopedia_factions_military_text">
 		<text>
-			Military
+			Military forces in the Zone are a detachment of the State Security Service.\n
+			\nTasked primarily with ensuring that the border between the Zone and the outside world is not breached, they are hated here by almost everybody barring Duty and the Ecologists.\n
+			\nThey have the right to fire without warning, therefore military checkpoints are safer to bypass, as all unofficial persons in the Zone are considered "local fauna" and are subject to destruction.\n
+			\nIn reality however, the military are frequently and easily bribed, with the most obvious example being how they ignore the rookie village, despite being less than a few hundred meters away from a major checkpoint.\n
 		</text>
 	</string>
 	
@@ -101,7 +114,11 @@
 	</string>
 	<string id="encyclopedia_factions_monolith_text">
 		<text>
-			Monolith
+			Monolith are a fanatical pseudo-religious sect hostile to all but their own.\n
+			\nFixated by their fanaticism, they attempt to resist all who would try to penetrate through to the center of the Zone - to such an extent that most stalkers consider them to be genuinely insane.\n
+			\nWhilst physically on par with any other stalkers in the Zone, their fervour sets them aside in enabling them to ignore pain and continue a fight, even after running out of ammunition for their weapons.\n
+			\nTheir members are thought to be inducted through brainwashing, previously via the use of the Brain Scorcher until it was shut down by Strelok.\n
+			\nIrrespective of this, in recent years the Monolith have somehow gotten access to a new and mysterious supply of reinforcements.\n
 		</text>
 	</string>
 	

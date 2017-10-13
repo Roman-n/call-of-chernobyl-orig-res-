@@ -12,7 +12,7 @@
 		<text>
 			Bookworm Food requires you to unlock all articles for the in-game guide.\n
 			\nArticles can be unlocked through a multitude of ways, such as talking to important characters or downloading data from memory sticks.\n
-			\nAfter unlocking the achievement, all future memory sticks which are found on the bodies of dead stalkers will be replaced by rare PDAs.
+			\nWhen this achievement is unlocked, all future memory sticks which would be found on the bodies of dead stalkers will be replaced by rare PDAs.
 		</text>
 	</string>
 	
@@ -31,8 +31,8 @@
 	</string>
 	<string id="encyclopedia_achievements_down_to_earth_text">
 		<text>
-			\nDown to Earth requires you to destroy either 3 helicopters with small arms, or just the 1 if you use explosive weapons such as the RPG or RG-6.\n
-			\nWhen the achievement is unlocked, all Mi-24 "Hind" helicopters will gradually be replaced with the Mi-2 "Hoplite", a much older and weaker aircraft.
+			\nDown to Earth requires you to destroy either 3 helicopters with small arms, or just the 1 if you use an explosive weapon such as the RPG or RG-6.\n
+			\nWhen this achievement is unlocked, all Mi-24 "Hind" helicopters will gradually be replaced with the Mi-2 "Hoplite", a much older and weaker aircraft.
 		</text>
 	</string>
 	
@@ -52,8 +52,8 @@
 	<string id="encyclopedia_achievements_geologist_text">
 		<text>
 			Geologist requires you to detect a minimum of 50 artefacts.\n
-			\nArtefact detection requires a detector, which can be found in stashes, on bodies, and are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
-			\nWhen the achievement is unlocked, the respawn rates of artefacts found in anomalies is slightly increased.
+			\nArtefact detection requires a detector, which and are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
+			\nWhen this achievement is unlocked, the respawn rates of artefacts found in anomalies is slightly increased.
 		</text>
 	</string>
 	
@@ -63,7 +63,7 @@
 	<string id="encyclopedia_achievements_heavy_pockets_text">
 		<text>
 			Heavy Pockets requires you to possess 1,000,000 RU at any one moment.\n
-			\nWhen the achievement is unlocked, most traders will begin to offer you special supplies, the same as if you had great relations with their faction.
+			\nWhen this achievement is unlocked, most traders will begin to offer you special supplies, the same as if you had great relations with their faction.
 		</text>
 	</string>
 	
@@ -74,7 +74,7 @@
 		<text>
 			Infopreneur requires to you deliver a minimum of 50 PDAs to information brokers.\n
 			\nPDAs can be found on the bodies of dead stalkers, and can be traded to certain characters by telling them you have information to sell.\n
-			\nWhen the achievement is unlocked, these same characters will offer you a slightly increased reward for any future PDAs you bring them.
+			\nWhen this achievement is unlocked, these same characters will offer you a slightly increased reward for any future PDAs you bring them.
 		</text>
 	</string>
 	
@@ -85,7 +85,7 @@
 		<text>
 			Mechanized Warfare requires you to deliver all 3 sets of tools to a single mechanic.\n
 			\nBasic, advanced and expert tools can be found mostly in stashes, but can also on occasion be found for sale by certain traders.\n
-			\nThis achievement doesn't come with a special reward, but you will have the access to a mechanic who can fully upgrade your gear other than Forester - who would otherwise charge you much more.
+			\nThis achievement doesn't come with a special reward, but you will have the access to a mechanic who can fully upgrade your gear other than Forester - who would charge you much more.
 		</text>
 	</string>
 	
@@ -94,8 +94,8 @@
 	</string>
 	<string id="encyclopedia_achievements_patriarch_text">
 		<text>
-			Patriarch requires you to achieve the highest possible rank, which is earned at 28,000 points.\n
-			\nRank can be earned through almost every action that you can take in the Zone. A more detailed explanation of ranks and how they work can be found in its guide article.\n
+			Patriarch requires you to achieve the highest possible rank.\n
+			\nRank can be earned through almost every action that you can take in the Zone.\nAn article explaining ranks and how they work can be found in the features category.\n
 			\nWhen this achievement is unlocked, you will be able to recruit 2 additional stalkers as companions above your current limit.
 		</text>
 	</string>
@@ -140,7 +140,7 @@
 	<string id="encyclopedia_achievements_tourist_text">
 		<text>
 			Tourist requires you to visit all 32 levels in the Zone.\n
-			\nWhen this achievement is unlocked, you will receive coordinates on your map for 3 unique stashes.
+			\nWhen this achievement is unlocked, you will receive coordinates for 3 unique stashes.
 		</text>
 	</string>
 	
@@ -150,7 +150,7 @@
 	<string id="encyclopedia_achievements_well_dressed_text">
 		<text>
 			Well Dressed requires you to either kill 500 mutants, or field dress 250 mutant parts.\n
-			\nWhen this achievement is unlocked, there is a chance that you will harvest additional mutant parts when field dressing.
+			\nWhen this achievement is unlocked, there is a chance that you will receive additional mutant parts when field dressing.
 		</text>
 	</string>
 	

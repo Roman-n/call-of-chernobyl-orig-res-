@@ -106,8 +106,7 @@
 	</string>
 	<string id="encyclopedia_features_ironman_mode_text">
 		<text>
-			Ironman mode enforces a permanent end to your character when they die.\n
-			\nIronman mode adds an indirect layer of difficulty to gameplay, whereby all of your saved games for a character are deleted upon their death.\n
+			Ironman mode adds an indirect layer of difficulty to gameplay, whereby all of your saved games for a character are deleted upon their death.\n
 			\nShould Azazel mode be enabled at the same time you will be allowed to continue playing as whoever you switched to, but saves made as your deceased character will be deleted as per usual.\n
 			\nIt should be noted that only saves for the current playthrough are deleted, as they are each tagged with a unique identifier to tell them apart.\n
 			\nThis mode can only be enabled from the character creation screen.
@@ -169,10 +168,10 @@
 		<text>
 			Rank is a score system based on what a stalker has accomplished in the Zone.\n
 			\nActions which you perform throughout your playthrough are recorded and each grant a varying number of points depending on the action in question.\n
-			\nAs you accumulate more and more points your rank will gradually change as you pass through every milestone, with each requiring an additional 1000 points on top of the requirements of its predecessor.\n
+			\nAs you accumulate more and more points your rank will gradually change as you pass through every milestone, with each requiring an additional 1,000 points on top of the requirements of its predecessor.\n
 			\nMost of these actions are logged in the statistics tab of the PDA, which also contains an in-game leaderboard that keeps track of the current top-100 highest ranking stalkers.\n
 			\nThere are currently eight total ranks available:\n
-			\n• Rookie (0)\n• Trainee (1000) (+1000)\n• Experienced (3000) (+2000)\n• Professional (6000) (+3000)\n• Veteran (10000) (+4000)\n• Expert (15000) (+5000)\n• Master (21000) (+6000)\n• Legend (28000) (+7000)
+			\n• Rookie (0)\n• Trainee (1,000) (+1,000)\n• Experienced (3,000) (+2,000)\n• Professional (6,000) (+3,000)\n• Veteran (1,0000) (+4,000)\n• Expert (15,000) (+5,000)\n• Master (21,000) (+6,000)\n• Legend (28,000) (+7,000)
 		</text>
 	</string>
 	
@@ -186,7 +185,7 @@
 			\nThe easiest ways to increase reputation are by completing tasks, providing first-aid, and killing your faction's enemies, whilst inversely the easiest ways to lose it are by cancelling or failing tasks, and killing neutral or friendly stalkers.\n
 			\nIt should be noted that reputation is not to be confused with goodwill, which handles all stalker and faction relations. Reputation is largely an immersion-focused feature for the benefit of the player.\n
 			\nThere are currently nine total reputations available:\n
-			\n• Terrible (-2000) (-500)\n• Dreary (-1500) (-500)\n• Awful (-1000) (-500)\n• Bad (-500) (-500)\n• Neutral (0)\n• Good (500) (+500)\n• Great (1000) (+500)\n• Brilliant (1500) (+500)\n• Excellent (2000) (+500)
+			\n• Terrible (-2,000) (-500)\n• Dreary (-1,500) (-500)\n• Awful (-1,000) (-500)\n• Bad (-500) (-500)\n• Neutral (0)\n• Good (500) (+500)\n• Great (1,000) (+500)\n• Brilliant (1,500) (+500)\n• Excellent (2,000) (+500)
 		</text>
 	</string>
 	
