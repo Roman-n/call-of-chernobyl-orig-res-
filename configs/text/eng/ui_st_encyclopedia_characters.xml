@@ -5,6 +5,27 @@
 		<text>Characters</text>
 	</string>
 	
+	<string id="encyclopedia_characters_ashot">
+		<text>Ashot</text>
+	</string>
+	<string id="encyclopedia_characters_ashot_text">
+		<text>
+			Ashot is Freedom's cheerful and optimistic trader at Yanov Station.\n
+			\nAccording to himself, because of his "low prices and quality equipment", he has supposedly been put on several hit-lists by black market traders.\n
+			\nTogether with the help of Yar, a long-time buddy of his from the Army Warehouses, many stalkers find themselves becoming unwitting pawns in his many practical jokes.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_axel">
+		<text>Axel</text>
+	</string>
+	<string id="encyclopedia_characters_axel_text">
+		<text>
+			Axel serves as a medic aboard the Skadovsk in Zaton.\n
+			\nVery little is known about Axel as he isn't the most talkative of stalkers, though rumours in circulation would suggest he only came to the Zone to escape from his mother-in-law.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_characters_barkeep">
 		<text>Barkeep</text>
 	</string>
@@ -22,10 +43,22 @@
 	</string>
 	<string id="encyclopedia_characters_beard_text">
 		<text>
-			Beard is an artifact dealer and barkeeper aboard the Skadovsk.\n
+			Beard is an artefact dealer and barkeeper aboard the Skadovsk.\n
 			\nHe is a very important figure near the center of the Zone, and effectively the leader of loners in Zaton.\n
-			\nThough mainly artifact recovery he does offer various work to stalkers, and always appears willing to do whatever he sees as in the best interests of his people.\n
-			\nHis bar is one of the busiest in the Zone - second only to the 100 Rads - and is synonymous with the Skadovsk itself.
+			\nThough mainly artefact recovery he does offer various work to stalkers, and always appears willing to do whatever he sees as in the best interests of his people.\n
+			\nHis bar is one of the busiest in the Zone - second only to the 100 Rads - and is almost synonymous with the Skadovsk itself.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_cardan">
+		<text>Cardan</text>
+	</string>
+	<string id="encyclopedia_characters_cardan_text">
+		<text>
+			Cardan is an experienced technician and a recovering alcoholic.\n
+			\nHe came to the Zone with his two friends, Joker and Barge, who after a fierce, booze-fuelled argument, decided to go their separate ways.\n
+			\nFrom here he took up residence at the Skadovsk where he proceeded to sink further into his alcoholism, only swearing off drinking when learning of his former friends' demise.\n
+			\nPrior to this, he worked on the development of the so-called "Project 62" - a prototype of the Gauss rifle - until its eventual closure in 2004.
 		</text>
 	</string>
 	
@@ -34,9 +67,9 @@
 	</string>
 	<string id="encyclopedia_characters_cold_text">
 		<text>
-			Cold helped to rebuild and now leads the Clear Sky faction.\n
+			Cold helped to rebuild - and now leads - the Clear Sky faction.\n
 			\nFormerly just the barkeeper, Cold is one of few in the Zone to have fallen upwards, taking Clear Sky's reins after most of its key members either died or deserted.\n
-			\nKnown among his comrades as a cheerful and good-natured person, as well as a lover of vulgar jokes, he came to the Zone because he could not seem to find his place in the outside world.\n
+			\nKnown by his comrades as a cheerful and good-natured person, as well as a lover of vulgar jokes, he came to the Zone because he could not seem to find his place in the outside world.\n
 			\nThere is little doubt that he made the right decision, restoring his faction to its former glory and now occupying an important seat of power in the Zone.
 		</text>
 	</string>
@@ -50,6 +83,19 @@
 			\nAccording to popular legend, the Doctor was one of the first stalkers to reach the Wish Granter, with the desire to treat any living creature in the Zone.\n
 			\nHis wish was granted, giving him the gift of healing, but erasing his distinction between people and mutants.\n
 			\nThis is denied by the Doctor himself as just a story, saying that none of those who set out to find it have ever returned alive.\n
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_gonta">
+		<text>Gonta</text>
+	</string>
+	<string id="encyclopedia_characters_gonta_text">
+		<text>
+			Gonta is a professional mutant hunter, and a pupil of Trapper.\n
+			\nOn the orders of Trapper he arrived at Zaton with Garmata, Crab, and Danila, to destroy a chimera which had been terrorising stalkers in the vicinity.\n
+			\nRight from the beginning their venture was struck by bad luck, with Danila mysteriously disappearing and leaving them a man short.\n
+			\nThey hired a stalker named Magpie to assist them, who instead backed out at the last moment, stealing their gear and then fleeing for Yanov.\n
+			\nWith the help of Major Degtyarev, they killed the chimera, uncovered Danila's fate, and discovered Magpie's whereabouts - delivering him justice soon after.
 		</text>
 	</string>
 	
@@ -93,9 +139,21 @@
 	</string>
 	<string id="encyclopedia_characters_novikov_text">
 		<text>
-			Novikov, also known as Grey, is Clear Sky's veteran mechanic.\n
+			Novikov, also known as Grey, is Clear Sky's veteran technician.\n
 			\nA member of the faction since their earliest days, Novikov is described by his comrades as an expert in his field, with Cold saying that he can make a rifle out of an empty can with ammo to boot.\n
 			\nFollowing their near collapse, he briefly took up contract work with at the mobile science lab in Jupiter, before heading back after hearing they had pulled through and rebuilt.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_owl">
+		<text>Owl</text>
+	</string>
+	<string id="encyclopedia_characters_owl_text">
+		<text>
+			Owl is a blackmarket trader with questionable loyalties.\n
+			\nAn uncomfortable and rude person, of all the inhabitants aboard the Skadovsk he stands out as a bad character and a grumpy temper.\n
+			\nHe has a rich assortment of weapons and ammunition, and very much appreciates any information which stalkers are willing to sell to him.\n
+			\nBecause of his ties to Sultan, and both the manner of his speech and his appearance, many loners believe him to have once been a bandit.
 		</text>
 	</string>
 	
@@ -139,8 +197,20 @@
 	</string>
 	<string id="encyclopedia_characters_xenotech_text">
 		<text>
-			Xenotech is a mechanic who repairs gear mostly for newbie stalkers.\n
-			\nWorking out of the neutral base in the Cordon - situated about halfway between the ruined bridge and the "High Hopes" anomaly - Xenotech is a gifted mechanic whose efforts are of great value to stalkers new to the Zone.
+			Xenotech is a technician who repairs gear mostly for newbie stalkers.\n
+			\nWorking out of the neutral base in the Cordon - situated about halfway between the ruined bridge and the "High Hopes" anomaly - Xenotech is a gifted technician whose efforts are of great value to stalkers new to the Zone.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_yar">
+		<text>Yar</text>
+	</string>
+	<string id="encyclopedia_characters_yar_text">
+		<text>
+			Yar, also known as Uncle Yar, is a stalker with many talents.\n
+			\nHe is well known in the Zone for being a brilliant technician, with jokes that he can make an anti-aircraft gun from a rusty rifle perhaps not being all that far from the truth.\n
+			\nFollowing the end of the Faction Wars and the rush towards the center of the Zone, Yar travelled with Freedom's expedition to Yanov Station, before very briefly working as a medic in the Outskirts.\n
+			\nHe soon returned after the ceasefire with Duty broke down, where he decided yet again to change his profession and try his hand at becoming an information broker.\n
 		</text>
 	</string>
 	

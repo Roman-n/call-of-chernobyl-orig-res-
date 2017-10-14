@@ -52,8 +52,8 @@
 	<string id="encyclopedia_achievements_geologist_text">
 		<text>
 			Geologist requires you to detect a minimum of 50 artefacts.\n
-			\nArtefact detection requires a detector, which and are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
-			\nWhen this achievement is unlocked, the respawn rates of artefacts found in anomalies is slightly increased.
+			\nArtefact detection requires a detector, which are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
+			\nWhen this achievement is unlocked, the respawn rate of artefacts found in anomalies is slightly increased.
 		</text>
 	</string>
 	
@@ -83,9 +83,9 @@
 	</string>
 	<string id="encyclopedia_achievements_mechanized_warfare_text">
 		<text>
-			Mechanized Warfare requires you to deliver all 3 sets of tools to a single mechanic.\n
+			Mechanized Warfare requires you to deliver all 3 sets of tools to a single technician.\n
 			\nBasic, advanced and expert tools can be found mostly in stashes, but can also on occasion be found for sale by certain traders.\n
-			\nWhen this achievement is unlocked, gunsmith and sewing kits will repair items slightly more than they usually would..
+			\nWhen this achievement is unlocked, gunsmith and sewing kits will repair items slightly more than they usually would.
 		</text>
 	</string>
 	
@@ -107,7 +107,7 @@
 		<text>
 			Radiotherapy requires you to survive 25 emissions and 25 psi-storms.\n
 			\nEmissions and psi-storms occur at random intervals, which can be altered through the weather options section of the main menu.\n
-			\nBoth of these features they can be toggled at any time during a playthrough, but will need to be enabled in order for you to earn this achievement.\n
+			\nBoth of these features can be toggled at any time during a playthrough, but will need to be enabled in order for you to earn this achievement.\n
 			\nWhen this achievement is unlocked, there is a small chance that you can survive an emission or a psi-vortex without taking cover.
 		</text>
 	</string>
@@ -160,7 +160,7 @@
 	<string id="encyclopedia_achievements_wishful_thinking_text">
 		<text>
 			Wishful Thinking is only available in story mode, and requires you to defeat all 10 waves of the Wish Granter's illusions.\n
-			\nWhen this achievement is unlocked, you will receive a major increase to your rank and reputation.
+			\nWhen this achievement is unlocked, you will receive a major increase to both your rank and reputation.
 		</text>
 	</string>
 	

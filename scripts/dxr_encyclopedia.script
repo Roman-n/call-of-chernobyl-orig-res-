@@ -42,13 +42,12 @@ end
 
 -- Characters: Talking-to.
 -- Factions: Talking-to.
-function on_interact_character(character)
-	local faction = character_community(level.object_by_id(character))
+function on_interact_character(character_id)
+	local character = level.object_by_id(character_id)
+	local faction = character_community(character)
 	on_interact("factions", faction)
-	local story_id = get_object_story_id(character) or nil
-	if (story_id) then
-		on_interact("characters", story_id)
-	end
+	local section = character:section()
+	on_interact("characters", section)
 end
 
 -- Characters: Looting.
@@ -63,10 +62,8 @@ function on_interact_character2(mode, last_mode)
 	end
 	local faction = character_community(character)
 	on_interact("factions", faction)
-	local story_id = get_object_story_id(character:id()) or nil
-	if (story_id) then
-		on_interact("characters", story_id)
-	end
+	local section = character:section()
+	on_interact("characters", section)
 end
 
 -- Items: Using.

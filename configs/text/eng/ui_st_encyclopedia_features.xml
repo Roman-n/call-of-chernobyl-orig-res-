@@ -44,10 +44,10 @@
 	</string>
 	<string id="encyclopedia_features_delayed_repairs_text">
 		<text>
-			Delayed repairs allows mechanics to retain your equipment.\n
-			\nWith this feature enabled, broken weapons, outfits, and headgear which you bring to a mechanic will be kept in their possession until they have completed all repairs.\n
-			\nAfter handing over your items you can speak with the mechanic again to ask whether they are ready for pick-up, to which they will either return them or tell you how much time they still require.\n
-			\nThis adds a somewhat realistic enhancement to the mechanic-based repair system suitable for players seeking a harder experience, as it will no-longer work instantaneously and instead emphasise the use of gunsmith and sewing kits.\n
+			Delayed repairs allows technicians to retain your equipment.\n
+			\nWith this feature enabled, broken weapons, outfits, and headgear which you bring to a technician will be kept in their possession until they have completed all repairs.\n
+			\nAfter handing over your items you can speak with the technician again to ask whether they are ready for pick-up, to which they will either return them or tell you how much time they still require.\n
+			\nThis adds a somewhat realistic enhancement to the technician-based repair system suitable for players seeking a harder experience, as it will no-longer work instantaneously and instead emphasise the use of gunsmith and sewing kits.\n
 			\nThis feature can be toggled from the game options menu and is disabled by default.
 		</text>
 	</string>
