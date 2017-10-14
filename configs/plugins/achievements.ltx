@@ -1,3 +1,7 @@
+; This plugin lists all available achievements and their basic configurations.
+; Requirements and rewards are handled via their functors, which are in the dxr_achievements.script file.
+; Story mode achievements should be tagged with the "story" attribute so that the counter displays correctly.
+
 [achievements]
 bookworm_food
 completionist
@@ -42,6 +46,7 @@ hint		= st_achievement_4_hint
 name		= st_achievement_4_name
 desc		= st_achievement_4_descr
 functor		= dxr_achievements.duga_free_functor
+story		= true
 
 [geologist]
 icon		= ui_inGame2_Opitniy_stalker
@@ -119,3 +124,4 @@ hint		= st_achievement_11_hint
 name		= st_achievement_11_name
 desc		= st_achievement_11_descr
 functor		= dxr_achievements.wishful_thinking_functor
+story		= true
