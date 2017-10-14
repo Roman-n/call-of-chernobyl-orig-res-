@@ -3,7 +3,7 @@
 [trader]
 buy_condition                                      = buy_condition_generic
 buy_item_condition_factor                          = 0.7
-buy_supplies                                       = {=actor_goodwill_ge(trader:1500)} supplies_special, {+achieved_heavy_pockets} supplies_special, supplies_generic
+buy_supplies                                       = {=actor_goodwill_ge(trader:1500)} supplies_special, {=heavy_pockets_functor} supplies_special, supplies_generic
 discounts                                          = {=actor_goodwill_ge(trader:1200)} discount_5, {=actor_goodwill_ge(trader:1000)} discount_4, {=actor_goodwill_ge(trader:800)} discount_3, {=actor_goodwill_ge(trader:600)} discount_2, {=actor_goodwill_ge(trader:400)} discount_1, {=actor_goodwill_ge(trader:200)} discount_0, discount_sid
 sell_condition                                     = sell_condition_generic
 

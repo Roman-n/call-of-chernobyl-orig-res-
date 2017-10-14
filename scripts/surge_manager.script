@@ -1783,7 +1783,7 @@ end
 
 -- Cleaner way to bunch together survival conditions.
 function is_actor_immune()
-	-- invulnerability after game load
+	-- Invulnerability after game load.
 	if (bind_stalker_ext.invulnerable_time and time_global() < bind_stalker_ext.invulnerable_time) then 
 		return true 
 	end
@@ -1803,6 +1803,7 @@ function is_actor_immune()
 	or (character_community(db.actor) == "actor_zombied") then
 		return true
 	end
+	
 	-- 'Radiotherapy' achievement has been unlocked.
 	if (has_alife_info("achieved_radiotherapy")) then
 		if (math.random(1,100) < 25) then
