@@ -8,6 +8,8 @@ additional_inventory_weight              = 10 ; +max_walk_weight
 additional_inventory_weight2             = 10 ;	+40 kg
 slot                                     = 6
 
+ef_equipment_type                        = 3
+
 inv_grid_width                           = 2
 inv_grid_height                          = 3
 
@@ -15,12 +17,12 @@ default_to_ruck                          = false
 sprint_allowed                           = true
 control_inertion_factor                  = 1
 player_hud_section                       = actor_hud_05
+power_restore_speed = 0
 
 [without_outfit]:outfit_base
 full_scale_icon                          = 6,6
 player_hud_section                       = actor_hud_05
 
-power_restore_speed = 0
 ;---------------------------------------------------------------------------------------------
 ;		Sunrise Suit
 ;---------------------------------------------------------------------------------------------
@@ -30,8 +32,6 @@ visual                                   = dynamics\outfit\stalker_outfit
 actor_visual                             = actors\stalker_neutral\stalker_neutral_2.ogf
 npc_visual                               = actors\stalker_neutral\stalker_neutral_2.ogf
 player_hud_section                       = actor_hud_loner_sunrise
-
-ef_equipment_type                        = 3
 
 inv_name                                 = stalker_outfit_name
 inv_name_short                           = stalker_outfit_name
@@ -62,7 +62,7 @@ strike_protection                        = 0.18
 explosion_protection                     = 0.18
 wound_protection                         = 0.15
 
-hit_fraction_actor                       = 0.7
+hit_fraction_actor                       = 0.6
 bones_koeff_protection                   = actor_armor_suit
 
 power_loss                               = 0.1 ;NEW FORMULA BELOW
@@ -105,15 +105,13 @@ actor_visual                             = actors\stalker_freedom\stalker_freedo
 npc_visual                               = actors\stalker_freedom\stalker_freedom_1.ogf
 player_hud_section                       = actor_hud_freedom_wind
 
-ef_equipment_type                        = 3
-
 inv_name                                 = svoboda_light_outfit_name
 inv_name_short                           = svoboda_light_outfit_name
 description                              = svoboda_light_outfit_description
 
 inv_weight                               = 6
-additional_inventory_weight              = 7 ; +max_walk_weight
-additional_inventory_weight2             = 7 ;	+40 kg
+additional_inventory_weight              = 8
+additional_inventory_weight2             = 8
 inv_grid_x                               = 18
 inv_grid_y                               = 20
 
@@ -136,7 +134,7 @@ strike_protection                        = 0.13
 explosion_protection                     = 0.13
 wound_protection                         = 0.11
 
-hit_fraction_actor                       = 0.75
+hit_fraction_actor                       = 0.7
 bones_koeff_protection                   = actor_armor_freedom_wind
 
 artefact_count                           = 1
@@ -179,8 +177,6 @@ actor_visual                             = actors\stalker_dolg\stalker_dolg_2.og
 npc_visual                               = actors\stalker_dolg\stalker_dolg_2.ogf
 player_hud_section                       = actor_hud_duty_ps5m
 
-ef_equipment_type                        = 3
-
 inv_name                                 = dolg_outfit_name
 inv_name_short                           = dolg_outfit_name
 description                              = dolg_outfit_description
@@ -209,7 +205,7 @@ strike_protection                        = 0.21
 explosion_protection                     = 0.21
 wound_protection                         = 0.175
 
-hit_fraction_actor                       = 0.675
+hit_fraction_actor                       = 0.575
 bones_koeff_protection                   = actor_armor_duty_suit
 
 artefact_count                           = 0
@@ -252,8 +248,6 @@ actor_visual                             = actors\stalker_nebo\stalker_nebo_3
 npc_visual                               = actors\stalker_nebo\stalker_nebo_3
 player_hud_section                       = actor_hud_cs1
 
-ef_equipment_type                        = 3
-
 inv_name                                 = csky_medium_outfit_name
 inv_name_short                           = csky_medium_outfit_name
 description                              = csky_medium_outfit_description
@@ -283,7 +277,7 @@ explosion_protection                     = 0.22
 wound_protection                         = 0.185
 
 bones_koeff_protection                   = actor_armor_cs1
-hit_fraction_actor                       = 0.65
+hit_fraction_actor                       = 0.55
 artefact_count                           = 2
 
 upgrades                                 = up_gr_firstab_cs_heavy_outfit, up_gr_seconab_cs_heavy_outfit, up_gr_thirdab_cs_heavy_outfit, up_gr_fourtab_cs_heavy_outfit
@@ -311,8 +305,6 @@ visual                                   = dynamics\outfit\cs_heavy_outfit
 actor_visual                             = actors\stalker_nebo\stalker_nebo_b ;E3 cut CS-1 variant
 npc_visual                               = actors\stalker_nebo\stalker_nebo_b
 player_hud_section                       = actor_hud_cs1b
-
-ef_equipment_type                        = 3
 
 inv_name                                 = csky_heavy_outfit_name
 inv_name_short                           = csky_heavy_outfit_name
@@ -343,7 +335,7 @@ strike_protection                        = 0.255
 explosion_protection                     = 0.255
 wound_protection                         = 0.215
 
-hit_fraction_actor                       = 0.6
+hit_fraction_actor                       = 0.5
 bones_koeff_protection                   = actor_armor_cs1b
 
 artefact_count                           = 2
@@ -385,8 +377,6 @@ actor_visual                             = actors\stalker_nebo\stalker_nebo_2
 npc_visual                               = actors\stalker_nebo\stalker_nebo_2
 player_hud_section                       = actor_hud_cs2
 
-ef_equipment_type                        = 3
-
 inv_name                                 = csky_light_outfit_name
 inv_name_short                           = csky_light_outfit_name
 description                              = csky_light_outfit_description
@@ -416,7 +406,7 @@ explosion_protection                     = 0.15
 wound_protection                         = 0.125
 
 bones_koeff_protection                   = actor_armor_cs2
-hit_fraction_actor                       = 0.725
+hit_fraction_actor                       = 0.65
 artefact_count                           = 2
 
 upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
@@ -456,15 +446,13 @@ actor_visual                             = actors\stalker_nebo\stalker_nebo_1
 npc_visual                               = actors\stalker_nebo\stalker_nebo_1
 player_hud_section                       = actor_hud_cs3a
 
-ef_equipment_type                        = 3
-
 inv_name                                 = csky_light_novice_outfit_name
 inv_name_short                           = csky_light_novice_outfit_name
 description                              = csky_light_novice_outfit_description
 
 inv_weight                               = 5
-additional_inventory_weight              = 6 ; +max_walk_weight
-additional_inventory_weight2             = 6 ;	+40 kg
+additional_inventory_weight              = 7
+additional_inventory_weight2             = 7
 inv_grid_x                               = 18
 inv_grid_y                               = 33
 
@@ -488,7 +476,7 @@ strike_protection                        = 0.1
 explosion_protection                     = 0.1
 wound_protection                         = 0.085
 
-hit_fraction_actor                       = 0.77
+hit_fraction_actor                       = 0.725
 bones_koeff_protection                   = actor_armor_cs3
 
 artefact_count                           = 1
@@ -519,15 +507,13 @@ actor_visual                             = actors\stalker_nebo\stalker_nebo_a ; 
 npc_visual                               = actors\stalker_nebo\stalker_nebo_a
 player_hud_section                       = actor_hud_cs3b
 
-ef_equipment_type                        = 3
-
 inv_name                                 = csky_3b_outfit_name
 inv_name_short                           = csky_3b_outfit_name
 description                              = csky_3b_outfit_description
 
 inv_weight                               = 6
-additional_inventory_weight              = 8 ; +max_walk_weight
-additional_inventory_weight2             = 8 ;	+40 kg
+additional_inventory_weight              = 9
+additional_inventory_weight2             = 9
 inv_grid_x                               = 28
 inv_grid_y                               = 33
 
@@ -552,7 +538,7 @@ strike_protection                        = 0.135
 explosion_protection                     = 0.135
 wound_protection                         = 0.11
 
-hit_fraction_actor                       = 0.74
+hit_fraction_actor                       = 0.675
 bones_koeff_protection                   = actor_armor_cs2
 
 artefact_count                           = 1
@@ -583,8 +569,6 @@ actor_visual                             = actors\stalker_freedom\stalker_freedo
 npc_visual                               = actors\stalker_freedom\stalker_freedom_3.ogf
 player_hud_section                       = actor_hud_freedom_guard
 
-ef_equipment_type                        = 3
-
 inv_name                                 = svoboda_heavy_outfit_name
 inv_name_short                           = svoboda_heavy_outfit_name
 description                              = svoboda_heavy_outfit_description
@@ -613,7 +597,7 @@ strike_protection                        = 0.195
 explosion_protection                     = 0.195
 wound_protection                         = 0.16
 
-hit_fraction_actor                       = 0.675
+hit_fraction_actor                       = 0.55
 bones_koeff_protection                   = actor_armor_freedom_guard
 
 artefact_count                           = 1
@@ -655,8 +639,6 @@ actor_visual                             = actors\stalker_soldier\stalker_soldie
 npc_visual                               = actors\stalker_soldier\stalker_soldier_3.ogf
 player_hud_section                       = actor_hud_military_berill
 
-ef_equipment_type                        = 3
-
 inv_name                                 = specops_outfit_name
 inv_name_short                           = specops_outfit_name
 description                              = specops_outfit_description
@@ -685,7 +667,7 @@ strike_protection                        = 0.23
 explosion_protection                     = 0.23
 wound_protection                         = 0.19
 
-hit_fraction_actor                       = 0.625
+hit_fraction_actor                       = 0.5
 bones_koeff_protection                   = actor_armor_berill
 
 artefact_count                           = 0
@@ -757,7 +739,7 @@ strike_protection                        = 0.29
 explosion_protection                     = 0.29
 wound_protection                         = 0.24
 
-hit_fraction_actor                       = 0.55
+hit_fraction_actor                       = 0.45
 bones_koeff_protection                   = actor_armor_skat
 
 artefact_count                           = 0
@@ -829,7 +811,7 @@ strike_protection                        = 0.34
 explosion_protection                     = 0.34
 wound_protection                         = 0.285
 
-hit_fraction_actor                       = 0.5
+hit_fraction_actor                       = 0.4
 bones_koeff_protection                   = actor_armor_skat9m
 
 artefact_count                           = 1
@@ -890,7 +872,7 @@ strike_protection                        = 0.29
 explosion_protection                     = 0.29
 wound_protection                         = 0.24
 
-hit_fraction_actor                       = 0.55
+hit_fraction_actor                       = 0.45
 bones_koeff_protection                   = actor_armor_psz
 
 artefact_count                           = 0
@@ -933,8 +915,6 @@ actor_visual                             = actors\stalker_merc\stalker_merc_2.og
 npc_visual                               = actors\stalker_merc\stalker_merc_2.ogf
 player_hud_section                       = actor_hud_merc_suit
 
-ef_equipment_type                        = 3
-
 inv_name                                 = merc_outfit_name
 inv_name_short                           = merc_outfit_name
 description                              = merc_outfit_description
@@ -963,7 +943,7 @@ strike_protection                        = 0.21
 explosion_protection                     = 0.21
 wound_protection                         = 0.175
 
-hit_fraction_actor                       = 0.675
+hit_fraction_actor                       = 0.575
 bones_koeff_protection                   = actor_armor_duty_suit
 
 power_loss                               = 0.1
@@ -1028,8 +1008,6 @@ actor_visual                             = actors\stalker_bandit\stalker_band_2_
 npc_visual                               = actors\stalker_bandit\stalker_band_2_mask.ogf
 player_hud_section                       = actor_hud_bandit_merc
 
-ef_equipment_type                        = 3
-
 inv_name                                 = banditmerc_outfit_name
 inv_name_short                           = banditmerc_outfit_name
 description                              = banditmerc_outfit_description
@@ -1058,7 +1036,7 @@ strike_protection                        = 0.18
 explosion_protection                     = 0.18
 wound_protection                         = 0.15
 
-hit_fraction_actor                       = 0.7
+hit_fraction_actor                       = 0.6
 bones_koeff_protection                   = actor_armor_bandit
 
 power_loss                               = 0.1
@@ -1100,8 +1078,6 @@ actor_visual                             = actors\stalker_freedom\stalker_freedo
 npc_visual                               = actors\stalker_freedom\stalker_freedom_2.ogf
 player_hud_section                       = actor_hud_freedom_guardian
 
-ef_equipment_type                        = 3
-
 inv_name                                 = svoboda_heavy_outfit_2_name
 inv_name_short                           = svoboda_heavy_outfit_2_name
 description                              = svoboda_heavy_outfit_2_description
@@ -1132,7 +1108,7 @@ strike_protection                        = 0.155
 explosion_protection                     = 0.155
 wound_protection                         = 0.13
 
-hit_fraction_actor                       = 0.725
+hit_fraction_actor                       = 0.625
 bones_koeff_protection                   = actor_armor_freedom_suit
 
 artefact_count                           = 1
@@ -1222,14 +1198,12 @@ actor_visual                             = actors\stalker_soldier\stalker_soldie
 npc_visual                               = actors\stalker_soldier\stalker_soldier1e
 player_hud_section                       = actor_hud_military_novice
 
-ef_equipment_type                        = 3
-
 inv_name                                 = army_outfit_name
 inv_name_short                           = army_outfit_name
 description                              = army_outfit_description
 inv_weight                               = 5
-additional_inventory_weight              = 7 ; +max_walk_weight
-additional_inventory_weight2             = 7 ;	+40 kg
+additional_inventory_weight              = 7
+additional_inventory_weight2             = 7
 inv_grid_x                               = 20
 inv_grid_y                               = 33
 
@@ -1254,7 +1228,7 @@ explosion_protection                     = 0.11
 wound_protection                         = 0.09
 
 bones_koeff_protection                   = actor_armor_cs3
-hit_fraction_actor                       = 0.76
+hit_fraction_actor                       = 0.7
 artefact_count                           = 0
 
 upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
@@ -1282,8 +1256,6 @@ visual                                   = dynamics\outfit\bandit_commander_outf
 actor_visual                             = actors\stalker_bandit\stalker_bandit6a.ogf
 npc_visual                               = actors\stalker_bandit\stalker_bandit6a.ogf
 player_hud_section                       = actor_hud_brown_trench
-
-ef_equipment_type                        = 3
 
 inv_name                                 = trenchcoat_brown_outfit_name
 inv_name_short                           = trenchcoat_brown_outfit_name
@@ -1314,7 +1286,7 @@ strike_protection                        = 0.215
 explosion_protection                     = 0.215
 wound_protection                         = 0.18
 
-hit_fraction_actor                       = 0.65
+hit_fraction_actor                       = 0.55
 bones_koeff_protection                   = actor_armor_duty_suit
 
 artefact_count                           = 1
@@ -1405,8 +1377,6 @@ actor_visual                             = actors\stalker_bandit\stalker_bandit_
 npc_visual                               = actors\stalker_bandit\stalker_bandit_5_gasmask.ogf
 player_hud_section                       = actor_hud_duty_psz9d
 
-ef_equipment_type                        = 3
-
 inv_name                                 = bandit_specops_outfit_name
 inv_name_short                           = bandit_specops_outfit_name
 description                              = bandit_specops_outfit_description
@@ -1435,7 +1405,7 @@ strike_protection                        = 0.21
 explosion_protection                     = 0.21
 wound_protection                         = 0.175
 
-hit_fraction_actor                       = 0.66
+hit_fraction_actor                       = 0.525
 bones_koeff_protection                   = actor_armor_duty_suit
 
 artefact_count                           = 0
@@ -1493,8 +1463,8 @@ inv_name_short                           = nbc_outfit_name
 description                              = nbc_outfit_description
 
 inv_weight                               = 10
-additional_inventory_weight              = 13 ; +max_walk_weight
-additional_inventory_weight2             = 13 ;	+40 kg
+additional_inventory_weight              = 13
+additional_inventory_weight2             = 13
 inv_grid_x                               = 10
 inv_grid_y                               = 33
 
