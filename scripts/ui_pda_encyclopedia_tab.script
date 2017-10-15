@@ -64,6 +64,7 @@ end
 function pda_encyclopedia_tab:SaveCheckBoxSettings()
 	-- Write the updated value to axr_options so it is remembered.
 	axr_main.config:w_value("pda_encyclopedia", "images_above_text",  self.image_checkbox:GetCheck())
+	axr_main.config:w_value("pda_encyclopedia", "display_messages",  self.message_checkbox:GetCheck())
 	axr_main.config:save()
 end
 
@@ -190,6 +191,7 @@ end
 -- Add the callbacks for the article and category lists.
 function pda_encyclopedia_tab:InitCallbacks()
 	self:AddCallback("images_above_text", ui_events.BUTTON_CLICKED, self.SaveCheckBoxSettings, self)
+	self:AddCallback("display_messages", ui_events.BUTTON_CLICKED, self.SaveCheckBoxSettings, self)
 	self:AddCallback("article_list", ui_events.LIST_ITEM_SELECT, self.SelectArticle, self)
 	self:AddCallback("category_list", ui_events.LIST_ITEM_SELECT, self.SelectCategory, self)
 end
@@ -225,6 +227,11 @@ function pda_encyclopedia_tab:InitControls()
 	self.image_checkbox = xml:InitCheck("image_checkbox", self)
 	self.image_checkbox:SetCheck(axr_main.config:r_value("pda_encyclopedia", "images_above_text", 1, true))
 	self:Register(self.image_checkbox, "images_above_text")
+	
+	-- "Unlock messages" checkbox.
+	self.message_checkbox = xml:InitCheck("message_checkbox", self)
+	self.message_checkbox:SetCheck(axr_main.config:r_value("pda_encyclopedia", "display_messages", 1, true))
+	self:Register(self.message_checkbox, "display_messages")
 	
 	-- Article and category lists.
 	self.article_list = xml:InitListBox("article_list", self)
