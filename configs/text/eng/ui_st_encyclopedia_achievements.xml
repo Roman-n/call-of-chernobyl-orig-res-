@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_achievements">
+		<text>Achievements</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_bookworm_food">
+		<text>Bookworm Food</text>
+	</string>
+	<string id="encyclopedia_achievements_bookworm_food_text">
+		<text>
+			Bookworm Food requires you to unlock all articles for the in-game guide.\n
+			\nArticles can be unlocked through a multitude of ways, such as talking to important characters or downloading data from memory sticks.\n
+			\nWhen this achievement is unlocked, all future memory sticks which would be found on the bodies of dead stalkers will be replaced by rare PDAs.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_completionist">
+		<text>Completionist</text>
+	</string>
+	<string id="encyclopedia_achievements_completionist_text">
+		<text>
+			\nCompletionist requires you to unlock all other achievements in the game.\n
+			\nThis achievement doesn't come with a special reward, but does provide double the amount of rank points normally earned when you unlock an achievement.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_down_to_earth">
+		<text>Down to Earth</text>
+	</string>
+	<string id="encyclopedia_achievements_down_to_earth_text">
+		<text>
+			\nDown to Earth requires you to destroy either 3 helicopters with small arms, or just the 1 if you use an explosive weapon such as the RPG or RG-6.\n
+			\nWhen this achievement is unlocked, all Mi-24 "Hind" helicopters will gradually be replaced with the Mi-2 "Hoplite", a much older and weaker aircraft.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_duga_free">
+		<text>Duga Free</text>
+	</string>
+	<string id="encyclopedia_achievements_duga_free_text">
+		<text>
+			Duga Free is only available in story mode, and requires you to disable both the Miracle Machine and the Brain Scorcher.\n
+			\nThis achievement doesn't come with a special reward, but it does become much easier to pass through Yantar and Radar now that their psi-fields have been disabled.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_geologist">
+		<text>Geologist</text>
+	</string>
+	<string id="encyclopedia_achievements_geologist_text">
+		<text>
+			Geologist requires you to detect a minimum of 50 artefacts.\n
+			\nArtefact detection requires a detector, which are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
+			\nWhen this achievement is unlocked, the respawn rate of artefacts found in anomalies is slightly increased.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_heavy_pockets">
+		<text>Heavy Pockets</text>
+	</string>
+	<string id="encyclopedia_achievements_heavy_pockets_text">
+		<text>
+			Heavy Pockets requires you to possess 1,000,000 RU at any one moment.\n
+			\nWhen this achievement is unlocked, most traders will begin to offer you special supplies, the same as if you had great relations with their faction.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_infopreneur">
+		<text>Infopreneur</text>
+	</string>
+	<string id="encyclopedia_achievements_infopreneur_text">
+		<text>
+			Infopreneur requires to you deliver a minimum of 50 PDAs to information brokers.\n
+			\nPDAs can be found on the bodies of dead stalkers, and can be traded to certain characters by telling them you have information to sell.\n
+			\nWhen this achievement is unlocked, these same characters will offer you a slightly increased reward for any future PDAs you bring them.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_mechanized_warfare">
+		<text>Mechanized Warfare</text>
+	</string>
+	<string id="encyclopedia_achievements_mechanized_warfare_text">
+		<text>
+			Mechanized Warfare requires you to deliver all 3 sets of tools to a single technician.\n
+			\nBasic, advanced and expert tools can be found mostly in stashes, but can also on occasion be found for sale by certain traders.\n
+			\nWhen this achievement is unlocked, gunsmith and sewing kits will repair items slightly more than they usually would.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_patriarch">
+		<text>Patriarch</text>
+	</string>
+	<string id="encyclopedia_achievements_patriarch_text">
+		<text>
+			Patriarch requires you to achieve the highest possible rank.\n
+			\nRank can be earned through almost every action that you can take in the Zone.\nAn article explaining ranks and how they work can be found in the features category.\n
+			\nWhen this achievement is unlocked, you will be able to recruit 2 additional stalkers as companions above your current limit.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_radiotherapy">
+		<text>Radiotherapy</text>
+	</string>
+	<string id="encyclopedia_achievements_radiotherapy_text">
+		<text>
+			Radiotherapy requires you to survive 25 emissions and 25 psi-storms.\n
+			\nEmissions and psi-storms occur at random intervals, which can be altered through the weather options section of the main menu.\n
+			\nBoth of these features can be toggled at any time during a playthrough, but will need to be enabled in order for you to earn this achievement.\n
+			\nWhen this achievement is unlocked, there is a small chance that you can survive an emission or a psi-vortex without taking cover.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_rag_and_bone">
+		<text>Rag and Bone</text>
+	</string>
+	<string id="encyclopedia_achievements_rag_and_bone_text">
+		<text>
+			Rag and Bone requires you to loot (at least partially) a minimum of 100 stashes.\n
+			\nStashes can be found almost anywhere in the Zone at any time, but receiving their coordinates after completing tasks will mark them on your map.\n
+			\nWhen this achievement is unlocked, the maximum value of the items that can be found in future generated stashes is slightly increased.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_silver_or_lead">
+		<text>Silver or Lead</text>
+	</string>
+	<string id="encyclopedia_achievements_silver_or_lead_text">
+		<text>
+			Silver or Lead requires you to either kill 500 stalkers, or make 50 stalkers surrender to you.\n
+			\nThe requirements for this achievement will likely be met through normal gameplay, but if you are deliberately trying to unlock it, be careful not to kill neutral or friendly stalkers if you value your reputation.\n
+			\nWhen this achievement is unlocked, there is a chance that surrendering stalkers could give you coordinates to an additional stash location.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_tourist">
+		<text>Tourist</text>
+	</string>
+	<string id="encyclopedia_achievements_tourist_text">
+		<text>
+			Tourist requires you to visit all 32 levels in the Zone.\n
+			\nWhen this achievement is unlocked, you will receive coordinates for 3 unique stashes.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_well_dressed">
+		<text>Well Dressed</text>
+	</string>
+	<string id="encyclopedia_achievements_well_dressed_text">
+		<text>
+			Well Dressed requires you to either kill 500 mutants, or field dress 250 mutant parts.\n
+			\nWhen this achievement is unlocked, there is a chance that you will receive additional mutant parts when field dressing.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_achievements_wishful_thinking">
+		<text>Wishful Thinking</text>
+	</string>
+	<string id="encyclopedia_achievements_wishful_thinking_text">
+		<text>
+			Wishful Thinking is only available in story mode, and requires you to defeat all 10 waves of the Wish Granter's illusions.\n
+			\nWhen this achievement is unlocked, you will receive a major increase to both your rank and reputation.
+		</text>
+	</string>
+	
+</string_table>

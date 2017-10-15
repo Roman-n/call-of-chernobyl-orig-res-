@@ -718,6 +718,10 @@ end
 
 -- Cleaner way to bunch together survival conditions.
 function is_actor_immune()
+	-- Invulnerability after game load.
+	if (bind_stalker_ext.invulnerable_time and time_global() < bind_stalker_ext.invulnerable_time) then 
+		return true 
+	end
 	-- God mode console command enabled.
 	if (get_console():get_bool("g_god")) then
 		return true

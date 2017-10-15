@@ -12,15 +12,25 @@ function can_unlock()
 end
 
 -- Returns how many achievements are available.
+local achievements_available = nil
 function get_achievements_available()
-	local available = 15
-	
-	-- 'Duga Free' and 'Wishful Thinking'.
-	if (has_alife_info("story_mode_disabled")) then
-		available = available - 2
+	-- Check if a count has already been made.
+	if (achievements_available) then
+		return achievements_available
 	end
-	
-	return available
+	-- Scan the achievements section for achievements.
+	achievements_available = 0
+	local ini = system_ini()
+	local line_count = ini:line_count("achievements") or 0
+	for i = 0, line_count - 1 do
+		-- Check whether the achievement requires story mode.
+		local junk1, section, junk2 = ini:r_line("achievements", i, "", "")
+		local story = ini:r_bool_ex(section, "story", false)
+		if (not story or (story and not has_alife_info("story_mode_disabled"))) then
+			achievements_available = achievements_available + 1
+		end
+	end
+	return achievements_available
 end
 
 --------------------
@@ -302,25 +312,10 @@ end
 
 
 -- Completionist.
--- Requires all other achievements to be unlocked.
--- Exception to 'Duga Free' if story mode is disabled.
--- Exception to 'Wishful Thinking' if story mode is disabled.
+-- Requires all available achievements to be unlocked.
 function completionist_requirements()
 	return (
-				(has_alife_info("achieved_bookworm_food"))
-			and (has_alife_info("achieved_duga_free") or has_alife_info("story_mode_disabled"))
-			and (has_alife_info("achieved_down_to_earth"))
-			and (has_alife_info("achieved_geologist"))
-			and (has_alife_info("achieved_heavy_pockets"))
-			and (has_alife_info("achieved_infopreneur"))
-			and (has_alife_info("achieved_mechanized_warfare"))
-			and (has_alife_info("achieved_patriarch"))
-			and (has_alife_info("achieved_radiotherapy"))
-			and (has_alife_info("achieved_rag_and_bone"))
-			and (has_alife_info("achieved_silver_or_lead"))
-			and (has_alife_info("achieved_tourist"))
-			and (has_alife_info("achieved_well_dressed"))
-			and (has_alife_info("achieved_wishful_thinking") or has_alife_info("story_mode_disabled"))
+				(xr_statistic.actor_statistic.achievements >= get_achievements_available())
 		)
 end
 
@@ -352,10 +347,10 @@ function geologist_requirements()
 end
 
 -- Heavy Pockets.
--- Requires player to possess 500,000 RU.
+-- Requires player to possess 1,000,000 RU.
 function heavy_pockets_requirements()
 	return (
-				(db.actor:money() >= 500000)
+				(db.actor:money() >= 1000000)
 		)	
 end
 

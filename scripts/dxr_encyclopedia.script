@@ -41,26 +41,29 @@ function on_interact(key, section)
 end
 
 -- Characters: Talking-to.
-function on_interact_character(character)
-	local story_id = get_object_story_id(character) or nil
-	if (story_id) then
-		on_interact("characters", story_id)
-	end
+-- Factions: Talking-to.
+function on_interact_character(character_id)
+	local character = level.object_by_id(character_id)
+	local faction = character_community(character)
+	on_interact("factions", faction)
+	local section = character:section()
+	on_interact("characters", section)
 end
 
 -- Characters: Looting.
+-- Factions: Looting.
 function on_interact_character2(mode, last_mode)
-	if (mode ~= 4) then 
+	if (last_mode ~= 4) then 
 		return 
 	end
 	local character = ActorMenu.get_actor_menu():GetPartner()
-	if not (character and character:alive()) then
+	if (not character or character:alive()) then
 		return
 	end
-	local story_id = get_object_story_id(character:id()) or nil
-	if (story_id) then
-		on_interact("characters", story_id)
-	end
+	local faction = character_community(character)
+	on_interact("factions", faction)
+	local section = character:section()
+	on_interact("characters", section)
 end
 
 -- Items: Using.
@@ -192,9 +195,11 @@ function unlock_article(section)
 		return
 	end
 	
-	-- Return if the specified article is already unlocked.
+	-- Return if the specified article is already unlocked, or doesn't exist.
 	if (section) then
 		if (unlocked_articles[section]) then
+			return
+		elseif (not locked_articles[section]) then
 			return
 		end
 		

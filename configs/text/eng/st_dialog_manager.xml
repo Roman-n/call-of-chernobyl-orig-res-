@@ -648,10 +648,10 @@
 		<text>You ain't gonna be able to hit shit if you're running while shooting. Find some cover to hide behind and lean out to shoot; you'll be far more accurate.</text>
 	</string>	
 	<string id="dm_tips_7">
-		<text>Keep your gear in good condition. You gun will jam and your suit will be full of holes if you don't see a mechanic every now and then.</text>
+		<text>Keep your gear in good condition. You gun will jam and your suit will be full of holes if you don't see a technician every now and then.</text>
 	</string>	
 	<string id="dm_tips_8">
-		<text>Last time I went to see a mechanic he couldn't upgrade half my shit, asked me to go out and fetch tools for him. What, am I his errand boy now?</text>
+		<text>Last time I went to see a technician he couldn't upgrade half my shit, asked me to go out and fetch tools for him. What, am I his errand boy now?</text>
 	</string>	
 	<string id="dm_tips_9">
 		<text>Ever met a guy who stood outside during an emission? Of course you haven't! Hide your ass whenever one hits unless you feel like having your brain boiled.</text>
@@ -687,7 +687,7 @@
 		<text>Make sure to pack energy drinks with you, they'll come in handy if you keep tiring out when carrying loot back to camp.</text>
 	</string>
 	<string id="dm_tips_20">
-		<text>If your helmet has night vision make sure to upgrade it. You'll be able to see further and clearer if you let a mechanic screw around with it for some cash.</text>
+		<text>If your helmet has night vision make sure to upgrade it. You'll be able to see further and clearer if you let a technician screw around with it for some cash.</text>
 	</string>	
 	<string id="dm_tips_21">
 		<text>You aren't defenceless if you're out artefact hunting. So what if you're carrying your detector? You can still hold a pistol in the other hand.</text>
@@ -726,7 +726,7 @@
 		<text>Crouch and sneak about if you don't wanna get seen or heard. Not ever battle is worth fighting, or maybe you just want to get the jump on someone?</text>
 	</string>	
 	<string id="dm_tips_33">
-		<text>You can attach scopes and launchers to your shooter y'know? There's just some things a mechanic just can't do. But you'll have to find the parts yourself...</text>
+		<text>You can attach scopes and launchers to your shooter y'know? There's just some things a technician just can't do. But you'll have to find the parts yourself...</text>
 	</string>	
 	<string id="dm_tips_34">
 		<text>There's different ways to take down different types of mutants, they all have their own weak spots. You can kick tushkanos and rats too y'know?</text>
@@ -867,7 +867,7 @@
 	</string>
 
 
-<!-------- Mechanic --->
+<!-------- Technician --->
 	<string id="st_mechanic_query_items">
 		<text>Is any of my equipment ready for pick-up?</text>
 	</string>

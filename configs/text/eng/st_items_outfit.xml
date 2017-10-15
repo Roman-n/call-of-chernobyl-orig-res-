@@ -454,17 +454,17 @@
 	</string>
 
 	<string id="isg_outfit_name">
-		<text>UNISG outfit</text>
+		<text>ISG outfit</text>
 	</string>
 	<string id="isg_outfit_description">
 		<text>This bodysuit is a combination of a bodysuit of twin-layered rubberised cloth with Plexiglas lining and built-in body armour. Created specifically for members of the now defunct United Nations International Scientific Group, this suit is modelled after the popular Sunrise suit. Comes with built-in artefact containers.</text>
 	</string>
 	
 	<string id="isg_scientific_outfit_name">
-		<text>UNISG SEVA suit</text>
+		<text>ISG SEVA suit</text>
 	</string>
 	<string id="isg_scientific_outfit_description">
-		<text>A suit once worn by brave UNISG scientists who foraged into Zone's most anomalous areas. It provides good protection from bullet and shrapnel hit, but not enough for large-scale hostilities. Fully upgradeable and boasting two built-in artefact containers.</text>
+		<text>A suit once worn by brave ISG scientists who foraged into Zone's most anomalous areas. It provides good protection from bullet and shrapnel hit, but not enough for large-scale hostilities. Fully upgradeable and boasting two built-in artefact containers.</text>
 	</string>
 	
 	<string id="bandit_specops_outfit_name">

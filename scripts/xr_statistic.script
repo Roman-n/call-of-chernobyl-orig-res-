@@ -248,23 +248,20 @@ function npc_on_death_callback(victim,who)
 	local npc_faction = character_community(victim)
 	local actor_faction = character_community(who)
 	
-	-- Kiled a friendly NPC.
+	-- Killed a friendly NPC.
 	if (xr_conditions.is_factions_friends(nil, nil, { npc_faction, actor_faction })) then
 		inc_actor_rank(rank_rep.killed_friend.rnk)
 		inc_actor_reputation(rank_rep.killed_friend.rpt)
---		printf("killed friendly")
 	
 	-- Killed an enemy NPC.
 	elseif (xr_conditions.is_factions_enemies(nil, nil, { npc_faction, actor_faction })) then
 		inc_actor_rank(rank_rep.killed_enemy.rnk)
 		inc_actor_reputation(rank_rep.killed_enemy.rpt)
---		printf("killed enemy")
 	
 	-- Killed a neutral NPC.
 	else
 		inc_actor_rank(rank_rep.killed_neutral.rnk)
 		inc_actor_reputation(rank_rep.killed_neutral.rpt)
---		printf("killed neutral")
 	end
 	
 end
@@ -529,8 +526,8 @@ function inc_actor_reputation(reputation)
 	db.actor:change_character_reputation(reputation)
 	
 	-- Impose restrictions at double the minimum and maximum reputation values.
-	if (db.actor:character_reputation() < -5000) then db.actor:set_character_reputation(-5000) end
-	if (db.actor:character_reputation() > 5000) then db.actor:set_character_reputation(5000) end
+	if (db.actor:character_reputation() < -4000) then db.actor:set_character_reputation(-4000) end
+	if (db.actor:character_reputation() > 4000) then db.actor:set_character_reputation(4000) end
 	
 	-- Check for actor reputation change.
 	check_actor_reputation_change()

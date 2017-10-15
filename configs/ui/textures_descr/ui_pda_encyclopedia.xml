@@ -1,13 +1,33 @@
 <w>
+	
+	<!-- Achievements -->
+	<file name="ui\guide\encyclopedia_factions_historic">
+		<texture id="encyclopedia_achievements_bookworm_food_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_completionist_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_down_to_earth_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_duga_free_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_geologist_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_heavy_pockets_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_infopreneur_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_mechanized_warfare_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_patriarch_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_radiotherapy_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_rag_and_bone_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_silver_or_lead_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_tourist_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_well_dressed_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_achievements_wishful_thinking_image" x="0" y="0" width="0" height="0"/>
+	</file>
+	
 	<!-- Characters -->
 	<file name="ui\guide\encyclopedia_characters">
+		<texture id="encyclopedia_characters_ashot_image" x="300" y="1500" width="300" height="300"/>
 		<texture id="encyclopedia_characters_axel_image" x="600" y="1200" width="300" height="300"/>
 		<texture id="encyclopedia_characters_barkeep_image" x="300" y="0" width="300" height="300"/>
 		<texture id="encyclopedia_characters_beard_image" x="600" y="0" width="300" height="300"/>
 		<texture id="encyclopedia_characters_cardan_image" x="0" y="1500" width="300" height="300"/>
 		<texture id="encyclopedia_characters_cold_image" x="600" y="300" width="300" height="300"/>
 		<texture id="encyclopedia_characters_doctor_image" x="300" y="1200" width="300" height="300"/>
-		<texture id="encyclopedia_characters_druzhok_image" x="300" y="1500" width="300" height="300"/>
 		<texture id="encyclopedia_characters_gonta_image" x="0" y="1200" width="300" height="300"/>
 		<texture id="encyclopedia_characters_ivan_trodnik_image" x="0" y="600" width="300" height="300"/>
 		<texture id="encyclopedia_characters_librarian_image" x="600" y="600" width="300" height="300"/>
@@ -18,11 +38,37 @@
 		<texture id="encyclopedia_characters_spore_image" x="0" y="900" width="300" height="300"/>
 		<texture id="encyclopedia_characters_wolf_image" x="300" y="300" width="300" height="300"/>
 		<texture id="encyclopedia_characters_xenotech_image" x="300" y="900" width="300" height="300"/>
+		<texture id="encyclopedia_characters_yar_image" x="600" y="1500" width="300" height="300"/>
+	</file>
+	
+	<!-- Factions -->
+	<file name="ui\guide\encyclopedia_factions">
+		<texture id="encyclopedia_factions_bandit_image" x="0" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_factions_clear_sky_image" x="300" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_factions_duty_image" x="600" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_factions_ecologist_image" x="0" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_factions_freedom_image" x="300" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_factions_loner_image" x="600" y="300" width="300" height="300"/>
+		<texture id="encyclopedia_factions_mercenary_image" x="0" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_factions_military_image" x="300" y="600" width="300" height="300"/>
+		<texture id="encyclopedia_factions_monolith_image" x="600" y="600" width="300" height="300"/>
+	</file>
+	
+	<!-- Factions (Historic) -->
+	<file name="ui\guide\encyclopedia_factions_historic">
+		<texture id="encyclopedia_factions_historic_final_day_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_factions_historic_isg_image" x="0" y="0" width="300" height="300"/>
+		<texture id="encyclopedia_factions_historic_renegade_image" x="300" y="0" width="300" height="300"/>
+	</file>
+	
+	<!-- Factions (Other) -->
+	<file name="ui\guide\encyclopedia_factions_other">
+		<texture id="encyclopedia_factions_other_zombified_image" x="0" y="0" width="300" height="300"/>
 	</file>
 	
 	<!-- Features -->
 	<!-- No images -->
-	<file name="ui\guide\encyclopedia_characters">
+	<file name="ui\guide\encyclopedia_factions_historic">
 		<texture id="encyclopedia_features_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_azazel_mode_image" x="0" y="0" width="0" height="0"/>

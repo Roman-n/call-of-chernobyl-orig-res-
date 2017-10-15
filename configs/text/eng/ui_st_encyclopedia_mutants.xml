@@ -57,7 +57,7 @@
 			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and generally afraid of bright lights.\n
 			\nCreated as the result of genetic experiments on criminals under the program of human telekinetic development, burers naturally posses powerful telekinetic abilities.\n
 			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
-			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis
+			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis
 		</text>
 	</string>
 	
@@ -71,7 +71,7 @@
 			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet, secluded places such as forest thickets.\n
 			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until it tires and/or bleeds out.\n
 			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to attack.\n
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: None
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
 		</text>
 	</string>
 	
@@ -124,7 +124,7 @@
 			\nLike many other living creatures, domestic pigs in the Zone underwent serious mutations following the second disaster, affecting genes responsible for their metabolism.\n
 			\nThis eventually caused the animal's phenotype to change significantly, their forelimbs have turned into insect-like legs which the flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
 			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is attacked or cornered and has nowhere else to run.\n
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
 		</text>
 	</string>
 	
@@ -150,7 +150,7 @@
 			\nIt is unclear whether or not they are related to burers, but between them they share a great many psychic similarities making it difficult to dismiss as just coincidence.\n
 			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, and attacking anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
-			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: High\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis
+			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis
 		</text>
 	</string>
 	
@@ -204,7 +204,7 @@
 			Pseudogiants are one of the rarest and most fearsome mutants in the Zone.\n
 			\nUnlike other humanoid mutants, the pseudogiant has developed incredible strength and can withstand an inhuman amount of punishment before succumbing to its wounds and dying.\n
 			\nA pair of disproportionately huge limbs and incredibly powerful physical attacks allows it to devastate anything that is unfortunate enough to get near it - being able to create shockwaves that hurl objects by simply slamming its huge feet.\n
-			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back, only attacking when another target gets within range.\n
+			\nDespite their resilience they appear to be more territorial than offensive, typically not pursuing a target more than a short distance before abandoning the chase and falling back.\n
 			\n• Attacks: Melee\n• Health: Very high\n• Speed: Slow\n• Traits: Immense strength
 		</text>
 	</string>
@@ -279,7 +279,7 @@
 	</string>
 	<string id="encyclopedia_mutants_zombie_text">
 		<text>
-			Zombies are people who have been reduced to their most residual and animal reflexes.\n
+			Zombies are people who have been reduced to their most residual reflexes.\n
 			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of the people they used to be.\n
 			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psi-fields, having lost even the ability to operate basic tools and weaponry.\n
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n

@@ -6,28 +6,117 @@
 ; Do not touch this section unless you know what you are doing!
 [encyclopedia_interactivity]
 characters = encyclopedia_interactivity_characters
+factions = encyclopedia_interactivity_factions
 items = encyclopedia_interactivity_items
 mutants = encyclopedia_interactivity_mutants
+outfits = encyclopedia_interactivity_outfits
 smarts = encyclopedia_interactivity_smarts
 vehicles = encyclopedia_interactivity_vehicles
 
 ; Characters - triggered by looting or talking-to.
+; Faction articles should also trigger if a character is technically in the trader faction.
 [encyclopedia_interactivity_characters]
 bar_visitors_barman_stalker_trader = encyclopedia_characters_barkeep
 esc_2_12_stalker_nimble = encyclopedia_characters_nimble
 esc_2_12_stalker_wolf = encyclopedia_characters_wolf
-esc_m_trader = encyclopedia_characters_sidorovich
 esc_smart_terrain_5_7_loner_mechanic_stalker = encyclopedia_characters_xenotech
+jup_a6_freedom_trader_ashot = encyclopedia_characters_ashot
+jup_b19_freedom_yar = encyclopedia_characters_yar
+m_lesnik = encyclopedia_factions_loner
+m_trader = encyclopedia_factions_loner, encyclopedia_characters_sidorovich
 mar_base_owl_stalker_trader = encyclopedia_characters_spore
 mar_base_stalker_barmen = encyclopedia_characters_librarian
 mar_base_stalker_tech = encyclopedia_characters_novikov
 mar_smart_terrain_base_doctor = encyclopedia_characters_ivan_trodnik
 mar_smart_terrain_base_stalker_leader_marsh = encyclopedia_characters_cold
-mar_smart_terrain_doc_doctor = encyclopedia_characters_doctor
+mar_smart_terrain_doc_doctor = encyclopedia_factions_loner, encyclopedia_characters_doctor
+yan_stalker_sakharov = encyclopedia_factions_ecologist
 zat_a2_stalker_barmen = encyclopedia_characters_beard
+zat_a2_stalker_mechanic = encyclopedia_characters_cardan
+zat_b22_stalker_medic = encyclopedia_characters_axel
+zat_b30_owl_stalker_trader = encyclopedia_characters_owl
+zat_b106_stalker_gonta = encyclopedia_characters_gonta
 
-; Items - triggered by using or acquiring.
+; Factions - triggered by looting or talking-to.
+[encyclopedia_interactivity_factions]
+army = encyclopedia_factions_military
+bandit = encyclopedia_factions_bandit
+csky = encyclopedia_factions_clear_sky
+dolg = encyclopedia_factions_duty
+ecolog = encyclopedia_factions_ecologist
+freedom = encyclopedia_factions_freedom
+killer = encyclopedia_factions_mercenary
+monolith = encyclopedia_factions_monolith
+stalker = encyclopedia_factions_loner
+zombied = encyclopedia_factions_other_zombified
+
+; Items - triggered by using.
 [encyclopedia_interactivity_items]
+
+; Outfits - triggered by equipping.
+[encyclopedia_interactivity_outfits]
+army_outfit = encyclopedia_factions_military
+bandit_exo_outfit = encyclopedia_factions_bandit
+bandit_novice_outfit = encyclopedia_factions_bandit
+bandit_specops_outfit = encyclopedia_factions_bandit
+banditmerc_outfit = encyclopedia_factions_bandit
+barmerc_outfit = encyclopedia_factions_loner
+commander_outfit = encyclopedia_factions_military
+cs_3b_outfit = encyclopedia_factions_clear_sky
+cs_exo_outfit = encyclopedia_factions_clear_sky
+cs_heavy_outfit = encyclopedia_factions_clear_sky
+cs_light_novice_outfit = encyclopedia_factions_clear_sky
+cs_light_outfit = encyclopedia_factions_clear_sky
+cs_medium_outfit = encyclopedia_factions_clear_sky
+cs_nbc_outfit = encyclopedia_factions_clear_sky
+cs_novice_outfit = encyclopedia_factions_clear_sky
+cs_scientific_outfit = encyclopedia_factions_clear_sky
+cs_stalker_outfit = encyclopedia_factions_clear_sky
+dolg_exo_outfit = encyclopedia_factions_duty
+dolg_heavy_outfit = encyclopedia_factions_duty
+dolg_novice_outfit = encyclopedia_factions_duty
+dolg_outfit = encyclopedia_factions_duty
+dolg_radiation_outfit = encyclopedia_factions_duty
+dolg_scientific_outfit = encyclopedia_factions_duty
+ecolog_guard_outfit = encyclopedia_factions_ecologist
+ecolog_outfit_blue = encyclopedia_factions_ecologist
+ecolog_outfit_green = encyclopedia_factions_ecologist
+ecolog_outfit_orange = encyclopedia_factions_ecologist
+ecolog_outfit_white = encyclopedia_factions_ecologist
+exo_outfit = encyclopedia_factions_loner
+exo_proto_outfit = encyclopedia_factions_loner
+isg_outfit = encyclopedia_factions_historic_isg
+isg_scientific_outfit = encyclopedia_factions_historic_isg
+merc_exo_outfit = encyclopedia_factions_mercenary
+merc_outfit = encyclopedia_factions_mercenary
+merc_radiation_outfit = encyclopedia_factions_mercenary
+merc_scientific_outfit = encyclopedia_factions_mercenary
+merc_stalker_outfit = encyclopedia_factions_mercenary
+military_exo_outfit = encyclopedia_factions_military
+military_outfit = encyclopedia_factions_military
+monolith_exo_outfit = encyclopedia_factions_monolith
+monolith_nbc_outfit = encyclopedia_factions_monolith
+monolith_outfit = encyclopedia_factions_monolith
+monolith_radiation_outfit = encyclopedia_factions_monolith
+monolith_scientific_outfit = encyclopedia_factions_monolith
+nbc_outfit = encyclopedia_factions_loner
+novice_2_outfit = encyclopedia_factions_loner
+novice_outfit = encyclopedia_factions_loner
+radiation_outfit = encyclopedia_factions_loner
+scientific_heavy_outfit = encyclopedia_factions_loner
+scientific_outfit = encyclopedia_factions_loner
+specops_outfit = encyclopedia_factions_military
+stalker_outfit = encyclopedia_factions_loner
+stalker_outfit_barge = encyclopedia_factions_loner
+svoboda_exo_outfit = encyclopedia_factions_freedom
+svoboda_heavy_outfit = encyclopedia_factions_freedom
+svoboda_heavy_outfit_2 = encyclopedia_factions_freedom
+svoboda_light_outfit = encyclopedia_factions_freedom
+svoboda_novice_outfit = encyclopedia_factions_freedom
+svoboda_radiation_outfit = encyclopedia_factions_freedom
+svoboda_scientific_outfit = encyclopedia_factions_freedom
+trenchcoat_brown_outfit = encyclopedia_factions_bandit
+trenchcoat_outfit = encyclopedia_factions_loner
 
 ; Mutants - triggered by field dressing.
 [encyclopedia_interactivity_mutants]
