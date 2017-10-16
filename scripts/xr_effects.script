@@ -204,7 +204,7 @@ end
 
 function reward_stash(actor,npc,p)
 	if (p and p[1] ~= "true") or ((math.random(1,100)/100) <= 0.5) then
-		local bonus
+		local bonus = {}
 
 		for i=1,5 do
 			if (p[i+1]) then
