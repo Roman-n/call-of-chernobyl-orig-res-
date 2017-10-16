@@ -205,10 +205,18 @@ end
 function reward_stash(actor,npc,p)
 	if (p and p[1] ~= "true") or ((math.random(1,100)/100) <= 0.5) then
 		local bonus
-		if ((math.random(1,100)/100) <= 0.35) then
-			local t = {"itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_2","itm_repairkit_tier_2","itm_repairkit_tier_3"}
-			bonus = {t[math.random(#t)]}
+
+		for i=1,5 do
+			if (p[i+1]) then
+				bonus[i] = p[i+1]
+			end
 		end
+
+		if ((math.random(1,100)/100) <= 0.30) then
+			local t = {"itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_2","itm_repairkit_tier_2","itm_repairkit_tier_3"}
+			bonus[#bonus+1] = {t[math.random(#t)]}
+		end
+		
 		coc_treasure_manager.create_random_stash(nil,nil,bonus)
 	end
 end
