@@ -15,7 +15,7 @@
 			\nArticles can be unlocked through a multitude of ways, such as talking to important characters or downloading data from memory sticks.\n
 			\n%c[guide_green]Rewards%c[default]\n
 			\nAll future memory sticks which would be found on the bodies of dead stalkers will be replaced by rare PDAs.\n
-			\nShould extra articles be added after unlocking this achievement, such as via a patch or a mod, then this effect will be disabled so that memory sticks can obtained again.
+			\nShould extra articles be added after unlocking this achievement, such as via a patch or a mod, then this effect will be temporarily disabled so that memory sticks can be obtained again.
 		</text>
 	</string>
 	
@@ -48,7 +48,7 @@
 		<text>
 			%c[guide_blue]Duga Free%c[default] is only available in story mode, and requires you to disable both the Miracle Machine and the Brain Scorcher.\n
 			\n%c[guide_green]Rewards%c[default]\n
-			\nYantar and Radar become much easier to travel through, now that their psi-fields have been disabled.
+			\nYantar and Radar will become much easier to travel through after said psi-field emitters are disabled.
 		</text>
 	</string>
 	
@@ -59,7 +59,7 @@
 		<text>
 			%c[guide_blue]Geologist%c[default] requires you to detect a minimum of 50 artefacts.\n
 			\n%c[guide_green]Information%c[default]\n
-			\nArtefact detection requires a detector, which are sold by most traders. By using them near an anomaly, there is a chance you may detect an artefact.\n
+			\nArtefact detection requires a detector, which are sold by most traders.\nBy using them near an anomaly, there is a chance you may detect an artefact.\n
 			\n%c[guide_green]Rewards%c[default]\n
 			\nRespawn rates for artefacts found in anomalies will be slightly increased.
 		</text>
@@ -72,7 +72,7 @@
 		<text>
 			%c[guide_blue]Heavy Pockets%c[default] requires you to possess 1,000,000 RU at any one moment.\n
 			\n%c[guide_green]Rewards%c[default]\n
-			\nMost traders will begin to offer you special supplies, as if you had great relations with their faction.
+			\nMost traders will begin to offer you special supplies which would only otherwise be available if you had great relations with their faction.
 		</text>
 	</string>
 	
@@ -111,7 +111,7 @@
 			\n%c[guide_green]Information%c[default]\n
 			\nRank can be earned through almost every action that you can take in the Zone.\nAn article explaining ranks and how they work can be found in the features category.\n
 			\n%c[guide_green]Rewards%c[default]\n
-			\nYou will be able to recruit 2 additional stalkers as companions above your current limit.
+			\nYou will be able to recruit 2 additional companions above the regular limit.
 		</text>
 	</string>
 	
@@ -138,7 +138,7 @@
 			\n%c[guide_green]Information%c[default]\n
 			\nStashes can be found almost anywhere in the Zone at any time, but receiving their coordinates after completing tasks will mark them on your map.\n
 			\n%c[guide_green]Rewards%c[default]\n
-			\nThe maximum value of the items that can be found in future generated stashes will be slightly increased.
+			\nThe maximum total value of items found in newly generated stashes will be slightly increased.
 		</text>
 	</string>
 	
