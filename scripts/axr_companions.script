@@ -174,7 +174,7 @@ function on_game_start()
 
 	allow_only_friends_as_companions = ini:r_bool_ex("main","allow_only_friends_as_companions",false)
 	allow_simulation_squads_as_companions = ini:r_bool_ex("main","allow_simulation_squads_as_companions",false)
-	max_actor_squad_size = ini:r_float_ex("main","max_actor_squad_size") or 2
+	max_actor_squad_size = ini:r_float_ex("main","max_actor_squad_size") or 3
 end
 
 function companion_squad_can_teleport(squad)

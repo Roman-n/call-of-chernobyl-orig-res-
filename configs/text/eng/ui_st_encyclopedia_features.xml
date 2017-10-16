@@ -5,17 +5,34 @@
 		<text>Features</text>
 	</string>
 	
+	<string id="encyclopedia_features_companions">
+		<text>Companions</text>
+	</string>
+	<string id="encyclopedia_features_companions_text">
+		<text>
+			%c[guide_blue]Companions%c[default] are stalkers who can be recruited to your side, similar to followers and familiars in other games.\n
+			\n%c[guide_green]Information%c[default]\n
+			\nWith the Zone being as dangerous as it is, most other stalkers can be found exploring in small groups, usually in size of around 3 to 4 individuals.\n
+			\nThis feature allows you to do the same, as by talking to the leader of one of these groups you may be able to convince them to explore the Zone together with you.\n
+			\nThe only requirements are that the squad's leader must have friendly relations with you, that his rank is no more than a single tier above yours, and that you haven't too many stalkers following you already.\n
+			\nIn very special cases, characters such as Fanatic may be used as companions to help complete certain tasks, having their own unique set of requirements, and not counting towards your squad limit.\n
+			\nInformation about your companions can be viewed in the Relations tab of the PDA, where you can also issue them orders as a group or individually, as well as change their behaviours.\n
+			\nThis can also be done through key bindings, which can be set via the Controls options menu.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_features_rank">
 		<text>Rank</text>
 	</string>
 	<string id="encyclopedia_features_rank_text">
 		<text>
-			Rank is a score system based on what a stalker has accomplished in the Zone.\n
+			%c[guide_blue]Rank%c[default] is a score system based on what a stalker has accomplished in the Zone.\n
+			\n%c[guide_green]Information%c[default]\n
 			\nActions which you perform throughout your playthrough are recorded and each grant a varying number of points depending on the action in question.\n
 			\nAs you accumulate more and more points your rank will gradually change as you pass through every milestone, with each requiring an additional 1,000 points on top of the requirements of its predecessor.\n
 			\nMost of these actions are logged in the statistics tab of the PDA, which also contains an in-game leaderboard that keeps track of the current top-100 highest ranking stalkers.\n
-			\nThere are currently eight total ranks available:\n
-			\n• Rookie (0)\n• Trainee (1,000) (+1,000)\n• Experienced (3,000) (+2,000)\n• Professional (6,000) (+3,000)\n• Veteran (1,0000) (+4,000)\n• Expert (15,000) (+5,000)\n• Master (21,000) (+6,000)\n• Legend (28,000) (+7,000)
+			\n%c[guide_green]Ranks%c[default]\n
+			\n• Rookie: 0\n• Trainee: 1,000\n• Experienced: 3,000\n• Professional: 6,000\n• Veteran: 10,000\n• Expert: 15,000\n• Master: 21,000\n• Legend: 28,000
 		</text>
 	</string>
 	
@@ -24,12 +41,13 @@
 	</string>
 	<string id="encyclopedia_features_reputation_text">
 		<text>
-			Reputation is a representation of how a stalker interacts with others.\n
+			%c[guide_blue]Reputation%c[default] is a representation of how a stalker interacts with others.\n
+			\n%c[guide_green]Information%c[default]\n
 			\nReputation is similar to rank but differs in that it isn't quite so linear - being able to both increase and decrease - and that it is based on your interactions with other stalkers rather than the environment.\n
 			\nThe easiest ways to increase reputation are by completing tasks, providing first-aid, and killing your faction's enemies, whilst inversely the easiest ways to lose it are by cancelling or failing tasks, and killing neutral or friendly stalkers.\n
-			\nIt should be noted that reputation is not to be confused with goodwill, which handles all stalker and faction relations. Reputation is largely an immersion-focused feature for the benefit of the player.\n
-			\nThere are currently nine total reputations available:\n
-			\n• Terrible (-2,000) (-500)\n• Dreary (-1,500) (-500)\n• Awful (-1,000) (-500)\n• Bad (-500) (-500)\n• Neutral (0)\n• Good (500) (+500)\n• Great (1,000) (+500)\n• Brilliant (1,500) (+500)\n• Excellent (2,000) (+500)
+			\nIt should be noted that reputation is largely an immersion-focused feature, and should not be confused with goodwill, which handles all stalker and faction relations.\n
+			\n%c[guide_green]Reputations%c[default]\n
+			\n• Terrible: -2,000\n• Dreary: -1,500\n• Awful: -1,000\n• Bad: -500\n• Neutral: 0\n• Good: 500\n• Great: 1,000\n• Brilliant: 1,500\n• Excellent: 2,000
 		</text>
 	</string>
 	
