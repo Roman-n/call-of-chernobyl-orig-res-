@@ -113,7 +113,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 		self.image:SetStretchTexture(true)
 		self.image:InitTexture(section .. "_image")
 	else
-		self.information:SetText(game.translate_string("pda_encyclopedia_locked"))
+		self.information:SetText(game.translate_string("pda_encyclopedia_locked_text"))
 	end
 	
 	-- Same reasoning as the offset for the image height.
@@ -171,6 +171,7 @@ function pda_encyclopedia_tab:InitArticles(category)
 	local articles = category and category.articles or nil
 	if not (articles) then return end
 	
+	-- Create each article item and add it to the category.
 	local item = nil
 	local section = nil
 	for i = 1, #articles do
@@ -179,7 +180,7 @@ function pda_encyclopedia_tab:InitArticles(category)
 		if (section) then
 			-- Hide the article's title if it isn't unlocked.
 			if (self.locked_articles[section]) then
-				item.sect:SetText("??????????")
+				item.sect:SetText(game.translate_string("pda_encyclopedia_locked"))
 			else
 				item.sect:SetText(game.translate_string(section))
 			end
@@ -223,12 +224,12 @@ function pda_encyclopedia_tab:InitControls()
 	xml:InitFrame("border", self)
 	xml:InitStatic("frame1:caption", self)
 	
-	-- "Images above text" checkbox.
+	-- "Images on top" checkbox.
 	self.image_checkbox = xml:InitCheck("image_checkbox", self)
 	self.image_checkbox:SetCheck(axr_main.config:r_value("pda_encyclopedia", "images_above_text", 1, true))
 	self:Register(self.image_checkbox, "images_above_text")
 	
-	-- "Unlock messages" checkbox.
+	-- "Show messages" checkbox.
 	self.message_checkbox = xml:InitCheck("message_checkbox", self)
 	self.message_checkbox:SetCheck(axr_main.config:r_value("pda_encyclopedia", "display_messages", 1, true))
 	self:Register(self.message_checkbox, "display_messages")
