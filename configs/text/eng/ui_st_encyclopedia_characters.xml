@@ -200,7 +200,7 @@
 	</string>
 	<string id="encyclopedia_characters_novikov_text">
 		<text>
-			%c[guide_blue]Novikov%c[default], also known as Grey, is Clear Sky's veteran technician.\n
+			%c[guide_blue]Novikov%c[default], also known as %c[guide_blue]Grey%c[default], is Clear Sky's veteran technician.\n
 			\n%c[guide_green]Information%c[default]\n
 			\nA member of the faction since their earliest days, Novikov is described by his comrades as an expert in his field, with Cold saying that he can make a rifle out of an empty can with ammo to boot.\n
 			\nFollowing their near collapse, he briefly took up contract work with at the mobile science lab in Jupiter, before heading back after hearing they had pulled through and rebuilt.\n
