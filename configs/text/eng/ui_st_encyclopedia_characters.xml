@@ -263,7 +263,7 @@
 			\n%c[guide_green]Information%c[default]\n
 			\nTasking himself with protecting the village and the stalkers that live there from outside threats, Wolf uses a network of scouts and spies to keep track of unfriendly movements that occur within the Cordon.\n
 			\nSharing information he learns with Sidorovich, they frequently send out raiding parties and opportunists to clean out encroaching bandits, mutants, and other threats to their mutual interest in the village's security.\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Statistics%c[default]\n
 			\n• Faction Loner\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
@@ -276,7 +276,7 @@
 			%c[guide_blue]Xenotech%c[default] is a technician who repairs gear mostly for newbie stalkers.\n
 			\n%c[guide_green]Information%c[default]\n
 			\nWorking out of the neutral base in the Cordon - situated about halfway between the ruined bridge and the "High Hopes" anomaly - Xenotech is a gifted technician whose efforts are of great value to stalkers new to the Zone.\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Statistics%c[default]\n
 			\n• Faction Loner\n• Rank: Professional\n• Reputation: Good
 		</text>
 	</string>
@@ -291,7 +291,7 @@
 			\nHe is well known in the Zone for being a brilliant technician, with jokes that he can make an anti-aircraft gun from a rusty rifle perhaps not being all that far from the truth.\n
 			\nFollowing the end of the Faction Wars and the rush towards the center of the Zone, Yar travelled with Freedom's expedition to Yanov station, before very briefly working as a medic in the Outskirts.\n
 			\nHe soon returned after the ceasefire with Duty broke down, where he decided yet again to change his profession and try his hand at becoming an information broker.\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Statistics%c[default]\n
 			\n• Faction Freedom\n• Rank: Expert\n• Reputation: Excellent
 		</text>
 	</string>
