@@ -88,7 +88,7 @@
 	</string>
 	<string id="encyclopedia_features_options_hardcore_ai_aim_text">
 		<text>
-			%c[guide_blue]Hardcore AI%c[default] aim increases AI aim predictability and decreases reaction times.\n
+			%c[guide_blue]Hardcore AI aim%c[default] increases AI aim predictability and decreases reaction times.\n
 			\n%c[guide_green]Information%c[default]\n
 			\nWith this feature enabled it becomes harder for you to avoid being hit whilst strafing and sprinting, with the use of cover becoming much more essential to your long-term survival.\n
 			\nThis feature can be toggled from the game options menu and is disabled by default.
