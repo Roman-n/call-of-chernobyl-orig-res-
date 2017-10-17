@@ -41,17 +41,17 @@ function on_interact(key, section)
 end
 
 -- Characters: Talking-to.
--- Factions: Talking-to.
+-- Also triggers faction articles.
 function on_interact_character(character_id)
 	local character = level.object_by_id(character_id)
 	local faction = character_community(character)
-	on_interact("factions", faction)
+	on_interact_faction(faction)
 	local section = character:section()
 	on_interact("characters", section)
 end
 
 -- Characters: Looting.
--- Factions: Looting.
+-- Also triggers faction articles.
 function on_interact_character2(mode, last_mode)
 	if (last_mode ~= 4) then 
 		return 
@@ -61,9 +61,14 @@ function on_interact_character2(mode, last_mode)
 		return
 	end
 	local faction = character_community(character)
-	on_interact("factions", faction)
+	on_interact_faction(faction)
 	local section = character:section()
 	on_interact("characters", section)
+end
+
+-- Factions: Multi-purpose.
+function on_interact_faction(faction)
+	on_interact("factions", faction)
 end
 
 -- Items: Using.
@@ -150,7 +155,7 @@ end
 --------------------------------
 
 -- Jumps straight to a specific article.
--- Also used to trigger display messages when unlocking.
+-- Also returns the category and article indices.
 function set_article(section, unlocking)
 	-- Instance of the guide object.
 	local guide = ui_pda_encyclopedia_tab.get_ui()
@@ -171,24 +176,13 @@ function set_article(section, unlocking)
 				article = category.articles[index_a]
 				-- Set the category and article if correct.
 				if (article and article == section) then
-					-- Unlock messages are sent here, as we can access the category.
-					if (unlocking) then
-						local verbose = axr_main.config:r_value("pda_encyclopedia", "display_messages", 1, true)
-						if (verbose) then
-							local text_a = game.translate_string(article)
-							local text_c = game.translate_string(category.section)
-							local message = game.translate_string("pda_encyclopedia_notify")
-							news_manager.send_tip(db.actor, strformat(message, text_c, text_a), nil, "guide_unlock", nil, nil)
-						end
-					end
 					guide:SelectCategory(index_c)
 					guide:SelectArticle(index_a)
-					return
+					return index_a, index_c
 				end
 			end
 		end
 	end
-	
 end
 
 -- Unlocks an article for the player.
@@ -234,8 +228,17 @@ function unlock_article(section)
 	-- Update the required counters.
 	guide.articles_locked_count = guide.articles_locked_count - 1
 	guide.articles_unlocked_count = guide.articles_unlocked_count + 1
-	
-	-- Notify the player and update the PDA selection.
 	xr_statistic.inc_counter("guide_articles")
-	set_article(section, true)
+	
+	-- Set the article, and retrieve the indices.
+	local index_a, index_c = set_article(section)
+	if not (index_a or index_c) then return end
+	
+	-- Send a message about unlocking the article.
+	if (axr_main.config:r_value("pda_encyclopedia", "display_messages", 1, true)) then
+		local text_c = game.translate_string(guide.categories[index_c].section)
+		local text_a = game.translate_string(guide.categories[index_c].articles[index_a])
+		local message = game.translate_string("pda_encyclopedia_notify")
+		news_manager.send_tip(db.actor, strformat(message, text_c, text_a), nil, "guide_unlock", nil, nil)
+	end
 end
