@@ -232,7 +232,7 @@ function unlock_article(section)
 	
 	-- Set the article, and retrieve the indices.
 	local index_a, index_c = set_article(section)
-	if not (index_a or index_c) then return end
+	if not (index_a and index_c) then return end
 	
 	-- Send a message about unlocking the article.
 	if (axr_main.config:r_value("pda_encyclopedia", "display_messages", 1, true)) then
