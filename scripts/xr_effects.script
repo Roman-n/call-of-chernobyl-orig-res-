@@ -206,18 +206,44 @@ function reward_stash(actor,npc,p)
 	if (p and p[1] ~= "true") or ((math.random(1,100)/100) <= 0.5) then
 		local bonus = {}
 
-		for i=1,5 do
-			if (p[i+1]) then
-				bonus[i] = p[i+1]
-			end
+		for i=2,#p do
+			table.insert(bonus,p[i])
 		end
 
 		if ((math.random(1,100)/100) <= 0.30) then
 			local t = {"itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_2","itm_repairkit_tier_2","itm_repairkit_tier_3"}
-			bonus[#bonus+1] = {t[math.random(#t)]}
+			table.insert(bonus,{t[math.random(#t)]})
 		end
 		
 		coc_treasure_manager.create_random_stash(nil,nil,bonus)
+	end
+end
+
+-- create_stash(story_id:hint:section1:section2:section3:section4:section5)
+-- param1 story_id
+-- param2 hint
+-- param3+ section
+function create_stash(actor,npc,p)
+	local box = get_story_object(p[1])
+	if not (box) then 
+		return 
+	end
+	
+	local t = {}
+	for i=2,#p do
+		if (system_ini():section_exist(p[i])) then
+			table.insert(t,p[i])
+		else 
+			printf("create_stash | trying to spawn item that doesn't exist %s",p[i])
+		end
+	end
+	
+	if (#t > 0) then
+		local id = box:id()
+		coc_treasure_manager.caches[id] = table.concat(t,",")
+		
+		level.map_add_object_spot_ser(id, "treasure", game.translate_string(hint or "st_ui_pda_secret"))
+		news_manager.send_treasure(0)
 	end
 end
 
