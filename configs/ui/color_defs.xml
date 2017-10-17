@@ -41,7 +41,7 @@
   <color name="pda_red"			r="238"	g="28"	b="36"/>
   <color name="pda_yellow"		r="248"	g="148"	b="29"/>
   
-  <color name="guide_blue"		r="100"	g="160"	b="170"/>
-  <color name="guide_green"		r="110"	g="180"	b="0"/>
+  <color name="guide_blue"		r="135"	g="170"	b="185"/>
+  <color name="guide_green"		r="135"	g="210"	b="100"/>
   
 </colors>
