@@ -154,6 +154,7 @@ function generic_object_binder:update(delta)
 	local tg = time_global()
 	if (enemy) or (self.post_combat_idle_timer and tg < self.post_combat_idle_timer) then
 		xr_logic.mob_release(self.object)
+		self.object:remove_home()
 		self.post_combat_idle_timer = time_global() + math.random(15000,30000) -- This allows mob released to use engine stuff like corpse eating and dragging after combat
 		return
 	end
@@ -178,6 +179,7 @@ function generic_object_binder:update(delta)
 		end
 		
 		xr_logic.mob_capture(self.object, true)
+		self.object:remove_home()
 
 		local commander = db.storage[squad:commander_id()] and db.storage[squad:commander_id()].object
 		if (commander == nil or commander:id() == id) then
