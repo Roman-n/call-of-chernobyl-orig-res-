@@ -461,7 +461,7 @@
 		<text>Helicopter patrols</text>
 	</string>
 	<string id="ui_mm_ai_die_in_anomaly">
-		<text>AI die in anomalies</text>
+		<text>AI die to anomalies</text>
 	</string>
 	<string id="ui_mm_dynamic_news">
 		<text>Dynamic news</text>
@@ -488,7 +488,7 @@
 		<text>Quicksave count</text>
 	</string>
 	<string id="ui_mm_actor_hud">
-		<text>Mask Overlay</text>
+		<text>Mask overlay</text>
 	</string>
 	<string id="ui_mm_alife_mutant_pop">
 		<text>Population factor (mutants)</text>

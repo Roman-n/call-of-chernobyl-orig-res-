@@ -530,10 +530,10 @@ function try_spawn_treasure(box)
 				create_ammo(sec,box:position(),box:level_vertex_id(),box:game_vertex_id(),id,math.random(10,20))
 			else
 			
-				-- Chernobyl Weapon Pack / Arsenal Overhaul 3
+				-- STCoP Weapon Pack / Arsenal Overhaul 3
 				-- Switches the weapon to a sighted variant if available.
 				if (math.random() <= 0.3) then
-					local sights = alun_utils.parse_list(ini, sec, "sights")
+					local sights = alun_utils.parse_list(ini, sec, "scopes")
 					if (#sights > 0) then
 						sight = sights[math.random(#sights)]
 						local variant_section = sec .. "_" .. sight
@@ -614,7 +614,7 @@ function get_valid_item_sections()
 								local class = ini:r_string_ex(section,"class")
 								if (class == "G_FAKE") then
 								else
-									-- Chernobyl Weapon Pack / Arsenal Overhaul 3
+									-- STCoP Weapon Pack / Arsenal Overhaul 3
 									-- blacklist everything but base weapon, try_spawn_treasure will handle the randomization of sights
 									local parent_section = ini:r_string_ex(section,"parent_section")
 									if (parent_section == nil or parent_section == "" or parent_section == section) then

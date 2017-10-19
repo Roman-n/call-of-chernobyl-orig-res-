@@ -5,6 +5,19 @@
 		<text>Features (Options)</text>
 	</string>
 	
+	<string id="encyclopedia_features_options_ai_die_to_anomalies">
+		<text>AI die to anomalies</text>
+	</string>
+	<string id="encyclopedia_features_options_ai_die_to_anomalies_text">
+		<text>
+			%c[guide_blue]AI die to anomalies%c[default] removes anomalies as a factor in the AI's pathfinding.\n
+			\n%c[guide_green]Information%c[default]\n
+			\nWith this feature enabled mutants and other stalkers will lose their clairvoyant ability to know exactly where anomalies are located.\n
+			\nAs such, they will now find themselves placed at the full mercy of the Zone's environment no different from your own character.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_features_options_aoe_pickup_mode">
 		<text>AoE pickup mode</text>
 	</string>
@@ -26,7 +39,7 @@
 			\n%c[guide_green]Information%c[default]\n
 			\nWith this feature enabled having the best artefacts is no-longer the end of the line for artefact hunters.\n
 			\nArtefacts will become weaker the more they are used, promoting their further hunting and accumulation, instead of becoming just a quick source of income.\n
-			\nThis feature can be toggled from the game options menu and is disabled by default.
+			\nThis feature can be toggled from the game options menu and is enabled by default.
 		</text>
 	</string>
 	

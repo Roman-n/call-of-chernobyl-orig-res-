@@ -44,7 +44,7 @@
 		<texture id="encyclopedia_characters_yar_image" x="512" y="1280" width="256" height="256"/>
 	</file>
 	
-	<!-- Factions -->
+	<!-- Factions, Factions (Historic) & Factions (Other) -->
 	<file name="ui\guide\encyclopedia_factions">
 		<texture id="encyclopedia_factions_bandit_image" x="0" y="0" width="256" height="256"/>
 		<texture id="encyclopedia_factions_clear_sky_image" x="256" y="0" width="256" height="256"/>
@@ -55,27 +55,19 @@
 		<texture id="encyclopedia_factions_mercenary_image" x="0" y="512" width="256" height="256"/>
 		<texture id="encyclopedia_factions_military_image" x="256" y="512" width="256" height="256"/>
 		<texture id="encyclopedia_factions_monolith_image" x="512" y="512" width="256" height="256"/>
-	</file>
-	
-	<!-- Factions (Historic) & Factions (Other) -->
-	<file name="ui\guide\encyclopedia_factions2">
 		<texture id="encyclopedia_factions_historic_final_day_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_factions_historic_isg_image" x="0" y="0" width="256" height="256"/>
-		<texture id="encyclopedia_factions_historic_renegade_image" x="256" y="0" width="256" height="256"/>
-		<texture id="encyclopedia_factions_other_zombified_image" x="0" y="256" width="256" height="256"/>
+		<texture id="encyclopedia_factions_historic_isg_image" x="0" y="768" width="256" height="256"/>
+		<texture id="encyclopedia_factions_historic_renegade_image" x="256" y="768" width="256" height="256"/>
+		<texture id="encyclopedia_factions_other_zombified_image" x="512" y="768" width="256" height="256"/>
 	</file>
 	
-	<!-- Features -->
+	<!-- Features & Features (Options) -->
 	<!-- No images -->
 	<file name="ui\ui_console">
 		<texture id="encyclopedia_features_companions_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_rank_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_reputation_image" x="0" y="0" width="0" height="0"/>
-	</file>
-	
-	<!-- Features (Options)-->
-	<!-- No images -->
-	<file name="ui\ui_console">
+		<texture id="encyclopedia_features_options_ai_die_to_anomalies_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_options_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_options_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_options_azazel_mode_image" x="0" y="0" width="0" height="0"/>
