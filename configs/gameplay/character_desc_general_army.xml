@@ -809,7 +809,7 @@
     <visual>actors\stalker_soldier\stalker_soldier_2</visual>
     <supplies>
 #include "gameplay\loadouts\army_base.ltx"
-#include "gameplay\loadouts\army_tier_2.ltx"
+#include "gameplay\loadouts\army_sniper.ltx"
         [spawn] \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
