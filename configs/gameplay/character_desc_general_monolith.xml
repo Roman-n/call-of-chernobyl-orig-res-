@@ -1047,7 +1047,7 @@
     <visual>actors\stalker_monolith\stalker_monolith_2</visual>
     <supplies>
 #include "gameplay\loadouts\monolith_base.ltx"
-#include "gameplay\loadouts\monolith_tier_1.ltx"
+#include "gameplay\loadouts\monolith_sniper.ltx"
         [spawn] \n
     </supplies>
 #include "gameplay\character_criticals.xml"
@@ -1068,7 +1068,7 @@
     <visual>actors\stalker_monolith\stalker_monolith_2</visual>
     <supplies>
 #include "gameplay\loadouts\monolith_base.ltx"
-#include "gameplay\loadouts\monolith_tier_1.ltx"
+#include "gameplay\loadouts\monolith_sniper.ltx"
         [spawn] \n
     </supplies>
 #include "gameplay\character_criticals.xml"
