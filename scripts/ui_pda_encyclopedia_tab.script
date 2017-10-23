@@ -155,6 +155,7 @@ function pda_encyclopedia_tab:SelectCategory(index)
 	-- Initialise the category's articles.
 	local category = self.categories[index]
 	self:InitArticles(category)
+	self.scrollbar:Clear()
 end
 
 --------------------------

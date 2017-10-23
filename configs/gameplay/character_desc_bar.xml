@@ -367,7 +367,7 @@
     
     <!--------------------STALKER 3_1 and 3_2---------------------->
     <specific_character id="bar_arena_stalker_3_1" team_default = "1">
-    <name>GENERATE_NAME_stalker</name>
+    <name>bar_swede_name</name>
     <icon>ui_inGame2_neutral_2_mask</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>bar_arena_stalker</bio>

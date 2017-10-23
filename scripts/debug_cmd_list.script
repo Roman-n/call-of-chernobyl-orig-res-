@@ -318,6 +318,24 @@ function cmd.name(me,txt,owner,p)
 	return "name:= invalid name"
 end
 
+-- Rank
+function cmd.rank(me,txt,owner,p)
+	local wrd = check_and_set_help(me,txt,owner,"<amount>")
+	if not (wrd) then return end
+	local amt = tonumber(wrd) or 0
+	xr_statistic.inc_actor_rank(amt)
+	return "rank:= gave actor "..amt.." rank points."
+end
+
+-- Reputation
+function cmd.reputation(me,txt,owner,p)
+	local wrd = check_and_set_help(me,txt,owner,"<amount>")
+	if not (wrd) then return end
+	local amt = tonumber(wrd) or 0
+	xr_statistic.inc_actor_reputation(amt)
+	return "reputation:= gave actor "..amt.." reputation points."
+end
+
 -- SPAWN
 --[[
 example usage:

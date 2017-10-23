@@ -88,8 +88,10 @@ function on_interact_mutant(mutant)
 end
 
 -- Smart terrains: Entering.
+-- Also triggers level articles.
 -- Does not use a script callback to function.
 function on_interact_smart(smart)
+	on_interact("levels", level.name())
 	on_interact("smarts", smart:name())
 end
 
