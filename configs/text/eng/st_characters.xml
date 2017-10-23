@@ -621,6 +621,9 @@
 	<string id="bar_beast_name">
 		<text>Beast</text>
 	</string>
+	<string id="bar_swede_name">
+		<text>Swede</text>
+	</string>
 	<string id="yan_ghost_name">
 		<text>Ghost</text>
 	</string>
