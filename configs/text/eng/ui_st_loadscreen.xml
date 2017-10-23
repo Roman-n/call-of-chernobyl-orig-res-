@@ -10,11 +10,11 @@
 	</string>
 	
 	<string id="ls_tip_1">
-		<text>Rank has eight different levels starting at 'Rookie' and finishing at 'Legend'. It can be increased through almost any in-game activity, and certain features may require reaching a high rank before they can be used.</text>
+		<text>Rank has eight different levels and can be increased through almost any in-game activity. Certain features may require reaching a high rank before they can be used.</text>
 	</string>
 	
 	<string id="ls_tip_2">
-		<text>Achievements can be unlocked through certain in-game accomplishments or by reaching statistical milestones. Every achievement is unlocked with an appropriate reward which can be viewed in the PDA.</text>
+		<text>Achievements can be unlocked through in-game accomplishments or by reaching statistical milestones. Every achievement is unlocked with an appropriate reward.</text>
 	</string>
 	
 	<string id="ls_tip_3">
@@ -22,7 +22,7 @@
 	</string>
 	
 	<string id="ls_tip_4">
-		<text>Sleep deprivation is an optional feature where the passage of time and using consumables will gradually drain the player - eventually requiring them to rest when prompted. Failing to do so may have dire consequences.</text>
+		<text>Sleep deprivation is an optional feature where the passage of time and usage of consumables will gradually drain your character, eventually requiring you to rest. Failing to do so may have dire consequences.</text>
 	</string>
 	
 	<string id="ls_tip_5">
@@ -30,7 +30,7 @@
 	</string>
 	
 	<string id="ls_tip_6">
-		<text>Ironman mode gives a true sense of mortality. When the player is killed all saves for that specific character are deleted and can never be restored. Pick your faction and starting location wisely.</text>
+		<text>Ironman mode gives a true sense of mortality. When your character is killed all saves for that specific playthrough are deleted and can never be restored. Pick your faction and starting location wisely.</text>
 	</string>
 	
 	<string id="ls_tip_7">
@@ -38,7 +38,7 @@
 	</string>
 	
 	<string id="ls_tip_8">
-		<text>Backpacks can be bought or found and then used to create a custom stash. Stashes created by the player are never de-spawned nor are they ever looted by other stalkers. They are permanent until all items are removed.</text>
+		<text>Backpacks can be bought or found and then used to create a custom stash. Stashes created by your character are never de-spawned nor are they ever looted by other stalkers. They are permanent until all items are removed.</text>
 	</string>
 	
 	<string id="ls_tip_9">
@@ -58,50 +58,47 @@
 	</string>
 	
 	<string id="ls_tip_13">
-		<text>As you achieve more in-game your rank will increase, the available ranks are as follows: 'Rookie', 'Trainee', 'Experienced', 'Professional', 'Veteran', 'Expert', 'Master' and 'Legend'.</text>
-	</string>
-	
-	<string id="ls_tip_14">
 		<text>Most tasks can be cancelled after you agree to complete them. You can do this by speaking with the stalker who gave you the task. Just remember that cancelling a task will decrease your reputation and goodwill.</text>
 	</string>
 	
+	<string id="ls_tip_14">
+		<text>Reputation represents how a stalker interacts with others in the Zone. It is gained and lost by helping or harming non-hostile stalkers respectively.</text>
+	</string>
+	
 	<string id="ls_tip_15">
-		<text>Reputation is a representation of how a stalker is viewed by their faction. It is gained and lost by helping or harming non-hostile stalkers respectively.</text>
-	</string>
-	
-	<string id="ls_tip_16">
-		<text>Reputation is dynamic and can frequently change, the available reputations are as follows: 'Terrible', 'Dreary', 'Awful', 'Bad', 'Neutral', 'Good', 'Great', 'Brilliant' and 'Excellent'.</text>
-	</string>
-	
-	<string id="ls_tip_17">
-		<text>Darkscape is a large forest between Cordon and Dark Valley. While there are few reasons to visit, it is frequently used as a hideout by loners and bandits with a bounty placed on their heads.</text>
-	</string>
-	
-	<string id="ls_tip_18">
 		<text>Remember to ask regular stalkers if they have any jobs available. Just because they aren't anybody important doesn't mean they won't be willing to pay you to do their dirty work.</text>
 	</string>
 	
-	<string id="ls_tip_19">
+	<string id="ls_tip_16">
 		<text>Rostok's arena hosts two types of competitions: the traditional fights where stalkers battle each other for cash rewards, or challenges where they attempt to kill increasingly harder mutants.</text>
 	</string>
 	
-	<string id="ls_tip_20">
-		<text>Online exclusion radius can be set via the game options and defaults to 25m. It creates a no-spawn area around the player preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
+	<string id="ls_tip_17">
+		<text>Online exclusion radius can be set via the game options and defaults to 25. It creates a no-spawn zone around your character preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
 	</string>
 	
-	<string id="ls_tip_21">
+	<string id="ls_tip_18">
 		<text>Freedom completely occupies Yanov Station in Jupiter after a mysterious stalker assisted them several years ago. Some of their well-known members have since relocated to their new northern base.</text>
 	</string>
 	
-	<string id="ls_tip_22">
+	<string id="ls_tip_19">
 		<text>The 'Completionist' achievement is received for unlocking all other available achievements. How many achievements are available to you depends on your faction and whether or not story mode is enabled.</text>
 	</string>
 	
-	<string id="ls_tip_23">
+	<string id="ls_tip_20">
 		<text>It is much easier to avoid detection when travelling during the night or through heavy rain. However, you risk encountering fierce nocturnal mutants.</text>
 	</string>
 	
-	<string id="ls_tip_24">
-		<text>You won't be able to issue orders to companions if you leave them behind. Companions in Wait or Patrol modes will not travel with you to new map locations.</text>
+	<string id="ls_tip_21">
+		<text>You won't be able to issue orders to companions if you leave them behind. Companions in Wait or Patrol modes will not travel with you when you move into a different level.</text>
 	</string>
+	
+	<string id="ls_tip_22">
+		<text>Vodka is a useful alternative to anti-radiation drugs if they are in short supply. It also weighs quite a lot and increases your hunger when used.</text>
+	</string>
+	
+	<string id="ls_tip_23">
+		<text>Not sure how to earn that achievement? Don't know what this feature does? The 'Guide' tab of your PDA has all essential articles unlocked right from the start.</text>
+	</string>
+	
 </string_table>

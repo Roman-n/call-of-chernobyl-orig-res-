@@ -8,29 +8,24 @@
 
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
-	-- Note that not all interactivity is done via callbacks.
-	-- Examples: Entering smart terrains and field-dressing (successfully) mutants.
-
-	-- Entering vehicles.
-	RegisterScriptCallback("actor_on_attach_vehicle", on_interact_vehicle)
+	-- Entering a vehicle.
+	RegisterScriptCallback("actor_on_attach_vehicle", detect_vehicle_interaction)
 	
-	-- Talking-to and looting important characters.
-	RegisterScriptCallback("actor_on_leave_dialog", on_interact_character)
-	RegisterScriptCallback("actor_menu_mode_changed", on_interact_character2)
+	-- Talking-to or looting a character.
+	RegisterScriptCallback("actor_on_leave_dialog", detect_character_interaction)
+	RegisterScriptCallback("actor_menu_mode_changed", detect_character_interaction2)
 	
-	-- Using items.
-	RegisterScriptCallback("actor_on_item_use", on_interact_item)
-	
-	-- Equipping outfits.
-	RegisterScriptCallback("actor_item_to_slot", on_interact_outfit)
+	-- Using or equipping items.
+	RegisterScriptCallback("actor_on_item_use", detect_item_interaction)
+	RegisterScriptCallback("actor_item_to_slot", detect_item_interaction)
 end
 
 -------------------------
 ----- Interactivity -----
 -------------------------
 
--- Generic method to save repeating code.
-function on_interact(key, section)
+-- Generic method to save having to repeat code.
+function create_interaction(key, section)
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local interactivity = guide.interactivity or {}
 	if (key and section and interactivity[key] and interactivity[key][section]) then
@@ -40,64 +35,49 @@ function on_interact(key, section)
 	end
 end
 
--- Characters: Talking-to.
--- Also triggers faction articles.
-function on_interact_character(character_id)
+-- Character and faction articles for closing a dialog.
+function detect_character_interaction(character_id)
 	local character = level.object_by_id(character_id)
-	local faction = character_community(character)
-	on_interact_faction(faction)
-	local section = character:section()
-	on_interact("characters", section)
+	local faction = character and character:community() or nil
+	local section = character and character:section() or nil
+	create_interaction("factions", faction)
+	create_interaction("characters", section)
 end
 
--- Characters: Looting.
--- Also triggers faction articles.
-function on_interact_character2(mode, last_mode)
+-- Character and faction articles for looting a dead stalker.
+function detect_character_interaction2(mode, last_mode)
 	if (last_mode ~= 4) then 
 		return 
 	end
 	local character = ActorMenu.get_actor_menu():GetPartner()
-	if (not character or character:alive()) then
-		return
-	end
-	local faction = character_community(character)
-	on_interact_faction(faction)
-	local section = character:section()
-	on_interact("characters", section)
+	if (not character or character:alive()) then return end
+	local faction = character and character:community() or nil
+	local section = character and character:section() or nil
+	create_interaction("factions", faction)
+	create_interaction("characters", section)
 end
 
--- Factions: Multi-purpose.
-function on_interact_faction(faction)
-	on_interact("factions", faction)
+-- Item articles for using or moving to slot.
+function detect_item_interaction(item)
+	create_interaction("items", item:section())
 end
 
--- Items: Using.
-function on_interact_item(item)
-	on_interact("items", item:section())
+-- Mutant articles for field-dressing them.
+-- Called directly from mutant looting method.
+function detect_mutant_interaction(mutant)
+	create_interaction("mutants", mutant)
 end
 
--- Outfits: Equipping.
-function on_interact_outfit(outfit)
-	on_interact("outfits", outfit:section())
+-- Smart terrains and level articles for entering.
+-- Called directly from smart terrain update method.
+function detect_smart_interaction(smart)
+	create_interaction("levels", level.name())
+	create_interaction("smarts", smart:name())
 end
 
--- Mutants: Field-dressing.
--- Does not use a script callback to function.
-function on_interact_mutant(mutant)
-	on_interact("mutants", mutant)
-end
-
--- Smart terrains: Entering.
--- Also triggers level articles.
--- Does not use a script callback to function.
-function on_interact_smart(smart)
-	on_interact("levels", level.name())
-	on_interact("smarts", smart:name())
-end
-
--- Vehicles: Entering.
-function on_interact_vehicle(vehicle)
-	on_interact("vehicles", vehicle:section())
+-- Vehicle articles for entering.
+function detect_vehicle_interaction(vehicle)
+	create_interaction("vehicles", vehicle:section())
 end
 
 ---------------------------
@@ -202,7 +182,7 @@ function unlock_article(section)
 		return
 	end
 	
-	-- Return if the specified article is already unlocked, or doesn't exist.
+	-- Return if the specified article is already unlocked or doesn't exist.
 	if (section) then
 		if (unlocked_articles[section]) then
 			return
@@ -210,7 +190,7 @@ function unlock_article(section)
 			return
 		end
 		
-	-- Should no article be specified, select one at random to unlock.
+	-- Should no article be specified select one at random to unlock.
 	else
 		local index = 1
 		local selection = math.random(get_articles_locked_count())
@@ -232,7 +212,7 @@ function unlock_article(section)
 	guide.articles_unlocked_count = guide.articles_unlocked_count + 1
 	xr_statistic.inc_counter("guide_articles")
 	
-	-- Set the article, and retrieve the indices.
+	-- Set the article and retrieve the indices.
 	local index_a, index_c = set_article(section)
 	if not (index_a and index_c) then return end
 	

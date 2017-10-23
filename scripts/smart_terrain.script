@@ -1219,7 +1219,7 @@ function se_smart_terrain:update()
 		-- Unlock relevant article in guide and track statistic.
 		if (self.dist_to_actor <= 50) then
 			xr_statistic.smart_terrain_mark_visited(self)
-			dxr_encyclopedia.on_interact_smart(self)
+			dxr_encyclopedia.detect_smart_interaction(self)
 		end	
 		if (nearest_to_actor_smart.id) then 
 			if (nearest_to_actor_smart.id == self.id) then 

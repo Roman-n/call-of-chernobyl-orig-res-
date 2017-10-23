@@ -424,7 +424,7 @@ function loot_mutant(obj,cls,t,npc)
 	
 	-- Unlock relevant mutant article in guide.
 	if not npc then
-		dxr_encyclopedia.on_interact_mutant(clsid_to_section[cls])
+		dxr_encyclopedia.detect_mutant_interaction(clsid_to_section[cls])
 	end
 
 	local loot,sec

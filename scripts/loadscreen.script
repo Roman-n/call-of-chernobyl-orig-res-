@@ -1,4 +1,4 @@
-local tip_count = 24
+local tip_count = 23
 local tip = 1
 
 function get_tip_header(level_name)
