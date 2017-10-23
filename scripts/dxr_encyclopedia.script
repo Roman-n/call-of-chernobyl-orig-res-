@@ -38,10 +38,8 @@ end
 -- Character and faction articles for closing a dialog.
 function detect_character_interaction(character_id)
 	local character = level.object_by_id(character_id)
-	local faction = character and character:community() or nil
-	local section = character and character:section() or nil
-	create_interaction("factions", faction)
-	create_interaction("characters", section)
+	create_interaction("factions", character_community(character))
+	create_interaction("characters", character and character:section() or nil)
 end
 
 -- Character and faction articles for looting a dead stalker.
@@ -51,10 +49,8 @@ function detect_character_interaction2(mode, last_mode)
 	end
 	local character = ActorMenu.get_actor_menu():GetPartner()
 	if (not character or character:alive()) then return end
-	local faction = character and character:community() or nil
-	local section = character and character:section() or nil
-	create_interaction("factions", faction)
-	create_interaction("characters", section)
+	create_interaction("factions", character_community(character))
+	create_interaction("characters", character and character:section() or nil)
 end
 
 -- Item articles for using or moving to slot.
