@@ -348,7 +348,7 @@ end
 function try_to_open_door(npc,opened_doors)
 	local npc_position = npc:position()
 	for id,position in pairs(db.level_doors) do
-		if (db.storage[id].ph_door and npc_position:distance_to_sqr(position) <= 3) then
+		if (db.storage[id] and db.storage[id].ph_door and npc_position:distance_to_sqr(position) <= 3) then
 			local action = db.storage[id].ph_door.door_action					
 			if action.st.not_for_npc == false and action.st.closed == true then
 				action:use_callback()
@@ -362,7 +362,7 @@ function try_to_close_door(npc, doors)
 	local npc_position = npc:position()
 	local closed_doors = {}
 	for id, v in pairs(doors) do
-		if (db.storage[id].ph_door) then 
+		if (db.storage[id] and db.storage[id].ph_door) then 
 			if (npc_position:distance_to_sqr(db.level_doors[id]) > 3) then
 				local action = db.storage[id].ph_door.door_action					
 				if action.st.not_for_npc == false and action.st.closed ~= true then

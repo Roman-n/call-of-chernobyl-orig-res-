@@ -216,6 +216,10 @@ function evaluator_wounded_exist:evaluate()
 		return false
 	end
 	
+	if (npc:in_smart_cover()) then 
+		return false
+	end
+	
 	if (xr_danger.has_danger(npc)) then
 		return false
 	end
