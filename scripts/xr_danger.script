@@ -9,7 +9,7 @@ evaid = 188113
 actid = 188113
 --------------------
 --------------------
-local alife, math_random, tonumber = alife, math.random, tonumber
+local math_random = math.random
 --------------------
 
 local DangerInertion = {

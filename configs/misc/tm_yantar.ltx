@@ -16,7 +16,7 @@ on_init = %=pstor_set(yan_ecolog_semenov_task_1_tissue_need:5) =add_task_compani
 ; precondition = {=random_chance(50)} true, false
 repeat_timeout = 86400
 on_complete = %=complete_task_inc_goodwill(50:ecolog) =reward_random_money(4000:5000) =reward_stash(true) =inc_task_stage(yan_ecolog_semenov_task_1) =pstor_reset(yan_ecolog_semenov_task_1_tissue_need) =pstor_reset(yan_ecolog_semenov_task_1_tissue_count) -yan_ecolog_semenov_task_1_started -yan_ecolog_semenov_task_1_completed%
-on_fail = %=remove_task_companion(yan_ecolog_semenov_squad) =fail_task_dec_goodwill(25:ecolog)%
+on_fail = %=remove_task_companion(yan_ecolog_semenov_squad) =fail_task_dec_goodwill(50:ecolog)%
 on_cancel = %=remove_task_companion(yan_ecolog_semenov_squad)%
 condlist_0 = {!squad_exist(yan_ecolog_semenov_squad)} fail
 condlist_1 = {=check_task_stage(yan_ecolog_semenov_task_1:1)} %+yan_ecolog_semenov_task_1_completed =inc_task_stage(yan_ecolog_semenov_task_1) =remove_task_companion(yan_ecolog_semenov_squad)%
@@ -91,7 +91,7 @@ stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = yan_ecolog_kruglov_task_1_fetch_finish
-on_complete = %+yan_ecolog_kruglov_upgrade_tier_1 =complete_task_inc_goodwill(50:ecolog) =reward_item_cost_mult_and_remove(yan_ecolog_kruglov_task_1_fetch:1.0) =inc_task_stage(yan_ecolog_kruglov_task_1)%
+on_complete = %+yan_ecolog_kruglov_upgrade_tier_1 =complete_task_inc_goodwill(25:ecolog) =reward_item_cost_mult_and_remove(yan_ecolog_kruglov_task_1_fetch:1.0) =inc_task_stage(yan_ecolog_kruglov_task_1)%
 precondition = {-yan_ecolog_kruglov_upgrade_tier_1} true, false
 
 
@@ -113,7 +113,7 @@ stage_complete = 1
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = yan_ecolog_kruglov_task_2_fetch_finish
-on_complete = %+yan_ecolog_kruglov_upgrade_tier_2 =complete_task_inc_goodwill(50:ecolog) =reward_item_cost_mult_and_remove(yan_ecolog_kruglov_task_2_fetch:1.0) =inc_task_stage(yan_ecolog_kruglov_task_2)%
+on_complete = %+yan_ecolog_kruglov_upgrade_tier_2 =complete_task_inc_goodwill(25:ecolog) =reward_item_cost_mult_and_remove(yan_ecolog_kruglov_task_2_fetch:1.0) =inc_task_stage(yan_ecolog_kruglov_task_2)%
 precondition = {+yan_ecolog_kruglov_upgrade_tier_1 -yan_ecolog_kruglov_upgrade_tier_2} true, false
 
 

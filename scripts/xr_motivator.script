@@ -60,7 +60,7 @@ function motivator_binder:net_spawn(se_abstract)
 	end
 
 	local npc = self.object
-
+	
 	-- Enable if you need it, CoC doesn't have story for actor_visual and ini read from HDD not good
 	--[[
 	local visual = system_ini():r_string_ex(npc:section(),"set_visual")

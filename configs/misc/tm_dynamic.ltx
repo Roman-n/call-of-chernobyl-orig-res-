@@ -98,7 +98,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_4_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_random_item(wpn_val:1:wpn_abakan:1:wpn_groza:1:wpn_sig550:1) =complete_task_inc_goodwill(50:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
+on_complete = %=reward_random_item(wpn_val:1:wpn_abakan:1:wpn_groza:1:wpn_sig550:1) =complete_task_inc_goodwill(25:stalker) =remove_fetch_item(simulation_task_4_fetch) =reward_stash(true) =inc_task_stage(simulation_task_4)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_4)} fail
 
@@ -124,7 +124,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_5_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_item_cost_mult_and_remove(simulation_task_5_fetch:0.75) =reward_stash(true) =inc_task_stage(simulation_task_5)%
+on_complete = %=complete_task_inc_goodwill(25:stalker) =reward_item_cost_mult_and_remove(simulation_task_5_fetch:0.75) =reward_stash(true) =inc_task_stage(simulation_task_5)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_5)} fail
 
@@ -173,7 +173,7 @@ target_functor = simulation_task_target
 on_init = %=find_smart_under_faction_control_ex(simulation_task_7_id:bandit) =setup_companion_task(hostage_companion_task_1_stalker:nil:simulation_task_7_id:true:true) +hostage_companion_task_1_started%
 precondition = {=random_chance =is_faction_enemy_to_actor(bandit) -hostage_companion_task_1_started -hostage_companion_task_1_hostage_rescued =all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:bandit) !squad_exist(hostage_companion_task_1)} true, false
 repeat_timeout = 86400
-on_complete = %=reward_random_money(6000:7500) =complete_task_inc_goodwill(50:stalker) =reward_stash(true) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_7_id) =pstor_reset(simulation_task_7_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_7) =unlock_smart(simulation_task_7_id)%
+on_complete = %=reward_random_money(6000:7500) =complete_task_inc_goodwill(25:stalker) =reward_stash(true) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_7_id) =pstor_reset(simulation_task_7_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_7) =unlock_smart(simulation_task_7_id)%
 on_fail = %=unlock_smart(simulation_task_7_id) =fail_task_dec_goodwill(25:stalker) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_7_id) =pstor_reset(simulation_task_7_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 on_cancel = %=unlock_smart(simulation_task_7_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_7_id) =pstor_reset(simulation_task_7_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 condlist_0 = {!squad_exist(hostage_companion_task_1)} fail
@@ -198,7 +198,7 @@ target_functor = simulation_task_target
 on_init = %=find_smart_under_faction_control(simulation_task_8_id:freedom:bandit) =setup_companion_task(hostage_companion_task_1_dolg:nil:simulation_task_8_id:true:true) +hostage_companion_task_1_started%
 precondition = {=random_chance =is_faction_enemy_to_actor(bandit) =is_faction_enemy_to_actor(freedom) -hostage_companion_task_1_started -hostage_companion_task_1_hostage_rescued =all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:freedom:bandit) !squad_exist(hostage_companion_task_1)} true, false
 repeat_timeout = 86400
-on_complete = %=reward_random_money(6000:7500) =unlock_smart(simulation_task_8_id) =reward_stash(true) =complete_task_inc_goodwill(50:dolg) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_8_id) =pstor_reset(simulation_task_8_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_8)%
+on_complete = %=reward_random_money(6000:7500) =unlock_smart(simulation_task_8_id) =reward_stash(true) =complete_task_inc_goodwill(25:dolg) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_8_id) =pstor_reset(simulation_task_8_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_8)%
 on_fail = %=unlock_smart(simulation_task_8_id) =fail_task_dec_goodwill(25:dolg) =pstor_reset(simulation_task_8_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_8_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 on_cancel = %=unlock_smart(simulation_task_8_id) =pstor_reset(simulation_task_8_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_8_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 condlist_0 = {!squad_exist(hostage_companion_task_1)} fail
@@ -223,7 +223,7 @@ target_functor = simulation_task_target
 on_init = %=find_smart_under_faction_control(simulation_task_9_id:army:monolith) =setup_companion_task(hostage_companion_task_1_freedom:nil:simulation_task_9_id:true:true) +hostage_companion_task_1_started%
 precondition = {=random_chance =is_faction_enemy_to_actor(monolith) =is_faction_enemy_to_actor(army) -hostage_companion_task_1_started -hostage_companion_task_1_hostage_rescued =all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:army:monolith) !squad_exist(hostage_companion_task_1)} true, false
 repeat_timeout = 86400
-on_complete = %=reward_random_money(6000:7500) =unlock_smart(simulation_task_9_id) =reward_stash(true) =complete_task_inc_goodwill(50:freedom) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_9_id) =pstor_reset(simulation_task_9_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_9)%
+on_complete = %=reward_random_money(6000:7500) =unlock_smart(simulation_task_9_id) =reward_stash(true) =complete_task_inc_goodwill(25:freedom) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_9_id) =pstor_reset(simulation_task_9_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_9)%
 on_fail = %=unlock_smart(simulation_task_9_id) =fail_task_dec_goodwill(25:freedom) =pstor_reset(simulation_task_9_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_9_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 on_cancel = %=unlock_smart(simulation_task_9_id) =pstor_reset(simulation_task_9_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_9_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 condlist_0 = {!squad_exist(hostage_companion_task_1)} fail
@@ -248,7 +248,7 @@ target_functor = simulation_task_target
 on_init = %=find_smart_under_faction_control_ex(simulation_task_10_id:bandit) =setup_companion_task(hostage_companion_task_1_ecolog:nil:simulation_task_10_id:true:true) +hostage_companion_task_1_started%
 precondition = {=random_chance =is_faction_enemy_to_actor(bandit) -hostage_companion_task_1_started -hostage_companion_task_1_hostage_rescued =all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:bandit) !squad_exist(hostage_companion_task_1)} true, false
 repeat_timeout = 86400
-on_complete = %=reward_random_item(af_soul:1:af_gravi:1:af_fuzz_kolobok:1:af_electra_moonlight:1:af_fireball:1:af_rusty_kristall:1:af_ameba_slug:1) =complete_task_inc_goodwill(50:ecolog) =reward_stash(true) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_10) =unlock_smart(simulation_task_10_id)%
+on_complete = %=reward_random_item(af_soul:1:af_gravi:1:af_fuzz_kolobok:1:af_electra_moonlight:1:af_fireball:1:af_rusty_kristall:1:af_ameba_slug:1) =complete_task_inc_goodwill(25:ecolog) =reward_stash(true) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started =inc_task_stage(simulation_task_10) =unlock_smart(simulation_task_10_id)%
 on_fail = %=unlock_smart(simulation_task_10_id) =fail_task_dec_goodwill(25:ecolog) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 on_cancel = %=unlock_smart(simulation_task_10_id) =remove_special_task_squad(hostage_companion_task_1) =pstor_reset(simulation_task_10_id) =pstor_reset(simulation_task_10_target_id) -hostage_companion_task_1_hostage_rescued -hostage_companion_task_1_started%
 condlist_0 = {!squad_exist(hostage_companion_task_1)} fail
@@ -272,7 +272,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_11:killer:army:bandit)%
-on_complete = %=reward_random_money(5000:6500) =reward_stash(true) =inc_task_stage(simulation_task_11) =complete_task_inc_goodwill(50:stalker)%
+on_complete = %=reward_random_money(5000:6500) =reward_stash(true) =inc_task_stage(simulation_task_11) =complete_task_inc_goodwill(25:stalker)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_11)} fail
 
@@ -295,7 +295,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_12:bandit)%
-on_complete = %=reward_random_item(wpn_ak74:1:wpn_lr300:1:wpn_wincheaster1300:1) =reward_random_item(vodka:1) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(50:stalker)%
+on_complete = %=reward_random_item(wpn_ak74:1:wpn_lr300:1:wpn_wincheaster1300:1) =reward_random_item(vodka:1) =inc_task_stage(simulation_task_12) =reward_stash(true) =complete_task_inc_goodwill(25:stalker)%
 on_fail = %=fail_task_dec_goodwill(25:stalker)%
 condlist_0 = {!task_giver_alive(simulation_task_12)} fail
 
@@ -375,7 +375,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_15_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=reward_random_item(wpn_abakan:1:wpn_ak74:1:wpn_val:1:wpn_groza:1) =complete_task_inc_goodwill(50:army) =remove_fetch_item(simulation_task_15_fetch) =reward_stash(true) =inc_task_stage(simulation_task_15)%
+on_complete = %=reward_random_item(wpn_abakan:1:wpn_ak74:1:wpn_val:1:wpn_groza:1) =complete_task_inc_goodwill(25:army) =remove_fetch_item(simulation_task_15_fetch) =reward_stash(true) =inc_task_stage(simulation_task_15)%
 on_fail = %=fail_task_dec_goodwill(25:army)%
 condlist_0 = {!task_giver_alive(simulation_task_15)} fail
 
@@ -401,7 +401,7 @@ target_functor = general_fetch_task
 task_complete_descr = simulation_task_16_fetch_finish
 precondition = true
 repeat_timeout = 86400
-on_complete = %=complete_task_inc_goodwill(50:bandit) =reward_item_cost_mult_and_remove(simulation_task_16_fetch:0.75) =reward_stash(true) =inc_task_stage(simulation_task_16)%
+on_complete = %=complete_task_inc_goodwill(25:bandit) =reward_item_cost_mult_and_remove(simulation_task_16_fetch:0.75) =reward_stash(true) =inc_task_stage(simulation_task_16)%
 on_fail = %=fail_task_dec_goodwill(25:bandit)%
 condlist_0 = {!task_giver_alive(simulation_task_16)} fail
 
@@ -424,7 +424,7 @@ status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
 on_job_descr = %=on_init_bounty_hunt(simulation_task_17:bandit:freedom:csky)%
-on_complete = %=reward_random_item(wpn_ak74:1:wpn_abakan:1:wpn_groza:1:wpn_val:1) =reward_stash(true) =inc_task_stage(simulation_task_17) =complete_task_inc_goodwill(50:army)%
+on_complete = %=reward_random_item(wpn_ak74:1:wpn_abakan:1:wpn_groza:1:wpn_val:1) =reward_stash(true) =inc_task_stage(simulation_task_17) =complete_task_inc_goodwill(25:army)%
 on_fail = %=fail_task_dec_goodwill(25:army)%
 condlist_0 = {!task_giver_alive(simulation_task_17)} fail
 
