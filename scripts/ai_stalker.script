@@ -414,6 +414,14 @@ function evaluate_cover_point(npc,point)
 	local lvid = point:level_vertex_id()
 	local id = npc:id()
 	
+	if (point:is_smart_cover()) then
+		-- exclude shotguns
+		local wpn = npc:active_item()
+		if (wpn and IsShotgun(wpn)) then 
+			return false
+		end
+	end
+	
 	-- check if already taken
 	if (npc_id_by_cover_lvid[lvid] and npc_id_by_cover_lvid[lvid] ~= id) then 
 		return false
