@@ -405,3 +405,32 @@ function CSE_ALifeObject_spawn_supplies(se_obj,id,ini_string)
 	end
 	return true
 end
+
+-- called from engine
+-- hack to prevent stalkers from sharing the same cover location
+cover_lvid_by_npc_id = {}
+npc_id_by_cover_lvid = {}
+function evaluate_cover_point(npc,point)
+	local lvid = point:level_vertex_id()
+	local id = npc:id()
+	
+	-- check if already taken
+	if (npc_id_by_cover_lvid[lvid] and npc_id_by_cover_lvid[lvid] ~= id) then 
+		return false
+	end
+	
+	clear_cover(id)
+	
+	npc_id_by_cover_lvid[lvid] = id
+	cover_lvid_by_npc_id[id] = lvid
+	
+	return true
+end
+
+function clear_cover(id)
+	if (cover_lvid_by_npc_id[id]) then
+		npc_id_by_cover_lvid[ cover_lvid_by_npc_id[id] ] = nil
+		cover_lvid_by_npc_id[id] = nil
+	end
+end
+

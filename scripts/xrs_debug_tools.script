@@ -19,9 +19,9 @@ by Alundaio
 ---------------------------------------------------------------------------------------------------------
 
 local toggle_hud_list = 	{
-							["top"]  = { "actor_condition_hud", "current_test_hud","actor_inside_zone_hud","feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
+							["right"]  = { "actor_condition_hud", "current_test_hud","actor_inside_zone_hud","feel_touch_hud", "task_hud","squad_info_hud","stalker_info_hud","stalker_data_hud","position_other_hud"},
 							["left"] = { "team_squad_group_hud","surge_hud","arena_hud","actor_feel_touch_hud", "enemy_hud", "trader_hud", "monster_hud", "weapon_hud", "anim_hud", "behavior_hud"},
-							["right"] = { "actor_slot_hud","stalker_condition_hud","space_restrictor_hud","npc_memory_hud","npc_info_hud", "actor_info_hud", "planner_hud", "gulag_info_hud", "heli_hud", "wounded_hud","corpse_hud", "position_hud"}
+							["top"] = { "actor_slot_hud","stalker_condition_hud","space_restrictor_hud","npc_memory_hud","npc_info_hud", "actor_info_hud", "planner_hud", "gulag_info_hud", "heli_hud", "wounded_hud","corpse_hud", "position_hud"}
 							}
 --------------------------------------------------------------------------------------------------
 
@@ -166,6 +166,7 @@ function activate_feature()
 	actions_by_stalker_ids[3865] = "action_walker"
 	actions_by_stalker_ids[453] = "action_animpoint"
 	actions_by_stalker_ids[454] = "action_reach_animpoint"
+	actions_by_stalker_ids[stalker_ids.action_in_smart_cover] = "action_in_smart_cover"
 	actions_by_stalker_ids[xr_actions_id.stohe_camper_base + 1] = "camper_patrol"
 	actions_by_stalker_ids[xr_actions_id.sidor_act_patrol + 1] = "action_commander"
 	--alundaio schemes

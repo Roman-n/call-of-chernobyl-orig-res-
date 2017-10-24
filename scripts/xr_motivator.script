@@ -231,6 +231,8 @@ function motivator_binder:net_destroy()
 		db.actor:stop_talk()
 		self.object:stop_talk()
 	end
+	
+	ai_stalker.clear_cover(self.object:id())
 
 	if (self.st) then
 		if (self.st.active_scheme) then
@@ -323,6 +325,8 @@ function motivator_binder:death_callback(victim, who)
 		--alun_utils.debug_write(strformat("END motivator_binder:death_callback %s",victim and victim:name()))
 		return 
 	end
+	
+	ai_stalker.clear_cover(self.object:id())
 	
 	if (victim:has_info("npcx_is_companion")) then 
 		xr_statistic.inc_counter("killed_companions") -- lose rep for companion death, nobody would want to hang out with a loser!

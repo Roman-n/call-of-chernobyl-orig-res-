@@ -3,7 +3,7 @@
 -- Edited by Alundaio
 --'******************************************************
 -------------------
-local level,alife,game_graph,math,pairs,tostring,tonumber,tsort,tinsert = level,alife,game_graph,math,pairs,tostring,tonumber,table.sort,table.insert
+local tsort,tinsert = table.sort,table.insert
 -------------------
 -----------------------------------------------------------------------------------
 --						Public
