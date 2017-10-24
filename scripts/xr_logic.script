@@ -909,7 +909,10 @@ end
 
 function mob_capture(mob, reset_actions)
 	if reset_actions then
-		reset_action(mob, script_name())
+		if mob:get_script() then
+			mob:script(false, script_name())
+		end
+		mob:script(true,script_name())
 	else
 		printf("mob_capture: reset_actions parameter's value is not specified")
 		if not mob:get_script() then

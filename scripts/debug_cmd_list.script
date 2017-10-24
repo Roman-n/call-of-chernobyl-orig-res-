@@ -2200,3 +2200,19 @@ function cmd.debug_visuals(me,txt,owner,p)
 	end
 	return "debug_visuals:= type debug_visuals help for a list of subcommands."
 end
+
+function cmd.gulag(me,txt,owner,p)
+	local wrd,rest = check_and_set_help(me,txt,owner,"[export]")
+	if (wrd) then
+		if (wrd  == "export") then 
+			local sim = alife()
+			for id=1,65534 do 
+				local se_obj = sim:object(id)
+				if (se_obj and se_obj:clsid() == clsid.smart_terrain) then 
+					gulag_general.load_job(se_obj,true)
+				end
+			end
+		end
+	end
+	return "gulag:= type gulag help for a list of subcommands."
+end

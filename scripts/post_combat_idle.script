@@ -165,7 +165,7 @@ function action_post_combat_wait:execute()
 	state = anims[math.random(#anims)]
 	self.st.animation:set_state(state)
 	self.st.animation:set_control()
-	
+		
 	local dir = npc:direction()
 	npc:set_sight(look.direction,vector():set(-dir.x,-dir.y,-dir.z))
 
