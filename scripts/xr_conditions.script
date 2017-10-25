@@ -279,6 +279,7 @@ function is_enemy_actor(enemy, npc)
 end
 
 function is_enemy_actor_or_companion(enemy,npc)
+	local id = enemy:id()
 	return id == 0 or alife():has_info(id,"npcx_is_companion")
 end
 
