@@ -1186,10 +1186,12 @@ function npc_memory_hud_show(hud)
 		hud:add_msg("","-------Visual-------")
 		for o in near:memory_visible_objects() do
 			local obj = o:object()
-			hud:add_msg("",obj and obj:name())
+			if (obj) then
+				hud:add_msg("",obj:name() .. " | " .. near:memory_time(obj))
+			end
 		end
 		hud:add_msg("","-------Sound-------")
-		for o in near:memory_visible_objects() do
+		for o in near:memory_sound_objects() do
 			local obj = o:object()
 			hud:add_msg("",obj and obj:name())
 		end

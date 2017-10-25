@@ -279,20 +279,7 @@ function is_enemy_actor(enemy, npc)
 end
 
 function is_enemy_actor_or_companion(enemy,npc)
-	if (IsMonster(enemy)) then 
-		return false 
-	end
-	if not (npc:relation(enemy) >= game_object.enemy) then
-		return false
-	end
-	local id = enemy:id()
-	if (id == 0) then 
-		return true 
-	end 
-	if (alife():has_info(id,"npcx_is_companion")) then
-		return true 
-	end
-	return false
+	return id == 0 or alife():has_info(id,"npcx_is_companion")
 end
 
 -- current enemy at a distance greater than or equal to the specified Distance
