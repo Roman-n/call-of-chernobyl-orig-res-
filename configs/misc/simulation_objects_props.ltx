@@ -1562,22 +1562,32 @@ sim_avail = false
 sim_avail = false
 
 ;technical, but with sim available, surge too
-[zat_b33]:default_lair
-sim_avail =  false
+[zat_b33]:default_territory
+surge = 1
+sim_avail = true
 
 [zat_a23_smart_terrain]:default_territory
 sim_avail = false
 
 ;surge
-[zat_b7]:default_territory
+[zat_b7]:default_base
 surge = 1
-sim_avail = true
+sim_avail = {!squad_exist(zat_b7_stalkers_victims_1)} true, false
 ;sim_avail = {+zat_b7_task_end} true, false
+stalker = 1
+bandit = 1
+killer = 1
+csky = 1
+ecolog = 1
 
-[zat_b40_smart_terrain]:default_territory
+[zat_b40_smart_terrain]:default_base
 surge = 1
 sim_avail = true
 ;sim_avail = {+zat_b40_actor_has_notebook} true, false 
+killer = 1
+stalker = 1
+ecolog = 1
+csky = 1
 
 [zat_b28]:default_lair
 surge = 1
@@ -1590,10 +1600,11 @@ territory 	= 1
 sim_avail = true
 ;sim_avail = {+zat_b42_controller_dead} true, false 
 
-[zat_b18]:default_territory
+[zat_b18]:default_base
 surge = 1
 sim_avail = true
 ;sim_avail = {+zat_b18_noah_dead} true, false
+stalker = 1
 
 [zat_b101]:default_resource
 surge = 1
@@ -1681,113 +1692,86 @@ sim_avail = true
 
 ;---------	SIMULATION	--------
 
-[zat_sim_1]:default_lair
-territory 	= 1
+[zat_sim_1]:default_territory
 sim_avail =  true
 
 [zat_sim_2]:default_territory
-territory 	= 1
 sim_avail =  true
 
-[zat_sim_3]:default_lair
-territory 	= 1
+[zat_sim_3]:default_territory
 sim_avail =  true
 
-[zat_sim_4]:default_lair
-territory 	= 1
+[zat_sim_4]:default_territory
 sim_avail =  true
 
-[zat_sim_5]:default_lair
-territory 	= 1
+[zat_sim_5]:default_territory
 sim_avail =  true
 
 [zat_sim_6]:default_territory
-territory 	= 1
 sim_avail =  true
 
-[zat_sim_7]:default_lair
-territory 	= 1
+[zat_sim_7]:default_territory
 sim_avail = true
 ;sim_avail =  {+zat_b38_disappearance_stalkers_find_to_be_missing_hunter_give -zat_b38_cop_passed_away} false, true
 
-[zat_sim_8]:default_lair
-territory 	= 1
+[zat_sim_8]:default_territory
 sim_avail =  true
 
-[zat_sim_9]:default_lair
-territory 	= 1
+[zat_sim_9]:default_territory
 sim_avail =  true
 
-[zat_sim_10]:default_lair
-territory 	= 1
+[zat_sim_10]:default_territory
 sim_avail =  true
 
 [zat_sim_11]:default_territory
-territory 	= 1
 sim_avail =  true
 
 [zat_sim_12]:default_territory
-territory 	= 1
 sim_avail =  true
 
 [zat_sim_13]:default_territory
-territory 	= 1
 sim_avail =  true
 
-[zat_sim_14]:default_lair
-territory 	= 1
+[zat_sim_14]:default_territory
 sim_avail =  true
 
-[zat_sim_15]:default_lair
-territory 	= 1
+[zat_sim_15]:default_territory
 sim_avail =  true
 
-[zat_sim_16]:default_lair
-territory 	= 1
+[zat_sim_16]:default_territory
 sim_avail =  true
 
-[zat_sim_17]:default_lair
-territory 	= 1
+[zat_sim_17]:default_territory
 sim_avail =  true
 
-[zat_sim_18]:default_lair
-territory 	= 1
+[zat_sim_18]:default_territory
 sim_avail =  true
 
 [zat_sim_19]:default_territory
-territory 	= 1
 sim_avail =  true
 
-[zat_sim_20]:default_lair
-territory 	= 1
+[zat_sim_20]:default_territory
 sim_avail =  true
 
-[zat_sim_21]:default_lair
-territory 	= 1
+[zat_sim_21]:default_territory
 sim_avail =  true
 
-[zat_sim_22]:default_lair
-territory 	= 1
+[zat_sim_22]:default_territory
 sim_avail =  true
 
-[zat_sim_23]:default_lair
-territory 	= 1
+[zat_sim_23]:default_territory
 sim_avail =  true
 
-[zat_sim_24]:default_lair
-territory 	= 1
+[zat_sim_24]:default_territory
 sim_avail =  true
 
-[zat_sim_25]:default_lair
-territory 	= 1
+[zat_sim_25]:default_territory
 sim_avail =  true
 
-[zat_sim_26]:default_lair
-territory 	= 1
+[zat_sim_26]:default_territory
 sim_avail =  true
 
 [zat_sim_27]:default_territory
-territory 	= 1
 sim_avail =  true
 
 [zat_sim_28]:default_territory
@@ -1927,68 +1911,68 @@ sim_avail =  false
 
 ;---------	SIMULATION	--------
 
-[jup_sim_1]:default_lair
+[jup_sim_1]:default_territory
 sim_avail =  true
 
-[jup_sim_2]:default_lair
+[jup_sim_2]:default_territory
 sim_avail =  true
 
-[jup_sim_3]:default_lair
+[jup_sim_3]:default_territory
 sim_avail =  true
 
-[jup_sim_4]:default_lair
+[jup_sim_4]:default_territory
 sim_avail =  true
 
-[jup_sim_5]:default_lair
+[jup_sim_5]:default_territory
 sim_avail =  true
 
 [jup_sim_6]:default_territory
 sim_avail =  true
 
-[jup_sim_7]:default_lair
+[jup_sim_7]:default_territory
 sim_avail =  true
 
-[jup_sim_8]:default_lair
+[jup_sim_8]:default_territory
 sim_avail =  true
 
-[jup_sim_9]:default_lair
+[jup_sim_9]:default_territory
 sim_avail =  true
 
-[jup_sim_10]:default_lair
+[jup_sim_10]:default_territory
 sim_avail =  true
 
-[jup_sim_11]:default_lair
+[jup_sim_11]:default_territory
 sim_avail =  true
 
-[jup_sim_12]:default_lair
+[jup_sim_12]:default_territory
 sim_avail =  true
 
-[jup_sim_13]:default_lair
+[jup_sim_13]:default_territory
 sim_avail =  true
 
-[jup_sim_14]:default_lair
+[jup_sim_14]:default_territory
 sim_avail =  true
 
-[jup_sim_15]:default_lair
+[jup_sim_15]:default_territory
 sim_avail =  true
 
-[jup_sim_16]:default_lair
+[jup_sim_16]:default_territory
 sim_avail =  true
 
-[jup_sim_17]:default_lair
+[jup_sim_17]:default_territory
 sim_avail =  true
 resource 	= 2
 
-[jup_sim_18]:default_lair
+[jup_sim_18]:default_territory
 sim_avail =  true
 
-[jup_sim_19]:default_lair
+[jup_sim_19]:default_territory
 sim_avail =  true
 
-[jup_sim_20]:default_lair
+[jup_sim_20]:default_territory
 sim_avail =  true
 
-[jup_sim_21]:default_lair
+[jup_sim_21]:default_territory
 sim_avail =  true
 ; ---------------------------  Pripyat  ------------------------------------
 ; --------------------------------------------------------------------------
@@ -2055,42 +2039,41 @@ surge 		= 1
 zombied 	= 1
 monolith	= 1 
 
-[pri_sim_1]:default_lair
+[pri_sim_1]:default_territory
 sim_avail = true
 surge = 1
-all   = 1
 
-[pri_sim_2]:default_lair
+[pri_sim_2]:default_territory
 sim_avail = true
 
-[pri_sim_3]:default_lair
+[pri_sim_3]:default_territory
 sim_avail = true
 
-[pri_sim_4]:default_lair
+[pri_sim_4]:default_territory
 sim_avail = true
 
-[pri_sim_5]:default_lair
+[pri_sim_5]:default_territory
 sim_avail = true
 
-[pri_sim_6]:default_lair
+[pri_sim_6]:default_territory
 sim_avail = true
 
-[pri_sim_7]:default_lair
+[pri_sim_7]:default_territory
 sim_avail = true
 
-[pri_sim_8]:default_lair
+[pri_sim_8]:default_territory
 sim_avail = true
 
-[pri_sim_9]:default_lair
+[pri_sim_9]:default_territory
 sim_avail = true
 
-[pri_sim_10]:default_lair
+[pri_sim_10]:default_territory
 sim_avail = true
 
-[pri_sim_11]:default_lair
+[pri_sim_11]:default_territory
 sim_avail = true
 
-[pri_sim_12]:default_lair
+[pri_sim_12]:default_territory
 sim_avail = true
 
 [pri_b35_military]:default_territory
