@@ -38,11 +38,35 @@ fetch_descr = yan_stalker_sakharov_task_1_fetch_about
 fetch_func = %=setup_rare_mutant_fetch_task(yan_stalker_sakharov_task_1_fetch)%
 stage_complete = 1
 ; precondition = {=random_chance(50)} true, false
-repeat_timeout = 172800
+repeat_timeout = 86400
 status_functor = actor_has_fetch_item
 target_functor = general_fetch_task
 task_complete_descr = yan_stalker_sakharov_task_1_fetch_finish
 on_complete = %=complete_task_inc_goodwill(50:ecolog) =reward_stash(true) =reward_item_cost_mult_and_remove(yan_stalker_sakharov_task_1_fetch:3) =inc_task_stage(yan_stalker_sakharov_task_1)%
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR ECOLOGS TASK-
+
+[yan_stalker_sakharov_task_2]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 5
+storyline = false
+title = jup_b6_scientist_tech_task_2_name
+title_functor = general_fetch_task
+descr = yan_stalker_sakharov_task_2_text
+descr_functor = general_fetch_task
+job_descr = jup_b6_scientist_tech_task_2_about
+fetch_descr = jup_b6_scientist_tech_task_2_fetch_about
+fetch_func = %=setup_artefact_fetch_task(yan_stalker_sakharov_task_2_fetch)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = jup_b6_scientist_tech_task_2_fetch_finish
+; precondition = true
+repeat_timeout = 172800
+on_complete = %=complete_task_inc_goodwill(50:ecolog) =reward_item_cost_mult_and_remove(yan_stalker_sakharov_task_2_fetch:0.7) =inc_task_stage(yan_stalker_sakharov_task_2)%
+on_fail = %=fail_task_dec_goodwill(50:ecolog)%
 
 
 ;--------------------------------------------------------------------------------------------------

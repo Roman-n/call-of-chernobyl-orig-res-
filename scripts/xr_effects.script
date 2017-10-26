@@ -203,7 +203,7 @@ function reward_money(actor,npc,p)
 end
 
 function reward_stash(actor,npc,p)
-	if (p and p[1] ~= "true") or ((math.random(1,100)/100) <= 0.5) then
+	if (p and p[1] ~= "true") or ((math.random(1,100)/100) <= 0.75) then
 		local bonus = {}
 
 		for i=2,#p do
@@ -211,7 +211,7 @@ function reward_stash(actor,npc,p)
 		end
 
 		if ((math.random(1,100)/100) <= 0.30) then
-			local t = {"itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_2","itm_repairkit_tier_2","itm_repairkit_tier_3"}
+			local t = {"itm_repairkit_tier_1","itm_repairkit_tier_1","itm_repairkit_tier_2","itm_repairkit_tier_2","itm_repairkit_tier_3"}
 			table.insert(bonus,t[math.random(#t)])
 		end
 		
