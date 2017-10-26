@@ -33,9 +33,7 @@ function sim_squad_scripted:__init(section) super (section)
 	self.current_target_id	= nil
 	self.assigned_target_id	= nil
 	self:init_squad()
-	--if (USE_MARSHAL) then
-	--	RegisterScriptCallback("save_state",self.save_state,self)
-	--end
+	
 	self.first_update 		= false
 end
 
@@ -179,7 +177,7 @@ local function get_help_target_id(squad)
 			return 0
 		end
 	end
-	return
+	return squad.task_target_id
 end
 
 -- This update is called for all squads with a scripted smart_terrain target
@@ -201,6 +199,12 @@ function sim_squad_scripted:specific_update(script_target_id)
 	end
 	
 	if (self.current_action) then
+	
+		-- in such case assigned is changed (such as get_help_target_id) but current action is 1 (reached)
+		if (self.current_action == 1 and self.assigned_target_id ~= self.current_target_id) then 
+			self.current_action = 0
+		end
+		
 		-- If current action is not finished, then return
 		if (self.current_action == 0) then
 			-- if not (self.online) then
@@ -244,8 +248,14 @@ function sim_squad_scripted:generic_update()
 	end 
 	
 	self.assigned_target_id = get_help_target_id(self) or self.assigned_target_id or self.current_target_id
-	
+
 	if (self.current_action) then
+		
+		-- in such case assigned is changed (such as get_help_target_id) but current action is 1 (reached)
+		if (self.current_action == 1 and self.assigned_target_id ~= self.current_target_id) then 
+			self.current_action = 0
+		end
+	
 		local se_target = simulation_objects.get_server_entity(self.assigned_target_id)
 		-- Evaluate current assigned target; make sure it is still valid
 		if (se_target and se_target:target_precondition(self,true)) then
@@ -281,7 +291,7 @@ function sim_squad_scripted:generic_update()
 		self.assigned_target_id = nil
 		self.current_target_id = nil
 		self.current_action = nil
-		self.__lock = true
+		self.__lock = db.actor.afterFirstUpdate -- keep trying until first update
 		return 
 	end
 
@@ -777,12 +787,21 @@ end
 --***********************************************************************************************
 --*										SAVE\LOAD												*
 --***********************************************************************************************
---[[
+
 function sim_squad_scripted:save_state(m_data)
 	--alun_utils.debug_write(strformat("%s:%s sim_squad_scripted:save_state BEFORE",self:name(),self.id))
+	if (self:npc_count() == 0) then 
+		return
+	end
+	if not (m_data.sim_squad_scripted) then 
+		m_data.sim_squad_scripted = {}
+	end
 	m_data.sim_squad_scripted[self.id] = {}
 	m_data.sim_squad_scripted[self.id].name = self:name() -- debugging only
 	m_data.sim_squad_scripted[self.id].current_target_id = self.current_target_id
+	m_data.sim_squad_scripted[self.id].assigned_target_id = self.assigned_target_id
+	m_data.sim_squad_scripted[self.id].task_target_id = self.task_target_id
+	m_data.sim_squad_scripted[self.id].current_action = self.current_action
 	m_data.sim_squad_scripted[self.id].respawn_point_id = self.respawn_point_id
 	m_data.sim_squad_scripted[self.id].respawn_point_prop_section = self.respawn_point_prop_section
 	m_data.sim_squad_scripted[self.id].smart_id = self.smart_id
@@ -793,23 +812,29 @@ function sim_squad_scripted:load_state(m_data)
 	if not (m_data.sim_squad_scripted and m_data.sim_squad_scripted[self.id]) then 
 		return 
 	end
+	if (self:npc_count() == 0) then
+		return
+	end
 	--alun_utils.debug_write("sim_squad_scripted:load_state BEFORE")
 	self.current_target_id = m_data.sim_squad_scripted[self.id].current_target_id
+	self.assigned_target_id = m_data.sim_squad_scripted[self.id].assigned_target_id
+	self.task_target_id = m_data.sim_squad_scripted[self.id].task_target_id
+	self.current_action = m_data.sim_squad_scripted[self.id].current_action
 	self.respawn_point_id = m_data.sim_squad_scripted[self.id].respawn_point_id
 	self.respawn_point_prop_section = m_data.sim_squad_scripted[self.id].respawn_point_prop_section
 	self.smart_id = m_data.sim_squad_scripted[self.id].smart_id
 	m_data.sim_squad_scripted[self.id] = nil
 	--alun_utils.debug_write("sim_squad_scripted:load_state AFTER")
 end 
---]]
 
 function sim_squad_scripted:STATE_Write(packet)
 	--alun_utils.debug_write("sim_squad_scripted:STATE_Write")
 	cse_alife_online_offline_group.STATE_Write (self, packet)
 	
-	--if (USE_MARSHAL) then 
-		--return 
-	--end
+	if (USE_MARSHAL) then
+		self:save_state(alife_storage_manager.get_state())
+		return 
+	end
 	
 	set_save_marker(packet, "save", false, "sim_squad_scripted")
 
@@ -825,11 +850,11 @@ function sim_squad_scripted:STATE_Read(packet, size)
 	--alun_utils.debug_write( strformat("\n%s:STATE_Read start",self:name()) )
 	cse_alife_online_offline_group.STATE_Read (self, packet, size)
 	
-	--if (USE_MARSHAL) then 
-		--self:load_state(alife_storage_manager.get_state())
-		--self:init_squad_on_load()
-		--return 
-	--end 
+	if (USE_MARSHAL) then 
+		self:load_state(alife_storage_manager.get_state())
+		self:init_squad_on_load()
+		return 
+	end 
 	
 	set_save_marker(packet, "load", false, "sim_squad_scripted")	
 
@@ -889,9 +914,7 @@ function sim_squad_scripted:on_unregister()
 			smart.already_spawned[self.respawn_point_prop_section].num = smart.already_spawned[self.respawn_point_prop_section].num - 1
 		end
 	end
-	--if (USE_MARSHAL) then 
-	--	UnregisterScriptCallback("save_state",self)
-	--end
+
 	cse_alife_online_offline_group.on_unregister(self)
 end
 
@@ -1093,14 +1116,17 @@ function sim_squad_scripted:get_squad_props()
 
 		if (self.current_action) then
 			if (self.current_action == 0) then 
-				t = t .. "Trying to Reach Target"
+				t = t .. "Trying to Reach Target\\n"
 			elseif (self.current_action == 1) then 
 				t = t .. "Stay On Target"
+				if (self.stay_time) then
+					t = strformat("%s = %s (%s)\\n",t,tostring(self.idle_time - game.get_game_time():diffSec(self.stay_time)),self.idle_time)
+				end
 			end
-			
-			if (self.current_action == 1 and self.stay_time) then
-				t = strformat("%s = %s (%s)",t,tostring(self.idle_time - game.get_game_time():diffSec(self.stay_time)),self.idle_time)
-			end
+		end
+		
+		if (self.__lock) then
+			t = t .. "[locked]" -- cannot find target
 		end
 
 		return t
