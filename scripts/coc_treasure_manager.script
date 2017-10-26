@@ -59,7 +59,8 @@ local function on_game_load()
 	
 	local ignore_list = {
 		["bar_inv_box"] = true,
-		["bar_inventory_box_2"] = true
+		["bar_inventory_box_2"] = true,
+		["val_recover_item_2_spawn"] = true
 	}
 
 	local sim = alife()
