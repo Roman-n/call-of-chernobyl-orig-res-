@@ -74,7 +74,9 @@ end
 function se_smart_terrain:on_before_register()
 	-- persistent storage
 	alife_storage_manager.get_se_obj_state(self,true)
-	
+	if (USE_MARSHAL) then
+		RegisterScriptCallback("save_state",self)
+	end
 	--alun_utils.debug_write(strformat("%s:%s:on_before_register BEFORE",self:name(),self.id))
 	cse_alife_smart_zone.on_before_register(self)
 	sim_board.get_sim_board():register_smart(self)
@@ -121,6 +123,9 @@ function se_smart_terrain:on_unregister()
 	local m_data = alife_storage_manager.get_state()
 	if (m_data.se_object) then
 		m_data.se_object[self.id] = nil
+	end
+	if (USE_MARSHAL) then 
+		UnregisterScriptCallback("save_state",self)
 	end
 	cse_alife_smart_zone.on_unregister(self)
 end
@@ -884,7 +889,6 @@ end
 function se_smart_terrain:STATE_Write(packet)
 	cse_alife_smart_zone.STATE_Write(self, packet)
 	if (USE_MARSHAL) then
-		self:save_state(alife_storage_manager.get_state())
 		return 
 	end
 	--set_save_marker(packet, "save", false, "se_smart_terrain")

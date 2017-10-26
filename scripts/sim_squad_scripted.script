@@ -33,7 +33,9 @@ function sim_squad_scripted:__init(section) super (section)
 	self.current_target_id	= nil
 	self.assigned_target_id	= nil
 	self:init_squad()
-	
+	if (USE_MARSHAL) then
+		RegisterScriptCallback("save_state", self)
+	end
 	self.first_update 		= false
 end
 
@@ -830,12 +832,9 @@ end
 function sim_squad_scripted:STATE_Write(packet)
 	--alun_utils.debug_write("sim_squad_scripted:STATE_Write")
 	cse_alife_online_offline_group.STATE_Write (self, packet)
-	
 	if (USE_MARSHAL) then
-		self:save_state(alife_storage_manager.get_state())
 		return 
 	end
-	
 	set_save_marker(packet, "save", false, "sim_squad_scripted")
 
 	packet:w_stringZ(tostring(self.current_target_id))
@@ -914,7 +913,9 @@ function sim_squad_scripted:on_unregister()
 			smart.already_spawned[self.respawn_point_prop_section].num = smart.already_spawned[self.respawn_point_prop_section].num - 1
 		end
 	end
-
+	if (USE_MARSHAL) then 
+		UnregisterScriptCallback("save_state",self)
+	end
 	cse_alife_online_offline_group.on_unregister(self)
 end
 
