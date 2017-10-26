@@ -782,7 +782,12 @@
                 <next>1112</next>
                 <next>1113</next>
             </phrase>
-            <phrase id="18">
+			<phrase id="173">
+                <text>esc_2_12_stalker_nimble_place_order_173</text>
+                <give_info>esc_2_12_finished_category_7</give_info>
+                <has_info>esc_2_12_finishing_category_7</has_info>
+            </phrase>
+			<phrase id="18">
                 <text>esc_2_12_stalker_nimble_place_order_18</text>
             </phrase>
             <phrase id="2">
@@ -792,11 +797,6 @@
             </phrase>
             <phrase id="11131">
                 <text>esc_2_12_stalker_nimble_place_order_11131</text>
-            </phrase>
-            <phrase id="173">
-                <text>esc_2_12_stalker_nimble_place_order_173</text>
-                <give_info>esc_2_12_finished_category_7</give_info>
-                <has_info>esc_2_12_finishing_category_7</has_info>
             </phrase>
         </phrase_list>
     </dialog>
@@ -845,11 +845,11 @@
     </dialog>
 	<dialog id="esc_2_12_stalker_nimble_about_quest">
 		<phrase_list>
-			<phrase id="0">
+			<phrase id="0">	
 				<precondition>dialogs_escape.actor_has_mar_base_owl_stalker_trader_task_1_pda</precondition>
 				<text>esc_2_12_stalker_nimble_mar_base_owl_stalker_trader_task_1_about</text>
 				<next>1</next>
-			</phrase>
+			</phrase> 
 		    <phrase id="1">
                 <text>esc_2_12_stalker_nimble_mar_base_owl_stalker_trader_task_1</text>
 				<action>dialogs_escape.mar_base_owl_stalker_trader_task_1_give_reward</action>
