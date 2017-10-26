@@ -461,7 +461,7 @@
 		<text>Спаун вертолёта</text>
 	</string>
 	<string id="ui_mm_ai_die_in_anomaly">
-		<text>Смерть НПС в аномалиях</text>
+		<text>НПС гибнут в аномалиях</text>
 	</string>
 	<string id="ui_mm_dynamic_news">
 		<text>Динамические новости</text>

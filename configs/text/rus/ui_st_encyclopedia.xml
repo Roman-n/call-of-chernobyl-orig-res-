@@ -19,17 +19,27 @@
 		<text>»зображение над текстом</text>
 	</string>
 	
-	<string id="pda_encyclopedia_notify">
-		<text>ƒобавлена стать€: %s</text>
+	<string id="pda_encyclopedia_message_checkbox">
+		<text>—ообщени€</text>
 	</string>
 	
-	<string id="pda_btn_encyclopedia_locked">
+	<!-- Messages -->
+	<string id="pda_encyclopedia_notify">
+		<text>ƒобавлена стать€: %s, %s</text>
+	</string>
+	
+	<!-- Locked articles -->
+	<string id="pda_encyclopedia_locked">
+		<text>??????????</text>
+	</string>
+	
+	<string id="pda_encyclopedia_locked_text">
 		<text>
 			¬ы ещЄ не разблокировали эту статью.\n
 			\n —татьи можно разблокировать следующими способами:\n
 			\nХ посеща€ новые локации;
 			\nХ загружа€ данные с найденных карт пам€ти;
-			\nХ добыва€ охотничьих трофеи;
+			\nХ добыва€ охотничьи трофеи;
 			\nХ взаимодейству€ со сталкерами;
 			\nХ использу€ снар€жение группировок.
 		</text>

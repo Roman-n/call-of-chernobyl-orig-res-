@@ -475,7 +475,7 @@
 	<text>Представитель «О-Сознания»</text> 
   </string>
     <string id="warlab_volunteer_name">
-	<text>Учёный из «О-Сознания»</text>  
+	<text>Учёный «О-Сознания»</text>  
   </string>
   <string id="sar2_clone_name">
 	<text>Галопроекция</text> 
@@ -502,19 +502,19 @@
 		<text>Прапор</text>
 	</string>
 	<string id="sar2_dolg_guard_commander_name">
-		<text>Начальник охраны</text>
+		<text>Начальник Охраны</text>
 	</string>
 	<string id="sar2_dolg_skull_name">
 		<text>Череп</text>
 	</string>
 	<string id="sar2_dolg_zastava_commander_name">
-		<text>Командир блокпоста</text>
+		<text>Командир заставы</text>
 	</string>
 	<string id="sar2_dram_novice_name">
 		<text>Юрик</text>
 	</string>
 	<string id="sar2_explorer_name">
-		<text>Жека "Дуплет"</text>
+		<text>Жека Дуплет</text>
 	</string>
 	<string id="sar2_fanat_name">
 		<text>Фанат</text>
@@ -620,6 +620,9 @@
 	</string>
 	<string id="bar_beast_name">
 		<text>Зверь</text>
+	</string>
+	<string id="bar_swede_name">
+		<text>Швед</text>
 	</string>
 	<string id="yan_ghost_name">
 		<text>Призрак</text>

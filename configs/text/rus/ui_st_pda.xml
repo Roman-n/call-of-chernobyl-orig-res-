@@ -261,6 +261,9 @@
 	<string id="st_ui_pda_secret_searched">
 		<text>Тайник (частично разграблен)</text>
 	</string>
+	<string id="st_ui_pda_secret_tourist">
+		<text>Тайник туриста</text>
+	</string>
 	<string id="st_ui_pda_sleep_place">
 		<text>Место сна</text>
 	</string>
