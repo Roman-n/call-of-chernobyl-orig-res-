@@ -883,10 +883,10 @@ end
 --*******************************************************
 function se_smart_terrain:STATE_Write(packet)
 	cse_alife_smart_zone.STATE_Write(self, packet)
-	if (USE_MARSHAL) then
-		self:save_state(alife_storage_manager.get_state())
-		return 
-	end
+	-- if (USE_MARSHAL) then
+		-- self:save_state(alife_storage_manager.get_state())
+		-- return 
+	-- end
 	--set_save_marker(packet, "save", false, "se_smart_terrain")
 
 	-- Информацию о НПС, идущих в смарт
@@ -932,10 +932,10 @@ function se_smart_terrain:STATE_Read(packet, size)
 	cse_alife_smart_zone.STATE_Read(self, packet, size)
 	self:read_params()
 	
-	if (USE_MARSHAL) then
-		self:load_state(alife_storage_manager.get_state())
-		return
-	end
+	-- if (USE_MARSHAL) then
+		-- self:load_state(alife_storage_manager.get_state())
+		-- return
+	-- end
 
 	self.need_init_npc = true
 	--set_save_marker(packet, "load", false, "se_smart_terrain")
