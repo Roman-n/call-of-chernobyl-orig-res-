@@ -891,12 +891,6 @@ end
 function sim_squad_scripted:on_register()
 	--alun_utils.debug_write( strformat("%s:on_register start",self:name()) )
 	cse_alife_online_offline_group.on_register( self )
-	
-	local m_data = alife_storage_manager.get_state()
-	if (m_data.sim_squad_scripted) then 
-		m_data.sim_squad_scripted[self.id] = nil
-	end
-	
 	story_objects.check_spawn_ini_for_story_id(self)
 	sim_board.get_sim_board().squads[self.id] = true
 	--simulation_objects.register(self)

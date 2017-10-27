@@ -245,30 +245,34 @@ function anomaly_zone_binder:spawn_artefact_randomly()
 			return
 		end
 
+		local t_layer = self.artefacts_table[layer]
+		utils.shuffle(t_layer)
+		local size = #t_layer
+		
 		local coeff_total = 0
 		for k, v in pairs(self.artefacts_coeff_table[layer]) do
 			coeff_total = coeff_total + v
 		end
 		if coeff_total == 0 then
-			for i = 1, #self.artefacts_table[layer] do
+			for i = 1, size do
 				self.artefacts_coeff_table[layer][i] = 1
 				coeff_total = coeff_total + 1
 			end
 		end
 
 		local rnd = math.random(1, coeff_total)
-		for i = 1, #self.artefacts_table[layer] do
+		for i = 1, size do
 			local chance = self.artefacts_coeff_table[layer][i]
 			if rnd <= chance then
-				rnd_artefact = self.artefacts_table[layer][i]
+				rnd_artefact = t_layer[i]
 				break
 			end
 			rnd = rnd - chance
 		end
 	end
 	
-	if not (rnd_artefact) then 
-		return 
+	if not (rnd_artefact) then
+		return
 	end
 
 	local rnd_path_name			= self:get_artefact_path()

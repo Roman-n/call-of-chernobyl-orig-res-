@@ -84,11 +84,6 @@ function se_smart_terrain:on_register()
 	cse_alife_smart_zone.on_register(self)
 	db.add_smart_terrain(self)
 
-	local m_data = alife_storage_manager.get_state()
-	if (m_data.smart_terrains) then 
-		m_data.smart_terrains[self:name()] = nil
-	end
-	
 	local sim = alife()
 	local gg = game_graph()
 	actor_level = actor_level or sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
