@@ -65,19 +65,16 @@ class "se_smart_terrain" (cse_alife_smart_zone)
 function se_smart_terrain:__init(section) super(section)
 	self.job_count = 0
 	self.npc_by_job_section = {}
-	--self.dead_time = {}
 	self.npc_info  = {}
 	self.arriving_npc  = {}
 	self.__campfire_check_time = game.get_game_time()
 	--alun_utils.debug_write(strformat("%s:%s Init",self:name(),self.id))
 end
 function se_smart_terrain:on_before_register()
-	-- persistent storage
-	alife_storage_manager.get_se_obj_state(self,true)
-	
 	--alun_utils.debug_write(strformat("%s:%s:on_before_register BEFORE",self:name(),self.id))
 	cse_alife_smart_zone.on_before_register(self)
 	sim_board.get_sim_board():register_smart(self)
+	self:read_params()
 	--alun_utils.debug_write(strformat("%s:%s:on_before_register AFTER",self:name(),self.id))
 end
 
@@ -87,6 +84,11 @@ function se_smart_terrain:on_register()
 	cse_alife_smart_zone.on_register(self)
 	db.add_smart_terrain(self)
 
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.smart_terrains) then 
+		m_data.smart_terrains[self:name()] = nil
+	end
+	
 	local sim = alife()
 	local gg = game_graph()
 	actor_level = actor_level or sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
@@ -126,7 +128,8 @@ function se_smart_terrain:on_unregister()
 end
 
 function se_smart_terrain:read_params()
-	--alun_utils.debug_write(strformat("%s:%s:se_smart_terrain:read_params BEFORE",self:name(),self.id))
+	--alun_utils.debug_write(strformat("%s:%s:se_smart_terrain:read_params BEFORE %s",self:name(),self.id,self.b_loaded))
+		
 	local spawn_ini = self:spawn_ini()
 	local filename = spawn_ini:r_string_ex(smart_sect,"cfg")
 	if not (filename) then
@@ -180,9 +183,9 @@ function se_smart_terrain:read_params()
 	if (self.faction_controlled) then
 		local spawn_num_condlist = ini:r_string_to_condlist(smart_sect,"faction_respawn_num")
 		if (spawn_num_condlist) then
-			self.respawn_params 	= {}
+			self.respawn_params 	= self.respawn_params or {}
 			
-			self.already_spawned	= {}
+			self.already_spawned	= self.already_spawned or {}
 			self.respawn_point		= true
 			local p = utils.parse_names(self.faction_controlled)
 			if (p) then
@@ -201,13 +204,11 @@ function se_smart_terrain:read_params()
 				for i,faction in pairs(p) do
 					local prop_name = "faction_controlled_"..faction
 					if (squads_by_faction[faction]) then
-						self.respawn_params[prop_name] = {}
-						self.already_spawned[prop_name]	= {}
+						self.respawn_params[prop_name] = self.respawn_params[prop_name] or {}
 						self.respawn_params[prop_name].num = spawn_num_condlist
-						self.already_spawned[prop_name].num	= 0
-						local spawn_squads = utils.parse_names(squads_by_faction[faction])
-						self.respawn_params[prop_name].squads = spawn_squads
+						self.respawn_params[prop_name].squads = utils.parse_names(squads_by_faction[faction])
 						self.respawn_params[prop_name].faction = faction
+						self.already_spawned[prop_name]	= self.already_spawned[prop_name] or { num = 0 }
 					end
 				end
 			end
@@ -231,8 +232,8 @@ function se_smart_terrain:read_params()
 		return
 	end	
 
-	self.respawn_params 	= {}
-	self.already_spawned	= {}
+	self.respawn_params 	= self.respawn_params or {}
+	self.already_spawned	= self.already_spawned or {}
 	self.respawn_point		= true
 	
 	for j=0,n-1 do
@@ -242,23 +243,11 @@ function se_smart_terrain:read_params()
 		else
 			local spawn_num_condlist = ini:r_string_to_condlist(prop_name,"spawn_num")
 			if (spawn_num_condlist) then
-				self.respawn_params[prop_name] 			= {}
-				self.already_spawned[prop_name]			= {}
-				self.respawn_params[prop_name].num		= spawn_num_condlist
-				self.already_spawned[prop_name].num	= 0
-				
-				local spawn_squads = ini:r_string_ex(prop_name,"spawn_squads")
-				local spawn_helicopter = ini:r_string_ex(prop_name,"spawn_helicopter")
-				if (spawn_helicopter) then 
-					spawn_helicopter = utils.parse_names(spawn_helicopter)
-					self.respawn_params[prop_name].helicopter = spawn_helicopter
-				elseif (spawn_squads) then
-					spawn_squads = utils.parse_names(spawn_squads)
-					self.respawn_params[prop_name].squads = spawn_squads
-				else
-					printf("ERROR: %s Wrong smart_terrain respawn_params section [%s] prop [%s] line [spawn_squads](there is no line)", self:name(), respawn_params, prop_name)
-					return
-				end
+				self.respawn_params[prop_name] = self.respawn_params[prop_name] or {}
+				self.respawn_params[prop_name].num = spawn_num_condlist
+				self.respawn_params[prop_name].squads = ini:r_list(prop_name,"spawn_squads")
+				self.respawn_params[prop_name].helicopter = ini:r_list(prop_name,"spawn_helicopter")
+				self.already_spawned[prop_name]	= self.already_spawned[prop_name] or { num = 0 }
 			end
 		end
 	end
@@ -816,13 +805,13 @@ function se_smart_terrain:switch_to_desired_job(npc)
 end
 
 function se_smart_terrain:save_state(m_data)
-	--alun_utils.debug_write(strformat("se_smart_terrain:save_state BEFORE %s %s",self:name(),self.id))
+	alun_utils.debug_write(strformat("se_smart_terrain:save_state BEFORE %s %s",self:name(),self.id))
 	if not (m_data.smart_terrains) then 
 		m_data.smart_terrains = {}
 	end
 	
 	--printf("m_data.smart_terrains = %s name=%s",m_data.smart_terrains ~= nil,self:name())
-	m_data.smart_terrains[self:name()] = {}
+	m_data.smart_terrains[self:name()] = m_data.smart_terrains[self:name()] or {}
 	local t = m_data.smart_terrains[self:name()]
 
 	for id,v in pairs(self.arriving_npc) do
@@ -842,9 +831,7 @@ function se_smart_terrain:save_state(m_data)
 		t.npc_info[id].need_job = info.need_job
 	end
 
-	if not (is_empty(self.already_spawned)) then
-		t.already_spawned = self.already_spawned
-	end
+	t.already_spawned = self.already_spawned
 
 	t.last_respawn_update = self.last_respawn_update
 	local tim = (self.smart_alarm_time or time_global()) - time_global()
@@ -852,29 +839,33 @@ function se_smart_terrain:save_state(m_data)
 		t.smart_alarm_time = tim
 	end
 	
-	--alun_utils.debug_write(strformat("se_smart_terrain:save_state AFTER %s",self:name()))
+	alun_utils.debug_write(strformat("se_smart_terrain:save_state AFTER %s",self:name()))
 end
 
 function se_smart_terrain:load_state(m_data)
-	--printf("load state %s",self:name())
-	if not (m_data.smart_terrains and m_data.smart_terrains[self:name()]) then 
-		return 
+	--printf("load state %s  [%s][%s]",self:name(),m_data.smart_terrains ~= nil,m_data.smart_terrains[self:name()] ~= nil)
+	
+	local data = m_data.smart_terrains and m_data.smart_terrains[self:name()]
+	if not (data) then 
+		return
 	end
+	
 	--alun_utils.debug_write(strformat("se_smart_terrain:load_state BEFORE %s",self:name()))
 	self.need_init_npc = true
 	
-	if (m_data.smart_terrains[self:name()].arriving_npc) then
-		for i,id in pairs(m_data.smart_terrains[self:name()].arriving_npc) do 
+	if (data.arriving_npc) then
+		for i,id in pairs(data.arriving_npc) do 
 			self.arriving_npc[id] = false
 		end
 	end
 	
-	self.load_info = m_data.smart_terrains[self:name()].npc_info or {}
-	self.already_spawned = m_data.smart_terrains[self:name()].already_spawned or self.already_spawned
-	self.last_respawn_update = m_data.smart_terrains[self:name()].last_respawn_update
-	self.smart_alarm_time = (m_data.smart_terrains[self:name()].smart_alarm_time or time_global()) - time_global()
+	self.load_info = data.npc_info or {}
+	self.already_spawned = data.already_spawned or self.already_spawned
+	self.last_respawn_update = data.last_respawn_update
+	self.smart_alarm_time = (data.smart_alarm_time or time_global()) - time_global()
 	
-	m_data.smart_terrains[self:name()] = nil
+	-- Cannot nil here. For some stupid reason smart terrain binded twice in a row
+	--m_data.smart_terrains[self:name()] = nil
 	--alun_utils.debug_write(strformat("se_smart_terrain:load_state AFTER %s",self:name()))
 end
 
@@ -883,10 +874,10 @@ end
 --*******************************************************
 function se_smart_terrain:STATE_Write(packet)
 	cse_alife_smart_zone.STATE_Write(self, packet)
-	-- if (USE_MARSHAL) then
-		-- self:save_state(alife_storage_manager.get_state())
-		-- return 
-	-- end
+	if (USE_MARSHAL) then
+		self:save_state(alife_storage_manager.get_state())
+		return 
+	end
 	--set_save_marker(packet, "save", false, "se_smart_terrain")
 
 	-- Информацию о НПС, идущих в смарт
@@ -930,12 +921,12 @@ end
 function se_smart_terrain:STATE_Read(packet, size)
 	--alun_utils.debug_write(strformat("%s:STATE_READ start",self:name()))
 	cse_alife_smart_zone.STATE_Read(self, packet, size)
-	self:read_params()
 	
-	-- if (USE_MARSHAL) then
-		-- self:load_state(alife_storage_manager.get_state())
-		-- return
-	-- end
+	
+	if (USE_MARSHAL) then
+		self:load_state(alife_storage_manager.get_state())
+		return
+	end
 
 	self.need_init_npc = true
 	--set_save_marker(packet, "load", false, "se_smart_terrain")

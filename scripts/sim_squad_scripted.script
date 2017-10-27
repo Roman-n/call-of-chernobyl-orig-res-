@@ -33,7 +33,9 @@ function sim_squad_scripted:__init(section) super (section)
 	self.current_target_id	= nil
 	self.assigned_target_id	= nil
 	self:init_squad()
-	
+	if (USE_MARSHAL) then
+		RegisterScriptCallback("save_state", self)
+	end
 	self.first_update 		= false
 end
 
@@ -823,19 +825,16 @@ function sim_squad_scripted:load_state(m_data)
 	self.respawn_point_id = m_data.sim_squad_scripted[self.id].respawn_point_id
 	self.respawn_point_prop_section = m_data.sim_squad_scripted[self.id].respawn_point_prop_section
 	self.smart_id = m_data.sim_squad_scripted[self.id].smart_id
-	m_data.sim_squad_scripted[self.id] = nil
+	--m_data.sim_squad_scripted[self.id] = nil
 	--alun_utils.debug_write("sim_squad_scripted:load_state AFTER")
 end 
 
 function sim_squad_scripted:STATE_Write(packet)
 	--alun_utils.debug_write("sim_squad_scripted:STATE_Write")
 	cse_alife_online_offline_group.STATE_Write (self, packet)
-	
 	if (USE_MARSHAL) then
-		self:save_state(alife_storage_manager.get_state())
 		return 
 	end
-	
 	set_save_marker(packet, "save", false, "sim_squad_scripted")
 
 	packet:w_stringZ(tostring(self.current_target_id))
@@ -892,6 +891,12 @@ end
 function sim_squad_scripted:on_register()
 	--alun_utils.debug_write( strformat("%s:on_register start",self:name()) )
 	cse_alife_online_offline_group.on_register( self )
+	
+	local m_data = alife_storage_manager.get_state()
+	if (m_data.sim_squad_scripted) then 
+		m_data.sim_squad_scripted[self.id] = nil
+	end
+	
 	story_objects.check_spawn_ini_for_story_id(self)
 	sim_board.get_sim_board().squads[self.id] = true
 	--simulation_objects.register(self)
@@ -914,7 +919,9 @@ function sim_squad_scripted:on_unregister()
 			smart.already_spawned[self.respawn_point_prop_section].num = smart.already_spawned[self.respawn_point_prop_section].num - 1
 		end
 	end
-
+	if (USE_MARSHAL) then 
+		UnregisterScriptCallback("save_state",self)
+	end
 	cse_alife_online_offline_group.on_unregister(self)
 end
 
