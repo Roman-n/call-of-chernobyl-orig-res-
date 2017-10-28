@@ -1473,10 +1473,36 @@ function se_smart_terrain:target_precondition(squad, ignore_population, skip_pro
 		return false
 	end
 	
-	if (self.props[squad.player_id] == nil or self.props.all > 0 or self.props[squad.player_id] > 0) then
-		
-		local is_monster = is_squad_monster[squad.player_id]
-		if (is_monster ~= true and squad.player_id ~= "zombied") then
+	local is_monster = is_squad_monster[squad.player_id]
+	if (is_monster) then 
+		if (self.props.all > 0 or self.props.all_monster > 0 or self.props[squad.player_id] > 0) then 
+			if (skip_props) and (self.props.lair > 0 or self.props.territory > 0) then
+				return true 
+			end
+			
+			-- lair
+			if (self.props.lair > 0 and sim_board.general_lair_precondition(squad,self)) then 
+				return true 
+			end
+			
+			-- territory
+			if (self.props.territory > 0 and sim_board.general_territory_precondition(squad,self)) then 
+				return true 
+			end
+		end
+	elseif (squad.player_id == "zombied") then 
+		if (self.props.all > 0 or self.props.all_stalker > 0 or self.props[squad.player_id] > 0) then 
+			if (skip_props) and (self.props.territory > 0) then
+				return true 
+			end
+			
+			-- territory
+			if (self.props.territory > 0 and sim_board.general_territory_precondition(squad,self)) then 
+				return true 
+			end
+		end		
+	else 
+		if (self.props.all > 0 or self.props.all_stalker > 0 or self.props[squad.player_id] > 0) then 
 			if (skip_props) and (self.props.base > 0 or self.props.resource > 0 or self.props.territory > 0) then
 				return true 
 			end
@@ -1497,22 +1523,12 @@ function se_smart_terrain:target_precondition(squad, ignore_population, skip_pro
 			-- resource
 			if (self.props.resource > 0 and sim_board.general_resource_precondition(squad,self)) then 
 				return true 
-			end
-		else
-		
-			if (skip_props) and (self.props.lair > 0 or self.props.territory > 0) then
+			end	
+
+			-- territory
+			if (self.props.territory > 0 and sim_board.general_territory_precondition(squad,self)) then 
 				return true 
-			end
-			
-			-- lair
-			if (self.props.lair > 0 and sim_board.general_lair_precondition(squad,self)) then 
-				return true 
-			end
-		end
-		
-		-- territory
-		if (self.props.territory > 0 and sim_board.general_territory_precondition(squad,self)) then 
-			return true 
+			end				
 		end
 	end
 

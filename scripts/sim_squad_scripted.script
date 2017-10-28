@@ -250,7 +250,7 @@ function sim_squad_scripted:generic_update()
 	end 
 	
 	self.assigned_target_id = get_help_target_id(self) or self.assigned_target_id or self.current_target_id
-
+	
 	if (self.current_action) then
 		
 		-- in such case assigned is changed (such as get_help_target_id) but current action is 1 (reached)
@@ -258,7 +258,7 @@ function sim_squad_scripted:generic_update()
 			self.current_action = 0
 		end
 	
-		local se_target = simulation_objects.get_server_entity(self.assigned_target_id)
+		local se_target = self.assigned_target_id == self.id and self or simulation_objects.get_server_entity(self.assigned_target_id)
 		-- Evaluate current assigned target; make sure it is still valid
 		if (se_target and se_target:target_precondition(self,true)) then
 			-- If current action is not finished, then return
@@ -957,8 +957,13 @@ function sim_squad_scripted:check_online_status()
 					b = false
 				end
 			end
+			if (b == false) then
+				self.assigned_target_id = self.id
+				self.current_target_id = self.id
+				self.current_action = 0
+			end
 		end
-		if (db.actor) then
+		if (b == nil and db.actor) then
 			if (db.actor:has_info("enforce_online_exclusion")) then -- For story needs
 				if (self.online) then -- exclude from coming online except if already online or storied
 					if (self.was_forced_offline or self.position:distance_to(db.actor:position()) >= 2500) then
@@ -1158,7 +1163,7 @@ function sim_squad_scripted:get_current_task()
 end
 
 function sim_squad_scripted:am_i_reached(squad)
-	return self:npc_count() == 0
+	return self:npc_count() == 0 or self.id == squad.id
 end
 
 function sim_squad_scripted:on_after_reach(squad)
