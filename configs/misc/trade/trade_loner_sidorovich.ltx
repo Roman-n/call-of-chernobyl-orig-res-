@@ -1,7 +1,7 @@
 #include "profiles\profiles.ltx"
 
 [trader]
-buy_condition                                      = buy_condition_generic
+buy_condition                                      = buy_condition_generic_w_artefact
 buy_item_condition_factor                          = 0.7
 buy_supplies                                       = {=actor_goodwill_ge(trader:1600)} supplies_special, {=heavy_pockets_functor} supplies_special, {=actor_goodwill_ge(trader:1000)} supplies_friend, supplies_generic
 discounts                                          = {=actor_goodwill_ge(trader:1200)} discount_5, {=actor_goodwill_ge(trader:1000)} discount_4, {=actor_goodwill_ge(trader:800)} discount_3, {=actor_goodwill_ge(trader:600)} discount_2, {=actor_goodwill_ge(trader:400)} discount_1, {=actor_goodwill_ge(trader:200)} discount_0, discount_sid
@@ -58,8 +58,8 @@ vodka                                              = 3, 0.4
 
 ;Misc
 itm_sleepbag                                       = 1, 0.2
-itm_gunsmith_toolkit                               = 1, 0.1
-itm_outfit_toolkit                                 = 1, 0.1
+itm_gunsmith_toolkit                               = 1, 0.15
+itm_outfit_toolkit                                 = 1, 0.25
 wood_stove										   = 1, 0.2
 charcoal										   = 2, 0.3
 equ_backpack									   = 3, 0.3
@@ -157,8 +157,8 @@ bandage                                            = 5, 0.6
 
 ;Misc
 itm_sleepbag                                       = 1, 0.3
-itm_gunsmith_toolkit                               = 1, 0.2
-itm_outfit_toolkit                                 = 1, 0.2
+itm_gunsmith_toolkit                               = 1, 0.3
+itm_outfit_toolkit                                 = 1, 0.4
 wood_stove										   = 1, 0.3
 charcoal										   = 2, 0.4
 equ_backpack									   = 3, 0.5
@@ -264,8 +264,8 @@ bandage                                            = 6, 0.7
 
 ;Misc
 itm_sleepbag                                       = 1, 0.4
-itm_gunsmith_toolkit                               = 1, 0.3
-itm_outfit_toolkit                                 = 1, 0.3
+itm_gunsmith_toolkit                               = 1, 0.5
+itm_outfit_toolkit                                 = 1, 0.7
 wood_stove										   = 1, 0.4
 charcoal										   = 2, 0.5
 equ_backpack									   = 4, 0.5

@@ -65,6 +65,30 @@ precondition = true
 
 
 ;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR SIDOROVICH TASK-
+
+[esc_m_trader_task_3]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 5
+storyline = false
+title = esc_m_trader_task_3_name
+title_functor = general_fetch_task
+descr = esc_m_trader_task_3_text
+descr_functor = general_fetch_task
+job_descr = esc_m_trader_task_3_about
+fetch_descr = esc_m_trader_task_3_fetch_about
+fetch_func = %=setup_artefact_fetch_task(esc_m_trader_task_3_fetch)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = esc_m_trader_task_3_fetch_finish
+; precondition = true
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:trader) =reward_stash(true) =reward_item_cost_mult_and_remove(esc_m_trader_task_3_fetch:0.6) =inc_task_stage(esc_m_trader_task_3)%
+on_fail = %=fail_task_dec_goodwill(50:trader)%
+
+
+;--------------------------------------------------------------------------------------------------
 ; ELIMINATE MUTANTS FOR WOLF TASK-
 
 [esc_2_12_stalker_wolf_task_1]

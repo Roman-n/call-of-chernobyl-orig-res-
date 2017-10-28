@@ -44,9 +44,9 @@ local always_in_existence = {
 	["detector_simple"] = 20,
 	["equ_military_pack"] = 5,
 	["equ_tourist_pack"] = 3,
-	["itm_repairkit_tier_1"] = 10,
-	["itm_repairkit_tier_2"] = 7,
-	["itm_repairkit_tier_3"] = 4,
+	["itm_repairkit_tier_1"] = 7,
+	["itm_repairkit_tier_2"] = 5,
+	["itm_repairkit_tier_3"] = 3,
 	["wpn_gauss"] = 1
 }
 ------------------------------------------------------------------------------------------------------------------
