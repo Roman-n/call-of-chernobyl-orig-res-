@@ -1031,8 +1031,10 @@ is_squad_monster = {
 		["monster_vegetarian"] 		= true,
 		["monster_zombied_day"] 	= true,
 		["monster_zombied_night"] 	= true,
-		["monster_special"] 		= true,
-		["monster"]					= true
+		["monster_special_day"] 	= true,
+		["monster_special_night"] 	= true,
+		["monster"]					= true,
+		["zoo_monster"]				= true
 }
 squad_community_by_behaviour = {
 		["stalker"]							= "stalker",

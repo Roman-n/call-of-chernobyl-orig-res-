@@ -28,7 +28,8 @@ monster_predatory_night = 0
 monster_vegetarian		= 0
 monster_zombied_day		= 0
 monster_zombied_night	= 0
-monster_special			= 0
+monster_special_night	= 0
+monster_special_day		= 0
 
 army_heli		= 0
 monolith_heli 	= 0
@@ -58,7 +59,8 @@ monster_predatory_night = 1
 monster_vegetarian		= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
+monster_special_night	= 1
+monster_special_day		= 1
 
 [default_territory]:default			; Use only if smart supports both stalker and monster jobs
 territory 	= 1
@@ -639,20 +641,20 @@ army		= 1
 bandit		= 1
 all_monster	= 0
 lair 		= 1
+monster					= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
 
 [agr_u_bloodsucker]:default_lair
 sim_avail = {+agru_add_reward} true, false
 all_monster	= 0
+monster					= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
 
 [agr_u_bloodsucker_2]:default_territory
 sim_avail = {+agru_add_reward_1} true, false
@@ -661,30 +663,30 @@ stalker					= 1
 army					= 1
 all_monster				= 0
 lair 					= 1
+monster					= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
 
 [agr_u_monsters]:default_lair
 sim_avail = {+agru_controller_death} true, false
 all_monster				= 0
+monster					= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
 
 [agr_u_soldiers]:default_territory
 sim_avail = {+agr_u_soldiers_dead +agru_end_poltergeist_squad_dead} true, false
 all_monster				= 0
 lair 					= 1
+monster					= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
-monster_special			= 1
 
 ;----------- << DARK VALLEY >> ------------
 ;---------	SIMULATION	--------
@@ -794,7 +796,6 @@ lair					= 1
 monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special 		= 1
 monster_zombied_day 	= 1
 monster_zombied_night 	= 1
 
@@ -804,7 +805,6 @@ all_monster 			= 0
 monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special 		= 1
 monster_zombied_day 	= 1
 monster_zombied_night 	= 1
 
@@ -834,7 +834,6 @@ lair					= 1
 monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special 		= 1
 monster_zombied_day 	= 1
 monster_zombied_night 	= 1
 
@@ -1035,6 +1034,7 @@ monolith				= 1
 zombied 				= 1
 all_monster 			= 0
 lair 					= 1
+monster					= 1
 monster_zombied_day 	= 1
 monster_zombied_night 	= 1
 
@@ -1048,6 +1048,7 @@ army 					= 1
 zombied					= 1
 all_monster 			= 0
 lair 					= 1
+monster					= 1
 monster_zombied_day 	= 1
 monster_zombied_night 	= 1
 monster_predatory_night	= 1
@@ -1472,6 +1473,7 @@ sim_avail 	= false
 all_stalker	= 0
 lair			= 1
 all_monster		= 0
+monster					= 1
 monster_predatory_night	= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
@@ -1486,6 +1488,7 @@ army			= 1
 zombied			= 1
 all_monster				= 0
 lair					= 1
+monster 				= 1
 monster_predatory_night	= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
@@ -1499,6 +1502,7 @@ stalker			= 1
 army			= 1
 all_monster				= 0
 lair					= 1
+monster 				= 1
 monster_predatory_night	= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
@@ -2359,9 +2363,9 @@ sim_avail = true
 sim_avail = {+lx8_actor_in_lab +actor_left_labx8} true, false
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2371,9 +2375,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker	= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2381,9 +2385,9 @@ monster_zombied_night	= 1
 sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, false
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2392,9 +2396,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker			= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2403,9 +2407,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker			= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2413,9 +2417,9 @@ monster_zombied_night	= 1
 sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, false
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2424,9 +2428,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker			= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2435,9 +2439,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker			= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
@@ -2446,9 +2450,9 @@ sim_avail = {+actor_pass_jupiter_exit_find +actor_pass_pripyat_exit_find} true, 
 all_stalker			= 0
 all_monster 			= 0
 lair 					= 1
+monster 				= 1
 monster_predatory_day 	= 1
 monster_predatory_night = 1
-monster_special			= 1
 monster_zombied_day		= 1
 monster_zombied_night	= 1
 
