@@ -5,7 +5,7 @@
 		<text>Defend territory for Duty</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_1_text">
-		<text>Hostile forces are encroaching on Duty territory. General Petrenko has asked you to eliminate the threat.</text>
+		<text>Hostile forces are encroaching on Duty territory. Colonel Petrenko has asked you to eliminate the threat.</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_1_about">
 		<text>I have been informed that enemy forces are advancing on one of our camps. I need you to stop them before they get there.</text>
@@ -18,7 +18,7 @@
 		<text>Recapture territory for Duty</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_2_text">
-		<text>You have been tasked to recapture territory for Duty. Report back to General Petrenko after the job is done.</text>
+		<text>You have been tasked to recapture territory for Duty. Report back to Colonel Petrenko after the job is done.</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_2_about">
 		<text>I have an important mission available. Freedom has taken over one of our camps and I need a specialist to reclaim it.</text>
@@ -31,7 +31,7 @@
 		<text>Assassinate VIP</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_3_text">
-		<text>General Petrenko has ordered you to find and eliminate a target.</text>
+		<text>Colonel Petrenko has ordered you to find and eliminate a target.</text>
 	</string>
 	<string id="bar_dolg_general_petrenko_stalker_task_3_about">
 		<text>I have a list of VIPs that need...taken care of. Some are informants, high-ranking Freedom members, squad leaders, tacticians or just plain scum. Extract information if you can, otherwise kill-on-sight.</text>

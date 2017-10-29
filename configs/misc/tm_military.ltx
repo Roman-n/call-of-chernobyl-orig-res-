@@ -34,11 +34,11 @@ job_descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_1_about
 task_complete_descr = mil_smart_terrain_7_7_freedom_leader_stalker_task_1_finish
 repeat_timeout = 86400
 target_functor = general_under_faction_control
-status_functor = check_smart_under_faction_control_staged
-status_functor_params = army,dolg,monolith
+status_functor = check_smart_under_faction_control_staged_enemy
+status_functor_params = freedom
 stage_complete = 1
-on_init = %=find_smart_under_faction_control_ex(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_id:army:dolg:monolith)%
-precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:army:dolg:monolith)} true, false
+on_init = %=find_smart_under_faction_control_enemy(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_id:freedom)%
+precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_enemy(1:nil:false:freedom)} true, false
 on_complete = %=complete_task_inc_goodwill(50:freedom) =reward_random_money(6500:7500) =reward_stash(true) =inc_task_stage(mil_smart_terrain_7_7_freedom_leader_stalker_task_1) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_target_id)%
 on_fail = %=pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_target_id) =fail_task_dec_goodwill(50:freedom)%
 on_cancel = %=pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_id) =pstor_reset(mil_smart_terrain_7_7_freedom_leader_stalker_task_1_target_id)%

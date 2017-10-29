@@ -2565,9 +2565,13 @@ function all_avail_smart_stayed_squad_count_ge_by_faction_ex(actor,npc,p)
 	
 		local sim = alife()
 		local gg = game_graph()
-		--local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
-
-		for name,v in pairs(SIMBOARD.smarts_by_names) do
+		local actor_gvid = sim:actor().m_game_vertex_id
+		
+		local function check_dist(t,a,b)
+			return utils.graph_distance(actor_gvid,t[a].m_game_vertex_id) < utils.graph_distance(actor_gvid,t[b].m_game_vertex_id)
+		end
+	
+		for name,v in spairs(SIMBOARD.smarts_by_names,check_dist) do
 			if (simulation_objects.available_by_id[v.id] == true) then
 				if (smart_stayed_squad_count_ge_by_faction(actor,npc,{name,unpack(p)}) == true) then 
 					return true 
@@ -2577,6 +2581,39 @@ function all_avail_smart_stayed_squad_count_ge_by_faction_ex(actor,npc,p)
 	end
 	return false
 end
+
+-- same as above but checks all enemy factions compared to p[4]
+function all_avail_smart_stayed_squad_count_ge_by_faction_enemy(actor,npc,p)
+	if (#p >= 4) then
+	
+		local sim = alife()
+		local gg = game_graph()
+		local actor_gvid = sim:actor().m_game_vertex_id
+		
+		local function check_dist(t,a,b)
+			return utils.graph_distance(actor_gvid,t[a].m_game_vertex_id) < utils.graph_distance(actor_gvid,t[b].m_game_vertex_id)
+		end
+
+		local t = {}
+		local com_list = alun_utils.get_communities_list()
+		for comm,v in pairs(com_list) do
+			if (comm ~= "monster" and game_relations.is_factions_enemies(p[4],comm)) then
+				table.insert(t,comm)
+			end
+		end
+	
+		for name,v in spairs(SIMBOARD.smarts_by_names,check_dist) do
+			if (simulation_objects.available_by_id[v.id] == true) then
+				if (smart_stayed_squad_count_ge_by_faction(actor,npc,{name,p[1],p[2],p[3],unpack(t)}) == true) then 
+					return true 
+				end
+			end
+		end
+	end
+	return false
+end
+
+
 
 -- Returns true if squads by behavior faction (player_id) of a given count exist at smart out of entire population; including arriving
 -- param1 - smart_name 

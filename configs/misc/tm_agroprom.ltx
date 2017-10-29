@@ -11,11 +11,11 @@ job_descr = agr_smart_terrain_1_6_army_trader_stalker_task_1_about
 task_complete_descr = agr_smart_terrain_1_6_army_trader_stalker_task_1_finish
 repeat_timeout = 86400
 target_functor = general_under_faction_control
-status_functor = check_smart_under_faction_control_staged
-status_functor_params = stalker,bandit,csky,freedom
+status_functor = check_smart_under_faction_control_staged_enemy
+status_functor_params = army
 stage_complete = 1
-on_init = %=find_smart_under_faction_control_ex(agr_smart_terrain_1_6_army_trader_stalker_task_1_id:stalker:bandit:csky:freedom)%
-precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:stalker:bandit:csky:freedom)} true, false
+on_init = %=find_smart_under_faction_control_enemy(agr_smart_terrain_1_6_army_trader_stalker_task_1_id:army)%
+precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_enemy(1:nil:false:army)} true, false
 on_complete = %=complete_task_inc_goodwill(50:army) =reward_random_money(6500:7500) =reward_stash(true) =inc_task_stage(agr_smart_terrain_1_6_army_trader_stalker_task_1) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_target_id)%
 on_fail = %=fail_task_dec_goodwill(50:army) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_target_id)%
 on_cancel = %=pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_1_target_id)%
@@ -33,11 +33,11 @@ job_descr = agr_smart_terrain_1_6_army_trader_stalker_task_2_about
 task_complete_descr = agr_smart_terrain_1_6_army_trader_stalker_task_2_finish
 repeat_timeout = 86400
 target_functor = general_under_faction_control
-status_functor = check_smart_under_faction_control_staged
-status_functor_params = stalker,bandit,csky,freedom
+status_functor = check_smart_under_faction_control_staged_enemy
+status_functor_params = army
 stage_complete = 1
-on_init = %=find_smart_under_faction_control(agr_smart_terrain_1_6_army_trader_stalker_task_2_id:stalker:bandit:csky:freedom)%
-precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:stalker:bandit:csky:freedom)} true, false
+on_init = %=find_smart_under_faction_control_enemy(agr_smart_terrain_1_6_army_trader_stalker_task_2_id:army)%
+precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_enemy(1:nil:false:army)} true, false
 on_complete = %=complete_task_inc_goodwill(25:army) =reward_random_money(3000:4000) =reward_stash(true) =inc_task_stage(agr_smart_terrain_1_6_army_trader_stalker_task_2) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_target_id)%
 on_fail = %=fail_task_dec_goodwill(25:army) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_target_id)%
 on_cancel = %=pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_id) =pstor_reset(agr_smart_terrain_1_6_army_trader_stalker_task_2_target_id)%

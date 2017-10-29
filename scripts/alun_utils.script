@@ -336,18 +336,25 @@ function get_reputation_name(value)
 end
 
 local communities
-function get_communities_list()
-	if communities then
-		return communities
-	end
-	local tmp = parse_list(system_ini(),"game_relations","communities")
-	communities = {}
-	for i,cn in ipairs(tmp) do
-		if not tonumber(cn) then
-			communities[#communities+1] = cn
+function get_communities_list(new_table)
+	if not (new_table) then
+		if communities then
+			return communities
 		end
 	end
-	return communities
+	
+	local tmp = parse_list(system_ini(),"game_relations","communities")
+	local t = {}
+	for i,cn in ipairs(tmp) do
+		if not tonumber(cn) then
+			t[cn] = true
+		end
+	end
+	
+	if not (new_table) then 
+		communities = t
+	end
+	return t
 end
 
 function execute_script_on_squad(obj,script_to_execute,...)

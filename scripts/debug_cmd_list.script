@@ -295,8 +295,8 @@ function cmd.community(me,txt,owner,p)
 	if not (wrd) then return end
 	
 	local comm_list = alun_utils.get_communities_list()
-	for i=1,#comm_list do 
-		if (wrd == comm_list[i]) then 
+	for comm,v in pairs(comm_list) do 
+		if (wrd == comm) then 
 			db.actor:set_character_community(wrd, 0, 0)
 			return "community:= actor community successfully changed to "..wrd
 		end

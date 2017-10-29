@@ -44,9 +44,15 @@ function find_smart_under_faction_control_ex(actor,npc,p)
 	local gg = game_graph()
 	--local actor_level = sim:level_name(gg:vertex(sim:actor().m_game_vertex_id):level_id())
 		
+	local actor_gvid = sim:actor().m_game_vertex_id
+	
+	local function check_dist(t,a,b)
+		return utils.graph_distance(actor_gvid,t[a].m_game_vertex_id) < utils.graph_distance(actor_gvid,t[b].m_game_vertex_id)
+	end
+	
 	local target_id
-	for name,smart in pairs(SIMBOARD.smarts_by_names) do 
-		if (simulation_objects.available_by_id[smart.id] == true) then 
+	for name,smart in spairs(SIMBOARD.smarts_by_names,check_dist) do
+		if (simulation_objects.available_by_id[smart.id] == true) then
 			local smrt = SIMBOARD.smarts[smart.id]
 			if (smrt) then 
 				for k,v in pairs(smrt.squads) do
@@ -54,6 +60,48 @@ function find_smart_under_faction_control_ex(actor,npc,p)
 					if (squad and squad.current_target_id and squad.current_target_id == smart.id and not squad:get_script_target()) then
 						for i=2,#p do
 							if (p[i] == "monster" and is_squad_monster[squad.player_id] or squad.player_id == p[i]) then
+								utils.save_var(db.actor,p[1],smart.id)
+								return
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end
+
+-- same as _ex but checks all enemy factions to p[2]
+function find_smart_under_faction_control_enemy(actor,npc,p)
+	if not (p[1]) then
+		return 
+	end 
+	
+	local sim = alife()
+	local gg = game_graph()
+	local actor_gvid = sim:actor().m_game_vertex_id
+	
+	local function check_dist(t,a,b)
+		return utils.graph_distance(actor_gvid,t[a].m_game_vertex_id) < utils.graph_distance(actor_gvid,t[b].m_game_vertex_id)
+	end
+	
+	local com_list = alun_utils.get_communities_list(true)
+	for comm,v in pairs(com_list) do
+		if not (game_relations.is_factions_enemies(p[2],comm)) then
+			com_list[comm] = nil
+		end
+	end
+	
+	local target_id
+	for name,smart in spairs(SIMBOARD.smarts_by_names,check_dist) do
+		if (simulation_objects.available_by_id[smart.id] == true) then
+			local smrt = SIMBOARD.smarts[smart.id]
+			if (smrt) then 
+				for k,v in pairs(smrt.squads) do
+					local squad = alife_object(k)
+					if (squad and squad.current_target_id and squad.current_target_id == smart.id and not squad:get_script_target()) then
+						for comm,vv in pairs(com_list) do
+							if (comm ~= "monster" and squad.player_id == comm) then
 								utils.save_var(db.actor,p[1],smart.id)
 								return
 							end
