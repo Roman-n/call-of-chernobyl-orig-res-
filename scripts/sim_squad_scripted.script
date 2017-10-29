@@ -33,9 +33,6 @@ function sim_squad_scripted:__init(section) super (section)
 	self.current_target_id	= nil
 	self.assigned_target_id	= nil
 	self:init_squad()
-	if (USE_MARSHAL) then
-		RegisterScriptCallback("save_state", self)
-	end
 	self.first_update 		= false
 end
 
@@ -789,7 +786,7 @@ end
 --***********************************************************************************************
 --*										SAVE\LOAD												*
 --***********************************************************************************************
-
+--[[
 function sim_squad_scripted:save_state(m_data)
 	--alun_utils.debug_write(strformat("%s:%s sim_squad_scripted:save_state BEFORE",self:name(),self.id))
 	if (self:npc_count() == 0) then 
@@ -801,9 +798,6 @@ function sim_squad_scripted:save_state(m_data)
 	m_data.sim_squad_scripted[self.id] = {}
 	m_data.sim_squad_scripted[self.id].name = self:name() -- debugging only
 	m_data.sim_squad_scripted[self.id].current_target_id = self.current_target_id
-	m_data.sim_squad_scripted[self.id].assigned_target_id = self.assigned_target_id
-	m_data.sim_squad_scripted[self.id].task_target_id = self.task_target_id
-	m_data.sim_squad_scripted[self.id].current_action = self.current_action
 	m_data.sim_squad_scripted[self.id].respawn_point_id = self.respawn_point_id
 	m_data.sim_squad_scripted[self.id].respawn_point_prop_section = self.respawn_point_prop_section
 	m_data.sim_squad_scripted[self.id].smart_id = self.smart_id
@@ -819,22 +813,22 @@ function sim_squad_scripted:load_state(m_data)
 	end
 	--alun_utils.debug_write("sim_squad_scripted:load_state BEFORE")
 	self.current_target_id = m_data.sim_squad_scripted[self.id].current_target_id
-	self.assigned_target_id = m_data.sim_squad_scripted[self.id].assigned_target_id
-	self.task_target_id = m_data.sim_squad_scripted[self.id].task_target_id
-	self.current_action = m_data.sim_squad_scripted[self.id].current_action
 	self.respawn_point_id = m_data.sim_squad_scripted[self.id].respawn_point_id
 	self.respawn_point_prop_section = m_data.sim_squad_scripted[self.id].respawn_point_prop_section
 	self.smart_id = m_data.sim_squad_scripted[self.id].smart_id
 	--m_data.sim_squad_scripted[self.id] = nil
 	--alun_utils.debug_write("sim_squad_scripted:load_state AFTER")
 end 
+--]]
 
 function sim_squad_scripted:STATE_Write(packet)
 	--alun_utils.debug_write("sim_squad_scripted:STATE_Write")
 	cse_alife_online_offline_group.STATE_Write (self, packet)
-	if (USE_MARSHAL) then
-		return 
-	end
+	
+	--if (USE_MARSHAL) then 
+		--return 
+	--end
+	
 	set_save_marker(packet, "save", false, "sim_squad_scripted")
 
 	packet:w_stringZ(tostring(self.current_target_id))
@@ -849,11 +843,11 @@ function sim_squad_scripted:STATE_Read(packet, size)
 	--alun_utils.debug_write( strformat("\n%s:STATE_Read start",self:name()) )
 	cse_alife_online_offline_group.STATE_Read (self, packet, size)
 	
-	if (USE_MARSHAL) then 
-		self:load_state(alife_storage_manager.get_state())
-		self:init_squad_on_load()
-		return 
-	end 
+	--if (USE_MARSHAL) then 
+		--self:load_state(alife_storage_manager.get_state())
+		--self:init_squad_on_load()
+		--return 
+	--end 
 	
 	set_save_marker(packet, "load", false, "sim_squad_scripted")	
 
@@ -913,9 +907,6 @@ function sim_squad_scripted:on_unregister()
 			smart.already_spawned[self.respawn_point_prop_section].num = smart.already_spawned[self.respawn_point_prop_section].num - 1
 		end
 	end
-	if (USE_MARSHAL) then 
-		UnregisterScriptCallback("save_state",self)
-	end
 	cse_alife_online_offline_group.on_unregister(self)
 end
 
@@ -936,7 +927,7 @@ function sim_squad_scripted:check_online_status()
 	else
 		if (is_squad_monster[self.player_id]) then -- monster behaviors
 			local hour = level.get_time_hours()
-			if (self.player_id == "monster_predatory_day" or self.player_id == "monster_special_day") then 
+			if (self.player_id == "monster_predatory_day") then 
 				-- Monster will not come online during the hours of (9PM till 5AM)
 				if (hour <= 5 or hour >= 22) then
 					b = false 
@@ -946,7 +937,7 @@ function sim_squad_scripted:check_online_status()
 				if (hour <= 5 or hour >= 19) then
 					b = false
 				end
-			elseif (self.player_id == "monster_predatory_night" or self.player_id == "monster_special_night") then 
+			elseif (self.player_id == "monster_predatory_night") then 
 				-- Monster will not come online during the hours of (5AM till 7PM)
 				if (hour >= 5 and hour <= 19) then
 					b = false
@@ -1130,7 +1121,7 @@ function sim_squad_scripted:get_squad_props()
 				end
 			end
 		end
-		
+			
 		if (self.__lock) then
 			t = t .. "[locked]" -- cannot find target
 		end

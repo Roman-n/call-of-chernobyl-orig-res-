@@ -129,7 +129,7 @@ end
 
 -- Called when the context option is clicked.
 function context_action_functor(weapon)
-	detach_addon(weapon)
+	detach_sight(weapon)
 end
 
 ---------------------
@@ -168,7 +168,7 @@ function on_item_use(item)
 	
 	-- Multi-Tool (Compatibility)
 	if (item:section() == "addons_box") then
-		detach_addon(get_weapon())
+		detach_sight(get_weapon())
 	end
 end
 
