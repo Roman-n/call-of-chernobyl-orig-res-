@@ -1494,9 +1494,9 @@ function se_smart_terrain:target_precondition(squad, ignore_population, skip_pro
 			
 			-- territory
 			if (self.props.territory > 0 and sim_board.general_territory_precondition(squad,self)) then 
-				return true 
+				return true
 			end
-		end		
+		end
 	else 
 		if (self.props.all > 0 or self.props.all_stalker > 0 or self.props[squad.player_id] > 0) then 
 			if (skip_props) and (self.props.base > 0 or self.props.resource > 0 or self.props.territory > 0) then

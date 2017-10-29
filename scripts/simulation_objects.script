@@ -7,24 +7,13 @@ local ALLOW_NPC_LEVEL_TRANSITION = true
 
 -- setup default squad behaviors
 local default_squad_behaviour = {	
-	["actor"]			= 0,
-	["all"]				= 1,
-	["base"] 			= 1,
-	["lair"]			= 0,
+	["base"] 			= 20,
 	["resource"] 		= 2,
-	["squad"] 			= 0,
-	["surge"]			= 3,
 	["territory"]		= 1
 }
 
 local default_monster_behaviour = {	
-	["actor"]			= 0,
-	["base"] 			= 0,
-	["lair"]			= 1,
-	["monster"]			= 1,
-	["resource"] 		= 0,
-	["squad"] 			= 0,
-	["surge"]			= 0,
+	["lair"]			= 10,
 	["territory"]		= 1
 }
 

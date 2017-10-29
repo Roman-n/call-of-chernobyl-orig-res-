@@ -246,12 +246,13 @@ function sim_squad_scripted:generic_update()
 		return -- so that squad doesn't continously try to find target which lowers FPS
 	end 
 	
-	self.assigned_target_id = get_help_target_id(self) or self.assigned_target_id or self.current_target_id
+	local forced_id = get_help_target_id(self)
+	self.assigned_target_id = forced_id or self.assigned_target_id or self.current_target_id
 	
 	if (self.current_action) then
 		
 		-- in such case assigned is changed (such as get_help_target_id) but current action is 1 (reached)
-		if (self.current_action == 1 and self.assigned_target_id ~= self.current_target_id) then 
+		if (self.current_action == 1 and self.assigned_target_id ~= self.current_target_id) then
 			self.current_action = 0
 		end
 	
@@ -273,6 +274,9 @@ function sim_squad_scripted:generic_update()
 				end
 				return
 			elseif (self.current_action == 1 and self.current_target_id == self.assigned_target_id) then
+				if (forced_id) then
+					return -- infinite stay time
+				end
 				if (se_target.locked == true) or (self.stay_time and game.get_game_time():diffSec(self.stay_time) < self.idle_time) then 
 					return
 				end
@@ -289,6 +293,7 @@ function sim_squad_scripted:generic_update()
 		-- we have to clear AFTER on_reach_target, not BEFORE so we can get location mask of old smart
 		self.assigned_target_id = nil
 		self.current_target_id = nil
+		self.task_target_id = nil
 		self.current_action = nil
 		self.__lock = db.actor.afterFirstUpdate -- keep trying until first update
 		return 
@@ -298,6 +303,7 @@ function sim_squad_scripted:generic_update()
 	
 	self.assigned_target_id = target.id
 	self.current_target_id = nil
+	self.task_target_id = nil
 	self.current_action = 0
 	
 	local sim = alife()
