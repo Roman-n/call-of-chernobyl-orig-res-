@@ -800,7 +800,7 @@ function se_smart_terrain:switch_to_desired_job(npc)
 end
 
 function se_smart_terrain:save_state(m_data)
-	alun_utils.debug_write(strformat("se_smart_terrain:save_state BEFORE %s %s",self:name(),self.id))
+	--alun_utils.debug_write(strformat("se_smart_terrain:save_state BEFORE %s %s",self:name(),self.id))
 	if not (m_data.smart_terrains) then 
 		m_data.smart_terrains = {}
 	end
@@ -834,7 +834,7 @@ function se_smart_terrain:save_state(m_data)
 		t.smart_alarm_time = tim
 	end
 	
-	alun_utils.debug_write(strformat("se_smart_terrain:save_state AFTER %s",self:name()))
+	--alun_utils.debug_write(strformat("se_smart_terrain:save_state AFTER %s",self:name()))
 end
 
 function se_smart_terrain:load_state(m_data)
@@ -1304,12 +1304,12 @@ function se_smart_terrain:setup_logic(npc)
 
 	local npc_info = self.npc_info[npc:id()]
 	if not (npc_info) then
-		printf("%s.setup_logic: npc_info is nil! for id=%s",self:name(),npc:id())
+		printf("%s.setup_logic: npc_info is nil! for %s",self:name(),npc:name())
 		return
 	end
 	
 	if not (npc_info.se_obj) then
-		printf("%s.setup_logic: npc_info.se_obj is nil! for id=%s",self:name(),npc:id())
+		printf("%s.setup_logic: npc_info.se_obj is nil! for %s",self:name(),npc:name())
 		return 
 	end
 

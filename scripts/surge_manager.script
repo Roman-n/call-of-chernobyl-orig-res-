@@ -1197,20 +1197,9 @@ function CSurgeManager:kill_obj_at_pos(pos)
 	end
 	local board = SIMBOARD
 	local sim, gg = alife(),game_graph()
-	local immuned_to_surge_squads = {
-					["monolith"] = true,
-					["monster_predatory_day"] 	= true,
-					["monster_predatory_night"] = true,
-					["monster_vegetarian"] 		= true,
-					["monster_zombied_day"] 	= true,
-					["monster_zombied_night"] 	= true,
-					["monster_special"] 		= true,
-					["monster"]					= true,
-					["zombied"]					= true
-	}
 	for k,v in pairs(board.squads) do
 		local squad = alife_object(k)
-		if (squad and squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)) then 
+		if (squad and squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,sim,gg)) then 
 			local squad_npcs = get_squad_members(squad.id)
 			for kk,vv in pairs(squad_npcs) do
 				local obj = sim:object(kk)
@@ -1247,21 +1236,10 @@ function CSurgeManager:get_objects_to_kill()
 		return 
 	end
 	local board = SIMBOARD
-	local immuned_to_surge_squads = {
-				["monolith"] = true,
-				["monster_predatory_day"] 	= true,
-				["monster_predatory_night"] = true,
-				["monster_vegetarian"] 		= true,
-				["monster_zombied_day"] 	= true,
-				["monster_zombied_night"] 	= true,
-				["monster_special"] 		= true,
-				["monster"]					= true,
-				["zombied"]					= true
-	}
 	local sim,gg = alife(),game_graph()
 	for k,v in pairs(board.squads) do
 		local squad = alife_object(k)
-		if (squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)) then 
+		if (squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,sim,gg)) then 
 			local squad_npcs = get_squad_members(squad.id)
 			for kk,vv in pairs(squad_npcs) do
 				local obj = sim:object(kk)
@@ -1398,21 +1376,10 @@ function CSurgeManager:kill_all_unhided()
 	end
 	local board = SIMBOARD
 	local sim,gg = alife(),game_graph()
-	local immuned_to_surge_squads = {
-				["monolith"] = true,
-				["monster_predatory_day"] 	= true,
-				["monster_predatory_night"] = true,
-				["monster_vegetarian"] 		= true,
-				["monster_zombied_day"] 	= true,
-				["monster_zombied_night"] 	= true,
-				["monster_special"] 		= true,
-				["monster"]					= true,
-				["zombied"]					= true
-	}
 	local can_skip
 	for k,v in pairs(board.squads) do
 		local squad = alife_object(k)
-		if (squad:clsid() == online_offline_group_s and  can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)) then
+		if (squad:clsid() == online_offline_group_s and  can_destroy_squad(squad,sim,gg)) then
 			local squad_npcs = get_squad_members(squad.id)
 			for kk,vv in pairs(squad_npcs) do
 				local obj = sim:object(kk)
@@ -1484,21 +1451,10 @@ function CSurgeManager:kill_all_unhided_after_actor_death()
 		return 
 	end
 	local board = SIMBOARD
-	local immuned_to_surge_squads = {
-					["monolith"] = true,
-					["monster_predatory_day"] 	= true,
-					["monster_predatory_night"] = true,
-					["monster_vegetarian"] 		= true,
-					["monster_zombied_day"] 	= true,
-					["monster_zombied_night"] 	= true,
-					["monster_special"] 		= true,
-					["monster"]					= true,
-					["zombied"]					= true
-	}
 	local sim,gg = alife(),game_graph()
 	for k,v in pairs(board.squads) do
 		local squad = alife_object(k)
-		if (squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)) then
+		if (squad:clsid() == clsid.online_offline_group_s and can_destroy_squad(squad,sim,gg)) then
 			local squad_npcs = get_squad_members(squad.id)
 			for kk,vv in pairs(squad_npcs) do
 				local obj = sim:object(kk)
@@ -1756,13 +1712,16 @@ function sound_started()
 	return get_surge_manager().started and get_surge_manager().blowout_sound
 end
 
-function can_destroy_squad(squad,immuned_to_surge_squads,sim,gg)
+function can_destroy_squad(squad,sim,gg)
 	if not (squad.online) then 
 		return false
 	end
-	if(immuned_to_surge_squads[squad.player_id]) then
+	if (is_squad_monster[squad.player_id]) then
 		return false
 	end
+	if (squad.player_id == "zombied" or squad.player_id == "monolith") then 
+		return false
+	end 
 	if not (simulation_objects.is_on_the_same_level(sim:actor(), squad)) then 
 		return false 
 	end
