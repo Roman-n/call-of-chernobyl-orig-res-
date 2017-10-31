@@ -699,7 +699,7 @@ function is_actor_immune()
 		return true
 	end
 	-- 'Radiotherapy' achievement has been unlocked.
-	if (has_alife_info("achieved_radiotherapy")) then
+	if (dxr_achievements.has_achievement("radiotherapy")) then
 		if (math.random(1,100) < 25) then
 			return true
 		end

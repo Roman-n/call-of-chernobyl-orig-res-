@@ -1,7 +1,7 @@
 -- Modified by Alundaio
 
 actor_statistic = {
-					achievements = 0,
+					achievements = {},
 					actual_rank = 0,
 					actual_reputation = 0,
 					arena_battles = 0,
@@ -214,7 +214,9 @@ function load_state(data)
 end
 
 function inc_achievement(achievement)
-	inc_counter("achievements", rank_rep[achievement].rnk, rank_rep[achievement].rpt)
+	actor_statistic.achievements[achievement] = true
+	inc_actor_rank(rank_rep[achievement].rnk)
+	inc_actor_reputation(rank_rep[achievement].rpt)
 end
 
 function inc_counter(statistic, cstm_rnk, cstm_rpt)
@@ -331,7 +333,6 @@ function save(package)
 	package:w_u16(actor_statistic.level_changes)
 	package:w_u16(actor_statistic.enemies_surrendered)
 	package:w_u16(actor_statistic.field_dressings)
-	package:w_u16(actor_statistic.achievements)
 	package:w_stringZ(tostring(actor_statistic.best_monster))
 	package:w_stringZ(tostring(actor_statistic.favorite_weapon_sect))
 

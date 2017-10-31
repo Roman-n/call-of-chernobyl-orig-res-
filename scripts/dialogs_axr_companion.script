@@ -233,7 +233,7 @@ function is_non_story(actor,npc)
 end 
 
 function is_room_in_actor_squad(actor,npc)
-	local max_size = axr_companions.max_actor_squad_size + (has_alife_info("achieved_patriarch") and 2 or 0)
+	local max_size = axr_companions.max_actor_squad_size + (dxr_achievements.has_achievement("patriarch") and 2 or 0)
 	if (axr_companions.get_companion_count() + alun_utils.get_squad_count(npc) <= max_size) then
 		return true
 	end

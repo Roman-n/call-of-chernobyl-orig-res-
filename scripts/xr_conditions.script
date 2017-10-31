@@ -2885,7 +2885,7 @@ function heli_dist_to_max_bounding_le(actor,npc,p)
 end
 
 function heavy_pockets_functor(actor,npc,p)
-	return has_alife_info("achieved_heavy_pockets")
+	return dxr_achievements.has_achievement("heavy_pockets")
 end
 
 ------------------------------------------------------------------------------------

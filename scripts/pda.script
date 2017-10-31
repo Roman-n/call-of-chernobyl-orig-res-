@@ -129,7 +129,7 @@ function get_stat(index) -- index= int        return string
 	elseif(index==15) then 
 		return (dxr_encyclopedia.get_articles_unlocked_count() .. "/" .. dxr_encyclopedia.get_articles_count())
 	elseif(index==16) then 
-		return (xr_statistic.actor_statistic.achievements .. "/" .. dxr_achievements.get_achievements_available())
+		return (dxr_achievements.get_achievements_unlocked_count() .. "/" .. dxr_achievements.get_achievements_count())
 	elseif(index==17) then 
 		return (xr_statistic.get_levels_visited_count() .. "/32")
 	elseif(index==18) then 

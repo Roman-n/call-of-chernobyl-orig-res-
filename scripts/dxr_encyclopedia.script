@@ -44,9 +44,7 @@ end
 
 -- Character and faction articles for looting a dead stalker.
 function detect_character_interaction2(mode, last_mode)
-	if (last_mode ~= 4) then 
-		return 
-	end
+	if (last_mode ~= 4) then return end
 	local character = ActorMenu.get_actor_menu():GetPartner()
 	if (not character or character:alive()) then return end
 	create_interaction("factions", character_community(character))

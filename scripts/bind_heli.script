@@ -227,7 +227,7 @@ function heli_binder:update( delta )
 		if not (self.is_story_heli) then -- has custom logic from spawn
 			-- Down to Earth achievement
 			-- Kills off any remaining strong helicopters.
-			if (has_alife_info("achieved_down_to_earth")) then
+			if (dxr_achievements.has_achievement("down_to_earth")) then
 				local self_destruct = system_ini():r_bool_ex(self.object:section(), "kill_with_achievement", false)
 				if (not self.st.heliObject.m_dead and self_destruct == true) then
 					self.self_destruct = true

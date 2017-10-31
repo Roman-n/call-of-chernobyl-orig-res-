@@ -209,7 +209,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	local spawned_item = bonus_items or {}
 	local max_weight = math.random(80,130)
 	
-	if (has_alife_info("achieved_rag_and_bone")) then
+	if (dxr_achievements.has_achievement("rag_and_bone")) then
 		max_weight = max_weight + 30
 	end
 	
