@@ -1,4 +1,74 @@
 ;--------------------------------------------------------------------------------------------------
+; DEFEND BAR FROM MUTANTS TASK-
+
+[bar_visitors_barman_stalker_trader_task_1]
+icon = ui_inGame2_Nochnaya_ohota
+prior = 35
+storyline = false
+title = bar_visitors_barman_stalker_trader_task_1_name
+descr = bar_visitors_barman_stalker_trader_task_1_text
+job_descr = bar_visitors_barman_stalker_trader_task_1_about
+task_complete_descr = bar_visitors_barman_stalker_trader_task_1_finish
+target_functor = general_under_faction_control
+status_functor = check_smart_under_faction_control_staged
+status_functor_params = monster
+on_init = %=find_smart_under_faction_control(bar_visitors_barman_stalker_trader_task_1_id:monster)%
+precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:monster)} true, false
+repeat_timeout = 86400
+stage_complete = 1
+on_complete = %=complete_task_inc_goodwill(25:stalker:trader) =reward_random_money(2500:3000) =reward_stash(true) =inc_task_stage(bar_visitors_barman_stalker_trader_task_1) =pstor_reset(bar_visitors_barman_stalker_trader_task_1_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_1_target_id)%
+on_fail = %=pstor_reset(bar_visitors_barman_stalker_trader_task_1_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_1_target_id) =fail_task_dec_goodwill(25:stalker:trader)%
+on_cancel = %=pstor_reset(bar_visitors_barman_stalker_trader_task_1_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_1_target_id)%
+
+
+;--------------------------------------------------------------------------------------------------
+; KILL BANDITS FOR BARMAN TASK-
+
+[bar_visitors_barman_stalker_trader_task_2]
+icon = ui_inGame2_Odin_vistrel
+prior = 10
+storyline = false
+title = bar_visitors_barman_stalker_trader_task_2_name
+descr = bar_visitors_barman_stalker_trader_task_2_text
+job_descr = bar_visitors_barman_stalker_trader_task_2_about
+task_complete_descr = bar_visitors_barman_stalker_trader_task_2_finish
+repeat_timeout = 86400
+target_functor = general_under_faction_control
+status_functor = check_smart_under_faction_control_staged
+status_functor_params = bandit
+stage_complete = 1
+on_init = %=find_smart_under_faction_control_ex(bar_visitors_barman_stalker_trader_task_2_id:bandit)%
+precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction_ex(1:nil:false:bandit)} true, false
+on_complete = %=complete_task_inc_goodwill(50:stalker:trader) =reward_random_money(4500:5500) =reward_stash(true) =inc_task_stage(bar_visitors_barman_stalker_trader_task_2) =pstor_reset(bar_visitors_barman_stalker_trader_task_2_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_2_target_id)%
+on_fail = %=fail_task_dec_goodwill(50:stalker:trader) =pstor_reset(bar_visitors_barman_stalker_trader_task_2_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_2_target_id)%
+on_cancel = %=pstor_reset(bar_visitors_barman_stalker_trader_task_2_id) =pstor_reset(bar_visitors_barman_stalker_trader_task_2_target_id)%
+
+
+;--------------------------------------------------------------------------------------------------
+; FIND ARTEFACT FOR BARMAN TASK-
+
+[bar_visitors_barman_stalker_trader_task_3]
+icon = ui_inGame2_Kontrakt_s_uchenimi
+prior = 5
+storyline = false
+title = bar_visitors_barman_stalker_trader_task_3_name
+title_functor = general_fetch_task
+descr = bar_visitors_barman_stalker_trader_task_3_text
+descr_functor = general_fetch_task
+job_descr = bar_visitors_barman_stalker_trader_task_3_about
+fetch_descr = bar_visitors_barman_stalker_trader_task_3_fetch_about
+fetch_func = %=setup_artefact_fetch_task(bar_visitors_barman_stalker_trader_task_3_fetch)%
+stage_complete = 1
+status_functor = actor_has_fetch_item
+target_functor = general_fetch_task
+task_complete_descr = bar_visitors_barman_stalker_trader_task_3_fetch_finish
+; precondition = true
+repeat_timeout = 86400
+on_complete = %=complete_task_inc_goodwill(50:stalker:trader) =reward_stash(true) =reward_item_cost_mult_and_remove(bar_visitors_barman_stalker_trader_task_3_fetch:0.63) =inc_task_stage(bar_visitors_barman_stalker_trader_task_3)%
+on_fail = %=fail_task_dec_goodwill(50:stalker:trader)%
+
+
+;--------------------------------------------------------------------------------------------------
 ; DEFEND TERRITORY FOR DUTY TASK-
 
 [bar_dolg_general_petrenko_stalker_task_1]

@@ -361,12 +361,10 @@ function pick_section_from_condlist(obj, npc, condlist)
 		return ""
 	end
 	
-	local actor = db.actor
-	
 	local npc_id = npc and IsStalker(npc) and type(npc.id) == "function" and npc:id()
 	npc_id = npc_id == 0 and nil or npc_id -- we want only npc not actor
 
-	local sim = alife()
+	local sim = alife()	
 	for i=1,#condlist do
 		local cond = condlist[i]
 		local infop_conditions_met = true
@@ -382,8 +380,8 @@ function pick_section_from_condlist(obj, npc, condlist)
 								break
 							end
 						end
-					elseif (actor) then 
-						if not (actor:has_info(infop[1])) then
+					else
+						if not (sim:has_info(0,infop[1])) then
 							infop_conditions_met = false
 							break
 						end
@@ -396,8 +394,8 @@ function pick_section_from_condlist(obj, npc, condlist)
 								break
 							end
 						end
-					elseif (actor) then 
-						if (actor:has_info(infop[1])) then
+					else
+						if (sim:has_info(0,infop[1])) then
 							infop_conditions_met = false
 							break
 						end
@@ -438,9 +436,9 @@ function pick_section_from_condlist(obj, npc, condlist)
 									npc:give_info_portion(infop[1])
 								end
 							end
-						elseif (actor) then
-							if not (actor:has_info(infop[1])) then 
-								actor:give_info_portion(infop[1])
+						else
+							if not (sim:has_info(0,infop[1])) then 
+								sim:give_info(0,infop[1])
 							end
 						end
 					elseif (infop[2] == 2) then 
@@ -450,9 +448,9 @@ function pick_section_from_condlist(obj, npc, condlist)
 									npc:disable_info_portion(infop[1])
 								end
 							end
-						elseif (actor) then
-							if (actor:has_info(infop[1])) then 
-								actor:disable_info_portion(infop[1])
+						else
+							if (sim:has_info(0,infop[1])) then 
+								sim:disable_info(0,infop[1])
 							end
 						end
 					elseif (infop[2] == 3 or infop[2] == 4) then
@@ -713,8 +711,8 @@ function parse_condlist(npc, section, field, src)
 	return lst
 end
 
-function cfg_get_number_and_condlist(ini, section, field, npc,cond_name)
-	local str = ini:r_string_ex(section,field)
+function cfg_get_number_and_condlist(ini, section, field, npc,cond_name, str)
+	str = str or ini:r_string_ex(section,field)
 	if not str then
 		return nil
 	end
@@ -733,8 +731,8 @@ function cfg_get_number_and_condlist(ini, section, field, npc,cond_name)
 	return t
 end
 
-function cfg_get_string_and_condlist(ini, section, field, npc,cond_name)
-	local str = ini:r_string_ex(section,field)
+function cfg_get_string_and_condlist(ini, section, field, npc, cond_name, str)
+	str = str or ini:r_string_ex(section,field)
 	if not str then
 		return nil
 	end
@@ -753,8 +751,8 @@ function cfg_get_string_and_condlist(ini, section, field, npc,cond_name)
 	return t
 end
 
-function cfg_get_two_strings_and_condlist(ini, section, field, npc,cond_name)
-	local str = ini:r_string_ex(section,field)
+function cfg_get_two_strings_and_condlist(ini, section, field, npc, cond_name, str)
+	str = str or ini:r_string_ex(section,field)
 	if not str then
 		return nil
 	end
@@ -774,7 +772,7 @@ function cfg_get_two_strings_and_condlist(ini, section, field, npc,cond_name)
 	return t
 end
 
-function cfg_get_condlist(ini, section, field, npc,cond_name)
+function cfg_get_condlist(ini, section, field, npc, cond_name, str)
 	
 	local str = ini:r_string_ex(section,field)
 	if not str then
@@ -796,7 +794,7 @@ function cfg_get_condlist(ini, section, field, npc,cond_name)
 end
 
 function cfg_get_npc_and_zone(ini, section, field, npc,cond_name)
-	local t = cfg_get_two_strings_and_condlist(ini, section, field, npc,cond_name)
+	local t = cfg_get_two_strings_and_condlist(ini, section, field, npc, cond_name)
 
 	if t then
 		local id = get_story_object_id(t.v1)
@@ -827,35 +825,35 @@ function cfg_get_switch_conditions(ini, section, npc)
 		local result, id, value  = ini:r_line_ex(section,line_number,"","")
 		local cond_name = id:gsub("%d*$","")
 		if (cond_name == "on_actor_dist_le") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_actor_dist_le_nvis") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_actor_dist_ge") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_actor_dist_ge_nvis") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_signal") then
-			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_first_update") then 
-			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_info") then
-			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name)	
+			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name,value)	
 		elseif (cond_name == "on_timer") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_game_timer") then
-			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name)	
+			lst[#lst+1] = cfg_get_number_and_condlist(ini,section,id,npc,cond_name,value)	
 		elseif (cond_name == "on_actor_in_zone") then
-			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_actor_not_in_zone") then
-			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name)	
+			lst[#lst+1] = cfg_get_string_and_condlist(ini,section,id,npc,cond_name,value)	
 		elseif (cond_name == "on_actor_inside") then
-			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_actor_outside") then
-			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_condlist(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_npc_in_zone") then
-			lst[#lst+1] = cfg_get_npc_and_zone(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_npc_and_zone(ini,section,id,npc,cond_name,value)
 		elseif (cond_name == "on_npc_not_in_zone") then
-			lst[#lst+1] = cfg_get_npc_and_zone(ini,section,id,npc,cond_name)
+			lst[#lst+1] = cfg_get_npc_and_zone(ini,section,id,npc,cond_name,value)
 		end
 	end
 

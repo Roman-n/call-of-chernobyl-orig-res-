@@ -11,24 +11,25 @@ function check_smart_under_faction_control(tsk,task_id)
 	if not (db.actor) then 
 		return 
 	end
+	
 	local smart_id = utils.load_var(db.actor,task_id.."_id")
-	if not (smart_id) then 
+	if not (smart_id) then -- error
+		printf("check_smart_under_faction_control no smart id for task %s",task_id)
 		return "fail"
 	end 
 	
 	local smrt = SIMBOARD.smarts[smart_id]
-	if not (smrt) then 
-		return "fail"
-	end 
-	
-	local smart = smrt.smrt
-	if not (smart) then 
-		return "fail"
-	end 
+	local smart = smrt and smrt.smrt
+	if not (smart) then
+		return
+	end
 	
 	--in case sim_avail is set true during the player's tsk
 	-- with simulation_objects.available_by_id[smart.id] nil means unprocess, false is absolutely not avail
-	if (simulation_objects.available_by_id[smart.id] == false) then
+	if (simulation_objects.available_by_id[smart.id] == nil) then 
+		return -- still needs processing
+	elseif (simulation_objects.available_by_id[smart.id] == false) then
+		printf("check_smart_under_faction_control task failed because smart no longer available",task_id)
 		return "fail"
 	end
 	

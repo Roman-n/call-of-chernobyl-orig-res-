@@ -17,8 +17,6 @@ if string.find(command_line(), "-dbg") then
 	end
 end
 
-USE_INI_MEMOIZE = true
-
 -------------------------------------------------------------------------------------------------
 -- Use marshal library for saving persistent data (like xr_logic pstor)
 -- marshal library can encode tables, functions, strings and numbers to easily allow persistent data storage to file
@@ -1551,113 +1549,35 @@ function string.gsplit(s, sep, plain)
 end
 
 -- INI Extensions
-local ini_cache = { [system_ini()] = {} }
-function clear_ini_cache(ini)
-	ini_cache[ini] = empty_table(ini_cache[ini])
+function ini_file.r_string_ex(ini,s,k,def)
+	--callstack()
+	--printf("r_string_ex(%s,%s)",s,k)
+	if not (ini:section_exist(s) and ini:line_exist(s,k)) then
+		return def
+	end
+	return ini:r_string(s,k) or def
 end
-if (USE_INI_MEMOIZE) then
-	-- memoize ini results
-	local function r_memoize(ini,s,k,def,typ)
-		if not (s) then
-			callstack()
-		end
-		
-		if (ini_cache[ini]) then
-			local key = s.."&"..k
-			if (ini_cache[ini][key]) then
-				return ini_cache[ini][key]
-			end
-		end
-		
-		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
-			return def
-		end
-		
-		local result = ini:r_string(s,k)
-		if (result) then
-			if (typ == 0) then
-				result = result == "true" or result == "1" or false
-			elseif (typ == 1) then
-				result = tonumber(result)
-			end
-			
-			if (result ~= nil) then
-				if (ini_cache[ini]) then
-					local key = s.."&"..k
-					if (ini_cache[ini][key]) then
-						ini_cache[ini][key] = result
-					end
-				end
-			end
-		end
-		
-		return result == nil and def or result
+function ini_file.r_float_ex(ini,s,k,def)
+	--callstack()
+	--printf("r_float_ex(%s,%s)",s,k)
+	if not (ini:section_exist(s) and ini:line_exist(s,k)) then
+		return def
 	end
-
-	function ini_file.r_string_ex(ini,s,k,def)
-		return r_memoize(ini,s,k,def)
+	return ini:r_float(s,k) or def
+end
+-- It is wise to use the def with r_bool_ex, because false and nil are consider 'not'. def is only returned on nil
+function ini_file.r_bool_ex(ini,s,k,def)
+	--callstack()
+	if not (ini:section_exist(s) and ini:line_exist(s,k)) then
+		return def
 	end
-
-	-- It is wise to use the def with r_bool_ex, because false and nil are consider 'not'. def is only returned on nil
-	function ini_file.r_bool_ex(ini,s,k,def)
-		return r_memoize(ini,s,k,def,0)
-	end
-	function ini_file.r_float_ex(ini,s,k,def)
-		return r_memoize(ini,s,k,def,1)
-	end
-	function ini_file.r_line_ex(ini,s,k)
-		if not (ini_cache[ini]) then
-			ini_cache[ini] = {}
-		end
-		
-		if (ini_cache[ini]) then
-			local key = s .. "&" .. k
-			if (ini_cache[ini][key]) then
-				return unpack(ini_cache[ini][key])
-			end
-		end
-		
-		local a,b,c = ini:r_line(s,k,"","")
-		
-		if (ini_cache[ini]) then
-			local key = s.."&"..k
-			if (ini_cache[ini][key]) then
-				ini_cache[ini][key] = {a,b,c}
-			end
-		end
-		
-		return a,b,c
-	end
-else
-	function ini_file.r_string_ex(ini,s,k,def)
-		--callstack()
-		--printf("r_string_ex(%s,%s)",s,k)
-		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
-			return def
-		end
-		return ini:r_string(s,k) or def
-	end
-	function ini_file.r_float_ex(ini,s,k,def)
-		--callstack()
-		--printf("r_float_ex(%s,%s)",s,k)
-		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
-			return def
-		end
-		return ini:r_float(s,k) or def
-	end
-	function ini_file.r_bool_ex(ini,s,k,def)
-		--callstack()
-		if not (ini:section_exist(s) and ini:line_exist(s,k)) then
-			return def
-		end
-		--printf("r_bool_ex(%s,%s)",s,k)
-		local v = ini:r_string(s,k)
-		return v == nil and def or v == "true" or v == "1" or false
-	end
-	function ini_file.r_line_ex(ini,s,k)
-		--callstack()
-		return ini:r_line(s,k,"","")
-	end
+	--printf("r_bool_ex(%s,%s)",s,k)
+	local v = ini:r_string(s,k)
+	return v == nil and def or v == "true" or v == "1" or false
+end
+function ini_file.r_line_ex(ini,s,k)
+	--callstack()
+	return ini:r_line(s,k,"","")
 end
 function ini_file.r_string_to_condlist(ini,s,k,def)
 	local src = ini:r_string_ex(s,k) or def

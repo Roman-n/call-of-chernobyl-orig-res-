@@ -63,7 +63,7 @@ function activate_feature()
 	start_blur 				= 20				--// time between sleeps when vision blur starts 
 	itn_mul 				= 0.2				--// blur intensity multiplier
 	pwr_rate,rng_factor 	= -0.00065, 0.08		--// power reduction rate ,high/low range multiplier - lower is flatter
-	caff_max				= 5					--// max energy drinks per hr
+	caff_max				= 3					--// max energy drinks per hr
 	last_warning 			= 3					--// # of hourly warnings before passing out
 	die_chance 				= 0.01				--// chance of dying if actor passes out
 	--last_chk, pwr_chk		= 0, 0				--// hourly and power update counters

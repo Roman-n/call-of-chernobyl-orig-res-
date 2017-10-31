@@ -499,7 +499,7 @@ function surrender_victim_answers_1(a,b)
 			end
 		end
 
-	if (coc_treasure_manager and coc_treasure_manager.last_secret) then
+		if (coc_treasure_manager and coc_treasure_manager.last_secret) then
 			return game.translate_string("st_surrender_victim_answer_"..math.random(3))
 		else
 			return game.translate_string("st_surrender_victim_answer_5")
