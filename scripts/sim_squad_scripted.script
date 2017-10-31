@@ -931,7 +931,7 @@ function sim_squad_scripted:check_online_status()
 	elseif not (level_weathers.valid_levels[level.name()]) then -- underground levels
 		-- don't enforce any rule
 	else
-		if (is_squad_monster[self.player_id]) then -- monster behaviors
+		if (self.online ~= true and is_squad_monster[self.player_id]) then -- monster behaviors
 			local hour = level.get_time_hours()
 			if (self.player_id == "monster_predatory_day" or self.player_id == "monster_special_day") then 
 				-- Monster will not come online during the hours of (9PM till 5AM)
