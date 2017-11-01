@@ -259,7 +259,7 @@ function generic_object_binder:death_callback(victim, who)
 
 	if (who) then
 		if (who:id() == db.actor:id()) then
-			xr_statistic.inc_counter("killed_monsters")
+			dxr_statistics.increment_statistic("killed_monsters")
 		elseif (IsStalker(who) and who:alive()) then
 			local se_who = alife_object(who:id())
 			-- npc_statistic
@@ -305,10 +305,6 @@ function generic_object_binder:hit_callback(obj, amount, local_direction, who, b
 	--alun_utils.debug_write(strformat("generic_object_binder %s",obj and obj:name()))
 	if (amount <= 0) then
 		return
-	end
-
-	if(who:id()==db.actor:id()) then
-		xr_statistic.set_best_weapon(amount)
 	end
 
 	if self.st.hit then

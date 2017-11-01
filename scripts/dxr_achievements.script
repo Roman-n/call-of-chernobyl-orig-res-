@@ -40,16 +40,12 @@ end
 
 -- Counts how many achievements are unlocked.
 function get_achievements_unlocked_count()
-	local index = 0
-	for k, v in pairs(xr_statistic.actor_statistic.achievements) do
-		index = index + 1
-	end
-	return index
+	return dxr_statistics.get_actor_achievements_count()
 end
 
 -- Checks whether an achievement is unlocked.
 function has_achievement(achievement)
-	return achievement and xr_statistic.actor_statistic.achievements[achievement] or false
+	return dxr_statistics.has_actor_achievement(achievement)
 end
 
 --------------------
@@ -271,7 +267,7 @@ function tourist_functor()
 		return true
 	end
 	-- Unlock the achievement.
-	if (dxr_achievements.has_achievement("tourist_delay")) then
+	if (has_achievement("tourist_delay")) then
 		tourist_rewards()
 		return true
 	end
@@ -342,8 +338,8 @@ end
 -- Requires 3 helicopters killed, or just one with an RPG-7.
 function down_to_earth_requirements()
 	return (
-				(xr_statistic.actor_statistic.heli_kills >= 3)
-			 or (xr_statistic.actor_statistic.heli_rocket_kills >= 1)
+				(dxr_statistics.get_statistic_count("helicoptes_downed") >= 3)
+			 or (dxr_statistics.get_statistic_count("helicopters_downed2") >= 1)
 		)
 end
 
@@ -361,7 +357,7 @@ end
 -- Requires 50 artefacts be detected by the player.
 function geologist_requirements()
 	return (
-				(xr_statistic.actor_statistic.artefacts_detected >= 50)
+				(dxr_statistics.get_statistic_count("artefacts_detected") >= 50)
 		)
 end
 
@@ -377,7 +373,7 @@ end
 -- Requires player to deliver 50 PDAs.
 function infopreneur_requirements()
 	return (
-				(xr_statistic.actor_statistic.pdas_delivered >= 50)
+				(dxr_statistics.get_statistic_count("pdas_delivered") >= 50)
 		)
 end
 
@@ -411,8 +407,8 @@ end
 -- Requires 25 emissions and 25 psi-storms to be survived.
 function radiotherapy_requirements()
 	return (
-				(xr_statistic.actor_statistic.surges >= 25)
-			and (xr_statistic.actor_statistic.storms >= 25)
+				(dxr_statistics.get_statistic_count("emissions") >= 25)
+			and (dxr_statistics.get_statistic_count("psi_storms") >= 25)
 		)
 end
 
@@ -420,7 +416,7 @@ end
 -- Requires 100 stashes be found and looted.
 function rag_and_bone_requirements()
 	return (
-				(xr_statistic.actor_statistic.stashes_found >= 100)
+				(dxr_statistics.get_statistic_count("stashes_found") >= 100)
 		)
 end
 
@@ -428,8 +424,8 @@ end
 -- Requires player to kill 500 stalkers or have 50 surrender to you.
 function silver_or_lead_requirements()
 	return (
-				(xr_statistic.actor_statistic.killed_stalkers >= 500)
-			 or (xr_statistic.actor_statistic.enemies_surrendered >= 50)
+				(dxr_statistics.get_statistic_count("killed_stalkers") >= 500)
+			 or (dxr_statistics.get_statistic_count("enemies_surrendered") >= 50)
 		)
 end
 
@@ -437,7 +433,7 @@ end
 -- Requires player to visit all levels.
 function tourist_requirements()
 	return (
-				(xr_statistic.actor_visited_all_levels())
+				(dxr_statistics.has_actor_visitied_all_levels())
 		)
 end
 
@@ -445,8 +441,8 @@ end
 -- Requires player to kill 500 mutants or field dress 250 mutant parts.
 function well_dressed_requirements()
 	return (
-				(xr_statistic.actor_statistic.killed_monsters >= 500)
-			 or (xr_statistic.actor_statistic.field_dressings >= 250)
+				(dxr_statistics.get_statistic_count("killed_monsters") >= 500)
+			 or (dxr_statistics.get_statistic_count("field_dressings") >= 250)
 		)
 end
 
@@ -467,16 +463,12 @@ end
 -- Future memory sticks become rare PDAs.
 -- Reputation and rank point increase.
 function bookworm_food_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_15_unlock", nil, "bookworm_food", nil, nil)
-	xr_statistic.inc_achievement("bookworm_food")
 	SendScriptCallback("on_achievement_earned","bookworm_food","st_achievement_15_unlock")
 end
 
 -- Completionist.
 -- Reputation and rank point increase.
 function completionist_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_10_unlock", nil, "completionist", nil, nil)
-	xr_statistic.inc_achievement("completionist")
 	SendScriptCallback("on_achievement_earned","completionist","st_achievement_10_unlock")
 end
 
@@ -484,8 +476,6 @@ end
 -- Weaker helicopters are respawned.
 -- Reputation and rank point increase.
 function down_to_earth_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_12_unlock", nil, "down_to_earth", nil, nil)
-	xr_statistic.inc_achievement("down_to_earth")
 	SendScriptCallback("on_achievement_earned","down_to_earth","st_achievement_12_unlock")
 end
 
@@ -493,8 +483,6 @@ end
 -- Yantar & Radar psi-fields disabled.
 -- Reputation and rank point increase.
 function duga_free_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_4_unlock", nil, "duga_free", nil, nil)
-	xr_statistic.inc_achievement("duga_free")
 	SendScriptCallback("on_achievement_earned","duga_free","st_achievement_4_unlock")
 end
 
@@ -502,8 +490,6 @@ end
 -- Increased spawn chance of artefacts.
 -- Reputation and rank point increase.
 function geologist_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_13_unlock", nil, "geologist", nil, nil)
-	xr_statistic.inc_achievement("geologist")
 	SendScriptCallback("on_achievement_earned","geologist","st_achievement_13_unlock")
 end
 
@@ -511,8 +497,6 @@ end
 -- Traders sell cheaper and rarer goods.
 -- Reputation and rank point increase.
 function heavy_pockets_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_1_unlock", nil, "heavy_pockets", nil, nil)
-	xr_statistic.inc_achievement("heavy_pockets")
 	SendScriptCallback("on_achievement_earned","heavy_pockets","st_achievement_1_unlock")
 end
 
@@ -520,8 +504,6 @@ end
 -- Money received for delivering PDAs increased.
 -- Reputation and rank point increase.
 function infopreneur_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_3_unlock", nil, "infopreneur", nil, nil)
-	xr_statistic.inc_achievement("infopreneur")
 	SendScriptCallback("on_achievement_earned","infopreneur","st_achievement_3_unlock")
 end
 
@@ -529,8 +511,6 @@ end
 -- A mechanic can now fully upgrade equipment.
 -- Reputation and rank point increase.
 function mechanized_warfare_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_7_unlock", nil, "mechanized_warfare", nil, nil)
-	xr_statistic.inc_achievement("mechanized_warfare")
 	SendScriptCallback("on_achievement_earned","mechanized_warfare","st_achievement_7_unlock")
 end
 
@@ -538,8 +518,6 @@ end
 -- Larger sized squads can be recruited.
 -- Reputation and rank point increase.
 function patriarch_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_14_unlock", nil, "patriarch", nil, nil)
-	xr_statistic.inc_achievement("patriarch")
 	SendScriptCallback("on_achievement_earned","patriarch","st_achievement_14_unlock")
 end
 
@@ -547,8 +525,6 @@ end
 -- 25% chance of surviving emissions and psi-vortices.
 -- Reputation and rank point increase.
 function radiotherapy_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_2_unlock", nil, "radiotherapy", nil, nil)
-	xr_statistic.inc_achievement("radiotherapy")
 	SendScriptCallback("on_achievement_earned","radiotherapy","st_achievement_2_unlock")
 end
 
@@ -556,8 +532,6 @@ end
 -- Random chance of better loot in task reward stashes.
 -- Reputation and rank point increase.
 function rag_and_bone_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_9_unlock", nil, "rag_and_bone", nil, nil)
-	xr_statistic.inc_achievement("rag_and_bone")
 	SendScriptCallback("on_achievement_earned","rag_and_bone","st_achievement_9_unlock")
 end
 
@@ -565,8 +539,6 @@ end
 -- 33% chance of a second stash from surrendering stalkers.
 -- Reputation and rank point increase.
 function silver_or_lead_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_6_unlock", nil, "silver_or_lead", nil, nil)
-	xr_statistic.inc_achievement("silver_or_lead")
 	SendScriptCallback("on_achievement_earned","silver_or_lead","st_achievement_6_unlock")
 end
 
@@ -579,8 +551,6 @@ function tourist_rewards()
 		coc_treasure_manager.create_random_stash(nil, hint, nil, "treasure_unique")
 	end
 	db.actor:disable_info_portion("achieved_tourist_delay")
-	news_manager.send_tip(db.actor, "st_achievement_8_unlock", nil, "tourist", nil, nil)
-	xr_statistic.inc_achievement("tourist")
 	SendScriptCallback("on_achievement_earned","tourist","st_achievement_8_unlock")
 end
 
@@ -588,8 +558,6 @@ end
 -- 20% chance of extra parts when field dressing mutants.
 -- Reputation and rank point increase.
 function well_dressed_rewards()
-	news_manager.send_tip(db.actor, "st_achievement_5_unlock", nil, "well_dressed", nil, nil)
-	xr_statistic.inc_achievement("well_dressed")
 	SendScriptCallback("on_achievement_earned","well_dressed","st_achievement_5_unlock")
 end
 
@@ -597,9 +565,7 @@ end
 -- Bonus reputation and rank point increase.
 -- Reputation and rank point increase.
 function wishful_thinking_rewards()
-	xr_statistic.inc_actor_rank(1000)
-	xr_statistic.inc_actor_reputation(500)
-	news_manager.send_tip(db.actor, "st_achievement_11_unlock", nil, "wishful_thinking", nil, nil)
-	xr_statistic.inc_achievement("wishful_thinking")
+	dxr_statistics.increment_rank(1000)
+	dxr_statistics.increment_reputation(500)
 	SendScriptCallback("on_achievement_earned","wishful_thinking","st_achievement_11_unlock")
 end

@@ -273,10 +273,6 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 		return 
 	end
 	
-	if (who:id() == 0) then
-		xr_statistic.set_best_weapon(amount)
-	end
-	
 	-- Only wound the stalker from powerful attacks if not a head hit and not already wounded
 	if (bone_index ~= 15 and amount > 15 and amount >= obj.health*100 and not IsWounded(obj)) then
 		obj:set_health_ex(0.15)
@@ -329,12 +325,12 @@ function motivator_binder:death_callback(victim, who)
 	ai_stalker.clear_cover(self.object:id())
 	
 	if (victim:has_info("npcx_is_companion")) then 
-		xr_statistic.inc_counter("killed_companions") -- lose rep for companion death, nobody would want to hang out with a loser!
+		dxr_statistics.increment_statistic("killed_companions") -- lose rep for companion death, nobody would want to hang out with a loser!
 	elseif (who and who:id() == 0) then
 		if (utils.load_var(victim,"victim_surrender",false) == true) then
 			local state = tostring(utils.load_var(victim, "wounded_state"))
 			if (state ~= "nil") then
-				xr_statistic.inc_counter("killed_prisoners") -- lose rep for killing still wounded surrendered victim
+				dxr_statistics.increment_statistic("killed_prisoners") -- lose rep for killing still wounded surrendered victim
 			end
 		end
 	end

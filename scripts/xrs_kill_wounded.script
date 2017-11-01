@@ -64,7 +64,7 @@ local function npc_on_update(npc,st)
 		end
 
 		st.victim_surrender = db.actor:id()
-		xr_statistic.inc_counter("enemies_surrendered")
+		dxr_statistics.increment_statistic("enemies_surrendered")
 	end
 end
 

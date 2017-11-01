@@ -301,7 +301,7 @@ function actor_binder:save(packet)
 
 	xr_sound.actor_save(packet)
 	--alun_utils.w_stpk(packet,"stringZ",self.last_level_name,"last level name")
-	xr_statistic.save(packet)
+	dxr_statistics.save(packet)
 	task_manager.get_task_manager():save(packet)
 	packet:w_u8(self.object:active_slot())
 
@@ -348,7 +348,7 @@ function actor_binder:load(reader)
 		self.last_level_name = n
 	end
 	--]]
-	xr_statistic.load(reader)
+	dxr_statistics.load(reader)
 	task_manager.get_task_manager():load(reader)
 
 	self.loaded_active_slot = reader:r_u8()
@@ -377,7 +377,7 @@ function actor_binder:save_state(m_data)
 		sr_psy_antenna.psy_antenna:save_state(m_data)
 	end
 	
-	xr_statistic.save_state(m_data)
+	dxr_statistics.save_state(m_data)
 	inventory_upgrades.save_state(m_data)
 	xr_sound.actor_save_state(state)
 	task_manager.save_state(m_data)
@@ -412,7 +412,7 @@ function actor_binder:load_state(m_data)
 		sr_psy_antenna.psy_antenna:load_state(m_data)
 	end
 	
-	xr_statistic.load_state(m_data)
+	dxr_statistics.load_state(m_data)
 	inventory_upgrades.load_state(m_data)
 	xr_sound.actor_load_state(state)
 	task_manager.load_state(m_data)

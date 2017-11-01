@@ -99,39 +99,39 @@ function get_stat(index) -- index= int        return string
 	if(index==0) then
 		return get_time_elapsed()
 	elseif(index==1) then
-		return tostring(xr_statistic.actor_statistic.surges)
+		return tostring(dxr_statistics.get_statistic_count("emissions"))
 	elseif(index==2) then
-		return tostring(xr_statistic.actor_statistic.tasks_completed)
+		return tostring(dxr_statistics.get_statistic_count("tasks_completed"))
 	elseif(index==3) then
-		return tostring(xr_statistic.actor_statistic.killed_monsters)
+		return tostring(dxr_statistics.get_statistic_count("killed_monsters"))
 	elseif(index==4) then
-		return tostring(xr_statistic.actor_statistic.killed_stalkers)
+		return tostring(dxr_statistics.get_statistic_count("killed_stalkers"))
 	elseif(index==5) then
-		return tostring(xr_statistic.actor_statistic.boxes_smashed)
+		return tostring(dxr_statistics.get_statistic_count("boxes_smashed"))
 	elseif(index==6) then
-		return tostring(xr_statistic.actor_statistic.stashes_found)
+		return tostring(dxr_statistics.get_statistic_count("stashes_found"))
 	elseif(index==7) then
-		return tostring(xr_statistic.actor_statistic.storms)
+		return tostring(dxr_statistics.get_statistic_count("psi_storms"))
 	elseif(index==8) then
-		return tostring(xr_statistic.actor_statistic.pdas_delivered)
+		return tostring(dxr_statistics.get_statistic_count("pdas_delivered"))
 	elseif(index==9) then
-		return tostring(xr_statistic.actor_statistic.heli_kills)
+		return tostring(dxr_statistics.get_statistic_count("helicopters_downed"))
 	elseif(index==10) then
-		return tostring(xr_statistic.actor_statistic.artefacts_detected)
+		return tostring(dxr_statistics.get_statistic_count("artefacts_detected"))
 	elseif(index==11) then
-		return tostring(xr_statistic.actor_statistic.help_wounded)
+		return tostring(dxr_statistics.get_statistic_count("help_wounded"))
 	elseif(index==12) then 
-		return tostring(xr_statistic.actor_statistic.level_changes)
+		return tostring(dxr_statistics.get_statistic_count("level_changes"))
 	elseif(index==13) then 
-		return tostring(xr_statistic.actor_statistic.enemies_surrendered)
+		return tostring(dxr_statistics.get_statistic_count("enemies_surrendered"))
 	elseif(index==14) then 
-		return tostring(xr_statistic.actor_statistic.field_dressings)
+		return tostring(dxr_statistics.get_statistic_count("field_dressings"))
 	elseif(index==15) then 
 		return (dxr_encyclopedia.get_articles_unlocked_count() .. "/" .. dxr_encyclopedia.get_articles_count())
 	elseif(index==16) then 
 		return (dxr_achievements.get_achievements_unlocked_count() .. "/" .. dxr_achievements.get_achievements_count())
 	elseif(index==17) then 
-		return (xr_statistic.get_levels_visited_count() .. "/32")
+		return (dxr_statistics.get_actor_visited_levels_count() .. "/32")
 	elseif(index==18) then 
 		return (db.actor:money() .. " RU")
 	end

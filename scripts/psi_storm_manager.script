@@ -133,7 +133,7 @@ end
 
 function CPsiStormManager:skip_psi_storm()
 	if (self.started) then 
-		xr_statistic.inc_counter("storms")
+		dxr_statistics.increment_statistic("psi_storms")
 	end
 	if not (self.inited_time) then 
 		self.inited_time = game.get_game_time()
@@ -160,7 +160,7 @@ end
 
 function CPsiStormManager:finish(manual)
 	if (self.started) then 
-		xr_statistic.inc_counter("storms")
+		dxr_statistics.increment_statistic("psi_storms")
 		surge_manager.get_surge_manager():respawn_artefacts_and_replace_anomaly_zone()
 		surge_manager.get_surge_manager():toggle_level_artefact_respawns()	
 	end

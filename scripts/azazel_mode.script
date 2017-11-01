@@ -10,7 +10,7 @@ function on_game_load()
 	
 	if (alife_storage_manager.get_state().azazel_death) then
 		alife_storage_manager.get_state().azazel_death = nil
-		SetHudMsg(strformat(game.translate_string("st_death_count"),xr_statistic.actor_statistic.deaths),8)
+		SetHudMsg(strformat(game.translate_string("st_death_count"), dxr_statistics.get_statistic_count("deaths"), 8))
 		
 		-- Heal 
 		bind_stalker_ext.invulnerable_time = time_global() + 30000
@@ -29,8 +29,8 @@ function actor_on_before_death(whoID,flags)
 		return
 	end
 
-	xr_statistic.actor_statistic.deaths = xr_statistic.actor_statistic.deaths + 1
-	SetHudMsg(strformat(game.translate_string("st_death_count"),xr_statistic.actor_statistic.deaths),8)
+	dxr_statistics.increment_statistic("deaths")
+	SetHudMsg(strformat(game.translate_string("st_death_count"), dxr_statistics.get_statistic_count("deaths")), 8)
 	
 	-- find victims
 	local sim = alife()
@@ -57,7 +57,7 @@ function actor_on_before_death(whoID,flags)
 	--local t = #squad_mates > 0 and squad_mates or #faction_mates > 0 and faction_mates or avail_entities
 	local t = #squad_mates > 0 and squad_mates or avail_entities
 	if (#t == 0) then 
-		SetHudMsg(strformat(game.translate_string("st_death_count").." " .. game.translate_string("st_nobody_left_to_replace"),xr_statistic.actor_statistic.deaths),10)
+		SetHudMsg(strformat(game.translate_string("st_death_count").." " .. game.translate_string("st_nobody_left_to_replace"), dxr_statistics.get_statistic_count("deaths")), 10)
 		return
 	end
 	
@@ -164,9 +164,9 @@ function actor_on_before_death(whoID,flags)
 	
 	game_relations.set_community_goodwill_for_faction("actor_"..faction)
 	
-	-- Force update of xr_statistic records.
-	xr_statistic.check_actor_rank_change(true)
-	xr_statistic.check_actor_reputation_change(true)
+	-- Force update of dxr_statistics rank/rept records.
+	dxr_statistics.check_for_rank_change(true)
+	dxr_statistics.check_for_reputation_change(true)
 	
 	-- copy all items except ignored
 	for i=1,65534 do 
