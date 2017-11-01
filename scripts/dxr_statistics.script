@@ -67,7 +67,7 @@ actor_statistics = {
 	["psi_storms"]			=	{	count = 0,		rank = 5,		rept = 0	},
 	["stashes_found"]		=	{	count = 0,		rank = 10,		rept = 0	},
 	["tasks_cancelled"]		=	{	count = 0,		rank = 0,		rept = -25	},
-	["tasks_completed"]		=	{	count = 0,		rank = 0,		rept = 25	},
+	["tasks_completed"]		=	{	count = 0,		rank = 50,		rept = 25	},
 	["tasks_failed"]		=	{	count = 0,		rank = 0,		rept = -25	},
 	["wounded_helped"]		=	{	count = 0,		rank = 10,		rept = 10	},
 }
