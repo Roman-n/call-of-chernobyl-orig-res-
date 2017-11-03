@@ -57,6 +57,7 @@ function DynamicNewsManager:__init()
 		["dolg"]    		= true,
 		["freedom"]  		= true,
 		["bandit"]   		= true,
+		["renegade"]   		= true,
 	}
 
 	self.queue = {
@@ -69,7 +70,8 @@ function DynamicNewsManager:__init()
 		["ecolog"]   		= {},
 		["dolg"]    		= {},
 		["freedom"]  		= {},
-		["bandit"]   		= {}
+		["bandit"]   		= {},
+		["renegade"]   		= {}
 	}
 	
 	self.spammer = {	

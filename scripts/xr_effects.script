@@ -1609,6 +1609,7 @@ function hit_npc_from_npc(actor, npc, p)
 	h.impulse = 0.03
 	hitted_npc:hit(h)
 end
+]]--
 
 function hit_actor(actor, npc, p)
 	local h = hit()
@@ -1620,7 +1621,7 @@ function hit_actor(actor, npc, p)
 	h.impulse = 0.001
 	actor:hit(h)
 end
-]]--
+
 
 function restore_health_portion(actor, npc)
     local health = npc.health
@@ -1632,6 +1633,10 @@ end
 function restore_health(actor, npc)
 	--printf("HEALTH RESTORE")
 	npc.health = 1
+end
+
+function set_health_wounded(actor, npc)
+		npc:set_health_ex(0.2)
 end
 
 function make_enemy(actor, npc, p)
@@ -2762,11 +2767,11 @@ function dec_faction_goodwill_to_actor(actor, npc, p)
 end
 
 
---[[
+
 function add_custom_static(actor, npc, p)
 	if p[1] ~= nil and p[2] ~= nil then
 		get_hud():AddCustomStatic(p[1], true)
-		get_hud():GetCustomStatic(p[1]):wnd():SetTextST(p[2])
+		get_hud():GetCustomStatic(p[1]):wnd():TextControl():SetTextST(p[2])
 	else
 		printf("Invalid parameters in function add_custom_static!!!")
 	end
@@ -2779,7 +2784,7 @@ function remove_custom_static(actor, npc, p)
 		printf("Invalid parameters in function remove_custom_static!!!")
 	end
 end
-]]--
+
 
 function kill_actor(actor, npc)
 	db.actor:kill(db.actor)
@@ -2996,6 +3001,89 @@ function remove_map_spot(actor, npc, p)
 end
 ]]--
 
+-- add map spot from logic
+-- param 1 is story_id of object to show on pda map
+-- param 2 is ui icon tag from map_spots.xml
+-- param 3 is name of ui_st_pda.xml string
+function add_map_spot(actor, npc, p)
+	if(p[1]==nil) then
+		printf("Story id for add map spot function is not set")
+	else
+--		local story_id = tonumber(p[1]) --original SOC/CS
+		local story_id = p[1]
+--		local id = id_by_sid(story_id) --original SOC/CS
+		local id = get_story_object_id(story_id)
+		if(id==nil) then
+			local obj = alife_object(p[1])
+			id = obj and obj.id
+		end
+		if(id~=nil) then
+			if(p[2]==nil) then
+				p[2] = "primary_object"
+			end
+			if(p[3]==nil) then
+				p[3] = "default"
+			end
+			if level.map_has_object_spot(id, p[2]) == 0 then
+				level.map_add_object_spot_ser(id, p[2], p[3])
+			end
+		else
+			printf("Wrong story id or name [%s] for map spot function", tostring(story_id))
+		end
+	end
+end
+
+-- remove map spot from logic
+-- param 1 is story_id of object to show on pda map
+-- param 2 is ui icon tag from map_spots.xml
+function remove_map_spot(actor, npc, p)
+	if(p[1]==nil) then
+		printf("Story id for add map spot function is not set")
+	else
+--		local story_id = tonumber(p[1]) --original SOC/CS
+		local story_id = p[1]
+--		local id = id_by_sid(story_id) --original SOC/CS
+		local id = get_story_object_id(story_id)
+		if(id==nil) then
+			local obj = alife_object(p[1])
+			id = obj and obj.id
+		end
+		if(id~=nil) then
+			if(p[2]==nil) then
+				p[2] = "primary_object"
+			end
+			if level.map_has_object_spot(id, p[2]) ~= 0 then
+				level.map_remove_object_spot(id, p[2])
+			end
+		else
+			printf("Wrong story id or name [%s] for map spot function", tostring(story_id))
+		end
+	end
+end
+
+function show_csky_squads_on_map(actor, npc)
+	local csky_squads_tbl =
+	{	{target="csky_sim_squad_novice",   hint="csky"},
+		{target="csky_sim_squad_advanced", hint="csky"},
+		{target="csky_sim_squad_veteran",  hint="csky"}
+	}
+	if (squad.player_id == "csky") then 
+		for k,v in pairs(csky_squads_tbl) do
+			local obj_id = get_story_squad(v.target)
+			if(obj_id) then
+			level.map_add_object_spot_ser(obj_id, "alife_presentation_squad_friend_1", v.hint)
+			end
+		end
+	end
+end
+
+function make_actor_visible_to_npc(actor, npc, p)
+	local act = db.actor
+	if act then
+		npc:make_object_visible_somewhen(act)
+	end
+end
+
 -- Anomal fields support
 function enable_anomaly(actor, npc, p)
 	if p[1] == nil then
@@ -3048,12 +3136,12 @@ function add_cs_text(actor, npc, p)
 	if p[1] then
 		local hud = get_hud()
 		if (hud) then
-			local cs_text = hud:GetCustomStatic("text_on_screen_center")
+			local cs_text = hud:GetCustomStatic("red_text_on_screen_center")
 			if cs_text then
-				hud:RemoveCustomStatic("text_on_screen_center")
+				hud:RemoveCustomStatic("red_text_on_screen_center")
 			end
-			hud:AddCustomStatic("text_on_screen_center", true)
-			cs_text = hud:GetCustomStatic("text_on_screen_center")
+			hud:AddCustomStatic("red_text_on_screen_center", true)
+			cs_text = hud:GetCustomStatic("red_text_on_screen_center")
 			cs_text:wnd():TextControl():SetText(game.translate_string(p[1]))
 		end
 	end
@@ -3062,9 +3150,9 @@ end
 function del_cs_text(actor, npc, p)
 	local hud = get_hud()
 	if (hud) then
-		cs_text = hud:GetCustomStatic("text_on_screen_center")
+		cs_text = hud:GetCustomStatic("red_text_on_screen_center")
 		if cs_text then
-			hud:RemoveCustomStatic("text_on_screen_center")
+			hud:RemoveCustomStatic("red_text_on_screen_center")
 		end
 	end
 end

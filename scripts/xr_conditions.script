@@ -1578,6 +1578,12 @@ function dist_to_story_obj_ge(actor, npc, p)
 	return se_obj and se_obj.position:distance_to(db.actor:position()) > tonumber(p[2]) or false
 end
 
+function dist_to_story_obj_le(actor, npc, p)
+	local id = db.actor and p and get_story_object_id(p[1])
+	local se_obj = id and alife_object(id)
+	return se_obj and se_obj.position:distance_to(db.actor:position()) < tonumber(p[2]) or false
+end
+
 function actor_has_nimble_weapon(actor, npc)
 	local need_item = {}
 	need_item["wpn_groza_nimble"] = true
@@ -2836,6 +2842,7 @@ function smart_under_faction_control(actor,npc,p)
 		local f = {
 			["stalker"] = "stalker",
 			["bandit"] = "bandit",
+			["renegade"] = "renegade",
 			["killer"] = "merc",
 			["dolg"] = "duty",
 			["freedom"] = "freedom",

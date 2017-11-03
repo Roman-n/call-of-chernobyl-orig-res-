@@ -33,6 +33,8 @@ amb_vol = 0
 
 function start_game_callback()
 	math.randomseed(os.time())
+	math.random()
+
 	printf("Call of Chernobyl version %s",GAME_VERSION)
 	if (USE_MARSHAL) then
 		printf("using marshal library")
@@ -263,7 +265,7 @@ function JumpToLevel(new_level)
 	end
 
 	-- in case level has no smarts then just teleport to first found gvid for level
-	for gvid=0, 4860 do
+	for gvid=0, 5332 do
 		if gg:valid_vertex_id(gvid) then
 			cvertex = gg:vertex(gvid)
 			lvl = sim:level_name(cvertex:level_id())
@@ -1037,6 +1039,7 @@ is_squad_monster = {
 squad_community_by_behaviour = {
 		["stalker"]							= "stalker",
 		["bandit"]							= "bandit",
+		["renegade"]						= "renegade",
         ["csky"]							= "csky",
 		["dolg"]							= "dolg",
 		["freedom"]							= "freedom",
@@ -1051,7 +1054,9 @@ squad_community_by_behaviour = {
 		["monster_vegetarian"]				= "monster",
 		["monster_zombied_day"]				= "monster",
 		["monster_zombied_night"]			= "monster",
-		["monster_special"]					= "monster"
+		["monster_special_day"]				= "monster",
+		["monster_special_night"]			= "monster",
+		["zoo_monster"]						= "monster"
 }
 -------------------------------------------------------------------------------------------
 function get_object_community(obj)
