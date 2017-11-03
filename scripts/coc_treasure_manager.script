@@ -107,7 +107,7 @@ local function actor_on_item_take_from_box(box,itm)
 		
 		-- Remove the cache from the treasure manager.
 		caches[box:id()] = false
-		xr_statistic.inc_counter("stashes_found")
+		dxr_statistics.increment_statistic("stashes_found")
 		news_manager.send_treasure(1)
 	end
 	
@@ -209,7 +209,7 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 	local spawned_item = bonus_items or {}
 	local max_weight = math.random(80,130)
 	
-	if (has_alife_info("achieved_rag_and_bone")) then
+	if (dxr_achievements.has_achievement("rag_and_bone")) then
 		max_weight = max_weight + 30
 	end
 	

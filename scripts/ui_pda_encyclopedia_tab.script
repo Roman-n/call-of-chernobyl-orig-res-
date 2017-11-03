@@ -275,7 +275,7 @@ function pda_encyclopedia_tab:InitPlugin()
 	end
 	
 	-- Fill the categories with their articles.
-	local unlocked_articles = xr_statistic.actor_statistic.guide_articles
+	local unlocked_articles = dxr_statistics.actor_articles
 	for i = 1, #self.categories do
 		if (ini:section_exist(self.categories[i].section)) then
 			line_count = ini:line_count(self.categories[i].section) or 0

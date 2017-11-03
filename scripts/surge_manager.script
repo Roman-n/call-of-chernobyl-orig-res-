@@ -226,7 +226,7 @@ end
 
 function CSurgeManager:skip_surge()
 	if (self.started) then 
-		xr_statistic.inc_counter("surges")
+		dxr_statistics.increment_statistic("emissions")
 	end
 	if not (self.inited_time) then 
 		self.inited_time = game.get_game_time()
@@ -278,7 +278,7 @@ end
 function CSurgeManager:end_surge(manual)
 
 	if (self.started == true) then 
-		xr_statistic.inc_counter("surges")
+		dxr_statistics.increment_statistic("emissions")
 		self:kill_all_unhided()
 		self:respawn_artefacts_and_replace_anomaly_zone()
 		self:toggle_level_artefact_respawns()
@@ -1764,7 +1764,7 @@ function is_actor_immune()
 	end
 	
 	-- 'Radiotherapy' achievement has been unlocked.
-	if (has_alife_info("achieved_radiotherapy")) then
+	if (dxr_achievements.has_achievement("radiotherapy")) then
 		if (math.random(1,100) < 25) then
 			return true
 		end

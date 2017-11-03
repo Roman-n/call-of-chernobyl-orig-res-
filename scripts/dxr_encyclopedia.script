@@ -44,9 +44,7 @@ end
 
 -- Character and faction articles for looting a dead stalker.
 function detect_character_interaction2(mode, last_mode)
-	if (last_mode ~= 4) then 
-		return 
-	end
+	if (last_mode ~= 4) then return end
 	local character = ActorMenu.get_actor_menu():GetPartner()
 	if (not character or character:alive()) then return end
 	create_interaction("factions", character_community(character))
@@ -171,7 +169,7 @@ function unlock_article(section)
 	
 	-- Instance of the locked and unlocked article tables.
 	local locked_articles = guide.locked_articles or {}
-	local unlocked_articles = xr_statistic.actor_statistic.guide_articles
+	local unlocked_articles = dxr_statistics.actor_articles
 	
 	-- Return if all articles have been unlocked.
 	if (get_articles_locked_count() == 0) then
@@ -206,7 +204,7 @@ function unlock_article(section)
 	-- Update the required counters.
 	guide.articles_locked_count = guide.articles_locked_count - 1
 	guide.articles_unlocked_count = guide.articles_unlocked_count + 1
-	xr_statistic.inc_counter("guide_articles")
+	dxr_statistics.increment_statistic("articles")
 	
 	-- Set the article and retrieve the indices.
 	local index_a, index_c = set_article(section)
