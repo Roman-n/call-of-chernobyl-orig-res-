@@ -25,7 +25,7 @@ actor_achievements = {
 	["wishful_thinking"]	=	{	unlocked = false,	rank = 25,	rept = 0	},
 }
 
--- Articles found and detected.
+-- Artefacts found and detected.
 -- Should be empty by default.
 actor_artefacts = {
 }
@@ -58,10 +58,10 @@ actor_statistics = {
 	["killed_companions"]	=	{	count = 0,		rank = 0,		rept = -75	},
 	["killed_monsters"]		=	{	count = 0,		rank = 5,		rept = 0	},
 	["killed_prisoners"]	=	{	count = 0,		rank = 0,		rept = -25	},
-	["killed_stalkers"]		=	{	count = 0,		rank = 0,		rept = 0	},		-- Rank and reputation values aren't used, see below.
-	["killed_stalkers_e"]	=	{	count = 0,		rank = 0,		rept = 10	},			-- Enemies.
-	["killed_stalkers_f"]	=	{	count = 0,		rank = 0,		rept = -100	},			-- Friendlies.
-	["killed_stalkers_n"]	=	{	count = 0,		rank = 0,		rept = -75	},			-- Neutrals.
+	["killed_stalkers"]		=	{	count = 0,		rank = 0,		rept = 0	},		-- Unused; see below and the "rank_kill_points" config section.
+	["killed_stalkers_e"]	=	{	count = 0,		rank = 0,		rept = 10	},			-- Enemy relations.
+	["killed_stalkers_f"]	=	{	count = 0,		rank = 0,		rept = -100	},			-- Friendly relations.
+	["killed_stalkers_n"]	=	{	count = 0,		rank = 0,		rept = -75	},			-- Neutral relations.
 	["level_changes"]		=	{	count = 0,		rank = 0,		rept = 0	},
 	["pdas_delivered"]		=	{	count = 0,		rank = 10,		rept = 10	},
 	["psi_storms"]			=	{	count = 0,		rank = 5,		rept = 0	},
