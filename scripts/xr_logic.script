@@ -62,32 +62,29 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 
 	local actual_ini
 	local actual_ini_filename
-	if not (ini:section_exist(section_logic)) then
-		if (ini_filename == "<customdata>") then
-			actual_ini_filename = ini_filename
-			actual_ini = ini
-		else
-			actual_ini_filename = ini_filename
-			actual_ini = ini
-			printf("ERROR: xr_logic.configure_schemes: object '%s': unable to find section '%s' in '%s' gulag_name=%s", npc:name(), section_logic, ini_filename,gulag_name)
-		end
-	else
-		local filename = ini:r_string_ex(section_logic,"cfg")
-		if filename then
-			actual_ini_filename = filename
-			actual_ini = ini_file(filename)
-			if not ( actual_ini and actual_ini:section_exist(section_logic) ) then
-				abort("ERROR: object '%s' configuration file [%s] NOT FOUND or section [logic] isn't assigned ", npc:name(), filename)
-				return
-			end
-		elseif (ini_filename == "<customdata>") then -- the case where custom_data in object section exists
-			actual_ini_filename = system_ini():r_string_ex(npc:section(),"custom_data") or ini_filename
-			actual_ini = ini
-		else -- usually job_ini from setup_gulag_and_logic_on_spawn
-			actual_ini_filename = ini_filename
-			actual_ini = ini
+	
+	if (ini_filename == "<customdata>") then -- the case where custom_data in object section exists
+		local custom_data = system_ini():r_string_ex(npc:section(),"custom_data")
+		if (custom_data) then
+			actual_ini_filename = custom_data
+			actual_ini = ini_file(custom_data)
 		end
 	end
+		
+		local filename = ini:r_string_ex(section_logic,"cfg")
+	if filename then -- a link, because custom_data cannot have more then 4096 bytes of data
+			actual_ini_filename = filename
+			actual_ini = ini_file(filename)
+	end
+
+	actual_ini_filename = actual_ini_filename or ini_filename
+	actual_ini = actual_ini or ini
+	
+	if not (actual_ini) then
+		callstack()
+		printf("ERROR: object '%s' actual_ini=%s actual_ini_filename=%s %s=%s", npc:name(),actual_ini ~= nil,actual_ini_filename,section_logic,actual_ini and actual_ini:section_exist(section_logic))
+				return
+			end
 
 	-- Since at the moment of schema activation the previously installed common schemes could work, all of them should be disabled:
 	disable_generic_schemes(npc, stype)
@@ -363,6 +360,7 @@ function pick_section_from_condlist(obj, npc, condlist)
 	
 	local npc_id = npc and IsStalker(npc) and type(npc.id) == "function" and npc:id()
 	npc_id = npc_id == 0 and nil or npc_id -- we want only npc not actor
+	local actor = db.actor 
 
 	local sim = alife()	
 	for i=1,#condlist do
@@ -381,10 +379,17 @@ function pick_section_from_condlist(obj, npc, condlist)
 							end
 						end
 					else
+						if (actor) then 
+							if not (actor:has_info(infop[1])) then 
+								infop_conditions_met = false
+								break
+							end
+						else
 						if not (sim:has_info(0,infop[1])) then
 							infop_conditions_met = false
 							break
 						end
+					end
 					end
 				elseif (infop[2] == 2) then 
 					if (infop[3]) then
@@ -395,10 +400,17 @@ function pick_section_from_condlist(obj, npc, condlist)
 							end
 						end
 					else
+						if (actor) then 
+							if (actor:has_info(infop[1])) then 
+								infop_conditions_met = false
+								break
+							end
+						else
 						if (sim:has_info(0,infop[1])) then
 							infop_conditions_met = false
 							break
 						end
+					end
 					end
 				elseif (infop[2] == 3) then
 					if not (xr_conditions[infop[1]]) then
@@ -437,9 +449,15 @@ function pick_section_from_condlist(obj, npc, condlist)
 								end
 							end
 						else
+							if (actor) then
+								if not (actor:has_info(infop[1])) then
+									actor:give_info_portion(infop[1])
+								end
+							else
 							if not (sim:has_info(0,infop[1])) then 
 								sim:give_info(0,infop[1])
 							end
+						end
 						end
 					elseif (infop[2] == 2) then 
 						if (infop[3]) then
@@ -449,9 +467,15 @@ function pick_section_from_condlist(obj, npc, condlist)
 								end
 							end
 						else
+							if (actor) then 
+								if (actor:has_info(infop[1])) then
+									actor:disable_info_portion(infop[1])
+								end
+							else
 							if (sim:has_info(0,infop[1])) then 
 								sim:disable_info(0,infop[1])
 							end
+						end
 						end
 					elseif (infop[2] == 3 or infop[2] == 4) then
 						if not (xr_effects[infop[1]]) then
@@ -1109,20 +1133,36 @@ function load_obj(obj, reader)
 end
 
 function get_customdata_or_ini_file(npc, filename)
-	local st = db.storage[npc:id()]
 	if filename == "<customdata>" then
-		return npc:spawn_ini() or ini_file([[scripts\dummy.ltx]])
+		local ini = npc:spawn_ini()
+		if (ini) then 
+			local link_filename = ini:r_string_ex("logic","cfg")
+			if (link_filename) then
+				if (getFS():exist("$game_config$",link_filename)) then
+					return ini_file(link_filename), link_filename
+				else
+					printf("1:get_customdata_or_ini_file %s file %s doesn't exist!",npc:name(),link_filename)
+				end
+			end
+			return ini, filename
+		end
+		return ini_file("default_custom_data.ltx"), "default_custom_data.ltx"
 	elseif string.find( filename, "*" ) == 1 then
 		local gname = string.sub(filename, 2)
-		return db.dynamic_ltx[gname]
+		return db.dynamic_ltx[gname], filename
 	else
 		-- dynamic ltx found and already loaded
 		if (db.dynamic_ltx[filename]) then
-			return db.dynamic_ltx[filename]
+			return db.dynamic_ltx[filename], filename
 		end
 
-		return ini_file(filename)
+		if (getFS():exist("$game_config$",filename)) then
+			return ini_file(filename), filename
+		else 
+			printf("2:get_customdata_or_ini_file %s file %s doesn't exist!",npc:name(),filename)
 	end
+end
+	return ini_file("default_custom_data.ltx"), "default_custom_data.ltx"
 end
 
 function initialize_obj(obj, st, loaded, actor, stype)
@@ -1133,13 +1173,12 @@ function initialize_obj(obj, st, loaded, actor, stype)
 		end
 	end
 	
-	local ini_filename = loaded and st.loaded_ini_filename or "<customdata>"
-	local ini = get_customdata_or_ini_file(obj, ini_filename)
+	local ini, ini_filename = get_customdata_or_ini_file(obj, loaded and st.loaded_ini_filename or "<customdata>")
 	
-	ini = xr_logic.configure_schemes(obj, ini, ini_filename, stype, loaded and st.loaded_section_logic or "logic", loaded and st.loaded_gulag_name or "")
+	ini = configure_schemes(obj, ini, ini_filename, stype, loaded and st.loaded_section_logic or "logic", loaded and st.loaded_gulag_name or "")
 	
-	local section = loaded and st.loaded_active_section or xr_logic.determine_section_to_activate(obj, ini, "logic", actor)
-	xr_logic.activate_by_section(obj, ini, section, loaded and st.loaded_gulag_name or "", true)
+	local section = loaded and st.loaded_active_section or determine_section_to_activate(obj, ini, "logic", actor)
+	activate_by_section(obj, ini, section, loaded and st.loaded_gulag_name or "", true)
 	
 	-- no need to keep this information after initializing
 	st.loaded_ini_filename = nil
@@ -1171,37 +1210,35 @@ function set_new_scheme_and_logic(npc,scheme,section,logic,gulag,ini_filename)
 	db.storage[npc:id()].section_logic = logic
 
 	-- Select new active section
-	local new_section = section or xr_logic.determine_section_to_activate(npc, st.ini, st.section_logic)
+	local new_section = section or determine_section_to_activate(npc, st.ini, st.section_logic)
 
 	db.storage[npc:id()].overrides = cfg_get_overrides(st.ini, new_section, npc, db.storage[npc:id()].overrides)
 	
 	-- Switch to new section
-	xr_logic.switch_to_section(npc, st.ini, new_section)
+	switch_to_section(npc, st.ini, new_section)
 end
 
 function restore_scheme_and_logic(npc)
 	local st = db.storage[npc:id()]
-	st.ini_filename = "<customdata>"
-	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.ini, st.ini_filename = get_customdata_or_ini_file(npc, "<customdata>")
 	st.active_section = nil
 	st.active_scheme = nil
 	st.section_logic = "logic"
-	xr_logic.switch_to_section(npc,nil,nil)
+	switch_to_section(npc,nil,nil)
 end
 
 function reset_logic(npc,st)
-	st.ini_filename = "<customdata>"
-	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.ini, st.ini_filename = get_customdata_or_ini_file(npc, "<customdata>")
 	st.active_section = nil
 	st.active_scheme = nil
 	st.section_logic = "logic"
-	xr_logic.switch_to_section(npc,nil,nil)
+	switch_to_section(npc,nil,nil)
 end
 
 function str_from_condlist(obj,ini,section,field)
 	local str = section and ini and ini:section_exist(section) and ini:line_exist(section,field) and ini:r_string_ex(section,field) or "nil"
-	local condlist = xr_logic.parse_condlist(obj,section,field,str)
-	return xr_logic.pick_section_from_condlist(db.actor,obj,condlist)
+	local condlist = parse_condlist(obj,section,field,str)
+	return pick_section_from_condlist(db.actor,obj,condlist)
 end
 
 -- На входе имеем пустой массив и строку вида "  +infop1  -infop2 +infop3 ... "

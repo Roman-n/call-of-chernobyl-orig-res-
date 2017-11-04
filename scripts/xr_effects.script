@@ -4578,8 +4578,7 @@ end
 
 function clear_logic(actor,npc,p)
 	local st = db.storage[npc:id()]
-	st.ini_filename = "<customdata>"
-	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.ini, st.ini_filename = xr_logic.get_customdata_or_ini_file(npc, "<customdata>")
 	st.active_section = nil
 	st.active_scheme = nil
 	st.section_logic = "logic"

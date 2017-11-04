@@ -643,7 +643,7 @@ function debug_ui:OnBtnReloadIni()
 		local st = db.storage[tonumber(txt)]
 		if (st) then
 			st.ini = nil
-			st.ini = xr_logic.get_customdata_or_ini_file(st.object, st.ini_filename)
+			st.ini, st.ini_filename = xr_logic.get_customdata_or_ini_file(st.object, st.ini_filename)
 			xr_logic.switch_to_section(st.object,nil,nil)
 			self:SendOutput("INI reload performed on %s.",obj:name())
 		end

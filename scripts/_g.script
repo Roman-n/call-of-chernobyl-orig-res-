@@ -32,9 +32,6 @@ amb_vol = 0
 ----------------------------------------------------------------------
 
 function start_game_callback()
-	math.randomseed(os.time())
-	math.random()
-
 	printf("Call of Chernobyl version %s",GAME_VERSION)
 	if (USE_MARSHAL) then
 		printf("using marshal library")
