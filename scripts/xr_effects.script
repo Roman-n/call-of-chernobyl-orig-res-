@@ -1452,12 +1452,14 @@ function hit_obj(actor, npc, p)
 	h.impulse = p[4]
 
 	if p[5] then
-		sid = get_story_object(sid)
+		sid = get_story_object(p[5])
 		if sid then
 			h.direction = vec_sub(sid:position(), obj:position())
-		end
-		if not sid then
-			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
+		else
+			local path = patrol(p[5])
+			if (path) then
+				h.direction = vec_sub(path:point(0), obj:position())
+			end
 		end
 	else
 		h.direction = vec_sub(npc:position(), obj:position())
@@ -1483,12 +1485,14 @@ function hit_obj_chemical(actor, npc, p)
 	h.impulse = p[4]
 
 	if p[5] then
-		sid = get_story_object(sid)
+		sid = get_story_object(p[5])
 		if sid then
 			h.direction = vec_sub(sid:position(), obj:position())
-		end
-		if not sid then
-			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
+		else
+			local path = patrol(p[5])
+			if (path) then
+				h.direction = vec_sub(path:point(0), obj:position())
+			end
 		end
 	else
 		h.direction = vec_sub(npc:position(), obj:position())
@@ -1514,12 +1518,14 @@ function hit_obj_fire_wound(actor, npc, p)
 	h.impulse = p[4]
 
 	if p[5] then
-		sid = get_story_object(sid)
+		sid = get_story_object(p[5])
 		if sid then
 			h.direction = vec_sub(sid:position(), obj:position())
-		end
-		if not sid then
-			h.direction = vec_sub(patrol(p[5]):point(0), obj:position())
+		else
+			local path = patrol(p[5])
+			if (path) then
+				h.direction = vec_sub(path:point(0), obj:position())
+			end
 		end
 	else
 		h.direction = vec_sub(npc:position(), obj:position())

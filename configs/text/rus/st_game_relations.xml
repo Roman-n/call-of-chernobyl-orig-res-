@@ -69,6 +69,9 @@
 	<string id="monolith">
 		<text>«Монолит»</text>
 	</string>
+	<string id="renegade">
+		<text>«Ренегаты»</text>
+	</string>
 	<string id="stalker">
 		<text>«Одиночки»</text>
 	</string>

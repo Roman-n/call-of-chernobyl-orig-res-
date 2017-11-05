@@ -22,7 +22,7 @@
 		<text>Дикая Территория</text>
 	</string>
 	<string id="ui_st_container_warehouse">
-		<text>«Юпитер». Склад контейнеров</text>
+		<text>Окрестности «Юпитера». Склад контейнеров</text>
 	</string>
 	<string id="ui_st_cultural_center">
 		<text>Припять. ДК «Энергетик»</text>
@@ -94,6 +94,6 @@
 		<text>Болота. Лодочная станция</text>
 	</string>
 	<string id="ui_st_yanov_station">
-		<text>«Юпитер». Станция «Янов»</text>
+		<text>Окрестности «Юпитера». Станция «Янов»</text>
 	</string>
 </string_table>

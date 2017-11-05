@@ -40,7 +40,23 @@
 		<text>У меня тут есть список сталкеров, с которыми надо разобраться. В него обычно попадают всякие сволочи и конченые подонки... по разным причинам. Одним словом - мусор. Мусор, от которого Зону время от времени нужно очищать, понимаешь, да? Ну так что, берёшься?</text>
 	</string>
 	<string id="esc_m_trader_task_2_finish">
-		<text>Отлично, ты избавился от этого мудака! Вот награда, как обещал:</text>
+		<text>Отлично, ты избавился от этого ублюдка! Вот награда, как обещал:</text>
+	</string>
+	<!-- FIND ARTEFACT FOR SIDOROVICH TASK -->
+	<string id="esc_m_trader_task_3_name">
+		<text>Я хочу, чтобы ты принёс мне артефакт %s.</text>
+	</string>
+	<string id="esc_m_trader_task_3_text">
+		<text>Сидорович просил найти для него артефакт %s.</text>
+	</string>
+	<string id="esc_m_trader_task_3_about">
+		<text>Артефакты - это прибыльный бизнес. Спрос на них есть и внутри Зоны, и за её пределами. Для таких парней, как ты, поиск артефактов является выгодным промыслом. Интересно?</text>
+	</string>
+	<string id="esc_m_trader_task_3_fetch_about">
+		<text>Я ищу артефакт %s. И если сможешь достать его для меня, то я хорошо заплачу.</text>
+	</string>
+	<string id="esc_m_trader_task_3_fetch_finish">
+		<text>Хорошая работа. С тобой приятно иметь дело.</text>
 	</string>
 	<!-- ELIMINATE MUTANTS FOR WOLF TASK -->
 	<string id="esc_2_12_stalker_wolf_task_1_name">

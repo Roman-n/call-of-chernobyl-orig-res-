@@ -685,13 +685,13 @@
 		<text>Ты пушку-то спрячь!</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_default_1">
-		<text>Слышишь, иди с другими трепись. Я - пас.</text>
+		<text>Не, у меня нет настроения болтать.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_default_2">
-		<text>Кореш, мне сейчас не до тёрок.</text>
+		<text>Извини, сейчас - неохота болтать.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_default_3">
-		<text>Отвали.</text>
+		<text>Дружище, ты плохо понял? Я не хочу с тобой разговаривать.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_fight_1">
 		<text>Не сейчас!</text>
@@ -712,13 +712,13 @@
 		<text>Да не охота мне болтать, иди с командиром говори.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_weapon_1">
-		<text>Со стволом в лапах - какой базар? Убери на!</text>
+		<text>Э! Сперва пушку спрячь. Потом поговорим.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_weapon_2">
-		<text>Волыну заныкай, тогда и побазарим.</text>
+		<text>Если хочешь говорить - убери волыну.</text>
 	</string>
 	<string id="cc_generic-killer-meet_use_no_weapon_3">
-		<text>Или пушку нах, или сам вали!</text>
+		<text>Спрячь волыну, потом потолкуем.</text>
 	</string>
 
 	<!-- Military -->

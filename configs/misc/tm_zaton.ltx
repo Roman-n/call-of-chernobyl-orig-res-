@@ -47,22 +47,22 @@ reward_item = vodka
 
 
 ;--------------------------------------------------------------------------------------------------
-; ASSASSINATION FOR BEARD TASK-
+; ASSASSINATION FOR OWL TASK-
 
-[zat_a2_stalker_barmen_task_3]
+[zat_b30_owl_stalker_trader_task_1]
 icon = ui_inGame2_Odin_vistrel
 prior = 40
 storyline = false
-title = zat_a2_stalker_barmen_task_3_name
-descr = zat_a2_stalker_barmen_task_3_text
-job_descr = zat_a2_stalker_barmen_task_3_about
-task_complete_descr = zat_a2_stalker_barmen_task_3_finish
+title = zat_b30_owl_stalker_trader_task_1_name
+descr = zat_b30_owl_stalker_trader_task_1_text
+job_descr = zat_b30_owl_stalker_trader_task_1_about
+task_complete_descr = zat_b30_owl_stalker_trader_task_1_finish
 repeat_timeout = 172800
 status_functor = bounty_task
 target_functor = general_bounty_task
 stage_complete = 1
-on_job_descr = %=on_init_bounty_hunt(zat_a2_stalker_barmen_task_3:bandit:killer)%
-on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_random_money(7500:9000) =reward_stash(true) =inc_task_stage(zat_a2_stalker_barmen_task_3)%
+on_job_descr = %=on_init_bounty_hunt(zat_b30_owl_stalker_trader_task_1:army)%
+on_complete = %=complete_task_inc_goodwill(50:stalker) =reward_random_money(7500:8500) =reward_stash(true) =inc_task_stage(zat_b30_owl_stalker_trader_task_1)%
 precondition = true
 
 ;--------------------------------------------------------------------------------------------------

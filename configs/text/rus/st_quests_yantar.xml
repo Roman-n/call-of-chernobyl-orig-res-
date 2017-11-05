@@ -29,6 +29,10 @@
 	<string id="yan_stalker_sakharov_task_1_fetch_finish">
 		<text>Благодарю Вас, молодой человек. Я немедленно приступаю к исследованиям.</text>
 	</string>
+	<!-- FIND ARTEFACT FOR SAKHAROV TASK -->
+	<string id="yan_stalker_sakharov_task_2_text">
+		<text>Сахаров просил найти и принести ему артефакт %s.</text>
+	</string>
 	<!-- WAIT FOR PSI HELMET CALIBRATION TASK -->
 	<string id="yan_stalker_sakharov_psi_helmet_upgrade_name">
 		<text>Калибровка пси-шлема</text>
