@@ -1563,7 +1563,7 @@ function enemy_hud_show(hud)
 			}
 
 			hud:add_msg("Name", near:name())
-			hud:add_msg("Actor Relation",relation[near:relation(db.actor)])
+			hud:add_msg("Actor Relation",relation[near:relation(db.actor)] .. " (" .. near:general_goodwill(db.actor) .. ")")
 
 			if (st.script_combat_type) then
 				hud:add_msg("Script Combat",st.script_combat_type)
