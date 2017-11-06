@@ -337,6 +337,17 @@ function cmd.reputation(me,txt,owner,p)
 	return "reputation:= gave actor "..amt.." reputation points."
 end
 
+-- Statistic
+function cmd.statistic(me,txt,owner,p)
+	local wrd, rest = check_and_set_help(me,txt,owner,"<name> <amount>")
+	if not (wrd and rest) then return end
+	local amt = tonumber(rest) or 0
+	for i = 1, amt do
+		dxr_statistics.increment_statistic(wrd)
+	end
+	return "statistic:= incremented "..wrd.." by " .. amt .. "."
+end
+
 -- SPAWN
 --[[
 example usage:
