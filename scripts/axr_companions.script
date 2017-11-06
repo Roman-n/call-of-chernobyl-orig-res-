@@ -48,22 +48,14 @@ local function squad_on_npc_death(squad,se_npc)
 	end
 end
 
-local function squad_on_register(squad)
+local function squad_on_first_update(squad)
 	if (companion_squads[squad.id] ~= nil) then 
 		companion_squads[squad.id] = squad
 		squad:set_squad_relation("friend")
 		squad.scripted_target = "actor"
 	end
-	
-	-- backward save compatiblity. remove later
-	for k in squad:squad_members() do 
-		if (k.id and k.object and utils.se_obj_load_var(k.id,k.object:name(),"companion")) then
-			companion_squads[squad.id] = squad
-			squad.scripted_target = "actor"
-			break
-		end
-	end
 end
+
 local function squad_on_unregister(squad)
 	companion_squads[squad.id] = nil
 end
@@ -164,7 +156,7 @@ function on_game_start()
 	RegisterScriptCallback("npc_on_fighting_actor",on_fighting_actor)
 	RegisterScriptCallback("squad_on_update",squad_on_update)
 	RegisterScriptCallback("squad_on_npc_death",squad_on_npc_death)
-	RegisterScriptCallback("squad_on_register",squad_on_register)
+	RegisterScriptCallback("squad_on_first_update",squad_on_first_update)
 	RegisterScriptCallback("squad_on_unregister",squad_on_unregister)
 	RegisterScriptCallback("on_level_changing",on_level_changing)
 	RegisterScriptCallback("actor_on_item_drop",actor_on_item_drop)

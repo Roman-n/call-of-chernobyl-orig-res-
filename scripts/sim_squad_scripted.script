@@ -121,7 +121,8 @@ function sim_squad_scripted:update()
 	cse_alife_online_offline_group.update(self)
 	
 	if not (self.first_update) then 
-		self.first_update = true 
+		self.first_update = true
+		SendScriptCallback("squad_on_first_update",self)
 	end
 
 	self:refresh()
