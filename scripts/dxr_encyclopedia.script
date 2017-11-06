@@ -95,7 +95,7 @@ function context_functor(item)
 	
 	-- Return if there are no articles to unlock.
 	local guide = ui_pda_encyclopedia_tab.get_ui()
-	local locked_articles = guide.locked_articles or {}
+	local locked_articles = guide.locked_articles
 	if (get_articles_locked_count() == 0) then
 		return
 	end
@@ -168,7 +168,7 @@ function unlock_article(section)
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	
 	-- Instance of the locked and unlocked article tables.
-	local locked_articles = guide.locked_articles or {}
+	local locked_articles = guide.locked_articles
 	local unlocked_articles = dxr_statistics.actor_articles
 	
 	-- Return if all articles have been unlocked.

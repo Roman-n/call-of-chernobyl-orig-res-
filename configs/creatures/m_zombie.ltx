@@ -11,8 +11,8 @@ MinSpeed		= 1.0				;-- option for ALife Simulator
 MaxSpeed		= 5.0				;-- option for ALife Simulator
 going_speed             = 2 ;--/4.5                     ;-- option for ALife Simulator
 search_speed            = 1.5                           ;-- option for ALife Simulator
-visual			= monsters\zombi\zombi_1
-corpse_visual		= monsters\zombi\zombi_1
+visual			= monsters\zombi\zombi_2
+corpse_visual		= monsters\zombi\zombi_2
 icon                    = ui_npc_monster_kontroler	
 
 hit_fraction_monster = 0.75
@@ -308,7 +308,6 @@ fire_wound_immunity	= 0.05
 GroupControlSection	= spawn_group
 SpaceRestrictionSection = space_restrictor,zone_mosquito_bald,zone_witches_galantine,zone_burning_fuzz1,zone_mincer,zone_gravi_zone
 $spawn			= "monsters\zombies\zombie_01_weak"
-visual			= monsters\zombi\zombi_2
 ;$spawn                 = "monsters\zombies\zombie_base";-- option for Level Editor
 $npc			= on				;-- option for Level Editor
 $prefetch 		= 16
@@ -319,8 +318,6 @@ MinSpeed		= 1.0				;-- option for ALife Simulator
 MaxSpeed		= 5.0				;-- option for ALife Simulator
 going_speed             = 2;4.5                         ;-- option for ALife Simulator
 search_speed            = 1.5                           ;-- option for ALife Simulator
-;--/visual		= monsters\zombi\zombi_1
-corpse_visual		= monsters\zombi\zombi_1
 icon = ui_npc_monster_kontroler	
 community                       = zombie
 MaxHealthValue		     = 100			;-- range [0..200]
@@ -580,12 +577,16 @@ StartFakeDeathHealthThreshold	= 0.6
 rank = 6
 spec_rank = normal
 
+[zombie_normal2]:zombie_normal
+visual = monsters\zombi\zombi_trupik
+
+[zombie_normal3]:zombie_normal
+visual = monsters\zombi\zombi_4
+
 [zombie_strong]:zombie_weak
 visual				= monsters\zombi\zombi_3
 rank = 9
 spec_rank = strong
 
-; Doesn't actually have a ghost model.
-; Could always be borrowed from another mod.
-[zombie_ghost]:zombie_weak
+[zombie_strong2]:zombie_strong
 visual                          = monsters\zombi\zombi_1
