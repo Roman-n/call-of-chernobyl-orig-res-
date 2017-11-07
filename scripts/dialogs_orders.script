@@ -39,7 +39,7 @@ function actor_on_update(binder,delta)
 				orders_data[broker] = nil
 			end
 		end
-	end 
+	end
 end
 
 function has_orders(a,b)
@@ -57,7 +57,6 @@ end
 
 -- silly workaround for dynamic dialog
 functor_always_false = function() return false end
-functor_always_true = function() return true end
 for i=1,10 do
 	this["has_category_"..i] = functor_always_false
 	local cnt = i
@@ -89,7 +88,11 @@ function init_orders(npc)
 	local sec = "category_"..i_cnt
 	current_cnt = 0
 	while ini:section_exist(sec) do
-		this["has_category_"..i_cnt] = functor_always_true
+		local rank_req = ini:r_float_ex(sec,"rank") or 0
+		local rep_req = ini:r_float_ex(sec,"reputation") or 0
+		this["has_category_"..i_cnt] = function()
+			return db.actor:character_reputation() >= rep_req and db.actor:character_rank() >= rank_req
+		end
 
 		costs_table[i_cnt] = {}
 		costs_table[i_cnt].title = ini:r_string_ex(sec,"title") or "Error"
@@ -170,7 +173,7 @@ end
 
 function purchase_cancel()
 	orders_data[broker] = nil
-	dxr_statistics.increment_reputation(-10)
+	dxr_statistics.increment_reputation(-50)
 end
 
 function orders_item_pickup_existing(a,b)

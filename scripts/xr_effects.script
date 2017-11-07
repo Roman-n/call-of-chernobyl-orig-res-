@@ -317,9 +317,9 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 	end
 	db.actor:inventory_for_each(add_up_items)
 	
-	if (total_cost == 0) then 
-		return 
-	end 
+	if (total_cost <= 0) then
+		total_cost = 50
+	end
 	
 	dialogs.relocate_money(db.actor, total_cost ,"in")
 	

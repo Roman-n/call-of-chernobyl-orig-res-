@@ -100,7 +100,7 @@
 		<text>Okay, here you go.</text>
 	</string>
 	<string id="st_dm_orders_pickup_finish">
-		<text>There you go. Nice doing business with you.</text>
+		<text>There you go. Nice doing business with you. Make sure to stop by some other time, I may have more to offer.</text>
 	</string>
 	<string id="st_dm_orders_no_money">
 		<text>Well, I don't have that much on me.</text>
@@ -147,7 +147,7 @@
 		<text>Sniper weapon</text>
 	</string>
 	<string id="st_esc_2_12_stalker_nimble_category_5_title">
-		<text>Helmet</text>
+		<text>Armored outfit</text>
 	</string>
 	<string id="st_esc_2_12_stalker_nimble_category_6_title">
 		<text>Scientific outfit</text>
