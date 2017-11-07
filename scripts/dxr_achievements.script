@@ -338,7 +338,7 @@ end
 -- Requires 3 helicopters killed, or just one with an RPG-7.
 function down_to_earth_requirements()
 	return (
-				(dxr_statistics.get_statistic_count("helicoptes_downed") >= 3)
+				(dxr_statistics.get_statistic_count("helicopters_downed") >= 3)
 			 or (dxr_statistics.get_statistic_count("helicopters_downed2") >= 1)
 		)
 end
