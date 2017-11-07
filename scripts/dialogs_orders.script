@@ -33,7 +33,8 @@ function actor_on_update(binder,delta)
 			t.delivery_timer = nil
 			local se_obj = t.id and alife():object(t.id)
 			if (se_obj and se_obj:section_name() == broker and se_obj:alive()) then
-				news_manager.send_tip(db.actor,game.translate_string("st_dm_orders_pickup_ready"),nil,se_obj)
+				local msg = strformat("%c[255,160,160,160]%s, %s.\\n%c[default]%s",se_obj:character_name(),se_obj:community(),game.translate_string("st_dm_orders_pickup_ready"))
+				news_manager.send_tip(db.actor,msg,nil,se_obj)
 			else
 				orders_data[broker] = nil
 			end
