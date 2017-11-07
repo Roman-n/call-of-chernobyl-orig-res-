@@ -84,14 +84,18 @@ function init_orders(npc)
 		this["has_category_"..i] = functor_always_false
 	end
 	
+	local s_time = level.get_start_time()
+	local days_from_start = game.get_game_time():diffSec(s_time)/86400
+		
 	local i_cnt = 1
 	local sec = "category_"..i_cnt
 	current_cnt = 0
 	while ini:section_exist(sec) do
+		local day_req = ini:r_float_ex(sec,"days_from_start") or 0
 		local rank_req = ini:r_float_ex(sec,"rank") or 0
 		local rep_req = ini:r_float_ex(sec,"reputation") or 0
 		this["has_category_"..i_cnt] = function()
-			return db.actor:character_reputation() >= rep_req and db.actor:character_rank() >= rank_req
+			return db.actor:character_reputation() >= rep_req and db.actor:character_rank() >= rank_req and days_from_start >= day_req
 		end
 
 		costs_table[i_cnt] = {}
