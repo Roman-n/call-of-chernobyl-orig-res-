@@ -132,16 +132,8 @@ function get_buy_discount(npc_id)
 	end
 
 	local config = config_by_name[tm[npc_id].cfg_ltx]
-	if not (config) then 
-		return 1 
-	end 
-	
-	local str = config:r_string_ex("trader","discounts")
-	if(str == nil or str=="") then
-		return 1
-	end
-
-	local sect = xr_logic.pick_section_from_condlist(db.actor, nil, xr_logic.parse_condlist(db.actor, "trader", "discounts", str))
+	local condlist = config and config:r_string_to_condlist("trader","discounts")
+	local sect = condlist and xr_logic.pick_section_from_condlist(db.actor, nil, condlist)
 	if (sect == nil or sect == "") then 
 		return 1 
 	end
@@ -156,16 +148,8 @@ function get_sell_discount(npc_id)
 	end
 
 	local config = config_by_name[tm[npc_id].cfg_ltx]
-	if not (config) then 
-		return 1
-	end 
-	
-	local str = config:r_string_ex("trader","discounts")
-	if(str == nil or str=="") then
-		return 1
-	end
-
-	local sect = xr_logic.pick_section_from_condlist(db.actor, nil, xr_logic.parse_condlist(npc, "trade_manager", "discounts", str))
+	local condlist = config and config:r_string_to_condlist("trader","discounts")
+	local sect = condlist and xr_logic.pick_section_from_condlist(db.actor, nil, condlist)
 	if (sect == nil or sect == "") then 
 		return 1 
 	end
