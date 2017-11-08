@@ -397,9 +397,8 @@ function nearest_object(s,offline)
 	local nearest
 	local min_dist
 	local is_match
-	for i=1, 65534 do
-		local obj = alife_object(i)
-		if (obj) then
+	for id, obj in alife():objects() do
+		if (obj and id ~= 0) then
 			is_match = false
 			if (type(s) == "string" and string.find(obj:name(),s)) then
 				is_match = true

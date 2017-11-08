@@ -194,14 +194,13 @@ function on_init_bounty_hunt(actor,npc,p)
 		faction_lookup[p[i]] = true
 	end 
 	
-	for i=1,65534 do 
-		local se_obj = sim:object(i)
+	for id, se_obj in sim:objects() do 
 		-- find random sim stalker
-		if (se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive() and sfind(se_obj:section_name(),"sim_default") and get_object_story_id(i) == nil) and (se_obj.group_id == nil or se_obj.group_id == 65535 or get_object_story_id(se_obj.group_id) == nil) then
+		if (id ~= 0 and IsStalker(nil,se_obj:clsid()) and se_obj:alive() and sfind(se_obj:section_name(),"sim_default") and get_object_story_id(id) == nil) and (se_obj.group_id == nil or se_obj.group_id == 65535 or get_object_story_id(se_obj.group_id) == nil) then
 			comm = alife_character_community(se_obj)
 			if (faction_lookup[comm] == true) then 
-				size_t = size_t + 1 
-				valid_targets[size_t] = i
+				size_t = size_t + 1
+				valid_targets[size_t] = id
 			end
 		end
 	end
@@ -4498,10 +4497,8 @@ function make_a_wish(actor,npc,p)
 	
 	action_list[3] = function()
 		local sim = alife()
-		local squad
-		for i=1,65534 do
-			squad = sim:object(i)
-			if (squad and squad:clsid() == clsid.online_offline_group_s) then 
+		for id, squad in sim:objects() do
+			if (squad:clsid() == clsid.online_offline_group_s) then 
 				SIMBOARD:assign_squad_to_smart(squad, nil)
 				squad:remove_squad()
 			end
@@ -4867,7 +4864,7 @@ function disable_monolith_zones(actor,npc,p)
 		["zone_monolith"] = true
 	}
 	local sim = alife()
-	for i=1,65534 do 
+	for i=1,65534 do
 		local se_obj = sim:object(i)
 		if (se_obj and remove_sections[se_obj:section_name()]) then 
 			sim:release(se_obj,true)

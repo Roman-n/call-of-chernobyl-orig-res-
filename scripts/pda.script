@@ -222,12 +222,11 @@ function calculate_rankings()
 	local t = {}
 	local sim = alife()
 	-- add actor to list
-	t[0] = alife():actor():rank()
+	t[0] = sim:actor():rank()
 	
 	-- check all stalker server objects
-	for i=1,65534 do
-		local se_obj = sim:object(i)
-		if (se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive() and se_obj:community() ~= "zombied" and se_obj:community() ~= "trader") then
+	for id, se_obj in sim:objects() do
+		if (id ~= 0 and IsStalker(nil,se_obj:clsid()) and se_obj:alive() and se_obj:community() ~= "zombied" and se_obj:community() ~= "trader") then
 			-- Check if object has a story id, if it does they are probably unique
 			local sid = story_objects.story_id_by_object_id[se_obj.id]
 			if not (sid) then

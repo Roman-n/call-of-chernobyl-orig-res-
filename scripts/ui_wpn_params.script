@@ -52,6 +52,7 @@ function read_float(wpn_section, upgr_sections, param)
 		for i, sect in ipairs(upgrades) do
 			if param == "hit_power" then
 				local t = ltx:r_list(sect,param,"")
+				local gd = level.get_game_difficulty()+1
 				res = res + (tonumber(t[gd] or t[1]) or 0)
 			else
 				res = res + (ltx:r_float_ex(sect,param) or 0)
@@ -60,20 +61,28 @@ function read_float(wpn_section, upgr_sections, param)
 	end
 	
 	if (param == "hit_power") then
-		local ammo_section = ltx:r_list(wpn_section,"ammo_class","")[1] or ""
-		local k_hit = ltx:r_float_ex(ammo_section,"k_hit",0.5)
-		res = (res * k_hit) * ltx:r_float_ex(ammo_section,"buck_shot",1)
+		-- local ammos = ltx:r_list(wpn_section,"ammo_class","")
+		-- local ammo_section = ammos[1] or ""
+		-- if (class == "WP_BM16" or class == "WP_ASHTG") then
+			-- ammo_section = ammos[#ammos] or ""
+		-- end
+		-- local k_hit = ltx:r_float_ex(ammo_section,"k_hit",0.5)
+		-- res = (res * k_hit) * ltx:r_float_ex(ammo_section,"buck_shot",1)
 	elseif (param == "fire_dispersion_base") then
-		local ammo_section = ltx:r_list(wpn_section,"ammo_class","")[1] or ""
-		local k_disp = ltx:r_float_ex(ammo_section,"k_disp",1)
-		res = res * k_disp
+		-- local ammos = ltx:r_list(wpn_section,"ammo_class","")
+		-- local ammo_section = ammos[1] or ""
+		-- if (class == "WP_BM16" or class == "WP_ASHTG") then
+			-- ammo_section = ammos[#ammos] or ""
+		-- end
+		--local k_disp = ltx:r_float_ex(ammo_section,"k_disp",1)
+		--res = res * k_disp
 		
 		local disp_base = ltx:r_float_ex("actor","disp_base",1)
 		local PDM_disp_base = ltx:r_float_ex(wpn_section,"PDM_disp_base",1)
 		
 		res = res + (disp_base * PDM_disp_base)
 	elseif (param == "cam_dispersion_inc") then
-		res = res + ltx:r_float_ex(wpn_section,"zoom_cam_dispersion_inc",0)
+		res = math.random(1,10)--res + ltx:r_float_ex(wpn_section,"zoom_cam_dispersion_inc",0)
 	end
 	
     return res
@@ -102,11 +111,11 @@ end
 function GetDamageMP(wpn_section, upgr_sections)
 	local hit_power = read_float(wpn_section, upgr_sections, "hit_power")
 	hit_power = hit_power * 100	
-	return normalizeMP(hit_power)	
+	return normalizeMP(hit_power)
 end
 
 function GetHandling(wpn_section, upgr_sections)
-	if not (max_hit_power_value) then 
+	if not (max_hit_power_value) then
 		calculate_max_hit_power_value()
 	end
 	local cam_dispersion_inc = read_float(wpn_section,upgr_sections, "cam_dispersion_inc")

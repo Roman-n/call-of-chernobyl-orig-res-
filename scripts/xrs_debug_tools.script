@@ -1262,10 +1262,8 @@ function position_hud_show(hud)
 		__tmr_pos_hud = nil
 		_g_o_count = 0
 		local sim = alife()
-		for i=1,65534 do
-			if (sim:object(i) ~= nil) then
-				_g_o_count = _g_o_count + 1
-			end
+		for id, se_obj in sim:objects() do
+			_g_o_count = _g_o_count + 1
 		end
 	end
 	hud:add_msg("GameObject IDs",_g_o_count)

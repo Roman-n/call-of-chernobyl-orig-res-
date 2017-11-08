@@ -64,16 +64,13 @@ local function on_game_load()
 	}
 
 	local sim = alife()
-	for i=1, 65534 do
-		local se_obj = sim:object(i)
-		if (se_obj) then
-			if (IsInvbox(nil,se_obj:clsid()) and not ignore_list[se_obj:name()]) then
-				caches[se_obj.id] = false
-				caches_count = caches_count + 1
-			--elseif (se_obj:spawn_ini() and se_obj:spawn_ini():section_exist("drop_box")) then 
-			--	box_caches[se_obj.id] = false
-			--	box_caches_count = caches_count + 1
-			end
+	for id, se_obj in alife():objects() do
+		if (IsInvbox(nil,se_obj:clsid()) and not ignore_list[se_obj:name()]) then
+			caches[se_obj.id] = false
+			caches_count = caches_count + 1
+		--elseif (se_obj:spawn_ini() and se_obj:spawn_ini():section_exist("drop_box")) then 
+		--	box_caches[se_obj.id] = false
+		--	box_caches_count = caches_count + 1
 		end
 	end
 
