@@ -267,15 +267,15 @@ function tourist_functor()
 		return true
 	end
 	-- Unlock the achievement.
-	if (has_achievement("tourist_delay")) then
+	if (has_alife_info("tourist_achievement_delay")) then
 		tourist_rewards()
 		return true
 	end
 	-- An infoportion delays the achievement.
 	-- Without this it often unlocks during level transition.
 	if (tourist_requirements()) then
-		db.actor:give_info_portion("achieved_tourist_delay")
-		return true
+		db.actor:give_info_portion("tourist_achievement_delay")
+		return false
 	end
 end
 
@@ -330,7 +330,7 @@ end
 -- Requires all available achievements to be unlocked.
 function completionist_requirements()
 	return (
-				(get_achievements_locked_count() == 0)
+				(get_achievements_locked_count() <= 1)
 		)
 end
 
@@ -550,7 +550,7 @@ function tourist_rewards()
 	for i=1,3 do
 		coc_treasure_manager.create_random_stash(nil, hint, nil, "treasure_unique")
 	end
-	db.actor:disable_info_portion("achieved_tourist_delay")
+	db.actor:disable_info_portion("tourist_achievement_delay")
 	SendScriptCallback("on_achievement_earned","tourist","st_achievement_8_unlock")
 end
 
