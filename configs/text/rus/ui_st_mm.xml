@@ -526,4 +526,7 @@
 	<string id="ui_mm_invert_zoom">
 		<text>Инвертировать зум</text>
 	</string>
+	<string id="ui_mm_detail_scale">
+		<text>травы шкала</text>
+	</string>
 </string_table>

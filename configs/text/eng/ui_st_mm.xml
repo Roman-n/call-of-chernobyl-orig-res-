@@ -526,4 +526,7 @@
 	<string id="ui_mm_invert_zoom">
 		<text>Invert zoom</text>
 	</string>
+	<string id="ui_mm_detail_scale">
+		<text>Grass scale</text>
+	</string>
 </string_table>
