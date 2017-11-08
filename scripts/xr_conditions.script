@@ -764,25 +764,16 @@ end
 --       не успели проспавнитьс€.
 function is_alive(actor, npc, p)
 	local id
-	if npc == nil or (p and p[1]) then
-		id = get_story_object_id(p[1])
-	elseif (type(npc.id) == "number") then
-		id = npc.id
+	if (p and p[1]) then
+		id = p and p[1] and story_objects.object_id_by_story_id[ p[1] ]
 	else
-		id = npc:id()
+		id = npc and type(npc.id) == "number" and npc.id or npc:id()
 	end
-
-	if npc1 == nil then
+	if not (id) then 
 		return false
 	end
-
-	local se_obj = id and alife_object(id)
-
-	if se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive() then
-		return true
-	end
-
-	return false
+	local se_obj = alife_object(id)
+	return se_obj and IsStalker(nil,se_obj:clsid()) and se_obj:alive()
 end
 
 -- проверка (по story_id) все ли провер€емые сталкеры мертвы
@@ -824,9 +815,8 @@ end
 -- TODO: исправить ситуацию, когда выдаетс€ неправильный результат дл€ обьектов, которые
 --       не успели проспавнитьс€.
 function is_dead(actor, npc, p)
-	local npc1
-	npc1 = get_story_object(p[1])
-	return not npc1 or not npc1:alive()
+	local npc1 = get_story_object(p[1])
+	return not (npc1 and npc1:alive())
 end
 
 -- ѕровер€ет , существует ли обьект с заданным стори айди.
