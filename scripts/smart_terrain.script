@@ -879,7 +879,6 @@ function se_smart_terrain:STATE_Write(packet)
 		alun_utils.w_stpk(packet,"u16",k,"arriving_npc id")
 	end
 
-
 	-- Информацию о НПС в смарте
 	n = table.size(self.npc_info)
 	--printf("%s:STATE_Write   JobCount=%s",self:name(),n)
@@ -905,7 +904,8 @@ function se_smart_terrain:STATE_Write(packet)
 		alun_utils.w_stpk(packet,"bool",false,"respawn_point")
 	end
 
-	alun_utils.w_stpk(packet,"s32",(self.smart_alarm_time or time_global()) - time_global(),"smart_alarm_time")
+	local tg = time_global()
+	alun_utils.w_stpk(packet,"s32",(self.smart_alarm_time or tg) - tg,"smart_alarm_time")
 	
 	--set_save_marker(packet, "save", true, "se_smart_terrain")
 end
@@ -994,7 +994,7 @@ function se_smart_terrain:STATE_Read(packet, size)
 
 	if (packet:r_elapsed() ~= 0) then
 		local tmr = packet:r_s32()
-		if (tmr > 0 and tmr <= self.alarm_length) then
+		if (tmr > 0 and self.alarm_length and tmr <= self.alarm_length) then
 			self.smart_alarm_time = time_global() + tmr
 		end
 	end
