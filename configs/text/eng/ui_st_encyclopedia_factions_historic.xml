@@ -11,7 +11,7 @@
 	<string id="encyclopedia_factions_historic_final_day_text">
 		<text>
 			%c[guide_blue]Final Day%c[default] were a faction of scientists, also known as %c[guide_blue]Last Day%c[default], or as "%c[guide_blue]wild stalkers%c[default]".\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Information%c[default]
 			\nThey believed that the Zone would ultimately bring about the end of the world, expanding into and claiming ever more land with each passing emission.\n
 			\nAside from their fascination with hunting zombified stalkers for research purposes, and that their now-forgotten leader was assassinated by a stalker called Ghost, little else is known about them.\n
 			\nWith their activity occurring shortly after the emission that wiped out much of Clear Sky, it is possible they were a small splinter group - survivors who became unhinged from what they had witnessed.
@@ -24,7 +24,7 @@
 	<string id="encyclopedia_factions_historic_isg_text">
 		<text>
 			The %c[guide_blue]International Scientific Group%c[default] was founded to research the Zone.\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Information%c[default]
 			\nFollowing the sudden appearance of the Zone, the United Nations created a new research body, with its sole purpose being to research and explain this strange new phenomenon.\n
 			\nAn area far in the north surrounding six large generators was seen as the most scientifically interesting, and as such was picked as the site for their expedition.\n
 			\nLasting only a few months, their work was plagued by problems they could never have known to prepare for.\n
@@ -40,7 +40,7 @@
 	<string id="encyclopedia_factions_historic_renegade_text">
 		<text>
 			%c[guide_blue]Renegades%c[default] were some of the most despicable stalkers in the Zone.\n
-			\n%c[guide_green]Information%c[default]\n
+			\n%c[guide_green]Information%c[default]
 			\nHaving no limits or morals, they consisted mainly of stalkers who had committed crimes so terrible that their original factions had cast them out.\n
 			\nThe only law they respected was one of force, preying on the weak at the perimeters of the Zone, often those who were too young and inexperienced to stand any chance against them.\n
 			\nDriven into the marshes by their numerous enemies, it was only in the face of Clear Sky that their desire to survive forced these jackals to unite as a faction of their own.
