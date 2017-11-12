@@ -274,26 +274,61 @@ function pda_encyclopedia_tab:InitPlugin()
 		self.categories[i + 1] = { section = section }
 	end
 	
-	-- Fill the categories with their articles.
+	-- Handles each individual article.
 	local unlocked_articles = dxr_statistics.actor_articles
+	local function handle_article(section, value)
+		-- Available game modes, and unlock status.
+		local unlocked = nil
+		local modes = {
+			["azazel"] = IsAzazelMode(),
+			["hardcore"] = IsHardcoreMode(),
+			["story"] = IsStoryMode(),
+			["survival"] = IsSurvivalMode(),
+		}
+		
+		-- Check each value attached to the article.
+		if (value) then
+			for k, v in string.gmatch(value, "([%w_%-%s%.]+)=([%w_%-%s%.]+)") do
+				local result = ((tonumber(v) or 0) ~= 0)
+				-- Unlocks the article by default.
+				-- Does not require a value, just needs a key.
+				if (k == "unlocked") then
+					unlocked = result
+				end
+				-- Enables/disables article based on game mode.
+				for k2, v2 in pairs(modes) do
+					if (k == k2) then
+						if (v2 and not v) or (v and not v2) then
+							return
+						end
+					end
+				end
+			end
+		end
+		
+		-- Lock or unlock the appropriate articles.
+		if (unlocked) then
+			unlocked_articles[section] = true
+		else
+			self.locked_articles[section] = true
+			self.articles_locked_count = self.articles_locked_count + 1
+		end
+		
+		-- Article ready to be added.
+		return true
+	end
+	
+	-- Fill the categories with their articles.
 	for i = 1, #self.categories do
 		if (ini:section_exist(self.categories[i].section)) then
 			line_count = ini:line_count(self.categories[i].section) or 0
 			self.categories[i].articles = {}
 			for j = 0, line_count - 1 do
 				local junk1, section, value = ini:r_line(self.categories[i].section, j, "", "")
-				-- Lock or unlock the appropriate articles.
-				if not (unlocked_articles[section]) then
-					if (value == "unlocked") then
-						unlocked_articles[section] = true
-					else
-						self.locked_articles[section] = true
-						self.articles_locked_count = self.articles_locked_count + 1
-					end
+				if (handle_article(section, value) == true) then
+					table.insert(self.categories[i].articles, section)
+					self.articles_count = self.articles_count + 1
 				end
-				-- Add the article to its category.
-				table.insert(self.categories[i].articles, section)
-				self.articles_count = self.articles_count + 1
 			end
 		else printf("Encyclopedia category \"" .. self.categories[i].section .. "\" does not exist.") end
 	end

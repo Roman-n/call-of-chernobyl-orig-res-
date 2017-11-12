@@ -1,6 +1,12 @@
 ; This plugin determines the categories and their articles for the encyclopedia.
 ; Categories are listed in "encyclopedia" and their articles in sections of the same names.
-; Articles which are important and require unlocking from the start should have their value set as "unlocked".
+
+; Flags can be used to enable/disable articles depending on game mode, or unlock them by default.
+; In the case of unlocking, not having the flag will have the same effect as setting it to "0".
+
+; A presence of a game mode flag means that its value will become a requirement, either "1" or "0".
+; Should such a flag not exist, then no game mode will be required to enable/disable the article.
+; Available game mode flags are: "azazel", "hardcore", "story" and "survival".
 
 [encyclopedia]
 encyclopedia_achievements
@@ -14,21 +20,21 @@ encyclopedia_options_gameplay
 encyclopedia_options_ui_hud
 
 [encyclopedia_achievements]
-encyclopedia_achievements_bookworm_food = unlocked
-encyclopedia_achievements_completionist = unlocked
-encyclopedia_achievements_down_to_earth = unlocked
-encyclopedia_achievements_duga_free = unlocked
-encyclopedia_achievements_geologist = unlocked
-encyclopedia_achievements_heavy_pockets = unlocked
-encyclopedia_achievements_infopreneur = unlocked
-encyclopedia_achievements_mechanized_warfare = unlocked
-encyclopedia_achievements_patriarch = unlocked
-encyclopedia_achievements_radiotherapy = unlocked
-encyclopedia_achievements_rag_and_bone = unlocked
-encyclopedia_achievements_silver_or_lead = unlocked
-encyclopedia_achievements_tourist = unlocked
-encyclopedia_achievements_well_dressed = unlocked
-encyclopedia_achievements_wishful_thinking = unlocked
+encyclopedia_achievements_bookworm_food = unlocked=1
+encyclopedia_achievements_completionist = unlocked=1
+encyclopedia_achievements_down_to_earth = unlocked=1
+encyclopedia_achievements_duga_free = unlocked=1
+encyclopedia_achievements_geologist = unlocked=1
+encyclopedia_achievements_heavy_pockets = unlocked=1
+encyclopedia_achievements_infopreneur = unlocked=1
+encyclopedia_achievements_mechanized_warfare = unlocked=1
+encyclopedia_achievements_patriarch = unlocked=1
+encyclopedia_achievements_radiotherapy = unlocked=1
+encyclopedia_achievements_rag_and_bone = unlocked=1
+encyclopedia_achievements_silver_or_lead = unlocked=1
+encyclopedia_achievements_tourist = unlocked=1
+encyclopedia_achievements_well_dressed = unlocked=1
+encyclopedia_achievements_wishful_thinking = unlocked=1
 
 [encyclopedia_characters]
 encyclopedia_characters_ashot
@@ -73,13 +79,13 @@ encyclopedia_factions_historic_renegade
 encyclopedia_factions_other_zombified
 
 [encyclopedia_features]
-encyclopedia_features_azazel_mode = unlocked
-encyclopedia_features_companions = unlocked
-encyclopedia_features_ironman_mode = unlocked
-encyclopedia_features_rank = unlocked
-encyclopedia_features_reputation = unlocked
-encyclopedia_features_story_mode = unlocked
-encyclopedia_features_survival_mode = unlocked
+encyclopedia_features_azazel_mode = unlocked=1
+encyclopedia_features_companions = unlocked=1
+encyclopedia_features_ironman_mode = unlocked=1
+encyclopedia_features_rank = unlocked=1
+encyclopedia_features_reputation = unlocked=1
+encyclopedia_features_story_mode = unlocked=1
+encyclopedia_features_survival_mode = unlocked=1
 
 [encyclopedia_mutants]
 encyclopedia_mutants_blind_dog
@@ -105,18 +111,18 @@ encyclopedia_mutants_tushkano
 encyclopedia_mutants_zombie
 
 [encyclopedia_options_gameplay]
-encyclopedia_options_gameplay_ai_die_to_anomalies = unlocked
-encyclopedia_options_gameplay_aoe_pickup_mode = unlocked
-encyclopedia_options_gameplay_artefact_degradation = unlocked
-encyclopedia_options_gameplay_delayed_repairs = unlocked
-encyclopedia_options_gameplay_hardcore_ai_aim = unlocked
-encyclopedia_options_gameplay_helicopter_patrols = unlocked
-encyclopedia_options_gameplay_online_exclusion = unlocked
-encyclopedia_options_gameplay_population_factors = unlocked
-encyclopedia_options_gameplay_radio_music = unlocked
-encyclopedia_options_gameplay_sleep_deprivation = unlocked
+encyclopedia_options_gameplay_ai_die_to_anomalies = unlocked=1
+encyclopedia_options_gameplay_aoe_pickup_mode = unlocked=1
+encyclopedia_options_gameplay_artefact_degradation = unlocked=1
+encyclopedia_options_gameplay_delayed_repairs = unlocked=1
+encyclopedia_options_gameplay_hardcore_ai_aim = unlocked=1
+encyclopedia_options_gameplay_helicopter_patrols = unlocked=1
+encyclopedia_options_gameplay_online_exclusion = unlocked=1
+encyclopedia_options_gameplay_population_factors = unlocked=1
+encyclopedia_options_gameplay_radio_music = unlocked=1
+encyclopedia_options_gameplay_sleep_deprivation = unlocked=1
 
 [encyclopedia_options_ui_hud]
-encyclopedia_options_ui_hud_dynamic_news = unlocked
-encyclopedia_options_ui_hud_extended_hud = unlocked
-encyclopedia_options_ui_hud_portrait_by_outfit = unlocked
+encyclopedia_options_ui_hud_dynamic_news = unlocked=1
+encyclopedia_options_ui_hud_extended_hud = unlocked=1
+encyclopedia_options_ui_hud_portrait_by_outfit = unlocked=1
