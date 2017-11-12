@@ -1593,7 +1593,13 @@ function ini_file.r_list(ini,s,k,def)
 		return parse_names(src)
 	end
 end
-
+function ini_file.r_mult(ini,s,k,...)
+	local src = ini:r_string_ex(s,k)
+	if (src) then
+		return unpack(parse_names(src))
+	end
+	return ...
+end
 -----------------------------------------
 -- New INI wrapper to replace alun_utils.cfg_file
 class "ini_file_ex"
@@ -1703,6 +1709,14 @@ function ini_file_ex:r_list(s,k,def)
 	if (src) then
 		return parse_names(src)
 	end
+end
+
+function ini_file_ex:r_mult(s,k,...)
+	local src = self:r_string_ex(s,k) or def
+	if (src) then
+		return unpack(parse_names(src))
+	end
+	return ...
 end
 -----------------------------------------
 -- Constants

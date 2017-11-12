@@ -138,7 +138,12 @@ function danger_in_radius(npc,best_danger,bd_type,perceive_type)
 		end
 	end
 	
-	local ignore_distance = (DangerIgnore[bd_type] or 0) * coeff
+	local st = db.storage[npc:id()]
+	if (st.danger and st.danger.disabled) then 
+		return false
+	end
+	
+	local ignore_distance = (st.danger and st.danger[bd_type] and st.danger[bd_type][1] or DangerIgnore[bd_type] or 0) * coeff
 	if (ignore_distance <= 0) then
 		return false
 	end
@@ -238,7 +243,7 @@ local function eval_danger(self)
 		self.a.type = nil
 	end
 
-	local new_danger_time = (bd_type == danger_object.entity_corpse and danger:object():death_time() or danger:time()) + DangerInertion[bd_type]
+	local new_danger_time = (bd_type == danger_object.entity_corpse and danger:object():death_time() or danger:time()) + (self.a[bd_type] and self.a[bd_type][2] or DangerInertion[bd_type])
 	if (tg >= new_danger_time) then
 		return false
 	end
@@ -782,6 +787,21 @@ function configure_actions(npc,ini,scheme,section,stype,temp)
 end 
 
 function reset_generic_scheme(npc,scheme,section,stype,st)
-
+	if (st.danger) then
+		local danger_section = st.ini:r_string_ex(section,"danger") or ""
+		if (danger_section ~= "") then
+			local val = st.ini:r_float_ex(danger_section,"ignore_distance")
+			if (val and val == 0) then 
+				st.danger.disabled = true
+			end
+			for bd_type,v in pairs(bd_types) do
+				if (st.ini:line_exist(danger_section,v)) then
+					st.danger[bd_type] = {st.ini:r_mult(danger_section,v,DangerIgnore[bd_type],DangerInertion[bd_type])}
+					st.danger[bd_type][1] = tonumber(st.danger[bd_type][1])
+					st.danger[bd_type][2] = tonumber(st.danger[bd_type][2])
+				end
+			end
+		end
+	end
 end
 

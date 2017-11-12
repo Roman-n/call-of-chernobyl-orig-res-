@@ -896,10 +896,12 @@ function cfg_get_overrides(ini, section, npc, l)
 	
 	local st = db.storage[npc:id()]
 	if ini:line_exist(st.section_logic, "post_combat_time") then
-		l.min_post_combat_time,l.max_post_combat_time = utils.r_2nums( ini, st.section_logic, "post_combat_time", 10, 15 )
+		l.min_post_combat_time,l.max_post_combat_time = ini:r_mult(st.section_logic,"post_combat_time",10,15)
 	else
-		l.min_post_combat_time,l.max_post_combat_time = utils.r_2nums( ini, section, "post_combat_time", 10, 15 )
+		l.min_post_combat_time,l.max_post_combat_time = ini:r_mult(section,"post_combat_time",10,15)
 	end
+	l.min_post_combat_time,l.max_post_combat_time = tonumber(l.min_post_combat_time),tonumber(l.max_post_combat_time)
+	
 	if ini:line_exist(section, "on_offline") then
 		l.on_offline_condlist = xr_logic.parse_condlist(npc, section, "on_offline", ini:r_string_ex(section,"on_offline") or "nil")
 	else
