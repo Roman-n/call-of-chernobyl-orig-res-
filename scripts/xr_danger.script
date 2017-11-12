@@ -790,15 +790,16 @@ function reset_generic_scheme(npc,scheme,section,stype,st)
 	if (st.danger) then
 		local danger_section = st.ini:r_string_ex(section,"danger") or ""
 		if (danger_section ~= "") then
-			local val = st.ini:r_float_ex(danger_section,"ignore_distance")
+			local val = st.ini:r_float_ex(danger_section,"ignore_distance") -- compatibility with existing logics and ignore_distance = 0
 			if (val and val == 0) then 
 				st.danger.disabled = true
-			end
-			for bd_type,v in pairs(bd_types) do
-				if (st.ini:line_exist(danger_section,v)) then
-					st.danger[bd_type] = {st.ini:r_mult(danger_section,v,DangerIgnore[bd_type],DangerInertion[bd_type])}
-					st.danger[bd_type][1] = tonumber(st.danger[bd_type][1])
-					st.danger[bd_type][2] = tonumber(st.danger[bd_type][2])
+			else
+				for bd_type,v in pairs(bd_types) do
+					if (st.ini:line_exist(danger_section,v)) then
+						st.danger[bd_type] = {st.ini:r_mult(danger_section,v,DangerIgnore[bd_type],DangerInertion[bd_type])}
+						st.danger[bd_type][1] = tonumber(st.danger[bd_type][1])
+						st.danger[bd_type][2] = tonumber(st.danger[bd_type][2])
+					end
 				end
 			end
 		end
