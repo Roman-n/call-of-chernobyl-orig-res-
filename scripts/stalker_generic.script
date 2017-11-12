@@ -173,7 +173,7 @@ function reset_invulnerability(npc, ini, section)
 end
 function disable_invulnerability(npc)
 	--printf("DISABLE INVULNERABILITY. npc[%s] = [false]", npc:name())
-	npc:invulnerable(false)
+	--npc:invulnerable(false)
 end
 
 function update_invulnerability(npc)
