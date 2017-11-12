@@ -473,6 +473,8 @@ function motivator_binder:update(delta)
 	SendScriptCallback("npc_on_update",object,db.storage[id])
 	-- End [Alundaio]
 	
+	stalker_generic.update_invulnerability(object)
+	
 	local tg = time_global()
 	if (self.__tmr and tg < self.__tmr) then
 		--alun_utils.debug_write(strformat("motivator_bind:update %s END 2",self.object and self.object:name()))
@@ -483,8 +485,6 @@ function motivator_binder:update(delta)
 	-- DOOR
 	ph_door.try_to_open_door(self.object, self.opened_doors)
 	ph_door.try_to_close_door(self.object, self.opened_doors)
-	
-	stalker_generic.update_invulnerability(object)
 
 	if (self.st.active_scheme) then
 		local switched
