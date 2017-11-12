@@ -29,6 +29,7 @@
 		<texture id="encyclopedia_characters_cardan_image" x="0" y="1280" width="256" height="256"/>
 		<texture id="encyclopedia_characters_cold_image" x="512" y="256" width="256" height="256"/>
 		<texture id="encyclopedia_characters_doctor_image" x="256" y="1024" width="256" height="256"/>
+		<texture id="encyclopedia_characters_fanatic_image" x="768" y="1536" width="256" height="256"/>
 		<texture id="encyclopedia_characters_gonta_image" x="0" y="1024" width="256" height="256"/>
 		<texture id="encyclopedia_characters_hawaiian_image" x="768" y="256" width="256" height="256"/>
 		<texture id="encyclopedia_characters_ivan_trodnik_image" x="0" y="512" width="256" height="256"/>
@@ -61,29 +62,29 @@
 		<texture id="encyclopedia_factions_other_zombified_image" x="512" y="768" width="256" height="256"/>
 	</file>
 	
-	<!-- Features & Features (Options) -->
+	<!-- Features, Options (Gameplay), Options (UI/HUD) -->
 	<!-- No images -->
 	<file name="ui\ui_console">
+		<texture id="encyclopedia_features_azazel_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_companions_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_ironman_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_rank_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_reputation_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_ai_die_to_anomalies_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_azazel_mode_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_delayed_repairs_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_dynamic_news_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_extended_hud_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_hardcore_ai_aim_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_helicopter_patrols_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_ironman_mode_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_online_exclusion_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_population_factors_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_portrait_by_outfit_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_radio_music_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_sleep_deprivation_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_story_mode_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_options_survival_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_story_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_survival_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_ai_die_to_anomalies_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_delayed_repairs_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_hardcore_ai_aim_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_helicopter_patrols_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_online_exclusion_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_population_factors_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_radio_music_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_sleep_deprivation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_ui_hud_dynamic_news_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_ui_hud_extended_hud_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_ui_hud_portrait_by_outfit_image" x="0" y="0" width="0" height="0"/>
 	</file>
 	
 	<!-- Mutants -->
