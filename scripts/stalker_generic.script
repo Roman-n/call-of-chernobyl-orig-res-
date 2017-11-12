@@ -150,19 +150,16 @@ function is_need_invulnerability(npc)
 	end
 
 	local npc_st = db.storage[id]
-	if not (npc_st and npc_st.ini and npc_st.active_section) then 
+	if not (npc_st and npc_st.ini) then 
 		return false 
 	end
 	
-	local invulnerability = npc_st.ini:r_string_ex(npc_st.active_section,"invulnerable")
-
-	if invulnerability == nil then
+	local condlist = npc_st.ini:r_string_to_condlist(npc_st.section_logic,"invulnerable") or npc_st.active_section and npc_st.ini:r_string_to_condlist(npc_st.active_section,"invulnerable")
+	if not (condlist) then
 		return false
 	end
-
-	invulnerability = xr_logic.parse_condlist(npc, "invulnerability", "invulnerability", invulnerability)
-
-	return xr_logic.pick_section_from_condlist(db.actor, npc, invulnerability) == "true"
+	
+	return xr_logic.pick_section_from_condlist(db.actor,npc,condlist) == "true"
 end
 
 --' Вызывается на переключении на новую секцию. Производит вычитывание настроек из текущей секции.

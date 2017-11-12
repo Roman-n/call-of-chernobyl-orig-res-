@@ -71,10 +71,10 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 		end
 	end
 		
-		local filename = ini:r_string_ex(section_logic,"cfg")
+	local filename = ini:r_string_ex(section_logic,"cfg")
 	if filename then -- a link, because custom_data cannot have more then 4096 bytes of data
-			actual_ini_filename = filename
-			actual_ini = ini_file(filename)
+		actual_ini_filename = filename
+		actual_ini = ini_file(filename)
 	end
 
 	actual_ini_filename = actual_ini_filename or ini_filename
@@ -83,8 +83,8 @@ function configure_schemes(npc, ini, ini_filename, stype, section_logic, gulag_n
 	if not (actual_ini) then
 		callstack()
 		printf("ERROR: object '%s' actual_ini=%s actual_ini_filename=%s %s=%s", npc:name(),actual_ini ~= nil,actual_ini_filename,section_logic,actual_ini and actual_ini:section_exist(section_logic))
-				return
-			end
+		return
+	end
 
 	-- Since at the moment of schema activation the previously installed common schemes could work, all of them should be disabled:
 	disable_generic_schemes(npc, stype)
