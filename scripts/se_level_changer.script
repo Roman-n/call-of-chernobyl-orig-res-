@@ -6,11 +6,11 @@ end
 function se_level_changer:on_register()
 	cse_alife_level_changer.on_register(self)
 	-- Проверяем кастомдату обьекта на наличие стори айди.
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 end
 --------------------
 function se_level_changer:on_unregister()
-	story_objects.unregister(self.id)
+	--story_objects.unregister(self.id)
 	cse_alife_level_changer.on_unregister(self)
 end
 --------------------

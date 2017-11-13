@@ -7,18 +7,11 @@ end
 function se_artefact:on_register()
 	cse_alife_item_artefact.on_register(self)
 	-- Проверяем кастомдату обьекта на наличие стори айди.
-	story_objects.check_spawn_ini_for_story_id(self)
-	
-	-- persistent storage
-	alife_storage_manager.get_se_obj_state(self,true)
+	--story_objects.check_spawn_ini_for_story_id(self)
 end
 
 function se_artefact:on_unregister()
-	local m_data = alife_storage_manager.get_state()
-	if (m_data.se_object) then
-		m_data.se_object[self.id] = nil
-	end
-	story_objects.unregister(self.id)
+	--story_objects.unregister(self.id)
 	cse_alife_item_artefact.on_unregister(self)
 end
 --------------------

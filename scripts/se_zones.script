@@ -6,7 +6,7 @@ function se_zone_anom:__init (section) super (section)
 end
 function se_zone_anom:on_register()
 	cse_anomalous_zone.on_register(self)
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	--[[
 	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
 		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
@@ -32,7 +32,7 @@ function se_zone_torrid:__init (section) super (section)
 end
 function se_zone_torrid:on_register()
 	cse_torrid_zone.on_register(self)
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	--[[
 	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
 		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
@@ -59,7 +59,7 @@ function se_zone_visual:__init (section) super (section)
 end
 function se_zone_visual:on_register()
 	cse_zone_visual.on_register(self)
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	--[[
 	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
 		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
@@ -89,7 +89,7 @@ local sr_teleport_ini = ini_file("sr_teleport_sections.ltx")
 function se_restrictor:on_register()
 	cse_alife_space_restrictor.on_register(self)
 	-- Проверяем кастомдату обьекта на наличие стори айди.
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	-- Alundaio
 	local id = self.id
 	local name = self:name()

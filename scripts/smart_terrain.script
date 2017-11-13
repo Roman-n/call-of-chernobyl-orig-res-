@@ -90,7 +90,7 @@ function se_smart_terrain:on_register()
 	self.is_on_actor_level = actor_level == smart_level or nil
 	self.smart_alife_task = CALifeSmartTerrainTask(self.m_game_vertex_id, self.m_level_vertex_id)
 	
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	simulation_objects.register(self)
 	
 	self:load_jobs()
@@ -111,7 +111,7 @@ end
 
 function se_smart_terrain:on_unregister()
 	SIMBOARD:unregister_smart(self)
-	story_objects.unregister(self.id)
+	--story_objects.unregister(self.id)
 	simulation_objects.unregister(self)
 	db.del_smart_terrain(self)
 	local m_data = alife_storage_manager.get_state()

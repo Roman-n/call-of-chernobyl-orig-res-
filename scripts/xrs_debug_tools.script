@@ -1978,22 +1978,27 @@ axr_keybind.bind("DIK_NUMPADENTER",function(p)
 		return 
 	end 
 	if (p==1) then
-		local heli
-		for id,o in pairs(db.heli) do
-			heli = o
-			break
-		end
-		if (heli) then
-			local veh = db.actor:get_attached_vehicle()
-			if not (veh) then
-				db.actor:attach_vehicle(heli)
-			elseif (veh:cast_Heli()) then 
-				db.actor:detach_vehicle()
-			else 
-				db.actor:detach_vehicle()
-				db.actor:attach_vehicle(heli)
-			end
-		end	
+		for story_id,id in pairs(story_objects.object_id_by_story_id) do 
+			printf("%s = %s",story_id,id)
+		end 
+		
+		-- local heli
+		-- for id,o in pairs(db.heli) do
+			-- heli = o
+			-- break
+		-- end
+		-- if (heli) then
+			-- local veh = db.actor:get_attached_vehicle()
+			-- if not (veh) then
+				-- db.actor:attach_vehicle(heli)
+			-- elseif (veh:cast_Heli()) then 
+				-- db.actor:detach_vehicle()
+			-- else 
+				-- db.actor:detach_vehicle()
+				-- db.actor:attach_vehicle(heli)
+			-- end
+		-- end	
+		
 		-- local npc = level.get_target_obj()
 		-- if (npc and IsStalker(npc)) then 
 			-- debug_visual_ltx = debug_visual_ltx or ini_file_ex("debug_visual.ltx",true)

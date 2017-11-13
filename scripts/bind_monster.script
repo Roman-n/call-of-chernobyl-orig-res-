@@ -265,7 +265,7 @@ function generic_object_binder:death_callback(victim, who)
 			-- npc_statistic
 			if (se_who) then
 				who:set_character_rank(who:character_rank()+math.random(5,15))
-				local m_data = alife_storage_manager.get_se_obj_state(se_who)
+				local m_data = alife_storage_manager.get_se_obj_state(se_who,true)
 				if (m_data) then
 					m_data.mutants_killed = m_data.mutants_killed and m_data.mutants_killed + 1 or 1
 				end

@@ -892,7 +892,7 @@ end
 function sim_squad_scripted:on_register()
 	--alun_utils.debug_write( strformat("%s:on_register start",self:name()) )
 	cse_alife_online_offline_group.on_register( self )
-	story_objects.check_spawn_ini_for_story_id(self)
+	--story_objects.check_spawn_ini_for_story_id(self)
 	sim_board.get_sim_board().squads[self.id] = true
 	--simulation_objects.register(self)
 	SendScriptCallback("squad_on_register",self)
@@ -901,7 +901,7 @@ end
 function sim_squad_scripted:on_unregister()
 	--alun_utils.debug_write("sim_squad_scripted:on_unregister")
 	SendScriptCallback("squad_on_unregister",self)
-	story_objects.unregister(self.id)
+	--story_objects.unregister(self.id)
 	SIMBOARD.squads[self.id] = nil
 	SIMBOARD:assign_squad_to_smart(self, nil)
 	--simulation_objects.unregister(self)

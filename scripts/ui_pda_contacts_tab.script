@@ -119,7 +119,6 @@ function pda_contacts_tab:Reset()
 	
 	-- Loop through all currently online stalkers.
 	local display_list = {}
-	local m_data = alife_storage_manager.get_state()
 	for i=1, #db.OnlineStalkers do
 		local npc = db.storage[db.OnlineStalkers[i]]
 		npc = npc and npc.object or level.object_by_id(db.OnlineStalkers[i])
@@ -129,8 +128,12 @@ function pda_contacts_tab:Reset()
 			if (distance <= radius) then
 				if npc:relation(db.actor) ~= game_object.enemy then
 					if self.filter:GetCheck() then
-						if (m_data.actor_contacts and m_data.actor_contacts[db.OnlineStalkers[i]]) then
-							table.insert(display_list, npc)
+						local se_obj = alife_object(db.OnlineStalkers[i])
+						if (se_obj) then
+							local m_data = alife_storage_manager.get_se_obj_state(se_obj)
+							if (m_data and m_data.is_actor_contact) then
+								table.insert(display_list, npc)
+							end
 						end
 					else
 						table.insert(display_list, npc)
@@ -147,8 +150,12 @@ function pda_contacts_tab:Reset()
 			local npc = db.storage[id] and db.storage[id].object 
 			if (npc and db.actor:position():distance_to_sqr(npc:position()) <= radius) then 
 				if self.filter:GetCheck() then
-					if (m_data.actor_contacts and m_data.actor_contacts[id]) then
-						table.insert(display_list, npc)
+					local se_obj = alife_object(db.OnlineStalkers[i])
+					if (se_obj) then
+						local m_data = alife_storage_manager.get_se_obj_state(se_obj)
+						if (m_data and m_data.is_actor_contact) then
+							table.insert(display_list, npc)
+						end
 					end
 				else
 					table.insert(display_list, npc)
