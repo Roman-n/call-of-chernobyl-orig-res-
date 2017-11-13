@@ -277,8 +277,11 @@ function pda_encyclopedia_tab:InitPlugin()
 	-- Handles each individual article.
 	local unlocked_articles = dxr_statistics.actor_articles
 	local function handle_article(section, value)
-		-- Available game modes, and unlock status.
+		-- Availability of the article.
+		local disabled = nil
 		local unlocked = nil
+		
+		-- Available game modes.
 		local modes = {
 			["azazel"] = IsAzazelMode(),
 			["hardcore"] = IsHardcoreMode(),
@@ -289,21 +292,29 @@ function pda_encyclopedia_tab:InitPlugin()
 		-- Check each value attached to the article.
 		if (value) then
 			for k, v in string.gmatch(value, "([%w_%-%s%.]+)=([%w_%-%s%.]+)") do
-				local result = ((tonumber(v) or 0) ~= 0)
 				-- Unlocks the article by default.
 				-- Does not require a value, just needs a key.
 				if (k == "unlocked") then
-					unlocked = result
+					unlocked = true
 				end
 				-- Enables/disables article based on game mode.
-				for k2, v2 in pairs(modes) do
-					if (k == k2) then
-						if (v2 and not v) or (v and not v2) then
-							return
+				if (not disabled) then
+					local result = ((tonumber(v) or 0) ~= 0)
+					for k2, v2 in pairs(modes) do
+						if (k == k2) then
+							if (v2 and not result) or (result and not v2) then
+								disabled = true
+								break
+							end
 						end
 					end
 				end
 			end
+		end
+		
+		-- Prevents the article being added.
+		if (disabled) then
+			return false
 		end
 		
 		-- Lock or unlock the appropriate articles.
@@ -314,7 +325,7 @@ function pda_encyclopedia_tab:InitPlugin()
 			self.articles_locked_count = self.articles_locked_count + 1
 		end
 		
-		-- Article ready to be added.
+		-- Article can be added.
 		return true
 	end
 	
