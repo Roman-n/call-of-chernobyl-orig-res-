@@ -1454,6 +1454,7 @@ end
 -- called in CSE_ALifeDynamicObject::on_unregister()
 -- good place to remove ids from persistent tables
 function CSE_ALifeDynamicObject_on_register(id,se_obj)
+	--printf("CSE_ALifeDynamicObject_on_register %s %s",id,se_obj:name())
 	if (id == 0) then
 		story_objects.register(id,"actor")
 	else

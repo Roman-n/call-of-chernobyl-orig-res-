@@ -110,6 +110,14 @@ function se_restrictor:on_register()
 			end
 		end
 	end
+	
+	local spawn_ini = self:spawn_ini()
+	local filename = spawn_ini and spawn_ini:r_string_ex("logic","cfg")
+	if (filename and filename == "scripts\\sr_sleep.ltx") then
+		if (level.map_has_object_spot(id, "ui_pda2_actor_sleep_location") == 0) then
+			level.map_add_object_spot_ser(id, "ui_pda2_actor_sleep_location", "st_ui_pda_sleep_place")
+		end
+	end
 	-- Alundaio
 end
 
