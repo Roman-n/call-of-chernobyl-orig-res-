@@ -292,14 +292,14 @@ function pda_encyclopedia_tab:InitPlugin()
 		-- Check each value attached to the article.
 		if (value) then
 			for k, v in string.gmatch(value, "([%w_%-%s%.]+)=([%w_%-%s%.]+)") do
+				-- True/false value read from article flag.
+				local result = ((tonumber(v) or 0) ~= 0)
 				-- Unlocks the article by default.
-				-- Does not require a value, just needs a key.
 				if (k == "unlocked") then
-					unlocked = true
+					unlocked = result
 				end
 				-- Enables/disables article based on game mode.
 				if (not disabled) then
-					local result = ((tonumber(v) or 0) ~= 0)
 					for k2, v2 in pairs(modes) do
 						if (k == k2) then
 							if (v2 and not result) or (result and not v2) then
