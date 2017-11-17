@@ -5,7 +5,7 @@
 ------------------------------
 
 -- How many jobs are checked per update per npc, for a job
-local STEP_SIZE 			= 5
+local STEP_SIZE 			= 10
 local STEP_SIZE_OFFLINE 	= 1
 local locations_ini	= ini_file("misc\\smart_terrain_masks.ltx")
 nearest_to_actor_smart = {id = nil , dist = math.huge}
@@ -55,7 +55,7 @@ function arrived_to_smart(se_obj, smart)
 		return false
 	end
 	
-	return se_obj.position:distance_to_sqr(smart.position) <= smart.arrive_dist^2
+	return se_obj.position:distance_to_sqr(smart.position) <= smart.arrive_dist
 end
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -150,7 +150,7 @@ function se_smart_terrain:read_params()
 	
 	local ini = self.ini
 	
-	self.arrive_dist			= ini:r_float_ex(smart_sect,"arrive_dist") or 50
+	self.arrive_dist			= (ini:r_float_ex(smart_sect,"arrive_dist") or 65)^2
 	self.death_idle_time 		= ini:r_float_ex(smart_sect,"death_idle_time") or 600
 	self.def_restr				= ini:r_string_ex(smart_sect,"def_restr")	-- default out_restrictor for npc on jobs here
 	self.default_faction 		= ini:r_string_ex(smart_sect,"default_faction")
@@ -1395,7 +1395,7 @@ function se_smart_terrain:am_i_reached(squad)
 		return squad.position:distance_to_sqr(self.position) <= 625
 	end
 
-	return squad.always_arrived == true or squad.position:distance_to_sqr(self.position) <= self.arrive_dist^2
+	return squad.always_arrived == true or squad.position:distance_to_sqr(self.position) <= self.arrive_dist
 end
 
 function se_smart_terrain:on_after_reach(squad)

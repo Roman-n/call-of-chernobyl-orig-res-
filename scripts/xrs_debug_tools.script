@@ -217,7 +217,10 @@ function hud_tool:__init(custom_static)
 end
 
 function hud_tool:add_msg(text,value,...)
-	self.msg = self.msg..strformat(text..": %s\\n",value)
+	text = tostring(text)
+	value = tostring(value)
+	self.msg = self.msg..strformat( (text ~= "nil" and text..": %s\\n" or "\\n"), strformat(value ~= nil and value or "",...)  )
+	self.msg = self.msg:sub(1,3000)
 end
 
 function hud_tool:set_header(header)
@@ -228,7 +231,6 @@ function hud_tool:display(disable)
 	if (disable) then 
 		return 
 	end 
-	
 	local hud = get_hud()
 	local cus = hud and hud:GetCustomStatic(self.custom_static)
 	if (cus) then
@@ -1429,7 +1431,7 @@ function stalker_info_hud_show(hud)
 						return squad.position:distance_to_sqr(smart.position) <= 625
 					end
 
-					return squad.always_arrived or squad.position:distance_to_sqr(smart.position) <= smart.arrive_dist^2
+					return squad.always_arrived or squad.position:distance_to_sqr(smart.position) <= smart.arrive_dist
 				end 
 
 				return obj_pos:distance_to_sqr(smart.position) <= 2500
@@ -1541,6 +1543,26 @@ function team_squad_group_hud_show(hud)
 			hud:add_msg("Group",se_obj.group)
 		end
 	end 
+	
+	hud:add_msg("---Nearest Smart Gulag---")
+	if (smart_terrain.nearest_to_actor_smart and smart_terrain.nearest_to_actor_smart.id) then
+		local smart = alife_object(smart_terrain.nearest_to_actor_smart.id)
+		if (smart) then
+			hud:add_msg("------NPC_INFO-------")
+			for id,v in pairs(smart.npc_info) do
+				if (v.se_obj) then
+					hud:add_msg("Name",v.se_obj:name())
+				end
+			end
+			hud:add_msg("------ARRIVING_NPC-------")
+			for id,se_obj in pairs(smart.arriving_npc) do
+				if (se_obj) then
+					hud:add_msg("Name","%s (%s m)",se_obj:name(),se_obj.position:distance_to(smart.position))
+				end
+			end
+		end 
+	end
+		
 	hud:display()
 end
 
