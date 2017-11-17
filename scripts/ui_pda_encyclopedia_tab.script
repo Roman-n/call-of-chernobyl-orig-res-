@@ -318,7 +318,7 @@ function pda_encyclopedia_tab:InitPlugin()
 		end
 		
 		-- Lock or unlock the appropriate articles.
-		if (unlocked) then
+		if (unlocked or unlocked_articles[section]) then
 			unlocked_articles[section] = true
 		else
 			self.locked_articles[section] = true
