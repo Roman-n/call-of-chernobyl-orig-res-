@@ -6,18 +6,45 @@
 ----- Initialisation -----
 --------------------------
 
+-- Delays interaction until the player is loaded.
+-- This may look pointless, but it prevents articles unlocking "off-screen".
+local interaction_delay = nil
+local interaction_enabled = nil
+function actor_on_first_update()
+	interaction_delay = interaction_delay or time_global() + 7500
+end
+
+-- Checks whether or not interaction can be enabled.
+function actor_on_update()
+	if (interaction_delay and interaction_delay <= time_global()) then
+		-- Entering a vehicle.
+		RegisterScriptCallback("actor_on_attach_vehicle", detect_vehicle_interaction)
+		
+		-- Talking-to or looting a character.
+		RegisterScriptCallback("actor_on_leave_dialog", detect_character_interaction)
+		RegisterScriptCallback("actor_menu_mode_changed", detect_character_interaction2)
+		
+		-- Using or equipping items.
+		RegisterScriptCallback("actor_on_item_use", detect_item_interaction)
+		RegisterScriptCallback("actor_item_to_slot", detect_item_interaction)
+		
+		-- We don't need these callbacks anymore.
+		UnregisterScriptCallback("actor_on_first_update", actor_on_first_update)
+		UnregisterScriptCallback("actor_on_update", actor_on_update)
+		
+		-- Enable guide interactivity.
+		interaction_enabled = true
+		
+		-- Unlock the player's faction article.
+		local faction = character_community(db.actor):sub(7)
+		detect_faction_interaction(faction)
+	end
+end
+
 -- Initialises callbacks for interactivity plugin.
 function on_game_start()
-	-- Entering a vehicle.
-	RegisterScriptCallback("actor_on_attach_vehicle", detect_vehicle_interaction)
-	
-	-- Talking-to or looting a character.
-	RegisterScriptCallback("actor_on_leave_dialog", detect_character_interaction)
-	RegisterScriptCallback("actor_menu_mode_changed", detect_character_interaction2)
-	
-	-- Using or equipping items.
-	RegisterScriptCallback("actor_on_item_use", detect_item_interaction)
-	RegisterScriptCallback("actor_item_to_slot", detect_item_interaction)
+	RegisterScriptCallback("actor_on_first_update", actor_on_first_update)
+	RegisterScriptCallback("actor_on_update", actor_on_update)
 end
 
 -------------------------
@@ -28,7 +55,7 @@ end
 function create_interaction(key, section)
 	local guide = ui_pda_encyclopedia_tab.get_ui()
 	local interactivity = guide.interactivity or {}
-	if (key and section and interactivity[key] and interactivity[key][section]) then
+	if (interaction_enabled and key and section and interactivity[key] and interactivity[key][section]) then
 		for k, v in pairs(interactivity[key][section]) do
 			unlock_article(v)
 		end
@@ -38,7 +65,7 @@ end
 -- Character and faction articles for closing a dialog.
 function detect_character_interaction(character_id)
 	local character = level.object_by_id(character_id)
-	create_interaction("factions", character_community(character))
+	detect_faction_interaction(character_community(character))
 	create_interaction("characters", character and character:section() or nil)
 end
 
@@ -47,8 +74,13 @@ function detect_character_interaction2(mode, last_mode)
 	if (last_mode ~= 4) then return end
 	local character = ActorMenu.get_actor_menu():GetPartner()
 	if (not character or character:alive()) then return end
-	create_interaction("factions", character_community(character))
+	detect_faction_interaction(character_community(character))
 	create_interaction("characters", character and character:section() or nil)
+end
+
+-- Faction articles through various means.
+function detect_faction_interaction(faction)
+	create_interaction("factions", faction)
 end
 
 -- Item articles for using or moving to slot.
