@@ -914,7 +914,7 @@
 		<text>из автомата</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_1_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_1_5">
 		<text>убил</text>
@@ -938,7 +938,7 @@
 		<text>из автомата</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_2_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_2_5">
 		<text>убил</text>
@@ -962,7 +962,7 @@
 		<text>из пистолета</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_3_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_3_5">
 		<text>убил</text>
@@ -986,7 +986,7 @@
 		<text>из винтовки</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_4_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_4_5">
 		<text>убил</text>
@@ -1010,7 +1010,7 @@
 		<text>из дробовика</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_5_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_5_5">
 		<text>убил</text>
@@ -1052,13 +1052,13 @@
 		<text>Взрывная волна</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_7_2">
-		<text>взрыв снаряда</text>
+		<text>взрывы</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_7_3">
 		<text>из гранатомета</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_7_4">
-		<text>пристрелил</text>
+		<text>прикончил</text>
 	</string>
 	<string id="st_dyn_news_wpn_cls_7_5">
 		<text>убил</text>
@@ -2103,7 +2103,7 @@
 		<text>Удачный день! Нашёл артефакт %s.</text>
 	</string>
 	<string id="st_dyn_news_gossip_arte_2">
-		<text>Кто-нибудь знает где можно найти артефакт %s?</text>
+		<text>Кто-нибудь знает, где можно найти артефакт %s?</text>
 	</string>
 	<string id="st_dyn_news_gossip_arte_3">
 		<text>О! %s! Теперь можно и домой!</text>
@@ -2160,7 +2160,7 @@
 	</string>
 	<!-- kill wounded -->
 	<string id="st_dyn_news_gossip_kill_wounded_1">
-		<text>Один ещё живой. Это не надолго!</text>
+		<text>Один ещё живой. Это ненадолго!</text>
 	</string>
 	<string id="st_dyn_news_gossip_kill_wounded_2">
 		<text>Быстро! Один, вроде, ещё живой.</text>

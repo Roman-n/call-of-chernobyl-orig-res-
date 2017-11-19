@@ -204,10 +204,10 @@
 		<text>Ты бы оружие убрал, мужик. У нас здесь лагерь, как-никак.</text>
 	</string>
 	<string id="zat_a2_base_guard_2">
-		<text>Мужик, здесь места тихие. Так что, не шуми и спрячь ствол.</text>
+		<text>Мужик, здесь места тихие. Так что не шуми и спрячь ствол.</text>
 	</string>
 	<string id="zat_a2_base_guard_3">
-		<text>С оружием в поле шарится будешь, а здесь лагерь. Сечёшь разницу?</text>
+		<text>С оружием в поле шариться будешь, а здесь лагерь. Сечёшь разницу?</text>
 	</string>
 	<string id="zat_a2_base_relax">
 		<text>Сталкеры, внимание, сообщаю: двери «Скадовска» вновь открыты для вас.</text>
@@ -249,10 +249,10 @@
 		<text>Сталкеры, внимание! Выброс начнётся с минуты на минуту. Ищите глубокую нору, если жить охота!</text>
 	</string>
 	<string id="zat_a23_about_x8">
-		<text>Здесь упоминается центральная лаборатория Х-8, возможно, в ней найдётся информация о секретных экспериментах на территории Зоны. Наши аналитики давно интерисуются этим вопросом.</text>
+		<text>Здесь упоминается центральная лаборатория Х-8. Возможно, в ней найдётся информация о секретных экспериментах на территории Зоны. Наши аналитики давно интересуются этим вопросом.</text>
 	</string>
 	<string id="zat_b100_heli_2_maps">
-		<text>Судя по всему, экипаж погиб ещё в воздухе и вертолёт падал без управления. Бортовому компьютеру повезло больше. Так, сейчас погледим, что в нём полезного... Ага...! Карта местности с какими-то пометками. Пригодится.</text>
+		<text>Судя по всему, экипаж погиб ещё в воздухе и вертолёт падал без управления. Бортовому компьютеру повезло больше. Так, сейчас поглядим, что в нём полезного... Ага...! Карта местности с какими-то пометками. Пригодится.</text>
 	</string>
 	<string id="zat_b101_both_heli_info">
 		<text>С электроникой здесь то же самое, при этом система защиты от выбросов цела. Хм, что же это было?</text>
@@ -288,13 +288,13 @@
 		<text>Ты что, не понял? Назад, мозги вышибу!</text>
 	</string>
 	<string id="zat_b106_dont_receipt_reward">
-		<text>Всё, возвращаемся. Помощи от тебя не было ни какой, потому на награду не рассчитывай.</text>
+		<text>Всё, возвращаемся. Помощи от тебя не было никакой, потому на награду не рассчитывай.</text>
 	</string>
 	<string id="zat_b106_garmata_refuse_talk">
 		<text>Это не ко мне. Со старшим говори.</text>
 	</string>
 	<string id="zat_b106_garmata_story_reply">
-		<text>Да где ни спрашивал - всё до задницы. Вообще ни каких слухов. Будто и не было его никогда.</text>
+		<text>Да где ни спрашивал - всё до задницы. Вообще никаких слухов. Будто и не было его никогда.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_complete">
 		<text>Так, ребята. Мы своё дело сделали, возвращаемся. А ты не забудь заглянуть к Зверобою на «Янове». Скажешь, что раненая химера склеила ласты. И долю свою получишь.</text>
@@ -306,10 +306,10 @@
 		<text>Так, мы на месте. Где-то она совсем близко, блин, прям чувствую. Кто её увидит, сразу бейте в голову, близко подходить нельзя, нюх у химеры - что надо, он и во сне на полную работает.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_plan">
-		<text>Короче, план такой. Химера - она охотится ночью, а потом к утру валит в логово друхнуть. Застукать её можно на рассвете, она в это время как раз ляжет отдыхать. Мы подползём ближе да и прикончим её, пока сопит в две дырки! В общем, только собраться надо пораньше. Пересечься предлагаю в три ночи в баре.</text>
+		<text>Короче, план такой. Химера - она охотится ночью, а потом к утру валит в логово дрыхнуть. Застукать её можно на рассвете, она в это время как раз ляжет отдыхать. Мы подползём ближе да и прикончим её, пока сопит в две дырки! В общем, только собраться надо пораньше. Пересечься предлагаю в три ночи в баре.</text>
 	</string>
 	<string id="zat_b106_gonta_hunt_sneak">
-		<text>Подойти надо не заметно. Нельзя, чтобы она нас хоть как учуяла.</text>
+		<text>Подойти надо незаметно. Нельзя, чтобы она нас хоть как учуяла.</text>
 	</string>
 	<string id="zat_b106_gonta_see_chimera">
 		<text>Спишь, тварь... Ну, что, привет тебе от Краба. Давай!</text>
@@ -318,7 +318,7 @@
 		<text>Эта скотина ещё пожалеет, что сбежала.</text>
 	</string>
 	<string id="zat_b106_gonta_story_ask">
-		<text>Ну, как, узнал что-нибудь о Сороке?</text>
+		<text>Ну как, узнал что-нибудь о Сороке?</text>
 	</string>
 	<string id="zat_b106_gonta_story_calm">
 		<text>Ничего, потерпи, доктор сказал, уже через пару дней бегать сможешь. Пока давай отлёживайся, сил набирайся - пригодятся.</text>
@@ -459,7 +459,7 @@
 		<text>Mм-м? Чего ты, ну...? Дай поспать... Будь человеком.</text>
 	</string>
 	<string id="zat_b3_tech_no_sleep_2">
-		<text>Н-ну...сгинься!</text>
+		<text>Н-ну... сгинь!</text>
 	</string>
 	<string id="zat_b3_tech_no_sleep_3">
 		<text>Там, вон... Ты наливай!</text>
@@ -661,36 +661,6 @@
 	</string>
 	<string id="zat_b5_sultan_kill_stalkers">
 		<text>Take them down, boys!</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_1">
-		<text>Hello, stalker. Thinking of placing an order?</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_2">
-		<text>What's up? Decided to order something?</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_3">
-		<text>Hey! You need something?</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_not_ready_1">
-		<text>Don't worry, you'll get the goods a bit later.</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_not_ready_2">
-		<text>Come back later, I don't have the goods yet.</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_not_ready_3">
-		<text>Drop by later. I'll have your order by then.</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_ready_1">
-		<text>That's your order complete. Collect your goods.</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_ready_2">
-		<text>I have the goods. Take them!</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_greeting_order_ready_3">
-		<text>Take your goods, stalker! As you can see, I keep my word.</text>
-	</string>
-	<string id="zat_b51_stalker_nimble_order">
-		<text>The job's done. You can collect the goods.</text>
 	</string>
 	<string id="zat_b52_port_bandits_after_pay_snd_1">
 		<text>Good. Now get the hell out of here, before I change my mind!</text>
@@ -976,7 +946,7 @@
 		<text>Не... ну это...</text>
 	</string>
 	<string id="jup_b10_stalker_drunk_no_meet_2">
-		<text>Брр...да ты чё...</text>
+		<text>Брр... да ты чё...</text>
 	</string>
 	<string id="jup_b10_stalker_drunk_no_meet_3">
 		<text>Да я... вот...</text>
@@ -2190,7 +2160,7 @@
 		<text>[Major Degtyarev] Yes, I have the data. And Strelok's information confirms it. The helicopters were hit by anomalies after their locations changed during the emissions. The anomaly maps issued to their pilots turned out to be useless.</text>
 	</string>
 	<string id="pri_a28_actor_to_ssu_without_heli_info">
-		<text>[Major Degtyarev] Strelok believes that the helicopters went into anomalies. The location of anomalies changes after every emission; a fact that was missed when making the map for Operation Fairway. </text>
+		<text>[Major Degtyarev] Strelok believes that the helicopters went into anomalies. The location of anomalies changes after every emission; a fact that was missed when making the map for Operation Fairway.</text>
 	</string>
 	<string id="pri_a28_actor_to_strelok">
 		<text>Get in the chopper! I hope it was worth it...</text>
@@ -2581,5 +2551,143 @@
 	</string>
 	<string id="pri_b35_targets_lost_end">
 		<text>Both targets escaped. Abort mission and fall back!</text>
+	</string>
+	
+	<!-- CLOSED CAPTIONS FOR 'CALL OF CHERNOBYL' -->
+	
+	<string id="bar_barman_hello_1">
+		<text>Давай уже, подходи.</text>
+	</string>
+	<string id="bar_barman_hello_2">
+		<text>Ну что, дружище? Как оно?</text>
+	</string>
+	<string id="bar_barman_hello_3">
+		<text>Жив ещё? Ну и отлично.</text>
+	</string>
+	<string id="bar_barman_hello_4">
+		<text>Как оно?</text>
+	</string>
+	<string id="bar_barman_hello_5">
+		<text>Как делишки?</text>
+	</string>
+	<string id="bar_barman_wait_1">
+		<text>Чего так долго, а?</text>
+	</string>
+	<string id="bar_barman_wait_2">
+		<text>Давай уже, подходи.</text>
+	</string>
+	<string id="bar_barman_wait_3">
+		<text>Ну, чего стоишь? Давай, подходи.</text>
+	</string>
+	<string id="bar_barman_wait_4">
+		<text>Давай, подходи. Времени мало.</text>
+	</string>
+	<string id="bar_guard_prohodi_1">
+		<text>Проходи, не задерживайся.</text>
+	</string>
+	<string id="bar_guard_stop_1">
+		<text>Тебе сюда нельзя!</text>
+	</string>
+	<string id="bar_guard_stop_2">
+		<text>Поговори с Барменом.</text>
+	</string>
+	<string id="bar_guard_stop_3">
+		<text>Стой! Сейчас сюда нельзя.</text>
+	</string>
+	<string id="duty_hangar_1">
+		<text>Иди своей дорогой, сталкер.</text>
+	</string>
+	<string id="esc_mech_meet_1">
+		<text>Ну? Чего тебе?</text>
+	</string>
+	<string id="esc_mech_meet_2">
+		<text>Что ещё?</text>
+	</string>
+	<string id="esc_mech_meet_3">
+		<text>Ну не дадут отдохнуть. Всё ходят и ходят, прямо, как мёдом тут намазано.</text>
+	</string>
+	<string id="esc_mech_meet_bye_1">
+		<text>Всё, бывай.</text>
+	</string>
+	<string id="esc_mech_meet_bye_2">
+		<text>Уходишь? Ну, наконец-то.</text>
+	</string>
+	<string id="esc_mech_meet_bye_3">
+		<text>Неужели ты меня покидаешь? Боже, какое счастье.</text>
+	</string>
+	<string id="esc_nimble_greeting_1">
+		<text>Приветствую, сталкер. Решил сделать заказ?</text>
+	</string>
+	<string id="esc_nimble_greeting_2">
+		<text>Здоров! Решил что-нибудь заказать?</text>
+	</string>
+	<string id="esc_nimble_greeting_3">
+		<text>Привет! Товар какой-нибудь нужен?</text>
+	</string>
+	<string id="esc_nimble_greeting_order_not_ready_1">
+		<text>Товар всяко будет, не волнуйся, просто позже.</text>
+	</string>
+	<string id="esc_nimble_greeting_order_not_ready_2">
+		<text>Зайди попозже, товар пока не пришёл.</text>
+	</string>
+	<string id="esc_nimble_greeting_order_not_ready_3">
+		<text>Заказ ещё не готов. Подойди попозже, ладно?</text>
+	</string>
+	<string id="esc_nimble_greeting_order_ready_1">
+		<text>Заказ выполнен. Забирай товар.</text>
+	</string>
+	<string id="esc_nimble_greeting_order_ready_2">
+		<text>Товар у меня. Можно забрать.</text>
+	</string>
+	<string id="esc_nimble_greeting_order_ready_3">
+		<text>Забирай товар, сталкер! Я своё дело сделал.</text>
+	</string>
+	<string id="esc_nimble_order">
+		<text>Заказ выполнен. Можно забирать товар.</text>
+	</string>
+	<string id="red_forester_hello_bye_0">
+		<text>Доброго пути, сынок.</text>
+	</string>
+	<string id="red_forester_hello_bye_1">
+		<text>Не забывай старика.</text>
+	</string>
+	<string id="red_forester_hello_bye_2">
+		<text>Прямой дороги тебе, парень.</text>
+	</string>
+	<string id="red_forester_meet_hello_0">
+		<text>Здорово, живая душа.</text>
+	</string>
+	<string id="red_forester_meet_hello_1">
+		<text>Что, молодо-зелено? Чего ты тут ищешь?</text>
+	</string>
+	<string id="red_forester_meet_hello_2">
+		<text>Случайным гостем забрёл ко мне или как?</text>
+	</string>
+	<string id="val_bandit_trader_meet_1">
+		<text>Налетай-разбирай, подходи-покупай!</text>
+	</string>
+	<string id="val_bandit_trader_meet_2">
+		<text>Специальные антикризисные условия: купи автомат и улучши своё экономическое положение!</text>
+	</string>
+	<string id="yan_sakharov_meet_1">
+		<text>Здравствуйте, молодой человек!</text>
+	</string>
+	<string id="yan_sakharov_meet_2">
+		<text>Приветствую на нашей научной базе!</text>
+	</string>
+	<string id="yan_sakharov_meet_3">
+		<text>С чем пожаловали в мою скромную лабораторию?</text>
+	</string>
+	<string id="yan_sakharov_meet_4">
+		<text>Да-да?</text>
+	</string>
+	<string id="yan_sakharov_meet_bye_1">
+		<text>Всего наилучшего!</text>
+	</string>
+	<string id="yan_sakharov_meet_bye_2">
+		<text>Рад был с Вами пообщаться.</text>
+	</string>
+	<string id="yan_sakharov_meet_bye_3">
+		<text>Заходите ещё!</text>
 	</string>
 </string_table>
