@@ -56,7 +56,7 @@ local function squad_on_first_update(squad)
 	end
 end
 
-local function squad_on_unregister(squad)
+local function squad_on_unregister(squad,type_name)
 	companion_squads[squad.id] = nil
 end
 
@@ -157,7 +157,7 @@ function on_game_start()
 	RegisterScriptCallback("squad_on_update",squad_on_update)
 	RegisterScriptCallback("squad_on_npc_death",squad_on_npc_death)
 	RegisterScriptCallback("squad_on_first_update",squad_on_first_update)
-	RegisterScriptCallback("squad_on_unregister",squad_on_unregister)
+	RegisterScriptCallback("server_entity_on_unregister",squad_on_unregister)
 	RegisterScriptCallback("on_level_changing",on_level_changing)
 	RegisterScriptCallback("actor_on_item_drop",actor_on_item_drop)
 	RegisterScriptCallback("save_state",save_state)

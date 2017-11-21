@@ -6,12 +6,7 @@ function se_zone_anom:__init (section) super (section)
 end
 function se_zone_anom:on_register()
 	cse_anomalous_zone.on_register(self)
-	--story_objects.check_spawn_ini_for_story_id(self)
-	--[[
-	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
-		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
-	end
-	--]]
+	SendScriptCallback("server_entity_on_register",self,"se_zone_anom")
 end
 function se_zone_anom:update()
 	cse_anomalous_zone.update(self)
@@ -26,18 +21,17 @@ function se_zone_anom:STATE_Read( packet, size )
 		return
 	end
 end
+function se_zone_anom:on_unregister()
+	SendScriptCallback("server_entity_on_unregister",self,"se_zone_anom")
+	cse_anomalous_zone.on_unregister(self)
+end
 
 class "se_zone_torrid" (cse_torrid_zone)
 function se_zone_torrid:__init (section) super (section)
 end
 function se_zone_torrid:on_register()
 	cse_torrid_zone.on_register(self)
-	--story_objects.check_spawn_ini_for_story_id(self)
-	--[[
-	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
-		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
-	end
-	--]]
+	SendScriptCallback("server_entity_on_register",self,"se_zone_torrid")
 end
 function se_zone_torrid:update()
 	cse_torrid_zone.update(self)
@@ -52,19 +46,17 @@ function se_zone_torrid:STATE_Read( packet, size )
 		return
 	end
 end
-
+function se_zone_torrid:on_unregister()
+	SendScriptCallback("server_entity_on_unregister",self,"se_zone_torrid")
+	cse_torrid_zone.on_unregister(self)
+end
 
 class "se_zone_visual" (cse_zone_visual)
 function se_zone_visual:__init (section) super (section)
 end
 function se_zone_visual:on_register()
 	cse_zone_visual.on_register(self)
-	--story_objects.check_spawn_ini_for_story_id(self)
-	--[[
-	if(DEV_DEBUG and axr_main.config:r_value("mm_options","enable_debug_hud",1,false) == true) then
-		level.map_add_object_spot_ser(self.id,"treasure",self:section_name())
-	end
-	--]]
+	SendScriptCallback("server_entity_on_register",self,"se_zone_visual")
 end
 function se_zone_visual:update()
 	cse_zone_visual.update(self)
@@ -78,7 +70,10 @@ function se_zone_visual:STATE_Read( packet, size )
 		return
 	end
 end
-
+function se_zone_visual:on_unregister()
+	SendScriptCallback("server_entity_on_unregister",self,"se_zone_visual")
+	cse_zone_visual.on_unregister(self)
+end
 
 --' Рестрикторы
 class "se_restrictor" (cse_alife_space_restrictor)
@@ -127,4 +122,12 @@ end
 
 function se_restrictor:keep_saved_data_anyway()
 	return true
+end
+function se_restrictor:on_register()
+	cse_alife_space_restrictor.on_register(self)
+	SendScriptCallback("server_entity_on_register",self,"se_restrictor")
+end
+function se_restrictor:on_unregister()
+	SendScriptCallback("server_entity_on_unregister",self,"se_restrictor")
+	cse_alife_space_restrictor.on_unregister(self)
 end

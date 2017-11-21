@@ -63,7 +63,7 @@ end
 function se_stalker:on_register()
 	--alun_utils.debug_write("\nse_stalker:on_register "..self:name().." START")
 	cse_alife_human_stalker.on_register( self )
-	
+	SendScriptCallback("server_entity_on_register",self,"se_stalker")
 	-- Проверяем кастомдату обьекта на наличие стори айди.
 	--story_objects.check_spawn_ini_for_story_id(self)
 
@@ -97,7 +97,7 @@ function se_stalker:on_unregister()
 	end
 	db.offline_objects[self.id] = nil
 	trade_manager.unregister(self.id)
-	--story_objects.unregister(self.id)
+	SendScriptCallback("server_entity_on_unregister",self,"se_stalker")
 	cse_alife_human_stalker.on_unregister(self)
 end
 --------------------
