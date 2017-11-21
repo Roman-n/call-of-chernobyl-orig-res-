@@ -83,9 +83,7 @@ end
 local sr_teleport_ini = ini_file("sr_teleport_sections.ltx")
 function se_restrictor:on_register()
 	cse_alife_space_restrictor.on_register(self)
-	-- Проверяем кастомдату обьекта на наличие стори айди.
-	--story_objects.check_spawn_ini_for_story_id(self)
-	-- Alundaio
+	SendScriptCallback("server_entity_on_register",self,"se_restrictor")
 	local id = self.id
 	local name = self:name()
 	if (sr_teleport_ini:section_exist(name)) then
@@ -122,10 +120,6 @@ end
 
 function se_restrictor:keep_saved_data_anyway()
 	return true
-end
-function se_restrictor:on_register()
-	cse_alife_space_restrictor.on_register(self)
-	SendScriptCallback("server_entity_on_register",self,"se_restrictor")
 end
 function se_restrictor:on_unregister()
 	SendScriptCallback("server_entity_on_unregister",self,"se_restrictor")
