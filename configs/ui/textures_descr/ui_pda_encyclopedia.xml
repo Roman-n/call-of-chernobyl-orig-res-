@@ -47,6 +47,7 @@
 	</file>
 	
 	<!-- Characters -->
+	<!-- Split into multiple files to reduce texture load times on articles. -->
 	<file name="ui\guide\encyclopedia_characters">
 		<texture id="encyclopedia_characters_ashot_image" x="256" y="1280" width="256" height="256"/>
 		<texture id="encyclopedia_characters_axel_image" x="512" y="1024" width="256" height="256"/>
@@ -65,13 +66,19 @@
 		<texture id="encyclopedia_characters_major_kuznetsov_image" x="256" y="1792" width="256" height="256"/>
 		<texture id="encyclopedia_characters_nimble_image" x="0" y="256" width="256" height="256"/>
 		<texture id="encyclopedia_characters_novikov_image" x="256" y="512" width="256" height="256"/>
-		<texture id="encyclopedia_characters_sergeant_spooner_image" x="512" y="1792" width="256" height="256"/>
 		<texture id="encyclopedia_characters_owl_image" x="512" y="768" width="256" height="256"/>
+		<texture id="encyclopedia_characters_sergeant_spooner_image" x="512" y="1792" width="256" height="256"/>
 		<texture id="encyclopedia_characters_sidorovich_image" x="0" y="0" width="256" height="256"/>
 		<texture id="encyclopedia_characters_spore_image" x="0" y="768" width="256" height="256"/>
+		<texture id="encyclopedia_characters_sultan_image" x="768" y="1792" width="256" height="256"/>
 		<texture id="encyclopedia_characters_wolf_image" x="256" y="256" width="256" height="256"/>
 		<texture id="encyclopedia_characters_xenotech_image" x="256" y="768" width="256" height="256"/>
 		<texture id="encyclopedia_characters_yar_image" x="512" y="1280" width="256" height="256"/>
+	</file>
+	
+	<file name="ui\guide\encyclopedia_characters2">
+		<texture id="encyclopedia_characters_limpid_image" x="0" y="0" width="256" height="256"/>
+		<texture id="encyclopedia_characters_olivius_image" x="256" y="0" width="256" height="256"/>
 	</file>
 	
 	<!-- Factions, Factions (Historic) & Factions (Other) -->

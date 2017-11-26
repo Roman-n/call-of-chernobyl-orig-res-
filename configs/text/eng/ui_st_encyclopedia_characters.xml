@@ -15,7 +15,7 @@
 			\nAccording to himself, because of his "low prices and quality equipment", he has supposedly been put on several hit-lists by black market traders.\n
 			\nTogether with the help of Yar, a long-time buddy of his from the Army Warehouses, many stalkers find themselves becoming unwitting pawns in his practical jokes.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Freedom\n• Rank: Expert\n• Reputation: Excellent
+			\n• Faction: Freedom\n• Rank: Expert\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -28,7 +28,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nVery little is known about Axel as he isn't the most talkative of stalkers, though rumours in circulation would suggest he only came to the Zone to escape from his mother-in-law.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Experienced\n• Reputation: Neutral
+			\n• Faction: Loner\n• Rank: Experienced\n• Reputation: Neutral
 		</text>
 	</string>
 	
@@ -40,10 +40,10 @@
 			The %c[guide_blue]Barkeep%c[default] is the proprietor of the 100 Rads bar in Rostok.\n
 			\n%c[guide_green]Information%c[default]
 			\nDue to Rostok's central location in the busier parts of the Zone, the Barkeep is a very important trader - a lifeline for stalkers headed to or returning from battle.\n
-			\nAside from the obvious functions of managing the bar, he rents rooms, pays out bribes and supplies stalkers with plenty of equipment and work.\n
+			\nAside from the obvious functions of managing the bar, he rents rooms, pays out bribes, and supplies stalkers with plenty of equipment and work.\n
 			\nHe is respected greatly by many stalkers as he was instrumental in the opening of roads leading toward the center of the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -58,7 +58,7 @@
 			\nThough mainly artefact recovery he does offer various types of work, and he always appears willing to do whatever he sees as in the best interests of his people.\n
 			\nHis bar is one of the busiest in the Zone - second only to the 100 Rads - and is almost synonymous with the Skadovsk itself.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Expert\n• Reputation: Great
+			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Great
 		</text>
 	</string>
 	
@@ -73,7 +73,7 @@
 			\nFrom here he took up residence at the Skadovsk where he proceeded to sink further into his alcoholism, only swearing off drinking when learning of his former friends' demise.\n
 			\nPrior to this, he worked on the development of the so-called "Project 62" - a prototype of the Gauss rifle - until its eventual closure in 2004.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Expert\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -88,7 +88,7 @@
 			\nKnown by his comrades as a cheerful and good-natured person, as well as a lover of vulgar jokes, he came to the Zone because he could not seem to find his place in the outside world.\n
 			\nThere is little doubt that he made the right decision, restoring his faction to its former glory and now occupying an important seat of power in the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Clear Sky\n• Rank: Master\n• Reputation: Excellent
+			\n• Faction: Clear Sky\n• Rank: Master\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -103,7 +103,7 @@
 			\nHis wish was granted, giving him the gift of healing, but erasing his distinction between people and mutants.\n
 			\nThis is denied by the Doctor himself as just a story, saying that none of those who set out to find it have ever returned alive.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -117,7 +117,7 @@
 			\nFollowing Wolf's departure for the Army Warehouses until his return, Fanatic took charge in looking after new arrivals to the Zone at the rookie village.\n
 			\nDespite no-longer being solely in charge he is still regarded as an authority, though he much prefers to be out fighting bandits and mutants than standing idly by.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Expert\n• Reputation: Brilliant
+			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Brilliant
 		</text>
 	</string>
 	
@@ -133,7 +133,7 @@
 			\nThey hired a stalker named Magpie to assist them, who instead backed out at the last moment, stealing their gear and then fleeing for Yanov.\n
 			\nWith the help of a mysterious stalker, Gonta killed the chimera, uncovered Danila's fate, and discovered Magpie's whereabouts - delivering him justice soon after.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Veteran\n• Reputation: Good
+			\n• Faction: Loner\n• Rank: Veteran\n• Reputation: Good
 		</text>
 	</string>
 	
@@ -148,7 +148,7 @@
 			\nAlmost the entirety of his time is spent working at the bar, where he sells both food and drink, alongside weapons and ammunition.\n
 			\nInterestingly, this not only makes him one of only two barkeepers in the Zone who also works as a regular trader - the other being the Barkeep - but also places him within the same building as another trader - Ashot.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Expert\n• Reputation: Great
+			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Great
 		</text>
 	</string>
 	
@@ -163,7 +163,7 @@
 			\nForced into his position out of necessity rather than by choice, he was Clear Sky's most experienced medic following their near-collapse.\n
 			\nNow wishing he had succumb to wounds from his earlier time exploring, his only remaining joys in life are drinking and blaming the mercenary Scar for his troubles.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Clear Sky\n• Rank: Veteran\n• Reputation: Great
+			\n• Faction: Clear Sky\n• Rank: Veteran\n• Reputation: Great
 		</text>
 	</string>
 	
@@ -177,10 +177,40 @@
 			\nAfter the emission that cut the swamps off from the rest of the Zone, Librarian found himself trapped with no easy way out.\n
 			\nFacing death at the hands of bandits or worse, he headed to the far southern reaches and joined Clear Sky, where he would later replace Cold as their barkeeper following his promotion to leader.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Clear Sky\n• Rank: Veteran\n• Reputation: Great
+			\n• Faction: Clear Sky\n• Rank: Veteran\n• Reputation: Great
 		</text>
 	</string>
-
+	
+	<string id="encyclopedia_characters_lieutenant_kirilov">
+		<text>Lieutenant Kirilov</text>
+	</string>
+	<string id="encyclopedia_characters_lieutenant_kirilov_text">
+		<text>
+			%c[guide_blue]Lieutenant Kirilov%c[default] is one of the military's most gifted technicians.\n
+			\n%c[guide_green]Information%c[default]
+			\nOriginally just a radio operator, Kirilov has always had a knack for taking things apart and putting them back together.\n
+			\nAfter the failure to Operation Fairway, he and his group took refuge in an old laundromat, where he harnessed his skills in repairing their equipment and weapons.\n
+			\nFollowing these events he was recommended by Colonel Kavalsky, his commander, to take up the role of being the military's foremost technician at their base in Agroprom.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Military\n• Rank: Veteran\n• Reputation: Good
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_limpid">
+		<text>Limpid</text>
+	</string>
+	<string id="encyclopedia_characters_limpid_text">
+		<text>
+			%c[guide_blue]Limpid%c[default] is a bandit and long-time technician.\n
+			\n%c[guide_green]Information%c[default]
+			\nPreviously working at a factory, it is fair to say he is well versed in technology, and likely used to work as a mechanical engineer.\n
+			\nHowever after being fired from his job following a drunken brawl, he fell into alcoholism and eventually lost both his wife and his home shortly after.\n
+			\nWith nothing left in life he sought out the Zone to start over, soon after meeting bandits at the Garbage and finding work as their technician ever since.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Bandit\n• Rank: Professional\n• Reputation: Good
+		</text>
+	</string>
+	
 	<string id="encyclopedia_characters_loki">
 		<text>Loki</text>
 	</string>
@@ -191,7 +221,22 @@
 			\nWhen the Brain Scorcher was disabled and the rush to the center of the Zone began, Loki was the man put in charge of Freedom's expedition.\n
 			\nUnlike other leaders in the faction he takes a less zealous approach toward their ideology, once even agreeing to a ceasefire with Duty.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Freedom\n• Rank: Master\n• Reputation: Brilliant
+			\n• Faction: Freedom\n• Rank: Master\n• Reputation: Brilliant
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_major_kuznetsov">
+		<text>Major Kuznetsov</text>
+	</string>
+	<string id="encyclopedia_characters_major_kuznetsov_text">
+		<text>
+			%c[guide_blue]Major Kuznetsov%c[default] is a callous and extremely corrupt military officer.\n
+			\n%c[guide_green]Information%c[default]
+			\nSince arriving to the Zone only a few years ago, Kuznetsov has risen from being a lowly checkpoint keeper to an experienced commander feared by his subordinates.\n
+			\nDespite holding little official power within command-and-control, he has bribed and backstabbed his way to the top where few are willing to oppose him.\n
+			\nAs a result, he has effectively become the de facto leader of military forces in much of the Zone in all but name.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Military\n• Rank: Master\n• Reputation: Neutral
 		</text>
 	</string>
 	
@@ -203,10 +248,10 @@
 			%c[guide_blue]Nimble%c[default] is a profiteer who sells smuggled weapons and outfits.\n
 			\n%c[guide_green]Information%c[default]
 			\nStarting out as a member of Clear Sky, and then as a courier for Sidorovich, Nimble has assembled a list of important contacts allowing him to build his own smuggling business.\n
-			\nUnlike other traders in the Zone he specialises in the sale of rare equipment and items that can be very difficult to obtain, as such he never knows what he'll get his hands on next.\n
+			\nUnlike other traders in the Zone, he specialises in the sale of rare equipment and items that can be very difficult to obtain, as such he never knows what he'll get his hands on next.\n
 			\nHe originally set up shop at the Skadovsk in Zaton, but following the resurgence of the Monolith faction has since relocated to the Cordon, not far from Sidorovich's bunker.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -220,7 +265,21 @@
 			\nA member of the faction since their earliest days, Novikov is described by his comrades as an expert in his field, with Cold saying that he can make a rifle out of an empty can with ammo to boot.\n
 			\nAfter Clear Sky's destruction he briefly left to take up contract work with the Ecologists at the mobile science lab in Jupiter, but later returned after discovering they had pulled through and rebuilt.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Clear Sky\n• Rank: Veteran\n• Reputation: Brilliant
+			\n• Faction: Clear Sky\n• Rank: Veteran\n• Reputation: Brilliant
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_olivius">
+		<text>Olivius</text>
+	</string>
+	<string id="encyclopedia_characters_olivius_text">
+		<text>
+			%c[guide_blue]Olivius%c[default] fences loot and other stolen goods for the bandits.\n
+			\n%c[guide_green]Information%c[default]
+			\nCapitalising on the chaos following the assassination of Borov, the former bandit leader, he quickly entrenched his influence within the Dark Valley.\n
+			\nThough few would consider the bandits to currently have a leader, least of all themselves, there is little in the way of information, contracts, or trade involving the faction that Olivius doesn't have his hands in.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Bandit\n• Rank: Veteran\n• Reputation: Great
 		</text>
 	</string>
 	
@@ -231,11 +290,26 @@
 		<text>
 			%c[guide_blue]Owl%c[default] is a blackmarket trader with questionable loyalties.\n
 			\n%c[guide_green]Information%c[default]
-			\nAn uncomfortable and rude person, of all the inhabitants aboard the Skadovsk he stands out as a bad character and a grumpy temper.\n
+			\nAn uncomfortable and rude person, of all the inhabitants aboard the Skadovsk he stands out as a bad character with a grumpy temper.\n
 			\nHe has a rich assortment of weapons and ammunition, and very much appreciates any information which stalkers are willing to sell to him.\n
 			\nBecause of his ties to Sultan, and both the manner of his speech and his appearance, many loners believe him to have once been a bandit.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Expert\n• Reputation: Bad
+			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Bad
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_sergeant_spooner">
+		<text>Sergeant Spooner</text>
+	</string>
+	<string id="encyclopedia_characters_sergeant_spooner_text">
+		<text>
+			%c[guide_blue]Sergeant Spooner%c[default] is an expert soldier and cunning merchant.\n
+			\n%c[guide_green]Information%c[default]
+			\nThrough much of his life, information has always played an important factor in his decision making, choosing carefully what he shares, and to whom he shares it with.\n
+			\nNaturally he found his lot in life by joining the military where his skills are of great value, and now uses his position as a front for his trading and information broking business.\n
+			\nVery little information is otherwise known about him, least of all as to why he has such a peculiar nickname.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Military\n• Rank: Expert\n• Reputation: Great
 		</text>
 	</string>
 	
@@ -250,7 +324,7 @@
 			\nHowever many also see him as greedy and tight-fisted. Those who try to compete with him on his own territory, or just disgruntle him in general, often end up on the wrong side of an assassination contract.\n
 			\nWhether for good or bad, he continues to play an integral role within the Zone's economy and its faction's politics, as such he is a great source of work for those wanting to earn a quick payday.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -265,7 +339,23 @@
 			\nBefore long he caught the ears of Nimble who soon after requested a meet, and the two immediately realised the potency of combining their efforts.\n
 			\nThrough Nimble's contacts within his former faction, Spore was soon installed as Clear Sky's trader, allowing them to secure smuggling routes through the marshes and quickly establish what would become a thriving business relationship.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Clear Sky\n• Rank: Master\n• Reputation: Brilliant
+			\n• Faction: Clear Sky\n• Rank: Master\n• Reputation: Brilliant
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_sultan">
+		<text>Sultan</text>
+	</string>
+	<string id="encyclopedia_characters_sultan_text">
+		<text>
+			%c[guide_blue]Sultan%c[default] is the former leader of bandits in Zaton.\n
+			\n%c[guide_green]Information%c[default]
+			\nConsidering his adoption of an eastern ruler's title for his name, many in the Zone consider Sultan to be a man who thinks very highly of himself.\n
+			\nHis life has been one full of trouble; following the death of a close friend at the hands of substance abuse, Sultan killed the dealers responsible and was later imprisoned.\n
+			\nFollowing his release he soon enough found himself imprisoned yet again because of his "business", eventually leaving for the Zone where he joined the bandits, climbed the career ladder among thieves, and began to run his gang.\n
+			\nUltimately all of his attempts to establish himself as a leader within the faction were met with failure, as his enterprises and dealings within Zaton were crushed and swept away by Beard's loners.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Bandit\n• Rank: Master\n• Reputation: Terrible
 		</text>
 	</string>
 	
@@ -279,7 +369,7 @@
 			\nTasking himself with protecting the village and the stalkers that live there from outside threats, Wolf uses a network of scouts and spies to keep track of unfriendly movements that occur within the Cordon.\n
 			\nSharing information he learns with Sidorovich, they frequently send out raiding parties and opportunists to clean out encroaching bandits, mutants, and other threats to their mutual interest in the village's security.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent
 		</text>
 	</string>
 	
@@ -292,7 +382,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nWorking out of the neutral base in the Cordon - situated about halfway between the ruined bridge and the "High Hopes" anomaly - Xenotech is a gifted technician whose efforts are of great value to stalkers new to the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Loner\n• Rank: Professional\n• Reputation: Good
+			\n• Faction: Loner\n• Rank: Professional\n• Reputation: Good
 		</text>
 	</string>
 	
@@ -307,7 +397,7 @@
 			\nFollowing the end of the Faction Wars and the rush towards the center of the Zone, he travelled with Freedom's expedition to Yanov station, before very briefly working as a medic in the Outskirts.\n
 			\nHe soon returned after the ceasefire with Duty broke down, where he decided yet again to change his profession and try his hand at becoming an information broker.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction Freedom\n• Rank: Expert\n• Reputation: Excellent
+			\n• Faction: Freedom\n• Rank: Expert\n• Reputation: Excellent
 		</text>
 	</string>
 	
