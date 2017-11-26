@@ -47,7 +47,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nWhile less touched by mutation physically, the boars here have developed a serious taste for human flesh and much sharper intelligence.\n
 			\nThey are large animals, and their ability to survive and their aggression surpasses all of their living relatives outside of the Zone.\n
-			\nMutagenic processes have played a significant part in shaping these mammals: they have lost all fur in a few places and grown long, bristly fur in others.\n
+			\nMutagenic processes have played a significant part in shaping these mammals, as they have lost all fur in a few places and grown long, bristly fur in others.\n
 			\nUsually if distance is kept and they aren't antagonised, they will stick with their herd of flesh and other boars.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
@@ -122,7 +122,7 @@
 	</string>
 	<string id="encyclopedia_mutants_crow_text">
 		<text>
-			%c[guide_blue]Crows%c[default] are the only bird species to have survived in the Zone.\n
+			%c[guide_blue]Crows%c[default] are one of few bird species to have survived in the Zone.\n
 			\n%c[guide_green]Information%c[default]
 			\nIn order not to perish in a labyrinth of gravitational anomalies, military pilots use sophisticated detectors, but the secret of how crows safely navigate the Zone's skies remains a mystery.\n
 			\nLittle else is known about what makes the Zone's crows so special, or why they have remained almost completely genetically intact when compared to the rest of the local wildlife.\n
@@ -169,7 +169,7 @@
 			%c[guide_blue]Karliks%c[default] are very rare dwarf-like mutants which hide away in seclusion.\n
 			\n%c[guide_green]Information%c[default]
 			\nIt is unclear whether or not they are related to burers, but between them they share a great many psychic similarities making it difficult to dismiss as just coincidence.\n
-			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, and attacking anything that comes too close.\n
+			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, proceeding to attack anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis
@@ -184,7 +184,7 @@
 			%c[guide_blue]Poltergeists%c[default] are strange, almost invisible creatures haunting the deeper reaches of the Zone.\n
 			\n%c[guide_green]Information%c[default]
 			\nSupernatural in the eyes of some, and usually found haunting old, abandoned buildings.\n
-			\nNothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive wave of radiation.\n
+			\nNothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive blast of radiation.\n
 			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
 			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
 			\n%c[guide_green]Statistics%c[default]

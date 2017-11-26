@@ -279,6 +279,9 @@
 	<string id="st_resupply_ready">
 		<text>You can restock on medical supplies and ammo by visiting Lieutenant Rogovets and Lieutenant Kirillov.</text>
 	</string>
+	<string id="st_storm_while_asleep">
+		<text>A psi-storm has recently occurred in the Zone.</text>
+	</string>
 	<string id="st_surge_while_asleep">
 		<text>An emission has recently occurred in the Zone.</text>
 	</string>

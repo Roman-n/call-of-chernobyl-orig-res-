@@ -62,6 +62,11 @@ function create_interaction(key, section)
 	end
 end
 
+-- Anomaly articles through various means.
+function detect_anomaly_interaction(anomaly)
+	create_interaction("anomalies", anomaly)
+end
+
 -- Character and faction articles for closing a dialog.
 function detect_character_interaction(character_id)
 	local character = level.object_by_id(character_id)
