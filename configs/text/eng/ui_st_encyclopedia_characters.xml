@@ -298,6 +298,36 @@
 		</text>
 	</string>
 	
+	<string id="encyclopedia_characters_professor_kruglov">
+		<text>Professor Kruglov</text>
+	</string>
+	<string id="encyclopedia_characters_professor_kruglov_text">
+		<text>
+			%c[guide_blue]Professor Kruglov%c[default] is a doctor of biological sciences.\n
+			\n%c[guide_green]Information%c[default]
+			\nPrior to arriving in the Zone, Kruglov studied pathogenic mutations in animals and their effects, so it was only a matter of time until his research brought him here.\n
+			\nFor the last several years he has worked with his associate, Professor Sakharov, and claims to have made several major discoveries - though few stalkers actually know what he's talking about and usually just feign an understanding.\n
+			\nAs of late he has taken to running his own research lab in a pod near the main bunker in Yantar, where he offers a variety of technical work to those who visit him.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Ecologist\n• Rank: Experienced\n• Reputation: Neutral
+		</text>
+	</string>
+	
+	<string id="encyclopedia_characters_professor_sakharov">
+		<text>Professor Sakharov</text>
+	</string>
+	<string id="encyclopedia_characters_professor_sakharov_text">
+		<text>
+			%c[guide_blue]Professor Sakharov%c[default] is one of the Zone's most veteran researchers.\n
+			\n%c[guide_green]Information%c[default]
+			\nAs the chief scientist at Yantar's mobile science lab, Sakharov has shared involvement with the majority of scientific breakthroughs to have originated from the Zone.\n
+			\nAlthough seen as polite and professional, his only true care is for scientific discoveries, rarely appearing to spare any thought for his researchers when sending them to certain death.\n
+			\nBecause of the nature of his work he has an almost limitless supply of contracts to recover artefacts and mutant parts, making him a very popular employer amongst foolhardy stalkers.\n
+			\n%c[guide_green]Statistics%c[default]
+			\n• Faction: Ecologist\n• Rank: Master\n• Reputation: Brilliant
+		</text>
+	</string>
+	
 	<string id="encyclopedia_characters_sergeant_spooner">
 		<text>Sergeant Spooner</text>
 	</string>

@@ -79,6 +79,8 @@
 	<file name="ui\guide\encyclopedia_characters2">
 		<texture id="encyclopedia_characters_limpid_image" x="0" y="0" width="256" height="256"/>
 		<texture id="encyclopedia_characters_olivius_image" x="256" y="0" width="256" height="256"/>
+		<texture id="encyclopedia_characters_professor_kruglov_image" x="0" y="256" width="256" height="256"/>
+		<texture id="encyclopedia_characters_professor_sakharov_image" x="256" y="256" width="256" height="256"/>
 	</file>
 	
 	<!-- Factions, Factions (Historic) & Factions (Other) -->
