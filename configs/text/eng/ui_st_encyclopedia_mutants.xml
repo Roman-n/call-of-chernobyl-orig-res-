@@ -28,7 +28,7 @@
 		<text>
 			%c[guide_blue]Bloodsuckers%c[default], as the name would suggest, are hematophagous monsters.\n
 			\n%c[guide_green]Information%c[default]
-			\nThe bloodsucker is semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
+			\nThe bloodsucker is a semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
 			\nThis status has been achieved thanks to the species' relative rarity and the low survival rate of its victims.\n
 			\nThose who have encountered them and lived to tell about it have described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
 			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
@@ -62,7 +62,7 @@
 			%c[guide_blue]Burers%c[default] are stocky, almost dwarf-like monsters that usually stick to underground areas.\n
 			\n%c[guide_green]Information%c[default]
 			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and generally afraid of bright lights.\n
-			\nCreated as the result of genetic experiments on criminals under the program of human telekinetic development, burers naturally posses powerful telekinetic abilities.\n
+			\nCreated as the result of genetic experiments on criminals, burers naturally posses powerful telekinetic abilities, making them far more powerful than they appear.\n
 			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis
@@ -79,7 +79,7 @@
 			\nOriginally ordinary pets, under the influence of the Zone they have changed quite remarkably, becoming very dangerous even to people.\n
 			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet, secluded places such as forest thickets.\n
 			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until it tires and/or bleeds out.\n
-			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to attack.\n
+			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to strike.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
 		</text>
@@ -262,7 +262,7 @@
 			%c[guide_blue]Pyrogeists%c[default] are a rare pyrokinetic subspecies of poltergeists.\n
 			\n%c[guide_green]Information%c[default]
 			\nAppearing as a floating form of heat haze surrounded by a fiery glow, they are easily distinguishable from regular poltergeists. On death, they explode in a mess of blood and fire.\n
-			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it has no telekinetic ability.\n
+			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as lacks any telekinetic abilities.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers
 		</text>
@@ -321,7 +321,7 @@
 		<text>
 			%c[guide_blue]Zombies%c[default] are people who have been reduced to their most residual reflexes.\n
 			\n%c[guide_green]Information%c[default]
-			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of the people they used to be.\n
+			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of those that they used to be.\n
 			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psi-fields, having lost even the ability to operate basic tools and weaponry.\n
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
 			\nThis mutant only spawns when playing in survival mode.\n

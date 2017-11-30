@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	
+	<string id="encyclopedia_locations">
+		<text>Locations</text>
+	</string>
+	
+	<string id="encyclopedia_locations_agroprom_underground">
+		<text>Agroprom Underground</text>
+	</string>
+	<string id="encyclopedia_locations_agroprom_underground_text">
+		<text>
+			The %c[guide_blue]Agroprom Underground%c[default] is a subterranean network of tunnels.\n
+			\n%c[guide_green]Information%c[default]
+			\nNobody is all too sure what the intended purpose of these catacombs was, as whilst some compartments were clearly used for necessities such as plumbing, others appear distinctly scientific in nature.\n
+			\nAs of now their only remaining use is for the mass farming of artefacts from its dozens of anomalies, and as a hunting ground for bandits and mutants which prey on unsuspecting stalkers that venture within.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_locations_dead_city">
+		<text>Dead City</text>
+	</string>
+	<string id="encyclopedia_locations_dead_city_text">
+		<text>
+			The %c[guide_blue]Dead City%c[default], once full of energy, is now nothing more than a crumbling ruin.\n
+			\n%c[guide_green]Information%c[default]
+			\nFormerly inhabited by those who could not find a home within Limansk, Pripyat, or other neighbouring cities, its name and history have now all been long forgotten.\n
+			\nThe name given to it by stalkers can be considered an accurate one, likening the city to a corpse because of its condition - decaying and wasting away at the hands of the elements.\n
+			\nDespite being under constant siege from invading bandits and mutants, the Mercenary faction has established their headquarters here, maintaining a small but yet powerful presence.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_locations_deserted_hospital">
+		<text>Deserted Hospital</text>
+	</string>
+	<string id="encyclopedia_locations_deserted_hospital_text">
+		<text>
+			The %c[guide_blue]Deserted Hospital%c[default], or %c[guide_blue]Limansk Hospital%c[default], is a large and derelict building almost entirely sunken into the earth.\n
+			\n%c[guide_green]Information%c[default]
+			\nAlthough nothing is publicly known about the history of this hospital, it is safe to presume its intended purpose was to serve the residents of nearby Limansk.\n
+			\nOne of the location's most interesting features is the fact that it has somehow collapsed into the ground, as earthquakes in this part of the world are extremely uncommon and usually go unnoticed.\n
+			\nIt is also the only major area within the Zone known to be absent of any radioactive or anomalous activity - however it is also one of the most dangerous due to being completely overrun by the Monolith.\n
+		</text>
+	</string>
+		
+	<string id="encyclopedia_locations_jupiter_underground">
+		<text>Jupiter Underground</text>
+	</string>
+	<string id="encyclopedia_locations_jupiter_underground_text">
+		<text>
+			The %c[guide_blue]Jupiter Underground%c[default], also known as the %c[guide_blue]Pripyat Underground%c[default] and %c[guide_blue]Pripyat-1%c[default], is a series of tunnels which run deep beneath the surface.\n
+			\n%c[guide_green]Information%c[default]
+			\nOnce used to covertly move goods and materials without being seen, as evidenced by the numerous rusting transports, these secretive tunnels were abandoned and filled with poisonous gases following the second disaster.\n
+			\nIt wasn't until recently that a group of stalkers managed to re-open the tunnels from the side of Jupiter, allowing enough time for them to be vented and made safe.\n
+			\nOf course "safe" is a relative term in the Zone, as those who have ventured below report encountering innumerable snorks and zombified stalkers.
+		</text>
+	</string>
+		
+	<string id="encyclopedia_locations_truck_cemetery">
+		<text>Truck Cemetery</text>
+	</string>
+	<string id="encyclopedia_locations_truck_cemetery_text">
+		<text>
+			The %c[guide_blue]Truck Cemetery%c[default], officially the %c[guide_blue]Rassokha Equipment Cemetery%c[default], is a giant scrapyard full of irradiated vehicles.\n
+			\n%c[guide_green]Information%c[default]
+			\nDuring clean-up operations following the initial disaster much heavy machinery was operated in the vicinity of the reactor, and was primarily used to move highly radioactive materials.\n
+			\nWhilst most of the equipment here was in perfect working order but had no practical way of being decontaminated, much of the rest just simply broke down due to the harsh conditions and was dumped here shortly after.\n
+			\nIn the years following the creation of the Zone as we know it today, the area has become plagued by conflict as Duty and Freedom fight over territory, all the while soldiers and bandits encroach from the east and south.\n
+			\nDespite being so isolated and difficult to get to, many stalkers have noticed the vehicles here are gradually being stripped bare - with many believing that somebody, perhaps the military, is attempting to salvage the metals and illegally sell them for scrap.
+		</text>
+	</string>
+	
+</string_table>

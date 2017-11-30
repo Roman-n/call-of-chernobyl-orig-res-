@@ -42,7 +42,7 @@
 	<!-- Anomalies (Other) -->
 	<file name="ui\guide\encyclopedia_anomalies_other">
 		<texture id="encyclopedia_anomalies_other_emission_image" x="0" y="256" width="512" height="256"/>
-		<texture id="encyclopedia_anomalies_other_phantom_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_anomalies_other_phantom_image" x="512" y="0" width="512" height="256"/>
 		<texture id="encyclopedia_anomalies_other_psistorm_image" x="0" y="0" width="512" height="256"/>
 	</file>
 	
@@ -100,39 +100,39 @@
 		<texture id="encyclopedia_factions_other_zombified_image" x="512" y="768" width="256" height="256"/>
 	</file>
 	
-	<!-- Levels -->
+	<!-- Locations -->
 	<file name="ui\guide\encyclopedia_levels">
-		<texture id="encyclopedia_levels_agroprom_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_agroprom_underground_image" x="0" y="256" width="512" height="256"/>
-		<texture id="encyclopedia_levels_army_warehouses_image" x="0" y="512" width="512" height="256"/>
-		<texture id="encyclopedia_levels_chernobyl_npp_image" x="0" y="768" width="512" height="256"/>
-		<texture id="encyclopedia_levels_cordon_image" x="512" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_dark_valley_image" x="512" y="256" width="512" height="256"/>
-		<texture id="encyclopedia_levels_darkscape_image" x="512" y="512" width="512" height="256"/>
-		<texture id="encyclopedia_levels_dead_city_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_deserted_hospital_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_garbage_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_generators_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_great_swamp_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_jupiter_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_jupiter_underground_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_lab_x16_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_lab_x18_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_lab_x19_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_lab_x8_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_limansk_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_monolith_control_center_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_outskirts_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_pripyat_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_radar_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_red_forest_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_rostok_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_sarcophagus_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_truck_cemetery_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_warlab_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_wild_territory_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_yantar_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_levels_zaton_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_agroprom_image" x="0" y="0" width="0" height="256"/>
+		<texture id="encyclopedia_locations_agroprom_underground_image" x="0" y="256" width="512" height="256"/>
+		<texture id="encyclopedia_locations_army_warehouses_image" x="0" y="512" width="512" height="256"/>
+		<texture id="encyclopedia_locations_chernobyl_npp_image" x="0" y="768" width="512" height="256"/>
+		<texture id="encyclopedia_locations_cordon_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_dark_valley_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_darkscape_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_dead_city_image" x="512" y="256" width="512" height="256"/>
+		<texture id="encyclopedia_locations_deserted_hospital_image" x="512" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_garbage_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_generators_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_great_swamp_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_jupiter_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_jupiter_underground_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_lab_x16_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_lab_x18_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_lab_x19_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_lab_x8_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_limansk_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_monolith_control_center_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_outskirts_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_pripyat_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_radar_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_red_forest_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_rostok_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_sarcophagus_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_truck_cemetery_image" x="512" y="512" width="512" height="256"/>
+		<texture id="encyclopedia_locations_warlab_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_wild_territory_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_yantar_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_zaton_image" x="0" y="0" width="512" height="256"/>
 	</file>
 	
 	<!-- Mutants -->

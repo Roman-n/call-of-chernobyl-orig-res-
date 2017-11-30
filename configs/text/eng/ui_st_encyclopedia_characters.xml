@@ -189,8 +189,8 @@
 			%c[guide_blue]Lieutenant Kirilov%c[default] is one of the military's most gifted technicians.\n
 			\n%c[guide_green]Information%c[default]
 			\nOriginally just a radio operator, Kirilov has always had a knack for taking things apart and putting them back together.\n
-			\nAfter the failure to Operation Fairway, he and his group took refuge in an old laundromat, where he harnessed his skills in repairing their equipment and weapons.\n
-			\nFollowing these events he was recommended by Colonel Kavalsky, his commander, to take up the role of being the military's foremost technician at their base in Agroprom.\n
+			\nAfter the failure to Operation Fairway, he and his group took refuge in an old laundromat where he harnessed his skills in repairing their equipment and weapons.\n
+			\nFollowing these events he was recommended by Colonel Kovalsky, his commander, to take up the role of being the military's foremost technician at their base in Agroprom.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Military\n• Rank: Veteran\n• Reputation: Good
 		</text>
@@ -203,7 +203,7 @@
 		<text>
 			%c[guide_blue]Limpid%c[default] is a bandit and long-time technician.\n
 			\n%c[guide_green]Information%c[default]
-			\nPreviously working at a factory, it is fair to say he is well versed in technology, and likely used to work as a mechanical engineer.\n
+			\nPreviously working at a factory as a mechanical engineer, it is fair to say that he is well versed in technology.\n
 			\nHowever after being fired from his job following a drunken brawl, he fell into alcoholism and eventually lost both his wife and his home shortly after.\n
 			\nWith nothing left in life he sought out the Zone to start over, soon after meeting bandits at the Garbage and finding work as their technician ever since.\n
 			\n%c[guide_green]Statistics%c[default]
@@ -324,7 +324,7 @@
 			\nAlthough seen as polite and professional, his only true care is for scientific discoveries, rarely appearing to spare any thought for his researchers when sending them to certain death.\n
 			\nBecause of the nature of his work he has an almost limitless supply of contracts to recover artefacts and mutant parts, making him a very popular employer amongst foolhardy stalkers.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Ecologist\n• Rank: Master\n• Reputation: Brilliant
+			\n• Faction: Ecologist (Trader)\n• Rank: Master\n• Reputation: Brilliant
 		</text>
 	</string>
 	
@@ -333,10 +333,10 @@
 	</string>
 	<string id="encyclopedia_characters_sergeant_spooner_text">
 		<text>
-			%c[guide_blue]Sergeant Spooner%c[default] is an expert soldier and cunning merchant.\n
+			%c[guide_blue]Sergeant Spooner%c[default] is an expert soldier and a cunning merchant.\n
 			\n%c[guide_green]Information%c[default]
-			\nThrough much of his life, information has always played an important factor in his decision making, choosing carefully what he shares, and to whom he shares it with.\n
-			\nNaturally he found his lot in life by joining the military where his skills are of great value, and now uses his position as a front for his trading and information broking business.\n
+			\nThroughout much of his life, information has always played an important factor in his decision making, choosing carefully what he shares, and to whom he shares it with.\n
+			\nNaturally he found his place after joining the military, where his skills are of great value, and now uses his position as a front for his personal trading and information broking business.\n
 			\nVery little information is otherwise known about him, least of all as to why he has such a peculiar nickname.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Military\n• Rank: Expert\n• Reputation: Great

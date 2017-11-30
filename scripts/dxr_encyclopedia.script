@@ -99,7 +99,7 @@ function detect_mutant_interaction(mutant)
 	create_interaction("mutants", mutant)
 end
 
--- Smart terrains and level articles for entering.
+-- Location articles for being within 50m.
 -- Called directly from smart terrain update method.
 function detect_smart_interaction(smart)
 	create_interaction("levels", level.name())
