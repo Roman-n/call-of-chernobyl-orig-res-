@@ -136,7 +136,7 @@ function actor_on_item_take(item)
 	-- Artefacts detected counter incrementation.
 	-- Requires the artefact be associated with an anomaly.
 	if (artefact and anomaly) then
-		anomal_zone:on_artefact_take(item)
+		anomaly:on_artefact_take(item)
 		increment_statistic("artefacts_detected")
 	else
 		bind_anomaly_zone.artefact_ways_by_id[item:id()] = nil
