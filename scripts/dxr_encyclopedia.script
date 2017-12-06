@@ -131,8 +131,6 @@ function context_functor(item)
 	end
 	
 	-- Return if there are no articles to unlock.
-	local guide = ui_pda_encyclopedia_tab.get_ui()
-	local locked_articles = guide.locked_articles
 	if (get_articles_locked_count() == 0) then
 		return
 	end
@@ -223,14 +221,31 @@ function unlock_article(section)
 		
 	-- Should no article be specified select one at random to unlock.
 	else
-		local index = 1
-		local selection = math.random(get_articles_locked_count())
+		-- Determine the lowest tier available.
+		-- This DOES NOT factor untiered articles.
+		local lowest_tier = guide.highest_tier
 		for k, v in pairs(locked_articles) do
-			if (index == selection) then
-				section = k
-				break
+			lowest_tier = (v > 0 and v < lowest_tier) and v or lowest_tier
+		end
+		-- Randomly select a valid articles.
+		-- This DOES factor untiered articles.
+		local generic_articles = {}
+		local tiered_articles = {}
+		for k, v in pairs(locked_articles) do
+			if (v <= lowest_tier) then
+				if (v <= 0) then
+					table.insert(generic_articles, k)
+				else
+					table.insert(tiered_articles, k)
+				end
 			end
-			index = index + 1
+		end
+		-- 75% chance of selecting a tiered article if available.
+		-- Their information is more useful and important, so is given priority.
+		if (#tiered_articles > 0 and math.random(100) >= 25) then
+			section = tiered_articles[math.random(#tiered_articles)]
+		else
+			section = generic_articles[math.random(#generic_articles)]
 		end
 	end
 	
