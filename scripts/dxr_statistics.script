@@ -46,7 +46,7 @@ actor_statistics = {
 	["arena_battles"]		=	{	count = 0,		rank = 25,		rept = 10	},
 	["artefacts_detected"]	=	{	count = 0,		rank = 5,		rept = 0	},
 	["artefacts_found"]		=	{	count = 0,		rank = 5,		rept = 0	},
-	["articles"]			=	{	count = 0,		rank = 10,		rept = 0	},		-- Counter is incremented but isn't used.
+	["articles"]			=	{	count = 0,		rank = 5,		rept = 0	},		-- Counter is incremented but isn't used.
 	["boxes_smashed"]		=	{	count = 0,		rank = 1,		rept = 0	},
 	["deaths"]				=	{	count = 0,		rank = 0,		rept = 0	},
 	["donations"]			=	{	count = 0,		rank = 0,		rept = 20	},
