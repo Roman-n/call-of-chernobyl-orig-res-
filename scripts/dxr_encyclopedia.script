@@ -267,7 +267,7 @@ function unlock_article(section)
 		local text_a = game.translate_string(guide.categories[index_c].articles[index_a])
 		-- Other information.
 		local header = game.translate_string("st_tip")
-		local texture = news_manager.tips_icons["guide_unlock"] or "ui_iconsTotal_grouping"
+		local texture = news_manager.tips_icons["guide_unlock"] or "ui_inGame2_Poslednie_razrabotki"
 		db.actor:give_game_news(header, strformat(message, text_c, text_a), texture, 0, 5000, 0)
 	end
 end

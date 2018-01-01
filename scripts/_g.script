@@ -148,6 +148,12 @@ function ResetTimeEvent(ev_id,act_id,timer)
 	end
 end
 
+function ReturnEventTime(ev_id,act_id)
+	if (ev_queue[ev_id] and ev_queue[ev_id][act_id]) and ev_queue[ev_id][act_id].timer then
+		return (ev_queue[ev_id][act_id].timer - time_global())/1000
+	end
+end
+
 function ProcessEventQueue(force)
 	-- if (has_alife_info("sleep_active")) then
 		-- return false
