@@ -5,19 +5,6 @@
 		<text>Features</text>
 	</string>
 	
-	<string id="encyclopedia_features_azazel_mode">
-		<text>Azazel mode</text>
-	</string>
-	<string id="encyclopedia_features_azazel_mode_text">
-		<text>
-			%c[guide_blue]Azazel mode%c[default] allows you to continue playing as another character after death.\n
-			\n%c[guide_green]Information%c[default]
-			\nIn Azazel mode death is not the end - upon the demise of your character you will posses the body of a random stalker who was previously controlled by the AI.\n
-			\nShould you have companions at the time of your death, they will be given priority and you will continue playing as one of them instead.\n
-			\nThis mode can only be enabled from the character creation screen.
-		</text>
-	</string>
-	
 	<string id="encyclopedia_features_companions">
 		<text>Companions</text>
 	</string>
@@ -34,16 +21,18 @@
 		</text>
 	</string>
 	
-	<string id="encyclopedia_features_ironman_mode">
-		<text>Ironman mode</text>
+	<string id="encyclopedia_features_map_spots">
+		<text>Map spots</text>
 	</string>
-	<string id="encyclopedia_features_ironman_mode_text">
+	<string id="encyclopedia_features_map_spots_text">
 		<text>
-			%c[guide_blue]Ironman mode%c[default] adds an indirect layer of difficulty to gameplay, whereby all of your saved games for a character are deleted upon their death.\n
+			%c[guide_blue]Map spots%c[default] are icons which appear on the map to highlight points of particular interest.\n
 			\n%c[guide_green]Information%c[default]
-			\nShould Azazel mode be enabled at the same time you will be allowed to continue playing as whoever you switched to, but saves made as your deceased character will be deleted as per usual.\n
-			\nNote that all saves in an ironman mode playthrough are tagged with a unique identifier so the game can distinguish between them, making it impossible for unrelated saves to be deleted by mistake.\n
-			\nThis mode can only be enabled from the character creation screen.
+			\nMany locations and entities have map spots associated with them, making it easier to read the map at a glance without having to worry about remembering tons of information.\n
+			\nYou are able to create your own custom map spots by double-clicking on the map and entering a name to be displayed when hovered over - these can be renamed or removed later by right-clicking them and selecting the appropriate context option.\n
+			\n%c[guide_green]Toggles%c[default]
+			\nAnomalous areas, important objects (traders, technicians, beds, etc.), stashes, and task waypoints can be toggled within the PDA by pressing the aptly named buttons at the top of the map tab.\n
+			\nRegardless of these settings, those which are attributed to stalkers and other moving objects are always visible on your minimap - as there is no guarantee they will remain stationary and in a single location.
 		</text>
 	</string>
 	
@@ -71,38 +60,27 @@
 			\n%c[guide_green]Information%c[default]
 			\nReputation is similar to rank but differs in that it isn't quite so linear - being able to both increase and decrease - and that it is based on your interactions with other stalkers rather than the environment.\n
 			\nThe easiest ways to increase reputation are by completing tasks, providing first-aid, and killing your faction's enemies, whilst inversely the easiest ways to lose it are by cancelling or failing tasks, and killing neutral or friendly stalkers.\n
-			\nIt should be noted that reputation is largely an immersion-focused feature, and should not be confused with goodwill, which handles all stalker and faction relations.\n
+			\nIt should be noted that whilst it is used by some features, reputation is largely immersion-focused and should not be confused with goodwill - which handles all stalker and faction relations.\n
 			\n%c[guide_green]Reputations%c[default]
 			\n• Terrible: -2,000\n• Dreary: -1,500\n• Awful: -1,000\n• Bad: -500\n• Neutral: 0\n• Good: 500\n• Great: 1,000\n• Brilliant: 1,500\n• Excellent: 2,000
 		</text>
 	</string>
 	
-	<string id="encyclopedia_features_story_mode">
-		<text>Story mode</text>
+	<string id="encyclopedia_features_stashes">
+		<text>Stashes</text>
 	</string>
-	<string id="encyclopedia_features_story_mode_text">
+	<string id="encyclopedia_features_stashes_text">
 		<text>
-			%c[guide_blue]Story mode%c[default] enables a non-linear story based on the events of Shadow of Chernobyl.\n
+			%c[guide_blue]Stashes%c[default] are items stored by stalkers in often well-hidden locations.\n
 			\n%c[guide_green]Information%c[default]
-			\nWith this mode enabled you start the game with the 'Mysteries of the Zone' storyline, and the tasks of disabling both the Brain Scorcher and the Miracle Machine.\n
-			\nTo begin the story you will need to find an important individual hiding somewhere within the Zone, who after a brief dialogue will provide you with multiple tasks which can be completed in any order.\n
-			\nThis mode can only be enabled from the character creation screen.\n
-			\n%c[guide_green]Availability%c[default]
-			\n• Clear Sky\n• Duty\n• Ecologist\n• Freedom\n• Loner\n• Mercenary
-		</text>
-	</string>
-	
-	<string id="encyclopedia_features_survival_mode">
-		<text>Survival mode</text>
-	</string>
-	<string id="encyclopedia_features_survival_mode_text">
-		<text>
-			%c[guide_blue]Survival mode%c[default] turns the Zone into a hunting ground - where you are the prey.\n
-			\n%c[guide_green]Information%c[default]
-			\nWith this mode enabled all spawns are replaced with zombified stalkers and mutants, who will slowly stumble towards your location in an attempt to kill you.\n
-			\nExclusive to this gameplay mode are zombies themselves, the last devolution of zombified stalkers who have lost the ability to operate mechanical devices such as firearms.\n
-			\nOnly a few traders and stalker squads can be found, meaning you will have to survive off of what you can scavenge in the world.\n
-			\nThis mode can only be enabled from the character creation screen.
+			\nMost stalkers in the Zone store spare ammunition, food, and medicines in containers, backpacks, and other hidden objects with the intent to retrieve them later.\n
+			\nFrequently the information as to their whereabouts dies with the stalker who hid them, resulting in numerous stashes full of unused items strewing the landscape waiting to be discovered at any time.\n
+			\nInformation brokers and traders often give coordinates to stashes as a bonus payment for those who have done good work for them, whereas those in a tight pinch might try to use their own personal stashes to barter for their survival.\n
+			\nYou can create your own stashes by right-clicking and selecting the appropriate option on any backpack in your inventory.\n
+			\nStashes which you create are never looted by other stalkers, so your items will always be safe.\n
+			\n%c[guide_green]Identification%c[default]
+			\nThe type and/or status of a stash can be easily determined by looking at its icon on the map or by hovering your mouse cursor over it.\n
+			\n• Green: Untouched\n• Purple: Partially looted\n• Yellow: Player-owned\n• Red: Unique
 		</text>
 	</string>
 	

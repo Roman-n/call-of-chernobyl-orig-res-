@@ -16,13 +16,12 @@
 		<texture id="encyclopedia_achievements_tourist_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_achievements_well_dressed_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_achievements_wishful_thinking_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_azazel_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_companions_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_ironman_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_equipment_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_rank_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_features_reputation_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_story_mode_image" x="0" y="0" width="0" height="0"/>
-		<texture id="encyclopedia_features_survival_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_features_stashes_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_mutants_historic_rat_wolf_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_mutants_historic_tark_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_ai_die_to_anomalies_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
@@ -34,6 +33,10 @@
 		<texture id="encyclopedia_options_gameplay_population_factors_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_radio_music_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_sleep_deprivation_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_other_azazel_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_other_ironman_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_other_story_mode_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_other_survival_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_ui_hud_dynamic_news_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_ui_hud_extended_hud_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_ui_hud_portrait_by_outfit_image" x="0" y="0" width="0" height="0"/>
@@ -81,6 +84,11 @@
 		<texture id="encyclopedia_characters_olivius_image" x="256" y="0" width="256" height="256"/>
 		<texture id="encyclopedia_characters_professor_kruglov_image" x="0" y="256" width="256" height="256"/>
 		<texture id="encyclopedia_characters_professor_sakharov_image" x="256" y="256" width="256" height="256"/>
+	</file>
+	
+	<!-- Features -->
+	<file name="ui\guide\encyclopedia_features">
+		<texture id="encyclopedia_features_map_spots_image" x="0" y="0" width="512" height="256"/>
 	</file>
 	
 	<!-- Factions, Factions (Historic) & Factions (Other) -->
@@ -132,7 +140,7 @@
 		<texture id="encyclopedia_locations_warlab_image" x="0" y="0" width="512" height="256"/>
 		<texture id="encyclopedia_locations_wild_territory_image" x="0" y="0" width="512" height="256"/>
 		<texture id="encyclopedia_locations_yantar_image" x="0" y="0" width="512" height="256"/>
-		<texture id="encyclopedia_locations_zaton_image" x="0" y="0" width="512" height="256"/>
+		<texture id="encyclopedia_locations_zaton_image" x="512" y="768" width="512" height="256"/>
 	</file>
 	
 	<!-- Mutants -->

@@ -172,7 +172,7 @@
 	</string>
 	<string id="encyclopedia_characters_librarian_text">
 		<text>
-			%c[guide_blue]Librarian%c[default], despite his name, is actually Clear Sky's barkeeper.\n
+			%c[guide_blue]Librarian%c[default] despite his name is actually Clear Sky's barkeeper.\n
 			\n%c[guide_green]Information%c[default]
 			\nAfter the emission that cut the swamps off from the rest of the Zone, Librarian found himself trapped with no easy way out.\n
 			\nFacing death at the hands of bandits or worse, he headed to the far southern reaches and joined Clear Sky, where he would later replace Cold as their barkeeper following his promotion to leader.\n
@@ -335,8 +335,8 @@
 		<text>
 			%c[guide_blue]Sergeant Spooner%c[default] is an expert soldier and a cunning merchant.\n
 			\n%c[guide_green]Information%c[default]
-			\nThroughout much of his life, information has always played an important factor in his decision making, choosing carefully what he shares, and to whom he shares it with.\n
-			\nNaturally he found his place after joining the military, where his skills are of great value, and now uses his position as a front for his personal trading and information broking business.\n
+			\nThroughout much of his life information has always played an important factor in his decision making, choosing carefully what he shares and to whom he shares it with.\n
+			\nNaturally he found his place after joining the military where his skills are of great value, and now uses his position as a front for his personal trading and information broking business.\n
 			\nVery little information is otherwise known about him, least of all as to why he has such a peculiar nickname.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Military\n• Rank: Expert\n• Reputation: Great
@@ -352,7 +352,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nHe enjoys a reputation of being a fairly honest businessman who gives newcomers a chance to survive, whilst his wealth of contacts allows him to smuggle in luxury goods.\n
 			\nHowever many also see him as greedy and tight-fisted. Those who try to compete with him on his own territory, or just disgruntle him in general, often end up on the wrong side of an assassination contract.\n
-			\nWhether for good or bad, he continues to play an integral role within the Zone's economy and its faction's politics, as such he is a great source of work for those wanting to earn a quick payday.\n
+			\nWhether for good or bad, he continues to play an integral role within the Zone's economy and its factions' politics, as such he is a great source of work for those wanting to earn a quick payday.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
 		</text>
