@@ -1119,6 +1119,9 @@
 	<string id="st_dyn_news_l10_red_forest">
 		<text>in Red Forest,</text>
 	</string>
+	<string id="st_dyn_news_l11_hospital">
+		<text>in Deserted Hospital</text>
+	</string>
 	<string id="st_dyn_news_l11_pripyat">
 		<text>in Pripyat,</text>
 	</string>
