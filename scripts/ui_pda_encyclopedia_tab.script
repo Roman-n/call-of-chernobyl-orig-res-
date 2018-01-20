@@ -137,7 +137,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 		self.image:SetAutoDelete(false)
 	end
 	
-	-- Add the text to the article's text.
+	-- Add the text to the article window.
 	self.scrollbar:AddWindow(self.information, true)
 	self.information:SetAutoDelete(false)
 	
