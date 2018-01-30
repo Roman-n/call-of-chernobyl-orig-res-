@@ -230,6 +230,7 @@ end
 ----- Miscellaneous -----
 -------------------------
 
+-- Gets the count for unlocked achievements.
 function get_actor_achievements_count()
 	local count = 0
 	for k, v in pairs(actor_achievements) do
