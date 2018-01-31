@@ -482,7 +482,7 @@ function surrender_victim_answers_1(a,b)
 
 	local r = math.random(1,5)
 	
-	if (db.storage[npc:id()].panicked_to_actor) then
+	if (db.storage[npc:id()].items_to_actor) then
 		return game.translate_string("st_surrender_victim_answer_5")
 	end
 
@@ -497,6 +497,7 @@ function surrender_victim_answers_1(a,b)
 		end
 
 		npc:iterate_inventory(itr,npc)
+		db.storage[npc:id()].items_to_actor = true
 
 		if (coc_treasure_manager) then
 			coc_treasure_manager.create_random_stash(nil, strformat(game.translate_string("st_itm_stash_of_character"),npc:character_name()) )
