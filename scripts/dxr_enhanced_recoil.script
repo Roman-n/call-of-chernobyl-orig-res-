@@ -175,7 +175,7 @@ function create_effect(weapon)
 	-- Set the recoil multiplier based on whether actor is aiming down sights.
 	local recoil_multiplier = (calculate_recoil_multiplier() * (axr_main.weapon_is_zoomed and zoom_in_multi or zoom_out_multi))
 	
-	-- Choose a random effect to base the recoil strenght on, based on whether or not the player is aiming down sights.
+	-- Choose a random effect to base the recoil strength on, based on whether or not the player is aiming down sights.
 	local effect_multiplier = axr_main.weapon_is_zoomed and zoom_in_effects[math.random(#zoom_in_effects)] or zoom_out_effects[math.random(#zoom_out_effects)]
 	
 	-- Generate the animations to be played.
