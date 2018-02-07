@@ -529,4 +529,7 @@
 	<string id="ui_mm_detail_scale">
 		<text>Прорисовка травы</text>
 	</string>
+	<string id="ui_mm_enhanced_recoil">
+		<text>Усиленная отдача</text>
+	</string>
 </string_table>

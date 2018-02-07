@@ -1,0 +1,32 @@
+; This plugin details the recoil effects of weapons when the enhanced recoil feature is enabled.
+; Each weapon should have a section of the same name here, with its name also listed in the "enhanced_recoil" section.
+
+; Speed of camera movement can be altered with the "speed" attribute.
+; Values should be "1" for high-RPM MGs, "2" for slow-RPM MGs or heavy weapons, and "3" for shotguns.
+; If an invalid number is provided then it will default to whichever is nearest to that given.
+
+; Effect multipliers are set separately for when the actor is zoomed in or out of their weapon.
+; The attributes for these are "zoom_in_effects" and "zoom_out_effects" respectively.
+; Per shot a random value from those provided will be chosen for the recoil calculation.
+
+; Two additional "global" zoom multipliers exist, but it isn't advised to use them.
+; Said multipliers are "zoom_in_multi" and "zoom_out_multi".
+
+; An additional multiplier also exists to strengthen/weaken the effects of recoil reduction via upgrades.
+; The higher the "upgrade_multi" value, the more of a dampening effect said upgrades will have (and vice versa).
+
+[enhanced_recoil]
+;wpn_ak74
+;wpn_mp5
+
+[wpn_ak74]
+speed = 2
+zoom_in_effects = 1, 1.1, 2, 0.9
+zoom_out_effects = 0.5, 0.55, 1, 0.45
+upgrade_multi = 1
+
+[wpn_mp5]
+speed = 1
+zoom_in_effects = 0.4, 0.6, 0.9
+zoom_out_effects = 0.2, 0.3, 0.45
+upgrade_multi = 1
