@@ -196,7 +196,9 @@ function create_effect(weapon)
 		end
 		
 		-- Create a new entry in the animations table storing this data.
-		table.insert(animations, { speed = speed, direction = direction, count = count })
+		if (count > 0) then
+			table.insert(animations, { speed = speed, direction = direction, count = count })
+		end
 	end
 	
 	-- Read the animations table data and turn it into camera movement.

@@ -8,14 +8,17 @@
 ; However, tiers will do nothing to hinder progress at the occasional possibility of discovering late-game content early on.
 ; Whilst regular articles are always randomly unlockable, there is a 50% chance of selecting exclusively from tiered articles.
 
-; Game mode flags make available/unavailable an article based on whether that mode is in use.
-; A value of "0" requires the game mode not be used for the article to be available, and vice versa for a value of "1".
-; For an article to be available regardless of the current game mode, the absence of this flag altogether will suffice.
-; The available game mode flags are as follows: "azazal", "hardcore", "story" and "survival".
+; Mode flags make available/unavailable an article based on whether a certain mode is in use.
+; A value of "0" requires the mode not be used for the article to be available, and vice versa for a value of "1".
+; For an article to be available regardless of the current mode, the absence of this flag altogether will suffice.
+; The available mode flags are as follows: "azazal", "debug", "dev_debug", "ironman", "story" and "survival".
 
 ; Unlock flags remove the requirement of having to discover an article or randomly unlock it.
 ; This is extremely useful for tutorial-esque articles, such as those about achievements or features.
 ; Valuing the unlock flag at "0" has the same effect as if the flag didn't exist whatsoever.
+
+; For any article which you add it is HIGHLY recommended to add texture description for it for reasons too long to list, even if it lacks an image.
+; You can create this by looking in the /configs/ui/textures_descr/ui_pda_encyclopedia.xml file and following the existing examples.
 
 [encyclopedia]
 encyclopedia_achievements
