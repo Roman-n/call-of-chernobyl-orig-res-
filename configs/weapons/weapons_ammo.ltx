@@ -9,32 +9,33 @@ slot                                     = -1
 explosive                                = false
 cform = skeleton
 tracer_color_ID                          = 0
+k_cam_dispersion                         = 1.0 ; shoot effect script only, will be added to engine later
 
 [ammo_knife]:ammo_base
-$prefetch                                          = 64
-box_size                                           = 1
-buck_shot                                          = 1
-cost                                               = 1
-impair                                             = 1
-inv_grid_height                                    = 1
-inv_grid_width                                     = 1
-inv_grid_x                                         = 0
-inv_grid_y                                         = 0
-inv_name                                           = "ammo_knife"
-inv_name_short                                     = "ammo_knife"
-inv_weight                                         = 0
-k_air_resistance                                   = 1
-k_ap                                               = 0.5
-k_disp                                             = 1
-k_dist                                             = 1
-k_hit                                              = 1
-k_impulse                                          = 1
-k_pierce                                           = 1
-tracer                                             = off
-visual                                             = dynamics\weapons\wpn_ammo\ammo_9x18_fmj.ogf
-wm_size                                            = 0.04
+$prefetch                                = 64
+box_size                                 = 1
+buck_shot                                = 1
+cost                                     = 1
+impair                                   = 1
+inv_grid_height                          = 1
+inv_grid_width                           = 1
+inv_grid_x                               = 0
+inv_grid_y                               = 0
+inv_name                                 = "ammo_knife"
+inv_name_short                           = "ammo_knife"
+inv_weight                               = 0
+k_air_resistance                         = 1
+k_ap                                     = 0.5
+k_disp                                   = 1
+k_dist                                   = 1
+k_hit                                    = 1
+k_impulse                                = 1
+k_pierce                                 = 1
+tracer                                   = off
+visual                                   = dynamics\weapons\wpn_ammo\ammo_9x18_fmj.ogf
+wm_size                                  = 0.04
 
-[ammo_9x18_fmj]:ammo_base
+[ammo_9x18_fmj]:ammo_base ; 7H15
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x18_fmj"	                                       ; option for Level Editor
@@ -58,19 +59,19 @@ inv_grid_x                               = 9
 inv_grid_y                               = 5
 
 k_dist                                   = 1
-k_disp                                   = 0.75
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.13
+k_pierce                                 = 0.1
 k_ap                                     = 0.1
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.06
-k_air_resistance                         = 1.6
+k_air_resistance                         = 1.0
 
-[ammo_9x18_pmm]:ammo_base
+[ammo_9x18_pmm]:ammo_base ; 7H16
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x18_pmm"	                                       ; option for Level Editor
@@ -94,20 +95,20 @@ inv_grid_x                               = 10
 inv_grid_y                               = 5
 
 k_dist                                   = 1
-k_disp                                   = 0.7
+k_disp                                   = 1
 k_hit                                    = 1.15
 k_impulse                                = 1
-k_pierce                                 = 0.14
+k_pierce                                 = 0.2
 k_ap                                     = 0.2
 impair                                   = 1.1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.06
-k_air_resistance                         = 1.55
+k_air_resistance                         = 1.0
 k_bullet_speed                           = 1.25
 
-[ammo_9x19_fmj]:ammo_base
+[ammo_9x19_fmj]:ammo_base ; 124gr
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x19_fmj"	                                       ; option for Level Editor
@@ -132,19 +133,19 @@ inv_grid_x                               = 11
 inv_grid_y                               = 5
 
 k_dist                                   = 1
-k_disp                                   = 0.7
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.14
+k_pierce                                 = 0.1
 k_ap                                     = 0.1
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.06
-k_air_resistance                         = 1.55
+k_air_resistance                         = 1.0
 
-[ammo_9x19_pbp]:ammo_base
+[ammo_9x19_pbp]:ammo_base ; 7H21
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x19_pbp"	                                       ; option for Level Editor
@@ -168,20 +169,20 @@ inv_grid_x                               = 12
 inv_grid_y                               = 5
 
 k_dist                                   = 1
-k_disp                                   = 0.7
+k_disp                                   = 1
 k_hit                                    = 1.2
 k_impulse                                = 1
-k_pierce                                 = 0.13
+k_pierce                                 = 0.15
 k_ap                                     = 0.15
 impair                                   = 1.1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.06
-k_air_resistance                         = 1.5
+k_air_resistance                         = 1.0
 k_bullet_speed                           = 1.25
 
-[ammo_11.43x23_fmj]:ammo_base
+[ammo_11.43x23_fmj]:ammo_base ; 230gr
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_11.43x23_fmj"	                                       ; option for Level Editor
@@ -205,17 +206,17 @@ inv_grid_x                               = 18
 inv_grid_y                               = 7
 
 k_dist                                   = 1
-k_disp                                   = 0.75
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.14
+k_pierce                                 = 0.1
 k_ap                                     = 0.1
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.08
-k_air_resistance                         = 1.8
+k_air_resistance                         = 0.75
 
 [ammo_11.43x23_hydro]:ammo_base
 GroupControlSection                      = spawn_group
@@ -241,19 +242,19 @@ inv_grid_x                               = 0
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.75
+k_disp                                   = 1
 k_hit                                    = 1.2
 k_impulse                                = 1
-k_pierce                                 = 0.16
+k_pierce                                 = 0.15
 k_ap                                     = 0.15
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.09
-k_air_resistance                         = 1.9
+k_air_resistance                         = 0.8
 
-[ammo_5.45x39_fmj]:ammo_base
+[ammo_5.45x39_fmj]:ammo_base ; 7H10
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_5.45x39_fmj"	                                       ; option for Level Editor
@@ -277,19 +278,19 @@ inv_grid_x                               = 8
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.75
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.3
-k_ap                                     = 0.3
+k_pierce                                 = 0.33
+k_ap                                     = 0.33
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.05
-k_air_resistance                         = 1.3
+k_air_resistance                         = 1.1
 
-[ammo_5.45x39_ap]:ammo_base
+[ammo_5.45x39_ap]:ammo_base ; 7H22
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_5.45x39_ap"	                                       ; option for Level Editor
@@ -313,10 +314,10 @@ inv_grid_x                               = 6
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.75
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.53
+k_pierce                                 = 0.6
 k_ap                                     = 0.6
 impair                                   = 1
 buck_shot                                = 1
@@ -325,7 +326,7 @@ tracer                                   = on
 wm_size                                  = 0.05
 k_air_resistance                         = 1.1
 
-[ammo_5.56x45_ss190]:ammo_base
+[ammo_5.56x45_ss190]:ammo_base ; SS109 (M855) green tip
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_5.56x45_ss190"	                                       ; option for Level Editor
@@ -350,19 +351,19 @@ inv_grid_x                               = 12
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.7
-k_hit                                    = 1
+k_disp                                   = 1
+k_hit                                    = 1.1 ; due to bigger (62gr) bullet
 k_impulse                                = 1
-k_pierce                                 = 0.27
-k_ap                                     = 0.28
+k_pierce                                 = 0.3
+k_ap                                     = 0.3
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.05
-k_air_resistance                         = 1.35
+k_air_resistance                         = 1.1
 
-[ammo_5.56x45_ap]:ammo_base
+[ammo_5.56x45_ap]:ammo_base ; M995 black tip
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_5.56x45_ap"	                                       ; option for Level Editor
@@ -386,17 +387,17 @@ inv_grid_x                               = 10
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.7
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.5
-k_ap                                     = 0.58
+k_pierce                                 = 0.6
+k_ap                                     = 0.6
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 2
 wm_size                                  = 0.05
-k_air_resistance                         = 1.15
+k_air_resistance                         = 1.1
 
 [ammo_pkm_100]:ammo_base
 GroupControlSection                      = spawn_group
@@ -424,19 +425,19 @@ inv_grid_y                               = 9
 hud_icon                                 = ui_hud2_res_back
 
 k_dist                                   = 1
-k_disp                                   = 0.8
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.4
-k_ap                                     = 0.35
+k_pierce                                 = 0.3
+k_ap                                     = 0.3
 impair                                   = 1
 buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.07
-k_air_resistance                         = 1
+k_air_resistance                         = 0.5
 
-[ammo_7.62x54_7h1]:ammo_base
+[ammo_7.62x54_7h1]:ammo_base ; 7H14
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_7.62x54_7h1"	                                       ; option for Level Editor
@@ -460,7 +461,7 @@ inv_grid_x                               = 14	                                  
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.6
+k_disp                                   = 0.9
 k_hit                                    = 1
 k_impulse                                = 1
 k_pierce                                 = 0.75
@@ -470,7 +471,7 @@ buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.07
-k_air_resistance                         = 1
+k_air_resistance                         = 0.4
 
 [ammo_gauss]:ammo_base
 GroupControlSection                      = spawn_group
@@ -496,7 +497,7 @@ inv_grid_x                               = 13
 inv_grid_y                               = 5
 
 k_dist                                   = 1
-k_disp                                   = 0.5
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
 k_pierce                                 = 5
@@ -523,7 +524,7 @@ inv_grid_height                          = 1
 inv_grid_x                               = 14
 inv_grid_y                               = 5
 
-[ammo_9x39_pab9]:ammo_base
+[ammo_9x39_pab9]:ammo_base ; SP5
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x39_pab9"	                                       ; option for Level Editor
@@ -547,7 +548,7 @@ inv_grid_x                               = 18
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.6
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
 k_pierce                                 = 0.3
@@ -557,9 +558,9 @@ buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.07
-k_air_resistance                         = 0.5
+k_air_resistance                         = 0.25
 
-[ammo_9x39_ap]:ammo_base
+[ammo_9x39_ap]:ammo_base ; SP6
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_9x39_ap"	                                       ; option for Level Editor
@@ -583,7 +584,7 @@ inv_grid_x                               = 16
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.7
+k_disp                                   = 1
 k_hit                                    = 1
 k_impulse                                = 1
 k_pierce                                 = 0.62
@@ -593,9 +594,9 @@ buck_shot                                = 1
 tracer                                   = on
 ;tracer_color_ID                          = 1
 wm_size                                  = 0.07
-k_air_resistance                         = 0.5
+k_air_resistance                         = 0.25
 
-[ammo_12x70_buck]:ammo_base
+[ammo_12x70_buck]:ammo_base ; #00 buck
 GroupControlSection                      = spawn_group
 discovery_dependency                     =
 $spawn                                   = "weapons\ammo\ammo_12x70_buck"	                                       ; option for Level Editor
@@ -611,24 +612,24 @@ box_size                                 = 10
 
 inv_name                                 = ammo-12x70-buck
 inv_name_short                           = ammo-12x70-buck_s
-inv_weight                               = .5
+inv_weight                               = .45
 
 inv_grid_width                           = 2
 inv_grid_height                          = 1
 inv_grid_x                               = 2
 inv_grid_y                               = 8
 
-k_dist                                   = 0.5
-k_disp                                   = 10
-k_hit                                    = 0.2
+k_dist                                   = 0.75
+k_disp                                   = 8
+k_hit                                    = 0.4
 k_impulse                                = 0.5
 k_pierce                                 = 0.01
 k_ap                                     = 0.01
-impair                                   = 1.25
-buck_shot                                = 15
+impair                                   = 1
+buck_shot                                = 9
 tracer                                   = off
-wm_size                                  = 0.03
-k_air_resistance                         = 2.5
+wm_size                                  = 0.035
+k_air_resistance                         = 1.3
 
 [ammo_12x76_zhekan]:ammo_base
 GroupControlSection                      = spawn_group
@@ -654,17 +655,17 @@ inv_grid_x                               = 4
 inv_grid_y                               = 8
 
 k_dist                                   = 1
-k_disp                                   = 0.5
+k_disp                                   = 0.9
 k_hit                                    = 1
 k_impulse                                = 1
-k_pierce                                 = 0.4
-k_ap                                     = 0.4
-impair                                   = 1.2
+k_pierce                                 = 0.3
+k_ap                                     = 0.3
+impair                                   = 1
 buck_shot                                = 1
 tracer                                   = off
 wm_size                                  = 0.1
 explosive                                = off
-k_air_resistance                         = 1.3
+k_air_resistance                         = 1.1
 k_bullet_speed                           = 1.2
 
 [ammo_12x76_zhekan_heli]:ammo_12x76_zhekan ; Do not use! Fake zhekan for helicopter

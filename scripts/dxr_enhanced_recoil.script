@@ -195,15 +195,16 @@ function create_effect(weapon)
 		end
 		
 		-- Create a new entry in the animations table storing this data.
+		local variant = math.random(0, 1)
 		if (count >= 1 and key <= 4) then
-			table.insert(animations, { speed = speed, direction = key, count = count })
+			table.insert(animations, { speed = speed, direction = key, count = count, variant = variant })
 		end
 	end
 	
 	-- Read the animations table data and turn it into camera movement.
 	for key, value in pairs(animations) do
 		for index = 1, value.count do
-			local animation = string.format([[shoot\s%s_e%s_%s.anm]], value.speed, value.direction, math.random(0, 1))
+			local animation = string.format([[shoot\s%s_e%s_%s.anm]], value.speed, value.direction, value.variant)
 			level.add_cam_effector(animation, math.random(5000, 8000), false, "")
 		end
 	end

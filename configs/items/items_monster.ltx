@@ -1,6 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; NON-EATABLE MONSTER ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; NON-EATABLE MONSTER ITEMS
 
 [mutant_part_general]:identity_immunities
 GroupControlSection                      = spawn_group
@@ -235,11 +233,9 @@ inv_grid_x                               = 1
 inv_grid_y                               = 39
 cost                                     = 250
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;; EATABLE MONSTER ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; EATABLE MONSTER ITEMS
 
-[mutant_part_general_meat]:booster
+[mutant_part_general_meat]:booster_script
 $spawn                                   = "devices\monster_items\mutant_part_general"
 visual                                   = dynamics\zpf\raw_flesh.ogf
 
@@ -252,7 +248,6 @@ attach_position_offset                   = 0.104196, -0.010821, 0.076969
 attach_bone_name                         = bip01_r_hand
 auto_attach                              = false
 
-
 bone_name                                = bip01_r_hand
 position_offset                          = 0.0,0.0,0.0 0.117
 angle_offset                             = 1.570790,1.570790,3.92699
@@ -261,6 +256,8 @@ eat_satiety                              = 0.2
 eat_radiation                            = 0.3
 eat_health                               = -0.05
 eat_alcohol                              = -0.01
+
+hide_time_wpn = 3
 
 [mutant_part_flesh_meat]:mutant_part_general_meat
 $spawn                                   = "devices\monster_items\mutant_flesh_meat"

@@ -24,10 +24,13 @@ fire_max_power				=	5
 fire_linear_factor			=	0
 fire_quadratic_factor		=	0.025
 
-psy_max_distance			=	0
-psy_max_power				=	5
-psy_linear_factor			=	0.05
+psy_max_distance			=	15
+psy_max_power				=	0.25
+psy_linear_factor			=	0.5
 psy_quadratic_factor		=	0
+psy_sound				=	monsters\burer\burer_psi
+psy_pp_effector_name	= 	psy_antenna
+psy_pp_highest_at		= 	0.1
 
 radiation_max_distance		=	0
 radiation_max_power			=	0.01
@@ -223,8 +226,8 @@ Gravi_Step					= 2		; meter
 Gravi_Time_To_Hold			= 1200	; milisec
 Gravi_Radius				= 3.0
 Gravi_Impulse_To_Objects	= 60.0
-Gravi_Impulse_To_Enemy		= 1500.0
-Gravi_Hit_Power				= 1.0
+Gravi_Impulse_To_Enemy		= 150.0
+Gravi_Hit_Power				= 0.9
 
 ;-------------------------------------------------------------------------
 ; Tele Ability
@@ -362,8 +365,8 @@ transparency_threshold		= 0.66
 ;	anim					| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Left hand Strike
-stand_attack_0			 =	  	0.4,		  0.7,	     1000,        2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
-stand_stamina_attack_0 	 =	  	0.4,		  0.0,	     0,          2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
+stand_attack_0			 =	  	0.4,		  0.4,	     100,        2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
+stand_stamina_attack_0 	 =	  	0.4,		  0.4,	     100,          2.0, 0.4, 0.5,		 -1.6, 1.6, -1.6, 1.6,				  2.5
 
 ;=================================================================================
 ; Burer Attack Effector
@@ -574,15 +577,6 @@ community			= burer
 
 explosion_immunity		= 0.4
 fire_wound_immunity		= 0.4
-
-; Gravi Strike
-Gravi_Speed					= 76	; meter/sec	
-Gravi_Step					= 2		; meter
-Gravi_Time_To_Hold			= 1200	; milisec
-Gravi_Radius				= 3.0
-Gravi_Impulse_To_Objects	= 60.0
-Gravi_Impulse_To_Enemy		= 1000.0
-Gravi_Hit_Power				= 0.5
 
 ; Tele Strike
 Tele_Max_Handled_Objects = 3	;1;3	

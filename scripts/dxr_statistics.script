@@ -49,7 +49,7 @@ actor_statistics = {
 	["articles"]			=	{	count = 0,		rank = 5,		rept = 0	},		-- Counter is incremented but isn't used.
 	["boxes_smashed"]		=	{	count = 0,		rank = 1,		rept = 0	},
 	["deaths"]				=	{	count = 0,		rank = 0,		rept = 0	},
-	["donations"]			=	{	count = 0,		rank = 0,		rept = 20	},
+	["donations"]			=	{	count = 0,		rank = 0,		rept = 20	},		-- Actual points given depends on item condition.
 	["emissions"]			=	{	count = 0,		rank = 5,		rept = 0	},
 	["enemies_surrendered"]	=	{	count = 0,		rank = 10,		rept = 0	},
 	["field_dressings"]		=	{	count = 0,		rank = 1,		rept = 0	},

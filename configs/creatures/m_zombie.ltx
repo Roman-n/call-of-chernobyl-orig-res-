@@ -15,7 +15,7 @@ visual			= monsters\zombi\zombi_2
 corpse_visual		= monsters\zombi\zombi_2
 icon                    = ui_npc_monster_kontroler	
 
-hit_fraction_monster = 0.75
+hit_fraction_monster = 0.5
 skin_armor = 0.1
 
 spawn_phantom 		= m_phantom_zombi
@@ -546,15 +546,15 @@ Morale_Stable_Speed		= 0.01
 Morale_Despondent_Threashold	= 0.1
 
 [zombie_immunities_weak]
-burn_immunity			= 1.0
-strike_immunity			= 1.0
-shock_immunity			= 1.0
+burn_immunity			= 0.7
+strike_immunity			= 0.7
+shock_immunity			= 0.7
 wound_immunity			= 0.4
 radiation_immunity		= 0.0
-telepatic_immunity		= 1.0
-chemical_burn_immunity	= 1.0
+telepatic_immunity		= 0.0
+chemical_burn_immunity	= 0.7
 explosion_immunity		= 0.6
-fire_wound_immunity		= 1
+fire_wound_immunity		= 0.7
 
 [zombie_attack_params_weak]
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -572,8 +572,8 @@ stand_attack_3                 = 0.30, 0.4, 180, 0.0, 1.0, 0.0, -1.0, 0.3, -0.6,
 
 [zombie_normal]:zombie_weak
 visual				= monsters\zombi\zombi_trup_2
-FakeDeathCount			= 5		              ;-- max count of fake death
-StartFakeDeathHealthThreshold	= 0.6
+FakeDeathCount			= 2		              ;-- max count of fake death
+StartFakeDeathHealthThreshold	= 0.7
 rank = 6
 spec_rank = normal
 

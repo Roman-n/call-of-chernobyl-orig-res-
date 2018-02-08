@@ -10,7 +10,7 @@ af_vyvert				= 1, prob=0.002 \n
 af_gravi				= 1, prob=0.001 \n
 af_gold_fish			= 1, prob=0.001 \n
 af_blood				= 1, prob=0.003 \n
-af_mincer_meat			= 1, prob=0.003 \n
+af_mincer_meat			= 1, prob=0.002 \n
 af_soul					= 1, prob=0.002 \n
 af_fuzz_kolobok			= 1, prob=0.002 \n
 af_baloon				= 1, prob=0.001 \n
