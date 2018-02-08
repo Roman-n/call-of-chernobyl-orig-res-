@@ -5,9 +5,12 @@
 ; Values should be "1" for high-RPM MGs, "2" for slow-RPM MGs or heavy weapons, and "3" for shotguns.
 ; If an invalid number is provided then it will default to whichever is nearest to that given.
 
-; Effect multipliers are set separately for when the actor is zoomed in or out of their weapon.
+; Effects are set separately for when the actor is zoomed in or out of their weapon.
 ; The attributes for these are "zoom_in_effects" and "zoom_out_effects" respectively.
-; Per shot a random value from those provided will be chosen for the recoil calculation.
+; Only the first four effects are used, i.e. one for each available animation type.
+; Any decimal values are used to help provide randomness to the "strength" of the effect.
+; First moves the camera back, second turns left/right, third turns upward, fourth tilts left/right.
+; If there are any additional effects which you list after these, they are ignored and will not be used.
 
 ; Two additional "global" zoom multipliers exist, but it isn't advised to use them.
 ; Said multipliers are "zoom_in_multi" and "zoom_out_multi".

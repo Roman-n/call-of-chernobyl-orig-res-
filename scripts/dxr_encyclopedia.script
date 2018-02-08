@@ -35,9 +35,10 @@ function actor_on_update()
 		-- Enable guide interactivity.
 		interaction_enabled = true
 		
-		-- Unlock the player's faction article.
+		-- Unlock articles the player's faction and the current level.
 		local faction = character_community(db.actor):sub(7)
 		detect_faction_interaction(faction)
+		detect_level_interaction()
 	end
 end
 
@@ -93,6 +94,11 @@ function detect_item_interaction(item)
 	create_interaction("items", item:section())
 end
 
+-- Level articles for visiting them.
+function detect_level_interaction()
+	create_interaction("levels", level.name())
+end
+
 -- Mutant articles for field-dressing them.
 -- Called directly from mutant looting method.
 function detect_mutant_interaction(mutant)
@@ -102,7 +108,6 @@ end
 -- Location articles for being within 50m.
 -- Called directly from smart terrain update method.
 function detect_smart_interaction(smart)
-	create_interaction("levels", level.name())
 	create_interaction("smarts", smart:name())
 end
 

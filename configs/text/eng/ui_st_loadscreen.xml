@@ -18,7 +18,7 @@
 	</string>
 	
 	<string id="ls_tip_3">
-		<text>Basic, advanced and expert tools are required by most technicians in order to perform certain upgrades on weapons and outfits. Such items can often be found in stashes received as rewards for completing tasks.</text>
+		<text>Basic, advanced, and expert tools are required by most technicians in order to perform certain upgrades on weapons and outfits. Such items can often be found in stashes received as rewards for completing tasks.</text>
 	</string>
 	
 	<string id="ls_tip_4">
@@ -38,7 +38,7 @@
 	</string>
 	
 	<string id="ls_tip_8">
-		<text>Backpacks can be bought or found and then used to create a custom stash. Stashes created by your character are never de-spawned nor are they ever looted by other stalkers. They are permanent until all items are removed.</text>
+		<text>Backpacks can be bought or found and then used to create a custom stash. Stashes created by you are never de-spawned nor are they ever looted by other stalkers. They are permanent until all items are removed.</text>
 	</string>
 	
 	<string id="ls_tip_9">
@@ -46,7 +46,7 @@
 	</string>
 	
 	<string id="ls_tip_10">
-		<text>Truck Cemetery is a large graveyard of irradiated agricultural, civilian and military vehicles. As a great place to hide a stash, an eagle-eyed stalker may find many valuables among the wreckage.</text>
+		<text>Truck Cemetery is a large graveyard of irradiated agricultural, civilian and military vehicles. As a great place to hide a stash, an eagle-eyed stalker may find many valuables within the wreckage.</text>
 	</string>
 	
 	<string id="ls_tip_11">
@@ -62,7 +62,7 @@
 	</string>
 	
 	<string id="ls_tip_14">
-		<text>Reputation represents how a stalker interacts with others in the Zone. It is gained and lost by helping or harming non-hostile stalkers respectively.</text>
+		<text>Reputation is gained and lost by helping or harming non-hostile stalkers respectively.</text>
 	</string>
 	
 	<string id="ls_tip_15">
@@ -70,19 +70,19 @@
 	</string>
 	
 	<string id="ls_tip_16">
-		<text>Rostok's arena hosts two types of competitions: the traditional fights where stalkers battle each other for cash rewards, or challenges where they attempt to kill increasingly harder mutants.</text>
+		<text>Rostok's arena hosts two types of competitions: the traditional fights where stalkers battle each other for cash rewards, and challenges where they attempt to kill increasingly harder mutants.</text>
 	</string>
 	
 	<string id="ls_tip_17">
-		<text>Online exclusion radius can be set via the game options and defaults to 25. It creates a no-spawn zone around your character preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
+		<text>Online exclusion radius creates a no-spawn zone around your character preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
 	</string>
 	
 	<string id="ls_tip_18">
-		<text>Freedom completely occupies Yanov Station in Jupiter after a mysterious stalker assisted them several years ago. Some of their well-known members have since relocated to their new northern base.</text>
+		<text>Freedom completely occupies Yanov station in Jupiter after a mysterious stalker assisted them several years ago. Some of their well-known members have since relocated to their new northern base.</text>
 	</string>
 	
 	<string id="ls_tip_19">
-		<text>The 'Completionist' achievement is received for unlocking all other available achievements. How many achievements are available to you depends on your faction and whether or not story mode is enabled.</text>
+		<text>The 'Completionist' achievement is received for unlocking all other available achievements.</text>
 	</string>
 	
 	<string id="ls_tip_20">
@@ -98,7 +98,7 @@
 	</string>
 	
 	<string id="ls_tip_23">
-		<text>Not sure how to earn that achievement? Don't know what this feature does? The 'Guide' tab of your PDA has all essential articles unlocked right from the start.</text>
+		<text>Not sure how to earn that achievement? Don't know what this feature does? The 'Guide' tab of your PDA has all essential articles unlocked right from the start when you create your character.</text>
 	</string>
 	
 </string_table>
