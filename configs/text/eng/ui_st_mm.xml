@@ -31,13 +31,13 @@
 		<text>GAME TYPE</text>
 	</string>
 	<string id="gd_master">
-		<text>Master</text>
+		<text>Realistic</text>
 	</string>
 	<string id="gd_novice">
-		<text>Rookie</text>
+		<text>Easy</text>
 	</string>
 	<string id="gd_veteran">
-		<text>Veteran</text>
+		<text>Hard</text>
 	</string>
 	<string id="icon">
 		<text>ICONS</text>
@@ -196,7 +196,7 @@
 		<text>Quit profile</text>
 	</string>
 	<string id="ui_mm_master">
-		<text>Master</text>
+		<text>Realistic</text>
 	</string>
 	<string id="ui_mm_master_volume">
 		<text>SFX volume</text>
@@ -229,7 +229,7 @@
 		<text>New game</text>
 	</string>
 	<string id="ui_mm_novice">
-		<text>Rookie</text>
+		<text>Easy</text>
 	</string>
 	<string id="ui_mm_npc_torch">
 		<text>NPC flashlights</text>
@@ -337,7 +337,7 @@
 		<text>Sound quality</text>
 	</string>
 	<string id="ui_mm_stalker">
-		<text>Stalker</text>
+		<text>Normal</text>
 	</string>
 	<string id="ui_mm_sun_quality">
 		<text>Shadow quality</text>
@@ -358,7 +358,7 @@
 		<text>NPC identification</text>
 	</string>
 	<string id="ui_mm_veteran">
-		<text>Veteran</text>
+		<text>Hard</text>
 	</string>
 	<string id="ui_mm_video">
 		<text>Video</text>
@@ -412,7 +412,7 @@
 		<text>Show interface</text>
 	</string>
 	<string id="gd_stalker">
-		<text>Stalker</text>
+		<text>Normal</text>
 	</string>
 	<string id="st_opt_extreme">
 		<text>Extreme</text>
@@ -515,7 +515,7 @@
 		<text>Hardcore AI aim</text>
 	</string>
 	<string id="ui_mm_localization">
-		<text>Localization</text>
+		<text>Localisation</text>
 	</string>
 	<string id="ui_mm_r__enable_grass_shadow">
 		<text>Grass shadow</text>

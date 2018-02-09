@@ -27,10 +27,14 @@
 		<texture id="encyclopedia_options_gameplay_aoe_pickup_mode_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_artefact_degradation_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_delayed_repairs_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_difficulty_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_enhanced_recoil_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_hardcore_ai_aim_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_helicopter_patrols_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_localisation_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_online_exclusion_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_population_factors_image" x="0" y="0" width="0" height="0"/>
+		<texture id="encyclopedia_options_gameplay_quicksave_count_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_radio_music_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_gameplay_sleep_deprivation_image" x="0" y="0" width="0" height="0"/>
 		<texture id="encyclopedia_options_other_azazel_mode_image" x="0" y="0" width="0" height="0"/>

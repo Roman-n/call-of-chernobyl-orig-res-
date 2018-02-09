@@ -57,6 +57,42 @@
 		</text>
 	</string>
 	
+	<string id="encyclopedia_options_gameplay_difficulty">
+		<text>Difficulty</text>
+	</string>
+	<string id="encyclopedia_options_gameplay_difficulty_text">
+		<text>
+			%c[guide_blue]Difficulty%c[default] establishes how easy or hard the game should be to play.\n
+			\n%c[guide_green]Information%c[default]
+			\nAs of update 1.5 the difficulty settings have been completely revamped, as confusing names and uncertainty as to what they did has long had many players believe they were fundamentally broken.\n
+			\nPrior to this most balancing revolved around the "Master" difficulty (now "Realistic"), with every option below this making the player more resilient and the AI less accurate and much more "bullet spongy".\n
+			\nAs a result of these changes, the overpoweringly easy difficulties which broke the game have now been scrapped, with the new "Easy" difficulty now filling a role which has been missing for a very long time.\n
+			\nSince this overhaul the game now finds itself balanced around the "Normal" difficulty, which is the recommended choice if you are attempting to learn or re-learn the game for the first time.\n
+			\n%c[guide_green]Highlights%c[default]
+			\n• Accuracy of the AI across the board has been greatly increased.
+			\n• Ballistics mean your choice of ammunition and weapon is crucial to survival.
+			\n• Bleeding isn't trivial and requires more attention than before.
+			\n• Higher difficulties are genuinely challenging and require skill.
+			\n• Lower difficulties aren't tedious and now do what they were supposed to.
+			\n• Mutant encounters might be something you choose to run from.
+		</text>
+	</string>
+	
+	<string id="encyclopedia_options_gameplay_enhanced_recoil">
+		<text>Enhanced recoil</text>
+	</string>
+	<string id="encyclopedia_options_gameplay_enhanced_recoil_text">
+		<text>
+			%c[guide_blue]Enhanced recoil%c[default] adds much more varied and realistic handling of weapons.\n
+			\n%c[guide_green]Information%c[default]
+			\nNormally when firing your weapon the only effect that the built-in recoil system provides is that it gradually raises your reticle, animates your weapon, and slightly increases the spread of your bullets.\n
+			\nBecause of this the normal system is somewhat flawed as by firing in short bursts and slowly moving your mouse downward at the same time, you can almost completely negate a weapon's recoil with little practise.\n
+			\nWith this feature enabled a much more randomised and multi-directional recoil is created when firing your weapon - this restores the challenge of mastering your weapon and makes your choice of upgrades and ammunition much more influential.\n
+			\nIt is highly recommended to only enable this feature if your system can sustain on average at least thirty frames-per-second, although fifty or above is preferable.\n
+			\nThis feature can be toggled from the game options menu and is disabled by default.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_options_gameplay_hardcore_ai_aim">
 		<text>Hardcore AI aim</text>
 	</string>
@@ -78,9 +114,24 @@
 			\n%c[guide_green]Information%c[default]
 			\nFactions who have friendly aircraft patrolling in the area will be able to call on them for support in attacking, or defending from, enemy stalkers (including you) and mutants.\n
 			\nDespite their intimidating appearance they can be easily taken down after receiving a light amount of damage to the tail rotor.\n
-			\nThis feature can be toggled from the game options menu and is enabled by default.\n
+			\nIf the sound of rotor blades become an annoyance but you don't wish to turn off the feature, they can be turned off independently.\n
+			\nThese features can be toggled from the game options menu and are enabled by default.\n
 			\n%c[guide_green]Locations%c[default]
 			\n• Agroprom\n• Cordon\n• Darkscape\n• Great Swamp\n• Limansk
+		</text>
+	</string>
+	
+	<string id="encyclopedia_options_gameplay_localisation">
+		<text>Localisation</text>
+	</string>
+	<string id="encyclopedia_options_gameplay_localisation_text">
+		<text>
+			%c[guide_blue]Localisation%c[default] allows you to set the language in which you play the game.\n
+			\n%c[guide_green]Information%c[default]
+			\nUpon changing your localisation the majority of texts will update automatically, however some will still require a game restart to be changed.\n
+			\nThis feature can be adjusted from the game options menu and is set to "eng" by default.\n
+			\n%c[guide_green]Supported languages%c[default]
+			\n• English: eng\n• Russian: rus
 		</text>
 	</string>
 	
@@ -110,6 +161,20 @@
 		</text>
 	</string>
 	
+	<string id="encyclopedia_options_gameplay_quicksave_count">
+		<text>Quicksave count</text>
+	</string>
+	<string id="encyclopedia_options_gameplay_quicksave_count_text">
+		<text>
+			%c[guide_blue]Quicksave count%c[default] allows the game to cycle between multiple quicksaves.\n
+			\n%c[guide_green]Information%c[default]
+			\nWhen making a quicksave the filename will be appended with a number on the end - these numbers are used by the game to help with tracking of multiple different quicksaves.\n
+			\nBy allowing you to make multiple different quicksaves before they start being replaced, you will be able to revert to previous progress if you accidentally save at a bad moment.\n
+			\nIn short: the higher the value you give to this setting the more quicksaves you will allow the game to cycle through.\n
+			\nThis feature can be adjusted from the game options menu and is set to 5 by default.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_options_gameplay_radio_music">
 		<text>Radio music</text>
 	</string>
@@ -120,7 +185,7 @@
 			\nCertain relaxed areas within the Zone have radios installed nearby, with each playing a selection of musical tracks to keep stalkers entertained.\n
 			\nThis feature can be toggled from the game options menu and is enabled by default.\n
 			\n%c[guide_green]Locations%c[default]
-			\n• Agroprom - Military base\n• Cordon - Sidorovich's bunker\n• Great Swamp - Clear Sky base\n• Dark Valley - Bandit base\n• Rostok - 100 Rads\n• Red Forest - Forester's tower
+			\n• Agroprom: Military base\n• Cordon: Sidorovich's bunker\n• Great Swamp: Clear Sky base\n• Dark Valley: Bandit base\n• Rostok: 100 Rads\n• Red Forest: Forester's tower
 		</text>
 	</string>
 	
