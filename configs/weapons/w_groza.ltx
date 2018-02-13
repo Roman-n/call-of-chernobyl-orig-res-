@@ -183,9 +183,9 @@ anm_idle_w_gl_aim                        = groza_idle_aim
 anm_reload                               = groza_reload
 anm_reload_g                             = groza_reload_grenade
 anm_reload_w_gl                          = groza_reload
-anm_shots                                = groza_shoot, 2.0
+anm_shots                                = groza_shoot,, 2.0
 anm_shots_g                              = groza_shoot_grenade
-anm_shots_w_gl                           = groza_shoot, 2.0
+anm_shots_w_gl                           = groza_shoot,, 2.0
 anm_show                                 = groza_draw
 anm_show_g                               = groza_draw_grenade
 anm_show_w_gl                            = groza_draw
@@ -217,7 +217,6 @@ zoom_hide_crosshair                      = true
 [wpn_groza_nimble]:wpn_groza
 $spawn                                   = "weapons\unique\wpn_groza_nimble"
 ammo_class                               = ammo_5.45x39_fmj, ammo_5.45x39_ap
-ammo_mag_size                            = 30
 bullet_speed                             = 750
 fire_distance                            = 550
 cam_dispersion                           = 0.8
@@ -234,8 +233,11 @@ description                              = st_wpn_groza_nimble_descr
 fire_dispersion_base                     = 0.26
 fire_modes                               = 1, -1
 hit_power                                = 0.47, 0.47, 0.47, 0.47
+installed_upgrades                       = up_fiftha_groza
 inv_name                                 = st_wpn_groza_nimble
 rpm                                      = 750
 shell_particles                          = weapons\generic_shells
 scope_status                             = 2
 silencer_status                          = 2
+
+[wpn_groza_specops]:wpn_groza_nimble

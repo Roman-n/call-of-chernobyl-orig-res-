@@ -407,15 +407,15 @@ $spawn                                   = "weapons\ammo\ammo_pkm_100"	         
 
 cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_ammo\ammo_pkm.ogf
-description                              = ammo-7.62x54-ap_descr
+description                              = ammo-7.62x54-pkm_descr
 $prefetch                                = 64
 
 cost                                     = 2500
 
 box_size                                 = 100
 
-inv_name                                 = ammo-7.62x54-ap
-inv_name_short                           = ammo-7.62x54-ap_s
+inv_name                                 = ammo-7.62x54-pkm
+inv_name_short                           = ammo-7.62x54-pkm_s
 inv_weight                               = 2.2
 
 inv_grid_width                           = 2
@@ -624,8 +624,8 @@ k_dist                                   = 0.75
 k_disp                                   = 8
 k_hit                                    = 0.4
 k_impulse                                = 0.5
-k_pierce                                 = 0.01
-k_ap                                     = 0.01
+k_pierce                                 = 0.03
+k_ap                                     = 0.03
 impair                                   = 1
 buck_shot                                = 9
 tracer                                   = off
@@ -670,8 +670,13 @@ k_air_resistance                         = 1.1
 k_bullet_speed                           = 1.2
 
 [ammo_12x76_zhekan_heli]:ammo_12x76_zhekan ; Do not use! Fake zhekan for helicopter
-$spawn                                   =	                                       ;"weapons\ammo\ammo_12x76_zhekan_heli" ; option for Level Editor
-explosive                                = on
+$spawn                                   = ;"weapons\ammo\ammo_12x76_zhekan_heli"
+k_disp                                   = 1
+k_ap                                     = 0.5
+k_air_resistance                         = 1
+k_bullet_speed                           = 1
+explosive                                = off
+4to1_tracer                              = false
 tracer                                   = on
 tracer_color_ID                          = 3
 

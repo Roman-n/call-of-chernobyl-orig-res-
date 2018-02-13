@@ -81,6 +81,15 @@
 	<string id="ammo-7.62x54-7h14_s">
 		<text>7.62x54 7H14</text>
 	</string>
+	<string id="ammo-7.62x54-pkm">
+		<text>7.62x54 mm PP rounds</text>
+	</string>
+	<string id="ammo-7.62x54-pkm_descr">
+		<text>Cheap 7.62 calibre machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the RP-74 machine gun.</text>
+	</string>
+	<string id="ammo-7.62x54-pkm_s">
+    <text>7.62x54 PP</text>
+  </string>
 	<string id="ammo-9x18-fmj">
 		<text>9x18mm rounds</text>
 	</string>
@@ -379,7 +388,7 @@
 		<text>Carabineer</text>
 	</string>
 	<string id="st_wpn_spas12_nimble_descr">
-		<text>An army shotgun designed specifically for assault units on the basis of the SPSA-14. Capable of automatic fire like its predecessor, but provides better recoil compensation thanks to a balanced shock free system.</text>
+		<text>An army shotgun designed specifically for assault units on the basis of the SPSA-14. Capable of semi-automatic fire like its predecessor, but provides better recoil compensation thanks to a balanced shock free system.</text>
 	</string>
 	<string id="st_wpn_svd">
 		<text>SVDm-2</text>

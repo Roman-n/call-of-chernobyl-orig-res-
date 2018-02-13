@@ -3,7 +3,7 @@
 [trader]
 buy_condition                                      = buy_condition_generic_w_artefact
 buy_item_condition_factor                          = 0.75
-buy_supplies                                       = {=actor_goodwill_ge(trader:1600)} supplies_special, {=heavy_pockets_functor} supplies_special, {=actor_goodwill_ge(trader:1000)} supplies_friend, supplies_generic
+buy_supplies                                       = {=actor_goodwill_ge(trader:1200)} supplies_special, {=heavy_pockets_functor} supplies_special, {=actor_goodwill_ge(trader:600)} supplies_friend, supplies_generic
 discounts                                          = {=actor_goodwill_ge(trader:1200)} discount_5, {=actor_goodwill_ge(trader:1000)} discount_4, {=actor_goodwill_ge(trader:800)} discount_3, {=actor_goodwill_ge(trader:600)} discount_2, {=actor_goodwill_ge(trader:400)} discount_1, {=actor_goodwill_ge(trader:200)} discount_0, discount_sid
 sell_condition                                     = sell_condition_generic
 
@@ -82,7 +82,7 @@ helm_respirator                                    = 1, 0.2
 helm_respirator_2                                  = 1, 0.4
 helm_respirator_half                               = 1, 0.3
 
-[supplies_friend]:supplies_generic
+[supplies_friend]:supplies_generic ; lowered for now
 ;Weapons
 wpn_ak74                                           = 1, 0.5
 wpn_ak74u                                          = 1, 0.6

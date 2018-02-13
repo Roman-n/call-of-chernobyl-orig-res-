@@ -72,7 +72,6 @@
 
 <!--			-- Ecologist --				-->
 
-
 	<string id="ecolog_outfit_orn_name">
 		<text>SSP-99 protection suit</text>
 	</string>
@@ -144,7 +143,6 @@
 	<string id="svoboda_light_outfit_name">
 		<text>Wind of Freedom</text>
 	</string>
-
 	<string id="svoboda_light_outfit_description">
 		<text>This lightweight Freedom bodysuit's fabric is treated with "Horizon", a special solution developed by the faction by trial and error to increase resistance to anomalies. Like the Sunrise suit, the Wind of Freedom comes with built-in body armour and artefact container.</text>
 	</string>
@@ -152,7 +150,6 @@
   	<string id="svoboda_medium_outfit_name">
     	<text>Guardian of Freedom</text>
   	</string>
-
   	<string id="svoboda_medium_outfit_description">
     	<text>A modern Freedom model more suitable to new stalker recruits who are used to simpler suits. Unlike the PS3 series, this variation provides decent protection from anomalies and minimal protection from bullets. Comes with built-in artefact container.</text>
   	</string>
@@ -160,7 +157,6 @@
 	<string id="svoboda_heavy_outfit_name">
 		<text>Sentinel of Freedom</text>
 	</string>
-
 	<string id="svoboda_heavy_outfit_description">
 		<text>This stalker bodysuit with reinforced body armour made by Freedom craftsmen represents a good compromise between combat and anomaly protection. The built-in body armour comprises armour plating and ten Kevlar layers, capable of stopping a pistol bullet. The suit uses the relatively expensive Sovereign compound for anomaly protection. Comes with an artefact container.</text>
 	</string>
@@ -168,7 +164,6 @@
 	<string id="svoboda_scientific_outfit_name">
 		<text>Freedom scientific suit</text>
 	</string>
-
 	<string id="svoboda_scientific_outfit_description">
 		<text>Produced by Freedom especially for research in the Zone. The closed system of breathing and special treatment materials provide excellent protection against harmful radiation and anomalous effects. However, the built-in body armour isn't the best and can break somewhat easily, so is not suitable for active hostilities. Fully upgradeable and boasting built-in artefact container.</text>
 	</string>
@@ -183,7 +178,6 @@
   	<string id="svoboda_exo_outfit_name">
     	<text>Freedom exoskeleton</text>
   	</string>
-
   	<string id="svoboda_exo_outfit_description">
     	<text>An upgraded version of a regular exoskeleton. The use of lighter materials allowed the designers to reduce the suit's weight and with Freedom's usual trademark of high quality anomaly protection, the only thing that suffers is its overall armour and impact. Comes with built-in artefact container.</text>
   	</string>
@@ -255,11 +249,11 @@
 
 <!--			-- Mercenary --				-->
 
-  	<string id="merc_outfit_description">
-		<text>Outfit of choice for the Mercenary faction. It's design is based on the suit used by the special forces of Western armies. Due to a special treatment of the fabric, the armour has a strengthened stability during the physical movement of its plates. Comes with built-in artefact containers.</text>
-  	</string>
  	<string id="merc_outfit_name">
     	<text>Mercenary suit</text>
+  	</string>
+  	<string id="merc_outfit_description">
+		<text>Outfit of choice for the Mercenary faction. It's design is based on the suit used by the special forces of Western armies. Due to a special treatment of the fabric, the armour has a strengthened stability during the physical movement of its plates. Comes with built-in artefact containers.</text>
   	</string>
 
 	<string id="merc_stalker_outfit_name">
@@ -387,20 +381,18 @@
 		<text>This item comprises military PS5 series body armour with beryllium coating modified for use in the Zone. Designed for assault operations in highly radioactive areas, it is ineffective in areas of high anomalous activity. The suit makes its way to stalkers through the military, who exchange it for loot. Does not come with an artefact container.</text>
 	</string>
 
-	<string id="commander_outfit_name">
-		<text>SKAT-9M military armoured suit</text>
-	</string>
-
-	<string id="commander_outfit_description">
-		<text>This Skat-9M bulletproof military suit is designed for assault operations in areas of anomalous activity. It includes a PSZ-12p heavy military bulletproof suit and an integrated compensation suit. It provides perfect protection from bullets and splinters and it doesn't decrease the soldier's mobility. It has a balanced system of anomaly protection.</text>
-	</string>
-
 	<string id="military_outfit_name">
 		<text>SKAT-9 "Bulat" military armoured suit</text>
 	</string>
-
 	<string id="military_outfit_description">
 		<text>This modern military armoured suit is designed for assault operations in anomalous areas. Comprises a PSZ-12p heavy military armoured suit, built-in compensation suit, and an anomalous protection bodysuit. The armour provides excellent protection against bullet and fragmentation damage, without greatly reducing the wearer's mobility. Does not come with an artefact container.</text>
+	</string>
+
+	<string id="commander_outfit_name">
+		<text>SKAT-9M military armoured suit</text>
+	</string>
+	<string id="commander_outfit_description">
+		<text>This Skat-9M bulletproof military suit is designed for assault operations in areas of anomalous activity. It includes a PSZ-12p heavy military bulletproof suit and an integrated compensation suit. It provides perfect protection from bullets and splinters and it doesn't decrease the soldier's mobility. It has a balanced system of anomaly protection.</text>
 	</string>
 
 	<string id="military_exo_outfit_name">
@@ -438,7 +430,6 @@
 	<string id="st_helm_respirator_half">
 		<text>Respirator</text>
 	</string>
-
 	<string id="st_helm_respirator_half_descr">
 		<text>A regular plastic and rubber respirator, used to protect the wearer from inhaling harmful dusts, fumes, vapours or gases. Widely used by rookies and veterans of all factions due to its universal functionality. Does not provide any physical protection.</text>
 	</string>
@@ -457,7 +448,6 @@
 	<string id="st_helm_respirator_gp5">
 		<text>GP-5 gas mask</text>
 	</string>
-
 	<string id="st_helm_respirator_gp5_descr">
 		<text>The GP-5 was designed to protect civilians of the Soviet Union from radioactive fallout during the Cold War and was manufactured from 1962 to 1989. This mask is a helmet-type mask which was made in both white and black rubber. The lenses of these masks are held in place by crimped metal rims, crimped onto the rubber of the mask. The bottom of the mask is made of metal, and in it is the 40mm filter input, and the inhale and exhale valves. The GP-5 is widely used by loners and bandits due to its availability and cheap price.</text>
 	</string>
@@ -505,6 +495,3 @@
 	</string>
 
 </string_table>
-
-
-
