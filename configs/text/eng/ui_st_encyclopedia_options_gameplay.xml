@@ -64,17 +64,16 @@
 		<text>
 			%c[guide_blue]Difficulty%c[default] establishes how easy or hard the game should be to play.\n
 			\n%c[guide_green]Information%c[default]
-			\nAs of update 1.5 the difficulty settings have been completely revamped, as confusing names and uncertainty as to what they did has long had many players believe they were fundamentally broken.\n
-			\nPrior to this most balancing revolved around the "Master" difficulty (now "Realistic"), with every option below this making the player more resilient and the AI less accurate and much more "bullet spongy".\n
-			\nAs a result of these changes, the overpoweringly easy difficulties which broke the game have now been scrapped, with the new "Easy" difficulty now filling a role which has been missing for a very long time.\n
-			\nSince this overhaul the game now finds itself balanced around the "Normal" difficulty, which is the recommended choice if you are attempting to learn or re-learn the game for the first time.\n
+			\nAs of update 1.5 the difficulty settings have been completely revamped and replaced, as confusing names and uncertainty as to what they did have convinced many players that they were fundamentally broken.\n
+			\nGameplay is balanced with the "Normal" difficulty in mind, which is the recommended selection if you are attempting to learn (or re-learn) how to play the game successfully.\n
+			\nOther options also exist with two giving you the choice between making the game either easier or harder, and a third which turns everything up to the maximum and makes the Zone feel truly unforgiving.\n
 			\n%c[guide_green]Highlights%c[default]
-			\n• Accuracy of the AI across the board has been greatly increased.
 			\n• Ballistics mean your choice of ammunition and weapon is crucial to survival.
 			\n• Bleeding isn't trivial and requires more attention than before.
 			\n• Higher difficulties are genuinely challenging and require skill.
 			\n• Lower difficulties aren't tedious and now do what they were supposed to.
 			\n• Mutant encounters might be something you choose to run from.
+			\n• Obtaining high-end equipment won't make you feel invulnerable.
 		</text>
 	</string>
 	
@@ -88,7 +87,7 @@
 			\nNormally when firing your weapon the only effect that the built-in recoil system provides is that it gradually raises your reticle, animates your weapon, and slightly increases the spread of your bullets.\n
 			\nBecause of this the normal system is somewhat flawed as by firing in short bursts and slowly moving your mouse downward at the same time, you can almost completely negate a weapon's recoil with little practise.\n
 			\nWith this feature enabled a much more randomised and multi-directional recoil is created when firing your weapon - this restores the challenge of mastering your weapon and makes your choice of upgrades and ammunition much more influential.\n
-			\nIt is highly recommended to only enable this feature if your system can sustain on average at least thirty frames-per-second, although fifty or above is preferable.\n
+			\nIt is highly recommended to only enable this feature if your system can maintain at least a steady thirty frames-per-second, although fifty or above is much more preferable.\n
 			\nThis feature can be toggled from the game options menu and is disabled by default.
 		</text>
 	</string>

@@ -2,15 +2,15 @@
 <string_table>
 
 	<string id="ls_header">
-		<text>NIMBLE'S HANDBOOK</text>
+		<text>USEFUL INFORMATION</text>
 	</string>
 	
 	<string id="ls_tip_number">
-		<text>Excerpt #</text>
+		<text>Fact #</text>
 	</string>
 	
 	<string id="ls_tip_1">
-		<text>Rank has eight different levels and can be increased through almost any in-game activity. Certain features may require reaching a high rank before they can be used.</text>
+		<text>Rank has eight different levels and can be increased through almost any in-game activity. Certain features may require reaching a high rank before they can be used or fully unlocked.</text>
 	</string>
 	
 	<string id="ls_tip_2">
@@ -22,11 +22,11 @@
 	</string>
 	
 	<string id="ls_tip_4">
-		<text>Sleep deprivation is an optional feature where the passage of time and usage of consumables will gradually drain your character, eventually requiring you to rest. Failing to do so may have dire consequences.</text>
+		<text>Sleep deprivation is an optional feature where the passage of time and usage of consumables will eventually require you to rest. Failing to do so may have dire consequences.</text>
 	</string>
 	
 	<string id="ls_tip_5">
-		<text>Helicopter gunships can be seen patrolling many of the Zone's locations. When engaged in combat members of the helicopter's faction may often call on it for air support to help destroy attacking or defending forces.</text>
+		<text>Helicopter gunships can be seen patrolling many of the Zone's locations. When engaged in combat, members of the helicopter's faction may often call on it for air support to help destroy attacking or defending forces.</text>
 	</string>
 	
 	<string id="ls_tip_6">
@@ -54,7 +54,7 @@
 	</string>
 	
 	<string id="ls_tip_12">
-		<text>Completing tasks for factions will increase your goodwill with them. As it increases their traders will gradually offer you greater discounts on their goods and services.</text>
+		<text>Completing tasks for factions will increase your goodwill with them. As it increases, their traders will gradually offer you greater discounts on their goods and services.</text>
 	</string>
 	
 	<string id="ls_tip_13">
@@ -70,11 +70,11 @@
 	</string>
 	
 	<string id="ls_tip_16">
-		<text>Rostok's arena hosts two types of competitions: the traditional fights where stalkers battle each other for cash rewards, and challenges where they attempt to kill increasingly harder mutants.</text>
+		<text>Rostok's arena hosts two types of competitions: traditional fights where stalkers battle each other for cash rewards, and challenges where they attempt to kill increasingly harder mutants.</text>
 	</string>
 	
 	<string id="ls_tip_17">
-		<text>Online exclusion radius creates a no-spawn zone around your character preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
+		<text>Online exclusion radius creates a no-spawn zone around you preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
 	</string>
 	
 	<string id="ls_tip_18">
@@ -99,6 +99,22 @@
 	
 	<string id="ls_tip_23">
 		<text>Not sure how to earn that achievement? Don't know what this feature does? The 'Guide' tab of your PDA has all essential articles unlocked right from the start when you create your character.</text>
+	</string>
+	
+	<string id="ls_tip_24">
+		<text>Due to differing chemical composition, tracers in Western-made ammunition will glow red, whereas those of Eastern origin will instead glow green. This may help you determine what weapon your enemy is using.</text>
+	</string>
+	
+	<string id="ls_tip_25">
+		<text>Just like you, your enemy may also have loaded their weapon with armour-piercing ammunition. These rounds will punch through weak material and damage those hiding behind.</text>
+	</string>
+	
+	<string id="ls_tip_26">
+		<text>Buckshot will have little effect against body armour unless you aim for the head. However it will completely decimate anyone wearing nothing but a simple jacket.</text>
+	</string>
+	
+	<string id="ls_tip_27">
+		<text>Tactics and terrain are just as important to winning a fight as your choice of weapon and ammunition. Spending the time to create an ambush could give you a massive advantage over your enemies.</text>
 	</string>
 	
 </string_table>

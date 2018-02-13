@@ -1,4 +1,4 @@
-local tip_count = 23
+local tip_count = 27
 local tip = 1
 
 math.randomseed(os.time())
