@@ -1,8 +1,8 @@
 #include "profiles\profiles.ltx"
 
 [trader]
-buy_condition                                      = buy_condition_generic
-buy_item_condition_factor                          = 0.7
+buy_condition                                      = buy_condition_generic_w_artefact
+buy_item_condition_factor                          = 0.75
 buy_supplies                                       = {=actor_goodwill_ge(freedom:1800)} supplies_special, {=heavy_pockets_functor} supplies_special, {=actor_goodwill_ge(freedom:1000)} supplies_friend, supplies_generic
 discounts                                          = {=actor_goodwill_ge(freedom:2000)} discount_10, {=actor_goodwill_ge(freedom:1800)} discount_9, {=actor_goodwill_ge(freedom:1600)} discount_8, {=actor_goodwill_ge(freedom:1400)} discount_7, {=actor_goodwill_ge(freedom:1200)} discount_6, {=actor_goodwill_ge(freedom:1000)} discount_5, {=actor_goodwill_ge(freedom:800)} discount_4, {=actor_goodwill_ge(freedom:600)} discount_3, {=actor_goodwill_ge(freedom:400)} discount_2, {=actor_goodwill_ge(freedom:200)} discount_1, discount_0
 sell_condition                                     = sell_condition_generic
@@ -67,7 +67,7 @@ equ_small_pack									   = 1, 0.5
 
 ;Outfits
 svoboda_heavy_outfit                               = 1, 0.4
-svoboda_heavy_outfit_2                             = 1, 0.5
+svoboda_medium_outfit                              = 1, 0.5
 svoboda_light_outfit                               = 1, 0.7
 svoboda_novice_outfit                              = 1, 0.9
 
@@ -142,7 +142,7 @@ equ_military_pack								   = 1, 0.01
 
 ;Outfits
 svoboda_heavy_outfit                               = 1, 0.5
-svoboda_heavy_outfit_2                             = 1, 0.7
+svoboda_medium_outfit                              = 1, 0.7
 svoboda_light_outfit                               = 1, 0.9
 svoboda_scientific_outfit                          = 1, 0.25
 
@@ -228,7 +228,7 @@ equ_military_pack								   = 1, 0.02
 ;Outfits
 svoboda_exo_outfit                                 = 1, 0.2
 svoboda_heavy_outfit                               = 1, 0.7
-svoboda_heavy_outfit_2                             = 1, 0.9
+svoboda_medium_outfit                              = 1, 0.9
 svoboda_light_outfit                               = 1, 0.9
 svoboda_radiation_outfit                           = 1, 0.3
 svoboda_scientific_outfit                          = 1, 0.45

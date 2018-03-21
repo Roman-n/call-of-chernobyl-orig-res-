@@ -399,11 +399,14 @@
 	<string id="yan_semenov_bio">
 		<text>Research assistant at the mobile lab. No details available.</text>
 	</string>
+	<string id="yan_cherenkov_name">
+		<text>Professor Cherenkov</text>
+	</string>
 	<string id="yan_semenov_name">
-		<text>Assistant Semenov</text>
+		<text>Professor Semenov</text>
 	</string>
 	<string id="yan_vasilyev_name">
-		<text>Vasiliev</text>
+		<text>Professor Vasiliev</text>
 	</string>
 	<string id="yan_vasilyev_bio">
 		<text>Research assistant at the mobile lab. No details available.</text>

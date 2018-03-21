@@ -37,7 +37,7 @@ bone_fire			 = bip01_head				; bone name
 weapon_usage		 = 0						; boolean
 
 hit_fraction_monster = 0.75
-skin_armor = 0.1
+skin_armor = 0.01
 
 ;------------------------------------------------------------------------
 ; Influences
@@ -58,7 +58,7 @@ radiation_max_power			=	0.01
 radiation_linear_factor		=	1
 radiation_quadratic_factor	=	1
 radiation_pp_effector_name	= 	postprocess_rad
-radiation_pp_highest_at		= 	0.02
+radiation_pp_highest_at		= 	0.05
 
 ;---------------------------------------------------------------------
 ; Physics
@@ -614,7 +614,7 @@ MaxHealthValue		     = 1.25			; range [0..200]
 immunities_sect		= dog_immunities_strong
 attack_params		= dog_attack_params_strong
 
-hit_fraction_monster = 0.7
+hit_fraction_monster = 0.75
 
 [dog_strong_white]:dog_normal
 $spawn				= "monsters\dogs\dog_strong_white"
@@ -625,7 +625,7 @@ MaxHealthValue		     = 1.25			; range [0..200]
 immunities_sect		= dog_immunities_strong
 attack_params		= dog_attack_params_strong
 
-hit_fraction_monster = 0.7
+hit_fraction_monster = 0.75
 
 [dog_strong_brown]:dog_normal
 $spawn				= "monsters\dogs\dog_strong_brown"
@@ -636,7 +636,7 @@ MaxHealthValue		     = 1.25			; range [0..200]
 immunities_sect		= dog_immunities_strong
 attack_params		= dog_attack_params_strong
 
-hit_fraction_monster = 0.7
+hit_fraction_monster = 0.75
 
 [dog_strong_bulterier]:dog_normal
 $spawn				= "monsters\dogs\dog_strong_bulterier"
@@ -647,7 +647,7 @@ MaxHealthValue		     = 1.25			; range [0..200]
 immunities_sect		= dog_immunities_strong
 attack_params		= dog_attack_params_strong
 
-hit_fraction_monster = 0.7
+hit_fraction_monster = 0.75
 
 [dog_immunities_strong]
 burn_immunity = 0.9
@@ -688,7 +688,7 @@ MaxHealthValue		     = 1.33			; range [0..200]
 panic_threshold		= 0.0001
 
 radiation_max_distance		=	5
-radiation_max_power			=	0.01
+radiation_max_power			=	0.015
 radiation_linear_factor		=	1
 radiation_quadratic_factor	=	1
 radiation_pp_effector_name	= 	postprocess_rad
@@ -697,18 +697,18 @@ radiation_pp_highest_at		= 	0.05
 immunities_sect		= dog_immunities_strong_black
 attack_params		= dog_attack_params_strong_black
 
-hit_fraction_monster = 0.65
+hit_fraction_monster = 0.7
 
 [dog_immunities_strong_black]
-burn_immunity = 0.75
+burn_immunity = 0.8
 strike_immunity = 0;0.7
-shock_immunity = 0.75
-wound_immunity = 0.55
+shock_immunity = 0.8
+wound_immunity = 0.6
 radiation_immunity = 0
 telepatic_immunity = 0.0
-chemical_burn_immunity = 0.75
-explosion_immunity = 0.75
-fire_wound_immunity  = 0.8
+chemical_burn_immunity = 0.8
+explosion_immunity = 0.8
+fire_wound_immunity  = 0.85
 
 [dog_attack_params_strong_black]
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------

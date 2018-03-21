@@ -14,7 +14,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nSeveral generations of dogs have lived and died since the second disaster, with each being more affected by the Zone than the previous.\n
 			\nNumerous rapid mutations and evolutionary adaptations have led to the strengthening of previously weakly expressed canine abilities - at the expense of those that share their habitat.\n
-			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey literally through the walls.\n
+			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey through the walls.\n
 			\nLike their wolf ancestors, blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
@@ -28,9 +28,9 @@
 		<text>
 			%c[guide_blue]Bloodsuckers%c[default], as the name would suggest, are hematophagous monsters.\n
 			\n%c[guide_green]Information%c[default]
-			\nThe bloodsucker is semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
+			\nThe bloodsucker is a semi-legendary creature, often seen by stalkers as a symbol of both the dangers and corruption of the Zone.\n
 			\nThis status has been achieved thanks to the species' relative rarity and the low survival rate of its victims.\n
-			\nThose who have encountered them and lived to tell about it have described them as looking like tall, slouching humanoids with many tentacles protruding from their faces.\n
+			\nThose who have encountered them and lived to tell about it have described them as looking like tall slouching humanoids with many tentacles protruding from their faces.\n
 			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
 			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
 			\n%c[guide_green]Statistics%c[default]
@@ -47,7 +47,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nWhile less touched by mutation physically, the boars here have developed a serious taste for human flesh and much sharper intelligence.\n
 			\nThey are large animals, and their ability to survive and their aggression surpasses all of their living relatives outside of the Zone.\n
-			\nMutagenic processes have played a significant part in shaping these mammals: they have lost all fur in a few places and grown long, bristly fur in others.\n
+			\nMutagenic processes have played a significant part in shaping these mammals, as they have lost all fur in a few places, and grown long bristly fur in others.\n
 			\nUsually if distance is kept and they aren't antagonised, they will stick with their herd of flesh and other boars.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
@@ -62,7 +62,7 @@
 			%c[guide_blue]Burers%c[default] are stocky, almost dwarf-like monsters that usually stick to underground areas.\n
 			\n%c[guide_green]Information%c[default]
 			\nThey are humanoid creatures of hypertrophied complexion, clad in shreds of shabby overalls and generally afraid of bright lights.\n
-			\nCreated as the result of genetic experiments on criminals under the program of human telekinetic development, burers naturally posses powerful telekinetic abilities.\n
+			\nCreated as the result of genetic experiments on criminals, burers naturally posses powerful telekinetic abilities, making them far more powerful than they appear.\n
 			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis
@@ -77,9 +77,9 @@
 			%c[guide_blue]Cats%c[default] in the Zone are heavily mutated from local wildcats.\n
 			\n%c[guide_green]Information%c[default]
 			\nOriginally ordinary pets, under the influence of the Zone they have changed quite remarkably, becoming very dangerous even to people.\n
-			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet, secluded places such as forest thickets.\n
-			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until it tires and/or bleeds out.\n
-			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to attack.\n
+			\nIn most cases cats will live alone in a small group of two to three individuals, and will typically dwell in quiet secluded places such as forest thickets.\n
+			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until the victim tires and/or bleeds out.\n
+			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to strike.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
 		</text>
@@ -122,10 +122,10 @@
 	</string>
 	<string id="encyclopedia_mutants_crow_text">
 		<text>
-			%c[guide_blue]Crows%c[default] are the only bird species to have survived in the Zone.\n
+			%c[guide_blue]Crows%c[default] are one of few bird species to have survived in the Zone.\n
 			\n%c[guide_green]Information%c[default]
 			\nIn order not to perish in a labyrinth of gravitational anomalies, military pilots use sophisticated detectors, but the secret of how crows safely navigate the Zone's skies remains a mystery.\n
-			\nLittle else is known about what makes the Zone's crows so special, or why they have remained almost completely genetically intact when compared to the rest of the local wildlife.\n
+			\nLittle else is known about what makes the Zone's crows so special, or why they have remained almost completely untouched when compared to the rest of the local wildlife.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: None\n• Health: Low\n• Speed: Fast\n• Traits: None
 		</text>
@@ -136,9 +136,9 @@
 	</string>
 	<string id="encyclopedia_mutants_flesh_text">
 		<text>
-			%c[guide_blue]Flesh%c[default] are heavily mutated pigs, and one of the most harmless mutants in the Zone.\n
+			%c[guide_blue]Flesh%c[default] are heavily mutated pigs and one of the most harmless mutants in the Zone.\n
 			\n%c[guide_green]Information%c[default]
-			\nLike many other living creatures, domestic pigs in the Zone underwent serious mutations following the second disaster, affecting genes responsible for their metabolism.\n
+			\nLike many other creatures living in the Zone, domestic pigs underwent serious mutations following the second disaster, affecting genes responsible for their metabolism.\n
 			\nThis eventually caused the animal's phenotype to change significantly, their forelimbs have turned into insect-like legs which the flesh uses for digging up roots and tearing down carrion, whilst their bodies have become extremely bloated and fatty.\n
 			\nHowever they are mostly harmless, and will generally flee from a stalker if one approaches unless the creature is attacked or cornered and has nowhere else to run.\n
 			\n%c[guide_green]Statistics%c[default]
@@ -169,7 +169,7 @@
 			%c[guide_blue]Karliks%c[default] are very rare dwarf-like mutants which hide away in seclusion.\n
 			\n%c[guide_green]Information%c[default]
 			\nIt is unclear whether or not they are related to burers, but between them they share a great many psychic similarities making it difficult to dismiss as just coincidence.\n
-			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, and attacking anything that comes too close.\n
+			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, proceeding to attack anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis
@@ -184,7 +184,7 @@
 			%c[guide_blue]Poltergeists%c[default] are strange, almost invisible creatures haunting the deeper reaches of the Zone.\n
 			\n%c[guide_green]Information%c[default]
 			\nSupernatural in the eyes of some, and usually found haunting old, abandoned buildings.\n
-			\nNothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive wave of radiation.\n
+			\nNothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive blast of radiation.\n
 			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
 			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
 			\n%c[guide_green]Statistics%c[default]
@@ -247,7 +247,7 @@
 			%c[guide_blue]Psy-dogs%c[default] are a rare subspecies of pseudodogs, possessing unique psychic abilities.\n
 			\n%c[guide_green]Information%c[default]
 			\nThe most distinguishing feature of the psy-dog is its ability to affect the minds of others, where it is able to create seemingly live images of itself.\n
-			\nThese are different from regular phantoms produced by psi-fields and some other mutants, as they look more real and solid and can, at least to the mind, hurt what they attack.\n
+			\nThese are different from regular phantoms produced by psi-fields and some other mutants, as they look more real and solid and can - at least to the mind - hurt what they attack.\n
 			\nVisually they are almost indistinguishable from pseudodogs aside from having large streaks of a grey/white fur.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee, Psychic\n• Health: Average\n• Speed: Fast\n• Traits: Nimble, Phantom projection
@@ -262,7 +262,7 @@
 			%c[guide_blue]Pyrogeists%c[default] are a rare pyrokinetic subspecies of poltergeists.\n
 			\n%c[guide_green]Information%c[default]
 			\nAppearing as a floating form of heat haze surrounded by a fiery glow, they are easily distinguishable from regular poltergeists. On death, they explode in a mess of blood and fire.\n
-			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it has no telekinetic ability.\n
+			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it lacks any telekinetic abilities.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers
 		</text>
@@ -276,7 +276,7 @@
 			%c[guide_blue]Rats%c[default] are small, vicious rodents found in and around deserted buildings.\n
 			\n%c[guide_green]Information%c[default]
 			\nMostly found in packs, and in rare cases alone, rats are the constant companion of man - in the places that people leave behind the rats will soon replace them.\n
-			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides, has very little chance of surviving.\n
+			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides has very little chance of survival.\n
 			\nThey usually live in abandoned places and are said to feel danger and carefully bypass it.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Traits: None
@@ -291,7 +291,7 @@
 			%c[guide_blue]Snorks%c[default] are horrifically mutated soldiers and stalkers.\n
 			\n%c[guide_green]Information%c[default]
 			\nThese creatures were apparently once people as they still wear the tattered remains of their uniforms, although it is difficult to imagine what conditions could bring a person to this state.\n
-			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground and constantly sniffing the air to catch the smell of their next meal.\n
+			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground, and are constantly sniffing the air to catch the smell of their next meal.\n
 			\nThey hunt cleverly and prudently, waiting for stalkers like predatory animals. Lightning reflexes and hypertrophied muscles allow snorks to make long, precise jumps and within seconds tear their victims to shreds.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble
@@ -319,12 +319,12 @@
 	</string>
 	<string id="encyclopedia_mutants_zombie_text">
 		<text>
-			%c[guide_blue]Zombies%c[default] are people who have been reduced to their most residual reflexes.\n
+			%c[guide_blue]Zombies%c[default] are stalkers who have been reduced to their most residual reflexes.\n
 			\n%c[guide_green]Information%c[default]
-			\nUnlike the name would suggest, these zombies are not actually undead, but just mindless husks of the people they used to be.\n
+			\nUnlike the name would suggest these zombies are not actually undead, but just mindless husks of those that they used to be.\n
 			\nThese creatures are the final stage of deterioration for a human being after exposure to powerful psi-fields, having lost even the ability to operate basic tools and weaponry.\n
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
-			\nThis mutant only spawns when playing in survival mode.\n
+			\nDue to the fact most are killed off long before ever reaching this phase, this mutant can be a somewhat rare discovery in the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None
 		</text>

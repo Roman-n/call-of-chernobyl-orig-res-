@@ -187,7 +187,7 @@
 		<text>Bookworm Food</text>
 	</string>
 	<string id="st_achievement_15_hint">
-		<text>Memory sticks will be replaced by rare PDAs when found.</text>
+		<text>Memory sticks will be replaced by rare PDAs when spawned.</text>
 	</string>
 	<string id="st_achievement_15_descr">
 		<text>Through your own endeavours or by reading about those of others, you have come to learn a lot about the Zone and its many inhabitants. Perhaps you should consider sharing some of this knowledge?</text>

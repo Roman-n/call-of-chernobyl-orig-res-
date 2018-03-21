@@ -5,16 +5,26 @@
 ; Only used by scripts, and has hardcoded references.
 ; Do not touch this section unless you know what you are doing!
 [encyclopedia_interactivity]
+anomalies = encyclopedia_interactivity_anomalies
 characters = encyclopedia_interactivity_characters
 factions = encyclopedia_interactivity_factions
 items = encyclopedia_interactivity_items
+levels = encyclopedia_interactivity_levels
 mutants = encyclopedia_interactivity_mutants
 smarts = encyclopedia_interactivity_smarts
 vehicles = encyclopedia_interactivity_vehicles
 
+; Anomalies - triggered through various means.
+[encyclopedia_interactivity_anomalies]
+emissions = encyclopedia_anomalies_other_emission
+psi_storms = encyclopedia_anomalies_other_psistorm
+
 ; Characters - triggered by looting or talking-to.
 ; Faction articles should also trigger if a character is technically in the trader faction.
 [encyclopedia_interactivity_characters]
+agr_smart_terrain_1_6_army_mechanic_stalker = encyclopedia_characters_lieutenant_kirilov
+agr_smart_terrain_1_6_army_trader_stalker = encyclopedia_characters_sergeant_spooner
+agr_smart_terrain_1_6_near_2_military_colonel_kovalski = encyclopedia_characters_major_kuznetsov
 bar_visitors_barman_stalker_trader = encyclopedia_characters_barkeep
 esc_2_12_stalker_fanat = encyclopedia_characters_fanatic
 esc_2_12_stalker_nimble = encyclopedia_characters_nimble
@@ -32,14 +42,18 @@ mar_base_stalker_tech = encyclopedia_characters_novikov
 mar_smart_terrain_base_doctor = encyclopedia_characters_ivan_trodnik
 mar_smart_terrain_base_stalker_leader_marsh = encyclopedia_characters_cold
 mar_smart_terrain_doc_doctor = encyclopedia_factions_loner, encyclopedia_characters_doctor
-yan_stalker_sakharov = encyclopedia_factions_ecologist
+val_smart_terrain_7_3_bandit_mechanic_stalker = encyclopedia_characters_limpid
+val_smart_terrain_7_4_bandit_trader_stalker = encyclopedia_characters_olivius
+yan_ecolog_kruglov = encyclopedia_characters_professor_kruglov
+yan_stalker_sakharov = encyclopedia_factions_ecologist, encyclopedia_characters_professor_sakharov
 zat_a2_stalker_barmen = encyclopedia_characters_beard
 zat_a2_stalker_mechanic = encyclopedia_characters_cardan
 zat_b106_stalker_gonta = encyclopedia_characters_gonta
 zat_b22_stalker_medic = encyclopedia_characters_axel
 zat_b30_owl_stalker_trader = encyclopedia_characters_owl
+zat_b7_bandit_boss_sultan = encyclopedia_characters_sultan
 
-; Factions - triggered by looting or talking-to.
+; Factions - triggered through various means.
 [encyclopedia_interactivity_factions]
 army = encyclopedia_factions_military
 bandit = encyclopedia_factions_bandit
@@ -62,10 +76,10 @@ bandit_specops_outfit = encyclopedia_factions_bandit
 banditmerc_outfit = encyclopedia_factions_bandit
 barmerc_outfit = encyclopedia_factions_loner
 commander_outfit = encyclopedia_factions_military
-cs_3b_outfit = encyclopedia_factions_clear_sky
 cs_exo_outfit = encyclopedia_factions_clear_sky
 cs_heavy_outfit = encyclopedia_factions_clear_sky
 cs_light_novice_outfit = encyclopedia_factions_clear_sky
+cs_light_original_outfit = encyclopedia_factions_clear_sky
 cs_light_outfit = encyclopedia_factions_clear_sky
 cs_medium_outfit = encyclopedia_factions_clear_sky
 cs_nbc_outfit = encyclopedia_factions_clear_sky
@@ -110,13 +124,48 @@ stalker_outfit = encyclopedia_factions_loner
 stalker_outfit_barge = encyclopedia_factions_loner
 svoboda_exo_outfit = encyclopedia_factions_freedom
 svoboda_heavy_outfit = encyclopedia_factions_freedom
-svoboda_heavy_outfit_2 = encyclopedia_factions_freedom
 svoboda_light_outfit = encyclopedia_factions_freedom
+svoboda_medium_outfit = encyclopedia_factions_freedom
 svoboda_novice_outfit = encyclopedia_factions_freedom
 svoboda_radiation_outfit = encyclopedia_factions_freedom
 svoboda_scientific_outfit = encyclopedia_factions_freedom
 trenchcoat_brown_outfit = encyclopedia_factions_bandit
-trenchcoat_outfit = encyclopedia_factions_loner
+trenchcoat_outfit = encyclopedia_factions_bandit
+
+; Levels - triggered by visiting them.
+[encyclopedia_interactivity_levels]
+jupiter = encyclopedia_locations_jupiter
+k00_marsh = encyclopedia_locations_great_swamp
+k01_darkscape = encyclopedia_locations_darkscape
+k02_trucks_cemetery = encyclopedia_locations_truck_cemetery
+l01_escape = encyclopedia_locations_cordon
+l02_garbage = encyclopedia_locations_garbage
+l03_agroprom = encyclopedia_locations_agroprom
+l04_darkvalley = encyclopedia_locations_dark_valley
+l05_bar = encyclopedia_locations_rostok
+l06_rostok = encyclopedia_locations_wild_territory
+l07_military = encyclopedia_locations_army_warehouses
+l08_yantar = encyclopedia_locations_yantar
+l09_deadcity = encyclopedia_locations_dead_city
+l10_limansk = encyclopedia_locations_limansk
+l10_radar = encyclopedia_locations_radar
+l10_red_forest = encyclopedia_locations_red_forest
+l11_hospital = encyclopedia_locations_deserted_hospital
+l11_pripyat = encyclopedia_locations_pripyat
+l12_stancia = encyclopedia_locations_chernobyl_npp
+l12_stancia_2 = encyclopedia_locations_chernobyl_npp
+l13_generators = encyclopedia_locations_generators
+pripyat	= encyclopedia_locations_outskirts
+zaton = encyclopedia_locations_zaton
+jupiter_underground	= encyclopedia_locations_jupiter_underground
+labx8 = encyclopedia_locations_lab_x8
+l03u_agr_underground = encyclopedia_locations_agroprom_underground
+l04u_labx18 = encyclopedia_locations_lab_x18
+l08u_brainlab = encyclopedia_locations_lab_x16
+l10u_bunker = encyclopedia_locations_lab_x19
+l12u_control_monolith = encyclopedia_locations_monolith_control_center
+l12u_sarcofag = encyclopedia_locations_sarcophagus
+l13u_warlab = encyclopedia_locations_monolith_war_lab
 
 ; Mutants - triggered by field dressing.
 [encyclopedia_interactivity_mutants]

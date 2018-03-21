@@ -24,9 +24,7 @@
 	</string>
 	<string id="encyclopedia_achievements_completionist_text">
 		<text>
-			%c[guide_blue]Completionist%c[default] requires you to unlock all other achievements in the game.\n
-			\n%c[guide_green]Information%c[default]
-			\nCertain achievements are only available in story mode, as such those achievements will only be a requirement if story mode was enabled during character creation.\n
+			%c[guide_blue]Completionist%c[default] requires you to unlock all other available achievements.\n
 			\n%c[guide_green]Rewards%c[default]
 			\nDouble the amount of rank points compared to when you normally unlock an achievement.
 		</text>
@@ -48,7 +46,7 @@
 	</string>
 	<string id="encyclopedia_achievements_duga_free_text">
 		<text>
-			%c[guide_blue]Duga Free%c[default] is only available in story mode, and requires you to disable both the Miracle Machine and the Brain Scorcher.\n
+			%c[guide_blue]Duga Free%c[default] requires you to disable both the Miracle Machine and the Brain Scorcher.\n
 			\n%c[guide_green]Rewards%c[default]
 			\nYantar and Radar will become much easier to travel through after said psi-field emitters are disabled.
 		</text>
@@ -184,7 +182,7 @@
 	</string>
 	<string id="encyclopedia_achievements_wishful_thinking_text">
 		<text>
-			%c[guide_blue]Wishful Thinking%c[default] is only available in story mode, and requires you to defeat all 10 waves of the Wish Granter's illusions.\n
+			%c[guide_blue]Wishful Thinking%c[default] requires you to defeat all 10 waves of the Wish Granter's illusions.\n
 			\n%c[guide_green]Rewards%c[default]
 			\nYou will receive a major increase to both your rank and reputation.
 		</text>

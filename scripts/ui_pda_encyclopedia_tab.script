@@ -19,6 +19,9 @@ function pda_encyclopedia_tab:__init() super()
 	self.interactivity = {}
 	self.locked_articles = {}
 	
+	-- Tiering.
+	self.highest_tier = 0
+	
 	-- Plugin init.
 	self:InitPlugin()
 	self:InitPlugin2()
@@ -134,7 +137,7 @@ function pda_encyclopedia_tab:SelectArticle(index_a)
 		self.image:SetAutoDelete(false)
 	end
 	
-	-- Add the text to the article's text.
+	-- Add the text to the article window.
 	self.scrollbar:AddWindow(self.information, true)
 	self.information:SetAutoDelete(false)
 	
@@ -277,14 +280,17 @@ function pda_encyclopedia_tab:InitPlugin()
 	-- Handles each individual article.
 	local unlocked_articles = dxr_statistics.actor_articles
 	local function handle_article(section, value)
-		-- Availability of the article.
+		-- Information about the article.
 		local disabled = nil
+		local tier = 0
 		local unlocked = nil
 		
-		-- Available game modes.
+		-- Game mode toggles.
 		local modes = {
 			["azazel"] = IsAzazelMode(),
-			["hardcore"] = IsHardcoreMode(),
+			["debug"] = DEV_DEBUG,
+			["dev_debug"] = DEV_DEBUG_DEV,
+			["ironman"] = IsHardcoreMode(),
 			["story"] = IsStoryMode(),
 			["survival"] = IsSurvivalMode(),
 		}
@@ -292,17 +298,20 @@ function pda_encyclopedia_tab:InitPlugin()
 		-- Check each value attached to the article.
 		if (value) then
 			for k, v in string.gmatch(value, "([%w_%-%s%.]+)=([%w_%-%s%.]+)") do
-				-- True/false value read from article flag.
-				local result = ((tonumber(v) or 0) ~= 0)
+				-- Value read from article flag.
+				local v_bool = ((tonumber(v) or 0) ~= 0)
+				local v_numb = (tonumber(v) or 0)
 				-- Unlocks the article by default.
 				if (k == "unlocked") then
-					unlocked = result
-				end
+					unlocked = v_bool
+				-- Tiers the article.
+				elseif (k == "tier") then
+					tier = v_numb > 0 and v_numb or 0
 				-- Enables/disables article based on game mode.
-				if (not disabled) then
+				elseif (not disabled) then
 					for k2, v2 in pairs(modes) do
 						if (k == k2) then
-							if (v2 and not result) or (result and not v2) then
+							if (v2 and not v_bool) or (v_bool and not v2) then
 								disabled = true
 								break
 							end
@@ -317,11 +326,14 @@ function pda_encyclopedia_tab:InitPlugin()
 			return false
 		end
 		
+		-- Update the tiering information.
+		self.highest_tier = tier > self.highest_tier and tier or self.highest_tier
+		
 		-- Lock or unlock the appropriate articles.
 		if (unlocked or unlocked_articles[section]) then
 			unlocked_articles[section] = true
 		else
-			self.locked_articles[section] = true
+			self.locked_articles[section] = tier
 			self.articles_locked_count = self.articles_locked_count + 1
 		end
 		

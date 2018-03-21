@@ -279,6 +279,9 @@
 	<string id="st_resupply_ready">
 		<text>Перед операцией можно пополнить запас медикаментов и боеприпасов у лейтенантов Роговца и Кириллова.</text>
 	</string>
+	<string id="st_storm_while_asleep">
+		<text>Недавно по Зоне прошёл пси-шторм.</text>
+	</string>
 	<string id="st_surge_while_asleep">
 		<text>В Зоне недавно произошёл выброс.</text>
 	</string>

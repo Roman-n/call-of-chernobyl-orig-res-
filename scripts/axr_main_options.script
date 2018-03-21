@@ -117,6 +117,14 @@ function opt_menu_on_init(menu)
 			end
 		end
 	end}
+	-- enhanced_recoil
+	menu.gameplay_options["enhanced_recoil"] = {default = false, debug_only = false, typ="check", on_accept=function(handler, optMgr, ctrl)
+		if (ctrl:GetCheck()) then
+			dxr_enhanced_recoil.activate_feature()
+		else
+			dxr_enhanced_recoil.deactivate_feature()
+		end
+	end}
 	
 	-- I do not recommend allowing a factor greater than 1.5 because there are not enough smart terrain jobs
 	menu.gameplay_options["alife_mutant_pop"]			= {default=0.5, 	debug_only=false, 	typ="list", list={0.25,0.50,1.0,1.5}}

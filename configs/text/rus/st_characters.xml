@@ -394,10 +394,13 @@
 		<text>Лесник</text>
 	</string>
 	<string id="yan_st_sakharov_name">
-		<text>Проф. Сахаров</text>
+		<text>Профессор Сахаров</text>
 	</string>
 	<string id="yan_semenov_bio">
 		<text>Научный сотрудник мобильной лаборатории. Детальная информация отсутствует.</text>
+	</string>
+	<string id="yan_cherenkov_name">
+		<text>Доктор Черенков</text>
 	</string>
 	<string id="yan_semenov_name">
 		<text>Доцент Семёнов</text>
@@ -412,7 +415,7 @@
 		<text>Доктор биологических наук. За пределами Зоны занимался патогенными мутациями животных. В Зону отправился для изучения мутаций слепых псов.</text>
 	</string>
 	<string id="yan_kruglov_name">
-		<text>Проф. Круглов</text>
+		<text>Круглов</text>
 	</string>
   <string id="mar_base_stalker_tech_name">
 	<text>Новиков</text>
@@ -541,7 +544,7 @@
 		<text>Крот</text>
 	</string>
 	<string id="sar2_kruglov_name">
-		<text>Проф. Круглов</text>
+		<text>Профессор Круглов</text>
 	</string>
 	<string id="sar2_kuznetsov_name">
 		<text>Майор Кузнецов</text>
@@ -556,7 +559,7 @@
 		<text>Жорик</text>
 	</string>
 	<string id="sar2_professor_name">
-		<text>Проф. Сахаров</text>
+		<text>Профессор Сахаров</text>
 	</string>
 	<string id="sar2_ryaboy_name">
 		<text>Рябой</text>

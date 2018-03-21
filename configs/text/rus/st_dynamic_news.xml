@@ -1179,11 +1179,14 @@
 	<string id="st_dyn_news_l10_red_forest">
 		<text>в Рыжем Лесу,</text>
 	</string>
+	<string id="st_dyn_news_l11_hospital">
+		<text>в Заброшенном Госпитале.</text>
+	</string>
 	<string id="st_dyn_news_l11_pripyat">
 		<text>в центральной Припяти,</text>
 	</string>
 	<string id="st_dyn_news_labx8">
-		<text>в лаборатории X-8,</text>
+		<text>в X-8,</text>
 	</string>
 	<string id="st_dyn_news_pripyat">
 		<text>на Окраинах Припяти,</text>
@@ -1192,13 +1195,13 @@
 		<text>на Затоне,</text>
 	</string>
 	<string id="st_dyn_news_l12_stancia">
-		<text>на юге ЧАЭС</text>
+		<text>на юге ЧАЭС.</text>
 	</string>
 	<string id="st_dyn_news_l12_stancia_2">
-		<text>на севере ЧАЭС</text>
+		<text>на севере ЧАЭС.</text>
 	</string>
 	<string id="st_dyn_news_l13_generators">
-		<text>на Генераторах</text>
+		<text>на Генераторах.</text>
 	</string>
 	<!-- Daleko -->
 	<string id="st_dyn_l09_deadcity_daleko_1">

@@ -2881,6 +2881,10 @@ function heli_dist_to_max_bounding_le(actor,npc,p)
 	return dist and dist <= d or false
 end
 
+function down_to_earth_functor(actor,npc,p)
+	return dxr_achievements.has_achievement("down_to_earth")
+end
+
 function heavy_pockets_functor(actor,npc,p)
 	return dxr_achievements.has_achievement("heavy_pockets")
 end

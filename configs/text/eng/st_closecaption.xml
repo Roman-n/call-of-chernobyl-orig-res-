@@ -2645,6 +2645,33 @@
 	<string id="esc_nimble_order">
 		<text>The job's done. You can collect the goods.</text>
 	</string>
+	<string id="esc_fanat_farewell_1">
+		<text>See you, then.</text>
+	</string>	
+	<string id="esc_fanat_farewell_2">
+		<text>Good luck.</text>
+	</string>	
+	<string id="esc_fanat_farewell_3">
+		<text>Nice talking to you.</text>
+	</string>	
+	<string id="esc_fanat_farewell_4">
+		<text>Farewell.</text>
+	</string>	
+	<string id="esc_fanat_farewell_5">
+		<text>Good hunting, stalker.</text>
+	</string>
+	<string id="esc_fanat_greeting_1">
+		<text>Hello.</text>
+	</string>
+	<string id="esc_fanat_greeting_2">
+		<text>What's up?</text>
+	</string>
+	<string id="esc_fanat_greeting_3">
+		<text>Hey there.</text>
+	</string>
+	<string id="esc_fanat_greeting_4">
+		<text>Hey.</text>
+	</string>
 	<string id="red_forester_hello_bye_0">
 		<text>Farewell, sonny.</text>
 	</string>

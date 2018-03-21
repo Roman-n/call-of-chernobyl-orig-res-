@@ -18,6 +18,8 @@ boost_max_weight                         = 20.0
 use_sound                                = interface\inv_softdrink
 inv_weight                               = 0.1
 
+hide_time_wpn = 3
+
 [drug_coagulant]:booster_script
 $spawn                                   = "food and drugs\drug_coagulant"
 visual                                   = dynamics\equipments\medical\drug_coagulant.ogf
@@ -41,6 +43,8 @@ use_condition                            = true
 max_uses                                 = 2
 remove_after_use                         = true
 empty_weight                             = 0.01
+
+hide_time_wpn = 3
 
 [drug_psy_blockade]:booster_script
 $spawn                                   = "food and drugs\drug_psy_blockade"
@@ -66,6 +70,8 @@ max_uses                                 = 5
 remove_after_use                         = true
 empty_weight                             = 0.01
 
+hide_time_wpn = 3
+
 [drug_antidot]:booster_script
 $spawn                                   = "food and drugs\drug_antidot"
 visual                                   = dynamics\equipments\medical\drug_antidot.ogf
@@ -89,6 +95,8 @@ use_condition                            = true
 max_uses                                 = 3
 remove_after_use                         = true
 empty_weight                             = 0.01
+
+hide_time_wpn = 3
 
 [drug_radioprotector]:booster_script
 $spawn                                   = "food and drugs\drug_radioprotector"
@@ -114,6 +122,8 @@ max_uses                                 = 2
 remove_after_use                         = true
 empty_weight                             = 0.01
 
+hide_time_wpn = 3
+
 [drug_anabiotic]:booster_script
 $spawn                                   = "food and drugs\drug_anabiotic"
 visual                                   = dynamics\equipments\medical\drug_anabiotic.ogf
@@ -127,4 +137,8 @@ inv_grid_x                               = 0
 inv_grid_y                               = 2
 cost                                     = 3000
 
+eat_health                               = -0.1
+
 use_sound                                = interface\inv_pills
+
+hide_time_wpn = 3

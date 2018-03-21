@@ -96,6 +96,327 @@ explosion_immunity                       = -0.015
 fire_wound_immunity                      = -0.007
 
 ;---------------------------------------------------------------------------------------------
+;		CS-1a
+;---------------------------------------------------------------------------------------------
+[cs_light_novice_outfit]:outfit_base
+$spawn                                   = "outfit\cs_light_novice_outfit"
+visual                                   = dynamics\outfit\cs_light_novice_outfit
+actor_visual                             = actors\stalker_nebo\stalker_nebo_1
+npc_visual                               = actors\stalker_nebo\stalker_nebo_1
+player_hud_section                       = actor_hud_cs1
+
+inv_name                                 = csky_light_novice_outfit_name
+inv_name_short                           = csky_light_novice_outfit_name
+description                              = csky_light_novice_outfit_description
+
+inv_weight                               = 5
+additional_inventory_weight              = 7
+additional_inventory_weight2             = 7
+inv_grid_x                               = 18
+inv_grid_y                               = 33
+
+upgr_icon_x                              = 606
+upgr_icon_y                              = 1309
+upgr_icon_width                          = 306
+upgr_icon_height                         = 132
+
+cost                                     = 7000
+full_scale_icon                          = 2,6
+
+immunities_sect                          = sect_cs_light_novice_outfit_immunities
+power_loss                               = 0.05
+
+burn_protection                          = 0.025
+shock_protection                         = 0.125
+radiation_protection                     = 0.0055
+chemical_burn_protection                 = 0.025
+telepatic_protection                     = 0.0
+strike_protection                        = 0.1
+explosion_protection                     = 0.1
+wound_protection                         = 0.085
+
+hit_fraction_actor                       = 0.725
+bones_koeff_protection                   = actor_armor_cs1
+
+artefact_count                           = 1
+
+upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
+character_portrait                       = ui_inGame2_csky_5
+
+[sect_cs_light_novice_outfit_immunities]
+burn_immunity                            = 0.05
+strike_immunity                          = 0.0
+shock_immunity                           = 0.025
+wound_immunity                           = 0.045
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.05
+explosion_immunity                       = 0.05
+fire_wound_immunity                      = 0.028
+
+;---------------------------------------------------------------------------------------------
+;		CS-1b
+;---------------------------------------------------------------------------------------------
+[cs_light_original_outfit]:outfit_base
+$spawn                                   = "outfit\cs_light_original_outfit"
+visual                                   = dynamics\outfit\cs_light_novice_outfit
+actor_visual                             = actors\stalker_nebo\stalker_nebo_a ; cut E3 variant
+npc_visual                               = actors\stalker_nebo\stalker_nebo_a
+player_hud_section                       = actor_hud_cs1
+
+inv_name                                 = csky_light_original_outfit_name
+inv_name_short                           = csky_light_original_outfit_name
+description                              = csky_light_original_outfit_description
+
+inv_weight                               = 6
+additional_inventory_weight              = 9
+additional_inventory_weight2             = 9
+inv_grid_x                               = 28
+inv_grid_y                               = 33
+
+upgr_icon_x                              = 1856
+upgr_icon_y                              = 212
+upgr_icon_width                          = 300
+upgr_icon_height                         = 136
+
+cost                                     = 8000
+full_scale_icon                          = 2,6
+
+immunities_sect                          = sect_cs_light_original_outfit_immunities
+power_loss                               = 0.06
+
+
+burn_protection                          = 0.025
+shock_protection                         = 0.125
+radiation_protection                     = 0.0055
+chemical_burn_protection                 = 0.025
+telepatic_protection                     = 0.0
+strike_protection                        = 0.135
+explosion_protection                     = 0.135
+wound_protection                         = 0.11
+
+hit_fraction_actor                       = 0.675
+bones_koeff_protection                   = actor_armor_cs2
+
+artefact_count                           = 1
+
+upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
+character_portrait                       = ui_inGame2_csky_5
+
+[sect_cs_light_original_outfit_immunities]
+burn_immunity                            = 0.05
+strike_immunity                          = 0.0
+shock_immunity                           = 0.025
+wound_immunity                           = 0.043
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.05
+explosion_immunity                       = 0.045
+fire_wound_immunity                      = 0.026
+
+;---------------------------------------------------------------------------------------------
+;		CS-2
+;---------------------------------------------------------------------------------------------
+[cs_light_outfit]:outfit_base
+$spawn                                   = "outfit\cs_light_outfit"
+visual                                   = dynamics\outfit\cs_light_outfit
+actor_visual                             = actors\stalker_nebo\stalker_nebo_2
+npc_visual                               = actors\stalker_nebo\stalker_nebo_2
+player_hud_section                       = actor_hud_cs2
+
+inv_name                                 = csky_light_outfit_name
+inv_name_short                           = csky_light_outfit_name
+description                              = csky_light_outfit_description
+inv_weight                               = 7.5
+
+inv_grid_x                               = 0
+inv_grid_y                               = 15
+
+upgr_icon_x                              = 1858
+upgr_icon_y                              = 39
+upgr_icon_width                          = 304
+upgr_icon_height                         = 120
+
+cost                                     = 12500
+full_scale_icon                          = 10,11
+
+immunities_sect                          = sect_cs_light_outfit_immunities
+power_loss                               = 0.08
+
+burn_protection                          = 0.04
+shock_protection                         = 0.2
+radiation_protection                     = 0.0085
+chemical_burn_protection                 = 0.04
+telepatic_protection                     = 0.0
+strike_protection                        = 0.15
+explosion_protection                     = 0.15
+wound_protection                         = 0.125
+
+bones_koeff_protection                   = actor_armor_cs2
+hit_fraction_actor                       = 0.65
+artefact_count                           = 2
+
+upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
+character_portrait                       = ui_inGame2_csky_3
+
+[sect_cs_light_outfit_immunities]
+burn_immunity                            = 0.045
+strike_immunity                          = 0.0
+shock_immunity                           = 0.02
+wound_immunity                           = 0.04
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.045
+explosion_immunity                       = 0.04
+fire_wound_immunity                      = 0.024
+
+[sect_cs_light_outfit_immunities_add]
+burn_immunity                            = -0.02
+strike_immunity                          = 0.0
+shock_immunity                           = -0.01
+wound_immunity                           = -0.02
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = -0.02
+explosion_immunity                       = -0.02
+fire_wound_immunity                      = -0.008
+
+;---------------------------------------------------------------------------------------------
+;		CS-3a
+;---------------------------------------------------------------------------------------------
+[cs_medium_outfit]:outfit_base
+$spawn                                   = "outfit\cs_medium_outfit"
+visual                                   = dynamics\outfit\cs_medium_outfit
+actor_visual                             = actors\stalker_nebo\stalker_nebo_3
+npc_visual                               = actors\stalker_nebo\stalker_nebo_3
+player_hud_section                       = actor_hud_cs3a
+
+inv_name                                 = csky_medium_outfit_name
+inv_name_short                           = csky_medium_outfit_name
+description                              = csky_medium_outfit_description
+inv_weight                               = 10
+
+inv_grid_x                               = 18
+inv_grid_y                               = 14
+
+upgr_icon_x                              = 4
+upgr_icon_y                              = 304
+upgr_icon_width                          = 305
+upgr_icon_height                         = 131
+
+cost                                     = 17500
+full_scale_icon                          = 10,11
+
+immunities_sect                          = sect_cs_medium_outfit_immunities
+power_loss                               = 0.13
+
+burn_protection                          = 0.035
+shock_protection                         = 0.175
+radiation_protection                     = 0.0075
+chemical_burn_protection                 = 0.035
+telepatic_protection                     = 0.0
+strike_protection                        = 0.22
+explosion_protection                     = 0.22
+wound_protection                         = 0.185
+
+bones_koeff_protection                   = actor_armor_cs3
+hit_fraction_actor                       = 0.55
+artefact_count                           = 2
+
+upgrades                                 = up_gr_firstab_cs_heavy_outfit, up_gr_seconab_cs_heavy_outfit, up_gr_thirdab_cs_heavy_outfit, up_gr_fourtab_cs_heavy_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_cs_heavy_outfit
+character_portrait                       = ui_inGame2_csky_1_2
+
+[sect_cs_medium_outfit_immunities]
+burn_immunity                            = 0.043
+strike_immunity                          = 0.0
+shock_immunity                           = 0.019
+wound_immunity                           = 0.037
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.043
+explosion_immunity                       = 0.037
+fire_wound_immunity                      = 0.018
+
+;---------------------------------------------------------------------------------------------
+;		CS-3b
+;---------------------------------------------------------------------------------------------
+[cs_heavy_outfit]:outfit_base
+$spawn                                   = "outfit\cs_heavy_outfit"
+visual                                   = dynamics\outfit\cs_heavy_outfit
+actor_visual                             = actors\stalker_nebo\stalker_nebo_b ; cut E3 variant
+npc_visual                               = actors\stalker_nebo\stalker_nebo_b
+player_hud_section                       = actor_hud_cs3b
+
+inv_name                                 = csky_heavy_outfit_name
+inv_name_short                           = csky_heavy_outfit_name
+description                              = csky_heavy_outfit_description
+
+inv_weight                               = 11.5
+
+inv_grid_x                               = 30
+inv_grid_y                               = 33
+
+upgr_icon_x                              = 1869
+upgr_icon_y                              = 362
+upgr_icon_width                          = 293
+upgr_icon_height                         = 135
+
+cost                                     = 22500
+full_scale_icon                          = 2,6
+
+immunities_sect                          = sect_cs_heavy_outfit_immunities
+power_loss                               = 0.18
+
+burn_protection                          = 0.03
+shock_protection                         = 0.15
+radiation_protection                     = 0.0065
+chemical_burn_protection                 = 0.03
+telepatic_protection                     = 0.0
+strike_protection                        = 0.255
+explosion_protection                     = 0.255
+wound_protection                         = 0.215
+
+hit_fraction_actor                       = 0.5
+bones_koeff_protection                   = actor_armor_cs3b
+
+artefact_count                           = 2
+
+upgrades                                 = up_gr_firstab_cs_heavy_outfit, up_gr_seconab_cs_heavy_outfit, up_gr_thirdab_cs_heavy_outfit, up_gr_fourtab_cs_heavy_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_cs_heavy_outfit
+character_portrait                       = ui_inGame2_csky_5_2
+
+[sect_cs_heavy_outfit_immunities]
+burn_immunity                            = 0.04
+strike_immunity                          = 0.0
+shock_immunity                           = 0.018
+wound_immunity                           = 0.034
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.04
+explosion_immunity                       = 0.034
+fire_wound_immunity                      = 0.015
+
+[sect_cs_heavy_outfit_immunities_add]
+burn_immunity                            = -0.01
+strike_immunity                          = 0.0
+shock_immunity                           = -0.005
+wound_immunity                           = -0.009
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = -0.01
+explosion_immunity                       = -0.008
+fire_wound_immunity                      = -0.0025
+
+;---------------------------------------------------------------------------------------------
 ;		FREEDOM Wind
 ;---------------------------------------------------------------------------------------------
 [svoboda_light_outfit]:outfit_base
@@ -168,396 +489,66 @@ explosion_immunity                       = -0.02
 fire_wound_immunity                      = -0.008
 
 ;---------------------------------------------------------------------------------------------
-;		PS5-M Universal Duty Suit
+;		ORIGINAL GUARDIAN OF FREEDOM SUIT
 ;---------------------------------------------------------------------------------------------
-[dolg_outfit]:outfit_base
-$spawn                                   = "outfit\dolg_outfit"
-visual                                   = dynamics\outfit\dolg_outfit
-actor_visual                             = actors\stalker_dolg\stalker_dolg_2.ogf
-npc_visual                               = actors\stalker_dolg\stalker_dolg_2.ogf
-player_hud_section                       = actor_hud_duty_ps5m
+[svoboda_medium_outfit]:outfit_base
+$spawn                                   = "outfit\svoboda_medium_outfit"
+visual                                   = dynamics\outfit\freeheavy_outfit
+actor_visual                             = actors\stalker_freedom\stalker_freedom_2.ogf
+npc_visual                               = actors\stalker_freedom\stalker_freedom_2.ogf
+player_hud_section                       = actor_hud_freedom_guardian
 
-inv_name                                 = dolg_outfit_name
-inv_name_short                           = dolg_outfit_name
-description                              = dolg_outfit_description
+inv_name                                 = svoboda_medium_outfit_name
+inv_name_short                           = svoboda_medium_outfit_name
+description                              = svoboda_medium_outfit_description
 
-inv_weight                               = 9.5
+inv_weight                               = 7
 
-inv_grid_x                               = 6
-inv_grid_y                               = 15
+inv_grid_x                               = 16
+inv_grid_y                               = 20
 
-upgr_icon_x                              = 0
-upgr_icon_y                              = 161
-upgr_icon_width                          = 302
+upgr_icon_x                              = 1541
+upgr_icon_y                              = 353
+upgr_icon_width                          = 307
 upgr_icon_height                         = 130
 
-cost                                     = 15750
-full_scale_icon                          = 8,11
-
-immunities_sect                          = sect_dolg_outfit_immunities
-
-burn_protection                          = 0.03
-shock_protection                         = 0.15
-radiation_protection                     = 0.0065
-chemical_burn_protection                 = 0.03
-telepatic_protection                     = 0.0
-strike_protection                        = 0.21
-explosion_protection                     = 0.21
-wound_protection                         = 0.175
-
-hit_fraction_actor                       = 0.575
-bones_koeff_protection                   = actor_armor_duty_suit
-
-artefact_count                           = 0
-power_loss                               = 0.13
-
-upgrades                                 = up_gr_firstab_dolg_outfit, up_gr_seconab_dolg_outfit, up_gr_thirdab_dolg_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_dolg_outfit
-character_portrait                       = ui_inGame2_Dolg_2
-
-[sect_dolg_outfit_immunities]
-burn_immunity                            = 0.05
-strike_immunity                          = 0.0
-shock_immunity                           = 0.02
-wound_immunity                           = 0.04
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.05
-explosion_immunity                       = 0.04
-fire_wound_immunity                      = 0.02
-
-[sect_dolg_outfit_immunities_add]
-burn_immunity                            = -0.02
-strike_immunity                          = 0.0
-shock_immunity                           = -0.01
-wound_immunity                           = -0.02
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = -0.02
-explosion_immunity                       = -0.02
-fire_wound_immunity                      = -0.007
-
-;---------------------------------------------------------------------------------------------
-;		CS-1a body armor
-;---------------------------------------------------------------------------------------------
-[cs_medium_outfit]:outfit_base
-$spawn                                   = "outfit\cs_medium_outfit"
-visual                                   = dynamics\outfit\cs_medium_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_3
-npc_visual                               = actors\stalker_nebo\stalker_nebo_3
-player_hud_section                       = actor_hud_cs1
-
-inv_name                                 = csky_medium_outfit_name
-inv_name_short                           = csky_medium_outfit_name
-description                              = csky_medium_outfit_description
-inv_weight                               = 10
-
-inv_grid_x                               = 18
-inv_grid_y                               = 14
-
-upgr_icon_x                              = 4
-upgr_icon_y                              = 304
-upgr_icon_width                          = 305
-upgr_icon_height                         = 131
-
-cost                                     = 17500
-full_scale_icon                          = 10,11
-
-immunities_sect                          = sect_cs_medium_outfit_immunities
-power_loss                               = 0.13
-
-burn_protection                          = 0.035
-shock_protection                         = 0.175
-radiation_protection                     = 0.0075
-chemical_burn_protection                 = 0.035
-telepatic_protection                     = 0.0
-strike_protection                        = 0.22
-explosion_protection                     = 0.22
-wound_protection                         = 0.185
-
-bones_koeff_protection                   = actor_armor_cs1
-hit_fraction_actor                       = 0.55
-artefact_count                           = 2
-
-upgrades                                 = up_gr_firstab_cs_heavy_outfit, up_gr_seconab_cs_heavy_outfit, up_gr_thirdab_cs_heavy_outfit, up_gr_fourtab_cs_heavy_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_cs_heavy_outfit
-character_portrait                       = ui_inGame2_csky_1_2
-
-[sect_cs_medium_outfit_immunities]
-burn_immunity                            = 0.043
-strike_immunity                          = 0.0
-shock_immunity                           = 0.019
-wound_immunity                           = 0.037
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.043
-explosion_immunity                       = 0.037
-fire_wound_immunity                      = 0.018
-
-;---------------------------------------------------------------------------------------------
-;		CS-1b Body Armor
-;---------------------------------------------------------------------------------------------
-[cs_heavy_outfit]:outfit_base
-$spawn                                   = "outfit\cs_heavy_outfit"
-visual                                   = dynamics\outfit\cs_heavy_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_b ;E3 cut CS-1 variant
-npc_visual                               = actors\stalker_nebo\stalker_nebo_b
-player_hud_section                       = actor_hud_cs1b
-
-inv_name                                 = csky_heavy_outfit_name
-inv_name_short                           = csky_heavy_outfit_name
-description                              = csky_heavy_outfit_description
-
-inv_weight                               = 11.5
-
-inv_grid_x                               = 30
-inv_grid_y                               = 33
-
-upgr_icon_x                              = 1869
-upgr_icon_y                              = 362
-upgr_icon_width                          = 293
-upgr_icon_height                         = 135
-
-cost                                     = 22500
-full_scale_icon                          = 2,6
-
-immunities_sect                          = sect_cs_heavy_outfit_immunities
-power_loss                               = 0.18
-
-burn_protection                          = 0.03
-shock_protection                         = 0.15
-radiation_protection                     = 0.0065
-chemical_burn_protection                 = 0.03
-telepatic_protection                     = 0.0
-strike_protection                        = 0.255
-explosion_protection                     = 0.255
-wound_protection                         = 0.215
-
-hit_fraction_actor                       = 0.5
-bones_koeff_protection                   = actor_armor_cs1b
-
-artefact_count                           = 2
-
-upgrades                                 = up_gr_firstab_cs_heavy_outfit, up_gr_seconab_cs_heavy_outfit, up_gr_thirdab_cs_heavy_outfit, up_gr_fourtab_cs_heavy_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_cs_heavy_outfit
-character_portrait                       = ui_inGame2_csky_5_2
-
-[sect_cs_heavy_outfit_immunities]
-burn_immunity                            = 0.04
-strike_immunity                          = 0.0
-shock_immunity                           = 0.018
-wound_immunity                           = 0.034
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.04
-explosion_immunity                       = 0.034
-fire_wound_immunity                      = 0.015
-
-[sect_cs_heavy_outfit_immunities_add]
-burn_immunity                            = -0.01
-strike_immunity                          = 0.0
-shock_immunity                           = -0.005
-wound_immunity                           = -0.009
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = -0.01
-explosion_immunity                       = -0.008
-fire_wound_immunity                      = -0.0025
-
-;---------------------------------------------------------------------------------------------
-;		CS-2 body armor
-;---------------------------------------------------------------------------------------------
-[cs_light_outfit]:outfit_base
-$spawn                                   = "outfit\cs_light_outfit"
-visual                                   = dynamics\outfit\cs_light_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_2
-npc_visual                               = actors\stalker_nebo\stalker_nebo_2
-player_hud_section                       = actor_hud_cs2
-
-inv_name                                 = csky_light_outfit_name
-inv_name_short                           = csky_light_outfit_name
-description                              = csky_light_outfit_description
-inv_weight                               = 7.5
-
-inv_grid_x                               = 0
-inv_grid_y                               = 15
-
-upgr_icon_x                              = 1858
-upgr_icon_y                              = 39
-upgr_icon_width                          = 304
-upgr_icon_height                         = 120
-
 cost                                     = 12500
-full_scale_icon                          = 10,11
-
-immunities_sect                          = sect_cs_light_outfit_immunities
-power_loss                               = 0.08
-
-burn_protection                          = 0.04
-shock_protection                         = 0.2
-radiation_protection                     = 0.0085
-chemical_burn_protection                 = 0.04
-telepatic_protection                     = 0.0
-strike_protection                        = 0.15
-explosion_protection                     = 0.15
-wound_protection                         = 0.125
-
-bones_koeff_protection                   = actor_armor_cs2
-hit_fraction_actor                       = 0.65
-artefact_count                           = 2
-
-upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
-character_portrait                       = ui_inGame2_csky_3
-
-[sect_cs_light_outfit_immunities]
-burn_immunity                            = 0.045
-strike_immunity                          = 0.0
-shock_immunity                           = 0.02
-wound_immunity                           = 0.04
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.045
-explosion_immunity                       = 0.04
-fire_wound_immunity                      = 0.024
-
-[sect_cs_light_outfit_immunities_add]
-burn_immunity                            = -0.02
-strike_immunity                          = 0.0
-shock_immunity                           = -0.01
-wound_immunity                           = -0.02
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = -0.02
-explosion_immunity                       = -0.02
-fire_wound_immunity                      = -0.008
-
-;---------------------------------------------------------------------------------------------
-;		CS-3a Body Armor
-;---------------------------------------------------------------------------------------------
-[cs_light_novice_outfit]:outfit_base
-$spawn                                   = "outfit\cs_light_novice_outfit"
-visual                                   = dynamics\outfit\cs_light_novice_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_1
-npc_visual                               = actors\stalker_nebo\stalker_nebo_1
-player_hud_section                       = actor_hud_cs3a
-
-inv_name                                 = csky_light_novice_outfit_name
-inv_name_short                           = csky_light_novice_outfit_name
-description                              = csky_light_novice_outfit_description
-
-inv_weight                               = 5
-additional_inventory_weight              = 7
-additional_inventory_weight2             = 7
-inv_grid_x                               = 18
-inv_grid_y                               = 33
-
-upgr_icon_x                              = 606
-upgr_icon_y                              = 1309
-upgr_icon_width                          = 306
-upgr_icon_height                         = 132
-
-cost                                     = 7000
 full_scale_icon                          = 2,6
 
-immunities_sect                          = sect_cs_light_novice_outfit_immunities
-power_loss                               = 0.05
+upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
 
-burn_protection                          = 0.025
-shock_protection                         = 0.125
-radiation_protection                     = 0.0055
-chemical_burn_protection                 = 0.025
+immunities_sect                          = sect_svoboda_medium_outfit_immunities
+
+burn_protection                          = 0.042
+shock_protection                         = 0.21
+radiation_protection                     = 0.009
+chemical_burn_protection                 = 0.042
 telepatic_protection                     = 0.0
-strike_protection                        = 0.1
-explosion_protection                     = 0.1
-wound_protection                         = 0.085
+strike_protection                        = 0.155
+explosion_protection                     = 0.155
+wound_protection                         = 0.13
 
-hit_fraction_actor                       = 0.725
-bones_koeff_protection                   = actor_armor_cs3
+hit_fraction_actor                       = 0.625
+bones_koeff_protection                   = actor_armor_freedom_suit
 
 artefact_count                           = 1
+power_loss                               = 0.07
 
-upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
+upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
 installed_upgrades                       =
 upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
-character_portrait                       = ui_inGame2_csky_5
+character_portrait                       = ui_inGame2_Freedom_2
 
-[sect_cs_light_novice_outfit_immunities]
-burn_immunity                            = 0.05
+[sect_svoboda_medium_outfit_immunities]
+burn_immunity                            = 0.044
 strike_immunity                          = 0.0
-shock_immunity                           = 0.025
+shock_immunity                           = 0.022
 wound_immunity                           = 0.045
 radiation_immunity                       = 0.0
 telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.05
-explosion_immunity                       = 0.05
-fire_wound_immunity                      = 0.028
-
-;---------------------------------------------------------------------------------------------
-;		CS-3b Body Armor
-;---------------------------------------------------------------------------------------------
-[cs_3b_outfit]:outfit_base
-$spawn                                   = "outfit\cs_3b_outfit"
-visual                                   = dynamics\outfit\cs_light_novice_outfit
-actor_visual                             = actors\stalker_nebo\stalker_nebo_a ; CS-3a (cut E3 variant) http://stalker.wikia.com/wiki/CS-3a_body_armor_(Clear_Sky)
-npc_visual                               = actors\stalker_nebo\stalker_nebo_a
-player_hud_section                       = actor_hud_cs3b
-
-inv_name                                 = csky_3b_outfit_name
-inv_name_short                           = csky_3b_outfit_name
-description                              = csky_3b_outfit_description
-
-inv_weight                               = 6
-additional_inventory_weight              = 9
-additional_inventory_weight2             = 9
-inv_grid_x                               = 28
-inv_grid_y                               = 33
-
-upgr_icon_x                              = 1856
-upgr_icon_y                              = 212
-upgr_icon_width                          = 300
-upgr_icon_height                         = 136
-
-cost                                     = 8000
-full_scale_icon                          = 2,6
-
-immunities_sect                          = sect_cs_3b_outfit_immunities
-power_loss                               = 0.06
-
-
-burn_protection                          = 0.025
-shock_protection                         = 0.125
-radiation_protection                     = 0.0055
-chemical_burn_protection                 = 0.025
-telepatic_protection                     = 0.0
-strike_protection                        = 0.135
-explosion_protection                     = 0.135
-wound_protection                         = 0.11
-
-hit_fraction_actor                       = 0.675
-bones_koeff_protection                   = actor_armor_cs2
-
-artefact_count                           = 1
-
-upgrades                                 = up_gr_firstab_cs_light_outfit, up_gr_seconab_cs_light_outfit, up_gr_thirdab_cs_light_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
-character_portrait                       = ui_inGame2_csky_5
-
-[sect_cs_3b_outfit_immunities]
-burn_immunity                            = 0.05
-strike_immunity                          = 0.0
-shock_immunity                           = 0.025
-wound_immunity                           = 0.043
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.05
+chemical_burn_immunity                   = 0.044
 explosion_immunity                       = 0.045
-fire_wound_immunity                      = 0.026
+fire_wound_immunity                      = 0.025
 
 ;---------------------------------------------------------------------------------------------
 ;		Freedom Guard Suit (Guardian of Freedom CS/CoP)
@@ -628,6 +619,65 @@ telepatic_immunity                       = 0.0
 chemical_burn_immunity                   = -0.02
 explosion_immunity                       = -0.02
 fire_wound_immunity                      = -0.007
+
+;---------------------------------------------------------------------------------------------
+;		Army outfit
+;---------------------------------------------------------------------------------------------
+[army_outfit]:outfit_base
+$spawn                                   = "outfit\army_outfit"
+visual                                   = dynamics\outfit\army_outfit
+actor_visual                             = actors\stalker_soldier\stalker_soldier1e
+npc_visual                               = actors\stalker_soldier\stalker_soldier1e
+player_hud_section                       = actor_hud_military_novice
+
+inv_name                                 = army_outfit_name
+inv_name_short                           = army_outfit_name
+description                              = army_outfit_description
+inv_weight                               = 5
+additional_inventory_weight              = 7
+additional_inventory_weight2             = 7
+inv_grid_x                               = 20
+inv_grid_y                               = 33
+
+upgr_icon_x                              = 939
+upgr_icon_y                              = 838
+upgr_icon_width                          = 301
+upgr_icon_height                         = 121
+
+cost                                     = 6500
+full_scale_icon                          = 10,11
+
+immunities_sect                          = sect_army_outfit_immunities
+power_loss                               = 0.06
+
+burn_protection                          = 0.02
+shock_protection                         = 0.10
+radiation_protection                     = 0.005
+chemical_burn_protection                 = 0.02
+telepatic_protection                     = 0.0
+strike_protection                        = 0.11
+explosion_protection                     = 0.11
+wound_protection                         = 0.09
+
+bones_koeff_protection                   = actor_armor_cs3
+hit_fraction_actor                       = 0.7
+artefact_count                           = 0
+
+upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
+character_portrait                       = ui_inGame2_soldier_1_camo_paint
+
+[sect_army_outfit_immunities]
+burn_immunity                            = 0.055
+strike_immunity                          = 0.0
+shock_immunity                           = 0.025
+wound_immunity                           = 0.045
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.055
+explosion_immunity                       = 0.045
+fire_wound_immunity                      = 0.028
 
 ;---------------------------------------------------------------------------------------------
 ;		Berill-5M Armoured Suit
@@ -832,6 +882,77 @@ telepatic_immunity                       = 0.0
 chemical_burn_immunity                   = 0.038
 explosion_immunity                       = 0.029
 fire_wound_immunity                      = 0.015
+
+;---------------------------------------------------------------------------------------------
+;		PS5-M Universal Duty Suit
+;---------------------------------------------------------------------------------------------
+[dolg_outfit]:outfit_base
+$spawn                                   = "outfit\dolg_outfit"
+visual                                   = dynamics\outfit\dolg_outfit
+actor_visual                             = actors\stalker_dolg\stalker_dolg_2.ogf
+npc_visual                               = actors\stalker_dolg\stalker_dolg_2.ogf
+player_hud_section                       = actor_hud_duty_ps5m
+
+inv_name                                 = dolg_outfit_name
+inv_name_short                           = dolg_outfit_name
+description                              = dolg_outfit_description
+
+inv_weight                               = 9.5
+
+inv_grid_x                               = 6
+inv_grid_y                               = 15
+
+upgr_icon_x                              = 0
+upgr_icon_y                              = 161
+upgr_icon_width                          = 302
+upgr_icon_height                         = 130
+
+cost                                     = 15750
+full_scale_icon                          = 8,11
+
+immunities_sect                          = sect_dolg_outfit_immunities
+
+burn_protection                          = 0.03
+shock_protection                         = 0.15
+radiation_protection                     = 0.0065
+chemical_burn_protection                 = 0.03
+telepatic_protection                     = 0.0
+strike_protection                        = 0.21
+explosion_protection                     = 0.21
+wound_protection                         = 0.175
+
+hit_fraction_actor                       = 0.575
+bones_koeff_protection                   = actor_armor_duty_suit
+
+artefact_count                           = 0
+power_loss                               = 0.13
+
+upgrades                                 = up_gr_firstab_dolg_outfit, up_gr_seconab_dolg_outfit, up_gr_thirdab_dolg_outfit
+installed_upgrades                       =
+upgrade_scheme                           = upgrade_scheme_dolg_outfit
+character_portrait                       = ui_inGame2_Dolg_2
+
+[sect_dolg_outfit_immunities]
+burn_immunity                            = 0.05
+strike_immunity                          = 0.0
+shock_immunity                           = 0.02
+wound_immunity                           = 0.04
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.05
+explosion_immunity                       = 0.04
+fire_wound_immunity                      = 0.02
+
+[sect_dolg_outfit_immunities_add]
+burn_immunity                            = -0.02
+strike_immunity                          = 0.0
+shock_immunity                           = -0.01
+wound_immunity                           = -0.02
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = -0.02
+explosion_immunity                       = -0.02
+fire_wound_immunity                      = -0.007
 
 ;---------------------------------------------------------------------------------------------
 ;		PSZ-9d Duty Armor
@@ -1069,68 +1190,6 @@ explosion_immunity                       = -0.02
 fire_wound_immunity                      = -0.007
 
 ;---------------------------------------------------------------------------------------------
-;		ORIGINAL GUARDIAN OF FREEDOM SUIT
-;---------------------------------------------------------------------------------------------
-[svoboda_heavy_outfit_2]:outfit_base
-$spawn                                   = "outfit\freedom_heavy_outfit"
-visual                                   = dynamics\outfit\freeheavy_outfit
-actor_visual                             = actors\stalker_freedom\stalker_freedom_2.ogf
-npc_visual                               = actors\stalker_freedom\stalker_freedom_2.ogf
-player_hud_section                       = actor_hud_freedom_guardian
-
-inv_name                                 = svoboda_heavy_outfit_2_name
-inv_name_short                           = svoboda_heavy_outfit_2_name
-description                              = svoboda_heavy_outfit_2_description
-
-inv_weight                               = 7
-
-inv_grid_x                               = 16
-inv_grid_y                               = 20
-
-upgr_icon_x                              = 1541
-upgr_icon_y                              = 353
-upgr_icon_width                          = 307
-upgr_icon_height                         = 130
-
-cost                                     = 12500
-full_scale_icon                          = 2,6
-
-upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
-
-immunities_sect                          = sect_svoboda_heavy_outfit_2_immunities
-
-burn_protection                          = 0.042
-shock_protection                         = 0.21
-radiation_protection                     = 0.009
-chemical_burn_protection                 = 0.042
-telepatic_protection                     = 0.0
-strike_protection                        = 0.155
-explosion_protection                     = 0.155
-wound_protection                         = 0.13
-
-hit_fraction_actor                       = 0.625
-bones_koeff_protection                   = actor_armor_freedom_suit
-
-artefact_count                           = 1
-power_loss                               = 0.07
-
-upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
-character_portrait                       = ui_inGame2_Freedom_2
-
-[sect_svoboda_heavy_outfit_2_immunities]
-burn_immunity                            = 0.044
-strike_immunity                          = 0.0
-shock_immunity                           = 0.022
-wound_immunity                           = 0.045
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.044
-explosion_immunity                       = 0.045
-fire_wound_immunity                      = 0.025
-
-;---------------------------------------------------------------------------------------------
 ;		MONOLITH SUIT
 ;---------------------------------------------------------------------------------------------
 [monolith_outfit]:stalker_outfit
@@ -1189,69 +1248,10 @@ cost                                     = 15500
 character_portrait                       = ui_inGame2_ecolog_guard
 
 ;---------------------------------------------------------------------------------------------
-;		Army outfit
-;---------------------------------------------------------------------------------------------
-[army_outfit]:outfit_base
-$spawn                                   = "outfit\army_outfit"
-visual                                   = dynamics\outfit\army_outfit
-actor_visual                             = actors\stalker_soldier\stalker_soldier1e
-npc_visual                               = actors\stalker_soldier\stalker_soldier1e
-player_hud_section                       = actor_hud_military_novice
-
-inv_name                                 = army_outfit_name
-inv_name_short                           = army_outfit_name
-description                              = army_outfit_description
-inv_weight                               = 5
-additional_inventory_weight              = 7
-additional_inventory_weight2             = 7
-inv_grid_x                               = 20
-inv_grid_y                               = 33
-
-upgr_icon_x                              = 939
-upgr_icon_y                              = 838
-upgr_icon_width                          = 301
-upgr_icon_height                         = 121
-
-cost                                     = 6500
-full_scale_icon                          = 10,11
-
-immunities_sect                          = sect_army_outfit_immunities
-power_loss                               = 0.06
-
-burn_protection                          = 0.02
-shock_protection                         = 0.10
-radiation_protection                     = 0.005
-chemical_burn_protection                 = 0.02
-telepatic_protection                     = 0.0
-strike_protection                        = 0.11
-explosion_protection                     = 0.11
-wound_protection                         = 0.09
-
-bones_koeff_protection                   = actor_armor_cs3
-hit_fraction_actor                       = 0.7
-artefact_count                           = 0
-
-upgrades                                 = up_gr_firstab_svoboda_light_outfit, up_gr_seconab_svoboda_light_outfit, up_gr_thirdab_svoboda_light_outfit
-installed_upgrades                       =
-upgrade_scheme                           = upgrade_scheme_svoboda_light_outfit
-character_portrait                       = ui_inGame2_soldier_1_camo_paint
-
-[sect_army_outfit_immunities]
-burn_immunity                            = 0.055
-strike_immunity                          = 0.0
-shock_immunity                           = 0.025
-wound_immunity                           = 0.045
-radiation_immunity                       = 0.0
-telepatic_immunity                       = 0.0
-chemical_burn_immunity                   = 0.055
-explosion_immunity                       = 0.045
-fire_wound_immunity                      = 0.028
-
-;---------------------------------------------------------------------------------------------
 ;		Bandit commander outfit
 ;---------------------------------------------------------------------------------------------
 [trenchcoat_brown_outfit]:outfit_base
-$spawn                                   = "outfit\trenchcoat_outfit"
+$spawn                                   = "outfit\trenchcoat_brown_outfit"
 visual                                   = dynamics\outfit\bandit_commander_outfit
 actor_visual                             = actors\stalker_bandit\stalker_bandit6a.ogf
 npc_visual                               = actors\stalker_bandit\stalker_bandit6a.ogf
