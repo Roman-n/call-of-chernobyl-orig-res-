@@ -102,11 +102,11 @@
 	</string>
 	
 	<string id="ls_tip_24">
-		<text>Due to differing chemical composition, tracers in Western-made ammunition will glow red, whereas those of Eastern origin will instead glow green. This may help you determine what weapon your enemy is using.</text>
+		<text>Due to differing chemical composition, tracers in Western-made ammunition will glow red, whereas those of Eastern origin will glow green. This may help indicate what kind of weapon your enemy is using.</text>
 	</string>
 	
 	<string id="ls_tip_25">
-		<text>Just like you, your enemy may also have loaded their weapon with armour-piercing ammunition. These rounds will punch through weak material and damage those hiding behind.</text>
+		<text>Other stalkers may sometimes load their weapons with armour-piercing ammunition. These rounds will punch through weak material and damage those hiding behind.</text>
 	</string>
 	
 	<string id="ls_tip_26">
@@ -114,7 +114,47 @@
 	</string>
 	
 	<string id="ls_tip_27">
-		<text>Tactics and terrain are just as important to winning a fight as your choice of weapon and ammunition. Spending the time to create an ambush could give you a massive advantage over your enemies.</text>
+		<text>Tactics and terrain are just as important to winning a fight as your choice of weapon and ammunition. Spending the time to create an ambush could give you a massive advantage.</text>
+	</string>
+	
+	<string id="ls_tip_28">
+		<text>Traders restock their supplies every 48-hours. They will also refuse to buy any equipment from you if it falls below 75% condition.</text>
+	</string>
+	
+	<string id="ls_tip_29">
+		<text>Avoid standing next to red barrels in a fight as they will explode when shot. However if a hostile stalker should wander next to one a few well placed bullets will send them flying.</text>
+	</string>
+	
+	<string id="ls_tip_30">
+		<text>Turning on your flashlight will alert any nearby enemies to your location. Shining it directly in their eyes at close range may make it harder for them to shoot you.</text>
+	</string>
+	
+	<string id="ls_tip_31">
+		<text>Can't find tools for a technician to upgrade your gear? Legend has it that an elderly man in the Red Forest doesn't require them, but charges a small fortune for his services.</text>
+	</string>
+	
+	<string id="ls_tip_32">
+		<text>Most stalkers go through what is called the "hobo phase", which describes a period of poor equipment and limited finances when first exploring the Zone.</text>
+	</string>
+	
+	<string id="ls_tip_33">
+		<text>You can right-click weapons to unload them of their ammunition and remove any scopes, suppressors, or grenade launchers which they might have attached.</text>
+	</string>
+	
+	<string id="ls_tip_34">
+		<text>Mutant parts can be sold to the Ecologists at their scientific laboratories. Most other stalkers won't have any interest in purchasing them from you.</text>
+	</string>
+	
+	<string id="ls_tip_35">
+		<text>Each faction has their own unique arsenal. Because of this, weapons and ammunitions considered uncommon in one region of the Zone will likely be very prominent in others.</text>
+	</string>
+	
+	<string id="ls_tip_36">
+		<text>Gun running is the act of collecting cheap weapons in good condition, paying a technician to repair them fully, and then selling them to a trader for a small profit.</text>
+	</string>
+	
+	<string id="ls_tip_37">
+		<text>Plant a butterfly mine near a hostile stalker's fallen ally - when they try to loot it for weapons or ammunition they will blow themselves up in the process.</text>
 	</string>
 	
 </string_table>
