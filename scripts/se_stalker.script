@@ -137,12 +137,14 @@ end
 
 function se_trader:on_register()
 	--story_objects.check_spawn_ini_for_story_id(self)
+	SendScriptCallback("server_entity_on_register",self,"se_trader")
 	cse_alife_trader.on_register(self)
 end
 
 function se_trader:on_unregister()
 	trade_manager.unregister(self.id)
 	--story_objects.unregister(self.id)
+	SendScriptCallback("server_entity_on_unregister",self,"se_trader")
 	cse_alife_trader.on_unregister(self)
 end
 
