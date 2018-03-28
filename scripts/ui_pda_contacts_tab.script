@@ -143,8 +143,7 @@ function pda_contacts_tab:Reset()
 		end
 	end
 	
-	-- Special case for Sidorovich and Forester.
-	-- Note: I don't think either of these are being registered by the server anymore.
+	-- Special cases for Sidorovich and Forester.
 	local function add_by_sid(sid)
 		local id = story_objects.object_id_by_story_id[sid]
 		if (id) then 
