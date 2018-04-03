@@ -145,7 +145,6 @@ function create_effect(weapon)
 		-- Return a cached value if this weapon and ammo combination has been used before.
 		-- This saves having to keep digging out weapon and ammo values and recalculating for every shot.
 		local ammo_type = (weapon:get_ammo_type() + 1)
-		local cached_recoil = recoils[weapon:id()] and recoils[weapon:id()][ammo_type] or nil
 		if (recoils[weapon:id()]) then
 			if (recoils[weapon:id()][ammo_type]) then
 				return recoils[weapon:id()][ammo_type]

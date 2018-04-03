@@ -46,7 +46,7 @@
 	</string>
 	
 	<string id="ls_tip_10">
-		<text>Truck Cemetery is a large graveyard of irradiated agricultural, civilian and military vehicles. As a great place to hide a stash, an eagle-eyed stalker may find many valuables within the wreckage.</text>
+		<text>Truck Cemetery is a large graveyard of irradiated agricultural, civilian, and military vehicles. As a great place to hide a stash, an eagle-eyed stalker may find many valuables within the wreckage.</text>
 	</string>
 	
 	<string id="ls_tip_11">
@@ -54,11 +54,11 @@
 	</string>
 	
 	<string id="ls_tip_12">
-		<text>Completing tasks for factions will increase your goodwill with them. As it increases, their traders will gradually offer you greater discounts on their goods and services.</text>
+		<text>Completing tasks for factions will increase your goodwill with them. As it increases, their traders will gradually offer you greater discounts and more valuable items.</text>
 	</string>
 	
 	<string id="ls_tip_13">
-		<text>Most tasks can be cancelled after you agree to complete them. You can do this by speaking with the stalker who gave you the task. Just remember that cancelling a task will decrease your reputation and goodwill.</text>
+		<text>Most tasks can be cancelled after you agree to complete them. You can do this by speaking with the stalker who gave you the task. Cancelling a task will decrease your reputation and goodwill.</text>
 	</string>
 	
 	<string id="ls_tip_14">
@@ -70,11 +70,11 @@
 	</string>
 	
 	<string id="ls_tip_16">
-		<text>Rostok's arena hosts two types of competitions: traditional fights where stalkers battle each other for cash rewards, and challenges where they attempt to kill increasingly harder mutants.</text>
+		<text>Rostok's arena hosts two types of competitions: traditional fights where stalkers battle each other for cash rewards, and challenges, where they attempt to kill increasingly harder mutants.</text>
 	</string>
 	
 	<string id="ls_tip_17">
-		<text>Online exclusion radius creates a no-spawn zone around you preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
+		<text>Online exclusion radius creates a no-spawn zone around you; preventing mutants and other stalkers spawning unfairly and dangerously close.</text>
 	</string>
 	
 	<string id="ls_tip_18">
@@ -106,7 +106,7 @@
 	</string>
 	
 	<string id="ls_tip_25">
-		<text>Other stalkers may sometimes load their weapons with armour-piercing ammunition. These rounds will punch through weak material and damage those hiding behind.</text>
+		<text>Other stalkers may sometimes load their weapons with armour-piercing ammunition. These rounds will punch through weak materials and damage those hiding behind.</text>
 	</string>
 	
 	<string id="ls_tip_26">
@@ -118,11 +118,11 @@
 	</string>
 	
 	<string id="ls_tip_28">
-		<text>Traders restock their supplies every 48-hours. They will also refuse to buy any equipment from you if it falls below 75% condition.</text>
+		<text>Traders restock their supplies every 48-hours. They will also refuse to buy any equipment from you if it falls below 75&#37; condition.</text>
 	</string>
 	
 	<string id="ls_tip_29">
-		<text>Avoid standing next to red barrels in a fight as they will explode when shot. However if a hostile stalker should wander next to one a few well placed bullets will send them flying.</text>
+		<text>Avoid standing next to red barrels in a fight as they will explode when shot. However, if a hostile stalker should wander next to one a few well placed bullets will send them flying.</text>
 	</string>
 	
 	<string id="ls_tip_30">
@@ -134,15 +134,15 @@
 	</string>
 	
 	<string id="ls_tip_32">
-		<text>Most stalkers go through what is called the "hobo phase", which describes a period of poor equipment and limited finances when first exploring the Zone.</text>
+		<text>Most stalkers go through what they call the "hobo phase", which describes a period of poor equipment and limited finances when first exploring the Zone.</text>
 	</string>
 	
 	<string id="ls_tip_33">
-		<text>You can right-click weapons to unload them of their ammunition and remove any scopes, suppressors, or grenade launchers which they might have attached.</text>
+		<text>You can right-click weapons to unload them of their ammunition and remove any scopes, suppressors, and grenade launchers which they might have attached.</text>
 	</string>
 	
 	<string id="ls_tip_34">
-		<text>Mutant parts can be sold to the Ecologists at their scientific laboratories. Most other stalkers won't have any interest in purchasing them from you.</text>
+		<text>Mutant parts can be sold to the Ecologists at their scientific laboratories. Ordinary stalkers won't have any interest in purchasing them from you.</text>
 	</string>
 	
 	<string id="ls_tip_35">
@@ -150,11 +150,63 @@
 	</string>
 	
 	<string id="ls_tip_36">
-		<text>Gun running is the act of collecting cheap weapons in good condition, paying a technician to repair them fully, and then selling them to a trader for a small profit.</text>
+		<text>Collect cheap weapons in good condition, pay a technician to repair them fully, and then sell them to a trader to make a small but easy profit.</text>
 	</string>
 	
 	<string id="ls_tip_37">
-		<text>Plant a butterfly mine near a hostile stalker's fallen ally - when they try to loot it for weapons or ammunition they will blow themselves up in the process.</text>
+		<text>Plant a butterfly mine near a hostile stalker's fallen ally - when he tries to loot it for weapons or ammunition he will blow themselves up in the process.</text>
+	</string>
+	
+	<string id="ls_tip_38">
+		<text>Eating food won't heal you, but will instead cure your hunger. Being hungry reduces your energy regeneration.</text>
+	</string>
+	
+	<string id="ls_tip_39">
+		<text>Grenades and most other explosive objects will fragment when detonated. The shrapnel produced can reach much farther than the initial explosion's kill radius.</text>
+	</string>
+	
+	<string id="ls_tip_40">
+		<text>You can kick physical objects such as crates and boxes, and even small mutants with a low body mass. Bind this ability to a key in the controls menu to use it.</text>
+	</string>
+	
+	<string id="ls_tip_41">
+		<text>Found a cool area and would like to revisit it later? You can double-click almost anywhere on the world map to mark locations.</text>
+	</string>
+	
+	<string id="ls_tip_42">
+		<text>Try to be aware of how much noise you are creating - mutants and other stalkers will hear you if you don't move about with caution in mind.</text>
+	</string>
+	
+	<string id="ls_tip_43">
+		<text>Not sure if the path ahead is safe? Throw a bolt in that direction to see if any anomalies react to it.</text>
+	</string>
+	
+	<string id="ls_tip_44">
+		<text>The Zone does not care if you are busy checking your PDA - everything hostile will still carry on trying to kill you.</text>
+	</string>
+	
+	<string id="ls_tip_45">
+		<text>Enhanced recoil kicks your gun about in a much more realistic manner when enabled.</text>
+	</string>
+	
+	<string id="ls_tip_46">
+		<text>Protective equipment doesn't make radiation a non-issue, but it does reduce its effects, allowing you to spend more time in contaminated areas.</text>
+	</string>
+	
+	<string id="ls_tip_47">
+		<text>Your relation to another stalker can often be identified by the usage of colour on the interface. Neutrals appear yellow, friendlies appear green, and enemies appear red.</text>
+	</string>
+	
+	<string id="ls_tip_48">
+		<text>Bodies can be dragged by looking towards them and pressing the key prompts on-screen.</text>
+	</string>
+	
+	<string id="ls_tip_49">
+		<text>Stalkers will heal themselves during battle if they have a medical kit in their inventory, but will require another's assistance if they are mortally wounded.</text>
+	</string>
+	
+	<string id="ls_tip_50">
+		<text>Don't become too focused on a specific target, their allies will use this to their advantage by trying to flank you.</text>
 	</string>
 	
 </string_table>

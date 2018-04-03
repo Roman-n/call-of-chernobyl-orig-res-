@@ -60,7 +60,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nReputation is similar to rank but differs in that it isn't quite so linear - being able to both increase and decrease - and that it is based on your interactions with other stalkers rather than the environment.\n
 			\nThe easiest ways to increase reputation are by completing tasks, providing first-aid, and killing your faction's enemies, whilst inversely the easiest ways to lose it are by cancelling or failing tasks, and killing neutral or friendly stalkers.\n
-			\nIt should be noted that whilst it is used by some features, reputation is largely immersion-focused and should not be confused with goodwill - which handles all stalker and faction relations.\n
+			\nIt should be noted that whilst it is used by some features, reputation is largely immersion-focused and should not be confused with goodwill.\n
 			\n%c[guide_green]Reputations%c[default]
 			\n• Terrible: -2,000\n• Dreary: -1,500\n• Awful: -1,000\n• Bad: -500\n• Neutral: 0\n• Good: 500\n• Great: 1,000\n• Brilliant: 1,500\n• Excellent: 2,000
 		</text>
