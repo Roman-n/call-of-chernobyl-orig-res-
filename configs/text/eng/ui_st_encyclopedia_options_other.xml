@@ -26,7 +26,7 @@
 			%c[guide_blue]Ironman mode%c[default] adds an indirect layer of difficulty to gameplay, whereby all of your saved games for a character are deleted upon their death.\n
 			\n%c[guide_green]Information%c[default]
 			\nShould Azazel mode be enabled at the same time you will be allowed to continue playing as whoever you switched to, but saves made as your deceased character will be deleted as per usual.\n
-			\nNote that all saves in an ironman mode playthrough are tagged with a unique identifier so the game can distinguish between them, making it impossible for unrelated saves to be deleted by mistake.\n
+			\nWhen playing with this mode enabled all of the saves you make will be uniquely tagged as an ironman by the way, as such it is impossible for unrelated saves to be deleted by mistake.\n
 			\nThis mode can only be enabled from the character creation screen.
 		</text>
 	</string>

@@ -110,7 +110,7 @@
 	</string>
 	
 	<string id="ls_tip_26">
-		<text>Buckshot will have little effect against body armour unless you aim for the head. However it will completely decimate anyone wearing nothing but a simple jacket.</text>
+		<text>Buckshot will have little effect against body armour unless you aim for the head. However, it will completely decimate anyone wearing nothing but a simple jacket.</text>
 	</string>
 	
 	<string id="ls_tip_27">
@@ -118,7 +118,7 @@
 	</string>
 	
 	<string id="ls_tip_28">
-		<text>Traders restock their supplies every 48-hours. They will also refuse to buy any equipment from you if it falls below 75&#37; condition.</text>
+		<text>Traders restock their supplies every 48-hours. They will also refuse to buy any equipment from you if its condition falls below 75 percent.</text>
 	</string>
 	
 	<string id="ls_tip_29">
@@ -154,11 +154,11 @@
 	</string>
 	
 	<string id="ls_tip_37">
-		<text>Plant a butterfly mine near a hostile stalker's fallen ally - when he tries to loot it for weapons or ammunition he will blow themselves up in the process.</text>
+		<text>Plant a butterfly mine near a hostile stalker's fallen ally - when he tries to loot he will blow himself up in the process.</text>
 	</string>
 	
 	<string id="ls_tip_38">
-		<text>Eating food won't heal you, but will instead cure your hunger. Being hungry reduces your energy regeneration.</text>
+		<text>Eating food won't heal you but will instead cure your hunger. Being hungry reduces your energy regeneration.</text>
 	</string>
 	
 	<string id="ls_tip_39">
@@ -182,11 +182,11 @@
 	</string>
 	
 	<string id="ls_tip_44">
-		<text>The Zone does not care if you are busy checking your PDA - everything hostile will still carry on trying to kill you.</text>
+		<text>Use your binoculars to scout out the area surrounding you. Any nearby entities will be indicated by a rectangle.</text>
 	</string>
 	
 	<string id="ls_tip_45">
-		<text>Enhanced recoil kicks your gun about in a much more realistic manner when enabled.</text>
+		<text>Want to challenge your proficiency with weapons? Enable the enhanced recoil feature for more realistic multi-directional recoil.</text>
 	</string>
 	
 	<string id="ls_tip_46">
@@ -198,11 +198,11 @@
 	</string>
 	
 	<string id="ls_tip_48">
-		<text>Bodies can be dragged by looking towards them and pressing the key prompts on-screen.</text>
+		<text>Bodies can be dragged out of sight by looking towards them and pressing the key prompts on-screen.</text>
 	</string>
 	
 	<string id="ls_tip_49">
-		<text>Stalkers will heal themselves during battle if they have a medical kit in their inventory, but will require another's assistance if they are mortally wounded.</text>
+		<text>Stalkers will heal themselves during battle if they have a medical kit in their inventory, but will require the assistance of another if they are mortally wounded.</text>
 	</string>
 	
 	<string id="ls_tip_50">
