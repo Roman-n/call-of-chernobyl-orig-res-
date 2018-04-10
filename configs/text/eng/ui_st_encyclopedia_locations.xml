@@ -12,7 +12,7 @@
 		<text>
 			%c[guide_blue]Agroprom%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• Many similarities in both layout and terrain can be found in the Army Warehouses.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -28,7 +28,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nNobody is all too sure what the intended purpose of these catacombs was, as whilst some compartments were clearly used for necessities such as plumbing, others appear distinctly scientific in nature.\n
 			\nAs of now their only remaining use is for the mass farming of artefacts from its dozens of anomalies, and as a hunting ground for bandits and mutants which prey on unsuspecting stalkers that venture within.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• As of update 1.4 this location is a merge of both iterations seen during the series.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -42,7 +42,7 @@
 		<text>
 			The %c[guide_blue]Army Warehouses%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• Many similarities in both layout and terrain can be found in Agroprom.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -59,7 +59,7 @@
 			\nIt was here on April 26th, 1986 that the first disaster occurred, after reactor 4 exploded following a power surge and failed emergency shutdown, vast plumes of radioactive materials were launched into the atmosphere.\n
 			\nWithin a radius of 30 kilometers from the station a total evacuation of the population was carried out and an exclusion zone was formed - separating everything within from the rest of the world by way of a protected perimeter.\n
 			\nThough extremely deep within Monolith territory, stalkers have attempted to reach this site for years - believing that within can be found a device with the power to grant one their most heartfelt desires.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• In real-life the Chernobyl NPP is actually located south of Pripyat.
 			\n• It is still possible to see this location in the distance despite actually being there.
 			\n• The northern and southern halves of this location were previously joined together.
@@ -75,7 +75,7 @@
 		<text>
 			%c[guide_blue]Cordon%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• A large factory existed here during development until being replaced by the car park.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -89,7 +89,7 @@
 		<text>
 			%c[guide_blue]Dark Valley%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 			\n• This location was once twice as large until the entire eastern half was cut and redesigned.
@@ -103,7 +103,7 @@
 		<text>
 			%c[guide_blue]Darkscape%c[default], or the %c[guide_blue]Dark Hollow%c[default], is a densely forested and highly anomalous area.\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -118,7 +118,7 @@
 			\nFormerly inhabited by those who could not find a home within Limansk or Pripyat, much of the location's history has since been long forgotten.\n
 			\nThe name given to it by stalkers can be considered an accurate one, likening the city to a corpse because of its condition - decaying and wasting away at the hands of the elements.\n
 			\nDespite being under constant siege from invading bandits and mutants, the Mercenary faction has established their headquarters here, maintaining a small but yet powerful presence.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -133,7 +133,7 @@
 			\nAlthough nothing is publicly known about the history of this hospital, it is safe to presume its intended purpose was to serve the residents of nearby Limansk.\n
 			\nOne of the location's most interesting features is the fact that it has somehow collapsed into the ground, as earthquakes in this part of the world are extremely uncommon and are usually so small that they go unnoticed.\n
 			\nIt is also the only major area within the Zone known to be absent of any radioactive or anomalous activity - however it is also one of the most dangerous due to being completely overrun by the Monolith.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• Psi-storms and emissions cannot occur here as there is nowhere to hide.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location did not originally appear on the world map.
@@ -147,7 +147,7 @@
 		<text>
 			%c[guide_blue]Garbage%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 			\n• This location is based on the many real-life scrap heaps that litter the exclusion zone.
@@ -162,7 +162,7 @@
 		<text>
 			%c[guide_blue]Generators%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• A similar location named "Generator" was cut from S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -175,7 +175,7 @@
 		<text>
 			%c[guide_blue]Great Swamp%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• A similar location named "Swamp" was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 		</text>
@@ -188,7 +188,7 @@
 		<text>
 			%c[guide_blue]Jupiter%c[default], or %c[guide_blue]Yanov%c[default], is a large industrial area dominated by railway infrastructure.\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Call of Pripyat.
 		</text>
 	</string>
@@ -203,7 +203,7 @@
 			\nOnce used to covertly move goods and materials without being seen, as evidenced by the numerous rusting transports, these secretive tunnels were abandoned and filled with poisonous gases following the second disaster.\n
 			\nIt wasn't until recently that a group of stalkers managed to re-open the tunnels from the side of Jupiter, allowing enough time for them to be vented and made safe.\n
 			\nOf course "safe" is a relative term in the Zone, as those who have ventured below report encountering innumerable snorks and zombified stalkers.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Call of Pripyat.
 			\n• This location was cut from S.T.A.L.K.E.R.: Clear Sky.
 		</text>
@@ -216,7 +216,7 @@
 		<text>
 			%c[guide_blue]Lab X-16%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -229,7 +229,7 @@
 		<text>
 			%c[guide_blue]Lab X-18%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -241,7 +241,7 @@
 		<text>
 			%c[guide_blue]Lab X-19%c[default], also known as %c[guide_blue]Lab X-10%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -253,7 +253,7 @@
 		<text>
 			%c[guide_blue]Lab X-8%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Call of Pripyat.
 			\n• This location shares an almost identical layout with the Monolith War Lab.
 		</text>
@@ -266,7 +266,7 @@
 		<text>
 			%c[guide_blue]Limansk%c[default], officially %c[guide_blue]Limansk-13%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location is influenced by the real-life "Chernobyl-2" military facility.
 		</text>
@@ -279,7 +279,7 @@
 		<text>
 			%c[guide_blue]Monolith Control Center%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• There exists an inaccessible area which was used only for a cutscene.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -292,7 +292,7 @@
 		<text>
 			The %c[guide_blue]Monolith War Lab%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location shares an almost identical layout with Lab X-8.
 			\n• This location was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -305,7 +305,7 @@
 		<text>
 			%c[guide_blue]Outskirts%c[default], or %c[guide_blue]Pripyat Outskirts%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Call of Pripyat.
 			\n• Previously named "Pripyat", we renamed this area to avoid confusion.
 		</text>
@@ -318,7 +318,7 @@
 		<text>
 			%c[guide_blue]Pripyat%c[default], or %c[guide_blue]Pripyat Plaza%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -330,7 +330,7 @@
 		<text>
 			The %c[guide_blue]Red Forest%c[default], officially the %c[guide_blue]Wormwood Forest%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 		</text>
 	</string>
@@ -342,7 +342,7 @@
 		<text>
 			%c[guide_blue]Radar%c[default], or the %c[guide_blue]Dark Forest%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -354,7 +354,7 @@
 		<text>
 			%c[guide_blue]Rostok%c[default], or %c[guide_blue]Bar%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• The western half of this location was removed and turned into the Wild Territory.
 			\n• There is a large area in this location which is unused and remains inaccessible.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -368,7 +368,7 @@
 		<text>
 			%c[guide_blue]Sarcophagus%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• Much of this location is duplicated in Chernobyl NPP, however it remains inaccessible.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -385,7 +385,7 @@
 			\nWhilst most of the equipment here was in perfect working order but had no practical way of being decontaminated, much of the rest just simply broke down due to the harsh conditions and was dumped here shortly after.\n
 			\nIn the years following the creation of the Zone as we know it today, the area has become plagued by conflict as Duty and Freedom fight over territory, all the while soldiers and bandits encroach from the east and south.\n
 			\nDespite being so isolated and difficult to get to, many stalkers have noticed the vehicles here are gradually being stripped bare - with many believing that somebody, perhaps the military, is attempting to salvage the metals and illegally sell them for scrap.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• In real-life all of the vehicles at Rassokha have long since been removed.
 			\n• This location has the largest file size, weighing in at almost quarter of a gigabyte.
 			\n• This location was custom-built exclusively for S.T.A.L.K.E.R.: Call of Chernobyl.
@@ -399,7 +399,7 @@
 		<text>
 			%c[guide_blue]Wild Territory%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location was originally a part of Rostok until its separation.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
@@ -412,7 +412,7 @@
 		<text>
 			%c[guide_blue]Yantar%c[default].\n
 			\n%c[guide_green]Information%c[default]
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• This location was drastically redesigned during development and was several times larger.
 			\n• This location featured in S.T.A.L.K.E.R.: Clear Sky.
 			\n• This location featured in S.T.A.L.K.E.R.: Shadow of Chernobyl.
@@ -429,7 +429,7 @@
 			\nLittered with the wrecks of numerous boats, barges and cargo ships, this location more strongly resembles a swamp than the former industrial site it used to be.\n
 			\nRadiation here is minimal aside from a few scattered pockets, but many parts are often found overrun by anomalies, mutants, or zombified stalkers.\n
 			\nAlthough located so far within the center of the Zone and being surrounded by Monolith territories, there are numerous settlements such as the Skadovsk and the Shevchenko.\n
-			\n%c[guide_green]Interesting facts%c[default]
+			\n%c[guide_green]Trivia%c[default]
 			\n• Due to an oversight, any flow of water from this location would likely flood Pripyat.
 			\n• This location featured in S.T.A.L.K.E.R.: Call of Pripyat.
 		</text>
