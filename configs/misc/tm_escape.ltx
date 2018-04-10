@@ -106,7 +106,7 @@ on_init = %=find_smart_under_faction_control(esc_2_12_stalker_wolf_task_1_id:mon
 precondition = {=all_avail_smart_stayed_squad_count_ge_by_faction(1:nil:false:monster)} true, false
 repeat_timeout = 86400
 stage_complete = 1
-on_complete = %=complete_task_inc_goodwill(25:stalker) =reward_random_money(2000:3000) =reward_stash(true) =inc_task_stage(esc_2_12_stalker_wolf_task_1) =pstor_reset(esc_2_12_stalker_wolf_task_1_id) =pstor_reset(esc_2_12_stalker_wolf_task_1_target_id)%
+on_complete = %=complete_task_inc_goodwill(25:stalker) =reward_by_rank(esc_2_12_stalker_wolf_task_1:2000:50) =reward_stash(true) =inc_task_stage(esc_2_12_stalker_wolf_task_1) =pstor_reset(esc_2_12_stalker_wolf_task_1_id) =pstor_reset(esc_2_12_stalker_wolf_task_1_target_id)%
 on_fail = %=pstor_reset(esc_2_12_stalker_wolf_task_1_id) =pstor_reset(esc_2_12_stalker_wolf_task_1_target_id) =fail_task_dec_goodwill(25:stalker)%
 on_cancel = %=pstor_reset(esc_2_12_stalker_wolf_task_1_id) =pstor_reset(esc_2_12_stalker_wolf_task_1_target_id)%
 
