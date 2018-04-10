@@ -12,7 +12,7 @@
 		<text>
 			%c[guide_blue]Ashot%c[default] is Freedom's cheerful and optimistic trader at Yanov station.\n
 			\n%c[guide_green]Information%c[default]
-			\nAccording to himself, because of his "low prices and quality equipment", he has supposedly been put on several hit-lists by black market traders.\n
+			\nAccording to himself, because of his "low prices and quality equipment" he has supposedly been put on several hit-lists by black market traders.\n
 			\nTogether with the help of Yar, a long-time buddy of his from the Army Warehouses, many stalkers find themselves becoming unwitting pawns in his practical jokes.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Freedom\n• Rank: Expert\n• Reputation: Excellent
@@ -43,7 +43,9 @@
 			\nAside from the obvious functions of managing the bar, he rents rooms, pays out bribes, and supplies stalkers with plenty of equipment and work.\n
 			\nHe is respected greatly by many stalkers as he was instrumental in the opening of roads leading toward the center of the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• Due to his peculiar face it took numerous attempts to produce a usable photograph.
 		</text>
 	</string>
 	
@@ -54,7 +56,7 @@
 		<text>
 			%c[guide_blue]Beard%c[default] is an artefact dealer and barkeeper aboard the Skadovsk.\n
 			\n%c[guide_green]Information%c[default]
-			\nHe is a very important figure near the center of the Zone, and effectively the leader of loners in Zaton.\n
+			\nHe is a very important figure near the center of the Zone and effectively the leader of loners in Zaton.\n
 			\nThough mainly artefact recovery he does offer various types of work, and he always appears willing to do whatever he sees as in the best interests of his people.\n
 			\nHis bar is one of the busiest in the Zone - second only to the 100 Rads - and is almost synonymous with the Skadovsk itself.\n
 			\n%c[guide_green]Statistics%c[default]
@@ -69,9 +71,9 @@
 		<text>
 			%c[guide_blue]Cardan%c[default] is an experienced technician and a recovering alcoholic.\n
 			\n%c[guide_green]Information%c[default]
-			\nHe came to the Zone with his two friends, Joker and Barge, who after a fierce, booze-fuelled argument, decided to go their separate ways.\n
+			\nHe came to the Zone with his two friends Joker and Barge, who after a fierce and booze-fuelled argument each decided to go their separate ways.\n
 			\nFrom here he took up residence at the Skadovsk where he proceeded to sink further into his alcoholism, only swearing off drinking when learning of his former friends' demise.\n
-			\nPrior to this, he worked on the development of the so-called "Project 62" - a prototype of the Gauss rifle - until its eventual closure in 2004.\n
+			\nPrior to this he worked on the development of the so-called "Project 62", a prototype of the Gauss rifle, until its eventual closure in 2004.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Excellent
 		</text>
@@ -85,7 +87,7 @@
 			%c[guide_blue]Cold%c[default] helped restore and now leads the Clear Sky faction.\n
 			\n%c[guide_green]Information%c[default]
 			\nFormerly just the barkeeper, Cold is one of few in the Zone to have fallen upwards, taking Clear Sky's reins after most of its key members either died or deserted.\n
-			\nKnown by his comrades as a cheerful and good-natured person, as well as a lover of vulgar jokes, he came to the Zone because he could not seem to find his place in the outside world.\n
+			\nKnown by his comrades as a cheerful and good-natured person as well as a lover of vulgar jokes, he came to the Zone because he could not seem to find his place in the outside world.\n
 			\nThere is little doubt that he made the right decision, restoring his faction to its former glory and now occupying an important seat of power in the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Clear Sky\n• Rank: Master\n• Reputation: Excellent
@@ -99,11 +101,13 @@
 		<text>
 			The %c[guide_blue]Doctor%c[default] is one of few surviving members of Strelok's group.\n
 			\n%c[guide_green]Information%c[default]
-			\nAccording to popular legend, the Doctor was one of the first stalkers to reach the Wish Granter, with the desire to treat any living creature in the Zone.\n
-			\nHis wish was granted, giving him the gift of healing, but erasing his distinction between people and mutants.\n
+			\nAccording to popular legend the Doctor was one of the first stalkers to reach the Wish Granter, with the desire to treat any living creature in the Zone.\n
+			\nHis wish was granted and he was given the gift of healing, but his ability to distinguish between people and mutants was erased.\n
 			\nThis is denied by the Doctor himself as just a story, saying that none of those who set out to find it have ever returned alive.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner (Trader)\n• Rank: Legend\n• Reputation: Excellent\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• Until update 1.4 and the addition of story mode he was the medic at Clear Sky's base.
 		</text>
 	</string>
 	
@@ -114,7 +118,7 @@
 		<text>
 			%c[guide_blue]Fanatic%c[default] earns his name from being a dedicated and aggressive stalker.\n
 			\n%c[guide_green]Information%c[default]
-			\nFollowing Wolf's departure for the Army Warehouses until his return, Fanatic took charge in looking after new arrivals to the Zone at the rookie village.\n
+			\nFollowing Wolf's departure for the Army Warehouses, Fanatic took charge in looking after new arrivals to the Zone at the rookie village until his eventual return.\n
 			\nDespite no-longer being solely in charge he is still regarded as an authority, though he much prefers to be out fighting bandits and mutants than standing idly by.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Brilliant
@@ -130,7 +134,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nOn the orders of Trapper he arrived to Zaton with Garmata, Crab, and Danila, to destroy a chimera which had been terrorising stalkers in the vicinity.\n
 			\nRight from the beginning their venture was struck by bad luck, with Danila mysteriously disappearing and leaving them a man short, and Crab being left bedridden after suffering injuries.\n
-			\nThey hired a stalker named Magpie to assist them, who instead backed out at the last moment, stealing their gear and then fleeing for Yanov station.\n
+			\nThey hired a stalker named Magpie to assist them who instead backed out at the last moment, stealing their gear and then fleeing for Yanov station.\n
 			\nWith the help of a mysterious stalker, Gonta killed the chimera, uncovered Danila's fate, and discovered Magpie's whereabouts - delivering him justice soon after.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Loner\n• Rank: Veteran\n• Reputation: Good
@@ -146,7 +150,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nDespite what his name would imply he isn't actually from Hawaii, but is nicknamed as such for often exclaiming "Aloha!" when greeting his customers.\n
 			\nAlmost the entirety of his time is spent working at the bar, where he sells both food and drink, alongside weapons and ammunition.\n
-			\nInterestingly, this not only makes him one of only two barkeepers in the Zone who also works as a regular trader - the other being the Barkeep - but also places him within the same building as another trader - Ashot.\n
+			\nInterestingly this not only makes him one of only two barkeepers in the Zone who also works as a regular trader, the other being the Barkeep, but also places him within the same building as another trader - Ashot.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Loner\n• Rank: Expert\n• Reputation: Great
 		</text>
@@ -157,7 +161,7 @@
 	</string>
 	<string id="encyclopedia_characters_ivan_trodnik_text">
 		<text>
-			%c[guide_blue]Ivan Trodnik%c[default] is the former guide, and now medic of Clear Sky.\n
+			%c[guide_blue]Ivan Trodnik%c[default] is the former guide and now medic of Clear Sky.\n
 			\n%c[guide_green]Information%c[default]
 			\nOnce a guide leading his fellow faction members through the unexplored marshes, Ivan now spends his days patching up the wounded.\n
 			\nForced into his position out of necessity rather than by choice, he was Clear Sky's most experienced medic following their near-collapse.\n
@@ -189,7 +193,7 @@
 			%c[guide_blue]Lieutenant Kirilov%c[default] is one of the military's most gifted technicians.\n
 			\n%c[guide_green]Information%c[default]
 			\nOriginally just a radio operator, Kirilov has always had a knack for taking things apart and putting them back together.\n
-			\nAfter the failure to Operation Fairway, he and his group took refuge in an old laundromat where he harnessed his skills in repairing their equipment and weapons.\n
+			\nAfter the failure to Operation Fairway he and his group took refuge in an old laundromat where he harnessed his skills in repairing their equipment and weapons.\n
 			\nFollowing these events he was recommended by Colonel Kovalsky, his commander, to take up the role of being the military's foremost technician at their base in Agroprom.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Military\n• Rank: Veteran\n• Reputation: Good
@@ -234,7 +238,7 @@
 			\n%c[guide_green]Information%c[default]
 			\nSince arriving to the Zone only a few years ago, Kuznetsov has risen from being a lowly checkpoint keeper to an experienced commander feared by his subordinates.\n
 			\nDespite holding little official power within command-and-control, he has bribed and backstabbed his way to the top where few are willing to oppose him.\n
-			\nAs a result, he has effectively become the de facto leader of military forces in much of the Zone in all but name.\n
+			\nAs a result he has effectively become the de facto leader of military forces in much of the Zone in all but name.\n
 			\n%c[guide_green]Statistics%c[default]
 			\n• Faction: Military\n• Rank: Master\n• Reputation: Neutral
 		</text>
@@ -247,11 +251,13 @@
 		<text>
 			%c[guide_blue]Nimble%c[default] is a profiteer who sells smuggled weapons and outfits.\n
 			\n%c[guide_green]Information%c[default]
-			\nStarting out as a member of Clear Sky, and then as a courier for Sidorovich, Nimble has assembled a list of important contacts allowing him to build his own smuggling business.\n
+			\nStarting out as a member of Clear Sky and then as a courier for Sidorovich, Nimble has assembled a list of important contacts allowing him to build his own smuggling business.\n
 			\nUnlike other traders in the Zone, he specialises in the sale of rare equipment and items that can be very difficult to obtain, as such he never knows what he'll get his hands on next.\n
 			\nHe originally set up shop at the Skadovsk in Zaton, but following the resurgence of the Monolith faction has since relocated to the Cordon, not far from Sidorovich's bunker.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent
+			\n• Faction: Loner\n• Rank: Legend\n• Reputation: Excellent\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• As of update 1.5 his unique trading system has been rewritten and replaced twice.
 		</text>
 	</string>
 	
@@ -309,7 +315,10 @@
 			\nFor the last several years he has worked with his associate, Professor Sakharov, and claims to have made several major discoveries - though few stalkers actually know what he's talking about and usually just feign an understanding.\n
 			\nAs of late he has taken to running his own research lab in a pod near the main bunker in Yantar, where he offers a variety of technical work to those who visit him.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Ecologist\n• Rank: Experienced\n• Reputation: Neutral
+			\n• Faction: Ecologist\n• Rank: Experienced\n• Reputation: Neutral\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• He is infamous for his difficult escort mission in S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• Until update 1.5 he wandered around aimlessly; killing any enemies he found in Yantar.
 		</text>
 	</string>
 	
@@ -382,10 +391,12 @@
 			\n%c[guide_green]Information%c[default]
 			\nConsidering his adoption of an eastern ruler's title for his name, many in the Zone consider Sultan to be a man who thinks very highly of himself.\n
 			\nHis life has been one full of trouble; following the death of a close friend at the hands of substance abuse, Sultan killed the dealers responsible and was later imprisoned.\n
-			\nFollowing his release he soon enough found himself imprisoned yet again because of his "business", eventually leaving for the Zone where he joined the bandits, climbed the career ladder among thieves, and began to run his gang.\n
+			\nFollowing his release and his many other "interactions" with the law, he eventually left for the Zone where he joined the bandits, climbed the career ladder among thieves, and began to run his gang.\n
 			\nUltimately all of his attempts to establish himself as a leader within the faction were met with failure, as his enterprises and dealings within Zaton were crushed and swept away by Beard's loners.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Faction: Bandit\n• Rank: Master\n• Reputation: Terrible
+			\n• Faction: Bandit\n• Rank: Master\n• Reputation: Terrible\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• Until update 1.3 he sat in the Skadovsk where he would frequently kill everybody aboard.
 		</text>
 	</string>
 	

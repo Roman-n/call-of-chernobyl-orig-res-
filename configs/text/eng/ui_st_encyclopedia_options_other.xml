@@ -36,7 +36,7 @@
 	</string>
 	<string id="encyclopedia_options_other_story_mode_text">
 		<text>
-			%c[guide_blue]Story mode%c[default] enables a non-linear story based on the events of Shadow of Chernobyl.\n
+			%c[guide_blue]Story mode%c[default] enables a non-linear story based on the events of S.T.A.L.K.E.R. Shadow of Chernobyl.\n
 			\n%c[guide_green]Information%c[default]
 			\nWith this mode enabled you start the game with the 'Mysteries of the Zone' storyline, and the tasks of disabling both the Brain Scorcher and the Miracle Machine.\n
 			\nTo begin the story you will need to find an important individual hiding somewhere within the Zone, who after a brief dialogue will provide you with multiple tasks which can be completed in any order.\n
