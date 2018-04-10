@@ -187,15 +187,19 @@ function set_weapon_drop_condition(npc,itm)
 end
 
 function try_spawn_ammo_for_weapon(npc,itm)
+	if not (IsWeapon(itm)) then 
+		return 
+	end
+	
 	local ini = system_ini()
-
 	local ammo_class = ini:r_list(itm:section(),"ammo_class")
 	if not (ammo_class and #ammo_class > 0) then 
 		return
 	end
 	
 	-- randomly spawn only 1 ammo type per found weapon
-	local sec = ammo_class[math.random(1,#ammo_class)]
+	local ammo_type = itm:get_ammo_type()+1
+	local sec = ammo_class[ammo_type]
 	if (sec and item_count[sec]) then 
 		local number = math.random(item_count[sec][1], item_count[sec][2])
 		if (number > 0 and system_ini():section_exist(sec)) then
