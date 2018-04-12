@@ -58,7 +58,6 @@ function check_smart_under_faction_control(tsk,task_id)
 						squad.force_online = true
 						
 						if (is_squad_monster[squad.player_id]) then
-							printf("yo")
 							for k in squad:squad_members() do 
 								local obj = db.storage[k.id] and db.storage[k.id].object
 								if (obj) then
