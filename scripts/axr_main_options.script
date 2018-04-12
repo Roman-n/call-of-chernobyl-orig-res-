@@ -156,7 +156,7 @@ function opt_menu_on_init(menu)
 				end
 			end, 
 			on_list_item_select=function(handler,ctrl)
-				selected = ctrl:GetText()
+				selected = l[ctrl:GetCurrentIdx()+1]--ctrl:GetText()
 				if (handler.char_icon) then
 					handler.char_icon:InitTexture(selected)
 				end
