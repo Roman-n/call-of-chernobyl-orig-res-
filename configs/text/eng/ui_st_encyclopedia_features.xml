@@ -21,6 +21,24 @@
 		</text>
 	</string>
 	
+	<string id="encyclopedia_features_guide">
+		<text>Guide</text>
+	</string>
+	<string id="encyclopedia_features_guide_text">
+		<text>
+			The %c[guide_blue]Guide%c[default] is a resource to help teach you about the game and its contents.\n
+			\n%c[guide_green]Information%c[default]
+			\nThis feature was added at much request by players to help explain features and gameplay mechanics, as well as to add a more visual representation of your progression.\n
+			\nArticles are sorted by category, with all tutorial-esque and important content being unlocked right from creating your own character.\n
+			\nWhen you unlock an article its name and category are displayed in the message, allowing you to find the content with relative ease.\n
+			\n%c[guide_green]Disclaimer%c[default]
+			\nFor the first time since S.T.A.L.K.E.R.: Shadow of Chernobyl a serious attempt is being made at reintroducing a complete in-game user guide to all available content.\n
+			\nAlthough this feature is mostly complete in function it is still in an early work-in-progress stage, and as such only a small percentage of articles have been written.\n
+			\nBecause of the magnitude of such a task there is much more yet to be added, with many missing and incomplete categories, and the interactive unlock system not yet being fully integrated.\n
+			\nBy introducing new articles with further updates and patches the guide will eventually be completed but it will take quite some time.
+		</text>
+	</string>
+	
 	<string id="encyclopedia_features_map_spots">
 		<text>Map spots</text>
 	</string>

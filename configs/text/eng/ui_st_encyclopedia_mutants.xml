@@ -34,7 +34,9 @@
 			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
 			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Camouflage, Blood-sucking
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Camouflage, Blood-sucking\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• A rare subspecies once existed in the Great Swamp which carried its victims away.
 		</text>
 	</string>
 	
@@ -65,7 +67,11 @@
 			\nCreated as the result of genetic experiments on criminals, burers naturally posses powerful telekinetic abilities, making them far more powerful than they appear.\n
 			\nBeing able to direct blasts of energy and manipulate physical objects with their mind, fighting burers can be difficult even when trying to hide from them.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis
+			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Psi-powers, Telekinesis\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Clear Sky.
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• This mutant was reintroduced in S.T.A.L.K.E.R.: Call of Pripyat.
 		</text>
 	</string>
 	
@@ -81,7 +87,9 @@
 			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until the victim tires and/or bleeds out.\n
 			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to strike.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
 	
@@ -97,7 +105,11 @@
 			\nIts second head allows for an even wider field of view, its hind legs allow it to jump huge distances, and its razor sharp claws and teeth can tear through practically any body armour.\n
 			\nThey are nocturnal creatures, so usually you won't see many of them during the day as they will be resting, but that doesn't rule it out as a possibility.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Traits: Nimble, Regenerative
+			\n• Attacks: Melee\n• Health: High\n• Speed: Fast\n• Traits: Nimble, Regenerative\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Clear Sky.
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• This mutant was reintroduced in S.T.A.L.K.E.R.: Call of Pripyat.
 		</text>
 	</string>
 	
@@ -157,7 +169,9 @@
 			\nNot much is known about these creatures, it is believed they were either former residents who illegally lived in the area before the second disaster, or early test subjects involved in genetic experimentation.\n
 			\nIts hypertrophied arms and swollen hands slow the creature down, but also act like clubs which are able to easily knock down grown men with very little effort.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
 	
@@ -172,7 +186,10 @@
 			\nOn the few rare occasions that observations have been made, karliks are seen captivated by certain locations or artefacts, as if they have tasked themselves with their responsibility, proceeding to attack anything that comes too close.\n
 			\nHardly anything else is known about them, as most who have encountered the creatures directly are often found dead or crazy with no discernible physical injuries.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis
+			\n• Attacks: Melee, Psychic (Electrical, Psi, Thermal)\n• Health: Average\n• Speed: Slow\n• Traits: Passive damage, Phantom projection, Psi-powers, Telekinesis\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• This mutant was likely an earlier version or iteration of the Burer.
 		</text>
 	</string>
 	
@@ -184,11 +201,13 @@
 			%c[guide_blue]Poltergeists%c[default] are strange, almost invisible creatures haunting the deeper reaches of the Zone.\n
 			\n%c[guide_green]Information%c[default]
 			\nSupernatural in the eyes of some, and usually found haunting old, abandoned buildings.\n
-			\nNothing is known about their origin, although rumours in circulation claim they are spirits of stalkers hit by a massive blast of radiation.\n
+			\nNothing is known about their origin, although rumours and legends claim they are spirits of stalkers hit by a massive blast of radiation.\n
 			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
 			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers, Telekinesis
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers, Telekinesis\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• In S.T.A.L.K.E.R.: Shadow of Chernobyl their physical form appeared on death.
 		</text>
 	</string>
 	
@@ -220,7 +239,9 @@
 			\nThere are no specific locations they are found as they tend to appear in the most unsuspecting of places.\n
 			\nUpon death they explode into multiple cloud-like formations before dissipating.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers
+			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant is a custom addition for S.T.A.L.K.E.R.: Call of Chernobyl.
 		</text>
 	</string>
 	
@@ -279,7 +300,10 @@
 			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides has very little chance of survival.\n
 			\nThey usually live in abandoned places and are said to feel danger and carefully bypass it.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Traits: None
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Traits: None\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• This mutant was likely an earlier version or iteration of the Tushkano.
 		</text>
 	</string>
 	
@@ -294,7 +318,9 @@
 			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground, and are constantly sniffing the air to catch the smell of their next meal.\n
 			\nThey hunt cleverly and prudently, waiting for stalkers like predatory animals. Lightning reflexes and hypertrophied muscles allow snorks to make long, precise jumps and within seconds tear their victims to shreds.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was the winner of the Monster Ball competition by GSC Game World.
 		</text>
 	</string>
 	
@@ -326,7 +352,10 @@
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
 			\nDue to the fact most are killed off long before ever reaching this phase, this mutant can be a somewhat rare discovery in the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None\n
+			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
+			\n• This mutant will only spawn in the world when you are playing in survival mode.
 		</text>
 	</string>
 	

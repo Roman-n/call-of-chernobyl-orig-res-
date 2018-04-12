@@ -25,7 +25,7 @@
 		<text>
 			%c[guide_blue]Area-of-effect pickup mode%c[default] enables picking up of multiple items at once.\n
 			\n%c[guide_green]Information%c[default]
-			\nWhen enabled, this feature allows you to pick up multiple items and put them in your inventory with a single key-press, just as you could in Call of Pripyat.\n
+			\nWhen enabled, this feature allows you to pick up multiple items and put them in your inventory with a single key-press, just as you could in S.T.A.L.K.E.R.: Call of Pripyat.\n
 			\nThis feature can be toggled from the game options menu and is disabled by default.
 		</text>
 	</string>
