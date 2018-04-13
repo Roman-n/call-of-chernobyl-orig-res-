@@ -225,7 +225,7 @@ function on_accept(tab_table,menu,optMgr,console)
 				elseif (type(v.default) == "number") then 
 					axr_main.config:w_value("mm_options",name,tonumber(v.ctrl:GetText()) or v.default)
 				else 
-					local value = v.list[ctrl:GetCurrentIdx()+1]
+					local value = v.list[v.ctrl:GetCurrentIdx()+1]
 					axr_main.config:w_value("mm_options",name,value)
 				end
 			end
