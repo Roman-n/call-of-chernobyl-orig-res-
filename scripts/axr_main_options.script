@@ -24,7 +24,7 @@ function opt_menu_on_init(menu)
 		localization_list[#localization_list+1] = flist:GetAt(it):sub(1,-2)
 	end
 	menu.gameplay_options["localization"] = {default="eng", debug_only=false, typ="list", list=localization_list, on_accept=function(handler,optMgr,ctrl)
-		local language = ctrl:GetText()
+		local language = localization_list[ctrl:GetCurrentIdx()+1] --ctrl:GetText()
 		if (language and language ~= "") then
 			local loc_ini = ini_file_ex("localization.ltx",true)
 			if (loc_ini:r_value("string_table","language") ~= language) then
@@ -225,7 +225,8 @@ function on_accept(tab_table,menu,optMgr,console)
 				elseif (type(v.default) == "number") then 
 					axr_main.config:w_value("mm_options",name,tonumber(v.ctrl:GetText()) or v.default)
 				else 
-					axr_main.config:w_value("mm_options",name,v.ctrl:GetText())
+					local value = v.list[ctrl:GetCurrentIdx()+1]
+					axr_main.config:w_value("mm_options",name,value)
 				end
 			end
 			
@@ -249,7 +250,7 @@ function on_set_values(tab_table,menu,optMgr)
 				elseif (type(v.default) == "number") then 
 					v.ctrl:SetText(axr_main.config:r_value("mm_options",name,2,v.default))
 				else 
-					v.ctrl:SetText(axr_main.config:r_value("mm_options",name,0,v.default))
+					v.ctrl:SetText(game.translate_string(axr_main.config:r_value("mm_options",name,0,v.default)))
 				end
 			end
 			if (v.on_set_values) then 
