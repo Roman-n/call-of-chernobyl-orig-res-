@@ -114,7 +114,7 @@ function create_release_item(npc)
 	end
 end
 
---' Функция вызывается для каждого предмета, если вернет false то предмет удалится.
+
 function keep_item(npc, item)
 	if not (item) then 
 		return 
@@ -142,12 +142,29 @@ function keep_item(npc, item)
 		return
 	end 
 	
-	-- release all animation objects
-	if (section == "bolt" or section == "medkit_script" or section == "guitar_a" or section == "guitar_a2" or section == "harmonica_a" or section == "wpn_binoc" or section == "anim_binoc" or section == "anim_knife" 
-		or section == "device_torch" or section == "device_pda" or section == "hand_radio" or section == "hand_radio_r" or section == "stick_bred" or section == "stick_kolbasa" or
-		section == "stick_kolbasa_bred") then
-		alife():release(se_item, true)
-		return 
+	--List of animation objects that we never want to drop as an item.
+	local animationObjects = {
+		["bolt"] = true,
+		["medkit_script"] = true,
+		["guitar_a"] = true,
+		["guitar_a2"] = true,
+		["harmonica_a"] = true,
+		["wpn_binoc"] = true,
+		["anim_binoc"] = true,
+		["anim_knife"] = true,
+		["device_torch"] = true,
+		["device_pda"] = true,
+		["hand_radio"] = true,
+		["hand_radio_r"] = true,
+		["stick_bred"] = true,
+		["stick_kolbasa"] = true,
+		["stick_kolbasa_bred"] = true,
+	}
+	
+	--If our section is one of the above animation objects, release it and return.
+	if animationObjects[section] then
+		alife():release( se_item, true )
+		return
 	end
 	
 	local m = item:get_max_uses()
@@ -232,7 +249,6 @@ function try_spawn_ammo_for_weapon(npc,itm)
 	end
 end
 
---' Функция спавнит необходимое число предметов
 function create_items(npc, section, number, rnd)
 	if not (system_ini():section_exist(section)) then 
 		--printf("death_manager: ERROR: trying to spawn section that doesn't exist! %s",section)
@@ -246,7 +262,6 @@ function create_items(npc, section, number, rnd)
 		end
 	else
 		for i=1,number do
-			--' Проверяем вероятность появить каждый объект в отдельности
 			if (math.random(1,1000)/1000 <=  rnd) then
 				alife():create(section,npc:position(),npc:level_vertex_id(),npc:game_vertex_id(),npc:id())
 			end
