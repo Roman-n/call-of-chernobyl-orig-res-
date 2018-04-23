@@ -358,7 +358,7 @@ function pick_section_from_condlist(obj, npc, condlist)
 		return ""
 	end
 	
-	local npc_id = npc and IsStalker(npc) and type(npc.id) == "function" and npc:id()
+	local npc_id = npc and (npc.id and type(npc.id) == "function" and npc:id() or npc.id)
 	npc_id = npc_id == 0 and nil or npc_id -- we want only npc not actor
 	local actor = db.actor 
 
