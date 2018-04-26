@@ -189,7 +189,8 @@ function WeatherManager:reset()
 	else
 		self.distant_storm_on = false
 	end
-    self:select_weather(true)
+    --self:select_weather(true) -- possible cause of weather bugs on reload? 
+	self:select_weather()
 end
 
 -- CC Functions
