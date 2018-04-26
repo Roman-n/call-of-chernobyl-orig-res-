@@ -35,7 +35,7 @@
 // #define DBG_TMAPPING
 //////////////////////////////////////////////////////////////////////////////////////////
 #ifndef SMAP_size
-#define SMAP_size        1024
+#define SMAP_size        2048
 #endif
 #define PARALLAX_H 0.02
 #define parallax float2(PARALLAX_H, -PARALLAX_H/2)

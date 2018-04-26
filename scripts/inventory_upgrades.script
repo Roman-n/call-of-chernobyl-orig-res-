@@ -408,20 +408,20 @@ function property_functor_a(param1, name)
 				sum = sum + val
 			end
 		elseif (name == "prop_inertion") then 
-			val = sysini:r_float_ex(section_table[i],"control_inertion_factor") or 0
+			val = sysini:r_float_ex(section_table[i],"crosshair_inertion") or 0
 			if (val ~= 0) then
-				local base_val = sysini:r_float_ex(cur_section,"control_inertion_factor") or 3
+				local base_val = sysini:r_float_ex(cur_section,"crosshair_inertion") or 3
 				sum = sum + ui_wpn_params.normalize(math.abs(val),0,base_val)/2
 			end
-			val = sysini:r_float_ex(section_table[i],"PDM_disp_base") or 0
+			val = sysini:r_float_ex(section_table[i],"PDM_disp_accel_factor") or 0
 			if (val ~= 0) then
-				local base_val = sysini:r_float_ex(cur_section,"PDM_disp_base") or 2.1
+				local base_val = sysini:r_float_ex(cur_section,"PDM_disp_accel_factor") or 2.1
 				sum = sum + ui_wpn_params.normalize(math.abs(val),0,base_val)/2
 			end
 		elseif (name == "prop_recoil") then
-			val = sysini:r_float_ex(section_table[i],"zoom_cam_dispersion") or 0
+			val = sysini:r_float_ex(section_table[i],"cam_step_angle_horz") or 0
 			if (val ~= 0) then
-				local base_val = sysini:r_float_ex(cur_section,"zoom_cam_dispersion") or 3
+				local base_val = sysini:r_float_ex(cur_section,"cam_step_angle_horz") or 3
 				sum = sum - ui_wpn_params.normalize(math.abs(val),0,base_val)/2
 			end
 			val = sysini:r_float_ex(section_table[i],"cam_dispersion") or 0
@@ -517,9 +517,9 @@ local function how_much_repair( item_name, item_condition )
 	local ltx = system_ini()
 	local cost = ltx:r_u32(item_name, "cost")
 	local class = ltx:r_string_ex(item_name, "class")
-	local factor = 1.35
+	local factor = 1.25
 	if (class == "E_HLMET" or class == "EQU_STLK" or class == "E_STLK") then 
-		factor = 0.70
+		factor = 0.75
 	end
 
 	return math.floor( cost * ((1 * (1-item_condition)) / (1 / (1-item_condition))) * factor * cur_price_percent )

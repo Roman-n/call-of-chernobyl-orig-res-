@@ -3,9 +3,18 @@ local item_count = {}
 local always_keep_item = {}
 local item_by_story_id
 local death_ini = ini_file("misc\\death_generic.ltx")
+local diff_multi, cnt_multi_1, cnt_multi_2 = 0.8,1,1
+
+function SetDiffModifications()
+	local diff = axr_main.config:r_value("mm_options","multi_loot",2) or 1
+	diff_multi = (diff - 0.2) or 0.8
+	cnt_multi_1 = diff or 1
+	cnt_multi_2 = diff or 1
+end
 
 function init_drop_settings()
 	-- Create a list by community of the percent chance to spawn an item
+	SetDiffModifications()
 	local community_list = { "stalker", "dolg", "freedom", "bandit", "renegade", "army", "zombied", "ecolog", "killer", "monolith", "csky" }
 	for k,v in pairs(community_list) do
 		item_by_community[v] = {}
@@ -14,7 +23,9 @@ function init_drop_settings()
 			local id, value = "", ""
 			for i=0,n-1 do
 				result, id, value	= death_ini:r_line_ex(v,i,"","")
-				item_by_community[v][id] = tonumber(value) or 0
+				local temp = not (death_ini:line_exist("exclude_from_multi",id)) and diff_multi or 1
+				item_by_community[v][id] = value and tonumber(value) * temp or 0
+				--printf("item by community difficulty multi %s : %s",temp,item_by_community[v][id])
 			end
 		end
 	end
@@ -27,7 +38,8 @@ function init_drop_settings()
 		if (p) then
 			p[1] = tonumber(p[1]) or 0
 			p[2] = tonumber(p[2]) or p[1]
-			item_count[id] = {p[1],p[2]}
+			item_count[id] = {math.ceil(p[1] * cnt_multi_1),math.ceil(p[2] * cnt_multi_2)}
+			--printf("item count  min%s:max%s  item_count[id] min%s:max%s",cnt_multi_1,cnt_multi_2,item_count[id][1],item_count[id][2])
 		end
 	end
 	
@@ -60,7 +72,7 @@ function decide_items_to_keep(npc)
 	npc:iterate_inventory(keep_item, npc)
 end
 
-function create_release_item(npc)
+function create_release_item(npc,who)
 	local death_dropped = utils.se_obj_load_var(npc:id(),npc:name(),"death_dropped")
 	if (death_dropped) then
 		return
@@ -74,7 +86,7 @@ function create_release_item(npc)
 		--local p = alun_utils.str_explode(item_by_story_id[sid],",")
 		--printf("sid=%s p=%s",sid,p)
 		if (p and p ~= "" and p ~= "nil") then
-			create_items(npc, p, 1, 100)
+			create_items(npc, p, 1, 100 * cnt_multi_2)
 		end
 	end
 
@@ -96,7 +108,7 @@ function create_release_item(npc)
 	npc:iterate_inventory(try_spawn_ammo_for_weapon,npc)
 	
 	for sec,v in pairs(spawn_items) do
-		if (v > 0 and item_count[sec]) then
+		if (v > 0 and item_count[sec]) and not utils.is_ammo(sec) then
 			local number = math.random(item_count[sec][1], item_count[sec][2])
 			
 			-- Bookworm Food achievement.
@@ -114,7 +126,7 @@ function create_release_item(npc)
 	end
 end
 
-
+--' Функция вызывается для каждого предмета, если вернет false то предмет удалится.
 function keep_item(npc, item)
 	if not (item) then 
 		return 
@@ -167,7 +179,7 @@ function keep_item(npc, item)
 		return
 	end
 	
-	local m = item:get_max_uses()
+	local m = math.ceil(item:get_max_uses() * math.random(diff_multi,1))
 	if (m > 0) then 
 		local r = math.random(0,m)
 		item:set_remaining_uses(r)
@@ -189,7 +201,8 @@ function keep_item(npc, item)
 		return
 	end
 	
-	if (item:cast_Ammo() == nil and xr_corpse_detection.lootable_table and xr_corpse_detection.lootable_table[section] and math.random(1,100) < 65) then
+	local temp = not (death_ini:line_exist("exclude_from_multi",item:section())) and diff_multi or 1
+	if (item:cast_Ammo() == nil and xr_corpse_detection.lootable_table and xr_corpse_detection.lootable_table[section] and math.random(1,100) < 65 * temp) then
 		return
 	end
 	
@@ -197,9 +210,10 @@ function keep_item(npc, item)
 end
 
 function set_weapon_drop_condition(npc,itm)
+	local multi = (axr_main.config:r_value("mm_options","multi_wpn_conditions",2) or 1)
 	local condition  = (math.random(40)+30)/100
 	--printf("condition [%s]", tostring(condition))
-	itm:set_condition(condition)
+	itm:set_condition(condition * multi)
 	try_spawn_ammo_for_weapon(npc,itm)
 end
 
@@ -249,6 +263,7 @@ function try_spawn_ammo_for_weapon(npc,itm)
 	end
 end
 
+--' Функция спавнит необходимое число предметов
 function create_items(npc, section, number, rnd)
 	if not (system_ini():section_exist(section)) then 
 		--printf("death_manager: ERROR: trying to spawn section that doesn't exist! %s",section)
@@ -262,6 +277,7 @@ function create_items(npc, section, number, rnd)
 		end
 	else
 		for i=1,number do
+			--' Проверяем вероятность появить каждый объект в отдельности
 			if (math.random(1,1000)/1000 <=  rnd) then
 				alife():create(section,npc:position(),npc:level_vertex_id(),npc:game_vertex_id(),npc:id())
 			end
