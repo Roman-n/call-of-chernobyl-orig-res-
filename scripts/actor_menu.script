@@ -97,3 +97,13 @@ function dialog_wnd_closed()
 	xr_meet_dialog_closed = true
 	-- use pda.script for dialog_wnd
 end
+
+-- Called from engine!
+-- return CUIWindow or nil
+function inventory_hint_init_item(itm1,itm2)
+	if (itm1:cast_EatableItem()) then
+		local ui = ui_actor_hint_wnd_ext.get_ui(itm1,itm2)
+		ui:Reinit(itm1,itm2)
+		return ui
+	end
+end
