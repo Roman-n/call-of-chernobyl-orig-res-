@@ -60,7 +60,7 @@ function read_float(wpn_section, upgr_sections, param)
 		end 
 	end
 	
-	if (param == "hit_power") then
+	--if (param == "hit_power") then
 		-- local ammos = ltx:r_list(wpn_section,"ammo_class","")
 		-- local ammo_section = ammos[1] or ""
 		-- if (class == "WP_BM16" or class == "WP_ASHTG") then
@@ -68,7 +68,7 @@ function read_float(wpn_section, upgr_sections, param)
 		-- end
 		-- local k_hit = ltx:r_float_ex(ammo_section,"k_hit",0.5)
 		-- res = (res * k_hit) * ltx:r_float_ex(ammo_section,"buck_shot",1)
-	elseif (param == "fire_dispersion_base") then
+	--elseif (param == "fire_dispersion_base") then
 		-- local ammos = ltx:r_list(wpn_section,"ammo_class","")
 		-- local ammo_section = ammos[1] or ""
 		-- if (class == "WP_BM16" or class == "WP_ASHTG") then
@@ -77,18 +77,18 @@ function read_float(wpn_section, upgr_sections, param)
 		--local k_disp = ltx:r_float_ex(ammo_section,"k_disp",1)
 		--res = res * k_disp
 		
-		local disp_base = ltx:r_float_ex("actor","disp_base",1)
-		local PDM_disp_base = ltx:r_float_ex(wpn_section,"PDM_disp_base",1)
+		--local disp_base = ltx:r_float_ex("actor","disp_base",1)
+		--local PDM_disp_base = ltx:r_float_ex(wpn_section,"PDM_disp_base",1)
 		
-		res = res + (disp_base * PDM_disp_base)
-	elseif (param == "cam_dispersion_inc") then
-		res = res + ltx:r_float_ex(wpn_section,"zoom_cam_dispersion_inc",0)
-	end
+		--res = res + (disp_base * PDM_disp_base)
+	--elseif (param == "cam_step_angle_horz") then
+		--res = res + ltx:r_float_ex(wpn_section,"zoom_cam_step_angle_horz",0)
+	--end
 	
     return res
 end
 
-local max_hit_power_value,max_rpm_value, max_fire_dispersion_base_value, max_cam_dispersion_inc_value
+local max_hit_power_value,max_rpm_value, max_fire_dispersion_base_value, max_control_inertion_factor_value, max_PDM_disp_accel_factor_value, max_crosshair_inertion_value
 
 function GetRPM(wpn_section, upgr_sections)
 	if not (max_hit_power_value) then 
@@ -118,8 +118,11 @@ function GetHandling(wpn_section, upgr_sections)
 	if not (max_hit_power_value) then
 		calculate_max_hit_power_value()
 	end
-	local cam_dispersion_inc = read_float(wpn_section,upgr_sections, "cam_dispersion_inc")
-	return normalize(cam_dispersion_inc,max_cam_dispersion_inc_value,0)
+	
+	local PDM_disp_accel_factor = read_float(wpn_section,upgr_sections, "PDM_disp_accel_factor")
+	local control_inertion_factor = read_float(wpn_section, upgr_sections, "control_inertion_factor")
+	local crosshair_inertion = read_float(wpn_section,upgr_sections, "crosshair_inertion")
+	return (normalize(PDM_disp_accel_factor, max_PDM_disp_accel_factor_value, 0) + normalize(control_inertion_factor, max_control_inertion_factor_value, 1) + normalize(crosshair_inertion, max_crosshair_inertion_value, 0))/3
 end
 
 function GetAccuracy(wpn_section, upgr_sections)
@@ -135,7 +138,9 @@ function calculate_max_hit_power_value()
 	max_hit_power_value = 0
 	max_rpm_value = 0
 	max_fire_dispersion_base_value = 0
-	max_cam_dispersion_inc_value = 0
+	max_PDM_disp_accel_factor_value = 0
+	max_control_inertion_factor_value = 0
+	max_crosshair_inertion_value = 0
 	
 	local sections_by_hit_power_value = DEV_DEBUG_DEV and {} or nil
 	local ini = system_ini()
@@ -160,9 +165,19 @@ function calculate_max_hit_power_value()
 					max_fire_dispersion_base_value = fire_dispersion_base
 				end
 
-				local cam_dispersion_inc = GetMaxPotential(section,"cam_dispersion_inc")
-				if (cam_dispersion_inc > max_cam_dispersion_inc_value) then 
-					max_cam_dispersion_inc_value = cam_dispersion_inc
+				local PDM_disp_accel_factor = GetMaxPotential(section,"PDM_disp_accel_factor")
+				if (PDM_disp_accel_factor > max_PDM_disp_accel_factor_value) then 
+					max_PDM_disp_accel_factor_value = PDM_disp_accel_factor
+				end
+
+				local control_inertion_factor = GetMaxPotential(section,"control_inertion_factor")
+				if (control_inertion_factor > max_control_inertion_factor_value) then 
+					max_control_inertion_factor_value = control_inertion_factor
+				end
+				
+				local crosshair_inertion = GetMaxPotential(section,"crosshair_inertion")
+				if (crosshair_inertion > max_crosshair_inertion_value) then 
+					max_crosshair_inertion_value = crosshair_inertion
 				end
 				
 				if (DEV_DEBUG_DEV) then

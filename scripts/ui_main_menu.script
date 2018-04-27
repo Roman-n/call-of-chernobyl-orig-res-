@@ -197,7 +197,7 @@ function main_menu:OnButton_return_game()
 	collectgarbage("collect")
 	collectgarbage("collect")
 	printf("collectgarbage after=%sKb",collectgarbage("count")*1024)
-		
+
 	local console = get_console()
 	console:execute("main_menu off")
 	SendScriptCallback("main_menu_on_quit",self)
@@ -267,6 +267,12 @@ function main_menu:OnButton_load_spawn()
 end
 
 function main_menu:OnButton_save_clicked()
+	if (alife_storage_manager.get_state().enable_campfire_mode) then
+		SetHudMsg("st_you_cant_save",4)
+		get_console():execute("main_menu off")
+		return
+	end
+
 	if self.save_dlg == nil then
 		self.save_dlg = ui_save_dialog.save_dialog()
 		self.save_dlg.owner = self

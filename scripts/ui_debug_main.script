@@ -88,6 +88,7 @@ function get_spawn_table(name)
 		["ON_OFF_S"] = "Squads",
 
 		["EQ_BAKPK"] = "Outfits",
+		["EQ_PATCH"] = "Items (Misc.)",
 		["II_ATTCH"] = "Items (Misc.)",
 		["II_BTTCH"] = "Items (Misc.)",
 

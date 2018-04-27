@@ -100,15 +100,14 @@ function update(npc)
 	
 	if (tm[id].current_buy_supplies == nil) then 
 		npc:buy_supplies(config, str)
-		tm[id].current_buy_supplies = str	
-	elseif (tm[id].current_buy_supplies ~= str) then
-		local tg = time_global()
-		if (tm[id].resupply_time and game.get_game_time():diffSec(tm[id].resupply_time) < 172800)  then
-			return
+		tm[id].current_buy_supplies = str
+	elseif (tm[id].current_buy_supplies ~= nil) then
+		--local tg = time_global()
+		if (tm[id].resupply_time and game.get_game_time():diffSec(tm[id].resupply_time) < 172800)  then			
+			tm[id].resupply_time = game.get_game_time()
+			npc:buy_supplies(config, str)
+			tm[id].current_buy_supplies = str
 		end
-		tm[id].resupply_time = game.get_game_time()
-		npc:buy_supplies(config, str)
-		tm[id].current_buy_supplies = str	
 	end
 end
 

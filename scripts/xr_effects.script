@@ -268,7 +268,8 @@ function on_init_bounty_hunt(actor,npc,p)
 end 
 
 function fail_task_dec_goodwill(actor,npc,p)
-	local amt = tonumber(p[1]) or 50
+	local multi = (axr_main.config:r_value("mm_options","multi_rewards_goodwill",2) or 1)
+	local amt = tonumber(p[1])*multi or 50
 	for i=2,#p do 
 		inc_faction_goodwill_to_actor(db.actor, nil, {p[i], -(amt)})
 	end
@@ -277,14 +278,16 @@ end
 -- param1 - amount of goodwill to increase
 -- param2+ - community
 function complete_task_inc_goodwill(actor,npc,p)
-	local amt = tonumber(p[1]) or 50
+	local multi = (axr_main.config:r_value("mm_options","multi_rewards_goodwill",2) or 1)
+	local amt = tonumber(p[1])*multi or 50
 	for i=2,#p do 
 		inc_faction_goodwill_to_actor(db.actor, nil, {p[i], amt})
 	end
 end
 
 function reward_money(actor,npc,p)
-	dialogs.relocate_money(db.actor,tonumber(p[1] or 500),"in")
+	local multi = (axr_main.config:r_value("mm_options","multi_rewards_money",2) or 1)
+	dialogs.relocate_money(db.actor,tonumber(p[1] or 500)*multi,"in")
 end
 
 -- param1 - task_id
@@ -353,7 +356,8 @@ function reward_item_cost_mult_and_remove(actor,npc,p)
 	local total_cost = 0
 	local function add_up_items(itm)
 		if (itm:section() == sec and cur_amt > 0) then
-			total_cost = total_cost + mult*itm:cost()*itm:condition()
+			local multi = (axr_main.config:r_value("mm_options","multi_rewards_money",2) or 1)
+			total_cost = total_cost + mult*itm:cost()*itm:condition()*multi
 			cur_amt = cur_amt - 1
 		end
 		if (cur_amt <= 0) then
@@ -406,7 +410,8 @@ function reward_random_item(actor,npc,p)
 				local se_item = alife():create(section,vector():set(0,0,0),0,0,0)
 				local cls = se_item:clsid()
 				if (IsWeapon(nil,cls) and cls ~= clsid.wpn_knife_s) then
-					se_item.condition = math.random(60,90)/100
+					local multi = (axr_main.config:r_value("mm_options","multi_wpn_coniditions",2) or 1)
+					se_item.condition = utils.clamp((math.random(80,90)/100)*multi,0.6,1)
 				end
 			end
 			news_manager.relocate_item(db.actor,"in",section,amt)
@@ -517,13 +522,13 @@ function setup_rare_mutant_fetch_task(actor,npc,p)
 		dialogs._FETCH_TEXT = game.translate_string(system_ini():r_string_ex(part,"inv_name") or "")
 	else
 		local parts = { 
-		"mutant_part_controller_glass",
+		"mutant_part_controller_brain",
 		"mutant_part_controller_hand",
 		"mutant_part_burer_hand",
 		"mutant_part_pseudogigant_eye",
 		"mutant_part_pseudogigant_hand",
 		"mutant_part_chimera_claw",
-		"mutant_part_chimera_kogot"
+		"mutant_part_chimera_teeth"
 		}
 		part = parts[math.random(#parts)]
 		utils.save_var(db.actor,p[1],part)
@@ -540,6 +545,7 @@ function setup_artefact_fetch_task(actor,npc,p)
 	else
 		local arts = {
 		"af_cristall",
+		"af_drops",
 		"af_fireball",
 		"af_dummy_glassbeads",
 		"af_eye",
@@ -561,6 +567,7 @@ function setup_artefact_fetch_task(actor,npc,p)
 		"af_electra_moonlight",
 		"af_dummy_battery",
 		"af_dummy_dummy",
+		"af_dummy_spring",
 		"af_ice",
 		"af_rusty_thorn",
 		"af_rusty_kristall",

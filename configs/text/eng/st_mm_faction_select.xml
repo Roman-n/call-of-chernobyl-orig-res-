@@ -108,6 +108,12 @@
 			\nNot compatible with Story mode.
 		</text>
 	</string>
+	<string id="st_mm_ck_campfire_desc">
+		<text>
+			%c[0,245,245,220]When using campfire save mode, you can only manually save at campfires by holding the use button. The ability to save normally is disabled, but travelling between two areas still generates an autosave.\n
+			\nCompatible with all other modes.
+		</text>
+	</string>
 	<string id="st_mm_faction_random_location">
 		<text>Random Location</text>
 	</string>

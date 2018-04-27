@@ -4,6 +4,7 @@
 -- name your campfires in SDK <smart_name>_campfire_<number> if you want them to be lit by NPCs
 
 campfires_all = {}
+local s_allow, s_pass, s_timer
 
 -- For use with Marshal save state system
 local function save_state(m_data)
@@ -36,8 +37,49 @@ function use_campfire(actor,zone,p)
 	end 
 end
 
+-- hold (use) to save
+axr_keybind.bind("kUSE",function(p)
+	if s_allow then
+		if (p==0) or (p==1) then
+			s_pass = false
+		elseif (p==2) then
+			-- holding timer
+			if (not s_pass) then
+				s_timer = time_global() + 3000 -- hold for 3 sec
+				s_pass = true
+			end
+			if (time_global() < s_timer) then
+				return
+			end
+			s_pass = false
+
+			-- create save
+			local flist = getFS():file_list_open_ex("$game_saves$",	bit_or(FS.FS_ListFiles,FS.FS_RootOnly),"*".. ui_load_dialog.saved_game_extension)
+			local f_cnt = flist and flist:Size() or 0
+			local inc = 0
+			if (f_cnt > 0) then
+				flist:Sort(FS.FS_sort_by_modif_down)
+			
+				for it=0, f_cnt-1 do
+					local file_name = flist:GetAt(it):NameFull():sub(0,-6):lower()
+			
+					-- grab last modified quicksave increment count
+					local d = tonumber( string.match(file_name,"campfire_autosave(%d+)") )
+					if (d) then
+						inc = d
+						break 
+					end
+				end
+			end
+			inc = inc >= axr_main.config:r_value("mm_options","quicksave_cnt",2,5) and 1 or inc + 1
+			get_console():execute("save campfire_autosave" .. inc)
+		end
+	end
+end)
+
 function on_game_start()
 	local tutorial_ran = 0 -- because we don't want to conflict with other tutorials, we need to identify if we are running (ie. > 0)
+	s_allow = false
 	local function main_loop()
 		
 		if not (db.actor) then 
@@ -62,15 +104,17 @@ function on_game_start()
 						tutorial_ran = id
 						if (binder.campfire:is_on()) then
 							game.start_tutorial("tutorial_campfire_extinguish")
-						else 
+						else
 							game.start_tutorial("tutorial_campfire_ignite")
 						end
+						s_allow = true
 					end
 				elseif (tutorial_ran == id) then
 					tutorial_ran = 0
 					if (game.has_active_tutorial()) then
 						game.stop_tutorial()
 					end
+					s_allow = false
 				end
 			end 
 		end
@@ -165,11 +209,3 @@ function turn_off_campfires_by_smart_name(smart_name,use_rand)
 		end
 	end
 end
-
-
-
-
-
-
-
-

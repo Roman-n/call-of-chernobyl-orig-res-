@@ -53,6 +53,11 @@ function action_quick_save()
 		return false 
 	end
 	
+	if (alife_storage_manager.get_state().enable_campfire_mode) then -- return true to stop the function from working
+		SetHudMsg("st_you_cant_save",4)
+		return true
+	end
+	
 	-- if game isn't already paused, then force a pause here
 	-- local force_pause
 	-- if not (device():is_paused()) then 
