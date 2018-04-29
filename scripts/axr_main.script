@@ -36,6 +36,7 @@ local intercepts = {
 	CUIActorMenu_OnItemDropped		= {},
 	CUIActorMenu_OnItemFocusReceive = {},
 	CUIActorMenu_OnItemFocusLost 	= {},
+	CUIActorMenu_CanMoveToPartner	= {},
 	
 	-- ui_main_menu.script
 	main_menu_on_keyboard		= {},
@@ -140,7 +141,7 @@ local intercepts = {
 	actor_on_hud_animation_end  = {},
 	actor_item_to_belt			= {},
 	actor_item_to_ruck			= {},
-	actor_item_to_slot			= {}, 
+	actor_item_to_slot			= {},
 	
 	-- level_input.script 
 	level_input_on_key_press	= {},
