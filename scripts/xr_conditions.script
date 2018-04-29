@@ -1050,6 +1050,15 @@ function is_squad_neutral_to_actor(actor, npc, p)
 	return not(is_squad_enemy_to_actor(actor, npc, p) or is_squad_friend_to_actor(actor, npc, p))
 end
 
+-- check if actor is enemy to a specific faction (p[1]]
+function is_actor_enemy_to_faction(actor,npc,p)
+	if(p[1]~=nil) then
+		return game_relations.is_factions_enemies(character_community(db.actor), p[1])
+	else
+		return false
+	end
+end
+
 -- текущий враг актёр?
 function fighting_actor(actor, npc)
 	local enemy_id = db.storage[npc:id()].enemy_id
@@ -2765,6 +2774,13 @@ function actor_community(actor,npc,p)
 		if (character_community(db.actor) == p[i]) then 
 			return true 
 		end
+	end
+	return false
+end
+
+function economy_type(actor,npc,p) -- called from ltx trader profiles, controls which weapons buy condition must be chosen depending on economy
+	if (p[1] == axr_main.config:r_value("mm_options","set_economy",0,"st_econ_2")) then
+		return true
 	end
 	return false
 end
