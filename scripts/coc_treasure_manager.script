@@ -163,7 +163,7 @@ end
 
 last_secret = nil
 function create_random_stash(no_spot,hint,bonus_items, map_spot)
-	map_spot = valid_map_spots[map_spot] and map_spot or "treasure"
+	map_spot = map_spot and valid_map_spots[map_spot] and map_spot or "treasure"
 	
 	last_secret = nil
 
@@ -495,6 +495,42 @@ function create_random_stash(no_spot,hint,bonus_items, map_spot)
 		caches[id] = table.concat(spawned_item,",")
 	else
 		caches[id] = false
+	end
+end
+
+function reveal_random_stash(map_spot,hint,bonus_items)
+	-- create a temporary table to use math.random
+	local t = {}
+	local size_t = 0
+	for id,v in pairs(caches) do
+		if (type(v) == "string") then
+			size_t = size_t + 1
+			t[size_t] = id
+		end
+	end
+
+	local index = size_t > 0 and math.random(size_t)
+	if not (index) then
+		return
+	end
+	
+	local id = t[index]
+	
+	map_spot = valid_map_spots[map_spot] and map_spot or "treasure"
+	-- create map spot
+	local ignore = nil
+	for k, v in pairs(valid_map_spots) do
+		if (level.map_has_object_spot(id,k) ~= 0) then
+			ignore = true
+		end
+	end	
+	if not (ignore) then
+		level.map_add_object_spot_ser(id, map_spot, hint and game.translate_string(hint) or game.translate_string("st_ui_pda_secret"))
+		news_manager.send_treasure(0)
+	end
+	
+	if (bonus_items and type(bonus_items) == "table") then
+		caches[id] = caches[id] .. "," .. table.concat(bonus_items,",")
 	end
 end
 

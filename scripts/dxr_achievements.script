@@ -546,9 +546,8 @@ end
 -- 3 "Tourist's stashes" are revealed.
 -- Reputation and rank point increase.
 function tourist_rewards()
-	local hint = game.translate_string("st_ui_pda_secret_tourist")
 	for i=1,3 do
-		coc_treasure_manager.create_random_stash(nil, hint, nil, "treasure_unique")
+		coc_treasure_manager.reveal_random_stash("treasure_unique","st_ui_pda_secret_tourist")
 	end
 	db.actor:disable_info_portion("tourist_achievement_delay")
 	SendScriptCallback("on_achievement_earned","tourist","st_achievement_8_unlock")

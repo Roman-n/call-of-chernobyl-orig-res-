@@ -571,4 +571,10 @@
 	<string id="ui_inv_download">
 		<text>download</text>
 	</string>
+	<string id="st_broker_reward">
+		<text>Broker reward</text>
+	</string>
+	<string id="st_stash_reward">
+		<text>Stash</text>
+	</string>
 </string_table>
