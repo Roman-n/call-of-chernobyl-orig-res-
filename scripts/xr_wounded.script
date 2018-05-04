@@ -183,6 +183,7 @@ function Cwound_manager:eat_medkit()
 	end
 	
 	self.npc:set_health_ex(1)
+	self.npc.psy_health = 1
 	
 	if self.npc:object("medkit_script") ~= nil then
 		alife():release(alife_object(self.npc:object("medkit_script"):id()), true)
@@ -462,6 +463,19 @@ function is_wounded(npc)
 		return tostring(st.wounded.wound_manager.state) ~= "nil"
 	end
 	return false
+end
+
+function is_psy_wounded(npc)
+	local st = db.storage[npc:id()]
+	if (st and st.wounded) then
+		local st_wound_state = tostring(st.wounded.wound_manager.state)
+		return st_wound_state == "psy_pain" or st_wound_state == "psy_armed" or st_wound_state == "psy_shoot"
+	end
+	return false
+end
+
+function not_is_psy_wounded(npc)
+	return not is_psy_wounded(npc)
 end
 
 function hit_callback(npc_id) -- Тут может не быть стораджа.

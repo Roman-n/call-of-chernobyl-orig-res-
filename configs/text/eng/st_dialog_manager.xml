@@ -754,6 +754,13 @@
 		<text>Sorry, I don't have a medkit.</text>
 	</string>
 
+	<string id="dm_psy_wounded_medkit">
+		<text>Snap out of it!</text>
+	</string>
+	<string id="dm_psy_wounded_sorry">
+		<text>Sorry, I can't help you.</text>
+	</string>
+	
 	<string id="dm_traveler_bye">
 		<text>Ok.</text>
 	</string>

@@ -671,6 +671,25 @@ function transfer_medkit(first_speaker, second_speaker)
 
 	dxr_statistics.increment_statistic("wounded_helped")
 end
+
+function give_medkit_no_transfer(a,b)
+	local npc = who_is_npc(a, b)
+
+	xr_wounded.unlock_medkit(npc)
+
+	if not (npc:object("medkit_script")) then
+		alife():create("medkit_script", npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id())
+	end
+	
+	if (npc:relation(db.actor) >= game_object.enemy) then
+		npc:set_relation(game_object.neutral,db.actor)
+	else
+		npc:set_relation(game_object.friend,db.actor)
+	end
+
+	dxr_statistics.increment_statistic("wounded_helped")
+end 
+
 function transfer_bandage(first_speaker, second_speaker)
 	dialogs.relocate_item_section(second_speaker, "bandage", "out")
 	second_speaker:set_relation(game_object.friend, first_speaker)
