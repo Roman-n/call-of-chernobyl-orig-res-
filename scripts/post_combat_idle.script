@@ -136,7 +136,7 @@ function action_post_combat_wait:execute()
 		
 		local bw = self.object:best_weapon()
 		if (bw and IsWeapon(bw)) then
-			if (bw:get_ammo_elapsed() < bw:get_ammo_magsize()) then
+			if (bw:ammo_get_count() < bw:get_ammo_total()) then
 				self.object:set_item(object.reload, bw)
 			end
 		end
