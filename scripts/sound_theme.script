@@ -182,12 +182,16 @@ function npc_sound:play(npc_id, faction, point, sound)
 	end
 	
 	local npc_data = self.npc[npc_id]
-	if not (npc_data) then 
+	if not (npc_data) then
 		return false 
 	end
 
-	if (self.group_snd and self.can_play_group_sound == false or self.can_play_sound[npc_id] == false) then 
-		return false 
+	if (self.group_snd) then 
+		if (self.can_play_group_sound == false) then
+			return false
+		end
+	elseif (self.can_play_sound[npc_id] == false) then
+		return false
 	end 
 
 	if self.played_time ~= nil and time_global() - self.played_time < self.idle_time then
