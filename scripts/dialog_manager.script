@@ -407,7 +407,7 @@ function init_start_dialogs(dialog, str)
 				add_dialog(v.id,get_id(),"dm_wounded_medkit",{"dialogs.actor_have_medkit"},{"dialogs.transfer_medkit","dialogs.break_dialog"})
 				add_dialog(v.id,get_id(),"dm_wounded_sorry",nil,"dialogs.break_dialog")
 			end
-			script = add_dialog(2,v.id,v.name,{"dialogs.is_wounded","dialogs.is_psy_wounded","dialogs.not_is_psy_wounded","dialog_manager.precondition_"..str.."_dialogs"},"dialog_manager.action_"..str.."_dialogs")
+			script = add_dialog(1,v.id,"dm_psy_wounded",{"dialogs.is_wounded","dialogs.is_psy_wounded","dialogs.not_is_psy_wounded","dialog_manager.precondition_"..str.."_dialogs"},"dialog_manager.action_"..str.."_dialogs")
 			if (script) then
 				ph = true
 				add_dialog(v.id,get_id(),"dm_psy_wounded_medkit",nil,{"dialogs.give_medkit_no_transfer","dialogs.break_dialog"})

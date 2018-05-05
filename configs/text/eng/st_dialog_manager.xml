@@ -1296,4 +1296,9 @@
 	<string id="st_inventory_upgrade_reply_9">
 		<text>It's almost ready.</text>
 	</string>
+	
+	<!-- Wounded -->
+	<string id="dm_psy_wounded">
+		<text>Help...me...my...brain!</text>
+	</string>
 </string_table>
