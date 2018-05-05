@@ -117,11 +117,6 @@ function action_post_combat_wait:execute()
 			self.st.lvid = utils.send_to_nearest_accessible_vertex(npc,new_vid)
 			self.st.stage = 1 
 			
-			local bw = self.object:best_weapon()
-			if (bw and IsWeapon(bw)) then
-				self.object:set_item(object.idle, bw)
-			end
-			
 			--alun_utils.debug_write("action_post_combat_wait:execute end 1")
 			return
 		end
@@ -131,14 +126,6 @@ function action_post_combat_wait:execute()
 			
 			--alun_utils.debug_write("action_post_combat_wait:execute end 2")
 			return
-		end
-		self.st.stage = 2
-		
-		local bw = self.object:best_weapon()
-		if (bw and IsWeapon(bw)) then
-			if (bw:ammo_get_count() < bw:get_ammo_total()) then
-				self.object:set_item(object.reload, bw)
-			end
 		end
 	end
 
