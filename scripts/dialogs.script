@@ -631,6 +631,17 @@ end
 function is_not_wounded(first_speaker, second_speaker, dn)
 	return not is_wounded(first_speaker, second_speaker)
 end
+
+function is_psy_wounded(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return xr_wounded.is_psy_wounded(npc)
+end
+
+function not_is_psy_wounded(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return not xr_wounded.is_psy_wounded(npc)
+end
+
 function actor_have_medkit(first_speaker, second_speaker)
 	local med = {"medkit","medkit_army","medkit_scientic"}
 	for k,v in pairs(med) do

@@ -474,10 +474,6 @@ function is_psy_wounded(npc)
 	return false
 end
 
-function not_is_psy_wounded(npc)
-	return not is_psy_wounded(npc)
-end
-
 function hit_callback(npc_id) -- Тут может не быть стораджа.
 	local st = npc_id and db.storage[npc_id]
 	if st and st.wounded then
