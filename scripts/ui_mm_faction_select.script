@@ -672,7 +672,7 @@ function faction_ui:OnFactionSelect(faction)
 		ammo = ammo[1] --ammo[math.random(#ammo)]
 
 		self.default_loadout[weapon] = 1
-		self.default_loadout[ammo] = 2
+		self.default_loadout[ammo] = 3
 	end
 
 	local money = alun_utils.str_explode(self.default_loadout["money"],",")

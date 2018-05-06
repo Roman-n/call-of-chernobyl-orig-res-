@@ -215,18 +215,6 @@ struct	v2p_aa_AA
 	float4 	HPos	:SV_Position;	// Clip-space position 	(for rasterization)
 };
 
-struct	p_aa_AA
-{
-	float2 	Tex0	:TEXCOORD0;
-	float2	Tex1	:TEXCOORD1;
-	float2 	Tex2	:TEXCOORD2;
-	float2	Tex3	:TEXCOORD3;
-	float2	Tex4	:TEXCOORD4;
-	float4	Tex5	:TEXCOORD5;
-	float4	Tex6	:TEXCOORD6;
-//	float4 	HPos	:SV_Position;	// Clip-space position 	(for rasterization)
-};
-
 struct	p_aa_AA_sun
 {
 	float2 	tc		:TEXCOORD0;
@@ -464,6 +452,20 @@ struct        v_detail
 {
         float4      pos                : POSITION;                // (float,float,float,1)
         int4        misc        : TEXCOORD0;        // (u(Q),v(Q),frac,matrix-id)
+};
+
+// Screen space sunshafts
+
+struct	v_ssss
+{
+	float4 P : POSITIONT;
+	float2 tc0	: TEXCOORD0;
+};
+
+struct	v2p_ssss
+{
+	float2 tc0 : TEXCOORD0;
+	float4 HPos : SV_Position;	// Clip-space position 	(for rasterization)
 };
 
 #endif	//	common_iostructs_h_included
