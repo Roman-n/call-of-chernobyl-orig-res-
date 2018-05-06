@@ -1128,6 +1128,38 @@ function cmd.wound(me,txt,owner,p)
 	end
 end
 
+-- Psy Wound
+function cmd.psy_wound(me,txt,owner,p)
+	local wrd = check_and_set_help(me,txt,owner,"id:<number>")
+	if not (wrd) then return end
+
+	local id
+	local vo
+	if (string.find(txt,"id:")) then
+		for s in string.gmatch(txt,"id:(%d+)") do
+			id = tonumber(s)
+		end
+
+		vo = level.object_by_id(id)
+		if not (vo) then
+			return "psy_wound:= Wrong arugument given or object doesn't exist. id:<%s>",id
+		end
+	end
+
+	if (vo) then
+		-- local h = hit()
+		-- h.power = 100*(vo.health-0.05)
+		-- h.direction = VEC_ZERO
+		-- h.bone = "bip01_spine"
+		-- h.draftsman = alun_utils.get_nearest_stalker(vo) or db.actor
+		-- h.impulse = 0
+		-- h.type = hit.telepatic
+		-- vo:hit(h)
+		vo.psy_health = -0.95
+		return "psy_wound:= %s has been wounded.",vo:name()
+	end
+end
+
 local var_list = { ["actor"] = db.actor}
 function get_var_list()
 	return var_list

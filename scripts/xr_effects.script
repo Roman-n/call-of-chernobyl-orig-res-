@@ -1819,7 +1819,7 @@ end
 
 -- забывание обиды
 function clearAbuse(npc)
-	printf("CLEAR_ABUSE")
+	--printf("CLEAR_ABUSE")
 	xr_abuse.clear_abuse(npc)
 end
 
