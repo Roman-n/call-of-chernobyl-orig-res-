@@ -103,6 +103,7 @@ function actor_on_weapon_fired(actor,weapon,ammo_elapsed)
 	create_effect(weapon)
 end
 
+local recoils = {}
 -- Calculates, caches, and then returns the recoil value.
 function calculate_recoil(weapon,recoil_values)
 	-- Return a cached value if this weapon and ammo combination has been used before.
@@ -139,7 +140,6 @@ function calculate_recoil(weapon,recoil_values)
 end
 	
 -- Shakes the screen about a bit and pretends to be recoil.
-local recoils = {}
 function create_effect(weapon)
 	-- Retrieve the speed and effects values.
 	local speed = recoil_values[weapon:section()].speed
@@ -177,7 +177,7 @@ function create_effect(weapon)
 		local variant = math.random(0, 1)
 		if (count >= 1 and key <= 4) then
 			for index = 1, count do
-				local animation = string.format([[shoot\s%s_e%s_%s.anm]], speed,direction, variant)
+				local animation = string.format([[shoot\s%s_e%s_%s.anm]], speed, key, variant)
 				level.add_cam_effector(animation, math.random(5000, 8000), false, "")
 			end
 		end
