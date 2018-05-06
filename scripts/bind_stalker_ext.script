@@ -115,6 +115,13 @@ function actor_on_update(binder,delta)
 end
 
 -------------------
+-- actor_on_weapon_no_ammo(actor,wpn,elapsed)
+-------------------
+function actor_on_weapon_fired(binder,obj,wpn,ammo_elapsed)
+	SendScriptCallback("actor_on_weapon_fired",obj,wpn,ammo_elapsed)
+end
+
+-------------------
 -- actor_on_weapon_no_ammo(wpn)
 -------------------
 function actor_on_weapon_no_ammo(binder,wpn)
