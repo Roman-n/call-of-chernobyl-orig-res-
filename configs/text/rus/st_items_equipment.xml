@@ -185,8 +185,14 @@
 	<string id="st_equ_smallpack_desc">
 		<text>Небольшой заплечный ранец, используемый, как правило, новичками. Внутренняя прокладка заменена водонепроницаемым слоем. Не очень хорош, но лучше, чем ничего.</text>
 	</string>
-	<string id="st_equ_milpack_name">
+	<string id="st_equ_smilpack_name">
 		<text>Вещмешок</text>
+	</string>
+	<string id="st_equ_smilpack_desc">
+		<text>Холстяной мешок, используемый военными уже более ста лет.</text>
+	</string>
+	<string id="st_equ_milpack_name">
+		<text>Военный рюкзак</text>
 	</string>
 	<string id="st_equ_milpack_desc">
 		<text>Традиционно используется военными для переноски боеприпасов, еды и медикаментов в длительных походах.</text>

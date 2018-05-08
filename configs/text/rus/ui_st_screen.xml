@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="st_ignite_fire">
-		<text>Зажечь ($$ACTION_USE$$)</text>
+		<text>Зажечь ($$ACTION_USE$$)\nЧтобы сохранить игру, удерживайте ($$ACTION_USE$$)</text>
 	</string>
 	<string id="st_extinguish_fire">
-		<text>Потушить ($$ACTION_USE$$)</text>
+		<text>Потушить ($$ACTION_USE$$)\nЧтобы сохранить игру, удерживайте ($$ACTION_USE$$)</text>
 	</string>
 	<string id="actor_inventory_box_use">
 		<text>Открыть личный ящик ($$ACTION_USE$$)</text>
@@ -418,5 +418,9 @@
 
 	<string id="st_nothing_useful">
 		<text>Ничего полезного</text>
+	</string>
+	
+	<string id="st_you_cant_save">
+		<text>Вы не можете сделать запись игры в этом месте.</text>
 	</string>
 </string_table>
