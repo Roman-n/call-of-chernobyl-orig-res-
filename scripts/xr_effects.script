@@ -4185,23 +4185,15 @@ local actor_nightvision = false
 local actor_torch		= false
 
 function disable_actor_nightvision(actor, npc)
-	local nightvision = db.actor:object("device_torch")
-	if not (nightvision) then
-		return
-	end
-	if nightvision:night_vision_enabled() then
-		nightvision:enable_night_vision(false)
+	if db.actor:night_vision_enabled() then
+		db.actor:enable_night_vision(false)
 		actor_nightvision = true
 	end
 end
 
 function enable_actor_nightvision(actor, npc)
-	local nightvision = db.actor:object("device_torch")
-	if not (nightvision) then
-		return
-	end
-	if not nightvision:night_vision_enabled() and actor_nightvision then
-		nightvision:enable_night_vision(true)
+	if not db.actor:night_vision_enabled() and actor_nightvision then
+		db.actor:enable_night_vision(true)
 		actor_nightvision = false
 	end
 end

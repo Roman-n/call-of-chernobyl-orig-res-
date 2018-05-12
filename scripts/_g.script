@@ -10,11 +10,9 @@
 --]]
 GAME_VERSION = "1.5b r7"
 
-if string.find(command_line(), "-dbg") then
+if string.find(command_line(), "-dev") then -- changed from -dbg so that seeing engine -dgb messages is optional
 	DEV_DEBUG = true
-	if string.find(command_line(), "-dbgdev") then -- because users all using dbg, need to hide OP features
-		DEV_DEBUG_DEV = true
-	end
+	DEV_DEBUG_DEV = true
 end
 
 -------------------------------------------------------------------------------------------------
@@ -33,9 +31,6 @@ amb_vol = 0
 
 function start_game_callback()
 	printf("Call of Chernobyl version %s",GAME_VERSION)
-	if (USE_MARSHAL) then
-		printf("using marshal library")
-	end
 
 	-- Alundaio
 	if (axr_main) then axr_main.on_game_start() end

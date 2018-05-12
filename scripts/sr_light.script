@@ -134,7 +134,7 @@ function check_light(stalker)
 
 	if not forced then
 		local htime = level.get_time_hours()
-		if htime <= 4 or htime >= 20 then
+		if htime <= 5 or htime >= 20 then
 			light = true
 		end
 

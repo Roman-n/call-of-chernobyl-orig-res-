@@ -262,7 +262,33 @@ end
 function actor_on_before_death(binder,whoID)
 	local flags = { ret_value = true }
 	SendScriptCallback("actor_on_before_death",whoID,flags)
-	if (flags.ret_value == true) then 
+	if (flags.ret_value == true) then
+	
+	--[[
+		if (IsHardcoreMode()) then
+			if not (deathIsActive) then
+				deathIsActive = true
+				local pda_menu = ActorMenu.get_pda_menu()
+				if not (pda_menu:IsShown()) then
+					pda_menu:ShowDialog(true)
+				end
+				pda_menu:GetTabControl():SetActiveTab("eptRanking")
+				pda_menu:SetActiveSubdialog("eptRanking")
+				local function screenshot_now()
+					get_console():execute("screenshot t")
+					local function kill_me()
+						db.actor:kill(db.actor,true)
+						return true
+					end
+					CreateTimeEvent(0,"kill_me",160,kill_me)
+					return true
+				end
+				CreateTimeEvent(0,"screenshot_now",30,screenshot_now)
+			end
+			return
+		end
+	--]]
+	
 		db.actor:kill(db.actor,true)
 	end
 end

@@ -494,6 +494,7 @@ function cmd.collectgarbage(me,txt,owner,p)
 	if (wrd == "full") then
 		local before = collectgarbage("count")
 		collectgarbage()
+		collectgarbage()
 		local after = collectgarbage("count")
 		return "collectgarbage:= |before|=>"..before.." |after|=> "..after
 	elseif (wrd == "count") then

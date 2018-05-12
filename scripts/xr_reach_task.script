@@ -192,21 +192,11 @@ function action_reach_task_location:single_execute(se_obj)
 	if (npc:game_vertex_id() ~= gv_id) then
 		if (npc:path_type() ~= game_object.game_path) then
 			npc:set_path_type(game_object.game_path)
-			npc:inactualize_game_path()
-			npc:inactualize_level_path()
-			npc:inactualize_patrol_path()
-			npc:set_desired_direction()
-			npc:set_desired_position()
 		end
 		npc:set_dest_game_vertex_id(gv_id)
 	else
 		if (npc:path_type() ~= game_object.level_path) then
 			npc:set_path_type(game_object.level_path)
-			npc:inactualize_game_path()
-			npc:inactualize_level_path()
-			npc:inactualize_patrol_path()
-			npc:set_desired_direction()
-			npc:set_desired_position()
 		end
 		utils.send_to_nearest_accessible_vertex(npc,lv_id,"xr_reach_task:3")
 	end
@@ -331,21 +321,11 @@ function action_reach_task_location:commander_execute(squad)
 	if npc:game_vertex_id() ~= gv_id then
 		if (npc:path_type() ~= game_object.game_path) then
 			npc:set_path_type(game_object.game_path)
-			npc:inactualize_game_path()
-			npc:inactualize_level_path()
-			npc:inactualize_patrol_path()
-			npc:set_desired_direction()
-			npc:set_desired_position()
 		end
 		npc:set_dest_game_vertex_id(gv_id)
 	else
 		if (npc:path_type() ~= game_object.level_path) then
 			npc:set_path_type(game_object.level_path)
-			npc:inactualize_game_path()
-			npc:inactualize_level_path()
-			npc:inactualize_patrol_path()
-			npc:set_desired_direction()
-			npc:set_desired_position()
 		end
 		utils.send_to_nearest_accessible_vertex(npc,lv_id,"xr_reach_task:2")
 	end

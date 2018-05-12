@@ -97,11 +97,18 @@ inv_grid_height                          = 1
 inv_grid_x                               = 14
 inv_grid_y                               = 7
 
-;aauu? iaeucy oi?aiaaou
 can_trade                                = true
 
 position                                 = 0.35,0.25,0.0
+
+highlight_equipped 						 = true
+light_section						 	 = torch_definition_volumetric	; The light section to use in it's model/objects/light_night.ltx
 light_trace_bone                         = lights_bone
+
+torch_offset							 = -0.2, 0.1, -0.3
+omni_offset								 = -0.2, 0.1, -0.1
+torch_inertion_speed_min				 = 0.5
+torch_inertion_speed_max				 = 7.5
 
 attach_angle_offset                      = 3.062, 0.008, -1.532
 attach_position_offset                   = 0.134, -0.007, 0.09
@@ -109,23 +116,13 @@ attach_position_offset                   = 0.134, -0.007, 0.09
 attach_bone_name                         = bip01_head
 auto_attach                              = false
 
-night_vision                             = on
-night_vision_texture                     = wpn\wpn_night
-night_vision_effector                    = postprocess_night
+snd_turn_on								 = weapons\nv_start
+snd_turn_off							 = weapons\nv_off
 
-snd_night_vision_on                      = weapons\nv_start
-snd_night_vision_off                     = weapons\nv_off
-snd_night_vision_idle                    = weapons\nv_loop
-snd_night_vision_broken                  = weapons\nv_off
-
-night_vision_recharge_time               = 6 ;(c) a?aiy ca?yaee aeeaioeyoi?a
-night_vision_recharge_time_min           = 2 ;(c) iei. a?aiy ca?yaee aeeaioeyoi?a, iinea eioi?iai ono-ai o?a ii?ao ?aaioaou
-night_vision_discharge_time              = 20 ;(c) a?aiy ?ac?yaee (?aaiou) ono?ienoaa iinea iieiie ca?yaee
 slot                                     = 9
 default_to_ruck                          = false
 sprint_allowed                           = true
 control_inertion_factor                  = 1
-disabled_maps                            = ai_test,ai_test2, andy_test_
 
 [device_flare]:identity_immunities
 class                                    = D_FLARE
