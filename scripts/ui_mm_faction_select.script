@@ -245,7 +245,7 @@ local function actor_on_before_death()
 	if not (uuid) then
 		return -- not in hardcore mode
 	end
-		
+	
 	local fs = getFS()
 	local flist = fs:file_list_open_ex("$game_saves$",bit_or(FS.FS_ListFiles,FS.FS_RootOnly),"*.scoc")
 	local f_cnt = flist:Size()
@@ -255,15 +255,27 @@ local function actor_on_before_death()
 		local file_name = string.sub(file:NameFull(), 0, (string.len(file:NameFull()) - string.len(".scoc")))
 
 		--printf("file_name = %s",file_name)
-		local f = io.open(fs:update_path('$game_saves$', '')..file_name..".scoc","rb")
+		local path = fs:update_path('$game_saves$', '')..file_name..".scoc"
+		local f = io.open(path,"rb")
 		if (f) then
 			local data = f:read("*all")
 			f:close()
 			if (data) then
 				local decoded = alife_storage_manager.decode(data)
 				if (decoded and decoded.uuid == uuid) then
-					printf("match found uuid = %s",uuid)
-					ui_load_dialog.delete_save_game(file_name)
+					decoded.death_count = (decoded.death_count or 0) + 1
+					if (decoded.death_count >= axr_main.config:r_value("mm_options","ironman_lives",2,0)) then
+						ui_load_dialog.delete_save_game(file_name)	
+					else
+						local f = io.open(path,"wb")
+						if (f) then
+							local encoded = marshal.encode(decoded)
+							if (encoded) then 
+								f:write(encoded)
+							end
+							f:close()
+						end
+					end
 				end
 			end
 		end
