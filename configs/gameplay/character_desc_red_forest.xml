@@ -12,12 +12,13 @@
         <rank>28902</rank>
         <reputation>2425</reputation>
         <money min="5000" max="20000" infinitive="0"/>
-        <visual>actors\stalker_lesnik\stalker_lesnik_1</visual>
+        <visual>actors\stalker_unique\stalker_lesnik</visual>
         <supplies>
         [spawn] \n
-#include "gameplay\character_items.xml"
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs.xml"
+#include "gameplay\supplies\character_items.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs.xml"
     </supplies>
     <mechanic_mode>1</mechanic_mode>
     <start_dialog>red_forester_hello_dialog</start_dialog>

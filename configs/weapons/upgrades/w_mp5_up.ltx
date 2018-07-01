@@ -63,9 +63,14 @@ cost		      		= 1000
 value					= +15
 
 crosshair_inertion		   = -0.5
+inertion_tendto_speed       = +0.35
+inertion_tendto_aim_speed   = +0.35
 
+PDM_disp_base               = -0.03
 PDM_disp_vel_factor 		= -0.3
 PDM_disp_accel_factor 		= -0.3
+inertion_origin_offset      = +0.0035
+inertion_origin_aim_offset  = +0.0035
 
 [up_sect_thirdd_mp5]
 cost		      		= 1000
@@ -104,9 +109,14 @@ cost		      		= 2000
 value					= +25
 
 crosshair_inertion		   = -0.75
- 
+inertion_tendto_speed       = +0.55
+inertion_tendto_aim_speed   = +0.55
+
+PDM_disp_base               = -0.05
 PDM_disp_vel_factor 		= -0.45
 PDM_disp_accel_factor 		= -0.45
+inertion_origin_offset      = +0.0055
+inertion_origin_aim_offset  = +0.0055
 
 [up_sect_fourtf_mp5]
 cost		      		= 2000
@@ -120,7 +130,7 @@ value					= +10
 ammo_mag_size        	= 10
 
 [up_sect_fifthc_mp5]
-cost		      		= 2500
+cost		      		= 1500
 value					= "9x18"
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
 
@@ -128,10 +138,8 @@ bullet_speed		 	= -50
 cam_dispersion         		= -0.1
 cam_step_angle_horz			= -0.05
 fire_dispersion_base		= +0.02
-hit_power					= -0.01
+hit_power					= -0.02
 
-condition_queue_shot_dec	= 0.0001
-condition_shot_dec      	= 0.0001
 misfire_start_prob	     	= 0.0005
 misfire_end_prob	     	= 0.005
 
@@ -493,7 +501,7 @@ scheme_index            = 1, 6
 known                   = 1
 effects                 =
 section                 = up_sect_fifthc_mp5
-property                = prop_calibre
+property                = prop_calibre, prop_bullet_speed, prop_rpm
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true

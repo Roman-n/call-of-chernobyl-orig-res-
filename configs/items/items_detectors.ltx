@@ -131,7 +131,7 @@ cform                                    = skeleton
 visual                                   = dynamics\devices\dev_detector_1\dev_detector_1.ogf
 
 ;use_condition	= true
-;decay_rate 		= 0.0001 ;decrement condition
+;decay_rate 	= 0.0001 ; broken engine feature (decrement condition)
 
 hud                                      = detector_simple_hud
 animation_slot                           = 7
@@ -148,8 +148,9 @@ inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 2
 inv_grid_y                               = 5
-cost                                     = 500
+cost                                     = 1500
 default_to_ruck                          = false
+
 
 af_radius                                = 30
 af_vis_radius                            = 3
@@ -219,9 +220,6 @@ $spawn                                   = "devices\detector_advanced"
 class                                    = DET_ADVA
 visual                                   = dynamics\devices\dev_detector_2\dev_detector_2.ogf
 
-;use_condition	= true
-;decay_rate 		= 0.00005 ;decrement condition
-
 inv_name                                 = st_detector2
 inv_name_short                           = st_detector2
 description                              = st_detector2_descr
@@ -230,7 +228,7 @@ inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 3
 inv_grid_y                               = 5
-cost                                     = 1000
+cost                                     = 5000
 hud                                      = detector_advanced_hud
 
 af_radius                                = 30
@@ -289,7 +287,7 @@ inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 4
 inv_grid_y                               = 5
-cost                                     = 2000
+cost                                     = 20000
 
 ; elite x="0.00096" y="0.0035"
 ui_p                                     = -0.02904,0.01,0.0364
@@ -342,9 +340,6 @@ af_freq_34                               = 0.05, 2
 $spawn                                   = "devices\detector_scientific"
 class                                    = DET_SCIE
 
-;use_condition	= true
-;decay_rate 		= 0.00004 ;decrement condition
-
 visual                                   = dynamics\devices\dev_detector_4\dev_detector_4.ogf
 
 inv_name                                 = st_detector4
@@ -356,7 +351,7 @@ inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 5
 inv_grid_y                               = 5
-cost                                     = 15500
+cost                                     = 50000
 
 ; elite x="0.00096" y="0.0035"
 ui_p                                     = -0.02904,0.01,0.0364

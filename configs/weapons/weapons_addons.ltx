@@ -3,15 +3,13 @@
 ;-------------
 
 [wpn_addon_scope]:identity_immunities
-GroupControlSection                      = spawn_group
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
 $prefetch                                = 32
 description                              = st_addon_scope_descr
-cost                                     = 1200
+cost                                     = 7500
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -30,15 +28,13 @@ scope_zoom_factor                        = 4
 addon_bone								 = wpn_scope
 
 [wpn_addon_scope_x2.7]:identity_immunities
-GroupControlSection                      = spawn_group
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_x2.7"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_x2.7"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
 $prefetch                                = 32
 description                              = st_addon_scope_x2.7_descr
-cost                                     = 1500
+cost                                     = 5000
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -56,16 +52,14 @@ scope_zoom_factor                        = 2.7
 
 addon_bone								 = wpn_scope
 
-[wpn_addon_scope_detector]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_scope_detector]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_detector"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_detector"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
 $prefetch                                = 32
 description                              = st_addon_scope_detector_descr
-cost                                     = 10000
+cost                                     = 17500
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -84,16 +78,14 @@ scope_zoom_factor                        = 4
 
 addon_bone								 = wpn_scope
 
-[wpn_addon_scope_night]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_scope_night]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_night"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_night"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
 $prefetch                                = 32
 description                              = st_addon_scope_night_vision_descr
-cost                                     = 6000
+cost                                     = 12500
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -113,17 +105,15 @@ scope_zoom_factor                        = 4
 addon_bone								 = wpn_scope
 
 [wpn_addon_scope_susat]:identity_immunities
-GroupControlSection                      = spawn_group
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_susat"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_susat"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
 description                              = st_addon_scope_susat_descr
 slot                                     = -1
 ;$prefetch 		= 64
 
-cost                                     = 1300
+cost                                     = 8000
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -142,17 +132,15 @@ scope_zoom_factor                        = 4
 addon_bone								 = wpn_scope
 
 [wpn_addon_scope_susat_x1.6]:identity_immunities
-GroupControlSection                      = spawn_group
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_susat_x1.6"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_susat_x1.6"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
 description                              = st_addon_scope_susat_x1.6_descr
 slot                                     = -1
 ;$prefetch 		= 64
 
-cost                                     = 1300
+cost                                     = 4000
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -170,18 +158,16 @@ scope_zoom_factor                        = 1.6
 
 addon_bone								 = wpn_scope
 
-[wpn_addon_scope_susat_custom]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_scope_susat_custom]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_susat_custom"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_susat_custom"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
 description                              = st_addon_scope_susat_custom_descr
 slot                                     = -1
 ;$prefetch 		= 64
 
-cost                                     = 5500
+cost                                     = 12500
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -197,21 +183,20 @@ inv_grid_y                               = 5
 scope_texture                            = wpn_crosshair_l85
 scope_dynamic_zoom                       = on
 scope_zoom_factor                        = 4
+scope_zoom_factor_min                    = 0.5
 
 addon_bone								 = wpn_scope
 
-[wpn_addon_scope_susat_dusk]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_scope_susat_dusk]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_susat_dusk"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_susat_dusk"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
 description                              = st_addon_scope_susat_dusk_descr
 slot                                     = -1
 ;$prefetch 		= 64
 
-cost                                     = 2500
+cost                                     = 12500
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -230,18 +215,16 @@ scope_zoom_factor                        = 1.6
 
 addon_bone								 = wpn_scope
 
-[wpn_addon_scope_susat_night]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_scope_susat_night]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\scope_susat_night"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\scope_susat_night"
 class                                    = WP_SCOPE
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
 description                              = st_addon_scope_susat_night_vision_descr
 slot                                     = -1
 ;$prefetch 		= 64
 
-cost                                     = 7000
+cost                                     = 13000
 
 holder_range_modifier                    = 1.0
 holder_fov_modifier                      = 1.0
@@ -261,11 +244,9 @@ scope_zoom_factor                        = 4
 addon_bone								 = wpn_scope
 
 [wpn_addon_silencer]:identity_immunities
-GroupControlSection                      = spawn_group
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\silencer"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\silencer"
 class                                    = WP_SILEN
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_silencer.ogf
 description                              = st_addon_silencer_descr
 $prefetch                                = 32
@@ -290,17 +271,51 @@ cam_dispersion_inc_k                     = 0.9
 
 addon_bone								 = wpn_silencer
 
-[wpn_addon_grenade_launcher]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_pistol_suppressor]:wpn_addon_silencer
+inv_name                                 = st_addon_pistol_suppressor
+inv_name_short                           = st_addon_pistol_suppressor
+description                              = st_addon_pistol_suppressor_descr
+
+inv_grid_x                               = 5
+inv_grid_y                               = 40
+
+cost                                     = 2000
+inv_weight                               = 0.3
+
+bullet_hit_power_k                       = 1
+bullet_hit_impulse_k                     = 1
+bullet_speed_k                           = 1
+fire_dispersion_base_k                   = 1
+cam_dispersion_k                         = 0.8
+cam_dispersion_inc_k                     = 0.8
+
+[wpn_addon_rifle_suppressor]:wpn_addon_silencer
+inv_name                                 = st_addon_rifle_suppressor
+inv_name_short                           = st_addon_rifle_suppressor
+description                              = st_addon_rifle_suppressor_descr
+
+inv_grid_x                               = 2
+inv_grid_y                               = 6
+
+cost                                     = 5000
+inv_weight                               = 0.7
+
+bullet_hit_power_k                       = 1
+bullet_hit_impulse_k                     = 1
+bullet_speed_k                           = 1
+fire_dispersion_base_k                   = 1
+cam_dispersion_k                         = 0.9
+cam_dispersion_inc_k                     = 0.9
+
+[wpn_addon_grenade_launcher]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\grenade_launcher"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\grenade_launcher"
 class                                    = WP_GLAUN
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_grenade_launcher.ogf
 description                              = st_grenade_launcher_descr
 $prefetch                                = 32
 
-cost                                     = 2000
+cost                                     = 8500
 inv_name                                 = st_grenade_launcher
 inv_name_short                           = st_grenade_launcher
 inv_weight                               = 1.3
@@ -309,22 +324,20 @@ inv_grid_width                           = 2
 inv_grid_height                          = 1
 inv_grid_x                               = 10
 inv_grid_y                               = 9
-grenade_vel                              = 44
+grenade_vel                              = 56
 
 addon_bone								 = wpn_launcher
 grenade_class							 = ammo_vog-25
 
-[wpn_addon_grenade_launcher_m203]:identity_immunities
-GroupControlSection                      = spawn_group
+[wpn_addon_grenade_launcher_m203]:identity_immunities ;? value
 discovery_dependency                     =
-$spawn                                   = "weapons\addons\grenade_launcher_m203"	                                       ; option for Level Editor
+$spawn                                   = "weapons\addons\grenade_launcher_m203"
 class                                    = WP_GLAUN
-cform                                    = skeleton
 visual                                   = dynamics\weapons\wpn_upgrade\wpn_grenade_launcher_m203.ogf
 description                              = st_grenade_launcher_m203_descr
 $prefetch                                = 32
 slot                                     = -1
-cost                                     = 1500
+cost                                     = 8500
 inv_name                                 = st_grenade_launcher_m203
 inv_name_short                           = st_grenade_launcher_m203
 inv_weight                               = 1.36
@@ -333,7 +346,7 @@ inv_grid_width                           = 2
 inv_grid_height                          = 1
 inv_grid_x                               = 12
 inv_grid_y                               = 9
-grenade_vel                              = 44
+grenade_vel                              = 56
 
 addon_bone								 = wpn_launcher
 grenade_class							 = ammo_m209
@@ -341,8 +354,8 @@ grenade_class							 = ammo_m209
 ;Advanced scope settings
 
 [scope_detector]
-vis_frame_speed                          = 4	                                       ; скорость, с которой наводится рамка на цель
-vis_frame_color                          = 0.7,0.7,0.7,1.0	                                       ; цвет рамки RGBA (A) Не учитывается
+vis_frame_speed                          = 4					; скорость, с которой наводится рамка на цель
+vis_frame_color                          = 0.7,0.7,0.7,1.0		; цвет рамки RGBA (A) Не учитывается
 found_snd                                = detectors\DA-2_beep1
 catch_snd                                = detectors\DA-2_beep1
 

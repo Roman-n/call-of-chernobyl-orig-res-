@@ -13,7 +13,7 @@
 		<text>A normal elastic bandage used to stop bleeding and prevent infection of wounds. For regular bleeding, carefully apply the bandage to the wound. For arterial bleeding, urgently tie the bandage around the affected area.</text>
 	</string>
 	<string id="st_binocular_descr">
-		<text>Standard issue military binoculars with a maximum of x7.5 magnification. Useful in the Zone in that they allow its owner to observe things from a distance.</text>
+		<text>Modular binoculars without any additions. Useful in the Zone in that they allow its owner to observe things from a distance.</text>
 	</string>
 	<string id="st_binocular_name">
 		<text>Binoculars</text>
@@ -61,7 +61,7 @@
 		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
 	</string>
 	<string id="st_device_torch_name">
-		<text>Flashlight</text>
+		<text>Headlamp</text>
 	</string>
 	<string id="st_drug_anabiotic">
 		<text>Anabiotics</text>
@@ -201,6 +201,12 @@
 	</string>
 	<string id="st_equ_touristpack_desc">
 		<text>A tourist's backpack with a lot of storage space. Not very popular due to its cumbersome size.</text>
+	</string>
+	<string id="st_water">
+		<text>Water</text>
+	</string>
+	<string id="st_water_descr">
+		<text>Clean and refreshing water. It can negate radioactivity received from Zone-produced food or help sober up.</text>
 	</string>
 	<string id="st_device_flashlight_name">
 		<text>Flashlight</text>

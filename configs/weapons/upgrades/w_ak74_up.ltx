@@ -2,7 +2,7 @@
 cost		      		= 600
 value					= -10
 
-cam_dispersion              = -0.08
+cam_dispersion              = -0.07
 cam_step_angle_horz        	= -0.08
 
 [up_sect_firstc_ak74]
@@ -26,17 +26,23 @@ fire_dispersion_condition_factor    = -0.25
 cost		      		= 2400
 value					= -30
 
-cam_dispersion              = -0.24
+cam_dispersion              = -0.21
 cam_step_angle_horz        	= -0.24
 
 [up_sect_secona_ak74]
 cost		      		= 600
 value					= +10
 
-crosshair_inertion		   = -0.4
- 
-PDM_disp_vel_factor 		= -0.15
-PDM_disp_accel_factor 		= -0.15
+crosshair_inertion		   = -0.3
+
+PDM_disp_base               = -0.05
+PDM_disp_vel_factor 		= -0.2
+PDM_disp_accel_factor 		= -0.2
+
+inertion_origin_offset		= 0.0015
+inertion_origin_aim_offset	= 0.0005
+inertion_tendto_speed		= 0.15
+inertion_tendto_aim_speed	= 0.25
 
 [up_sect_seconc_ak74]
 cost		      		= 1200
@@ -72,14 +78,14 @@ misfire_end_prob	     	= -0.005
 cost		      		= 1200
 value					= +20
 
-bullet_speed            = +50
+bullet_speed            = +60
 fire_dispersion_base	= -0.01
 
 [up_sect_thirdd_ak74]
 cost		      		= 1200
 value					= -20
 
-cam_dispersion              = -0.16
+cam_dispersion              = -0.14
 cam_step_angle_horz        	= -0.16
 
 [up_sect_thirde_ak74]
@@ -90,7 +96,7 @@ rpm                     = +100
 
 [up_sect_fourta_ak74]
 cost		      		= 600
-value					= -0.8
+value					= -0.7
 
 inv_weight = -0.8
 
@@ -98,27 +104,40 @@ inv_weight = -0.8
 cost		      		= 1200
 value					= +15
 
-crosshair_inertion		   = -0.8
- 
-PDM_disp_vel_factor 		= -0.3
-PDM_disp_accel_factor 		= -0.3
+crosshair_inertion		   = -0.6
+
+PDM_disp_base               = -0.05
+PDM_disp_vel_factor 		= -0.4
+PDM_disp_accel_factor 		= -0.4
+
+inertion_origin_offset		= 0.003
+inertion_origin_aim_offset	= 0.001
+inertion_tendto_speed		= 0.25
+inertion_tendto_aim_speed	= 0.5
 
 [up_sect_fourte_ak74]
 cost		      		= 2400
 value					= +25
 
-crosshair_inertion		   = -1.2
- 
-PDM_disp_vel_factor 		= -0.45
-PDM_disp_accel_factor 		= -0.45
+crosshair_inertion		   = -0.9
+
+PDM_disp_base               = -0.05
+PDM_disp_vel_factor 		= -0.6
+PDM_disp_accel_factor 		= -0.6
+
+inertion_origin_offset		= 0.0045
+inertion_origin_aim_offset	= 0.0015
+inertion_tendto_speed		= 0.35
+inertion_tendto_aim_speed	= 0.75
 
 [up_sect_fiftha_ak74]
-cost		      		= 2000
+cost		      		= 1500
+value					= 0
 scope_status = 2
 scopes_sect				= scope_ak74, scope_x2.7_ak74, scope_live_detector_ak74, scope_night_ak74
 
 [up_sect_fifthc_ak74]
-cost		      		= 3000
+cost		      		= 2000
 value					= "5.56x45"
 ammo_class          	= ammo_5.56x45_ss190, ammo_5.56x45_ap
 

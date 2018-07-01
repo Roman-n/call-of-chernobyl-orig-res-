@@ -13,8 +13,10 @@ visual							=	monsters\karlik\karlik_green
 spawn_phantom 					=	m_phantom_karlik
 can_spawn_phantom 				=	true
 
-hit_fraction_monster = 0.25
-skin_armor = 0.4
+hit_fraction_monster = 0.4
+skin_armor = 0.3
+
+feel_enemy_who_just_hit_max_distance = 100
 
 ; Influences.
 fire_linear_factor				=	0
@@ -22,9 +24,9 @@ fire_max_distance				=	0
 fire_max_power					=	5
 fire_quadratic_factor			=	0.025
 
-psy_linear_factor				=	0.5
-psy_max_distance				=	25
-psy_max_power					=	0.4
+psy_linear_factor				=	1.0
+psy_max_distance				=	20
+psy_max_power					=	0.33
 psy_pp_effector_name			=	psy_antenna
 psy_pp_highest_at				=	0.1
 psy_quadratic_factor			=	0
@@ -200,7 +202,7 @@ LegsCount						=	2
 spec_rank						=	normal
 species							=	karlik
 
-rank							=	17
+rank							=	19
 community						=	karlik
 monster_type					=	indoor
 
@@ -316,7 +318,7 @@ stand_walk_fwd_0 				=	1,		0.01,	1,		0.25,	0.7
 [m_karlik_damage]
 ; Bone name							hit_scale	-1	wound_scale
 default							=	1.0,		-1,		0.3
-bip01_head 						=	1.5,		-1,		0.5
+bip01_head 						=	2.0,		-1,		0.5
 bip01_neck 						=	1.0,		-1,		1.0
 bip01_pelvis 					=	1.0,		-1,		0.5
 bip01_spine 					=	1.0,		-1,		0.5
@@ -324,15 +326,15 @@ bip01_spine1 					=	1.0,		-1,		0.5
 
 ; Default immunities.
 [karlik_immunities]
-burn_immunity					=	1.0				 
+burn_immunity					=	1.0
 strike_immunity					=	0.5
 shock_immunity					=	0.5
 wound_immunity					=	0.5
 radiation_immunity				=	0.0
 telepatic_immunity				=	0.0
 chemical_burn_immunity			=	0.5
-explosion_immunity				=	0.7
-fire_wound_immunity				=	0.7
+explosion_immunity				=	0.5
+fire_wound_immunity				=	0.75
 
 [karlik_vision_free]
 min_view_distance   			=	0.7

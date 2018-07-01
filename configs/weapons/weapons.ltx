@@ -10,6 +10,7 @@
 #include "upgrades\w_ak74_up.ltx"
 #include "upgrades\w_ak74u_up.ltx"
 #include "upgrades\w_beretta_up.ltx"
+#include "upgrades\w_binoc_up.ltx"
 #include "upgrades\w_bm16_up.ltx"
 #include "upgrades\w_colt1911_up.ltx"
 #include "upgrades\w_desert_eagle_up.ltx"
@@ -97,19 +98,19 @@ tracer_length_max                        = 225	                                 
 tracer_length_min                        = 0	                                       ;1 ;2		;0.2
 
 ;расстояние после которого учитывается hit_probabilty полностью
-hit_probability_max_dist                 = 3	                                       ;
+hit_probability_max_dist                 = 3
 
 gravity_const                            = 9.81
 ;сопротивление воздуха, процент, который отнимается от скорости полета пули
-air_resistance_k                         = 1 ; if air_resistance_k * ammo k_air_resistance = 1 bullet damage will drop off at half of bullet_speed in meters
+air_resistance_k                         = 1
 ;размер шага времени (в милисекундах), по которому проигрываются
 time_step                                = 33
 ;минимальная скорость (м/с), на которой пуля еще считается и показывается
 min_bullet_speed                         = 3.0
 ;cколько процентов энергии потеряет пуля при столкновении с материалом (при падении под прямым углом)
-collision_energy_min                     = 0.80	                                       ;0.75; 0.90
+collision_energy_min                     = 0.80
 ;сколько процентов энергии останется у пули при любом столкновении
-collision_energy_max                     = 0.5	                                       ;0.7;0.50
+collision_energy_max                     = 0.5
 
 whine_sounds                             = weapons\whine_1, weapons\whine_2, weapons\whine_3, weapons\whine_4, weapons\whine_5, weapons\whine_6, weapons\whine_7, weapons\whine_8, weapons\whine_9, weapons\whine_10, weapons\whine_11, weapons\whine_12, weapons\whine01, weapons\whine02
 explode_particles                        = explosions\expl_bullet,explosions\expl_bullet_00,explosions\expl_bullet_01
@@ -131,9 +132,8 @@ color_3                                            = 255, 255, 0, 255 ; Yellow (
 ; Fake Missiles and Grenades
 ;---------------------------
 
-[wpn_fake_missile]:identity_immunities,default_weapon_params
+[wpn_fake_missile]:default_weapon_params
 visual                                   = dynamics\weapons\wpn_ammo\ammo_vog_25.ogf
-cform                                    = skeleton
 class                                    = G_FAKE
 $prefetch                                = 32
 
@@ -147,21 +147,16 @@ inv_grid_height                          = 1
 inv_grid_x                               = 19
 inv_grid_y                               = 10
 
-kill_msg_x                               = 17
-kill_msg_y                               = 232
-kill_msg_width                           = 21
-kill_msg_height                          = 22
-
 cost                                     = 150
 
-blast                                    = 2
+blast                                    = 2.5
 blast_r                                  = 5
 blast_impulse                            = 100
 blast_impulse_factor                     = 1
 
 frags                                    = 100
 frags_r                                  = 15
-frag_hit                                 = 0.1
+frag_hit                                 = 0.2
 frag_hit_impulse                         = 25
 
 hit_type_blast                           = explosion
@@ -201,10 +196,9 @@ engine_present                           = false	                               
 lights_enabled                           = false	                                       ;свет вокруг ракеты, во время полета
 force_explode_time                       = 10000
 
-[wpn_fake_missile1]:identity_immunities,default_weapon_params
+[wpn_fake_missile1]:default_weapon_params
 $prefetch                                = 32
 visual                                   = dynamics\weapons\wpn_ammo\ammo_vog_25p.ogf
-cform                                    = skeleton
 class                                    = G_FAKE
 
 ;свойства которые читаются, но не используются
@@ -216,11 +210,6 @@ inv_grid_width                           = 1
 inv_grid_height                          = 1
 inv_grid_x                               = 19
 inv_grid_y                               = 9
-
-kill_msg_x                               = 38
-kill_msg_y                               = 233
-kill_msg_width                           = 21
-kill_msg_height                          = 22
 
 cost                                     = 150
 
@@ -244,7 +233,7 @@ up_throw_factor                          = 0.7
 explode_particles                        = explosions\explosion_01
 
 light_color                              = 1.9,1.4,0.5
-light_range                              = 14.0
+light_range                              = 15.0
 light_time                               = 0.85
 
 ph_mass                                  = 1
@@ -272,10 +261,9 @@ trail_light_color                        = 0.6,0.5,0.3
 trail_light_range                        = 8.0
 force_explode_time                       = 10000
 
-[wpn_fake_missile2]:identity_immunities,default_weapon_params
+[wpn_fake_missile2]:default_weapon_params
 $prefetch                                = 32
 visual                                   = dynamics\weapons\wpn_ammo\ammo_m209.ogf
-cform                                    = skeleton
 class                                    = G_FAKE
 
 ;свойства которые читаются, но не используются
@@ -288,21 +276,16 @@ inv_grid_height                          = 1
 inv_grid_x                               = 5
 inv_grid_y                               = 13
 
-kill_msg_x                               = 61
-kill_msg_y                               = 232
-kill_msg_width                           = 19
-kill_msg_height                          = 22
-
 cost                                     = 150
 
-blast                                    = 2
+blast                                    = 2.5
 blast_r                                  = 5
 blast_impulse                            = 100
 blast_impulse_factor                     = 1
 
 frags                                    = 100
 frags_r                                  = 15
-frag_hit                                 = 0.1
+frag_hit                                 = 0.2
 frag_hit_impulse                         = 25
 
 hit_type_blast                           = explosion
@@ -315,7 +298,7 @@ up_throw_factor                          = 0.7
 explode_particles                        = explosions\explosion_01
 
 light_color                              = 1.9,1.4,0.5
-light_range                              = 14.0
+light_range                              = 15.0
 light_time                               = 0.85
 
 ph_mass                                  = 1

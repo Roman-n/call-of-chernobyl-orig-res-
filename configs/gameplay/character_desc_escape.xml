@@ -9,7 +9,7 @@
     <community>trader</community>
     <map_icon x="1" y="0"/>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <visual>actors\stalker_trader\stalker_trader_1</visual>
+    <visual>actors\stalker_unique\stalker_trader_sid</visual>
     <rank>35692</rank>
     <reputation>2302</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
@@ -31,15 +31,15 @@
     <icon>ui_inGame2_nimble</icon>
     <map_icon x="1" y="0">
     </map_icon>
-    <bio>Îïûòíûé ñòàëêåð. Äåòàëüíàÿ èíôîðìàöèÿ îòñóòñòâóåò.</bio>
+    <bio></bio>
     <class>esc_2_12_stalker_nimble</class>
     <community>stalker</community>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <rank>32472</rank>
     <reputation>2201</reputation>
     <money min="1000000" max="1000000" infinitive="1" />
-    <visual>actors\stalker_neutral\stalker_nimble</visual>
+    <visual>actors\stalker_unique\stalker_trader_nimble</visual>
     <supplies>
         [spawn] \n
 		wpn_binoc \n
@@ -49,8 +49,9 @@
         ammo_5.45x39_fmj = 1 \n
         wpn_pm \n
         ammo_9x18_fmj = 1 \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_2.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     <start_dialog>esc_2_12_stalker_nimble_start</start_dialog>
@@ -64,7 +65,7 @@
     <actor_dialog>actor_break_dialog</actor_dialog>
     </specific_character>
     
-    <!--------------------------------------- WOLF GUARD ----------------------------------------------------->
+    <!--------------------------- WOLF GUARD <!--------------------------->
     <specific_character id="esc_2_12_stalker_wolf" team_default = "1">
     <name>esc_wolf_name</name>
     <icon>ui_inGame2_wolf</icon>
@@ -76,9 +77,9 @@
     <rank>33136</rank>
     <reputation>2453</reputation>
     <money min="600" max="2000" infinitive="0"/>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <crouch_type>-1</crouch_type>
-    <visual>actors\stalker_neutral\stalker_neytral_balon_1</visual>
+    <visual>actors\stalker_unique\stalker_neutral_wolf</visual>
     <supplies>
         [spawn] \n
         wpn_pm \n
@@ -108,10 +109,10 @@
     <rank>16206</rank>
     <reputation>1725</reputation>
     <money min="600" max="2000" infinitive="0"/>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\build_1\</snd_config>
     <crouch_type>-1</crouch_type>
     <panic_treshold>0</panic_treshold>
-    <visual>actors\stalker_neutral\stalker_neytral_rukzak_3</visual>
+    <visual>actors\stalker_unique\stalker_neutral_fanatic</visual>
     <supplies>
         [spawn] \n
         wpn_binoc \n
@@ -141,17 +142,18 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>6278</rank>
     <reputation>784</reputation>
-    <visual>actors\stalker_neutral\loner_mechanic_stalker</visual>
-    <snd_config>characters_voice\human_03\stalker\</snd_config>
+    <visual>actors\stalker_unique\stalker_neutral_tech</visual>
+    <snd_config>characters_voice\human\no_speach\</snd_config>
     <supplies>
         [spawn] \n
         wpn_toz34  \n
         ammo_12x76_zhekan = 1 \n
         wpn_fort \n
         ammo_9x18_fmj = 1 \n
-#include "gameplay\character_items.xml"
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_2.xml"
+#include "gameplay\supplies\character_items.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     <actor_dialog>dm_ordered_task_dialog</actor_dialog>

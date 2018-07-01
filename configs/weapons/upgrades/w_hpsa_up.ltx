@@ -61,19 +61,19 @@ value					= -0.2
 
 inv_weight              = -0.2
 
-crosshair_inertion			= -0.15
-
-PDM_disp_vel_factor 		= -0.11
-PDM_disp_accel_factor 		= -0.11
-
 [up_sect_thirdc_hpsa]
 cost		      		= 600
 value					= +15
 
-crosshair_inertion			= -0.3
+crosshair_inertion			= -0.7
+inertion_tendto_speed       = +1
+inertion_tendto_aim_speed   = +1
 
-PDM_disp_vel_factor 		= -0.22
-PDM_disp_accel_factor 		= -0.22
+PDM_disp_base               = -0.1
+PDM_disp_vel_factor 		= -0.3
+PDM_disp_accel_factor 		= -0.3
+inertion_origin_offset      = +0.005
+inertion_origin_aim_offset  = +0.005
 
 [up_sect_thirdd_hpsa]
 cost		      		= 600
@@ -98,7 +98,7 @@ condition_shot_dec      	= -0.0001
 misfire_start_prob	     	= -0.001
 misfire_end_prob	     	= -0.01
 
-[up_sect_fourte_hpsa]
+[up_sect_fourte_hpsa] ; disabled
 cost		      		= 1200
 value					= +25
 
@@ -108,13 +108,13 @@ PDM_disp_vel_factor 		= -0.35
 PDM_disp_accel_factor 		= -0.35
 
 [up_sect_fiftha_hpsa]
-cost		      		= 1200
+cost		      		= 1000
 value					= +4
 
 ammo_mag_size		 	= +4
 
 [up_sect_fifthc_hpsa]
-cost		      		= 1500
+cost		      		= 1000
 value					= "9x18"
 
 ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
@@ -123,10 +123,8 @@ bullet_speed		 	= -50
 cam_dispersion         		= -0.2
 cam_step_angle_horz			= -0.15
 fire_dispersion_base		= +0.02
-hit_power					= -0.01
+hit_power					= -0.02
 
-condition_queue_shot_dec	= 0.0001
-condition_shot_dec      	= 0.0001
 misfire_start_prob	     	= 0.00005
 misfire_end_prob	     	= 0.0005
 
@@ -386,7 +384,7 @@ icon                    = ui_inGame2_upgrade_HPSS_1m_12
 [up_fourtc_hpsa]
 scheme_index            = 1, 5
 known                   = 1
-effects                 = up_gr_fourtef_hpsa
+effects                 = ;up_gr_fourtef_hpsa
 section                 = up_sect_fourtc_hpsa
 property                = prop_reliability
 
@@ -403,25 +401,25 @@ name                    = st_up_usmp_b5_name
 description             = st_up_usmp_b5_descr
 icon                    = ui_inGame2_upgrade_HPSS_1m_13
 
-[up_fourte_hpsa]
-scheme_index            = 2, 3
-known                   = 1
-effects                 =
-section                 = up_sect_fourte_hpsa
-property                = prop_inertion 
+;[up_fourte_hpsa]
+;scheme_index            = 2, 3
+;known                   = 1
+;effects                 =
+;section                 = up_sect_fourte_hpsa
+;property                = prop_inertion 
 
-precondition_functor    = inventory_upgrades.precondition_functor_a
-precondition_parameter  = a & b
+;precondition_functor    = inventory_upgrades.precondition_functor_a
+;precondition_parameter  = a & b
 
-effect_functor          = inventory_upgrades.effect_functor_a
-effect_parameter        = something_here
+;effect_functor          = inventory_upgrades.effect_functor_a
+;effect_parameter        = something_here
 
-prereq_functor          = inventory_upgrades.prereq_functor_a
-prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
-prereq_params           = 
-name                    = st_up_usmp_c2_name
-description             = st_up_usmp_c2_descr
-icon                    = ui_inGame2_upgrade_HPSS_1m_14
+;prereq_functor          = inventory_upgrades.prereq_functor_a
+;prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+;prereq_params           = 
+;name                    = st_up_usmp_c2_name
+;description             = st_up_usmp_c2_descr
+;icon                    = ui_inGame2_upgrade_HPSS_1m_14
 
 
 [up_fiftha_hpsa]
@@ -451,7 +449,7 @@ scheme_index            = 1, 6
 known                   = 1
 effects                 =
 section                 = up_sect_fifthc_hpsa
-property                = prop_calibre
+property                = prop_calibre, prop_bullet_speed
 
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
@@ -499,8 +497,8 @@ elements                = up_fourta_hpsa
 [up_gr_fourtcd_hpsa]
 elements                = up_fourtc_hpsa
 
-[up_gr_fourtef_hpsa]
-elements                = up_fourte_hpsa
+;[up_gr_fourtef_hpsa]
+;elements                = up_fourte_hpsa
 
 [up_gr_fifthab_hpsa]
 elements                = up_fiftha_hpsa

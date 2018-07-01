@@ -2037,4 +2037,25 @@
 	<string id="st_up_kom_a5_name">
 		<text>Rubberised cloth under-layer</text>
 	</string>
+	<string id="st_prop_binoc_7.5x">
+		<text>x7.5 zoom</text>
+	</string>
+	<string id="st_up_binoc_a1_name">
+		<text>7.5x maximum zoom</text>
+	</string>
+	<string id="st_up_binoc_a1_desc">
+		<text>Higher magnification lenses.</text>
+	</string>
+	<string id="st_up_binoc_a2_name">
+		<text>Adjustable magnification</text>
+	</string>
+	<string id="st_up_binoc_a2_desc">
+		<text>This modification allows the lenses to be easily adjusted.</text>
+	</string>
+	<string id="st_up_binoc_b1_name">
+		<text>Integrated night vision device</text>
+	</string>
+	<string id="st_up_binoc_b1_desc">
+		<text>A night vision device makes observation in the dark easier.</text>
+	</string>
 </string_table>

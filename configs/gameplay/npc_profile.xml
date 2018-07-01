@@ -73,10 +73,10 @@
 	<character id="sim_default_duty_4">
 		<class>sim_default_duty_4</class>
 	</character>
-	<!-- sim monolith -->
+	<!-- sim monolith
 	<character id="sim_default_monolith_0">
 		<class>sim_default_monolith_0</class>
-	</character>
+	</character>-->
 	<character id="sim_default_monolith_1">
 		<class>sim_default_monolith_1</class>
 	</character>
@@ -170,20 +170,11 @@
 	<character id="sim_default_military_4">
 		<class>sim_default_military_4</class>
 	</character>
-	<character id="sim_default_military_3_sniper_1">
-		<class>sim_default_military_3_sniper_1</class>
-	</character>
-	<character id="sim_default_military_3_sniper_2">
-		<class>sim_default_military_3_sniper_2</class>
-	</character>
-	<character id="sim_default_military_3_sniper_3">
-		<class>sim_default_military_3_sniper_3</class>
-	</character>
 
-	<!-- sim mercenery -->
+	<!-- sim mercenary
 	<character id="sim_default_killer_0">
 		<class>sim_default_killer_0</class>
-	</character>
+	</character>-->
 	<character id="sim_default_killer_1">
 		<class>sim_default_killer_1</class>
 	</character>
@@ -215,15 +206,12 @@
     <character id="sim_default_ecolog_0">
 		<class>sim_default_ecolog_0</class>
 	</character>
-	
 	<character id="sim_default_ecolog_1">
 		<class>sim_default_ecolog_1</class>
 	</character>
-	
 	<character id="sim_default_ecolog_2">
 		<class>sim_default_ecolog_2</class>
 	</character>
-	
 	<character id="sim_default_ecolog_3">
 		<class>sim_default_ecolog_3</class>
 	</character>
@@ -246,7 +234,6 @@
 	</character>
 
 	<!-- sim renegade -->
-
 	<character id="sim_default_renegade_0">
 		<class>sim_default_renegade_0</class>
 	</character>
@@ -258,27 +245,21 @@
 	</character>
 
 <!-- Marsh -->
-
 	<character id="mar_smart_terrain_base_doctor">
 		<class>mar_smart_terrain_base_doctor</class>
 	</character>
-	
 	<character id="mar_smart_terrain_doc_doctor">
 		<class>mar_smart_terrain_doc_doctor</class>
 	</character>
-
 	<character id="mar_base_stalker_barmen">
 		<class>mar_base_stalker_barmen</class>
 	</character>
-
 	<character id="mar_base_owl_stalker_trader">
 		<class>mar_base_owl_stalker_trader</class>
 	</character>
-
 	<character id="mar_base_stalker_tech">
 		<class>mar_base_stalker_tech</class>
 	</character>
-
 
 	<!-- Escape -->
 	<character id="esc_2_12_stalker_trader">

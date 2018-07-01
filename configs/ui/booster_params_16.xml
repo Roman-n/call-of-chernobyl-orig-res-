@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
 <!--		<texture_minus>ui_am_prop_radio_restore</texture_minus> -->
-		<value x="117" y="0" width="30" height="20" magnitude="1000">
+		<value x="117" y="0" width="30" height="20" magnitude="10000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_radiation_restore>
@@ -29,7 +29,7 @@
 			<texture>ui_am_prop_satiety_restore_speed</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
-		<value x="117" y="0" width="30" height="20" magnitude="10">
+		<value x="117" y="0" width="30" height="20" magnitude="1000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_satiety>
@@ -79,7 +79,7 @@
 			<texture>ui_am_propery_11</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
-		<value x="117" y="0" width="30" height="20" magnitude="300">
+		<value x="117" y="0" width="30" height="20" magnitude="500">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_telepat_protection>
@@ -109,7 +109,7 @@
 			<texture>ui_am_prop_electro</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
-		<value x="117" y="0" width="30" height="20" magnitude="48">
+		<value x="117" y="0" width="30" height="20" magnitude="30">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_shock_immunity>

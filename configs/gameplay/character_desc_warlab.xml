@@ -10,8 +10,8 @@
     <community>trader</community> <terrain_sect>stalker_terrain</terrain_sect>
     <rank>522</rank>
     <reputation>127</reputation>
-    <visual>actors\ucheniy\ucheniy_1_strong</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <visual>actors\stalker_unique\stalker_ccon_rep</visual>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     <start_dialog>oso_osoznanie_start</start_dialog>
@@ -38,7 +38,7 @@
     <rank>14488</rank>
     <reputation>2157</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_1</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -53,7 +53,7 @@
     <rank>2750</rank>
     <reputation>-740</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_2</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -68,7 +68,7 @@
     <rank>20666</rank>
     <reputation>-864</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_3</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -83,7 +83,7 @@
     <rank>25098</rank>
     <reputation>275</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_4</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -98,7 +98,7 @@
     <rank>12612</rank>
     <reputation>-694</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_1</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -113,7 +113,7 @@
     <rank>1268</rank>
     <reputation>-1820</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_2</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -128,7 +128,7 @@
     <rank>17984</rank>
     <reputation>-2388</reputation>
     <visual>actors\stalker_osoznanie\stalker_osoznanie_3</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     </specific_character>
@@ -143,7 +143,7 @@
     <rank>346</rank>
     <reputation>234</reputation>
     <visual>actors\stalker_invisible\stalker_invisible</visual>
-    <snd_config>characters_voice\human_01\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_1\</snd_config>
     <supplies>
     </supplies>
     <start_dialog>warlab_entity_start</start_dialog>

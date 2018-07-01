@@ -72,7 +72,6 @@ cl_run_fwd_0				=	1,	  0.2,	    1,       0.4,     1
 ;transparency_threshold is done during ray_query
 ;Note that improper values, no matter how high transparency_threshold will result in stalkers shooting at walls
 
-
 [stalker_vision_free]
 min_view_distance   		= 0.1				; min range of cone based on eye_range
 max_view_distance	 		= 0.6				; max range of cone based on eye_range
@@ -80,7 +79,7 @@ visibility_threshold	 	= 60				;Threshold in which object becomes visible based 
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
 time_quant					= 0.005				;step increment to for sight calculations
 decrease_value				= 0.1 				;Decrease over time to overall threshold
-velocity_factor		     	= 1.1				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 1.0				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.75				;Low value = easier to see at night
 transparency_threshold	 	= 0.6 			    ;Low value = easier to see through objects
 still_visible_time          = 0 				;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
@@ -92,7 +91,7 @@ visibility_threshold	 	= 60				;Threshold in which object becomes visible based 
 always_visible_distance 	= 0					;Distance object is always considered visible (float)
 time_quant					= 0.0052			;step increment to for sight calculations
 decrease_value				= 0.1				;Decrease over time to overall threshold
-velocity_factor		     	= 1.2				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 1.1				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.75				;Low value = easier to see at night
 transparency_threshold	 	= 0.6				;Low value = easier to see through objects (if greater then 1 then enemies are blind)
 still_visible_time          = 0					;The time (milliseconds) that the object is still considered visible , even if it is not in the frustum (u32)
@@ -105,20 +104,20 @@ still_visible_time          = 0					;The time (milliseconds) that the object is 
 	world					= 0.1	; коэффициент усиления приоритета\силы звука
 
 [stalker_damage]
-default						= 0.75, -1, 0.75
+default						= 0.75, -1, 0.5
 
-bip01_pelvis 				= 0.9, 1, 0.4
-bip01_spine 		 		= 1, 1, 0.8
+bip01_pelvis 				= 0.9, 1, 0.6
+bip01_spine 		 		= 1, 1, 0.7
 bip01_spine1 		 		= 1, 1, 0.8
 bip01_spine2 		 		= 1, 1, 0.8
-bip01_neck 			 		= 1, 0, 1.0
+bip01_neck 			 		= 2, 0, 1.0
 bip01_head 			 		= 4, 0, 1.0 , 3
 eyelid_1 			 		= 4, 0, 1.0 , 3
 eye_left 			 		= 4, 0, 1.0 , 3
 eye_right 			 		= 4, 0, 1.0 , 3
 jaw_1 		 		 		= 4, 0, 1.0
 
-bip01_l_clavicle	 		= 0.8, 10, 0.6
+bip01_l_clavicle	 		= 0.9, 10, 0.6
 bip01_l_upperarm	 		= 0.7, 10, 0.5
 bip01_l_forearm	 	 	    = 0.5, 10, 0.4
 bip01_l_hand	 	 	    = 0.25, -1, 0.2
@@ -132,7 +131,7 @@ bip01_l_finger2	 	 	    = 0.1, -1, 0.1
 bip01_l_finger21	 		= 0.1, -1, 0.1
 bip01_l_finger22	 		= 0.1, -1, 0.1
 
-bip01_r_clavicle	 		= 0.8, 8, 0.6
+bip01_r_clavicle	 		= 0.9, 8, 0.6
 bip01_r_upperarm	 		= 0.7, 8, 0.5
 bip01_r_forearm	 	 		= 0.5, 8, 0.4
 bip01_r_hand	 	 		= 0.25, -1, 0.2
@@ -148,11 +147,11 @@ bip01_r_finger22	 		= 0.1, -1, 0.1
 
 bip01_l_thigh	 	 		= 0.8, 4, 0.6
 bip01_l_calf	 	 		= 0.6, 4, 0.4
-bip01_l_foot	 	 		= 0.1, 4, 0.2
+bip01_l_foot	 	 		= 0.25, 4, 0.2
 bip01_l_toe0	 	 		= 0.1, -1, 0.1
 bip01_r_thigh	 	 		= 0.8, 6, 0.6
 bip01_r_calf	 	 		= 0.6, 6, 0.4
-bip01_r_foot	 	 		= 0.3, 6, 0.2
+bip01_r_foot	 	 		= 0.25, 6, 0.2
 bip01_r_toe0	 	 		= 0.1, -1, 0.1
 
 [critical_wound_head_section]
@@ -200,7 +199,6 @@ bip01_r_toe0	 	 		= 0.1, -1, 0.1
 	bip01_r_finger21
 	bip01_r_finger22
 
-
 [critical_wound_leg_left_section]
 	bip01_l_thigh
 	bip01_l_calf
@@ -240,7 +238,7 @@ satiety_power_v				= 0.0005
 satiety_health_v			= 0.1	;0.0001
 satiety_critical			= 0.0
 radiation_health_v			= 0.001
-morale_v					= 0.4	;0.0001
+morale_v					= 0.0001 ;0.4
 health_hit_part				= 1.0
 power_hit_part				= 0.0
 psy_health_v				= 0.0009
@@ -254,16 +252,16 @@ sleep_psy_health			= 1.0
 
 ;---LIMPING STATE-----------------------------------------------------
 use_limping_state			= off
-limping_threshold			= 0.05
+limping_threshold			= 0.3
 
 ;открытые раны
-bleeding_v					= 0.003	;потеря крови при номинальной ране в секунду
-wound_incarnation_v			= 0.004		;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
+bleeding_v					= 0.003		;потеря крови при номинальной ране в секунду
+wound_incarnation_v			= 0.003		;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
 min_wound_size				= 0.0128
+bleed_speed_k				= 1
 
 [stalker_terrain]
 	255,000,255,255
-
 
 [sakharov_terrain]
 	255,001,255,255
@@ -333,7 +331,7 @@ ef_creature_type		= 17						;option for evaluation functions
 ;---LEVEL EDITOR------------------------------------------------------
 $spawn					= "stalkers\stalker"				;option for Level Editor
 $npc					= on						;option for Level Editor
-visual					= actors\stalker_hero\stalker_hero_1.ogf	;option for Level Editor
+visual					= actors\stalker_unique\stalker_hero_degtyarev.ogf	;option for Level Editor
 corpse_visual			= dynamics\equipments\item_rukzak.ogf		;option for Level Editor
 custom_data				= default_custom_data.ltx			;option for Level Editor
 character_profile		= default					;option for Level Editor
@@ -376,7 +374,7 @@ max_item_mass					= 10000000.0				; option for ALife Simulator
 inv_max_weight					= 10000000.0				; Допустимый вес инвентори
 MaxHealthValue					= 100				; option for ALife Simulator, range [0..200]
 smart_terrain_choose_interval	= 00:15:00
-bleed_speed_k					= 0.333
+
 ;---ONLINE ALIFE-------------------------------------------------------------------
 time_to_search_for_artefacts	= 0 ; in milliseconds
 distance_to_search_for_artefacts= 0.0	; in meters
@@ -470,30 +468,21 @@ bone_model						= bip01
 crouch_type						= 0 ; 0 - crouch a little, 1 - crouch full; -1 - random crouch
 
 ;---FIRE DISPERSIONS--------------------------------------------------
-disp_walk_stand					= 5
-disp_walk_crouch				= 4
-disp_run_stand					= 9
-disp_run_crouch					= 7
+disp_walk_stand					= 3
+disp_walk_crouch				= 2
+disp_run_stand					= 5
+disp_run_crouch					= 4
 disp_stand_stand				= 3
 disp_stand_crouch				= 2
 disp_stand_stand_zoom			= 1
 disp_stand_crouch_zoom			= 0.75
-
-FireRandomMin 		 =     	1
-FireRandomMax 		 =     	12
-NoFireTimeMin 		 =    	4
-NoFireTimeMax 		 =    	16
-MinMissDistance		 =     	1
-MinMissFactor		 =     	0.0
-MaxMissDistance		 =    	6
-MaxMissFactor		 =     	0.0
 
 ;---FIRE QUEUE PARAMETERS
 fire_queue_section = fire_queue_params
 
 
 ;---CRITICAL WOUND------------------------------------------------------------------
-critical_wound_threshold		= 0.4
+critical_wound_threshold		= 0.5
 critical_wound_decrease_quant	= 0.2
 body_parts_section_id			= critical_wound_body_parts_section
 critical_wound_weights			= 100,50,10
@@ -526,29 +515,18 @@ ph_character_have_wounded_state = false; имеет ли персонаж состояние раненый
 ;cлучайные
 ;random_death_animations = norm_2_critical_hit_legs_right_0,norm_2_critical_hit_torso_0,norm_2_critical_hit_torso_1,norm_2_critical_hit_legs_left_0,norm_2_critical_hit_hend_left_0,norm_2_critical_hit_hend_right_0,norm_2_critical_hit_head_0
 
-
-
 ;front/back/left/right
 ;kill_enertion           = ragdoll_inertion_front_0/ragdoll_inertion_front_3/ragdoll_inertion_front_2/ragdoll_inertion_front_1
 
-
-
-
 ;kill_burst				= ragdoll_burst_front_0,ragdoll_burst_front_1/ragdoll_burst_back_0/ragdoll_burst_left_0/ragdoll_burst_right_0
-
-
 
 ;kill_shortgun	        = ragdoll_shortgun_front_0,ragdoll_shortgun_front_1,ragdoll_shortgun_front_2,ragdoll_shortgun_front_3,ragdoll_shortgun_front_4,ragdoll_shortgun_front_5,ragdoll_shortgun_front_6,ragdoll_shortgun_front_7,ragdoll_shortgun_front_8/ragdoll_shortgun_back_0,ragdoll_shortgun_back_1,ragdoll_shortgun_back_2,ragdoll_shortgun_back_3,ragdoll_shortgun_back_4,ragdoll_shortgun_back_5,ragdoll_shortgun_back_6/ragdoll_shortgun_left_0,ragdoll_shortgun_left_1,ragdoll_shortgun_left_2/ragdoll_shortgun_right_0,ragdoll_shortgun_right_1
 
-
 ;kill_headshot		= ragdoll_headshot_front_0,ragdoll_headshot_front_1,ragdoll_headshot_front_2,ragdoll_headshot_front_3,ragdoll_headshot_front_4,ragdoll_headshot_front_5,ragdoll_headshot_front_6,ragdoll_headshot_front_7,ragdoll_headshot_front_8,ragdoll_headshot_front_9,ragdoll_headshot_front_10/ragdoll_headshot_back_0,ragdoll_headshot_back_1,ragdoll_headshot_back_2,ragdoll_headshot_back_3,ragdoll_headshot_back_4,ragdoll_headshot_back_5/ragdoll_headshot_left_0,ragdoll_headshot_left_1,ragdoll_headshot_left_2,ragdoll_headshot_left_3,ragdoll_headshot_left_4,ragdoll_headshot_left_5,ragdoll_headshot_left_6,ragdoll_headshot_left_7/ragdoll_headshot_right_0,ragdoll_headshot_right_1,ragdoll_headshot_right_2,ragdoll_headshot_right_3,ragdoll_headshot_right_4,ragdoll_headshot_right_5,ragdoll_headshot_right_6
-
 
 ;kill_sniper_headshot	= ragdoll_sniper_headshot_front_0,ragdoll_sniper_headshot_front_1,ragdoll_sniper_headshot_front_2/ragdoll_sniper_headshot_back_0/ragdoll_sniper_headshot_left_0/ragdoll_sniper_headshot_right_0
 
-
 ;kill_sniper_body	= ragdoll_sniper_body_front_0,ragdoll_sniper_body_front_1,ragdoll_sniper_body_front_2/ragdoll_sniper_body_back_0,ragdoll_sniper_body_back_1,ragdoll_sniper_body_back_2,ragdoll_sniper_body_back_3/ragdoll_sniper_body_left_0/ragdoll_sniper_body_right_0
-
 
 ;kill_grenade            = ragdoll_grenade_front_0/ragdoll_grenade_back_0/ragdoll_grenade_left_0/ragdoll_grenade_right_0
 
@@ -744,17 +722,17 @@ bip01_r_toe0	 	 		= 10000.0, 1000, 0.2
 [fire_queue_params]  ; min < 15 < medium < 30 < max
 ; ef_weapon_type = 5
 pstl_min_queue_size_far			= 1
-pstl_max_queue_size_far			= 1
+pstl_max_queue_size_far			= 2
 pstl_min_queue_interval_far		= 500
-pstl_max_queue_interval_far		= 700
+pstl_max_queue_interval_far		= 750
 
 pstl_min_queue_size_medium		= 1
-pstl_max_queue_size_medium		= 1
+pstl_max_queue_size_medium		= 4
 pstl_min_queue_interval_medium	= 400
 pstl_max_queue_interval_medium	= 500
-; 172+ RPM
+
 pstl_min_queue_size_close		= 1
-pstl_max_queue_size_close		= 1
+pstl_max_queue_size_close		= 8
 pstl_min_queue_interval_close	= 350
 pstl_max_queue_interval_close	= 400
 
@@ -766,27 +744,27 @@ shtg_min_queue_interval_far		= 1000
 shtg_max_queue_interval_far		= 2000
 
 shtg_min_queue_size_medium		= 1
-shtg_max_queue_size_medium		= 2
-shtg_min_queue_interval_medium	= 650
+shtg_max_queue_size_medium		= 4
+shtg_min_queue_interval_medium	= 600
 shtg_max_queue_interval_medium	= 750
-; 100+ RPM
+
 shtg_min_queue_size_close		= 1
-shtg_max_queue_size_close		= 1
+shtg_max_queue_size_close		= 6
 shtg_min_queue_interval_close	= 600
-shtg_max_queue_interval_close	= 650
+shtg_max_queue_interval_close	= 750
 
 ;-------------------------------
 ; ef_weapon_type = 11 & 12 ; 
 snp_min_queue_size_far			= 1
 snp_max_queue_size_far			= 1
-snp_min_queue_interval_far		= 1000
-snp_max_queue_interval_far		= 2000
+snp_min_queue_interval_far		= 2000
+snp_max_queue_interval_far		= 3000
 
 snp_min_queue_size_medium		= 1
 snp_max_queue_size_medium		= 1
-snp_min_queue_interval_medium	= 1000
-snp_max_queue_interval_medium	= 1500
-; 60+ RPM
+snp_min_queue_interval_medium	= 1500
+snp_max_queue_interval_medium	= 2000
+
 snp_min_queue_size_close		= 1
 snp_max_queue_size_close		= 1
 snp_min_queue_interval_close	= 1000
@@ -796,34 +774,34 @@ snp_max_queue_interval_close	= 1100
 ; default
 auto_min_queue_size_far			= 1
 auto_max_queue_size_far			= 3
-auto_min_queue_interval_far		= 500
+auto_min_queue_interval_far		= 400
 auto_max_queue_interval_far		= 800
 
-auto_min_queue_size_medium		= 2
-auto_max_queue_size_medium		= 3
-auto_min_queue_interval_medium	= 400
+auto_min_queue_size_medium		= 1
+auto_max_queue_size_medium		= 6
+auto_min_queue_interval_medium	= 350
 auto_max_queue_interval_medium	= 600
 
-auto_min_queue_size_close		= 3
-auto_max_queue_size_close		= 3
-auto_min_queue_interval_close	= 200
-auto_max_queue_interval_close	= 400
+auto_min_queue_size_close		= 2
+auto_max_queue_size_close		= 9
+auto_min_queue_interval_close	= 250
+auto_max_queue_interval_close	= 500
 
 ;-------------------------------
 ; ef_weapon_type = 6, 7, 8, 10
-mchg_min_queue_size_far			= 2
-mchg_max_queue_size_far			= 3
+mchg_min_queue_size_far			= 1
+mchg_max_queue_size_far			= 6
 mchg_min_queue_interval_far		= 300
-mchg_max_queue_interval_far		= 500
+mchg_max_queue_interval_far		= 600
 
-mchg_min_queue_size_medium		= 3
-mchg_max_queue_size_medium		= 3
-mchg_min_queue_interval_medium	= 200
-mchg_max_queue_interval_medium	= 300
-; 500+ RPM
-mchg_min_queue_size_close		= 3
-mchg_max_queue_size_close		= 3
-mchg_min_queue_interval_close	= 120
-mchg_max_queue_interval_close	= 200
+mchg_min_queue_size_medium		= 2
+mchg_max_queue_size_medium		= 12
+mchg_min_queue_interval_medium	= 300
+mchg_max_queue_interval_medium	= 500
+
+mchg_min_queue_size_close		= 2
+mchg_max_queue_size_close		= 15
+mchg_min_queue_interval_close	= 200
+mchg_max_queue_interval_close	= 400
 
 ;-------------------------------

@@ -7,7 +7,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
     <class>pas_b400_vano</class>
     <community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
     <rank>11384</rank>
     <reputation>1495</reputation>
     <visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
@@ -21,8 +21,9 @@
         wpn_beretta \n
         ammo_9x19_fmj \n
         detector_simple \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_4.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     </specific_character>
@@ -36,7 +37,7 @@
     <class>pas_b400_sokolov</class>
     <community>stalker</community>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
     <rank>5538</rank>
     <reputation>442</reputation>
     <visual>actors\stalker_ecologist\stalker_ecolog_military</visual>
@@ -48,9 +49,9 @@
         ammo_5.45x39_fmj \n
         wpn_fort \n
         ammo_9x18_pmm \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_2.xml"
-#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     </specific_character>
@@ -64,7 +65,7 @@
     <class>pas_b400_zulus</class>
     <community>stalker</community>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
     <rank>11514</rank>
     <reputation>1414</reputation>
     <visual>actors\stalker_dolg\stalker_dolg_1</visual>
@@ -76,9 +77,9 @@
         ammo_pkm_100 \n
         wpn_usp \n
         ammo_11.43x23_hydro \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_4.xml"
-#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
+#include "gameplay\supplies\character_medical_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     </specific_character>
@@ -92,7 +93,7 @@
     <class>pas_b400_wanderer</class>
     <community>stalker</community>
     <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_03\stalker\</snd_config>
+    <snd_config>characters_voice\human\stalker_3\</snd_config>
     <rank>13440</rank>
     <reputation>1413</reputation>
     <visual>actors\stalker_monolith\stalker_monolith_1</visual>
@@ -104,8 +105,9 @@
         ammo_7.62x54_7h1 \n
         wpn_colt1911 \n
         ammo_11.43x23_fmj \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_4.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical.xml"
+#include "gameplay\supplies\character_drugs_3.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     </specific_character>
@@ -117,7 +119,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
     <class>pas_b400_monolith_sniper</class>
     <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\monolith\</snd_config>
+    <snd_config>characters_voice\human\monolith_3\</snd_config>
     <rank>1088</rank>
     <reputation>-185</reputation>
     <visual>actors\stalker_monolith\stalker_monolith_2</visual>
@@ -126,10 +128,10 @@
 #include "gameplay\loadouts\monolith_sniper.ltx"
         [spawn] \n
         device_torch \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_3.xml"
-#include "gameplay\character_drugs_sci.xml"
-#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical_sci.xml"
+#include "gameplay\supplies\character_drugs_2.xml"
+#include "gameplay\supplies\character_medical_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     </specific_character>
@@ -141,7 +143,7 @@
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
     <class>pas_b400_monolith_sniper</class>
     <community>monolith</community> <terrain_sect>stalker_terrain</terrain_sect>
-    <snd_config>characters_voice\human_02\monolith\</snd_config>
+    <snd_config>characters_voice\human\monolith_3\</snd_config>
     <rank>10282</rank>
     <reputation>-378</reputation>
     <visual>actors\stalker_monolith\stalker_monolith_1</visual>
@@ -149,10 +151,10 @@
 #include "gameplay\loadouts\monolith_base.ltx"
 #include "gameplay\loadouts\monolith_sniper.ltx"
         [spawn] \n
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs_3.xml"
-#include "gameplay\character_drugs_sci.xml"
-#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\supplies\character_food.xml"
+#include "gameplay\supplies\character_medical_sci.xml"
+#include "gameplay\supplies\character_drugs_2.xml"
+#include "gameplay\supplies\character_medical_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
 #include "gameplay\character_dialogs.xml"

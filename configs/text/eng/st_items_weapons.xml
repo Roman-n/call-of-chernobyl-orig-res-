@@ -88,8 +88,8 @@
 		<text>Cheap 7.62 calibre machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the RP-74 machine gun.</text>
 	</string>
 	<string id="ammo-7.62x54-pkm_s">
-    <text>7.62x54 PP</text>
-  </string>
+        <text>7.62x54 PP</text>
+    </string>
 	<string id="ammo-9x18-fmj">
 		<text>9x18mm rounds</text>
 	</string>
@@ -267,6 +267,9 @@
 	<string id="st_wpn_ak74">
 		<text>AKM-74/2</text>
 	</string>
+	<string id="st_wpn_ak74n">
+		<text>AKM-74/2N</text>
+	</string>
 	<string id="st_wpn_ak74u">
 		<text>AKM-74/2U</text>
 	</string>
@@ -312,6 +315,9 @@
 	<string id="st_wpn_groza_descr">
 		<text>This assault rifle combined with a grenade launcher, which is similar to the AKM series, was specially developed for rapid response units. The main differences are its 9x39 calibre ammunition, bullpup layout and extensive configuration options. This weapon is highly valued by military stalkers due to its ability to kill enemies wearing body armour behind improvised cover at a distance during urban combat, as well as its excellent stopping power.</text>
 	</string>
+	<string id="st_wpn_groza_specops">
+		<text>Tunder 5.45</text>
+	</string>
 	<string id="st_wpn_groza_nimble">
 		<text>Storm</text>
 	</string>
@@ -333,8 +339,14 @@
 	<string id="st_wpn_mp5">
 		<text>Viper 5</text>
 	</string>
+	<string id="st_wpn_mp5_m1">
+		<text>Viper 5 9x18</text>
+	</string>
 	<string id="st_wpn_mp5_descr">
 		<text>This submachine gun has gained popularity around the world thanks to its reliability, ease of use and accuracy. Over the last few decades the Viper 5 was in service with special armed forces and police units worldwide. Not surprisingly, having flooded the global black markets, it eventually made its way to the Zone.</text>
+	</string>
+	<string id="st_wpn_ump45">
+		<text>Viper 45</text>
 	</string>
 	<string id="st_wpn_mp5_nimble">
 		<text>Frasier</text>

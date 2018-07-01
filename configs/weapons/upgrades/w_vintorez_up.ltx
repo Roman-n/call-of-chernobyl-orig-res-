@@ -1,5 +1,5 @@
 [up_sect_firsta_vintorez]
-cost		      		= 1400
+cost		      		= 1100
 value					= +10
 
 fire_dispersion_condition_factor    = -0.33
@@ -9,21 +9,21 @@ misfire_start_prob	     	= -0.0005
 misfire_end_prob	     	= -0.005
 
 [up_sect_firstc_vintorez]
-cost		      		= 2800
+cost		      		= 2200
 value					= -20
 
 cam_dispersion              = -0.10
 cam_step_angle_horz        	= -0.10
 
 [up_sect_firstd_vintorez]
-cost		      		= 2800
+cost		      		= 2200
 value					= +20
 
 bullet_speed            = +50
 fire_dispersion_base    = -0.01 
 
 [up_sect_firste_vintorez]
-cost		      		= 5600
+cost		      		= 4400
 value					= +25
 
 crosshair_inertion			= -0.75
@@ -32,21 +32,21 @@ PDM_disp_vel_factor 		= -0.4
 PDM_disp_accel_factor 		= -0.4
 
 [up_sect_firstf_vintorez]
-cost		      		= 5600
+cost		      		= 4400
 value					= +30
 
 fire_dispersion_base	= -0.05
 fire_dispersion_condition_factor    = -0.25
 
 [up_sect_secona_vintorez]
-cost		      		= 1400
+cost		      		= 1100
 value					= +10
 
 bullet_speed            = +30
 fire_dispersion_base    = -0.005
 
 [up_sect_seconc_vintorez]
-cost		      		= 2800
+cost		      		= 2200
 value					= +15
 
 fire_dispersion_condition_factor    = -0.5
@@ -56,28 +56,28 @@ misfire_start_prob	     	= -0.001
 misfire_end_prob	     	= -0.01
 
 [up_sect_second_vintorez]
-cost		      		= 2800
+cost		      		= 2200
 value					= +20
 
 fire_dispersion_base	= -0.03
 fire_dispersion_condition_factor    = -0.25
 
 [up_sect_secone_vintorez]
-cost		      		= 5600
+cost		      		= 4400
 value					= +30
 
 bullet_speed            = +70
 fire_dispersion_base    = -0.015
 
 [up_sect_thirda_vintorez]
-cost		      		= 1400
+cost		      		= 1100
 value					= -10
 
 cam_dispersion              = -0.05
 cam_step_angle_horz        	= -0.05
 
 [up_sect_thirdc_vintorez]
-cost		      		= 2800
+cost		      		= 2200
 value					= +15
 
 crosshair_inertion			= -0.5
@@ -86,7 +86,7 @@ PDM_disp_vel_factor 		= -0.25
 PDM_disp_accel_factor 		= -0.25
 
 [up_sect_thirde_vintorez]
-cost		      		= 5600
+cost		      		= 4400
 value					= +25
 
 crosshair_inertion			= -0.75
@@ -95,14 +95,14 @@ PDM_disp_vel_factor 		= -0.4
 PDM_disp_accel_factor 		= -0.4
 
 [up_sect_thirdf_vintorez]
-cost		      		= 5600
+cost		      		= 4400
 value					= -30
 
 cam_dispersion              = -0.15
 cam_step_angle_horz        	= -0.15
 
 [up_sect_fourta_vintorez]
-cost		      		= 3000
+cost		      		= 2500
 
 scope_zoom_factor       = +1 
 
@@ -112,14 +112,19 @@ cost		      		= 4000
 scope_nightvision = scope_contrast
 
 [up_sect_fourte_vintorez]
-cost		      		= 7500
+cost		      		= 5500
 
 scope_nightvision = scope_nightvision
 
 [up_sect_fourtf_vintorez]
-cost		      		= 12500
+cost		      		= 11000
 
 scope_alive_detector = scope_detector
+
+[up_sect_fiftha_vintorez]
+cost		      		= 1500
+value					= +10
+ammo_mag_size        	= +10 
 
 
 [up_firsta_vintorez]
@@ -482,6 +487,26 @@ name                    = st_up_opt_c1_name
 description             = st_up_opt_c1_descr
 icon                    = ui_inGame2_upgrade_Vintar_VS_17
 
+[up_fiftha_vintorez]
+scheme_index            = 0, 4
+effects                 =
+section                 = up_sect_fiftha_vintorez
+property                = prop_ammo_size 
+
+known                   = 1
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_add_a4_name
+description             = st_up_add_a4_descr
+icon                    = ui_inGame2_upgrade_SA_Lavina_19
 
 
 [up_gr_firstab_vintorez]
@@ -502,7 +527,6 @@ elements                = up_seconc_vintorez, up_second_vintorez
 [up_gr_seconef_vintorez]
 elements                = up_secone_vintorez
 
-
 [up_gr_thirdab_vintorez]
 elements                = up_thirda_vintorez
 
@@ -520,3 +544,6 @@ elements                = up_fourtc_vintorez
 
 [up_gr_fourtef_vintorez]
 elements                = up_fourte_vintorez, up_fourtf_vintorez
+
+[up_gr_fifthab_vintorez]
+elements                = up_fiftha_vintorez

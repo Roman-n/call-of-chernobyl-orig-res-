@@ -6,7 +6,6 @@ $npc			     			= on						; option for Level Editor
 $prefetch 			 			= 16
 visual				 			= monsters\chimera\chimera
 corpse_visual		 			= monsters\chimera\chimera_dead
-icon							= ui_npc_monster_snork		; @@@@@NEEDS REFACTORING@@@@@
 
 terrain				 			= chimera_terrain
 
@@ -94,7 +93,7 @@ ph_skel_shot_up_factor        	= 0.25
 ;----------------------------------------------------------------------------
 ; speed factors			         linear | angular_real | angular_path | min |  max
 Velocity_Stand					= 0,		3.5,			1.5,		1,		1
-Velocity_RunFwdNormal			= 6.5,		3.5,			2.0,		0.2,	1	
+Velocity_RunFwdNormal			= 6.8,		3.5,			2.0,		0.2,	1	
 
 Velocity_RunFwdDamaged			= 5.0,  	3.5,			2.0,		0.2,	1
 Velocity_WalkFwdDamaged			= 2.0,		3.0,			2.0,		0.5,	2.0	
@@ -176,7 +175,7 @@ eat_freq						= 5.0		; частота укусов в сек
 eat_slice						= 0.001	; увеличение сытости при 1 укусе
 eat_slice_weight				= 10.0	; уменьшение еды у трупа
 
-satiety_threshold				= 0.5							; below this value monster fill hunger
+satiety_threshold				= 0.5							; below this value monster feels hunger
 
 ;-------------------------------------------------------------------------
 ; Morale
@@ -220,23 +219,8 @@ distant_idle_sound_range		= 100.0
 SoundThreshold					= 0.02             ; range [0..1]
 max_hear_dist					= 60
 
-;--------------------------------------------------------------------------
-; Chimera Damage
-;--------------------------------------------------------------------------
-;bone_name		 = <hit_scale>,-1,<wound_scale>
-;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья) 
-;<wound_scale>	- коэфф. изменения величины открытой раны
-
-default							= 0.5, -1, 0.1
-
-hip								= 1, -1, 0.1
-spine 							= 1, -1, 0.1
-spine_1 						= 1, -1, 0.1
-neck_r							= 1, -1, 0.1
-head_boss 						= 2, -1, 0.5
-
 ;-------------------------------------------------------------------------
-; Other Stuff (refactoring needed)
+; Other Stuff
 ;-------------------------------------------------------------------------
 material						= creatures\medium
 DynamicObjectsCount				= 32
@@ -283,7 +267,7 @@ always_visible_distance 		= 0.6
 time_quant						= 0.001
 decrease_value					= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     		= 0.5
-luminocity_factor				= 2.5 				; фактор освещения (только для Актёра)
+luminocity_factor				= 0.6 				; фактор освещения (только для Актёра)
 transparency_threshold			= 0.25
 
 [chimera_vision_danger]
@@ -294,14 +278,30 @@ always_visible_distance 		= 0.6
 time_quant						= 0.001
 decrease_value					= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
 velocity_factor		     		= 0.5
-luminocity_factor				= 2.5 				; фактор освещения (только для Актёра)
+luminocity_factor				= 0.5 				; фактор освещения (только для Актёра)
 transparency_threshold			= 0.25
+
+;--------------------------------------------------------------------------
+; Chimera Damage
+;--------------------------------------------------------------------------
+[m_chimera_damage]
+;bone_name		 = <hit_scale>,-1,<wound_scale>
+;<hit_scale>	- коэфф. изменения хита (уменьшения здоровья) 
+;<wound_scale>	- коэфф. изменения величины открытой раны
+
+default							= 0.75, -1, 0.1
+
+hip								= 1, -1, 0.2
+spine 							= 1, -1, 0.2
+spine_1 						= 1, -1, 0.2
+neck_r							= 1, -1, 0.6
+head_boss 						= 2, -1, 0.4
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 [m_chimera_attack_params]
-jump_attack_1  		= 	0.3,		0.7,		700,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5
+jump_attack_1  		= 	0.3,		1.1,		200,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5
 
 [m_chimera_attack_effector]
 duality_h						= 0.1; 0.01 
@@ -335,15 +335,15 @@ stand_run_fwd_0	=	   1,	   0.01,    1,	    0.25,    0.6,
 ; IMMUNITIES
 ;---------------------------------------------------------------------------
 [chimera_immunities]
-burn_immunity           = 0.3
-strike_immunity     	= 0;0.1
-shock_immunity      	= 0.3
-wound_immunity      	= 0.25
+burn_immunity           = 0.1
+strike_immunity     	= 0.0
+shock_immunity      	= 0.1
+wound_immunity      	= 0.3
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
-chemical_burn_immunity  = 0.3
-explosion_immunity    	= 0.2
-fire_wound_immunity   	= 0.2
+chemical_burn_immunity  = 0.1
+explosion_immunity    	= 0.5
+fire_wound_immunity   	= 0.3
 
 ;=================================================================================
 ; Terrain
@@ -373,38 +373,26 @@ panic_threshold = 0.1
 rank        	= 20
 immunities_sect = chimera_immunities_normal
 spec_rank     	= normal
-MaxHealthValue					= 1.0			; range [0..200]
 
 [chimera_immunities_normal]
-burn_immunity           = 0.3
-strike_immunity     	= 0;0.1
-shock_immunity      	= 0.3
-wound_immunity      	= 0.25
+burn_immunity     		= 0.1
+strike_immunity     	= 0.0
+shock_immunity      	= 0.1
+wound_immunity      	= 0.3
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
-chemical_burn_immunity  = 0.3
-explosion_immunity    	= 0.2
-fire_wound_immunity   	= 0.2
+chemical_burn_immunity  = 0.1
+explosion_immunity    	= 0.5
+fire_wound_immunity   	= 0.3
 
 [chimera_normal2]:m_chimera_e
-visual		= monsters\chimera\chimera2
-corpse_visual	= monsters\chimera\chimera2_dead
+visual		= monsters\chimera\chimera_2
+corpse_visual	= monsters\chimera\chimera_2_dead
 $spawn        	= "monsters\chimera\chimera_normal"
 panic_threshold = 0.1
 rank        	= 20
 immunities_sect = chimera_immunities_normal
 spec_rank     	= normal
-MaxHealthValue					= 1.0			; range [0..200]
-
-[chimera_normal3]:m_chimera_e
-visual		= monsters\chimera\chimera3
-corpse_visual	= monsters\chimera\chimera3_dead
-$spawn        	= "monsters\chimera\chimera_normal"
-panic_threshold = 0.1
-rank        	= 20
-immunities_sect = chimera_immunities_normal
-spec_rank     	= normal
-MaxHealthValue					= 1.0			; range [0..200]
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;Chimera population - Borovos 2013;;;;;;;;;;;;;;;;;
@@ -415,31 +403,39 @@ MaxHealthValue					= 1.0			; range [0..200]
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [chimera_weak]:m_chimera_e
-visual		 			= monsters\chimera\chimera_small
-corpse_visual		 			= monsters\chimera\chimera_small_dead
-$spawn        = "monsters\chimera\chimera_weak"
-panic_threshold = 0.15
-immunities_sect = chimera_immunities_weak
-attack_params					= m_chimera_weak_attack_params
-
-MaxHealthValue					= 0.75			; range [0..200]
+visual			= monsters\chimera\chimera_small
+corpse_visual	= monsters\chimera\chimera_small_dead
+$spawn			= "monsters\chimera\chimera_weak"
+panic_threshold	= 0.15
+rank			= 19
+immunities_sect	= chimera_immunities_weak
+attack_params	= m_chimera_weak_attack_params
 
 [chimera_immunities_weak]
-burn_immunity           = 0.4
-strike_immunity     	= 0;0.15
-shock_immunity      	= 0.4
-wound_immunity      	= 0.35
+burn_immunity           = 0.2
+strike_immunity     	= 0.0
+shock_immunity      	= 0.2
+wound_immunity      	= 0.4
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
-chemical_burn_immunity  = 0.4
-explosion_immunity    	= 0.3
-fire_wound_immunity   	= 0.3
+chemical_burn_immunity  = 0.2
+explosion_immunity    	= 0.6
+fire_wound_immunity   	= 0.4
+
+[chimera_weak2]:m_chimera_e
+visual			= monsters\chimera\chimera_2_small
+corpse_visual	= monsters\chimera\chimera_2_small_dead
+$spawn			= "monsters\chimera\chimera_weak"
+panic_threshold	= 0.15
+rank			= 19
+immunities_sect	= chimera_immunities_weak
+attack_params	= m_chimera_weak_attack_params
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 [m_chimera_weak_attack_params]
-jump_attack_1  		= 	0.3,		0.6,		600,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5
+jump_attack_1  		= 	0.3,		1.0,		180,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;------------- Strong -------------
@@ -450,59 +446,46 @@ visual		 			= monsters\chimera\chimera_big
 corpse_visual		 			= monsters\chimera\chimera_big_dead
 $spawn        = "monsters\chimera\chimera_strong"
 panic_threshold = 0.05
+rank        	= 21
 immunities_sect = chimera_immunities_strong
 attack_params					= m_chimera_strong_attack_params
-MaxHealthValue					= 1.25			; range [0..200]
 
 [chimera_immunities_strong]
-burn_immunity           = 0.2
-strike_immunity     	= 0;0.07
-shock_immunity      	= 0.2
+burn_immunity           = 0.1
+strike_immunity     	= 0.0
+shock_immunity      	= 0.1
 wound_immunity      	= 0.2
 radiation_immunity   	= 0.0
 telepatic_immunity    	= 0.0
-chemical_burn_immunity  = 0.2
-explosion_immunity    	= 0.15
-fire_wound_immunity   	= 0.15
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;------------- Strong2 -------------
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+chemical_burn_immunity  = 0.1
+explosion_immunity    	= 0.4
+fire_wound_immunity   	= 0.25
 
 [chimera_strong2]:m_chimera_e
-visual		= monsters\chimera\chimera2_big
-corpse_visual	= monsters\chimera\chimera2_big_dead
+visual		= monsters\chimera\chimera_2_big
+corpse_visual	= monsters\chimera\chimera_2_big_dead
 $spawn        = "monsters\chimera\chimera_strong"
 panic_threshold = 0.05
+rank        	= 21
 immunities_sect = chimera_immunities_strong
 attack_params	= m_chimera_strong_attack_params
-MaxHealthValue					= 1.25			; range [0..200]
-
-[chimera_strong3]:m_chimera_e
-visual		= monsters\chimera\chimera3_big
-corpse_visual	= monsters\chimera\chimera3_big_dead
-$spawn        = "monsters\chimera\chimera_strong"
-panic_threshold = 0.05
-immunities_sect = chimera_immunities_strong
-attack_params					= m_chimera_strong_attack_params
-MaxHealthValue					= 1.25			; range [0..200]
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;------------- Black -------------
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[chimera_strong4]:m_chimera_e
-visual		= monsters\chimera\chimera4_big
-corpse_visual	= monsters\chimera\chimera4_big_dead
+[chimera_black]:m_chimera_e
+visual		= monsters\chimera\chimera_black
+corpse_visual	= monsters\chimera\chimera_black_dead
 $spawn        = "monsters\chimera\chimera_strong"
 radiation_max_distance = 6
-panic_threshold = 0.05
+panic_threshold = 0.01
+rank        	= 21
 immunities_sect = chimera_immunities_strong
-attack_params					= m_chimera_strong_attack_params
-MaxHealthValue					= 1.33			; range [0..200]
+attack_params	= m_chimera_strong_attack_params
 
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 [m_chimera_strong_attack_params]
-jump_attack_1  		= 	0.3,		0.8,		800,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5
+jump_attack_1  		= 	0.3,		1.2,		225,       0.0, 1.0, 0.0,		-1.8, 1.8, -1.8, 1.8,							  2.5

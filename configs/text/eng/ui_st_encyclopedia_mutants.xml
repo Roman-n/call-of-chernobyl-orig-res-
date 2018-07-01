@@ -17,7 +17,7 @@
 			\nVision and hearing in many of these dogs is completely lost, but they have since developed a kind of telepathic vision that allows them to feel their prey through the walls.\n
 			\nLike their wolf ancestors, blind dogs hunt in packs, and an encounter with a large group can be dangerous even to the most well-armed and experienced of stalkers.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: Nimble
 		</text>
 	</string>
 	
@@ -34,7 +34,7 @@
 			\nPerhaps their most peculiar ability is their optic camouflage, which allows them to temporarily become almost invisible to the naked eye.\n
 			\nTypically this won't last long, as they are at their weakest when cloaked and will often only use it when discovering prey or trying to hide their movements.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Camouflage, Blood-sucking\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Average\n• Traits: Camouflage, Blood-sucking\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• A rare subspecies once existed in the Great Swamp which carried its victims away.
 		</text>
@@ -52,7 +52,7 @@
 			\nMutagenic processes have played a significant part in shaping these mammals, as they have lost all fur in a few places, and grown long bristly fur in others.\n
 			\nUsually if distance is kept and they aren't antagonised, they will stick with their herd of flesh and other boars.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Slow\n• Traits: None
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Average\n• Traits: Massive
 		</text>
 	</string>
 	
@@ -87,8 +87,9 @@
 			\nOften when they attack, the first will try to distract their prey whilst the rest sneak behind and try to slash and bite, until the victim tires and/or bleeds out.\n
 			\nIf on their own they will instead behave quite cowardly, spending a long time stalking their target and harassing them until finding a good opportunity to strike.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Very fast\n• Traits: Nimble\n
 			\n%c[guide_green]Trivia%c[default]
+			\n• This mutant was cut from S.T.A.L.K.E.R.: Clear Sky.
 			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 		</text>
 	</string>
@@ -205,7 +206,7 @@
 			\nTheir mysterious appearances and disappearances seem to correspond to the poltergeist legend, hence the name, as they will attempt to lift and throw heavy objects at you.\n
 			\nUnfortunately, all information about the poltergeist phenomenon originates from unclear and contradictory stories of questionable validity.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers, Telekinesis\n
+			\n• Attacks: Psychic\n• Health: Very low\n• Speed: Average\n• Traits: Passive damage, Psi-powers, Telekinesis\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• In S.T.A.L.K.E.R.: Shadow of Chernobyl their physical form appeared on death.
 		</text>
@@ -239,7 +240,7 @@
 			\nThere are no specific locations they are found as they tend to appear in the most unsuspecting of places.\n
 			\nUpon death they explode into multiple cloud-like formations before dissipating.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Psychic\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers\n
+			\n• Attacks: Psychic\n• Health: Low\n• Speed: Average\n• Traits: Psi-powers\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• This mutant is a custom addition for S.T.A.L.K.E.R.: Call of Chernobyl.
 		</text>
@@ -285,7 +286,7 @@
 			\nAppearing as a floating form of heat haze surrounded by a fiery glow, they are easily distinguishable from regular poltergeists. On death, they explode in a mess of blood and fire.\n
 			\nTheir primary and only attack is spawning pillars of fire, similar to burner anomalies, which it will use to try to burn its enemies to death as it lacks any telekinetic abilities.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Psychic (Thermal)\n• Health: Average\n• Speed: Average\n• Traits: Psi-powers
+			\n• Attacks: Psychic (Thermal)\n• Health: Very low\n• Speed: Average\n• Traits: Passive damage, Psi-powers
 		</text>
 	</string>
 	
@@ -300,7 +301,7 @@
 			\nRats are very smart creatures and will try to attack the victim from different angles, which when surrounded on all sides has very little chance of survival.\n
 			\nThey usually live in abandoned places and are said to feel danger and carefully bypass it.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Average\n• Traits: None\n
+			\n• Attacks: Melee\n• Health: Very low\n• Speed: Average\n• Traits: None\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 			\n• This mutant was likely an earlier version or iteration of the Tushkano.
@@ -318,7 +319,7 @@
 			\nSnorks lead a completely animal way of life. They move on all four limbs, bouncing over the ground, and are constantly sniffing the air to catch the smell of their next meal.\n
 			\nThey hunt cleverly and prudently, waiting for stalkers like predatory animals. Lightning reflexes and hypertrophied muscles allow snorks to make long, precise jumps and within seconds tear their victims to shreds.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Average\n• Speed: Fast\n• Traits: Nimble\n
+			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: Nimble\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• This mutant was the winner of the Monster Ball competition by GSC Game World.
 		</text>
@@ -336,7 +337,7 @@
 			\nThey live mostly in ruined buildings, feeding on everything that they can catch - both mutants and stalkers - and often in groups of up to ten individuals.\n
 			\nLike rats they are also very smart creatures and will attack their victims from all sides, and because of their small stature they can quickly overwhelm most prey when working together.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Fast\n• Traits: None
+			\n• Attacks: Melee\n• Health: Very low\n• Speed: Fast\n• Traits: None
 		</text>
 	</string>
 	
@@ -352,7 +353,7 @@
 			\nAs a result of these changes, zombies are nothing but slow half-corpses, for which there are only two effective stimuli: food and sleep.\n
 			\nDue to the fact most are killed off long before ever reaching this phase, this mutant can be a somewhat rare discovery in the Zone.\n
 			\n%c[guide_green]Statistics%c[default]
-			\n• Attacks: Melee\n• Health: Low\n• Speed: Slow\n• Traits: None\n
+			\n• Attacks: Melee\n• Health: Average\n• Speed: Very slow\n• Traits: None\n
 			\n%c[guide_green]Trivia%c[default]
 			\n• This mutant was cut from S.T.A.L.K.E.R.: Shadow of Chernobyl.
 			\n• This mutant will only spawn in the world when you are playing in survival mode.

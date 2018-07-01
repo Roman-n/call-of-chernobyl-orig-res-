@@ -2785,6 +2785,14 @@ function economy_type(actor,npc,p) -- called from ltx trader profiles, controls 
 	return false
 end
 
+function check_economy(actor,npc,p) -->
+	local eco = alife_storage_manager.get_state().economy
+	if (eco == "econ_" .. p[1]) then
+		return true
+	end
+	return false
+end
+
 function actor_goodwill_ge(actor,npc,p)
 	if (p[1] and p[2]) then
 		return db.actor and relation_registry.community_goodwill(p[1], db.actor:id()) >= tonumber(p[2])

@@ -11,9 +11,9 @@
     <community>army</community>
     <terrain_sect>stalker_terrain</terrain_sect>
     <rank>25982</rank>
-    <reputation>249</reputation>
-    <visual>actors\stalker_soldier\stalker_soldier_3_beret</visual>
-    <snd_config>characters_voice\human_01\military\</snd_config>
+    <reputation>1249</reputation>
+    <visual>actors\stalker_unique\stalker_soldier_kuznetsov</visual>
+    <snd_config>characters_voice\human\military_1\</snd_config>
     <supplies>
         [spawn] \n
         wpn_fort \n
@@ -22,9 +22,9 @@
         ammo_9x39_ap = 1 \n
         hand_radio \n
         wpn_binoc = 1 \n
-#include "gameplay\character_food_army.xml"
-#include "gameplay\character_drugs_2.xml"
-#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     <start_dialog>hello_dialog</start_dialog>
@@ -44,10 +44,14 @@
     <rank>19180</rank>
     <reputation>1172</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
-    <visual>actors\stalker_soldier\stalker_soldier4a</visual>
-    <snd_config>characters_voice\human_01\military\</snd_config>
+    <visual>actors\stalker_soldier\stalker_soldier_4m</visual>
+    <snd_config>characters_voice\human\military_3\</snd_config>
     <supplies>
         [spawn] \n
+		wpn_abakan \n
+        wpn_fort \n
+        ammo_5.45x39_fmj = 1 \n		
+        ammo_9x18_pmm = 1 \n
     </supplies>
 #include "gameplay\character_criticals.xml"
     <actor_dialog>dm_ordered_task_dialog</actor_dialog>
@@ -70,7 +74,7 @@
     <rank>11974</rank>
     <reputation>573</reputation>
     <visual>actors\stalker_soldier\stalker_soldier_2</visual>
-    <snd_config>characters_voice\human_02\military\</snd_config>
+    <snd_config>characters_voice\human\military_1\</snd_config>
     <supplies>
         [spawn] \n
         wpn_ak74 \n
@@ -78,9 +82,9 @@
         wpn_pm  \n
         ammo_9x18_fmj = 1 \n
         grenade_rgd5 = 1 \n
-#include "gameplay\character_items_2.xml"
-#include "gameplay\character_food.xml"
-#include "gameplay\character_drugs.xml"
+#include "gameplay\supplies\character_food_army.xml"
+#include "gameplay\supplies\character_medical_army.xml"
+#include "gameplay\supplies\character_drugs_army.xml"
     </supplies>
 #include "gameplay\character_criticals.xml"
     <actor_dialog>dm_ordered_task_dialog</actor_dialog>

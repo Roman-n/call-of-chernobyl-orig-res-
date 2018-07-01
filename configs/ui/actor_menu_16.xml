@@ -204,6 +204,13 @@
 				<texture>ui_inGame2_helmet_highlighter</texture>
 			</slot_highlight>
 		</slot>
+		<slot><!--14 Faction Patch  -->
+            <slot_dragdrop x="494" y="107" width="38" height="45" cell_width="33" cell_height="41"  rows_num="1" cols_num="1"
+            custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c" vc_horiz_align="c"/>
+            <slot_highlight x="496" y="111" width="33" height="41" stretch="1">
+                <texture>ui_inGame2_artefakt_highlighter</texture>
+            </slot_highlight>
+        </slot>
 	</inventory_slot_wnd>
 	<!--NEW DYNAMIC SLOTS END-->
 
