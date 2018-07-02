@@ -32,7 +32,7 @@
 	#include "gameplay\profiles\character_desc_stalker_0.xml"
 	<icon>ui_inGame2_neutral_1</icon>
 	<snd_config>characters_voice\human\stalker_1\</snd_config>
-	<visual>actors\stalker_neutral\stalker_neutral_1b_balahood</visual>
+	<visual>actors\stalker_neutral\stalker_neutral_1b_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_stalker_0_default_6" team_default = "1">
 	#include "gameplay\profiles\character_desc_stalker_0.xml"
@@ -77,7 +77,7 @@
 <specific_character id="sim_default_stalker_1_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_stalker_1.xml"
 	<icon>ui_inGame2_neutral_2</icon>
-	<visual>actors\stalker_neutral\stalker_neutral_2_balahood</visual>
+	<visual>actors\stalker_neutral\stalker_neutral_2_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_stalker_1_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_stalker_1.xml"
@@ -107,7 +107,7 @@
 <specific_character id="sim_default_stalker_1_default_8" team_default = "1">
 	#include "gameplay\profiles\character_desc_stalker_1.xml"
 	<icon>ui_inGame2_neutral_2</icon>
-	<visual>actors\stalker_neutral\stalker_neutral_2c_bala</visual>
+	<visual>actors\stalker_neutral\stalker_neutral_2c_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_stalker_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_stalker_2.xml"
