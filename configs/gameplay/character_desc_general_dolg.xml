@@ -30,7 +30,7 @@
 <specific_character id="sim_default_duty_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_bala</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2_balahood</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_2_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
@@ -40,7 +40,7 @@
 <specific_character id="sim_default_duty_1_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
     <icon>ui_inGame2_Dolg_2_bala</icon>
-    <visual>actors\stalker_dolg\stalker_dolg_2a_balahood</visual>
+    <visual>actors\stalker_dolg\stalker_dolg_2a_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_duty_2_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_2.xml"
