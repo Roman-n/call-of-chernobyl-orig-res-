@@ -180,7 +180,7 @@
 			<texture>ui_am_prop_movement</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
-		<value x="140" y="0" width="30" height="20" magnitude="100">
+		<value x="140" y="0" width="30" height="20" magnitude="100" sign_inverse="1">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</walk_accel>
@@ -190,7 +190,7 @@
 			<texture>ui_am_prop_overweight_movement</texture>
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
-		<value x="140" y="0" width="30" height="20" magnitude="100">
+		<value x="140" y="0" width="30" height="20" magnitude="100" sign_inverse="1">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</overweight_walk_accel>
