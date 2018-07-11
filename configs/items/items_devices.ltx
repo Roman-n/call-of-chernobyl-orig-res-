@@ -206,7 +206,7 @@ omni_offset                              = 0,0,0
 torch_inertion_speed_min                 = 0.5
 torch_inertion_speed_max                 = 7.5
 light_section                            = flashlight_definition
-light_trace_bone                         = lights_bone
+light_trace_bone                         = light_bone_1
 snd_turn_on                              = torch\snd_switch_on, 1.0, 0.1
 snd_turn_off                             = torch\snd_switch_off, 1.0, 0.1
 
@@ -219,9 +219,9 @@ item_orientation 						 = -8, -11.5,50
 item_visual                              = dynamics\devices\dev_tactical_torch\dev_tactical_torch_hud
 fire_point                               = 0,0,0
 fire_direction							 = 0,0,1			;Note: engine default is 0,0,1
-fire_bone                                = cone_bone
+fire_bone                                = light_bone_1
 fire_point2                              = 0,0,0
-fire_bone2                               = wpn_body
+fire_bone2                               = light_bone_1
 anm_show                                 = tactical_torch_draw, tactical_torch_draw
 anm_show_16x9                            = tactical_torch_draw, tactical_torch_draw
 anm_show_fast                            = tactical_torch_draw, tactical_torch_draw
@@ -264,4 +264,4 @@ spot_angle                               = 65 ; spot angle            <in gradus
 
 glow_texture                             = glow\glow_tactical_torch ; glow texture name     (required)
 glow_radius                              = 0.2 ; glow radius           <in meters>
-guide_bone                               = lights_bone ; guid bone name        (required)
+guide_bone                               = light_bone_1 ; guid bone name        (required)
