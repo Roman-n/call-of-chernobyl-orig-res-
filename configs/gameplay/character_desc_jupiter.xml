@@ -3,7 +3,7 @@
 	<!-- CoC Jup A6 -->
 	<specific_character id="jup_a6_freedom_trader_ashot" team_default = "1">
 		<name>jup_a6_freedom_trader_ashot_name</name>
-		<icon>ui_inGame2_ashot</icon>
+		<icon>ui_inGame2_Freedom_2_mask</icon>
 		<map_icon x="1" y="0"></map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 		<class>jup_a6_freedom_trader_ashot</class>
@@ -1333,7 +1333,7 @@
     <!-- Техник Новиков   -->
     <specific_character id="jup_b6_scientist_tech" team_default = "1">
     <name>jup_b6_scientist_novikov</name>
-    <icon>ui_inGame2_eco_tech</icon>
+    <icon>ui_inGame2_ecolog_orange</icon>
     <map_icon x="1" y="0">
     </map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -1345,7 +1345,7 @@
     <rank>5120</rank>
     <reputation>957</reputation>
     <money min="10000" max="10000" infinitive="0" />
-    <visual>actors\stalker_unique\stalker_ecolog_tech</visual>
+    <visual>actors\stalker_ecologist\stalker_ecolog</visual>
     <supplies>
         [spawn] \n
     </supplies>

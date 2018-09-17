@@ -130,7 +130,7 @@
     <!-- Bunker guards -->
     <specific_character id="yan_merc_01" team_default = "1">
     <name>yan_merc_01</name>
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_nbc</icon>
     <map_icon x="1" y="0">
     </map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -159,7 +159,7 @@
     
     <specific_character id="yan_merc_02" team_default = "1">
     <name>yan_merc_02</name>
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_gas</icon>
     <map_icon x="1" y="0">
     </map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>

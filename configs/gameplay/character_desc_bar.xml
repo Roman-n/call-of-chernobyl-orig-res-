@@ -224,7 +224,7 @@
 	<!------------ bar_visitors_stalker_mechanic ---------------------------->
 	<specific_character id="bar_visitors_stalker_mechanic" team_default = "1">
 	<name>bar_visitors_stalker_mechanic_name</name>
-	<icon>ui_inGame2_dolg_tech</icon>
+	<icon>ui_inGame2_Dolg_2_nohood</icon>
 	<map_icon x="1" y="0"></map_icon>
 	<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
 	<class>bar_visitors_stalker_mechanic</class>
@@ -235,7 +235,7 @@
 	<rank>3384</rank>
 	<reputation>376</reputation>
 	<money min="1500" max="3500" infinitive="0"/>
-	<visual>actors\stalker_unique\stalker_dolg_tech</visual>
+	<visual>actors\stalker_dolg\stalker_dolg_2a_nohood</visual>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
 	<start_dialog>bar_visitors_stalker_mechanic_start</start_dialog>

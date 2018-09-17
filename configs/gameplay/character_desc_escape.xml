@@ -133,7 +133,7 @@
     <!-------------------------- LONER MECHANIC ------------------------>
     <specific_character id="esc_smart_terrain_5_7_loner_mechanic_stalker" team_default="1">
     <name>esc_smart_terrain_5_7_loner_mechanic_stalker_name</name>
-    <icon>ui_inGame2_loner_tech</icon>
+    <icon>ui_inGame2_neutral_protoexo</icon>
     <bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
     <class>esc_smart_terrain_5_7_loner_mechanic_stalker</class>
     <community>stalker</community>
@@ -142,7 +142,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>6278</rank>
     <reputation>784</reputation>
-    <visual>actors\stalker_unique\stalker_neutral_tech</visual>
+    <visual>actors\stalker_neutral\stalker_neutral_exo_proto</visual>
     <snd_config>characters_voice\human\no_speach\</snd_config>
     <supplies>
         [spawn] \n

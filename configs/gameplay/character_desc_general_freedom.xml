@@ -1,13 +1,13 @@
 <specific_character id="sim_default_freedom_0_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
-    <icon>ui_inGame2_Freedom_1</icon>
+    <icon>ui_inGame2_Freedom_1_mask</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_1_mask</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_0_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
-    <icon>ui_inGame2_Freedom_1</icon>
+    <icon>ui_inGame2_Freedom_1_mask</icon>
 	<class>sim_default_freedom_0</class>
 	<snd_config>characters_voice\human\freedom_1\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_1a_mask</visual>
@@ -42,14 +42,14 @@
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
-    <icon>ui_inGame2_Freedom_1</icon>
+    <icon>ui_inGame2_Freedom_1_oldgas</icon>
     <class>sim_default_freedom_1</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_1_oldgas</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_0.xml"
-    <icon>ui_inGame2_Freedom_1</icon>
+    <icon>ui_inGame2_Freedom_1_oldgas</icon>
     <class>sim_default_freedom_1</class>
 	<snd_config>characters_voice\human\freedom_3\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_1a_oldgas</visual>
@@ -87,14 +87,14 @@
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
-    <icon>ui_inGame2_Freedom_2</icon>
+    <icon>ui_inGame2_Freedom_2_halfgas</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_2_halfgas</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_2_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_2.xml"
-    <icon>ui_inGame2_Freedom_2</icon>
+    <icon>ui_inGame2_Freedom_2_halfgas</icon>
     <class>sim_default_freedom_2</class>
     <snd_config>characters_voice\human\freedom_3\</snd_config>
     <visual>actors\stalker_freedom\stalker_freedom_2a_halfgas</visual>
@@ -108,12 +108,12 @@
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_3</icon>
+    <icon>ui_inGame2_Freedom_3_gas</icon>
     <visual>actors\stalker_freedom\stalker_freedom_3_gas</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_3</icon>
+    <icon>ui_inGame2_Freedom_3_gas</icon>
     <visual>actors\stalker_freedom\stalker_freedom_3_gas</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_2" team_default = "1">
@@ -123,7 +123,7 @@
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_freedom_3.xml"
-    <icon>ui_inGame2_Freedom_5a</icon>
+    <icon>ui_inGame2_Freedom_5</icon>
     <visual>actors\stalker_freedom\stalker_freedom_5a</visual>
 </specific_character>
 <specific_character id="sim_default_freedom_3_default_4" team_default = "1">

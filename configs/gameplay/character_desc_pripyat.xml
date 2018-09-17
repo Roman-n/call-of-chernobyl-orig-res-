@@ -1192,7 +1192,7 @@
     <!-- MONOLITH TRADER -->
     <specific_character id="pri_monolith_monolith_trader_stalker" team_default="1">
     <name>pri_monolith_monolith_trader_stalker_name</name>
-    <icon>ui_inGame2_monolith_trade</icon>
+    <icon>ui_inGame2_monolit_2_old</icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
     <class>pri_monolith_monolith_trader_stalker</class>
     <community>monolith</community>
@@ -1201,7 +1201,7 @@
     <rank>23692</rank>
     <reputation>380</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
-    <visual>actors\stalker_unique\stalker_monolith_trade</visual>
+    <visual>actors\stalker_monolith\stalker_monolith_0_oldgas</visual>
     <snd_config>characters_voice\human\monolith_3\</snd_config>
     <supplies></supplies>
 #include "gameplay\character_criticals.xml"
@@ -1215,7 +1215,7 @@
     <!-- MONOLITH MECHANIC -->
     <specific_character id="pri_monolith_monolith_mechanic_stalker" team_default="1">
     <name>pri_monolith_monolith_mechanic_stalker_name</name>
-    <icon>ui_inGame2_monolith_tech</icon>
+    <icon>ui_inGame2_monolit_2_nohood</icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
     <class>pri_monolith_monolith_mechanic_stalker</class>
     <community>monolith</community>
@@ -1224,7 +1224,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>17396</rank>
     <reputation>-900</reputation>
-    <visual>actors\stalker_unique\stalker_monolith_tech</visual>
+    <visual>actors\stalker_monolith\stalker_monolith_2_nohood</visual>
     <snd_config>characters_voice\human\monolith_3\</snd_config>
     <supplies></supplies>
 #include "gameplay\character_criticals.xml"

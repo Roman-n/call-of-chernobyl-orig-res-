@@ -3,7 +3,7 @@
     <!-------------------------- BANDIT TRADER ------------------------>
     <specific_character id="val_smart_terrain_7_4_bandit_trader_stalker" team_default="1">
     <name>val_smart_terrain_7_4_bandit_trader_stalker_name</name>
-    <icon>ui_inGame2_bandit_trade</icon>
+    <icon>ui_inGame2_bandit_a</icon>
     <bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
     <class>val_smart_terrain_7_4_bandit_trader_stalker</class>
     <community>bandit</community>
@@ -12,7 +12,7 @@
     <rank>13050</rank>
     <reputation>1097</reputation>
     <money min="1000000" max="1000000" infinitive="1"/>
-    <visual>actors\stalker_unique\stalker_bandit_trade</visual>
+    <visual>actors\stalker_bandit\stalker_bandita_1</visual>
     <snd_config>characters_voice\human\no_speach\</snd_config>
     <supplies>
         [spawn] \n
@@ -34,7 +34,7 @@
     <!-------------------------- BANDIT MECHANIC ------------------------>
     <specific_character id="val_smart_terrain_7_3_bandit_mechanic_stalker" team_default="1">
     <name>val_smart_terrain_7_3_bandit_mechanic_stalker_name</name>
-    <icon>ui_inGame2_bandit_tech</icon>
+    <icon>ui_inGame2_bandit_5_bala</icon>
     <bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
     <class>val_smart_terrain_7_3_bandit_mechanic_stalker</class>
     <community>bandit</community>
@@ -43,7 +43,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>7030</rank>
     <reputation>733</reputation>
-    <visual>actors\stalker_unique\stalker_bandit_tech</visual>
+    <visual>actors\stalker_bandit\stalker_bandit_5_bala</visual>
     <snd_config>characters_voice\human\bandit_2\</snd_config>
     <supplies>
         [spawn] \n
