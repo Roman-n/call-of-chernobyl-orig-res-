@@ -35,33 +35,36 @@
 	<texture id="ui_inGame2_Vano_nauchniy" x="246" y="87" width="123" height="87"/>
 	<texture id="ui_inGame2_Zulus" x="0" y="261" width="123" height="87"/>
 	<texture id="ui_inGame2_Zveroboy" x="123" y="870" width="123" height="87"/>
-	<texture id="ui_inGame2_arnie" x="123" y="1131" width="123" height="87"/>
-	<texture id="ui_inGame2_barman" x="0" y="1044" width="123" height="87"/>
-	<texture id="ui_inGame2_barman_retarded" x="246" y="1131" width="123" height="87"/>
-	<texture id="ui_inGame2_cold" x="246" y="1305" width="123" height="87"/>
-	<texture id="ui_inGame2_doc" x="246" y="1044" width="123" height="87"/>
-	<texture id="ui_inGame2_fanatic" x="123" y="1044" width="123" height="87"/>
-	<texture id="ui_inGame2_forester" x="123" y="1566" width="123" height="87"/>
-	<texture id="ui_inGame2_garik_guard" x="0" y="1217" width="123" height="87"/>
-	<texture id="ui_inGame2_ghost" x="246" y="1566" width="123" height="87"/>
-	<texture id="ui_inGame2_kalancha" x="123" y="1305" width="123" height="87"/>
-	<texture id="ui_inGame2_kitsenko" x="123" y="1479" width="123" height="87"/>
-	<texture id="ui_inGame2_lebedev" x="0" y="1305" width="123" height="87"/>
-	<texture id="ui_inGame2_lelik_guard" x="246" y="1218" width="123" height="87"/>
-	<texture id="ui_inGame2_lukash" x="123" y="1392" width="123" height="87"/>
-	<texture id="ui_inGame2_merc_durad" x="246" y="1479" width="123" height="87"/>
-	<texture id="ui_inGame2_merc_trade" x="246" y="1396" width="123" height="87"/>
-	<texture id="ui_inGame2_nimble" x="246" y="957" width="123" height="87"/>
-	<texture id="ui_inGame2_petrenko" x="0" y="1131" width="123" height="87"/>
-	<texture id="ui_inGame2_sakharov" x="0" y="1566" width="123" height="87"/>
-	<texture id="ui_inGame2_sakharov_pepe" x="246" y="1653" width="123" height="87"/>
-	<texture id="ui_inGame2_sid" x="0" y="957" width="123" height="87"/>
-	<texture id="ui_inGame2_skinflint" x="0" y="1392" width="123" height="87"/>
-	<texture id="ui_inGame2_ucheniy_3" x="0" y="1653" width="123" height="87"/>
-	<texture id="ui_inGame2_ucheniy_4" x="123" y="1653" width="123" height="87"/>
-	<texture id="ui_inGame2_voronin" x="0" y="1479" width="123" height="87"/>
-	<texture id="ui_inGame2_wolf" x="123" y="957" width="123" height="87"/>
-	<texture id="ui_inGame2_zhorik_guard" x="123" y="1218" width="123" height="87"/>
+	<texture id="ui_inGame2_arnie" x="123" y="1218" width="123" height="87"/>
+	<texture id="ui_inGame2_barman" x="0" y="1131" width="123" height="87"/>
+	<texture id="ui_inGame2_barman_retarded" x="246" y="1218" width="123" height="87"/>
+	<texture id="ui_inGame2_cold" x="246" y="1392" width="123" height="87"/>
+	<texture id="ui_inGame2_doc" x="246" y="1131" width="123" height="87"/>
+	<texture id="ui_inGame2_fanatic" x="123" y="1131" width="123" height="87"/>
+	<texture id="ui_inGame2_forester" x="123" y="1653" width="123" height="87"/>
+	<texture id="ui_inGame2_garik_guard" x="0" y="1305" width="123" height="87"/>
+	<texture id="ui_inGame2_ghost" x="246" y="1653" width="123" height="87"/>
+	<texture id="ui_inGame2_hero_degtyarev" x="246" y="957" width="123" height="87"/>
+	<texture id="ui_inGame2_hero_scar" x="123" y="957" width="123" height="87"/>
+	<texture id="ui_inGame2_hero_strelok" x="0" y="957" width="123" height="87"/>
+	<texture id="ui_inGame2_kalancha" x="123" y="1392" width="123" height="87"/>
+	<texture id="ui_inGame2_kitsenko" x="123" y="1566" width="123" height="87"/>
+	<texture id="ui_inGame2_lebedev" x="0" y="1392" width="123" height="87"/>
+	<texture id="ui_inGame2_lelik_guard" x="246" y="1305" width="123" height="87"/>
+	<texture id="ui_inGame2_lukash" x="123" y="1479" width="123" height="87"/>
+	<texture id="ui_inGame2_merc_durad" x="246" y="1566" width="123" height="87"/>
+	<texture id="ui_inGame2_merc_trade" x="246" y="1479" width="123" height="87"/>
+	<texture id="ui_inGame2_nimble" x="246" y="1044" width="123" height="87"/>
+	<texture id="ui_inGame2_petrenko" x="0" y="1218" width="123" height="87"/>
+	<texture id="ui_inGame2_sakharov" x="0" y="1653" width="123" height="87"/>
+	<texture id="ui_inGame2_sakharov_pepe" x="246" y="1740" width="123" height="87"/>
+	<texture id="ui_inGame2_sid" x="0" y="1044" width="123" height="87"/>
+	<texture id="ui_inGame2_skinflint" x="0" y="1479" width="123" height="87"/>
+	<texture id="ui_inGame2_ucheniy_3" x="0" y="1740" width="123" height="87"/>
+	<texture id="ui_inGame2_ucheniy_4" x="123" y="1740" width="123" height="87"/>
+	<texture id="ui_inGame2_voronin" x="0" y="1566" width="123" height="87"/>
+	<texture id="ui_inGame2_wolf" x="123" y="1044" width="123" height="87"/>
+	<texture id="ui_inGame2_zhorik_guard" x="123" y="1305" width="123" height="87"/>
 	
 	<!-- Duty -->
 	<texture id="ui_inGame2_Dolg_0" x="738" y="870" width="123" height="87"/>

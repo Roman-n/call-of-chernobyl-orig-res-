@@ -320,6 +320,24 @@ function faction_ui:InitControls(f)
 	xml:InitStatic				("background", self)
 	self.dialog					= xml:InitStatic("main_dialog:dialog", self)
 	
+	-- Default hero icons and texts.
+	self.default_heroes = {
+		{ "ui_inGame2_hero_degtyarev", "st_actor_name", "army" },
+		{ "ui_inGame2_hero_scar", "st_actor_cs_name", "killer" },
+		{ "ui_inGame2_hero_strelok", "pri_b305_strelok_name", "stalker" }
+	}
+	local rand = math.random(#self.default_heroes)
+	self.default_hero_icon = self.default_heroes[rand][1] or "ui_inGame2_hero_strelok"
+	self.default_hero_name = self.default_heroes[rand][2] or "pri_b305_strelok_name"
+	self.default_hero_comm = self.default_heroes[rand][3] or "stalker"
+	
+	-- A goofy super rare easter egg hero.
+	if (math.random(1, 1000) == 1) then
+		self.default_hero_icon = "ui_inGame2_barman_retarded"
+		self.default_hero_name = "bar_barmen_retarded_name"
+		self.default_hero_comm = "zombied"
+	end
+	
 	-- Menu Quit
 	local btn = xml:Init3tButton("main_dialog:btn_back", self.dialog)
 	self:Register(btn,"btn_back")
@@ -336,8 +354,7 @@ function faction_ui:InitControls(f)
 	xml:InitStatic("main_dialog:cap_character_name", self.dialog)
 	self.character_name = xml:InitEditBox("main_dialog:input_character_name",self.dialog)
 	self:Register(self.character_name,"input_character_name")
-	-- Set Default Name
-	self.character_name:SetText(game.translate_string("pri_b305_strelok_name"))
+	self.character_name:SetText(game.translate_string(self.default_hero_name))
 	
 	-- Faction select menu
 	xml:InitStatic("main_dialog:cap_faction_name", self.dialog)
@@ -358,7 +375,7 @@ function faction_ui:InitControls(f)
 	-- Icon
 	self.char_icon_base = xml:InitStatic("main_dialog:description:templ_item",nil)
 	self.char_icon = xml:InitStatic("main_dialog:description:char_icon",self.char_icon_base)
-	self.char_icon:InitTexture("ui_inGame2_Strelok")
+	self.char_icon:InitTexture(self.default_hero_icon)
 	self.scroll_v:AddWindow(self.char_icon_base, true)
 	self.char_icon_base:SetAutoDelete(false)
 	
@@ -366,7 +383,7 @@ function faction_ui:InitControls(f)
 	self.scroll_v:AddWindow(self.desc_text, true)
 	self.desc_text:SetAutoDelete(false)
 	
-	self:OnFaction_stalker()
+	self["OnFaction_" .. self.default_hero_comm](self)
 
 	self.start_list = xml:InitComboBox("main_dialog:list_starts", self.dialog)
 	self.start_list:SetAutoDelete(true)
@@ -555,10 +572,11 @@ end
 
 function faction_ui:load_icon_list()
 	local ini = ini_file("plugins\\player_portraits.ltx")
-	local def_icon = "ui_inGame2_Strelok"
 	
 	self.icon_list:ClearList()
-	self.icon_list:AddItem(def_icon, 1)
+	for i = 1, #self.default_heroes do
+		self.icon_list:AddItem(self.default_heroes[i][1], i)
+	end
 	self.icon_table = iempty_table(self.icon_table)
 	
 	local section = self.selected_faction.."_portraits"
@@ -566,13 +584,14 @@ function faction_ui:load_icon_list()
 	for i = 0, n - 1 do
 		local result, id, value = ini:r_line(section, i, "", "" )
 		if (id ~= "") then
-			self.icon_list:AddItem(id, i + 2)
+			self.icon_list:AddItem(id, i + #self.default_heroes + 2)
 			table.insert(self.icon_table, id)
 		end
 	end
 	
-	self.icon_list:SetText(def_icon)
-	self.char_icon:InitTexture(def_icon)
+	self.icon_list:SetText(self.default_hero_icon)
+	self.char_icon:InitTexture(self.default_hero_icon)
+	self.character_name:SetText(game.translate_string(self.default_hero_name))
 end
 
 --[[function faction_ui:load_list_difficulty()
