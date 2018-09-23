@@ -192,6 +192,10 @@ function opt_menu_on_init(menu)
 		menu.gameplay_options["multi_loot"]				= {default=1.0,	debug_only=true, 	typ="list", list={0.5,0.8,1.0,1.2,1.5,2.0}, on_accept=function(handler,optMgr,ctrl)
 			alife_storage_manager.get_state().economy_loot = axr_main.config:r_value("mm_options","multi_loot",2,1)
 		end}
+		-- multiplier for repair services
+		menu.gameplay_options["multi_repair"]				= {default=1.0,	debug_only=true, 	typ="list", list={0.5,0.8,1.0,1.2,1.5,2.0}, on_accept=function(handler,optMgr,ctrl)
+			alife_storage_manager.get_state().economy_repair = axr_main.config:r_value("mm_options","multi_repair",2,1)
+		end}
 	
 	end
 	

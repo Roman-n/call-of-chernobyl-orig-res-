@@ -1,0 +1,24 @@
+-- The script is used instead of the default effector to create a smoother effect
+-- Only a placeholder / test
+function on_game_start()
+    RegisterScriptCallback( "actor_on_update", actor_on_update )
+end
+ 
+ 
+local aimEffect = false
+function actor_on_update( delta )
+    local plyVelVec = db.actor:get_movement_speed()
+    local plyVel = math.sqrt( plyVelVec.x * plyVelVec.x + plyVelVec.y * plyVelVec.y + plyVelVec.z * plyVelVec.z )
+   
+    if plyVel > 0 then
+        if aimEffect then
+            level.remove_cam_effector( 42069 )
+            aimEffect = false
+        end
+    else
+        if not aimEffect then
+            level.add_cam_effector( "camera_effects\\idle.anm", 42069, true, "" )
+            aimEffect = true
+        end
+    end
+end

@@ -40,6 +40,11 @@ local function on_game_load(binder)
 			need_save = true
 		end
 		
+		if (config:r_value("character_creation","new_game_economy")) then -->>
+			alife_storage_manager.get_state().economy = config:r_value("character_creation","new_game_economy")
+			config:w_value("character_creation","new_game_economy")
+			need_save = true
+		end
 		if (config:r_value("character_creation","new_game_economy_goodwill",2)) then
 			alife_storage_manager.get_state().economy_goodwill = config:r_value("character_creation","new_game_economy_goodwill",2)
 			config:w_value("character_creation","new_game_economy_goodwill")
@@ -58,6 +63,11 @@ local function on_game_load(binder)
 		if (config:r_value("character_creation","new_game_economy_loot",2)) then
 			alife_storage_manager.get_state().economy_loot = config:r_value("character_creation","new_game_economy_loot",2)
 			config:w_value("character_creation","new_game_economy_loot")
+			need_save = true
+		end
+		if (config:r_value("character_creation","new_game_economy_repair",2)) then
+			alife_storage_manager.get_state().economy_repair = config:r_value("character_creation","new_game_economy_repair",2)
+			config:w_value("character_creation","new_game_economy_repair")
 			need_save = true
 		end
 	end
@@ -852,11 +862,14 @@ function faction_ui:OnStartGame()
 	local money = econ_ini:r_float_ex(econ, "multi_money") or axr_main.config:r_value("mm_options","multi_rewards_money",2,1)
 	local wpn = econ_ini:r_float_ex(econ, "multi_wpn_condition") or axr_main.config:r_value("mm_options","multi_wpn_conditions",2,1)
 	local loot = econ_ini:r_float_ex(econ, "multi_loot") or axr_main.config:r_value("mm_options","multi_loot",2,1)
+	local repair = econ_ini:r_float_ex(econ, "multi_repair") or axr_main.config:r_value("mm_options","multi_repair",2,1)
 	
+	axr_main.config:w_value("character_creation","new_game_economy",econ)
 	axr_main.config:w_value("character_creation","new_game_economy_goodwill",utils.round(goodwill,2))
 	axr_main.config:w_value("character_creation","new_game_economy_money",utils.round(money,2))
 	axr_main.config:w_value("character_creation","new_game_economy_wpn",utils.round(wpn,2))
 	axr_main.config:w_value("character_creation","new_game_economy_loot",utils.round(loot,2))
+	axr_main.config:w_value("character_creation","new_game_economy_repair",utils.round(repair,2))
 	axr_main.config:w_value("character_creation","new_game_hardcore_mode",self.ck_hardcore and self.ck_hardcore:GetCheck() and true or nil)
 	axr_main.config:w_value("character_creation","new_game_story_mode",self.ck_story and self.ck_story:GetCheck() and true or nil)
 	axr_main.config:w_value("character_creation","new_game_azazel_mode",self.ck_azazel_mode and self.ck_azazel_mode:GetCheck() and true or nil)

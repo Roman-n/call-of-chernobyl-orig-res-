@@ -4,6 +4,7 @@ local always_keep_item = {}
 local item_by_story_id
 local death_ini = ini_file("misc\\death_generic.ltx")
 local diff_multi, cnt_multi_1, cnt_multi_2 = 0.8,1,1
+local npcIdDeathTable = {}
 
 function SetDiffModifications()
 	local diff = axr_main.config:r_value("mm_options","multi_loot",2) or 1
@@ -38,14 +39,14 @@ function init_drop_settings()
 		if (p) then
 			p[1] = tonumber(p[1]) or 0
 			p[2] = tonumber(p[2]) or p[1]
-			item_count[id] = {math.ceil(p[1] * cnt_multi_1),math.ceil(p[2] * cnt_multi_2)}
+			item_count[id] = {math.floor(p[1] * cnt_multi_1),math.floor(p[2] * cnt_multi_2)}
 			--printf("item count  min%s:max%s  item_count[id] min%s:max%s",cnt_multi_1,cnt_multi_2,item_count[id][1],item_count[id][2])
 		end
 	end
 	
  	-- Create a list of item sections that npc must keep
 	local n = death_ini:line_count("keep_items")
-	for i=0,n-1 do 
+	for i=0,n-1 do
 		local result, id, value	= death_ini:r_line_ex("keep_items",i,"","")
 		if value == "true" then
 			always_keep_item[id] = true
@@ -65,19 +66,14 @@ end
 
 -- this will actually occur every time corpse spawn unless already looted
 function decide_items_to_keep(npc)
-	local death_dropped = utils.se_obj_load_var(npc:id(),npc:name(),"death_dropped")
-	if (death_dropped) then
-		return
-	end
+	if npcIdDeathTable[npc:id()] then return end
+	npcIdDeathTable[npc:id()] = true
 	npc:iterate_inventory(keep_item, npc)
 end
 
 function create_release_item(npc,who)
-	local death_dropped = utils.se_obj_load_var(npc:id(),npc:name(),"death_dropped")
-	if (death_dropped) then
-		return
-	end
-	utils.se_obj_save_var(npc:id(),npc:name(),"death_dropped",true)
+	if npcIdDeathTable[npc:id()] then return end
+	npcIdDeathTable[npc:id()] = true
 	
 	-- spawn items by story id
 	local sid = item_by_story_id and get_object_story_id(npc:id())
@@ -170,7 +166,7 @@ function keep_item(npc, item)
 		["hand_radio_r"] = true,
 		["stick_bred"] = true,
 		["stick_kolbasa"] = true,
-		["stick_kolbasa_bred"] = true,
+		["stick_kolbasa_bred"] = true
 	}
 	
 	--If our section is one of the above animation objects, release it and return.
@@ -195,9 +191,34 @@ function keep_item(npc, item)
 
 	local cls = item:clsid()
 	if IsWeapon(item,cls) and not(cls==clsid.wpn_grenade_rgd5_s or cls==clsid.wpn_grenade_f1_s or cls==clsid.wpn_knife_s) then
-		set_weapon_drop_condition(npc,item)
+		local rankAdd = {
+			["novice"] = -5,
+			["trainee"] = -2,
+			["experienced"] = 0,
+			["professional"] = 2,
+			["veteran"] = 5,
+			["expert"] = 9,
+			["master"] = 14,
+			["legend"] = 20
+		}
+		
+		local communityAdd = {
+			["zombied"] = -10,
+			["bandit"] = -5,
+			["army"] = 5,
+			["killer"] = 5
+		}
+		
+		local multi = (axr_main.config:r_value("mm_options","multi_wpn_conditions",2) or 1)
+		local condition  = (math.random(30)+35)
+		condition = condition + ( rankAdd[ranks.get_obj_rank_name( npc )] or 0 ) + ( communityAdd[npc:character_community()] or 0 )
+		condition = utils.clamp( condition * multi, 0, 100 )
+		item:set_condition( condition / 100 )
+		
+		try_spawn_ammo_for_weapon( npc, item )
 		-- Set random ammo in mag
 		item:set_ammo_elapsed( math.random(0,item:get_ammo_in_magazine()) )
+		
 		return
 	end
 	
@@ -207,14 +228,6 @@ function keep_item(npc, item)
 	end
 	
 	alife():release(se_item, true)
-end
-
-function set_weapon_drop_condition(npc,itm)
-	local multi = (axr_main.config:r_value("mm_options","multi_wpn_conditions",2) or 1)
-	local condition  = (math.random(40)+30)/100
-	--printf("condition [%s]", tostring(condition))
-	itm:set_condition(condition * multi)
-	try_spawn_ammo_for_weapon(npc,itm)
 end
 
 function try_spawn_ammo_for_weapon(npc,itm)
