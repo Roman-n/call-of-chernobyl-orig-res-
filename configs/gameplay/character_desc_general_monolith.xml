@@ -5,7 +5,7 @@
 </specific_character>
 <specific_character id="sim_default_monolith_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_1.xml"
-	<icon>ui_inGame2_monolit_0</icon>
+	<icon>ui_inGame2_monolit_2_old</icon>
 	<visual>actors\stalker_monolith\stalker_monolith_0_oldgas</visual>
 </specific_character>
 <specific_character id="sim_default_monolith_2_default_0" team_default = "1">
@@ -15,22 +15,22 @@
 </specific_character>
 <specific_character id="sim_default_monolith_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_2.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_2_old</icon>
 	<visual>actors\stalker_monolith\stalker_monolith_2_oldgas</visual>
 </specific_character>
 <specific_character id="sim_default_monolith_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_2.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_0</icon>
 	<visual>actors\stalker_monolith\stalker_monolith_2_halfgas</visual>
 </specific_character>
 <specific_character id="sim_default_monolith_2_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_2.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_2_gp5</icon>
 	<visual>actors\stalker_monolith\stalker_monolith_2_gp5</visual>
 </specific_character>
 <specific_character id="sim_default_monolith_2_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_2.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_2_nbc</icon>
 	<visual>actors\stalker_monolith\stalker_monolith_2_nbc</visual>
 </specific_character>
 <specific_character id="sim_default_monolith_3_default_0" team_default = "1">
@@ -55,13 +55,13 @@
 </specific_character>
 <specific_character id="sim_monolith_sniper" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_base.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_2_nohood</icon>
 	<class>sim_monolith_sniper</class>
 	<rank min="6000" max="15000" />
 	<panic_threshold>0.0</panic_threshold>
 	<snd_config>characters_voice\human\monolith_3\</snd_config>
 	<crouch_type>-1</crouch_type>
-	<visual>actors\stalker_monolith\stalker_monolith_2_bala</visual>
+	<visual>actors\stalker_monolith\stalker_monolith_2_nohood</visual>
 	<supplies>
 #include "gameplay\loadouts\monolith_base.ltx"
 #include "gameplay\loadouts\monolith_sniper.ltx"
@@ -73,13 +73,13 @@
 </specific_character>
 <specific_character id="sim_monolith_sniper_gauss" team_default = "1">
 	#include "gameplay\profiles\character_desc_monolith_base.xml"
-	<icon>ui_inGame2_monolit_2</icon>
+	<icon>ui_inGame2_monolit_2_nohood</icon>
 	<class>sim_monolith_sniper_gauss</class>
 	<rank min="6000" max="15000" />
 	<panic_threshold>0.0</panic_threshold>
 	<snd_config>characters_voice\human\monolith_3\</snd_config>
 	<crouch_type>-1</crouch_type>
-	<visual>actors\stalker_monolith\stalker_monolith_2_bala</visual>
+	<visual>actors\stalker_monolith\stalker_monolith_2_nohood</visual>
 	<supplies>
 #include "gameplay\loadouts\monolith_base.ltx"
 #include "gameplay\loadouts\monolith_sniper.ltx"

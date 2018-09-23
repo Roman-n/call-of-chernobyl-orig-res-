@@ -5,7 +5,7 @@
 </specific_character>
 <specific_character id="sim_default_killer_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_killer_1.xml"
-    <icon>ui_inGame2_merc_2_bala</icon>
+    <icon>ui_inGame2_merc_2_nohood</icon>
     <visual>actors\stalker_merc\stalker_merc_2a_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_killer_1_default_2" team_default = "1">

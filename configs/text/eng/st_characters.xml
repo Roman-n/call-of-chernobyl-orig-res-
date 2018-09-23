@@ -163,7 +163,10 @@
     <text>Durad Vidic</text>
   </string>
   <string id="st_actor_name">
-    <text>Degtyarev</text>
+    <text>Major Degtyarev</text>
+  </string>
+  <string id="st_actor_cs_name">
+    <text>Scar</text>
   </string>
   <string id="st_actor_generic_name">
     <text>Player</text>
@@ -357,6 +360,9 @@
 	<string id="esc_fanat_name">
 		<text>Fanatic</text>
 	</string>
+  <string id="bar_barmen_retarded_name">
+		<text>Karbeep</text>
+  </string>
   <string id="bar_barmen_name">
 		<text>Barkeep</text>
   </string>

@@ -33,7 +33,7 @@
     <!-------------------------- MERC MECHANIC ------------------------>
     <specific_character id="cit_killers_merc_mechanic_stalker" team_default="1">
     <name>cit_killers_merc_mechanic_stalker_name</name>
-    <icon>ui_inGame2_merc_tech</icon>
+    <icon>ui_inGame2_merc_2_nohood</icon>
     <bio>ќпытный сталкер. ƒетальна¤ информаци¤ отсутствует.</bio>
     <class>cit_killers_merc_mechanic_stalker</class>
     <community>killer</community>
@@ -42,7 +42,7 @@
     <mechanic_mode>1</mechanic_mode>
     <rank>14098</rank>
     <reputation>149</reputation>
-    <visual>actors\stalker_unique\stalker_merc_tech</visual>
+    <visual>actors\stalker_merc\stalker_merc_2a_nohood</visual>
     <snd_config>characters_voice\human\killer_1\</snd_config>
     <supplies>
         [spawn] \n

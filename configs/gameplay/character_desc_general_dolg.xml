@@ -6,19 +6,19 @@
 </specific_character>
 <specific_character id="sim_default_duty_0_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
-    <icon>ui_inGame2_Dolg_r</icon>
+    <icon>ui_inGame2_Dolg_r_nohood</icon>
     <snd_config>characters_voice\human\dolg_1\</snd_config>
     <visual>actors\stalker_dolg\stalker_dolg_r_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_duty_0_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
-    <icon>ui_inGame2_Dolg_r</icon>
+    <icon>ui_inGame2_Dolg_r_oldgas</icon>
     <snd_config>characters_voice\human\dolg_3\</snd_config>
     <visual>actors\stalker_dolg\stalker_dolg_r_oldgas</visual>
 </specific_character>
 <specific_character id="sim_default_duty_0_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_0.xml"
-    <icon>ui_inGame2_Dolg_r</icon>
+    <icon>ui_inGame2_Dolg_r_gas</icon>
     <snd_config>characters_voice\human\dolg_3\</snd_config>
     <visual>actors\stalker_dolg\stalker_dolg_r_gas</visual>
 </specific_character>
@@ -29,7 +29,7 @@
 </specific_character>
 <specific_character id="sim_default_duty_1_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
-    <icon>ui_inGame2_Dolg_2_bala</icon>
+    <icon>ui_inGame2_Dolg_2_nohood</icon>
     <visual>actors\stalker_dolg\stalker_dolg_2_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_duty_1_default_2" team_default = "1">
@@ -39,7 +39,7 @@
 </specific_character>
 <specific_character id="sim_default_duty_1_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_1.xml"
-    <icon>ui_inGame2_Dolg_2_bala</icon>
+    <icon>ui_inGame2_Dolg_2_nohood</icon>
     <visual>actors\stalker_dolg\stalker_dolg_2a_nohood</visual>
 </specific_character>
 <specific_character id="sim_default_duty_2_default_0" team_default = "1">
@@ -69,14 +69,17 @@
 </specific_character>
 <specific_character id="sim_default_duty_3_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_5</icon>
     <visual>actors\stalker_dolg\stalker_dolg_5</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_5</icon>
     <visual>actors\stalker_dolg\stalker_dolg_5a</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_4" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_3.xml"
+    <icon>ui_inGame2_Dolg_1</icon>
     <visual>actors\stalker_dolg\stalker_dolg_1</visual>
 </specific_character>
 <specific_character id="sim_default_duty_3_default_5" team_default = "1">
@@ -91,5 +94,6 @@
 </specific_character>
 <specific_character id="sim_default_duty_4_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_dolg_4.xml"
+    <icon>ui_inGame2_Dolg_4</icon>
     <visual>actors\stalker_dolg\stalker_dolg_4a</visual>
 </specific_character>

@@ -40,21 +40,21 @@
 </specific_character>
 <specific_character id="sim_default_ecolog_2_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_ecolog_2.xml"
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_gas</icon>
     <visual>actors\stalker_ecologist\stalker_ecolog_guard_gas</visual>
 </specific_character>
 <specific_character id="sim_default_ecolog_2_default_2" team_default = "1">
 	#include "gameplay\profiles\character_desc_ecolog_2.xml"
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_gp5</icon>
     <visual>actors\stalker_ecologist\stalker_ecolog_guard_gp5</visual>
 </specific_character>
 <specific_character id="sim_default_ecolog_3_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_ecolog_3.xml"
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_merc</icon>
     <visual>actors\stalker_ecologist\stalker_ecolog_guard_merc</visual>
 </specific_character>
 <specific_character id="sim_default_ecolog_3_default_1" team_default = "1">
 	#include "gameplay\profiles\character_desc_ecolog_3.xml"
-    <icon>ui_inGame2_ecolog_guard</icon>
+    <icon>ui_inGame2_ecolog_guard_nbc</icon>
     <visual>actors\stalker_ecologist\stalker_ecolog_guard_nbc</visual>
 </specific_character>

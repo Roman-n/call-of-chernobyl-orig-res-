@@ -3,7 +3,7 @@
 	<!-------------------------- DOCTOR ------------------------>
 	<specific_character id="mar_smart_terrain_base_doctor" team_default = "1">
 	<name>cit_doctor_name</name>
-	<icon>ui_inGame2_trodnik</icon>
+	<icon>ui_inGame2_csky_1</icon>
 	<map_icon x="1" y="0">
 	</map_icon>
 	<bio>Doctor.</bio>
@@ -56,7 +56,7 @@
 	<!-------------------------- CSKY BARMAN ------------------------>
 	<specific_character id="mar_base_stalker_barmen" team_default="1">
 	<name>mar_base_stalker_barmen_name</name>
-	<icon>ui_inGame2_librarian</icon>
+	<icon>ui_inGame2_csky_s_mask</icon>
 	<map_icon x="1" y="0">
 	</map_icon>
 	<bio>Îïûòíûé ñòàëêåð. Äåòàëüíàÿ èíôîðìàöèÿ îòñóòñòâóåò.</bio>
@@ -91,7 +91,7 @@
 	<!-------------------------- CSKY TRADER ------------------------>
 	<specific_character id="mar_base_owl_stalker_trader" team_default="1">
 	<name>mar_base_owl_stalker_trader_name</name>
-	<icon>ui_inGame2_csky_trade</icon>
+	<icon>ui_inGame2_csky_s_old</icon>
 	<map_icon x="1" y="0">
 	</map_icon>
 	<bio>Îïûòíûé ñòàëêåð. Äåòàëüíàÿ èíôîðìàöèÿ îòñóòñòâóåò.</bio>
@@ -102,7 +102,7 @@
 	<rank>21786</rank>
 	<reputation>1559</reputation>
 	<money min="1000000" max="1000000" infinitive="1" />
-	<visual>actors\stalker_unique\stalker_nebo_trade</visual>
+	<visual>actors\stalker_nebo\stalker_nebo_s_old</visual>
 	<supplies></supplies>
 #include "gameplay\character_criticals.xml"
 	<start_dialog>mar_base_owl_stalker_trader_start_dialog</start_dialog>
