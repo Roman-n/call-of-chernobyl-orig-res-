@@ -345,7 +345,7 @@ function faction_ui:InitControls(f)
 	end
 	
 	-- Randomly select a hero.
-	-- Default to Strelok is plugin failed to load.
+	-- Default to Strelok if plugin failed to load.
 	local rand = math.random(#self.default_heroes)
 	local comm = self.default_heroes[rand] and self.default_heroes[rand].comm
 	local icon = self.default_heroes[rand] and self.default_heroes[rand].icon
@@ -603,7 +603,9 @@ function faction_ui:load_icon_list()
 	
 	self.icon_list:ClearList()
 	for i = 1, #self.default_heroes do
-		self.icon_list:AddItem(self.default_heroes[i].icon, i)
+		if (self.default_heroes[i].icon) then
+			self.icon_list:AddItem(self.default_heroes[i].icon, i)
+		end
 	end
 	self.icon_table = iempty_table(self.icon_table)
 	
