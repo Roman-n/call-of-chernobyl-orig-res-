@@ -345,7 +345,7 @@ function faction_ui:InitControls(f)
 	end
 	
 	-- Randomly select a hero.
-	-- Default to Strelok if plugin failed to load.
+	-- Default to Strelok if an attribute of the selected hero is missing.
 	local rand = math.random(#self.default_heroes)
 	local comm = self.default_heroes[rand] and self.default_heroes[rand].comm
 	local icon = self.default_heroes[rand] and self.default_heroes[rand].icon
