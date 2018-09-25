@@ -305,8 +305,8 @@ function pda_encyclopedia_tab:InitPlugin()
 		-- Game mode toggles.
 		local modes = {
 			["azazel"] = IsAzazelMode(),
-			["debug"] = DEV_DEBUG,
-			["dev_debug"] = DEV_DEBUG_DEV,
+			["campfire"] = IsCampfireMode(),
+			["debug"] = (DEV_DEBUG or DEV_DEBUG_DEV),
 			["ironman"] = IsHardcoreMode(),
 			["story"] = IsStoryMode(),
 			["survival"] = IsSurvivalMode(),

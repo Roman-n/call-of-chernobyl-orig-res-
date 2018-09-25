@@ -331,21 +331,39 @@ function faction_ui:InitControls(f)
 	self.dialog					= xml:InitStatic("main_dialog:dialog", self)
 	
 	-- Default hero icons and texts.
-	self.default_heroes = {
-		{ "ui_inGame2_hero_degtyarev", "st_actor_name", "army" },
-		{ "ui_inGame2_hero_scar", "st_actor_cs_name", "killer" },
-		{ "ui_inGame2_hero_strelok", "pri_b305_strelok_name", "stalker" }
-	}
-	local rand = math.random(#self.default_heroes)
-	self.default_hero_icon = self.default_heroes[rand][1] or "ui_inGame2_hero_strelok"
-	self.default_hero_name = self.default_heroes[rand][2] or "pri_b305_strelok_name"
-	self.default_hero_comm = self.default_heroes[rand][3] or "stalker"
+	self.default_heroes = {}
+	local ini = ini_file("plugins\\player_heroes.ltx")
+	local line_count = ini:section_exist("heroes") and ini:line_count("heroes") or 0
+	for i = 0, line_count - 1 do
+		local junk1, section, junk2 = ini:r_line("heroes", i, "", "" )
+		local hero = {
+			comm = ini:r_string_ex(section, "comm") or nil,
+			icon = ini:r_string_ex(section, "icon") or nil,
+			name = ini:r_string_ex(section, "name") or nil
+		}
+		table.insert(self.default_heroes, hero)
+	end
 	
-	-- A goofy super rare easter egg hero.
-	if (math.random(1, 1000) == 1) then
+	-- Randomly select a hero.
+	-- Default to Strelok is plugin failed to load.
+	local rand = math.random(#self.default_heroes)
+	local comm = self.default_heroes[rand] and self.default_heroes[rand].comm
+	local icon = self.default_heroes[rand] and self.default_heroes[rand].icon
+	local name = self.default_heroes[rand] and self.default_heroes[rand].name
+	if not (comm and icon and name) then
+		comm = "stalker"
+		icon = "ui_inGame2_hero_strelok"
+		name = "pri_b305_strelok_name"
+	end
+	self.default_hero_comm = comm
+	self.default_hero_icon = icon
+	self.default_hero_name = name
+	
+	-- An extremely rare but goofy "fake barkeep" easter-egg hero.
+	if (math.random(1, 5000) == 1) then
+		self.default_hero_comm = "stalker"
 		self.default_hero_icon = "ui_inGame2_barman_retarded"
 		self.default_hero_name = "bar_barmen_retarded_name"
-		self.default_hero_comm = "zombied"
 	end
 	
 	-- Menu Quit
@@ -585,7 +603,7 @@ function faction_ui:load_icon_list()
 	
 	self.icon_list:ClearList()
 	for i = 1, #self.default_heroes do
-		self.icon_list:AddItem(self.default_heroes[i][1], i)
+		self.icon_list:AddItem(self.default_heroes[i].icon, i)
 	end
 	self.icon_table = iempty_table(self.icon_table)
 	

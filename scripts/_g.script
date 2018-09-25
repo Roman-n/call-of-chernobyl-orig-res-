@@ -375,6 +375,10 @@ function IsAzazelMode()
 	return axr_main.config and axr_main.config:r_value("character_creation","new_game_azazel_mode",1) == true or alife_storage_manager.get_state().enable_azazel_mode == true
 end
 
+function IsCampfireMode()
+	return axr_main.config and axr_main.config:r_value("character_creation","new_game_campfire_mode",1) == true or alife_storage_manager.get_state().enable_campfire_mode == true
+end
+
 function IsHardcoreMode()
 	return axr_main.config and axr_main.config:r_value("character_creation","new_game_hardcore_mode",1) == true or alife_storage_manager.get_state().uuid ~= nil
 end
