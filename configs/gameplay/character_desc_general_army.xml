@@ -58,11 +58,11 @@
     <icon>ui_inGame2_Soldier_1l</icon>
     <visual>actors\stalker_soldier\stalker_soldier_1l</visual>
 </specific_character>
-<specific_character id="sim_default_military_0_default_12" team_default = "1">
+<!--<specific_character id="sim_default_military_0_default_12" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_0.xml"
     <icon>ui_inGame2_Soldier_1</icon>
     <visual>actors\stalker_soldier\stalker_soldier_1</visual>
-</specific_character>
+</specific_character>-->
 <specific_character id="sim_default_military_1_default_0" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_1.xml"
     <icon>ui_inGame2_Soldier_2_bala</icon>
@@ -121,11 +121,11 @@
     <icon>ui_inGame2_Soldier_beret5</icon>
     <visual>actors\stalker_soldier\stalker_soldier_beret5</visual>
 </specific_character>
-<specific_character id="sim_default_military_3_default_6" team_default = "1">
+<!--<specific_character id="sim_default_military_3_default_6" team_default = "1">
 	#include "gameplay\profiles\character_desc_army_3.xml"
     <icon>ui_inGame2_Soldier_beret</icon>
     <visual>actors\stalker_soldier\stalker_soldier_beret</visual>
-</specific_character>
+</specific_character>-->
 <specific_character id="sim_default_military_3_default_sniper" team_default = "1">
     <name>GENERATE_NAME_sergeant</name>
     <icon>ui_inGame2_Soldier_2</icon>
