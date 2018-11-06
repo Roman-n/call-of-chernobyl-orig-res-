@@ -80,7 +80,7 @@
 	<name>GENERATE_NAME_stalker</name>
 	<icon>ui_inGame2_Zombied_neutral_1</icon>
 	<reputation min="-500" max="600" />
-	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1</visual>
+	<visual>actors\stalker_zombied\stalker_zombied_1_neutral_1_</visual>
 </specific_character>
 <specific_character id="sim_default_zombied_1_stalker_3" team_default = "1">
 	#include "gameplay\profiles\character_desc_zombied_1.xml"
