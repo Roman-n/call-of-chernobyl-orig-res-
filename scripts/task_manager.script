@@ -151,11 +151,14 @@ function CRandomTask:task_fail(p1)
 	if (tsk.forced_status == "fail") then
 		tsk.forced_status = nil
 		tsk.last_check_task = "fail"
+	elseif (tsk.forced_status == "reversed") then
+		tsk.forced_status = nil
+		tsk.last_check_task = "reversed"
 	elseif (tsk.forced_status == "complete") then 
 		return false
 	end
 	
-	if (tsk.last_check_task == "fail") then
+	if (tsk.last_check_task == "fail" or tsk.last_check_task == "reversed") then
 		return true
 	end
 	return false
@@ -227,6 +230,15 @@ function task_callback(tsk, state)
 		else 
 			tm.task_info[id] = nil
 		end
+	elseif (state == task.reversed) then
+		if (rtask.on_reversed) then
+			xr_logic.pick_section_from_condlist(db.actor, db.actor, rtask.on_reversed)
+		end
+		
+		news_manager.send_task(db.actor, "reversed", tsk)
+		rtask.status = "reversed"
+		
+		tm.task_info[id] = nil
 	end
 end
 
